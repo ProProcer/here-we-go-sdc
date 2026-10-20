@@ -90,3 +90,25 @@ Validation rejects duplicate IDs or role/skill pairs, dangling references,
 out-of-range weights, unlabeled records within a synthetic catalog, and roles
 without requirements. Schema or taxonomy changes require updated fixtures,
 response snapshot and consumer coordination.
+
+## Person 3 Data Analyst example — initial contract proposal
+
+Copy-ready integration notes for Persons 4 and 5 are in
+[the Role 3 handoff](ROLE_3_HANDOFF.md).
+
+See [Role 3 Data Analyst example](ROLE_3_DATA_ANALYST.md) for provenance,
+priority rules, limitations and commands. Existing Person 1 IDs are unchanged.
+
+`src.intelligence.outlook.get_outlook(role_id, scenario_id="baseline")` returns
+a typed `RoleOutlook` with cited contextual task interpretations and a nested
+`ScenarioResult`. `get_outlook_response` returns a JSON-compatible dictionary.
+`data/demo/data_analyst_outlooks.json` provides baseline, `moderate_ai_change`,
+and `rapid_ai_change` responses for integration. Person 4 should review the
+additive priority adjustment contract before wiring it into planning.
+
+Role 3 also provides `src.intelligence.feeds.refresh_evidence()` and
+`get_refresh_status()` for an explicit, bounded reviewed-source refresh and its
+cached/unavailable warnings. See [the refresh guide](ROLE_3_EVIDENCE_REFRESH.md).
+Outlook requests remain offline and use the last validated ledger. Person 5
+should display refresh status alongside source publication dates, not treat a
+recent fetch as evidence of a recent publication.

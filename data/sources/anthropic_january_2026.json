@@ -1,0 +1,45 @@
+{
+  "synthetic": false,
+  "source": {
+    "source_id": "source:anthropic_economic_index_2026_01",
+    "title": "Anthropic Economic Index report: Economic primitives",
+    "publisher": "Anthropic",
+    "source_url": "https://www.anthropic.com/research/anthropic-economic-index-january-2026-report",
+    "published_at": "2026-01-15",
+    "retrieved_at": "2026-10-20",
+    "synthetic": false,
+    "usage_note": "Original paraphrase and citation only; no source article or underlying dataset redistributed. No blanket article reuse license verified.",
+    "coverage": "Claude.ai and first-party API observations from November 2025; global platform sample.",
+    "limitations": "Historical vendor-specific sample, not current labor-market data or a Malaysia-specific estimate. Collaboration patterns do not measure role replacement."
+  },
+  "title_marker": "Economic primitives",
+  "publication_marker": "Jan 15, 2026",
+  "required_markers": [
+    "Augmentation is once again more common than automation on Claude.ai",
+    "November 2025"
+  ],
+  "signal": {
+    "signal_id": "signal:collaboration_november_2025",
+    "source_id": "source:anthropic_economic_index_2026_01",
+    "claim": "The January report describes collaborative use as more common than automated use in its November Claude.ai sample. This platform observation does not establish task replacement.",
+    "synthetic": false
+  },
+  "task_interpretations": [
+    {
+      "role_id": "role:data_analyst",
+      "task_id": "task:data_cleaning",
+      "signal_ids": ["signal:collaboration_november_2025"],
+      "interpretation": "The newer collaboration finding adds context for considering human-reviewed cleaning workflows. Applying it to this task is our interpretation; cleaning automation is not measured.",
+      "mapping_basis": "team_interpretation",
+      "evidence_scope": "contextual_not_task_measurement"
+    },
+    {
+      "role_id": "role:data_analyst",
+      "task_id": "task:routine_reporting",
+      "signal_ids": ["signal:collaboration_november_2025"],
+      "interpretation": "The newer collaboration finding adds context for considering iterative report review. Applying it to this task is our interpretation; reporting automation is not measured.",
+      "mapping_basis": "team_interpretation",
+      "evidence_scope": "contextual_not_task_measurement"
+    }
+  ]
+}

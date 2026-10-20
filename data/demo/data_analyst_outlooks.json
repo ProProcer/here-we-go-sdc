@@ -1,0 +1,371 @@
+{
+  "baseline": {
+    "schema_version": "0.1.0",
+    "role_id": "role:data_analyst",
+    "role_title": "Data Analyst",
+    "catalog_synthetic": true,
+    "baseline_label": "Contextual AI evidence; employment impact unknown",
+    "tasks": [
+      {
+        "task_id": "task:data_cleaning",
+        "label": "Clean and validate tabular data",
+        "evidence_status": "contextual_evidence",
+        "interpretation": "The newer collaboration finding adds context for considering human-reviewed cleaning workflows. Applying it to this task is our interpretation; cleaning automation is not measured.",
+        "mapping_basis": "team_interpretation",
+        "evidence_scope": "contextual_not_task_measurement",
+        "signal_ids": [
+          "signal:context_and_collaboration",
+          "signal:collaboration_november_2025"
+        ]
+      },
+      {
+        "task_id": "task:routine_reporting",
+        "label": "Prepare routine reports and dashboards",
+        "evidence_status": "contextual_evidence",
+        "interpretation": "The newer collaboration finding adds context for considering iterative report review. Applying it to this task is our interpretation; reporting automation is not measured.",
+        "mapping_basis": "team_interpretation",
+        "evidence_scope": "contextual_not_task_measurement",
+        "signal_ids": [
+          "signal:context_and_collaboration",
+          "signal:collaboration_november_2025"
+        ]
+      }
+    ],
+    "signals": [
+      {
+        "signal_id": "signal:context_and_collaboration",
+        "source_id": "source:anthropic_economic_index_2025_09",
+        "claim": "The report distinguishes collaborative from delegated AI use and identifies access to relevant organizational context as a constraint on sophisticated enterprise deployment.",
+        "synthetic": false
+      },
+      {
+        "signal_id": "signal:collaboration_november_2025",
+        "source_id": "source:anthropic_economic_index_2026_01",
+        "claim": "The January report describes collaborative use as more common than automated use in its November Claude.ai sample. This platform observation does not establish task replacement.",
+        "synthetic": false
+      }
+    ],
+    "sources": [
+      {
+        "source_id": "source:anthropic_economic_index_2025_09",
+        "title": "Anthropic Economic Index report: Uneven geographic and enterprise AI adoption",
+        "publisher": "Anthropic",
+        "source_url": "https://www.anthropic.com/news/anthropic-economic-index-september-2025-report",
+        "published_at": "2025-09-15",
+        "retrieved_at": "2026-10-20",
+        "synthetic": false,
+        "usage_note": "Linked citation and original paraphrases only; no article text or underlying dataset redistributed. No blanket article reuse license verified.",
+        "coverage": "Claude.ai and first-party API usage; global platform sample, including August 2025 observations.",
+        "limitations": "Vendor-specific, selected users; not representative employment data or a Malaysia-specific adoption estimate. Historical release, not latest evidence."
+      },
+      {
+        "source_id": "source:anthropic_economic_index_2026_01",
+        "title": "Anthropic Economic Index report: Economic primitives",
+        "publisher": "Anthropic",
+        "source_url": "https://www.anthropic.com/research/anthropic-economic-index-january-2026-report",
+        "published_at": "2026-01-15",
+        "retrieved_at": "2026-10-20",
+        "synthetic": false,
+        "usage_note": "Original paraphrase and citation only; no source article or underlying dataset redistributed. No blanket article reuse license verified.",
+        "coverage": "Claude.ai and first-party API observations from November 2025; global platform sample.",
+        "limitations": "Historical vendor-specific sample, not current labor-market data or a Malaysia-specific estimate. Collaboration patterns do not measure role replacement."
+      }
+    ],
+    "scenario": {
+      "scenario_id": "baseline",
+      "name": "Baseline (synthetic role requirements)",
+      "synthetic": false,
+      "assumptions": [],
+      "affected_task_ids": [],
+      "skill_priorities": [
+        {
+          "skill_id": "skill:communication",
+          "baseline_priority": 0.6,
+          "adjusted_priority": 0.6,
+          "applied_adjustment": 0.0
+        },
+        {
+          "skill_id": "skill:data_visualization",
+          "baseline_priority": 0.8,
+          "adjusted_priority": 0.8,
+          "applied_adjustment": 0.0
+        },
+        {
+          "skill_id": "skill:python",
+          "baseline_priority": 0.7,
+          "adjusted_priority": 0.7,
+          "applied_adjustment": 0.0
+        },
+        {
+          "skill_id": "skill:sql",
+          "baseline_priority": 0.9,
+          "adjusted_priority": 0.9,
+          "applied_adjustment": 0.0
+        },
+        {
+          "skill_id": "skill:statistics",
+          "baseline_priority": 0.8,
+          "adjusted_priority": 0.8,
+          "applied_adjustment": 0.0
+        }
+      ],
+      "interpretation": "Unadjusted catalog weights; the role catalog is synthetic. These are not measured demand or proficiency."
+    },
+    "limitations": [
+      "Role requirements and task assignments come from Person 1's synthetic integration catalog.",
+      "Task mappings are team interpretations, not measured task automation rates.",
+      "Scenario adjustments are illustrative learning priorities, not employment forecasts or changes to personal fit.",
+      "Outlook reads validated cached evidence. Run python -m src.intelligence.feeds to refresh the reviewed source; source publication dates may still be historical."
+    ]
+  },
+  "moderate_ai_change": {
+    "schema_version": "0.1.0",
+    "role_id": "role:data_analyst",
+    "role_title": "Data Analyst",
+    "catalog_synthetic": true,
+    "baseline_label": "Contextual AI evidence; employment impact unknown",
+    "tasks": [
+      {
+        "task_id": "task:data_cleaning",
+        "label": "Clean and validate tabular data",
+        "evidence_status": "contextual_evidence",
+        "interpretation": "The newer collaboration finding adds context for considering human-reviewed cleaning workflows. Applying it to this task is our interpretation; cleaning automation is not measured.",
+        "mapping_basis": "team_interpretation",
+        "evidence_scope": "contextual_not_task_measurement",
+        "signal_ids": [
+          "signal:context_and_collaboration",
+          "signal:collaboration_november_2025"
+        ]
+      },
+      {
+        "task_id": "task:routine_reporting",
+        "label": "Prepare routine reports and dashboards",
+        "evidence_status": "contextual_evidence",
+        "interpretation": "The newer collaboration finding adds context for considering iterative report review. Applying it to this task is our interpretation; reporting automation is not measured.",
+        "mapping_basis": "team_interpretation",
+        "evidence_scope": "contextual_not_task_measurement",
+        "signal_ids": [
+          "signal:context_and_collaboration",
+          "signal:collaboration_november_2025"
+        ]
+      }
+    ],
+    "signals": [
+      {
+        "signal_id": "signal:context_and_collaboration",
+        "source_id": "source:anthropic_economic_index_2025_09",
+        "claim": "The report distinguishes collaborative from delegated AI use and identifies access to relevant organizational context as a constraint on sophisticated enterprise deployment.",
+        "synthetic": false
+      },
+      {
+        "signal_id": "signal:collaboration_november_2025",
+        "source_id": "source:anthropic_economic_index_2026_01",
+        "claim": "The January report describes collaborative use as more common than automated use in its November Claude.ai sample. This platform observation does not establish task replacement.",
+        "synthetic": false
+      }
+    ],
+    "sources": [
+      {
+        "source_id": "source:anthropic_economic_index_2025_09",
+        "title": "Anthropic Economic Index report: Uneven geographic and enterprise AI adoption",
+        "publisher": "Anthropic",
+        "source_url": "https://www.anthropic.com/news/anthropic-economic-index-september-2025-report",
+        "published_at": "2025-09-15",
+        "retrieved_at": "2026-10-20",
+        "synthetic": false,
+        "usage_note": "Linked citation and original paraphrases only; no article text or underlying dataset redistributed. No blanket article reuse license verified.",
+        "coverage": "Claude.ai and first-party API usage; global platform sample, including August 2025 observations.",
+        "limitations": "Vendor-specific, selected users; not representative employment data or a Malaysia-specific adoption estimate. Historical release, not latest evidence."
+      },
+      {
+        "source_id": "source:anthropic_economic_index_2026_01",
+        "title": "Anthropic Economic Index report: Economic primitives",
+        "publisher": "Anthropic",
+        "source_url": "https://www.anthropic.com/research/anthropic-economic-index-january-2026-report",
+        "published_at": "2026-01-15",
+        "retrieved_at": "2026-10-20",
+        "synthetic": false,
+        "usage_note": "Original paraphrase and citation only; no source article or underlying dataset redistributed. No blanket article reuse license verified.",
+        "coverage": "Claude.ai and first-party API observations from November 2025; global platform sample.",
+        "limitations": "Historical vendor-specific sample, not current labor-market data or a Malaysia-specific estimate. Collaboration patterns do not measure role replacement."
+      }
+    ],
+    "scenario": {
+      "scenario_id": "moderate_ai_change",
+      "name": "Moderate AI adoption (hypothetical)",
+      "synthetic": true,
+      "assumptions": [
+        "Assume more AI-assisted cleaning and report drafting, with human review retained.",
+        "For this demo, raise statistics for validation, communication for business context, and Python for inspecting generated code. Adjustment sizes are authored assumptions."
+      ],
+      "affected_task_ids": [
+        "task:data_cleaning",
+        "task:routine_reporting"
+      ],
+      "skill_priorities": [
+        {
+          "skill_id": "skill:communication",
+          "baseline_priority": 0.6,
+          "adjusted_priority": 0.7,
+          "applied_adjustment": 0.1
+        },
+        {
+          "skill_id": "skill:data_visualization",
+          "baseline_priority": 0.8,
+          "adjusted_priority": 0.8,
+          "applied_adjustment": 0.0
+        },
+        {
+          "skill_id": "skill:python",
+          "baseline_priority": 0.7,
+          "adjusted_priority": 0.75,
+          "applied_adjustment": 0.05
+        },
+        {
+          "skill_id": "skill:sql",
+          "baseline_priority": 0.9,
+          "adjusted_priority": 0.9,
+          "applied_adjustment": 0.0
+        },
+        {
+          "skill_id": "skill:statistics",
+          "baseline_priority": 0.8,
+          "adjusted_priority": 0.9,
+          "applied_adjustment": 0.1
+        }
+      ],
+      "interpretation": "Illustrative hypothetical scenario; not observed evidence or a job-loss forecast. Priority = clamp(baseline + adjustment, 0, 1)."
+    },
+    "limitations": [
+      "Role requirements and task assignments come from Person 1's synthetic integration catalog.",
+      "Task mappings are team interpretations, not measured task automation rates.",
+      "Scenario adjustments are illustrative learning priorities, not employment forecasts or changes to personal fit.",
+      "Outlook reads validated cached evidence. Run python -m src.intelligence.feeds to refresh the reviewed source; source publication dates may still be historical."
+    ]
+  },
+  "rapid_ai_change": {
+    "schema_version": "0.1.0",
+    "role_id": "role:data_analyst",
+    "role_title": "Data Analyst",
+    "catalog_synthetic": true,
+    "baseline_label": "Contextual AI evidence; employment impact unknown",
+    "tasks": [
+      {
+        "task_id": "task:data_cleaning",
+        "label": "Clean and validate tabular data",
+        "evidence_status": "contextual_evidence",
+        "interpretation": "The newer collaboration finding adds context for considering human-reviewed cleaning workflows. Applying it to this task is our interpretation; cleaning automation is not measured.",
+        "mapping_basis": "team_interpretation",
+        "evidence_scope": "contextual_not_task_measurement",
+        "signal_ids": [
+          "signal:context_and_collaboration",
+          "signal:collaboration_november_2025"
+        ]
+      },
+      {
+        "task_id": "task:routine_reporting",
+        "label": "Prepare routine reports and dashboards",
+        "evidence_status": "contextual_evidence",
+        "interpretation": "The newer collaboration finding adds context for considering iterative report review. Applying it to this task is our interpretation; reporting automation is not measured.",
+        "mapping_basis": "team_interpretation",
+        "evidence_scope": "contextual_not_task_measurement",
+        "signal_ids": [
+          "signal:context_and_collaboration",
+          "signal:collaboration_november_2025"
+        ]
+      }
+    ],
+    "signals": [
+      {
+        "signal_id": "signal:context_and_collaboration",
+        "source_id": "source:anthropic_economic_index_2025_09",
+        "claim": "The report distinguishes collaborative from delegated AI use and identifies access to relevant organizational context as a constraint on sophisticated enterprise deployment.",
+        "synthetic": false
+      },
+      {
+        "signal_id": "signal:collaboration_november_2025",
+        "source_id": "source:anthropic_economic_index_2026_01",
+        "claim": "The January report describes collaborative use as more common than automated use in its November Claude.ai sample. This platform observation does not establish task replacement.",
+        "synthetic": false
+      }
+    ],
+    "sources": [
+      {
+        "source_id": "source:anthropic_economic_index_2025_09",
+        "title": "Anthropic Economic Index report: Uneven geographic and enterprise AI adoption",
+        "publisher": "Anthropic",
+        "source_url": "https://www.anthropic.com/news/anthropic-economic-index-september-2025-report",
+        "published_at": "2025-09-15",
+        "retrieved_at": "2026-10-20",
+        "synthetic": false,
+        "usage_note": "Linked citation and original paraphrases only; no article text or underlying dataset redistributed. No blanket article reuse license verified.",
+        "coverage": "Claude.ai and first-party API usage; global platform sample, including August 2025 observations.",
+        "limitations": "Vendor-specific, selected users; not representative employment data or a Malaysia-specific adoption estimate. Historical release, not latest evidence."
+      },
+      {
+        "source_id": "source:anthropic_economic_index_2026_01",
+        "title": "Anthropic Economic Index report: Economic primitives",
+        "publisher": "Anthropic",
+        "source_url": "https://www.anthropic.com/research/anthropic-economic-index-january-2026-report",
+        "published_at": "2026-01-15",
+        "retrieved_at": "2026-10-20",
+        "synthetic": false,
+        "usage_note": "Original paraphrase and citation only; no source article or underlying dataset redistributed. No blanket article reuse license verified.",
+        "coverage": "Claude.ai and first-party API observations from November 2025; global platform sample.",
+        "limitations": "Historical vendor-specific sample, not current labor-market data or a Malaysia-specific estimate. Collaboration patterns do not measure role replacement."
+      }
+    ],
+    "scenario": {
+      "scenario_id": "rapid_ai_change",
+      "name": "Rapid AI adoption (hypothetical)",
+      "synthetic": true,
+      "assumptions": [
+        "Assume faster adoption of AI-assisted cleaning and report drafting, with human accountability retained.",
+        "For this demo, put greater emphasis on statistical validation, communicating limitations, and inspecting generated Python. Adjustment sizes are authored assumptions."
+      ],
+      "affected_task_ids": [
+        "task:data_cleaning",
+        "task:routine_reporting"
+      ],
+      "skill_priorities": [
+        {
+          "skill_id": "skill:communication",
+          "baseline_priority": 0.6,
+          "adjusted_priority": 0.8,
+          "applied_adjustment": 0.2
+        },
+        {
+          "skill_id": "skill:data_visualization",
+          "baseline_priority": 0.8,
+          "adjusted_priority": 0.8,
+          "applied_adjustment": 0.0
+        },
+        {
+          "skill_id": "skill:python",
+          "baseline_priority": 0.7,
+          "adjusted_priority": 0.8,
+          "applied_adjustment": 0.1
+        },
+        {
+          "skill_id": "skill:sql",
+          "baseline_priority": 0.9,
+          "adjusted_priority": 0.9,
+          "applied_adjustment": 0.0
+        },
+        {
+          "skill_id": "skill:statistics",
+          "baseline_priority": 0.8,
+          "adjusted_priority": 1.0,
+          "applied_adjustment": 0.2
+        }
+      ],
+      "interpretation": "Illustrative hypothetical scenario; not observed evidence or a job-loss forecast. Priority = clamp(baseline + adjustment, 0, 1)."
+    },
+    "limitations": [
+      "Role requirements and task assignments come from Person 1's synthetic integration catalog.",
+      "Task mappings are team interpretations, not measured task automation rates.",
+      "Scenario adjustments are illustrative learning priorities, not employment forecasts or changes to personal fit.",
+      "Outlook reads validated cached evidence. Run python -m src.intelligence.feeds to refresh the reviewed source; source publication dates may still be historical."
+    ]
+  }
+}

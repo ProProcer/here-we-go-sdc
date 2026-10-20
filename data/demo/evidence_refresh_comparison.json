@@ -1,0 +1,69 @@
+{
+  "description": "Actual live source refresh from the September 2025 contextual example to the additional January 2026 report. Historical demonstration, not latest-evidence claim.",
+  "live_snapshot": "data/snapshots/trends/20261020T103338116657Z_09a95df9973d.json",
+  "before_source_ids": [
+    "source:anthropic_economic_index_2025_09"
+  ],
+  "after_source_ids": [
+    "source:anthropic_economic_index_2025_09",
+    "source:anthropic_economic_index_2026_01"
+  ],
+  "before_signal_ids": [
+    "signal:context_and_collaboration"
+  ],
+  "after_signal_ids": [
+    "signal:context_and_collaboration",
+    "signal:collaboration_november_2025"
+  ],
+  "before_tasks": [
+    {
+      "task_id": "task:data_cleaning",
+      "label": "Clean and validate tabular data",
+      "evidence_status": "contextual_evidence",
+      "interpretation": "We infer that AI-assisted cleaning needs checks against dataset meaning and validation rules; this source does not measure cleaning automation.",
+      "mapping_basis": "team_interpretation",
+      "evidence_scope": "contextual_not_task_measurement",
+      "signal_ids": [
+        "signal:context_and_collaboration"
+      ]
+    },
+    {
+      "task_id": "task:routine_reporting",
+      "label": "Prepare routine reports and dashboards",
+      "evidence_status": "contextual_evidence",
+      "interpretation": "We infer that AI-assisted reporting still needs business context and human review; this source does not measure reporting automation.",
+      "mapping_basis": "team_interpretation",
+      "evidence_scope": "contextual_not_task_measurement",
+      "signal_ids": [
+        "signal:context_and_collaboration"
+      ]
+    }
+  ],
+  "after_tasks": [
+    {
+      "task_id": "task:data_cleaning",
+      "label": "Clean and validate tabular data",
+      "evidence_status": "contextual_evidence",
+      "interpretation": "The newer collaboration finding adds context for considering human-reviewed cleaning workflows. Applying it to this task is our interpretation; cleaning automation is not measured.",
+      "mapping_basis": "team_interpretation",
+      "evidence_scope": "contextual_not_task_measurement",
+      "signal_ids": [
+        "signal:context_and_collaboration",
+        "signal:collaboration_november_2025"
+      ]
+    },
+    {
+      "task_id": "task:routine_reporting",
+      "label": "Prepare routine reports and dashboards",
+      "evidence_status": "contextual_evidence",
+      "interpretation": "The newer collaboration finding adds context for considering iterative report review. Applying it to this task is our interpretation; reporting automation is not measured.",
+      "mapping_basis": "team_interpretation",
+      "evidence_scope": "contextual_not_task_measurement",
+      "signal_ids": [
+        "signal:context_and_collaboration",
+        "signal:collaboration_november_2025"
+      ]
+    }
+  ],
+  "priority_changes_from_evidence_refresh": false
+}

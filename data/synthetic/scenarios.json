@@ -1,0 +1,28 @@
+[
+  {
+    "scenario_id": "moderate_ai_change",
+    "name": "Moderate AI adoption (hypothetical)",
+    "synthetic": true,
+    "role_id": "role:data_analyst",
+    "affected_task_ids": ["task:data_cleaning", "task:routine_reporting"],
+    "assumptions": [
+      "Assume more AI-assisted cleaning and report drafting, with human review retained.",
+      "For this demo, raise statistics for validation, communication for business context, and Python for inspecting generated code. Adjustment sizes are authored assumptions."
+    ],
+    "skill_priority_adjustments": {"skill:statistics": 0.1, "skill:communication": 0.1, "skill:python": 0.05},
+    "interpretation": "Illustrative hypothetical scenario; not observed evidence or a job-loss forecast. Priority = clamp(baseline + adjustment, 0, 1)."
+  },
+  {
+    "scenario_id": "rapid_ai_change",
+    "name": "Rapid AI adoption (hypothetical)",
+    "synthetic": true,
+    "role_id": "role:data_analyst",
+    "affected_task_ids": ["task:data_cleaning", "task:routine_reporting"],
+    "assumptions": [
+      "Assume faster adoption of AI-assisted cleaning and report drafting, with human accountability retained.",
+      "For this demo, put greater emphasis on statistical validation, communicating limitations, and inspecting generated Python. Adjustment sizes are authored assumptions."
+    ],
+    "skill_priority_adjustments": {"skill:statistics": 0.2, "skill:communication": 0.2, "skill:python": 0.1},
+    "interpretation": "Illustrative hypothetical scenario; not observed evidence or a job-loss forecast. Priority = clamp(baseline + adjustment, 0, 1)."
+  }
+]

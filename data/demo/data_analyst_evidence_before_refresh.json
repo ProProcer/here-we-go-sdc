@@ -1,0 +1,47 @@
+{
+  "schema_version": "0.1.0",
+  "sources": [
+    {
+      "source_id": "source:anthropic_economic_index_2025_09",
+      "title": "Anthropic Economic Index report: Uneven geographic and enterprise AI adoption",
+      "publisher": "Anthropic",
+      "source_url": "https://www.anthropic.com/news/anthropic-economic-index-september-2025-report",
+      "published_at": "2025-09-15",
+      "retrieved_at": "2026-10-20",
+      "synthetic": false,
+      "usage_note": "Linked citation and original paraphrases only; no article text or underlying dataset redistributed. No blanket article reuse license verified.",
+      "coverage": "Claude.ai and first-party API usage; global platform sample, including August 2025 observations.",
+      "limitations": "Vendor-specific, selected users; not representative employment data or a Malaysia-specific adoption estimate. Historical release, not latest evidence."
+    }
+  ],
+  "signals": [
+    {
+      "signal_id": "signal:context_and_collaboration",
+      "source_id": "source:anthropic_economic_index_2025_09",
+      "claim": "The report distinguishes collaborative from delegated AI use and identifies access to relevant organizational context as a constraint on sophisticated enterprise deployment.",
+      "synthetic": false
+    }
+  ],
+  "task_interpretations": [
+    {
+      "task_id": "task:data_cleaning",
+      "interpretation": "We infer that AI-assisted cleaning needs checks against dataset meaning and validation rules; this source does not measure cleaning automation.",
+      "mapping_basis": "team_interpretation",
+      "evidence_scope": "contextual_not_task_measurement",
+      "signal_ids": [
+        "signal:context_and_collaboration"
+      ],
+      "role_id": "role:data_analyst"
+    },
+    {
+      "task_id": "task:routine_reporting",
+      "interpretation": "We infer that AI-assisted reporting still needs business context and human review; this source does not measure reporting automation.",
+      "mapping_basis": "team_interpretation",
+      "evidence_scope": "contextual_not_task_measurement",
+      "signal_ids": [
+        "signal:context_and_collaboration"
+      ],
+      "role_id": "role:data_analyst"
+    }
+  ]
+}
