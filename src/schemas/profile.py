@@ -23,7 +23,9 @@ class ProfileSkill(Contract):
 
 class ProfileConstraints(Contract):
     budget_myr: float | None = Field(default=None, ge=0, allow_inf_nan=False)
-    hours_per_week: float | None = Field(default=None, gt=0, le=168, allow_inf_nan=False)
+    hours_per_week: float | None = Field(
+        default=None, gt=0, le=168, allow_inf_nan=False
+    )
 
 
 class SkillsProfile(Contract):

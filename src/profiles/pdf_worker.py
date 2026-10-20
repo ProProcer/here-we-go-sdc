@@ -1,12 +1,18 @@
 """Private PDF worker: bounded structured output, no raw CV logging or disk writes."""
 
-from io import BytesIO
 import json
 import sys
+from io import BytesIO
 
 from pypdf import PdfReader
 
-from src.profiles.cv_parser import CVParseError, MAX_BYTES, MAX_PAGES, MAX_PAGE_STREAM, _check_text
+from src.profiles.cv_parser import (
+    MAX_BYTES,
+    MAX_PAGE_STREAM,
+    MAX_PAGES,
+    CVParseError,
+    _check_text,
+)
 
 
 def extract_pdf(content: bytes) -> list[str]:
@@ -35,8 +41,11 @@ def main() -> None:
             raise CVParseError("file_limit", "PDF exceeds 2 MiB.")
         payload = {"pages": extract_pdf(content)}
     except CVParseError as error:
-        payload = {"error": error.code, "message": "Document cannot be parsed: " + error.code + "."}
-    except Exception:
+        payload = {
+            "error": error.code,
+            "message": "Document cannot be parsed: " + error.code + ".",
+        }
+    except Exception:  # noqa: BLE001 - Worker boundary must return a sanitized error for any decoder failure.
         payload = {"error": "invalid_pdf", "message": "Malformed or unsupported PDF."}
     sys.stdout.buffer.write(json.dumps(payload).encode("utf-8"))
 

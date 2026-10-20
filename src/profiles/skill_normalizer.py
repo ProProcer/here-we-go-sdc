@@ -21,7 +21,9 @@ def skill_index(taxonomy: Taxonomy) -> dict[str, Skill]:
     return index
 
 
-def normalize_entries(entries: list[str], taxonomy: Taxonomy) -> tuple[list[tuple[Skill, list[str]]], list[str]]:
+def normalize_entries(
+    entries: list[str], taxonomy: Taxonomy
+) -> tuple[list[tuple[Skill, list[str]]], list[str]]:
     """Resolve complete entries; aliases merge without adding scoring credit."""
     index = skill_index(taxonomy)
     found = {}

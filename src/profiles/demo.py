@@ -10,14 +10,25 @@ ROOT = Path(__file__).resolve().parents[2]
 
 
 def example_responses() -> list[dict]:
-    fixtures = json.loads((ROOT / "data/synthetic/profiles/typed_inputs.json").read_text(encoding="utf-8"))
+    fixtures = json.loads(
+        (ROOT / "data/synthetic/profiles/typed_inputs.json").read_text(encoding="utf-8")
+    )
     responses = []
     for fixture in fixtures:
-        profile = create_profile(fixture["profile_id"], fixture["entries"],
-                                 desired_role_id=fixture.get("desired_role_id"),
-                                 interests=fixture.get("interests"))
-        responses.append({"profile": profile.model_dump(mode="json"),
-                          "matches": [match.model_dump(mode="json") for match in match_roles(profile)]})
+        profile = create_profile(
+            fixture["profile_id"],
+            fixture["entries"],
+            desired_role_id=fixture.get("desired_role_id"),
+            interests=fixture.get("interests"),
+        )
+        responses.append(
+            {
+                "profile": profile.model_dump(mode="json"),
+                "matches": [
+                    match.model_dump(mode="json") for match in match_roles(profile)
+                ],
+            }
+        )
     return responses
 
 
