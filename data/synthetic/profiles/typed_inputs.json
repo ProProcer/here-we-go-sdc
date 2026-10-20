@@ -1,0 +1,7 @@
+[
+  {"profile_id": "synthetic:analytics_graduate", "entries": ["Python3", "structured query language"], "desired_role_id": "role:data_analyst", "interests": ["analytics"], "expected_skill_ids": ["skill:python", "skill:sql"], "expected_ranking": ["role:data_analyst", "role:business_analyst", "role:it_support_specialist"]},
+  {"profile_id": "synthetic:business_candidate", "entries": ["Excel", "requirements gathering", "stakeholder communication"], "expected_skill_ids": ["skill:communication", "skill:requirements_analysis", "skill:spreadsheets"], "expected_ranking": ["role:business_analyst", "role:it_support_specialist", "role:data_analyst"]},
+  {"profile_id": "synthetic:support_candidate", "entries": ["technical support", "Communication"], "expected_skill_ids": ["skill:communication", "skill:it_troubleshooting"], "expected_ranking": ["role:it_support_specialist", "role:business_analyst", "role:data_analyst"]},
+  {"profile_id": "synthetic:sparse_candidate", "entries": [], "expected_skill_ids": [], "expected_ranking": ["role:business_analyst", "role:data_analyst", "role:it_support_specialist"]},
+  {"profile_id": "synthetic:alias_candidate", "entries": [" python3 ", "PYTHON", "SQL", "structured query language"], "expected_skill_ids": ["skill:python", "skill:sql"], "expected_ranking": ["role:data_analyst", "role:business_analyst", "role:it_support_specialist"]}
+]

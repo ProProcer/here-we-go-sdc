@@ -1,0 +1,1199 @@
+[
+  {
+    "profile": {
+      "schema_version": "0.1.0",
+      "profile_id": "synthetic:analytics_graduate",
+      "synthetic": true,
+      "desired_role_id": "role:data_analyst",
+      "skills": [
+        {
+          "skill_id": "skill:python",
+          "label": "Python",
+          "level": "unknown",
+          "evidence": [
+            "Typed skill entry: Python3"
+          ],
+          "confirmation": "self_reported"
+        },
+        {
+          "skill_id": "skill:sql",
+          "label": "SQL",
+          "level": "unknown",
+          "evidence": [
+            "Typed skill entry: structured query language"
+          ],
+          "confirmation": "self_reported"
+        }
+      ],
+      "interests": [
+        "analytics"
+      ],
+      "constraints": {
+        "budget_myr": null,
+        "hours_per_week": null
+      },
+      "warnings": []
+    },
+    "matches": [
+      {
+        "role_id": "role:data_analyst",
+        "role_title": "Data Analyst",
+        "sector_id": "sector:information_services",
+        "sector": "Information Services",
+        "catalog_synthetic": true,
+        "rank": 1,
+        "fit_score": 42.11,
+        "score_breakdown": {
+          "method": "weighted_coverage_v1",
+          "earned_weight": 1.6,
+          "total_weight": 3.8,
+          "required_skill_coverage": 0.42105263157894735,
+          "transferability": null,
+          "preferences": null
+        },
+        "matched_skills": [
+          {
+            "skill_id": "skill:python",
+            "label": "Python",
+            "importance": 0.7,
+            "coverage": 1,
+            "weighted_contribution": 0.7,
+            "evidence": [
+              "Typed skill entry: Python3"
+            ],
+            "reason": "Supported by a self-reported or reviewed skill; proficiency is not assessed."
+          },
+          {
+            "skill_id": "skill:sql",
+            "label": "SQL",
+            "importance": 0.9,
+            "coverage": 1,
+            "weighted_contribution": 0.9,
+            "evidence": [
+              "Typed skill entry: structured query language"
+            ],
+            "reason": "Supported by a self-reported or reviewed skill; proficiency is not assessed."
+          }
+        ],
+        "missing_skills": [
+          {
+            "skill_id": "skill:communication",
+            "label": "Communication",
+            "importance": 0.6,
+            "coverage": 0,
+            "weighted_contribution": 0.0,
+            "evidence": [],
+            "reason": "Not evidenced in the submitted profile."
+          },
+          {
+            "skill_id": "skill:data_visualization",
+            "label": "Data visualization",
+            "importance": 0.8,
+            "coverage": 0,
+            "weighted_contribution": 0.0,
+            "evidence": [],
+            "reason": "Not evidenced in the submitted profile."
+          },
+          {
+            "skill_id": "skill:statistics",
+            "label": "Statistics",
+            "importance": 0.8,
+            "coverage": 0,
+            "weighted_contribution": 0.0,
+            "evidence": [],
+            "reason": "Not evidenced in the submitted profile."
+          }
+        ],
+        "manually_selected": true,
+        "warnings": [
+          "Coverage-only heuristic; transferability and preferences are not scored.",
+          "Missing or unverified skills are unconfirmed, not proof of inability.",
+          "Role requirements and importance weights are synthetic."
+        ]
+      },
+      {
+        "role_id": "role:business_analyst",
+        "role_title": "Business Analyst",
+        "sector_id": "sector:business_services",
+        "sector": "Business Services",
+        "catalog_synthetic": true,
+        "rank": 2,
+        "fit_score": 13.51,
+        "score_breakdown": {
+          "method": "weighted_coverage_v1",
+          "earned_weight": 0.5,
+          "total_weight": 3.7,
+          "required_skill_coverage": 0.13513513513513514,
+          "transferability": null,
+          "preferences": null
+        },
+        "matched_skills": [
+          {
+            "skill_id": "skill:sql",
+            "label": "SQL",
+            "importance": 0.5,
+            "coverage": 1,
+            "weighted_contribution": 0.5,
+            "evidence": [
+              "Typed skill entry: structured query language"
+            ],
+            "reason": "Supported by a self-reported or reviewed skill; proficiency is not assessed."
+          }
+        ],
+        "missing_skills": [
+          {
+            "skill_id": "skill:communication",
+            "label": "Communication",
+            "importance": 0.9,
+            "coverage": 0,
+            "weighted_contribution": 0.0,
+            "evidence": [],
+            "reason": "Not evidenced in the submitted profile."
+          },
+          {
+            "skill_id": "skill:data_visualization",
+            "label": "Data visualization",
+            "importance": 0.6,
+            "coverage": 0,
+            "weighted_contribution": 0.0,
+            "evidence": [],
+            "reason": "Not evidenced in the submitted profile."
+          },
+          {
+            "skill_id": "skill:requirements_analysis",
+            "label": "Requirements analysis",
+            "importance": 0.9,
+            "coverage": 0,
+            "weighted_contribution": 0.0,
+            "evidence": [],
+            "reason": "Not evidenced in the submitted profile."
+          },
+          {
+            "skill_id": "skill:spreadsheets",
+            "label": "Spreadsheets",
+            "importance": 0.8,
+            "coverage": 0,
+            "weighted_contribution": 0.0,
+            "evidence": [],
+            "reason": "Not evidenced in the submitted profile."
+          }
+        ],
+        "manually_selected": false,
+        "warnings": [
+          "Coverage-only heuristic; transferability and preferences are not scored.",
+          "Missing or unverified skills are unconfirmed, not proof of inability.",
+          "Role requirements and importance weights are synthetic."
+        ]
+      },
+      {
+        "role_id": "role:it_support_specialist",
+        "role_title": "IT Support Specialist",
+        "sector_id": "sector:information_services",
+        "sector": "Information Services",
+        "catalog_synthetic": true,
+        "rank": 3,
+        "fit_score": 0.0,
+        "score_breakdown": {
+          "method": "weighted_coverage_v1",
+          "earned_weight": 0.0,
+          "total_weight": 2.0,
+          "required_skill_coverage": 0.0,
+          "transferability": null,
+          "preferences": null
+        },
+        "matched_skills": [],
+        "missing_skills": [
+          {
+            "skill_id": "skill:communication",
+            "label": "Communication",
+            "importance": 0.8,
+            "coverage": 0,
+            "weighted_contribution": 0.0,
+            "evidence": [],
+            "reason": "Not evidenced in the submitted profile."
+          },
+          {
+            "skill_id": "skill:it_troubleshooting",
+            "label": "IT troubleshooting",
+            "importance": 0.9,
+            "coverage": 0,
+            "weighted_contribution": 0.0,
+            "evidence": [],
+            "reason": "Not evidenced in the submitted profile."
+          },
+          {
+            "skill_id": "skill:spreadsheets",
+            "label": "Spreadsheets",
+            "importance": 0.3,
+            "coverage": 0,
+            "weighted_contribution": 0.0,
+            "evidence": [],
+            "reason": "Not evidenced in the submitted profile."
+          }
+        ],
+        "manually_selected": false,
+        "warnings": [
+          "Coverage-only heuristic; transferability and preferences are not scored.",
+          "Missing or unverified skills are unconfirmed, not proof of inability.",
+          "Role requirements and importance weights are synthetic."
+        ]
+      }
+    ]
+  },
+  {
+    "profile": {
+      "schema_version": "0.1.0",
+      "profile_id": "synthetic:business_candidate",
+      "synthetic": true,
+      "desired_role_id": null,
+      "skills": [
+        {
+          "skill_id": "skill:communication",
+          "label": "Communication",
+          "level": "unknown",
+          "evidence": [
+            "Typed skill entry: stakeholder communication"
+          ],
+          "confirmation": "self_reported"
+        },
+        {
+          "skill_id": "skill:requirements_analysis",
+          "label": "Requirements analysis",
+          "level": "unknown",
+          "evidence": [
+            "Typed skill entry: requirements gathering"
+          ],
+          "confirmation": "self_reported"
+        },
+        {
+          "skill_id": "skill:spreadsheets",
+          "label": "Spreadsheets",
+          "level": "unknown",
+          "evidence": [
+            "Typed skill entry: Excel"
+          ],
+          "confirmation": "self_reported"
+        }
+      ],
+      "interests": [],
+      "constraints": {
+        "budget_myr": null,
+        "hours_per_week": null
+      },
+      "warnings": []
+    },
+    "matches": [
+      {
+        "role_id": "role:business_analyst",
+        "role_title": "Business Analyst",
+        "sector_id": "sector:business_services",
+        "sector": "Business Services",
+        "catalog_synthetic": true,
+        "rank": 1,
+        "fit_score": 70.27,
+        "score_breakdown": {
+          "method": "weighted_coverage_v1",
+          "earned_weight": 2.6,
+          "total_weight": 3.7,
+          "required_skill_coverage": 0.7027027027027027,
+          "transferability": null,
+          "preferences": null
+        },
+        "matched_skills": [
+          {
+            "skill_id": "skill:communication",
+            "label": "Communication",
+            "importance": 0.9,
+            "coverage": 1,
+            "weighted_contribution": 0.9,
+            "evidence": [
+              "Typed skill entry: stakeholder communication"
+            ],
+            "reason": "Supported by a self-reported or reviewed skill; proficiency is not assessed."
+          },
+          {
+            "skill_id": "skill:requirements_analysis",
+            "label": "Requirements analysis",
+            "importance": 0.9,
+            "coverage": 1,
+            "weighted_contribution": 0.9,
+            "evidence": [
+              "Typed skill entry: requirements gathering"
+            ],
+            "reason": "Supported by a self-reported or reviewed skill; proficiency is not assessed."
+          },
+          {
+            "skill_id": "skill:spreadsheets",
+            "label": "Spreadsheets",
+            "importance": 0.8,
+            "coverage": 1,
+            "weighted_contribution": 0.8,
+            "evidence": [
+              "Typed skill entry: Excel"
+            ],
+            "reason": "Supported by a self-reported or reviewed skill; proficiency is not assessed."
+          }
+        ],
+        "missing_skills": [
+          {
+            "skill_id": "skill:data_visualization",
+            "label": "Data visualization",
+            "importance": 0.6,
+            "coverage": 0,
+            "weighted_contribution": 0.0,
+            "evidence": [],
+            "reason": "Not evidenced in the submitted profile."
+          },
+          {
+            "skill_id": "skill:sql",
+            "label": "SQL",
+            "importance": 0.5,
+            "coverage": 0,
+            "weighted_contribution": 0.0,
+            "evidence": [],
+            "reason": "Not evidenced in the submitted profile."
+          }
+        ],
+        "manually_selected": false,
+        "warnings": [
+          "Coverage-only heuristic; transferability and preferences are not scored.",
+          "Missing or unverified skills are unconfirmed, not proof of inability.",
+          "Role requirements and importance weights are synthetic."
+        ]
+      },
+      {
+        "role_id": "role:it_support_specialist",
+        "role_title": "IT Support Specialist",
+        "sector_id": "sector:information_services",
+        "sector": "Information Services",
+        "catalog_synthetic": true,
+        "rank": 2,
+        "fit_score": 55.0,
+        "score_breakdown": {
+          "method": "weighted_coverage_v1",
+          "earned_weight": 1.1,
+          "total_weight": 2.0,
+          "required_skill_coverage": 0.55,
+          "transferability": null,
+          "preferences": null
+        },
+        "matched_skills": [
+          {
+            "skill_id": "skill:communication",
+            "label": "Communication",
+            "importance": 0.8,
+            "coverage": 1,
+            "weighted_contribution": 0.8,
+            "evidence": [
+              "Typed skill entry: stakeholder communication"
+            ],
+            "reason": "Supported by a self-reported or reviewed skill; proficiency is not assessed."
+          },
+          {
+            "skill_id": "skill:spreadsheets",
+            "label": "Spreadsheets",
+            "importance": 0.3,
+            "coverage": 1,
+            "weighted_contribution": 0.3,
+            "evidence": [
+              "Typed skill entry: Excel"
+            ],
+            "reason": "Supported by a self-reported or reviewed skill; proficiency is not assessed."
+          }
+        ],
+        "missing_skills": [
+          {
+            "skill_id": "skill:it_troubleshooting",
+            "label": "IT troubleshooting",
+            "importance": 0.9,
+            "coverage": 0,
+            "weighted_contribution": 0.0,
+            "evidence": [],
+            "reason": "Not evidenced in the submitted profile."
+          }
+        ],
+        "manually_selected": false,
+        "warnings": [
+          "Coverage-only heuristic; transferability and preferences are not scored.",
+          "Missing or unverified skills are unconfirmed, not proof of inability.",
+          "Role requirements and importance weights are synthetic."
+        ]
+      },
+      {
+        "role_id": "role:data_analyst",
+        "role_title": "Data Analyst",
+        "sector_id": "sector:information_services",
+        "sector": "Information Services",
+        "catalog_synthetic": true,
+        "rank": 3,
+        "fit_score": 15.79,
+        "score_breakdown": {
+          "method": "weighted_coverage_v1",
+          "earned_weight": 0.6,
+          "total_weight": 3.8,
+          "required_skill_coverage": 0.15789473684210525,
+          "transferability": null,
+          "preferences": null
+        },
+        "matched_skills": [
+          {
+            "skill_id": "skill:communication",
+            "label": "Communication",
+            "importance": 0.6,
+            "coverage": 1,
+            "weighted_contribution": 0.6,
+            "evidence": [
+              "Typed skill entry: stakeholder communication"
+            ],
+            "reason": "Supported by a self-reported or reviewed skill; proficiency is not assessed."
+          }
+        ],
+        "missing_skills": [
+          {
+            "skill_id": "skill:data_visualization",
+            "label": "Data visualization",
+            "importance": 0.8,
+            "coverage": 0,
+            "weighted_contribution": 0.0,
+            "evidence": [],
+            "reason": "Not evidenced in the submitted profile."
+          },
+          {
+            "skill_id": "skill:python",
+            "label": "Python",
+            "importance": 0.7,
+            "coverage": 0,
+            "weighted_contribution": 0.0,
+            "evidence": [],
+            "reason": "Not evidenced in the submitted profile."
+          },
+          {
+            "skill_id": "skill:sql",
+            "label": "SQL",
+            "importance": 0.9,
+            "coverage": 0,
+            "weighted_contribution": 0.0,
+            "evidence": [],
+            "reason": "Not evidenced in the submitted profile."
+          },
+          {
+            "skill_id": "skill:statistics",
+            "label": "Statistics",
+            "importance": 0.8,
+            "coverage": 0,
+            "weighted_contribution": 0.0,
+            "evidence": [],
+            "reason": "Not evidenced in the submitted profile."
+          }
+        ],
+        "manually_selected": false,
+        "warnings": [
+          "Coverage-only heuristic; transferability and preferences are not scored.",
+          "Missing or unverified skills are unconfirmed, not proof of inability.",
+          "Role requirements and importance weights are synthetic."
+        ]
+      }
+    ]
+  },
+  {
+    "profile": {
+      "schema_version": "0.1.0",
+      "profile_id": "synthetic:support_candidate",
+      "synthetic": true,
+      "desired_role_id": null,
+      "skills": [
+        {
+          "skill_id": "skill:communication",
+          "label": "Communication",
+          "level": "unknown",
+          "evidence": [
+            "Typed skill entry: Communication"
+          ],
+          "confirmation": "self_reported"
+        },
+        {
+          "skill_id": "skill:it_troubleshooting",
+          "label": "IT troubleshooting",
+          "level": "unknown",
+          "evidence": [
+            "Typed skill entry: technical support"
+          ],
+          "confirmation": "self_reported"
+        }
+      ],
+      "interests": [],
+      "constraints": {
+        "budget_myr": null,
+        "hours_per_week": null
+      },
+      "warnings": []
+    },
+    "matches": [
+      {
+        "role_id": "role:it_support_specialist",
+        "role_title": "IT Support Specialist",
+        "sector_id": "sector:information_services",
+        "sector": "Information Services",
+        "catalog_synthetic": true,
+        "rank": 1,
+        "fit_score": 85.0,
+        "score_breakdown": {
+          "method": "weighted_coverage_v1",
+          "earned_weight": 1.7,
+          "total_weight": 2.0,
+          "required_skill_coverage": 0.85,
+          "transferability": null,
+          "preferences": null
+        },
+        "matched_skills": [
+          {
+            "skill_id": "skill:communication",
+            "label": "Communication",
+            "importance": 0.8,
+            "coverage": 1,
+            "weighted_contribution": 0.8,
+            "evidence": [
+              "Typed skill entry: Communication"
+            ],
+            "reason": "Supported by a self-reported or reviewed skill; proficiency is not assessed."
+          },
+          {
+            "skill_id": "skill:it_troubleshooting",
+            "label": "IT troubleshooting",
+            "importance": 0.9,
+            "coverage": 1,
+            "weighted_contribution": 0.9,
+            "evidence": [
+              "Typed skill entry: technical support"
+            ],
+            "reason": "Supported by a self-reported or reviewed skill; proficiency is not assessed."
+          }
+        ],
+        "missing_skills": [
+          {
+            "skill_id": "skill:spreadsheets",
+            "label": "Spreadsheets",
+            "importance": 0.3,
+            "coverage": 0,
+            "weighted_contribution": 0.0,
+            "evidence": [],
+            "reason": "Not evidenced in the submitted profile."
+          }
+        ],
+        "manually_selected": false,
+        "warnings": [
+          "Coverage-only heuristic; transferability and preferences are not scored.",
+          "Missing or unverified skills are unconfirmed, not proof of inability.",
+          "Role requirements and importance weights are synthetic."
+        ]
+      },
+      {
+        "role_id": "role:business_analyst",
+        "role_title": "Business Analyst",
+        "sector_id": "sector:business_services",
+        "sector": "Business Services",
+        "catalog_synthetic": true,
+        "rank": 2,
+        "fit_score": 24.32,
+        "score_breakdown": {
+          "method": "weighted_coverage_v1",
+          "earned_weight": 0.9,
+          "total_weight": 3.7,
+          "required_skill_coverage": 0.24324324324324326,
+          "transferability": null,
+          "preferences": null
+        },
+        "matched_skills": [
+          {
+            "skill_id": "skill:communication",
+            "label": "Communication",
+            "importance": 0.9,
+            "coverage": 1,
+            "weighted_contribution": 0.9,
+            "evidence": [
+              "Typed skill entry: Communication"
+            ],
+            "reason": "Supported by a self-reported or reviewed skill; proficiency is not assessed."
+          }
+        ],
+        "missing_skills": [
+          {
+            "skill_id": "skill:data_visualization",
+            "label": "Data visualization",
+            "importance": 0.6,
+            "coverage": 0,
+            "weighted_contribution": 0.0,
+            "evidence": [],
+            "reason": "Not evidenced in the submitted profile."
+          },
+          {
+            "skill_id": "skill:requirements_analysis",
+            "label": "Requirements analysis",
+            "importance": 0.9,
+            "coverage": 0,
+            "weighted_contribution": 0.0,
+            "evidence": [],
+            "reason": "Not evidenced in the submitted profile."
+          },
+          {
+            "skill_id": "skill:spreadsheets",
+            "label": "Spreadsheets",
+            "importance": 0.8,
+            "coverage": 0,
+            "weighted_contribution": 0.0,
+            "evidence": [],
+            "reason": "Not evidenced in the submitted profile."
+          },
+          {
+            "skill_id": "skill:sql",
+            "label": "SQL",
+            "importance": 0.5,
+            "coverage": 0,
+            "weighted_contribution": 0.0,
+            "evidence": [],
+            "reason": "Not evidenced in the submitted profile."
+          }
+        ],
+        "manually_selected": false,
+        "warnings": [
+          "Coverage-only heuristic; transferability and preferences are not scored.",
+          "Missing or unverified skills are unconfirmed, not proof of inability.",
+          "Role requirements and importance weights are synthetic."
+        ]
+      },
+      {
+        "role_id": "role:data_analyst",
+        "role_title": "Data Analyst",
+        "sector_id": "sector:information_services",
+        "sector": "Information Services",
+        "catalog_synthetic": true,
+        "rank": 3,
+        "fit_score": 15.79,
+        "score_breakdown": {
+          "method": "weighted_coverage_v1",
+          "earned_weight": 0.6,
+          "total_weight": 3.8,
+          "required_skill_coverage": 0.15789473684210525,
+          "transferability": null,
+          "preferences": null
+        },
+        "matched_skills": [
+          {
+            "skill_id": "skill:communication",
+            "label": "Communication",
+            "importance": 0.6,
+            "coverage": 1,
+            "weighted_contribution": 0.6,
+            "evidence": [
+              "Typed skill entry: Communication"
+            ],
+            "reason": "Supported by a self-reported or reviewed skill; proficiency is not assessed."
+          }
+        ],
+        "missing_skills": [
+          {
+            "skill_id": "skill:data_visualization",
+            "label": "Data visualization",
+            "importance": 0.8,
+            "coverage": 0,
+            "weighted_contribution": 0.0,
+            "evidence": [],
+            "reason": "Not evidenced in the submitted profile."
+          },
+          {
+            "skill_id": "skill:python",
+            "label": "Python",
+            "importance": 0.7,
+            "coverage": 0,
+            "weighted_contribution": 0.0,
+            "evidence": [],
+            "reason": "Not evidenced in the submitted profile."
+          },
+          {
+            "skill_id": "skill:sql",
+            "label": "SQL",
+            "importance": 0.9,
+            "coverage": 0,
+            "weighted_contribution": 0.0,
+            "evidence": [],
+            "reason": "Not evidenced in the submitted profile."
+          },
+          {
+            "skill_id": "skill:statistics",
+            "label": "Statistics",
+            "importance": 0.8,
+            "coverage": 0,
+            "weighted_contribution": 0.0,
+            "evidence": [],
+            "reason": "Not evidenced in the submitted profile."
+          }
+        ],
+        "manually_selected": false,
+        "warnings": [
+          "Coverage-only heuristic; transferability and preferences are not scored.",
+          "Missing or unverified skills are unconfirmed, not proof of inability.",
+          "Role requirements and importance weights are synthetic."
+        ]
+      }
+    ]
+  },
+  {
+    "profile": {
+      "schema_version": "0.1.0",
+      "profile_id": "synthetic:sparse_candidate",
+      "synthetic": true,
+      "desired_role_id": null,
+      "skills": [],
+      "interests": [],
+      "constraints": {
+        "budget_myr": null,
+        "hours_per_week": null
+      },
+      "warnings": []
+    },
+    "matches": [
+      {
+        "role_id": "role:business_analyst",
+        "role_title": "Business Analyst",
+        "sector_id": "sector:business_services",
+        "sector": "Business Services",
+        "catalog_synthetic": true,
+        "rank": 1,
+        "fit_score": 0.0,
+        "score_breakdown": {
+          "method": "weighted_coverage_v1",
+          "earned_weight": 0.0,
+          "total_weight": 3.7,
+          "required_skill_coverage": 0.0,
+          "transferability": null,
+          "preferences": null
+        },
+        "matched_skills": [],
+        "missing_skills": [
+          {
+            "skill_id": "skill:communication",
+            "label": "Communication",
+            "importance": 0.9,
+            "coverage": 0,
+            "weighted_contribution": 0.0,
+            "evidence": [],
+            "reason": "Not evidenced in the submitted profile."
+          },
+          {
+            "skill_id": "skill:data_visualization",
+            "label": "Data visualization",
+            "importance": 0.6,
+            "coverage": 0,
+            "weighted_contribution": 0.0,
+            "evidence": [],
+            "reason": "Not evidenced in the submitted profile."
+          },
+          {
+            "skill_id": "skill:requirements_analysis",
+            "label": "Requirements analysis",
+            "importance": 0.9,
+            "coverage": 0,
+            "weighted_contribution": 0.0,
+            "evidence": [],
+            "reason": "Not evidenced in the submitted profile."
+          },
+          {
+            "skill_id": "skill:spreadsheets",
+            "label": "Spreadsheets",
+            "importance": 0.8,
+            "coverage": 0,
+            "weighted_contribution": 0.0,
+            "evidence": [],
+            "reason": "Not evidenced in the submitted profile."
+          },
+          {
+            "skill_id": "skill:sql",
+            "label": "SQL",
+            "importance": 0.5,
+            "coverage": 0,
+            "weighted_contribution": 0.0,
+            "evidence": [],
+            "reason": "Not evidenced in the submitted profile."
+          }
+        ],
+        "manually_selected": false,
+        "warnings": [
+          "Coverage-only heuristic; transferability and preferences are not scored.",
+          "Missing or unverified skills are unconfirmed, not proof of inability.",
+          "Role requirements and importance weights are synthetic.",
+          "No supported skills supplied; review or add skills before interpreting scores."
+        ]
+      },
+      {
+        "role_id": "role:data_analyst",
+        "role_title": "Data Analyst",
+        "sector_id": "sector:information_services",
+        "sector": "Information Services",
+        "catalog_synthetic": true,
+        "rank": 2,
+        "fit_score": 0.0,
+        "score_breakdown": {
+          "method": "weighted_coverage_v1",
+          "earned_weight": 0.0,
+          "total_weight": 3.8,
+          "required_skill_coverage": 0.0,
+          "transferability": null,
+          "preferences": null
+        },
+        "matched_skills": [],
+        "missing_skills": [
+          {
+            "skill_id": "skill:communication",
+            "label": "Communication",
+            "importance": 0.6,
+            "coverage": 0,
+            "weighted_contribution": 0.0,
+            "evidence": [],
+            "reason": "Not evidenced in the submitted profile."
+          },
+          {
+            "skill_id": "skill:data_visualization",
+            "label": "Data visualization",
+            "importance": 0.8,
+            "coverage": 0,
+            "weighted_contribution": 0.0,
+            "evidence": [],
+            "reason": "Not evidenced in the submitted profile."
+          },
+          {
+            "skill_id": "skill:python",
+            "label": "Python",
+            "importance": 0.7,
+            "coverage": 0,
+            "weighted_contribution": 0.0,
+            "evidence": [],
+            "reason": "Not evidenced in the submitted profile."
+          },
+          {
+            "skill_id": "skill:sql",
+            "label": "SQL",
+            "importance": 0.9,
+            "coverage": 0,
+            "weighted_contribution": 0.0,
+            "evidence": [],
+            "reason": "Not evidenced in the submitted profile."
+          },
+          {
+            "skill_id": "skill:statistics",
+            "label": "Statistics",
+            "importance": 0.8,
+            "coverage": 0,
+            "weighted_contribution": 0.0,
+            "evidence": [],
+            "reason": "Not evidenced in the submitted profile."
+          }
+        ],
+        "manually_selected": false,
+        "warnings": [
+          "Coverage-only heuristic; transferability and preferences are not scored.",
+          "Missing or unverified skills are unconfirmed, not proof of inability.",
+          "Role requirements and importance weights are synthetic.",
+          "No supported skills supplied; review or add skills before interpreting scores."
+        ]
+      },
+      {
+        "role_id": "role:it_support_specialist",
+        "role_title": "IT Support Specialist",
+        "sector_id": "sector:information_services",
+        "sector": "Information Services",
+        "catalog_synthetic": true,
+        "rank": 3,
+        "fit_score": 0.0,
+        "score_breakdown": {
+          "method": "weighted_coverage_v1",
+          "earned_weight": 0.0,
+          "total_weight": 2.0,
+          "required_skill_coverage": 0.0,
+          "transferability": null,
+          "preferences": null
+        },
+        "matched_skills": [],
+        "missing_skills": [
+          {
+            "skill_id": "skill:communication",
+            "label": "Communication",
+            "importance": 0.8,
+            "coverage": 0,
+            "weighted_contribution": 0.0,
+            "evidence": [],
+            "reason": "Not evidenced in the submitted profile."
+          },
+          {
+            "skill_id": "skill:it_troubleshooting",
+            "label": "IT troubleshooting",
+            "importance": 0.9,
+            "coverage": 0,
+            "weighted_contribution": 0.0,
+            "evidence": [],
+            "reason": "Not evidenced in the submitted profile."
+          },
+          {
+            "skill_id": "skill:spreadsheets",
+            "label": "Spreadsheets",
+            "importance": 0.3,
+            "coverage": 0,
+            "weighted_contribution": 0.0,
+            "evidence": [],
+            "reason": "Not evidenced in the submitted profile."
+          }
+        ],
+        "manually_selected": false,
+        "warnings": [
+          "Coverage-only heuristic; transferability and preferences are not scored.",
+          "Missing or unverified skills are unconfirmed, not proof of inability.",
+          "Role requirements and importance weights are synthetic.",
+          "No supported skills supplied; review or add skills before interpreting scores."
+        ]
+      }
+    ]
+  },
+  {
+    "profile": {
+      "schema_version": "0.1.0",
+      "profile_id": "synthetic:alias_candidate",
+      "synthetic": true,
+      "desired_role_id": null,
+      "skills": [
+        {
+          "skill_id": "skill:python",
+          "label": "Python",
+          "level": "unknown",
+          "evidence": [
+            "Typed skill entry:  python3 ",
+            "Typed skill entry: PYTHON"
+          ],
+          "confirmation": "self_reported"
+        },
+        {
+          "skill_id": "skill:sql",
+          "label": "SQL",
+          "level": "unknown",
+          "evidence": [
+            "Typed skill entry: SQL",
+            "Typed skill entry: structured query language"
+          ],
+          "confirmation": "self_reported"
+        }
+      ],
+      "interests": [],
+      "constraints": {
+        "budget_myr": null,
+        "hours_per_week": null
+      },
+      "warnings": []
+    },
+    "matches": [
+      {
+        "role_id": "role:data_analyst",
+        "role_title": "Data Analyst",
+        "sector_id": "sector:information_services",
+        "sector": "Information Services",
+        "catalog_synthetic": true,
+        "rank": 1,
+        "fit_score": 42.11,
+        "score_breakdown": {
+          "method": "weighted_coverage_v1",
+          "earned_weight": 1.6,
+          "total_weight": 3.8,
+          "required_skill_coverage": 0.42105263157894735,
+          "transferability": null,
+          "preferences": null
+        },
+        "matched_skills": [
+          {
+            "skill_id": "skill:python",
+            "label": "Python",
+            "importance": 0.7,
+            "coverage": 1,
+            "weighted_contribution": 0.7,
+            "evidence": [
+              "Typed skill entry:  python3 ",
+              "Typed skill entry: PYTHON"
+            ],
+            "reason": "Supported by a self-reported or reviewed skill; proficiency is not assessed."
+          },
+          {
+            "skill_id": "skill:sql",
+            "label": "SQL",
+            "importance": 0.9,
+            "coverage": 1,
+            "weighted_contribution": 0.9,
+            "evidence": [
+              "Typed skill entry: SQL",
+              "Typed skill entry: structured query language"
+            ],
+            "reason": "Supported by a self-reported or reviewed skill; proficiency is not assessed."
+          }
+        ],
+        "missing_skills": [
+          {
+            "skill_id": "skill:communication",
+            "label": "Communication",
+            "importance": 0.6,
+            "coverage": 0,
+            "weighted_contribution": 0.0,
+            "evidence": [],
+            "reason": "Not evidenced in the submitted profile."
+          },
+          {
+            "skill_id": "skill:data_visualization",
+            "label": "Data visualization",
+            "importance": 0.8,
+            "coverage": 0,
+            "weighted_contribution": 0.0,
+            "evidence": [],
+            "reason": "Not evidenced in the submitted profile."
+          },
+          {
+            "skill_id": "skill:statistics",
+            "label": "Statistics",
+            "importance": 0.8,
+            "coverage": 0,
+            "weighted_contribution": 0.0,
+            "evidence": [],
+            "reason": "Not evidenced in the submitted profile."
+          }
+        ],
+        "manually_selected": false,
+        "warnings": [
+          "Coverage-only heuristic; transferability and preferences are not scored.",
+          "Missing or unverified skills are unconfirmed, not proof of inability.",
+          "Role requirements and importance weights are synthetic."
+        ]
+      },
+      {
+        "role_id": "role:business_analyst",
+        "role_title": "Business Analyst",
+        "sector_id": "sector:business_services",
+        "sector": "Business Services",
+        "catalog_synthetic": true,
+        "rank": 2,
+        "fit_score": 13.51,
+        "score_breakdown": {
+          "method": "weighted_coverage_v1",
+          "earned_weight": 0.5,
+          "total_weight": 3.7,
+          "required_skill_coverage": 0.13513513513513514,
+          "transferability": null,
+          "preferences": null
+        },
+        "matched_skills": [
+          {
+            "skill_id": "skill:sql",
+            "label": "SQL",
+            "importance": 0.5,
+            "coverage": 1,
+            "weighted_contribution": 0.5,
+            "evidence": [
+              "Typed skill entry: SQL",
+              "Typed skill entry: structured query language"
+            ],
+            "reason": "Supported by a self-reported or reviewed skill; proficiency is not assessed."
+          }
+        ],
+        "missing_skills": [
+          {
+            "skill_id": "skill:communication",
+            "label": "Communication",
+            "importance": 0.9,
+            "coverage": 0,
+            "weighted_contribution": 0.0,
+            "evidence": [],
+            "reason": "Not evidenced in the submitted profile."
+          },
+          {
+            "skill_id": "skill:data_visualization",
+            "label": "Data visualization",
+            "importance": 0.6,
+            "coverage": 0,
+            "weighted_contribution": 0.0,
+            "evidence": [],
+            "reason": "Not evidenced in the submitted profile."
+          },
+          {
+            "skill_id": "skill:requirements_analysis",
+            "label": "Requirements analysis",
+            "importance": 0.9,
+            "coverage": 0,
+            "weighted_contribution": 0.0,
+            "evidence": [],
+            "reason": "Not evidenced in the submitted profile."
+          },
+          {
+            "skill_id": "skill:spreadsheets",
+            "label": "Spreadsheets",
+            "importance": 0.8,
+            "coverage": 0,
+            "weighted_contribution": 0.0,
+            "evidence": [],
+            "reason": "Not evidenced in the submitted profile."
+          }
+        ],
+        "manually_selected": false,
+        "warnings": [
+          "Coverage-only heuristic; transferability and preferences are not scored.",
+          "Missing or unverified skills are unconfirmed, not proof of inability.",
+          "Role requirements and importance weights are synthetic."
+        ]
+      },
+      {
+        "role_id": "role:it_support_specialist",
+        "role_title": "IT Support Specialist",
+        "sector_id": "sector:information_services",
+        "sector": "Information Services",
+        "catalog_synthetic": true,
+        "rank": 3,
+        "fit_score": 0.0,
+        "score_breakdown": {
+          "method": "weighted_coverage_v1",
+          "earned_weight": 0.0,
+          "total_weight": 2.0,
+          "required_skill_coverage": 0.0,
+          "transferability": null,
+          "preferences": null
+        },
+        "matched_skills": [],
+        "missing_skills": [
+          {
+            "skill_id": "skill:communication",
+            "label": "Communication",
+            "importance": 0.8,
+            "coverage": 0,
+            "weighted_contribution": 0.0,
+            "evidence": [],
+            "reason": "Not evidenced in the submitted profile."
+          },
+          {
+            "skill_id": "skill:it_troubleshooting",
+            "label": "IT troubleshooting",
+            "importance": 0.9,
+            "coverage": 0,
+            "weighted_contribution": 0.0,
+            "evidence": [],
+            "reason": "Not evidenced in the submitted profile."
+          },
+          {
+            "skill_id": "skill:spreadsheets",
+            "label": "Spreadsheets",
+            "importance": 0.3,
+            "coverage": 0,
+            "weighted_contribution": 0.0,
+            "evidence": [],
+            "reason": "Not evidenced in the submitted profile."
+          }
+        ],
+        "manually_selected": false,
+        "warnings": [
+          "Coverage-only heuristic; transferability and preferences are not scored.",
+          "Missing or unverified skills are unconfirmed, not proof of inability.",
+          "Role requirements and importance weights are synthetic."
+        ]
+      }
+    ]
+  }
+]

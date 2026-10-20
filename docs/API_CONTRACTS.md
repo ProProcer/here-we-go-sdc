@@ -1,5 +1,10 @@
 # Person 1 mock handoff — version 0.1.0
 
+Person 2 now provides proposed typed-profile and coverage-only matching contracts.
+See [Person 2 handoff](PERSON_2_HANDOFF.md) for functions, exact scoring policy,
+review semantics and example responses. These proposals still need consumer
+review; no HTTP routes or CV parser are included in this milestone.
+
 This initial contract is ready for teammates to consume and review. All data is
 synthetic, including role requirements, tasks and importance weights. It is for
 integration, not evidence of actual hiring requirements or market demand.
