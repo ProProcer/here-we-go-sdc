@@ -1,0 +1,18 @@
+{
+  "record_type": "isolated_live_promotion_smoke_test",
+  "tested_at": "2026-10-20T15:55:43.097498+00:00",
+  "source_url": "https://www.anthropic.com/research/anthropic-economic-index-january-2026-report",
+  "candidate_file_sha256": "647b10d4cfd68e257004603f0b8990c8b2b75f9273e0ac0b5b02cc35e4701858",
+  "candidate_id": "candidate:b230ffe9f9800a69f876ae15",
+  "source_response_sha256": "d9459da18ec8d2d96c30dc37617cf8bd3f577799e1017f9ade8bda919d15b079",
+  "source_response_bytes": 433382,
+  "parsed_text_sha256": "0c0ad17f5c89ef62539766460764e58b038d272dbbce622947432c6bc64f68aa",
+  "refresh_status": "updated",
+  "temporary_ledger_signal_count_before": 3,
+  "temporary_ledger_signal_count_after": 4,
+  "application_ledger_sha256_before": "68415ac119fe219f37714e168fa9f251f8eb7d28c7299a0559e92b1d3dd2dd56",
+  "application_ledger_sha256_after": "68415ac119fe219f37714e168fa9f251f8eb7d28c7299a0559e92b1d3dd2dd56",
+  "accepted_application_evidence_changed": false,
+  "human_review_performed": false,
+  "finding_approved_for_application": false
+}

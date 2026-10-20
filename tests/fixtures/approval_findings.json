@@ -1,0 +1,12 @@
+{
+  "findings": [
+    {
+      "claim": "The fictional sample reports lower model-assessed success on longer tasks.",
+      "evidence_type": "observed_usage",
+      "support": {"passage_id": "p0001", "quote": "longer tasks had lower success"},
+      "study_period": {"start": "2025-11-13", "end": "2025-11-20", "passage_id": "p0002"},
+      "limitations": ["Fictional platform sample; estimated outcomes do not establish employment effects."]
+    }
+  ],
+  "no_findings_reason": null
+}

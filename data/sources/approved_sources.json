@@ -1,0 +1,17 @@
+{
+  "schema_version": "0.1.0",
+  "sources": [
+    {
+      "source_id": "source:anthropic_economic_index_2026_01",
+      "source_url": "https://www.anthropic.com/research/anthropic-economic-index-january-2026-report",
+      "publisher": "Anthropic",
+      "published_at": "2026-01-15"
+    },
+    {
+      "source_id": "source:google_ds_star_2025_11",
+      "source_url": "https://research.google/blog/ds-star-a-state-of-the-art-versatile-data-science-agent/",
+      "publisher": "Google Research",
+      "published_at": "2025-11-06"
+    }
+  ]
+}

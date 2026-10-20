@@ -1,0 +1,24 @@
+{
+  "schema_version": "0.1.0",
+  "record_type": "finding_approval_plan",
+  "status": "prepared",
+  "prepared_at": "2026-10-20T17:02:36.810713Z",
+  "candidate_path": "C:\\Users\\Ivan Nathanael\\Uni\\Side Project\\here-we-go-sdc\\data\\review\\candidates\\google_ds_star_2025_11_20261020T170126539714Z_f6d5448f7eb7.json",
+  "candidate_file_sha256": "67443b64fe05dab686cfd314216a137e371d047219efacf7b7df5f9c28c3211c",
+  "candidate_id": "candidate:ac7ed9a6c5659245c695312c",
+  "parsed_text_sha256": "d6d9f44fc9e05cc5b05f4a8c6ea1c1c5126f151fc8e4f0449b1329261d10220c",
+  "source": {
+    "source_id": "source:google_ds_star_2025_11",
+    "source_url": "https://research.google/blog/ds-star-a-state-of-the-art-versatile-data-science-agent/",
+    "publisher": "Google Research",
+    "published_at": "2025-11-06"
+  },
+  "reviewed_evidence_type": "benchmark",
+  "reviewed_claim": "Google reports DS-STAR's top DABStep ranking as of September 18, 2025; evaluated data-science capabilities include data wrangling and visualization. Benchmark performance does not establish workplace adoption.",
+  "reviewed_limitations": [
+    "Author-reported historical benchmark results; this is not a current leaderboard claim or an independent workplace study.",
+    "The report describes Python-based file analysis, but does not separately measure this catalog's cleaning task, SQL proficiency or dashboard maintenance.",
+    "No employer skill demand, job survival, personal fit or Malaysia-specific labor-market outcome is established."
+  ],
+  "task_mapping": null
+}

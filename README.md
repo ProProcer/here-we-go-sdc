@@ -106,6 +106,22 @@ Person 1's **synthetic role catalog mock** is ready for integration. See
 usage and the proposed `GET /api/roles` adapter. This is a module handoff; the
 complete app is still to be implemented.
 
+Person 3's **Data Analyst evidence and scenario module** is also implemented.
+The [first evidence-chain deliverable](docs/ROLE_3_EVIDENCE_CHAIN.md) connects a
+refreshable cited finding to a proposed task interpretation and explained
+Python/SQL skill implications. It includes an offline example and live-fetch
+receipt; it does not constitute a deployed application or employment forecast.
+
+Role 3 also supports [automatic candidate finding extraction](docs/ROLE_3_EXTRACTION.md)
+from an approved report URL using Gemini. Generated findings remain in a separate
+review queue until an owner checks them; accepted evidence is not changed by extraction.
+The [approval CLI](docs/ROLE_3_APPROVAL.md) prepares a review plan and admits an
+explicitly approved finding through the refresh pipeline, with reviewer/source
+provenance and an optional separately reviewed role/task interpretation.
+The [task/skill proposal stage](docs/ROLE_3_TASK_SKILL_PROPOSALS.md) uses an accepted
+finding and the catalog to generate conditional implications or explain
+insufficient evidence. Its outputs remain separate proposals for review.
+
 ## How to run (once implementation exists)
 
 This planning pack has **no runnable app yet**. After actual implementation, replace these instructions with tested commands for the committed `requirements.txt` and `.replit` config; expected target:

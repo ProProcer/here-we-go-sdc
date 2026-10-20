@@ -27,7 +27,9 @@ class RoleOutlook(Contract):
     role_id: RoleId
     role_title: str
     catalog_synthetic: bool
-    baseline_label: Literal["Contextual AI evidence; employment impact unknown", "Insufficient evidence"]
+    baseline_label: Literal[
+        "Contextual AI evidence; employment impact unknown", "Insufficient evidence"
+    ]
     tasks: list[TaskOutlook]
     signals: list[TrendSignal]
     sources: list[EvidenceSource]
@@ -35,35 +37,60 @@ class RoleOutlook(Contract):
     limitations: list[str]
 
 
-def get_outlook(role_id: str, scenario_id: str = "baseline", *,
-                evidence_path: str | Path = DEFAULT_EVIDENCE,
-                scenarios_path: str | Path = DEFAULT_SCENARIOS) -> RoleOutlook:
+def get_outlook(
+    role_id: str,
+    scenario_id: str = "baseline",
+    *,
+    evidence_path: str | Path = DEFAULT_EVIDENCE,
+    scenarios_path: str | Path = DEFAULT_SCENARIOS,
+) -> RoleOutlook:
     catalog = load_role_catalog()
     ledger = load_evidence(evidence_path)
-    scenario = apply_scenario(catalog, role_id, scenario_id, load_scenarios(scenarios_path))
+    scenario = apply_scenario(
+        catalog, role_id, scenario_id, load_scenarios(scenarios_path)
+    )
     roles = {role.role_id: role for role in catalog.roles}
     tasks = {task.task_id: task for task in catalog.taxonomy.tasks}
     role = roles[role_id]
-    mappings = {row.task_id: row for row in ledger.task_interpretations if row.role_id == role_id}
+    mappings = {
+        row.task_id: row
+        for row in ledger.task_interpretations
+        if row.role_id == role_id
+    }
     task_outlooks = []
     for task_id in role.task_ids:
         mapping = mappings.get(task_id)
-        task_outlooks.append(TaskOutlook(
-            task_id=task_id, label=tasks[task_id].label,
-            evidence_status="contextual_evidence" if mapping else "insufficient_evidence",
-            interpretation=mapping.interpretation if mapping else "No reviewed evidence mapping is available.",
-            mapping_basis=mapping.mapping_basis if mapping else None,
-            evidence_scope=mapping.evidence_scope if mapping else None,
-            signal_ids=mapping.signal_ids if mapping else [],
-        ))
-    used_signals = {signal_id for task in task_outlooks for signal_id in task.signal_ids}
+        task_outlooks.append(
+            TaskOutlook(
+                task_id=task_id,
+                label=tasks[task_id].label,
+                evidence_status="contextual_evidence"
+                if mapping
+                else "insufficient_evidence",
+                interpretation=mapping.interpretation
+                if mapping
+                else "No reviewed evidence mapping is available.",
+                mapping_basis=mapping.mapping_basis if mapping else None,
+                evidence_scope=mapping.evidence_scope if mapping else None,
+                signal_ids=mapping.signal_ids if mapping else [],
+            )
+        )
+    used_signals = {
+        signal_id for task in task_outlooks for signal_id in task.signal_ids
+    }
     signals = [row for row in ledger.signals if row.signal_id in used_signals]
     used_sources = {row.source_id for row in signals}
     return RoleOutlook(
-        role_id=role_id, role_title=role.role_title, catalog_synthetic=catalog.synthetic,
-        baseline_label="Contextual AI evidence; employment impact unknown" if signals else "Insufficient evidence",
-        tasks=task_outlooks, signals=signals,
-        sources=[row for row in ledger.sources if row.source_id in used_sources], scenario=scenario,
+        role_id=role_id,
+        role_title=role.role_title,
+        catalog_synthetic=catalog.synthetic,
+        baseline_label="Contextual AI evidence; employment impact unknown"
+        if signals
+        else "Insufficient evidence",
+        tasks=task_outlooks,
+        signals=signals,
+        sources=[row for row in ledger.sources if row.source_id in used_sources],
+        scenario=scenario,
         limitations=[
             "Role requirements and task assignments come from Person 1's synthetic integration catalog.",
             "Task mappings are team interpretations, not measured task automation rates.",
@@ -79,5 +106,12 @@ def get_outlook_response(role_id: str, scenario_id: str = "baseline") -> dict:
 
 
 if __name__ == "__main__":
-    print(json.dumps({scenario_id: get_outlook_response("role:data_analyst", scenario_id)
-                      for scenario_id in ("baseline", "moderate_ai_change", "rapid_ai_change")}, indent=2))
+    print(
+        json.dumps(
+            {
+                scenario_id: get_outlook_response("role:data_analyst", scenario_id)
+                for scenario_id in ("baseline", "moderate_ai_change", "rapid_ai_change")
+            },
+            indent=2,
+        )
+    )

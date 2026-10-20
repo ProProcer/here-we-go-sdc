@@ -1,0 +1,143 @@
+{
+  "fetched_at": "2026-10-20T14:37:08.845449+00:00",
+  "source_url": "https://www.anthropic.com/research/anthropic-economic-index-january-2026-report",
+  "response_sha256": "1138a02cabf63704a71d0d25667142657577a1b0d7e2d930224f004fd6355442",
+  "response_bytes": 433382,
+  "review_sha256": "76d321e6db86340a0afc8cf5792cb25679e1379f234f29320199d5860b3f48b5",
+  "validation": "Reviewed heading, publication date and claim markers present",
+  "ledger": {
+    "schema_version": "0.2.0",
+    "sources": [
+      {
+        "source_id": "source:anthropic_economic_index_2025_09",
+        "title": "Anthropic Economic Index report: Uneven geographic and enterprise AI adoption",
+        "publisher": "Anthropic",
+        "source_url": "https://www.anthropic.com/news/anthropic-economic-index-september-2025-report",
+        "published_at": "2025-09-15",
+        "retrieved_at": "2026-10-20",
+        "synthetic": false,
+        "usage_note": "Linked citation and original paraphrases only; no article text or underlying dataset redistributed. No blanket article reuse license verified.",
+        "coverage": "Claude.ai and first-party API usage; global platform sample, including August 2025 observations.",
+        "limitations": "Vendor-specific, selected users; not representative employment data or a Malaysia-specific adoption estimate. Historical release, not latest evidence."
+      },
+      {
+        "source_id": "source:anthropic_economic_index_2026_01",
+        "title": "Anthropic Economic Index report: Economic primitives",
+        "publisher": "Anthropic",
+        "source_url": "https://www.anthropic.com/research/anthropic-economic-index-january-2026-report",
+        "published_at": "2026-01-15",
+        "retrieved_at": "2026-10-20",
+        "synthetic": false,
+        "usage_note": "Original paraphrase and citation only; no source article or underlying dataset redistributed. No blanket article reuse license verified.",
+        "coverage": "Claude.ai and first-party API observations from November 2025; global platform sample.",
+        "limitations": "Historical vendor-specific sample, not current labor-market data or a Malaysia-specific estimate. Collaboration patterns do not measure role replacement."
+      }
+    ],
+    "signals": [
+      {
+        "signal_id": "signal:context_and_collaboration",
+        "source_id": "source:anthropic_economic_index_2025_09",
+        "claim": "The report distinguishes collaborative from delegated AI use and identifies access to relevant organizational context as a constraint on sophisticated enterprise deployment.",
+        "synthetic": false
+      },
+      {
+        "signal_id": "signal:collaboration_november_2025",
+        "source_id": "source:anthropic_economic_index_2026_01",
+        "claim": "The January report describes collaborative use as more common than automated use in its November Claude.ai sample. This platform observation does not establish task replacement.",
+        "synthetic": false
+      },
+      {
+        "signal_id": "signal:task_complexity_success_november_2025",
+        "source_id": "source:anthropic_economic_index_2026_01",
+        "claim": "In its November 2025 platform sample, Anthropic reports lower estimated success for tasks requiring more human time. Success is assessed by Claude; this is not an independently verified Data Analyst performance or employment measure.",
+        "synthetic": false
+      }
+    ],
+    "task_interpretations": [
+      {
+        "role_id": "role:data_analyst",
+        "task_id": "task:data_cleaning",
+        "signal_ids": [
+          "signal:context_and_collaboration",
+          "signal:collaboration_november_2025",
+          "signal:task_complexity_success_november_2025"
+        ],
+        "interpretation": "The complexity-related reliability finding motivates proposing human checks for complex AI-assisted data cleaning. This is a contextual team interpretation; the report does not measure this catalog task or justify a numerical Python or SQL priority change.",
+        "mapping_basis": "team_interpretation",
+        "evidence_scope": "contextual_not_task_measurement"
+      },
+      {
+        "role_id": "role:data_analyst",
+        "task_id": "task:routine_reporting",
+        "signal_ids": [
+          "signal:context_and_collaboration",
+          "signal:collaboration_november_2025"
+        ],
+        "interpretation": "The newer collaboration finding adds context for considering iterative report review. Applying it to this task is our interpretation; reporting automation is not measured.",
+        "mapping_basis": "team_interpretation",
+        "evidence_scope": "contextual_not_task_measurement"
+      }
+    ],
+    "evidence_chains": [
+      {
+        "chain_id": "chain:data_analyst_cleaning_reliability",
+        "role_id": "role:data_analyst",
+        "task_id": "task:data_cleaning",
+        "signal_id": "signal:task_complexity_success_november_2025",
+        "reviewed_evidence_sha256": "03ebc8456cfce4f2312ccd2aa6cd103e7d84eaba3b79efe66196a075e57123eb",
+        "evidence_type": "observed_usage_with_model_assessed_outcomes",
+        "evidence_locator": "Introduction: task success and complexity finding; Chapter 2: definition and validation of task success; Chapter 4: Task Horizons in Real-World Usage, Figure 4.3; Chapter 1 footnote 1: sample dates.",
+        "study_period_start": "2025-11-13",
+        "study_period_end": "2025-11-20",
+        "mapping_basis": "team_interpretation",
+        "evidence_scope": "contextual_not_task_measurement",
+        "interpretation_status": "proposed_for_review",
+        "temporal_scope": "conditional_future_workflow_not_dated_forecast",
+        "assumptions": [
+          "An employer permits AI-assisted cleaning of an appropriate non-sensitive dataset.",
+          "AI can draft some routine cleaning code; this is a workflow assumption, not a measured finding for this role.",
+          "The analyst remains responsible for correctness, and generated transformations can be inspected and tested."
+        ],
+        "task_change": "If routine cleaning code is drafted by AI, some manual drafting effort may shift toward specifying transformations, checking generated code and validating the cleaned data. The source motivates the reliability concern; it does not establish that this workflow will be adopted.",
+        "human_responsibilities": [
+          "Specify missing-value handling, duplicate rules and valid data ranges using the business context.",
+          "Inspect generated Python transformations and SQL joins before applying them.",
+          "Check row counts, key uniqueness and unexpected data loss; investigate failed checks."
+        ],
+        "skill_implications": [
+          {
+            "skill_id": "skill:python",
+            "direction": "mixed",
+            "less_emphasis": [
+              "Writing repetitive cleaning boilerplate from scratch, if AI drafts it reliably."
+            ],
+            "more_emphasis": [
+              "Reading, debugging and testing generated transformations under the assumed review workflow."
+            ],
+            "rationale": "Drafting and validation are different uses of Python. The conditional shift between them does not establish that the broad skill becomes more or less important overall.",
+            "employer_demand_direction": "insufficient_evidence"
+          },
+          {
+            "skill_id": "skill:sql",
+            "direction": "mixed",
+            "less_emphasis": [
+              "Manually drafting repetitive cleaning queries, if AI drafts them reliably."
+            ],
+            "more_emphasis": [
+              "Checking joins, filters, null handling and query results under the assumed review workflow."
+            ],
+            "rationale": "Producing query syntax may require less manual effort while semantic checks remain a human responsibility in this assumed workflow. The report does not measure SQL hiring demand.",
+            "employer_demand_direction": "insufficient_evidence"
+          }
+        ],
+        "limitations": [
+          "Historical, vendor-specific observations include model-assessed outcomes; success is not an independent correctness audit.",
+          "The source does not isolate this catalog's data-cleaning task, Python skill or SQL skill.",
+          "Skill directions describe conditional learning emphasis within aspects of each skill, not measured employer demand or job survival.",
+          "The mapping is proposed for team review. It does not modify baseline weights, scenarios, personal fit or role rankings."
+        ],
+        "changes_skill_weights": false
+      }
+    ]
+  }
+}

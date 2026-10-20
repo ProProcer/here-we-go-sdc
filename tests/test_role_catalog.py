@@ -15,16 +15,19 @@ class TestRoleCatalog(unittest.TestCase):
         catalog = load_role_catalog()
         requirements = {
             role.role_id: {
-                row.skill_id for row in catalog.role_skills if row.role_id == role.role_id
+                row.skill_id
+                for row in catalog.role_skills
+                if row.role_id == role.role_id
             }
             for role in catalog.roles
         }
         profile = {"skill:sql", "skill:python"}
         analyst = requirements["role:data_analyst"]
         self.assertEqual(profile & analyst, profile)
-        self.assertEqual(analyst - profile, {
-            "skill:statistics", "skill:data_visualization", "skill:communication"
-        })
+        self.assertEqual(
+            analyst - profile,
+            {"skill:statistics", "skill:data_visualization", "skill:communication"},
+        )
         self.assertEqual(profile & requirements["role:it_support_specialist"], set())
 
     def test_response_matches_committed_snapshot(self):
@@ -54,7 +57,8 @@ class TestRoleCatalog(unittest.TestCase):
         cases.append(changed)
         changed = copy.deepcopy(payload)
         changed["role_skills"] = [
-            row for row in changed["role_skills"]
+            row
+            for row in changed["role_skills"]
             if row["role_id"] != "role:data_analyst"
         ]
         cases.append(changed)

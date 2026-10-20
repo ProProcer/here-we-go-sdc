@@ -19,7 +19,9 @@ class Scenario(Contract):
 
     @model_validator(mode="after")
     def bounded_adjustments(self):
-        if any(not -1 <= value <= 1 for value in self.skill_priority_adjustments.values()):
+        if any(
+            not -1 <= value <= 1 for value in self.skill_priority_adjustments.values()
+        ):
             raise ValueError("Priority adjustments must be finite and within [-1, 1]")
         return self
 

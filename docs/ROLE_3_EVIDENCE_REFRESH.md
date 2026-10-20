@@ -1,6 +1,7 @@
 # Role 3: reviewed evidence refresh
 
-The pipeline refreshes one explicitly approved public report. It uses Python's
+The pipeline refreshes explicitly approved public reports from a local registry.
+The current registry contains one report URL and two reviewed findings. It uses Python's
 standard library and the existing Pydantic dependency; no API key, LLM, GPU,
 additional package or server is needed.
 
@@ -54,7 +55,8 @@ The pipeline:
 These marker checks verify that a previously reviewed statement remains on the
 expected report page. They do not independently establish source truth or
 interpret arbitrary new findings. Changed claims, new URLs and new publications
-need a reviewed source definition and explicit allowlist update. This is a
+need a reviewed source definition and explicit update to
+`data/sources/approved_sources.json`. No fetcher code change is required. This is a
 bounded reviewed-source pipeline, not an automatic latest-news discovery feed.
 Only one refresh process should run at a time; concurrent writes are not locked.
 
@@ -82,6 +84,13 @@ restrictions, oversized responses, and missing date/claim markers. Mock HTML in
 tests stays in temporary directories and is never treated as a real fetch.
 
 ## Next integration work
+
+The first source-to-task-to-skill deliverable is now implemented. See
+[the evidence chain guide](ROLE_3_EVIDENCE_CHAIN.md) for its live receipt, proposed
+Python/SQL implications, explicit refresh command and new-release workflow.
+Use `--review data/sources/anthropic_task_complexity_2026.json` to refresh that
+finding; the default command continues to refresh the original collaboration
+finding. Evidence ledger 0.2.0 adds reasoning chains; old 0.1.0 inputs still load.
 
 Person 5 owns displaying refresh state, dates, citation links and interpretation
 labels. Person 4 should review the additive priority contract. Broader source

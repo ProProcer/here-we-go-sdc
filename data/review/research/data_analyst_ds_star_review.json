@@ -1,0 +1,183 @@
+{
+  "record_type": "assistant_research_review",
+  "schema_version": "0.1.0",
+  "author": "Codex interactive assistant",
+  "reviewed_at": "2026-10-20T16:42:55.209401+00:00",
+  "status": "research_draft_not_admitted",
+  "model_api_called": false,
+  "original_proposal_review": {
+    "path": "data/review/task_skill_proposals/data_analyst_approved_b230ffe9f9800a69f876ae15_06f004ca1b9a.json",
+    "assessment": "insufficient_evidence",
+    "decision": "Supported: retain the uncertainty; aggregate collaboration does not establish task-level effects."
+  },
+  "source": {
+    "source_id": "source:google_ds_star_2025_11",
+    "source_url": "https://research.google/blog/ds-star-a-state-of-the-art-versatile-data-science-agent/",
+    "publisher": "Google Research",
+    "published_at": "2025-11-06"
+  },
+  "report_title": "DS-STAR: A state-of-the-art versatile data science agent",
+  "response_sha256": "47f296c77694bccba07d4c4b88720e60db7b266f1177ad4445999b72ac00fa5e",
+  "parsed_text_sha256": "d6d9f44fc9e05cc5b05f4a8c6ea1c1c5126f151fc8e4f0449b1329261d10220c",
+  "passage_count": 42,
+  "findings": [
+    {
+      "claim": "Google describes DS-STAR generating Python scripts to examine varied data files.",
+      "evidence_type": "other",
+      "support": {
+        "passage_id": "p0011",
+        "quote": "DS-STAR creates a Python script",
+        "section": "DS-STAR: A state-of-the-art versatile data science agent > DS-STAR",
+        "passage_sha256": "c8f458156273c3d485b441da1fc1e8a2648b33145b25a7f78582aa0de1f5bd8c",
+        "quote_start": 0,
+        "quote_end": 31
+      },
+      "study_period": {
+        "start": null,
+        "end": null,
+        "passage_id": null
+      },
+      "limitations": [
+        "System description; not a measurement of data-cleaning accuracy or employment."
+      ],
+      "candidate_id": "candidate:2c94b2c282f5c100d7192a2e",
+      "study_period_passage_sha256": null,
+      "review_status": "pending_review"
+    },
+    {
+      "claim": "Google evaluates DS-STAR on benchmarks covering data wrangling and visualization.",
+      "evidence_type": "benchmark",
+      "support": {
+        "passage_id": "p0014",
+        "quote": "data wrangling, machine learning, and visualization",
+        "section": "DS-STAR: A state-of-the-art versatile data science agent > Evaluation",
+        "passage_sha256": "900024f44dfa62b98316b3ee804a90f290def5cf947d1583bf9b2581d08f77c8",
+        "quote_start": 270,
+        "quote_end": 321
+      },
+      "study_period": {
+        "start": null,
+        "end": null,
+        "passage_id": null
+      },
+      "limitations": [
+        "Benchmark scope does not establish deployment, employer demand or task-specific accuracy."
+      ],
+      "candidate_id": "candidate:6562d47d73d7a2362c02188e",
+      "study_period_passage_sha256": null,
+      "review_status": "pending_review"
+    },
+    {
+      "claim": "Google reports DS-STAR accuracy of 45.2% on DABStep, compared with 41.0% for its best alternative.",
+      "evidence_type": "benchmark",
+      "support": {
+        "passage_id": "p0015",
+        "quote": "45.2%",
+        "section": "DS-STAR: A state-of-the-art versatile data science agent > Evaluation",
+        "passage_sha256": "5f9f1f4b4293941de86b7146fe17785a2ee4fe95d1717de0828bba84291e0c6f",
+        "quote_start": 176,
+        "quote_end": 181
+      },
+      "study_period": {
+        "start": null,
+        "end": null,
+        "passage_id": null
+      },
+      "limitations": [
+        "Historical author-reported comparison; not a job replacement probability or current leaderboard result."
+      ],
+      "candidate_id": "candidate:ffe87d6689fa69470e7324b2",
+      "study_period_passage_sha256": null,
+      "review_status": "pending_review"
+    }
+  ],
+  "draft_proposal": {
+    "role_id": "role:data_analyst",
+    "signal_id": "signal:research_ds_star_draft",
+    "summary": "Research draft: possible shifts from routine drafting toward review if comparable assistance is adopted. No broad skill priority or employment direction is established.",
+    "tasks": [
+      {
+        "task_id": "task:data_cleaning",
+        "assessment": "conditional_interpretation",
+        "finding_relevance": "Python file inspection and benchmark data wrangling are relevant capabilities; catalog-specific cleaning was not separately measured.",
+        "task_change": "If useful drafts are produced, an analyst could review transformations instead of writing every step.",
+        "assumptions": [
+          "A comparable tool is available and permitted for the dataset.",
+          "Generated transformations are useful and independently testable."
+        ],
+        "human_responsibilities": [
+          "Specify valid values and missing-data rules.",
+          "Check transformations, row counts and unintended data loss."
+        ],
+        "limitations": [
+          "Conditional workflow inference; no measured adoption or labor demand.",
+          "No standalone cleaning accuracy or SQL result is supplied by these findings."
+        ],
+        "skill_implications": [
+          {
+            "skill_id": "skill:python",
+            "direction": "mixed",
+            "less_emphasis": [
+              "Drafting repetitive code from scratch when reliable assistance is available."
+            ],
+            "more_emphasis": [
+              "Reading, testing and debugging generated transformations."
+            ],
+            "rationale": "Proposed allocation of learning effort under the stated workflow; broad importance remains unknown.",
+            "employer_demand_direction": "insufficient_evidence"
+          },
+          {
+            "skill_id": "skill:sql",
+            "direction": "insufficient_evidence",
+            "less_emphasis": [],
+            "more_emphasis": [],
+            "rationale": "The selected findings do not measure SQL capability.",
+            "employer_demand_direction": "insufficient_evidence"
+          }
+        ]
+      },
+      {
+        "task_id": "task:routine_reporting",
+        "assessment": "conditional_interpretation",
+        "finding_relevance": "Visualization is in benchmark scope; scheduled dashboard maintenance is not separately evaluated.",
+        "task_change": "If usable charts are generated, work could shift toward checking and adapting drafts.",
+        "assumptions": [
+          "Comparable chart assistance is adopted.",
+          "The analyst can verify chart data and interpretation."
+        ],
+        "human_responsibilities": [
+          "Check aggregation, labels and scales.",
+          "Confirm that charts answer the reporting question."
+        ],
+        "limitations": [
+          "Benchmark scope is broader than this catalog task.",
+          "This is an inferred workflow, not measured reporting productivity."
+        ],
+        "skill_implications": [
+          {
+            "skill_id": "skill:data_visualization",
+            "direction": "mixed",
+            "less_emphasis": [
+              "Repetitive chart scaffolding when assisted."
+            ],
+            "more_emphasis": [
+              "Checking encodings, summaries and interpretation."
+            ],
+            "rationale": "Conditional learning emphasis; no overall priority or hiring direction is implied.",
+            "employer_demand_direction": "insufficient_evidence"
+          }
+        ]
+      }
+    ]
+  },
+  "provenance_note": "Findings and implications authored in this assistant session, not produced by Gemini. The draft signal ID is a placeholder, not an accepted ledger entry. This file is not an ExtractionRecord or TaskSkillProposalRecord and cannot be submitted to approval or proposal check.",
+  "unmapped_role_skills": [
+    "skill:statistics",
+    "skill:communication"
+  ],
+  "accepted_evidence_changed": false,
+  "changes_skill_weights": false,
+  "accepted_ledger_sha256": "4774f0a11e5d15511ecb3c81017196665f726baadb326458fbe18f91b5100727",
+  "pipeline_blocker": "GEMINI_API_KEY is absent from this workspace process. Automated extraction and subsequent admission/proposal generation have not been run for this source.",
+  "extraction_command": "python -m src.intelligence.extraction --url https://research.google/blog/ds-star-a-state-of-the-art-versatile-data-science-agent/"
+}

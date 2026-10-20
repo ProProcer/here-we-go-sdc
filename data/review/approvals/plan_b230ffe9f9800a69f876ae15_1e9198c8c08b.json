@@ -1,0 +1,22 @@
+{
+  "schema_version": "0.1.0",
+  "record_type": "finding_approval_plan",
+  "status": "prepared",
+  "prepared_at": "2026-10-20T15:50:42.064461Z",
+  "candidate_path": "C:\\Users\\Ivan Nathanael\\Uni\\Side Project\\here-we-go-sdc\\data\\review\\candidates\\anthropic_economic_index_2026_01_20261020T153412230377Z_1f9402f1d467.json",
+  "candidate_file_sha256": "647b10d4cfd68e257004603f0b8990c8b2b75f9273e0ac0b5b02cc35e4701858",
+  "candidate_id": "candidate:b230ffe9f9800a69f876ae15",
+  "parsed_text_sha256": "0c0ad17f5c89ef62539766460764e58b038d272dbbce622947432c6bc64f68aa",
+  "source": {
+    "source_id": "source:anthropic_economic_index_2026_01",
+    "source_url": "https://www.anthropic.com/research/anthropic-economic-index-january-2026-report",
+    "publisher": "Anthropic",
+    "published_at": "2026-01-15"
+  },
+  "reviewed_evidence_type": "observed_usage",
+  "reviewed_claim": "Analysis of Claude transcripts indicates that augmentation patterns increased to represent just over half of all conversations on Claude.ai.",
+  "reviewed_limitations": [
+    "Based on vendor sample of user conversations rather than broader labor market observation."
+  ],
+  "task_mapping": null
+}

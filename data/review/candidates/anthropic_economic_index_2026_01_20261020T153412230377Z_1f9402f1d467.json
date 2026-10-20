@@ -1,0 +1,98 @@
+{
+  "findings": [
+    {
+      "claim": "Analysis of Claude transcripts indicates that augmentation patterns increased to represent just over half of all conversations on Claude.ai.",
+      "evidence_type": "observed_usage",
+      "support": {
+        "passage_id": "p0005",
+        "quote": "just over half of conversations on",
+        "section": "Anthropic Economic Index report: Economic primitives > Introduction > What has changed since our last report",
+        "passage_sha256": "608ad881ff331f40521bd5348dd5c02567661401ff988b07a69b7d38f98eb630",
+        "quote_start": 377,
+        "quote_end": 411
+      },
+      "study_period": {
+        "start": null,
+        "end": null,
+        "passage_id": null
+      },
+      "limitations": [
+        "Based on vendor sample of user conversations rather than broader labor market observation."
+      ],
+      "candidate_id": "candidate:b230ffe9f9800a69f876ae15",
+      "study_period_passage_sha256": null,
+      "review_status": "pending_review"
+    },
+    {
+      "claim": "A regression model applied to state-level usage data suggests that usage per capita across US states could reach equalization within two to five years.",
+      "evidence_type": "author_projection",
+      "support": {
+        "passage_id": "p0007",
+        "quote": "equalized across the country in",
+        "section": "Anthropic Economic Index report: Economic primitives > Introduction > What has changed since our last report",
+        "passage_sha256": "db85ee28cb26d76ce669d71c44b1af70b92c8187a47fe8c90c1b8a7abc6ff6d4",
+        "quote_start": 180,
+        "quote_end": 211
+      },
+      "study_period": {
+        "start": null,
+        "end": null,
+        "passage_id": null
+      },
+      "limitations": [
+        "Projection based on short-term change observations carrying high uncertainty."
+      ],
+      "candidate_id": "candidate:1b93b88eca752d95c675e1ee",
+      "study_period_passage_sha256": null,
+      "review_status": "pending_review"
+    },
+    {
+      "claim": "Incorporating task success primitives into productivity models reduces the estimated annual labor productivity growth over the next decade from 1.8 to 1.2 percentage points.",
+      "evidence_type": "benchmark",
+      "support": {
+        "passage_id": "p0152",
+        "quote": "falls from 1.8 to 1.2",
+        "section": "Anthropic Economic Index report: Economic primitives > Chapter 4: Tasks and productivity > Revisiting the aggregate productivity implications of Claude usage",
+        "passage_sha256": "263e3e1880642d1142407b41cd55effe791b11a710460222d3d85d33bc1a3dec",
+        "quote_start": 69,
+        "quote_end": 90
+      },
+      "study_period": {
+        "start": null,
+        "end": null,
+        "passage_id": null
+      },
+      "limitations": [
+        "Based on vendor model success classifications and economic projections rather than direct employment measurements."
+      ],
+      "candidate_id": "candidate:f308f21774e71190b9168b57",
+      "study_period_passage_sha256": null,
+      "review_status": "pending_review"
+    }
+  ],
+  "no_findings_reason": null,
+  "schema_version": "0.1.0",
+  "record_type": "candidate_extraction",
+  "review_status": "pending_review",
+  "source": {
+    "source_id": "source:anthropic_economic_index_2026_01",
+    "source_url": "https://www.anthropic.com/research/anthropic-economic-index-january-2026-report",
+    "publisher": "Anthropic",
+    "published_at": "2026-01-15"
+  },
+  "report_title": "Anthropic Economic Index report: Economic primitives",
+  "fetched_at": "2026-10-20T15:34:12.230377Z",
+  "response_sha256": "5859add3b290726fad1e86a7c8048fae0859fa4d9039509638135e20d0a30e04",
+  "parsed_text_sha256": "0c0ad17f5c89ef62539766460764e58b038d272dbbce622947432c6bc64f68aa",
+  "passage_count": 184,
+  "parsed_characters": 103936,
+  "provider": "gemini",
+  "requested_model": "gemini-3.5-flash-lite",
+  "returned_model": "gemini-3.5-flash-lite",
+  "prompt_version": "candidate-findings-v1",
+  "limitations": [
+    "AI-generated candidates require source and semantic review before acceptance.",
+    "Exact-quote checks establish text presence, not support for every part of a paraphrase.",
+    "Extraction does not create task mappings, skill adjustments or employment forecasts."
+  ]
+}

@@ -1,9 +1,9 @@
 {
-  "status": "unchanged",
-  "attempted_at": "2026-10-20T10:44:42.368213Z",
+  "status": "updated",
+  "attempted_at": "2026-10-20T16:02:14.847157Z",
   "cache_available": true,
   "message": "Reviewed source verified. Historical evidence is not a current labor-market forecast.",
   "source_url": "https://www.anthropic.com/research/anthropic-economic-index-january-2026-report",
-  "snapshot_path": "data/snapshots/trends/20261020T104442368213Z_8d7bb63ae9e3.json",
-  "response_sha256": "8d7bb63ae9e3a8d68e2b23421e371d9d1db77763261cb3e93b501e966ea8efea"
+  "snapshot_path": "data/snapshots/trends/20261020T160214847157Z_a9a549fbe4e8.json",
+  "response_sha256": "a9a549fbe4e833afd9aafda2f1ed4b7788792fffa69569dea17ca2904ac07644"
 }

@@ -118,3 +118,34 @@ cached/unavailable warnings. See [the refresh guide](ROLE_3_EVIDENCE_REFRESH.md)
 Outlook requests remain offline and use the last validated ledger. Person 5
 should display refresh status alongside source publication dates, not treat a
 recent fetch as evidence of a recent publication.
+
+The separate `src.intelligence.impacts.get_evidence_chain_response(role_id)`
+adapter exposes source-to-finding-to-task-to-skill reasoning. See
+[the evidence-chain guide](ROLE_3_EVIDENCE_CHAIN.md) for its example and display
+requirements. These proposed qualitative implications do not change fit scores
+or numerical scenario priorities. The internal evidence ledger now accepts
+0.2.0 chains and legacy 0.1.0 inputs; the role catalog and existing outlook
+response contracts retain their versions.
+
+Automatic candidate extraction is a separate command:
+`python -m src.intelligence.extraction --url APPROVED_URL`. It uses Gemini and
+writes `ExtractionRecord` objects under `data/review/candidates/`, with
+`review_status=pending_review`. These are not `ReviewedSource`, `RoleOutlook` or
+accepted evidence. See [the extraction guide](ROLE_3_EXTRACTION.md).
+
+The [approval command](ROLE_3_APPROVAL.md) prepares a typed `ApprovalPlan` and
+admits it only with an explicit reviewer and `--approve`. `ReviewedSource` now
+accepts an optional `FindingApproval` provenance record and may contain zero task
+interpretations for finding-only admission. Approval provenance is stored in the
+review definition and refresh snapshot. The existing `TrendSignal`, `RoleOutlook`
+and scenario contracts are unchanged. Unmapped accepted findings are not shown in
+role-specific outlooks. Mapped findings preserve their evidence-type qualifier
+and reviewed limitations in the displayed claim.
+
+`src.intelligence.proposals.generate_task_skill_proposal()` now generates a
+separate `TaskSkillProposalRecord` from an admitted approval definition and role
+catalog. See [the task/skill proposal guide](ROLE_3_TASK_SKILL_PROPOSALS.md).
+Records remain `pending_review` under `data/review/task_skill_proposals/`; they
+do not alter `RoleOutlook`, `ScenarioResult`, fit or weights. Task/skill scope is
+validated against existing catalog links. `load_current_proposal()` checks
+accepted-input, catalog and prompt-version fingerprints before review.

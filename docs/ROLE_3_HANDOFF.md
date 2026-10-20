@@ -4,6 +4,13 @@ Data Analyst integration is ready. It uses Person 1's existing role/task/skill I
 two real dated contextual citations, and explicitly hypothetical scenarios.
 The source observations do not measure task automation or employment forecasts.
 
+A separate [evidence-chain deliverable](ROLE_3_EVIDENCE_CHAIN.md) now connects a
+third reviewed finding (from the same January report) to conditional Python/SQL
+learning implications. Consume `get_evidence_chain_response()` from
+`src.intelligence.impacts`; display its proposed status and assumptions.
+It does not change the numerical scenario priorities below. New reviewed releases
+can be added through the local source registry without changing fetcher code.
+
 ## Message for Person 4: Learning Planner
 
 Consume `get_outlook("role:data_analyst", scenario_id).scenario.skill_priorities`

@@ -1,0 +1,98 @@
+{
+  "schema_version": "0.1.0",
+  "record_type": "candidate_extraction",
+  "review_status": "pending_review",
+  "source": {
+    "source_id": "source:anthropic_economic_index_2026_01",
+    "source_url": "https://www.anthropic.com/research/anthropic-economic-index-january-2026-report",
+    "publisher": "Anthropic",
+    "published_at": "2026-01-15"
+  },
+  "report_title": "Anthropic Economic Index report: Economic primitives",
+  "fetched_at": "2026-10-20T15:12:40.188007Z",
+  "response_sha256": "9b194da9e866c8ba46a82a8b142c2088bc0a530d432e2c460d285b2fef04508e",
+  "parsed_text_sha256": "0c0ad17f5c89ef62539766460764e58b038d272dbbce622947432c6bc64f68aa",
+  "passage_count": 184,
+  "parsed_characters": 103936,
+  "provider": "gemini",
+  "requested_model": "gemini-3.5-flash-lite",
+  "returned_model": "gemini-3.5-flash-lite",
+  "prompt_version": "candidate-findings-v1",
+  "findings": [
+    {
+      "claim": "Consumer usage on Claude.ai remains heavily concentrated in coding-related tasks, with modifying software to correct errors representing the single most common task.",
+      "evidence_type": "observed_usage",
+      "support": {
+        "passage_id": "p0022",
+        "quote": "modifying software to correct errors",
+        "section": "Anthropic Economic Index report: Economic primitives > Chapter 1: What has changed since our last report > Shifting patterns of usage across tasks and associated occupations",
+        "passage_sha256": "62c92d904afcf60db358d0d00e1f2063e60720a012fc46e3c567ef9991955599",
+        "quote_start": 479,
+        "quote_end": 515
+      },
+      "study_period": {
+        "start": null,
+        "end": null,
+        "passage_id": null
+      },
+      "limitations": [
+        "Vendor sample based on 1 million Claude.ai conversations."
+      ],
+      "candidate_id": "candidate:f9c587f514c6cf6ab8792bdc",
+      "study_period_passage_sha256": null,
+      "review_status": "pending_review"
+    },
+    {
+      "claim": "Incorporating task reliability metrics into economic models reduces the projected annual labor productivity growth impact of Claude over the next decade.",
+      "evidence_type": "author_projection",
+      "support": {
+        "passage_id": "p0152",
+        "quote": "implied productivity growth falls from 1.8 to 1.2",
+        "section": "Anthropic Economic Index report: Economic primitives > Chapter 4: Tasks and productivity > Revisiting the aggregate productivity implications of Claude usage",
+        "passage_sha256": "263e3e1880642d1142407b41cd55effe791b11a710460222d3d85d33bc1a3dec",
+        "quote_start": 41,
+        "quote_end": 90
+      },
+      "study_period": {
+        "start": null,
+        "end": null,
+        "passage_id": null
+      },
+      "limitations": [
+        "Macroeconomic projection combining vendor sample data with assumptions about future task success and substitutability."
+      ],
+      "candidate_id": "candidate:a392132527ce3aed01e61849",
+      "study_period_passage_sha256": null,
+      "review_status": "pending_review"
+    },
+    {
+      "claim": "States in the United States with a higher concentration of computer and mathematical professionals exhibit systematically greater per capita usage of Claude.",
+      "evidence_type": "observed_usage",
+      "support": {
+        "passage_id": "p0038",
+        "quote": "tend to have higher usage per capita",
+        "section": "Anthropic Economic Index report: Economic primitives > Chapter 1: What has changed since our last report > Persistent regional concentration",
+        "passage_sha256": "50abacb5f42b70f2f779ce8867e3be550f0162750968f78fcc9a5c3c9e46d60f",
+        "quote_start": 368,
+        "quote_end": 404
+      },
+      "study_period": {
+        "start": null,
+        "end": null,
+        "passage_id": null
+      },
+      "limitations": [
+        "Observed employment effects derived from vendor platform logs and workforce composition metrics."
+      ],
+      "candidate_id": "candidate:00c627d804d67f387ec85778",
+      "study_period_passage_sha256": null,
+      "review_status": "pending_review"
+    }
+  ],
+  "no_findings_reason": null,
+  "limitations": [
+    "AI-generated candidates require source and semantic review before acceptance.",
+    "Exact-quote checks establish text presence, not support for every part of a paraphrase.",
+    "Extraction does not create task mappings, skill adjustments or employment forecasts."
+  ]
+}

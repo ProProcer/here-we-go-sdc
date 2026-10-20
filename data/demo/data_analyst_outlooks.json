@@ -10,12 +10,13 @@
         "task_id": "task:data_cleaning",
         "label": "Clean and validate tabular data",
         "evidence_status": "contextual_evidence",
-        "interpretation": "The newer collaboration finding adds context for considering human-reviewed cleaning workflows. Applying it to this task is our interpretation; cleaning automation is not measured.",
+        "interpretation": "The complexity-related reliability finding motivates proposing human checks for complex AI-assisted data cleaning. This is a contextual team interpretation; the report does not measure this catalog task or justify a numerical Python or SQL priority change.",
         "mapping_basis": "team_interpretation",
         "evidence_scope": "contextual_not_task_measurement",
         "signal_ids": [
           "signal:context_and_collaboration",
-          "signal:collaboration_november_2025"
+          "signal:collaboration_november_2025",
+          "signal:task_complexity_success_november_2025"
         ]
       },
       {
@@ -42,6 +43,12 @@
         "signal_id": "signal:collaboration_november_2025",
         "source_id": "source:anthropic_economic_index_2026_01",
         "claim": "The January report describes collaborative use as more common than automated use in its November Claude.ai sample. This platform observation does not establish task replacement.",
+        "synthetic": false
+      },
+      {
+        "signal_id": "signal:task_complexity_success_november_2025",
+        "source_id": "source:anthropic_economic_index_2026_01",
+        "claim": "In its November 2025 platform sample, Anthropic reports lower estimated success for tasks requiring more human time. Success is assessed by Claude; this is not an independently verified Data Analyst performance or employment measure.",
         "synthetic": false
       }
     ],
@@ -129,12 +136,13 @@
         "task_id": "task:data_cleaning",
         "label": "Clean and validate tabular data",
         "evidence_status": "contextual_evidence",
-        "interpretation": "The newer collaboration finding adds context for considering human-reviewed cleaning workflows. Applying it to this task is our interpretation; cleaning automation is not measured.",
+        "interpretation": "The complexity-related reliability finding motivates proposing human checks for complex AI-assisted data cleaning. This is a contextual team interpretation; the report does not measure this catalog task or justify a numerical Python or SQL priority change.",
         "mapping_basis": "team_interpretation",
         "evidence_scope": "contextual_not_task_measurement",
         "signal_ids": [
           "signal:context_and_collaboration",
-          "signal:collaboration_november_2025"
+          "signal:collaboration_november_2025",
+          "signal:task_complexity_success_november_2025"
         ]
       },
       {
@@ -161,6 +169,12 @@
         "signal_id": "signal:collaboration_november_2025",
         "source_id": "source:anthropic_economic_index_2026_01",
         "claim": "The January report describes collaborative use as more common than automated use in its November Claude.ai sample. This platform observation does not establish task replacement.",
+        "synthetic": false
+      },
+      {
+        "signal_id": "signal:task_complexity_success_november_2025",
+        "source_id": "source:anthropic_economic_index_2026_01",
+        "claim": "In its November 2025 platform sample, Anthropic reports lower estimated success for tasks requiring more human time. Success is assessed by Claude; this is not an independently verified Data Analyst performance or employment measure.",
         "synthetic": false
       }
     ],
@@ -254,12 +268,13 @@
         "task_id": "task:data_cleaning",
         "label": "Clean and validate tabular data",
         "evidence_status": "contextual_evidence",
-        "interpretation": "The newer collaboration finding adds context for considering human-reviewed cleaning workflows. Applying it to this task is our interpretation; cleaning automation is not measured.",
+        "interpretation": "The complexity-related reliability finding motivates proposing human checks for complex AI-assisted data cleaning. This is a contextual team interpretation; the report does not measure this catalog task or justify a numerical Python or SQL priority change.",
         "mapping_basis": "team_interpretation",
         "evidence_scope": "contextual_not_task_measurement",
         "signal_ids": [
           "signal:context_and_collaboration",
-          "signal:collaboration_november_2025"
+          "signal:collaboration_november_2025",
+          "signal:task_complexity_success_november_2025"
         ]
       },
       {
@@ -286,6 +301,12 @@
         "signal_id": "signal:collaboration_november_2025",
         "source_id": "source:anthropic_economic_index_2026_01",
         "claim": "The January report describes collaborative use as more common than automated use in its November Claude.ai sample. This platform observation does not establish task replacement.",
+        "synthetic": false
+      },
+      {
+        "signal_id": "signal:task_complexity_success_november_2025",
+        "source_id": "source:anthropic_economic_index_2026_01",
+        "claim": "In its November 2025 platform sample, Anthropic reports lower estimated success for tasks requiring more human time. Success is assessed by Claude; this is not an independently verified Data Analyst performance or employment measure.",
         "synthetic": false
       }
     ],
