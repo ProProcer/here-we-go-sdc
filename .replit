@@ -1,0 +1,5 @@
+run = "python src/main.py"
+entrypoint = "src/main.py"
+
+[nix]
+channel = "stable-24_05"
