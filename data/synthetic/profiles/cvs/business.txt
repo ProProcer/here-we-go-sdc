@@ -1,0 +1,3 @@
+Fictional CV for software testing
+Skills: Excel, requirements gathering, stakeholder communication
+Project: Documented stakeholder requirements and prepared Excel reports.

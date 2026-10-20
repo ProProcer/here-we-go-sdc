@@ -1,3 +1,4 @@
 # Add your project dependencies here, one per line.
 runpod
 pydantic==2.12.3
+pypdf==6.21.1

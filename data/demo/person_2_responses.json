@@ -42,14 +42,17 @@
         "sector": "Information Services",
         "catalog_synthetic": true,
         "rank": 1,
-        "fit_score": 42.11,
+        "fit_score": 47.89,
         "score_breakdown": {
-          "method": "weighted_coverage_v1",
+          "method": "reviewed_fit_v2",
           "earned_weight": 1.6,
           "total_weight": 3.8,
           "required_skill_coverage": 0.42105263157894735,
-          "transferability": null,
-          "preferences": null
+          "transferability": 0.0,
+          "preferences": 1.0,
+          "readiness": 0.42105263157894735,
+          "readiness_weight": 0.9,
+          "preference_weight": 0.1
         },
         "matched_skills": [
           {
@@ -106,10 +109,15 @@
         ],
         "manually_selected": true,
         "warnings": [
-          "Coverage-only heuristic; transferability and preferences are not scored.",
+          "Illustrative fit heuristic, not a hiring probability or proficiency assessment.",
           "Missing or unverified skills are unconfirmed, not proof of inability.",
           "Role requirements and importance weights are synthetic."
-        ]
+        ],
+        "transferable_skills": [],
+        "matched_interests": [
+          "analytics"
+        ],
+        "pinned": false
       },
       {
         "role_id": "role:business_analyst",
@@ -118,14 +126,17 @@
         "sector": "Business Services",
         "catalog_synthetic": true,
         "rank": 2,
-        "fit_score": 13.51,
+        "fit_score": 12.16,
         "score_breakdown": {
-          "method": "weighted_coverage_v1",
+          "method": "reviewed_fit_v2",
           "earned_weight": 0.5,
           "total_weight": 3.7,
           "required_skill_coverage": 0.13513513513513514,
-          "transferability": null,
-          "preferences": null
+          "transferability": 0.0,
+          "preferences": 0.0,
+          "readiness": 0.13513513513513514,
+          "readiness_weight": 0.9,
+          "preference_weight": 0.1
         },
         "matched_skills": [
           {
@@ -180,10 +191,13 @@
         ],
         "manually_selected": false,
         "warnings": [
-          "Coverage-only heuristic; transferability and preferences are not scored.",
+          "Illustrative fit heuristic, not a hiring probability or proficiency assessment.",
           "Missing or unverified skills are unconfirmed, not proof of inability.",
           "Role requirements and importance weights are synthetic."
-        ]
+        ],
+        "transferable_skills": [],
+        "matched_interests": [],
+        "pinned": false
       },
       {
         "role_id": "role:it_support_specialist",
@@ -194,12 +208,15 @@
         "rank": 3,
         "fit_score": 0.0,
         "score_breakdown": {
-          "method": "weighted_coverage_v1",
+          "method": "reviewed_fit_v2",
           "earned_weight": 0.0,
           "total_weight": 2.0,
           "required_skill_coverage": 0.0,
-          "transferability": null,
-          "preferences": null
+          "transferability": 0.0,
+          "preferences": 0.0,
+          "readiness": 0.0,
+          "readiness_weight": 0.9,
+          "preference_weight": 0.1
         },
         "matched_skills": [],
         "missing_skills": [
@@ -233,10 +250,13 @@
         ],
         "manually_selected": false,
         "warnings": [
-          "Coverage-only heuristic; transferability and preferences are not scored.",
+          "Illustrative fit heuristic, not a hiring probability or proficiency assessment.",
           "Missing or unverified skills are unconfirmed, not proof of inability.",
           "Role requirements and importance weights are synthetic."
-        ]
+        ],
+        "transferable_skills": [],
+        "matched_interests": [],
+        "pinned": false
       }
     ]
   },
@@ -292,12 +312,15 @@
         "rank": 1,
         "fit_score": 70.27,
         "score_breakdown": {
-          "method": "weighted_coverage_v1",
+          "method": "reviewed_fit_v2",
           "earned_weight": 2.6,
           "total_weight": 3.7,
           "required_skill_coverage": 0.7027027027027027,
-          "transferability": null,
-          "preferences": null
+          "transferability": 0.0,
+          "preferences": null,
+          "readiness": 0.7027027027027027,
+          "readiness_weight": 1.0,
+          "preference_weight": 0.0
         },
         "matched_skills": [
           {
@@ -356,10 +379,14 @@
         ],
         "manually_selected": false,
         "warnings": [
-          "Coverage-only heuristic; transferability and preferences are not scored.",
+          "Illustrative fit heuristic, not a hiring probability or proficiency assessment.",
           "Missing or unverified skills are unconfirmed, not proof of inability.",
+          "No recognized interests; readiness receives 100% weight.",
           "Role requirements and importance weights are synthetic."
-        ]
+        ],
+        "transferable_skills": [],
+        "matched_interests": [],
+        "pinned": false
       },
       {
         "role_id": "role:it_support_specialist",
@@ -370,12 +397,15 @@
         "rank": 2,
         "fit_score": 55.0,
         "score_breakdown": {
-          "method": "weighted_coverage_v1",
+          "method": "reviewed_fit_v2",
           "earned_weight": 1.1,
           "total_weight": 2.0,
           "required_skill_coverage": 0.55,
-          "transferability": null,
-          "preferences": null
+          "transferability": 0.0,
+          "preferences": null,
+          "readiness": 0.55,
+          "readiness_weight": 1.0,
+          "preference_weight": 0.0
         },
         "matched_skills": [
           {
@@ -414,10 +444,14 @@
         ],
         "manually_selected": false,
         "warnings": [
-          "Coverage-only heuristic; transferability and preferences are not scored.",
+          "Illustrative fit heuristic, not a hiring probability or proficiency assessment.",
           "Missing or unverified skills are unconfirmed, not proof of inability.",
+          "No recognized interests; readiness receives 100% weight.",
           "Role requirements and importance weights are synthetic."
-        ]
+        ],
+        "transferable_skills": [],
+        "matched_interests": [],
+        "pinned": false
       },
       {
         "role_id": "role:data_analyst",
@@ -426,14 +460,17 @@
         "sector": "Information Services",
         "catalog_synthetic": true,
         "rank": 3,
-        "fit_score": 15.79,
+        "fit_score": 21.05,
         "score_breakdown": {
-          "method": "weighted_coverage_v1",
+          "method": "reviewed_fit_v2",
           "earned_weight": 0.6,
           "total_weight": 3.8,
           "required_skill_coverage": 0.15789473684210525,
-          "transferability": null,
-          "preferences": null
+          "transferability": 0.05263157894736842,
+          "preferences": null,
+          "readiness": 0.21052631578947367,
+          "readiness_weight": 1.0,
+          "preference_weight": 0.0
         },
         "matched_skills": [
           {
@@ -488,10 +525,26 @@
         ],
         "manually_selected": false,
         "warnings": [
-          "Coverage-only heuristic; transferability and preferences are not scored.",
+          "Illustrative fit heuristic, not a hiring probability or proficiency assessment.",
           "Missing or unverified skills are unconfirmed, not proof of inability.",
+          "No recognized interests; readiness receives 100% weight.",
           "Role requirements and importance weights are synthetic."
-        ]
+        ],
+        "transferable_skills": [
+          {
+            "source_skill_id": "skill:spreadsheets",
+            "target_skill_id": "skill:data_visualization",
+            "task_id": "task:routine_reporting",
+            "partial_credit": 0.25,
+            "weighted_contribution": 0.2,
+            "evidence": [
+              "Typed skill entry: Excel"
+            ],
+            "reason": "Related skill in the same catalog task; illustrative 25% credit, target remains a gap."
+          }
+        ],
+        "matched_interests": [],
+        "pinned": false
       }
     ]
   },
@@ -538,12 +591,15 @@
         "rank": 1,
         "fit_score": 85.0,
         "score_breakdown": {
-          "method": "weighted_coverage_v1",
+          "method": "reviewed_fit_v2",
           "earned_weight": 1.7,
           "total_weight": 2.0,
           "required_skill_coverage": 0.85,
-          "transferability": null,
-          "preferences": null
+          "transferability": 0.0,
+          "preferences": null,
+          "readiness": 0.85,
+          "readiness_weight": 1.0,
+          "preference_weight": 0.0
         },
         "matched_skills": [
           {
@@ -582,10 +638,14 @@
         ],
         "manually_selected": false,
         "warnings": [
-          "Coverage-only heuristic; transferability and preferences are not scored.",
+          "Illustrative fit heuristic, not a hiring probability or proficiency assessment.",
           "Missing or unverified skills are unconfirmed, not proof of inability.",
+          "No recognized interests; readiness receives 100% weight.",
           "Role requirements and importance weights are synthetic."
-        ]
+        ],
+        "transferable_skills": [],
+        "matched_interests": [],
+        "pinned": false
       },
       {
         "role_id": "role:business_analyst",
@@ -596,12 +656,15 @@
         "rank": 2,
         "fit_score": 24.32,
         "score_breakdown": {
-          "method": "weighted_coverage_v1",
+          "method": "reviewed_fit_v2",
           "earned_weight": 0.9,
           "total_weight": 3.7,
           "required_skill_coverage": 0.24324324324324326,
-          "transferability": null,
-          "preferences": null
+          "transferability": 0.0,
+          "preferences": null,
+          "readiness": 0.24324324324324326,
+          "readiness_weight": 1.0,
+          "preference_weight": 0.0
         },
         "matched_skills": [
           {
@@ -656,10 +719,14 @@
         ],
         "manually_selected": false,
         "warnings": [
-          "Coverage-only heuristic; transferability and preferences are not scored.",
+          "Illustrative fit heuristic, not a hiring probability or proficiency assessment.",
           "Missing or unverified skills are unconfirmed, not proof of inability.",
+          "No recognized interests; readiness receives 100% weight.",
           "Role requirements and importance weights are synthetic."
-        ]
+        ],
+        "transferable_skills": [],
+        "matched_interests": [],
+        "pinned": false
       },
       {
         "role_id": "role:data_analyst",
@@ -670,12 +737,15 @@
         "rank": 3,
         "fit_score": 15.79,
         "score_breakdown": {
-          "method": "weighted_coverage_v1",
+          "method": "reviewed_fit_v2",
           "earned_weight": 0.6,
           "total_weight": 3.8,
           "required_skill_coverage": 0.15789473684210525,
-          "transferability": null,
-          "preferences": null
+          "transferability": 0.0,
+          "preferences": null,
+          "readiness": 0.15789473684210525,
+          "readiness_weight": 1.0,
+          "preference_weight": 0.0
         },
         "matched_skills": [
           {
@@ -730,10 +800,14 @@
         ],
         "manually_selected": false,
         "warnings": [
-          "Coverage-only heuristic; transferability and preferences are not scored.",
+          "Illustrative fit heuristic, not a hiring probability or proficiency assessment.",
           "Missing or unverified skills are unconfirmed, not proof of inability.",
+          "No recognized interests; readiness receives 100% weight.",
           "Role requirements and importance weights are synthetic."
-        ]
+        ],
+        "transferable_skills": [],
+        "matched_interests": [],
+        "pinned": false
       }
     ]
   },
@@ -761,12 +835,15 @@
         "rank": 1,
         "fit_score": 0.0,
         "score_breakdown": {
-          "method": "weighted_coverage_v1",
+          "method": "reviewed_fit_v2",
           "earned_weight": 0.0,
           "total_weight": 3.7,
           "required_skill_coverage": 0.0,
-          "transferability": null,
-          "preferences": null
+          "transferability": 0.0,
+          "preferences": null,
+          "readiness": 0.0,
+          "readiness_weight": 1.0,
+          "preference_weight": 0.0
         },
         "matched_skills": [],
         "missing_skills": [
@@ -818,11 +895,15 @@
         ],
         "manually_selected": false,
         "warnings": [
-          "Coverage-only heuristic; transferability and preferences are not scored.",
+          "Illustrative fit heuristic, not a hiring probability or proficiency assessment.",
           "Missing or unverified skills are unconfirmed, not proof of inability.",
+          "No recognized interests; readiness receives 100% weight.",
           "Role requirements and importance weights are synthetic.",
           "No supported skills supplied; review or add skills before interpreting scores."
-        ]
+        ],
+        "transferable_skills": [],
+        "matched_interests": [],
+        "pinned": false
       },
       {
         "role_id": "role:data_analyst",
@@ -833,12 +914,15 @@
         "rank": 2,
         "fit_score": 0.0,
         "score_breakdown": {
-          "method": "weighted_coverage_v1",
+          "method": "reviewed_fit_v2",
           "earned_weight": 0.0,
           "total_weight": 3.8,
           "required_skill_coverage": 0.0,
-          "transferability": null,
-          "preferences": null
+          "transferability": 0.0,
+          "preferences": null,
+          "readiness": 0.0,
+          "readiness_weight": 1.0,
+          "preference_weight": 0.0
         },
         "matched_skills": [],
         "missing_skills": [
@@ -890,11 +974,15 @@
         ],
         "manually_selected": false,
         "warnings": [
-          "Coverage-only heuristic; transferability and preferences are not scored.",
+          "Illustrative fit heuristic, not a hiring probability or proficiency assessment.",
           "Missing or unverified skills are unconfirmed, not proof of inability.",
+          "No recognized interests; readiness receives 100% weight.",
           "Role requirements and importance weights are synthetic.",
           "No supported skills supplied; review or add skills before interpreting scores."
-        ]
+        ],
+        "transferable_skills": [],
+        "matched_interests": [],
+        "pinned": false
       },
       {
         "role_id": "role:it_support_specialist",
@@ -905,12 +993,15 @@
         "rank": 3,
         "fit_score": 0.0,
         "score_breakdown": {
-          "method": "weighted_coverage_v1",
+          "method": "reviewed_fit_v2",
           "earned_weight": 0.0,
           "total_weight": 2.0,
           "required_skill_coverage": 0.0,
-          "transferability": null,
-          "preferences": null
+          "transferability": 0.0,
+          "preferences": null,
+          "readiness": 0.0,
+          "readiness_weight": 1.0,
+          "preference_weight": 0.0
         },
         "matched_skills": [],
         "missing_skills": [
@@ -944,11 +1035,15 @@
         ],
         "manually_selected": false,
         "warnings": [
-          "Coverage-only heuristic; transferability and preferences are not scored.",
+          "Illustrative fit heuristic, not a hiring probability or proficiency assessment.",
           "Missing or unverified skills are unconfirmed, not proof of inability.",
+          "No recognized interests; readiness receives 100% weight.",
           "Role requirements and importance weights are synthetic.",
           "No supported skills supplied; review or add skills before interpreting scores."
-        ]
+        ],
+        "transferable_skills": [],
+        "matched_interests": [],
+        "pinned": false
       }
     ]
   },
@@ -997,12 +1092,15 @@
         "rank": 1,
         "fit_score": 42.11,
         "score_breakdown": {
-          "method": "weighted_coverage_v1",
+          "method": "reviewed_fit_v2",
           "earned_weight": 1.6,
           "total_weight": 3.8,
           "required_skill_coverage": 0.42105263157894735,
-          "transferability": null,
-          "preferences": null
+          "transferability": 0.0,
+          "preferences": null,
+          "readiness": 0.42105263157894735,
+          "readiness_weight": 1.0,
+          "preference_weight": 0.0
         },
         "matched_skills": [
           {
@@ -1061,10 +1159,14 @@
         ],
         "manually_selected": false,
         "warnings": [
-          "Coverage-only heuristic; transferability and preferences are not scored.",
+          "Illustrative fit heuristic, not a hiring probability or proficiency assessment.",
           "Missing or unverified skills are unconfirmed, not proof of inability.",
+          "No recognized interests; readiness receives 100% weight.",
           "Role requirements and importance weights are synthetic."
-        ]
+        ],
+        "transferable_skills": [],
+        "matched_interests": [],
+        "pinned": false
       },
       {
         "role_id": "role:business_analyst",
@@ -1075,12 +1177,15 @@
         "rank": 2,
         "fit_score": 13.51,
         "score_breakdown": {
-          "method": "weighted_coverage_v1",
+          "method": "reviewed_fit_v2",
           "earned_weight": 0.5,
           "total_weight": 3.7,
           "required_skill_coverage": 0.13513513513513514,
-          "transferability": null,
-          "preferences": null
+          "transferability": 0.0,
+          "preferences": null,
+          "readiness": 0.13513513513513514,
+          "readiness_weight": 1.0,
+          "preference_weight": 0.0
         },
         "matched_skills": [
           {
@@ -1136,10 +1241,14 @@
         ],
         "manually_selected": false,
         "warnings": [
-          "Coverage-only heuristic; transferability and preferences are not scored.",
+          "Illustrative fit heuristic, not a hiring probability or proficiency assessment.",
           "Missing or unverified skills are unconfirmed, not proof of inability.",
+          "No recognized interests; readiness receives 100% weight.",
           "Role requirements and importance weights are synthetic."
-        ]
+        ],
+        "transferable_skills": [],
+        "matched_interests": [],
+        "pinned": false
       },
       {
         "role_id": "role:it_support_specialist",
@@ -1150,12 +1259,15 @@
         "rank": 3,
         "fit_score": 0.0,
         "score_breakdown": {
-          "method": "weighted_coverage_v1",
+          "method": "reviewed_fit_v2",
           "earned_weight": 0.0,
           "total_weight": 2.0,
           "required_skill_coverage": 0.0,
-          "transferability": null,
-          "preferences": null
+          "transferability": 0.0,
+          "preferences": null,
+          "readiness": 0.0,
+          "readiness_weight": 1.0,
+          "preference_weight": 0.0
         },
         "matched_skills": [],
         "missing_skills": [
@@ -1189,10 +1301,14 @@
         ],
         "manually_selected": false,
         "warnings": [
-          "Coverage-only heuristic; transferability and preferences are not scored.",
+          "Illustrative fit heuristic, not a hiring probability or proficiency assessment.",
           "Missing or unverified skills are unconfirmed, not proof of inability.",
+          "No recognized interests; readiness receives 100% weight.",
           "Role requirements and importance weights are synthetic."
-        ]
+        ],
+        "transferable_skills": [],
+        "matched_interests": [],
+        "pinned": false
       }
     ]
   }

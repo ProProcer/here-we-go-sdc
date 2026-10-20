@@ -1,4 +1,4 @@
-"""Person 2 contracts: reviewed skills and explainable coverage-only matches."""
+"""Person 2 contracts for reviewed skills and explainable role matching."""
 
 from typing import Literal
 
@@ -55,12 +55,25 @@ class SkillContribution(Contract):
 
 
 class ScoreBreakdown(Contract):
-    method: Literal["weighted_coverage_v1"] = "weighted_coverage_v1"
+    method: Literal["reviewed_fit_v2"] = "reviewed_fit_v2"
     earned_weight: float
     total_weight: float
     required_skill_coverage: float
-    transferability: None = None
-    preferences: None = None
+    transferability: float = Field(ge=0, le=1)
+    preferences: float | None = Field(default=None, ge=0, le=1)
+    readiness: float = Field(ge=0, le=1)
+    readiness_weight: float
+    preference_weight: float
+
+
+class TransferContribution(Contract):
+    source_skill_id: SkillId
+    target_skill_id: SkillId
+    task_id: str
+    partial_credit: float
+    weighted_contribution: float
+    evidence: list[str]
+    reason: str
 
 
 class RoleMatch(Contract):
@@ -76,3 +89,6 @@ class RoleMatch(Contract):
     missing_skills: list[SkillContribution]
     manually_selected: bool
     warnings: list[str]
+    transferable_skills: list[TransferContribution] = Field(default_factory=list)
+    matched_interests: list[str] = Field(default_factory=list)
+    pinned: bool = False

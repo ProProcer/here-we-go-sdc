@@ -44,3 +44,12 @@ def review_profile(profile: SkillsProfile, skills: list[ProfileSkill | dict], *,
     payload["skills"] = [row.model_dump() if isinstance(row, ProfileSkill) else row for row in skills]
     return validate_profile(SkillsProfile.model_validate(payload),
                             catalog if catalog is not None else load_role_catalog())
+
+
+def create_profile_from_cv(profile_id: str, content: bytes, filename: str, *,
+                           catalog: RoleCatalog | None = None) -> SkillsProfile:
+    """Parse a fictional document and propose unverified skills for human review."""
+    from src.profiles.cv_parser import parse_cv
+    from src.profiles.extraction import extract_profile
+
+    return extract_profile(parse_cv(content, filename), profile_id, catalog=catalog)

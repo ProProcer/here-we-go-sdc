@@ -1,7 +1,11 @@
 # Person 2: typed profiles and weighted matching
 
-Steps 1–6 are implemented as offline Python services. These are proposed v0.1.0
-integration contracts for Persons 4 and 5 to review, not a record of their approval.
+The implemented Python services provide typed-skill intake, canonical skill
+normalization, editable profiles, explainable role matching, fictional CV
+parsing, transferability and preference scoring, and target-role pinning.
+See [matching and CV intake](PERSON_2_MATCHING_AND_CV_INTAKE.md) for the detailed
+scoring policy, parser limits and integration examples. The contracts are
+proposals for Persons 4 and 5 to review, not a record of their approval.
 Person 1's catalog, taxonomy and importance weights are unchanged. All profiles
 and role requirements in this example are synthetic.
 
@@ -28,23 +32,27 @@ proficiency levels, so inventing proficiency comparisons would be unsupported.
 earned_weight = sum(importance for covered requirements)
 total_weight = sum(importance for all role requirements)
 coverage = earned_weight / total_weight
-fit_score = round_half_up(100 * coverage, 2 decimal places)
+readiness = coverage + partial_transfer_weight / total_weight
+fit_score = round_half_up(100 * readiness, 2 decimal places)  # Without recognized interests
 ```
 
-For Data Analyst, Python (0.7) and SQL (0.9) earn 1.6 of 3.8: 42.11/100.
+For Data Analyst without recognized interests, Python (0.7) and SQL (0.9)
+earn 1.6 of 3.8: 42.11/100.
 Statistics, visualization and communication remain unconfirmed gaps. This is
 not a hiring probability. Missing evidence does not establish inability.
 
-This milestone uses 100% required-skill coverage. The specification's proposed
-70/20/10 formula is deferred until transferability and preference rules exist.
-Those components are null, not fabricated zeros. Interests and desired role do
-not affect scores. There is no AI-outlook or scenario input to personal fit.
+Matching combines direct coverage with bounded partial transfer credit. Related
+reviewed skills can contribute 25% of an uncovered requirement's importance
+through a shared catalog task, without repeating direct credit. The target
+requirement remains a gap. Recognized explicitly entered interests receive 10%
+of the final score; otherwise readiness receives 100%. AI outlook and scenario
+assumptions do not enter personal fit. Zero total requirement weight produces
+zero with a warning.
 
-Rank by unrounded Decimal coverage descending, then role ID ascending. Display
-scores use two decimals and ROUND_HALF_UP; distinct underlying scores can have
-the same displayed value. Zero total weight produces zero with a warning.
-Every role is returned. manually_selected marks preference only; top-N pinning
-and UI positioning remain future integration work.
+Results are ranked by unrounded Decimal fit descending, then role ID ascending.
+Displayed scores use two decimals and ROUND_HALF_UP. Every role is returned by
+default. With top_n, an excluded desired role is appended with pinned=true and
+its original score and rank. manually_selected marks the user's choice.
 
 ## Code blocks and their purposes
 
@@ -58,15 +66,20 @@ and UI positioning remain future integration work.
 - SkillContribution: each role requirement's weight, binary coverage, earned
   contribution, evidence and explanatory reason. Used for both matches and gaps.
 - ScoreBreakdown: exposes numerator, denominator and ratio, method version,
-  and explicitly unimplemented transferability/preferences.
+  readiness, transferability, preferences and component weights.
 - RoleMatch: role/sector identity, rank, score, breakdown, matched/missing
-  requirements, synthetic provenance, selection flag and warnings.
+  requirements, transfer explanations, matched interests, synthetic provenance,
+  selection/pinning flags and warnings.
 
 All inherit Contract(extra="forbid"). Unsupported fields, including demographic
-fields, are rejected. Interests are metadata only. The scorer reads only skill
-IDs and confirmation, plus catalog requirements; level and evidence text never
+fields, are rejected. Only explicitly entered recognized interests affect
+preference alignment. Skill IDs, confirmation and catalog requirements determine
+readiness; level and evidence text never
 become hidden ranking features. These contracts are stricter than the planning
 examples: evidence is a list, and matched skills carry detailed contributions.
+
+- TransferContribution: source skill, target requirement, shared task, partial
+  credit, evidence and explanation for each transfer contribution.
 
 ### src/profiles/skill_normalizer.py
 
@@ -91,6 +104,10 @@ examples: evidence is a list, and matched skills carry detailed contributions.
   Unsupported-entry warnings remain as intake provenance; rebuilding typed input
   via create_profile regenerates them.
 
+- create_profile_from_cv: parses fictional PDF/plain-text documents and proposes
+  unverified skills with evidence for human review. Parser and extraction details
+  are documented in [matching and CV intake](PERSON_2_MATCHING_AND_CV_INTAKE.md).
+
 ### src/profiles/matching.py
 
 - Input preparation: validates the profile again and builds lookup tables for
@@ -98,16 +115,21 @@ examples: evidence is a list, and matched skills carry detailed contributions.
 - Role loop: evaluates every catalog role using its own requirement denominator.
 - Requirement loop: assigns coverage from confirmation status, accumulates Decimal
   weights and creates the contribution/reason for matched or missing output.
-- Result construction: exposes ratio, rounded score, synthetic and missing-data
-  caveats, and desired-role metadata. Zero-weight and empty profiles are explicit.
-- Final sorting: uses unrounded coverage and role ID, then assigns sequential
-  ranks. No network, random state, current time or model output affects results.
+- Result construction: combines direct coverage, partial transfer credit and
+  optional interest alignment; exposes component weights, evidence, rounded score,
+  synthetic and missing-data caveats, and desired-role metadata.
+- Final sorting and selection: uses unrounded fit and role ID, assigns ranks,
+  and appends a selected target outside top_n without changing its rank or score.
+  No network, random state, current time or model output affects results.
 
 ### Fixtures, examples and tests
 
 - data/synthetic/profiles/typed_inputs.json: five fictional typed inputs, manually
   specified expected skill IDs and expected role order (analytics, business,
-  support, empty and duplicate-alias examples). These are not PDF/CV fixtures.
+  support, empty and duplicate-alias examples).
+- data/synthetic/profiles/cvs: three fictional text CVs and an analytics PDF.
+- tests/test_cv_pipeline.py: document parsing, review-gated matching, protected
+  attribute exclusion, transfer credit, preference handling and target pinning.
 - src/profiles/demo.py: runs all fixtures through intake and matching, returning
   JSON-compatible profile/match pairs. Its CLI prints without modifying files.
 - data/demo/person_2_responses.json: generated complete responses for Person 5.
@@ -118,7 +140,7 @@ examples: evidence is a list, and matched skills carry detailed contributions.
 
 ## Usage
 
-From the repository root, with Python 3.10+ and pydantic==2.12.3 installed:
+From the repository root, with Python 3.10+ and requirements.txt installed:
 
 ```python
 from src.profiles.intake import create_profile, review_profile
@@ -150,8 +172,8 @@ instead of the Windows .venv path. This change does not establish Replit use.
 
 ## Remaining work
 
-No PDF/plain-text CV parser, OCR, automatic free-text extraction, HTTP routes,
-review screen, persistence, transferability scoring, preference scoring or top-N
-pinning is added. Person 5 owns UI/routes; Person 4 can join missing_skills by
-skill_id and importance. Broader vocabulary needs coordinated taxonomy additions.
-Future extracted claims should start unverified and be reviewed before coverage.
+HTTP routes, the review screen, persistence, actual Replit execution and
+consumer approval of the proposed contracts remain outstanding. Person 5 owns
+UI/routes; Person 4 can join missing_skills by skill_id and importance. Broader
+vocabulary needs coordinated taxonomy additions. OCR is unsupported. Extracted
+CV claims start unverified and must be reviewed before receiving skill coverage.

@@ -1,0 +1,4 @@
+Fictional CV for software testing
+Name: Sample Candidate
+Skills: Python3, structured query language
+Project: Used Python and SQL for a university data-cleaning project.
