@@ -1,0 +1,43 @@
+[
+  {
+    "role_id": "role:data_analyst",
+    "role_title": "Data Analyst",
+    "sector_id": "sector:information_services",
+    "task_ids": [
+      "task:data_cleaning",
+      "task:routine_reporting"
+    ],
+    "source_ids": [
+      "source:synthetic_role_catalog_v1"
+    ],
+    "updated_at": "2026-10-20",
+    "synthetic": true
+  },
+  {
+    "role_id": "role:business_analyst",
+    "role_title": "Business Analyst",
+    "sector_id": "sector:business_services",
+    "task_ids": [
+      "task:requirements_gathering",
+      "task:routine_reporting"
+    ],
+    "source_ids": [
+      "source:synthetic_role_catalog_v1"
+    ],
+    "updated_at": "2026-10-20",
+    "synthetic": true
+  },
+  {
+    "role_id": "role:it_support_specialist",
+    "role_title": "IT Support Specialist",
+    "sector_id": "sector:information_services",
+    "task_ids": [
+      "task:incident_triage"
+    ],
+    "source_ids": [
+      "source:synthetic_role_catalog_v1"
+    ],
+    "updated_at": "2026-10-20",
+    "synthetic": true
+  }
+]

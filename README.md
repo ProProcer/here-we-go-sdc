@@ -101,6 +101,11 @@ This is a design tree. Only some planning files exist yet. **No provided sample 
 
 One of these members must also serve as the **registered team leader** to monitor official instructions and submit required materials. See the specification for interfaces and acceptance tests.
 
+Person 1's **synthetic role catalog mock** is ready for integration. See
+[`docs/API_CONTRACTS.md`](docs/API_CONTRACTS.md) for fixtures, shared IDs, loader
+usage and the proposed `GET /api/roles` adapter. This is a module handoff; the
+complete app is still to be implemented.
+
 ## How to run (once implementation exists)
 
 This planning pack has **no runnable app yet**. After actual implementation, replace these instructions with tested commands for the committed `requirements.txt` and `.replit` config; expected target:

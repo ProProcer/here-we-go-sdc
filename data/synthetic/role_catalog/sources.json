@@ -1,0 +1,11 @@
+[
+  {
+    "source_id": "source:synthetic_role_catalog_v1",
+    "synthetic": true,
+    "title": "Team-authored synthetic integration fixture",
+    "source_url": null,
+    "license": "Apache-2.0",
+    "created_at": "2026-10-20",
+    "limitations": "Illustrative role/task mappings and importance weights only. No collected job postings, observed skill frequencies, or labor-market evidence."
+  }
+]

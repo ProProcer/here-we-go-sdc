@@ -1,0 +1,107 @@
+{
+  "version": "0.1.0",
+  "skills": [
+    {
+      "skill_id": "skill:python",
+      "label": "Python",
+      "aliases": [
+        "python3"
+      ]
+    },
+    {
+      "skill_id": "skill:sql",
+      "label": "SQL",
+      "aliases": [
+        "structured query language"
+      ]
+    },
+    {
+      "skill_id": "skill:statistics",
+      "label": "Statistics",
+      "aliases": [
+        "statistical analysis"
+      ]
+    },
+    {
+      "skill_id": "skill:spreadsheets",
+      "label": "Spreadsheets",
+      "aliases": [
+        "Excel",
+        "Google Sheets"
+      ]
+    },
+    {
+      "skill_id": "skill:data_visualization",
+      "label": "Data visualization",
+      "aliases": [
+        "data visualisation",
+        "dashboarding"
+      ]
+    },
+    {
+      "skill_id": "skill:requirements_analysis",
+      "label": "Requirements analysis",
+      "aliases": [
+        "requirements gathering"
+      ]
+    },
+    {
+      "skill_id": "skill:communication",
+      "label": "Communication",
+      "aliases": [
+        "stakeholder communication"
+      ]
+    },
+    {
+      "skill_id": "skill:it_troubleshooting",
+      "label": "IT troubleshooting",
+      "aliases": [
+        "technical support"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "task:data_cleaning",
+      "label": "Clean and validate tabular data",
+      "skill_ids": [
+        "skill:python",
+        "skill:sql"
+      ]
+    },
+    {
+      "task_id": "task:routine_reporting",
+      "label": "Prepare routine reports and dashboards",
+      "skill_ids": [
+        "skill:spreadsheets",
+        "skill:data_visualization"
+      ]
+    },
+    {
+      "task_id": "task:requirements_gathering",
+      "label": "Document stakeholder requirements",
+      "skill_ids": [
+        "skill:requirements_analysis",
+        "skill:communication"
+      ]
+    },
+    {
+      "task_id": "task:incident_triage",
+      "label": "Triage and resolve user IT issues",
+      "skill_ids": [
+        "skill:it_troubleshooting",
+        "skill:communication"
+      ]
+    }
+  ],
+  "sectors": [
+    {
+      "sector_id": "sector:information_services",
+      "label": "Information Services"
+    },
+    {
+      "sector_id": "sector:business_services",
+      "label": "Business Services"
+    }
+  ]
+}

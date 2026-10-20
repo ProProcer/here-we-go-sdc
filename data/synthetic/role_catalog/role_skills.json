@@ -1,0 +1,119 @@
+[
+  {
+    "role_id": "role:data_analyst",
+    "skill_id": "skill:python",
+    "importance": 0.7,
+    "evidence_ids": [
+      "source:synthetic_role_catalog_v1"
+    ],
+    "synthetic": true
+  },
+  {
+    "role_id": "role:data_analyst",
+    "skill_id": "skill:sql",
+    "importance": 0.9,
+    "evidence_ids": [
+      "source:synthetic_role_catalog_v1"
+    ],
+    "synthetic": true
+  },
+  {
+    "role_id": "role:data_analyst",
+    "skill_id": "skill:statistics",
+    "importance": 0.8,
+    "evidence_ids": [
+      "source:synthetic_role_catalog_v1"
+    ],
+    "synthetic": true
+  },
+  {
+    "role_id": "role:data_analyst",
+    "skill_id": "skill:data_visualization",
+    "importance": 0.8,
+    "evidence_ids": [
+      "source:synthetic_role_catalog_v1"
+    ],
+    "synthetic": true
+  },
+  {
+    "role_id": "role:data_analyst",
+    "skill_id": "skill:communication",
+    "importance": 0.6,
+    "evidence_ids": [
+      "source:synthetic_role_catalog_v1"
+    ],
+    "synthetic": true
+  },
+  {
+    "role_id": "role:business_analyst",
+    "skill_id": "skill:requirements_analysis",
+    "importance": 0.9,
+    "evidence_ids": [
+      "source:synthetic_role_catalog_v1"
+    ],
+    "synthetic": true
+  },
+  {
+    "role_id": "role:business_analyst",
+    "skill_id": "skill:communication",
+    "importance": 0.9,
+    "evidence_ids": [
+      "source:synthetic_role_catalog_v1"
+    ],
+    "synthetic": true
+  },
+  {
+    "role_id": "role:business_analyst",
+    "skill_id": "skill:spreadsheets",
+    "importance": 0.8,
+    "evidence_ids": [
+      "source:synthetic_role_catalog_v1"
+    ],
+    "synthetic": true
+  },
+  {
+    "role_id": "role:business_analyst",
+    "skill_id": "skill:data_visualization",
+    "importance": 0.6,
+    "evidence_ids": [
+      "source:synthetic_role_catalog_v1"
+    ],
+    "synthetic": true
+  },
+  {
+    "role_id": "role:business_analyst",
+    "skill_id": "skill:sql",
+    "importance": 0.5,
+    "evidence_ids": [
+      "source:synthetic_role_catalog_v1"
+    ],
+    "synthetic": true
+  },
+  {
+    "role_id": "role:it_support_specialist",
+    "skill_id": "skill:it_troubleshooting",
+    "importance": 0.9,
+    "evidence_ids": [
+      "source:synthetic_role_catalog_v1"
+    ],
+    "synthetic": true
+  },
+  {
+    "role_id": "role:it_support_specialist",
+    "skill_id": "skill:communication",
+    "importance": 0.8,
+    "evidence_ids": [
+      "source:synthetic_role_catalog_v1"
+    ],
+    "synthetic": true
+  },
+  {
+    "role_id": "role:it_support_specialist",
+    "skill_id": "skill:spreadsheets",
+    "importance": 0.3,
+    "evidence_ids": [
+      "source:synthetic_role_catalog_v1"
+    ],
+    "synthetic": true
+  }
+]
