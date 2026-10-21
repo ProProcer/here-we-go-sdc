@@ -149,3 +149,66 @@ Records remain `pending_review` under `data/review/task_skill_proposals/`; they
 do not alter `RoleOutlook`, `ScenarioResult`, fit or weights. Task/skill scope is
 validated against existing catalog links. `load_current_proposal()` checks
 accepted-input, catalog and prompt-version fingerprints before review.
+
+## Person 4 learning planner contract
+
+Person 4 has made an internal Python module, not an HTTP service. See
+[the Person 4 handoff](PERSON_4_HANDOFF.md) for schemas, selection behavior,
+validation rules and integration notes.
+
+### Direct-call usage
+
+```python
+from src.reskilling.planner import build_learning_plan
+
+result = build_learning_plan(
+    profile,
+    selected_role_match,
+    scenario_id,
+    country="Malaysia",
+    preferred_language="English",
+    search_provider=course_search_provider,
+)
+```
+
+### Inputs and output
+
+Inputs are a reviewed `SkillsProfile`, the selected `RoleMatch`, one of
+`baseline`, `moderate_ai_change` or `rapid_ai_change`, country, preferred
+language and an optional replaceable `CourseSearchProvider`.
+
+The return value is a `PlanningResult` containing:
+
+- `plan: LearningPlan`
+- `validation_logs: list[CourseValidationLog]`
+
+### Priority contract
+
+- Actual gaps come only from `RoleMatch.missing_skills`; scenario priorities do
+  not establish proficiency or create gaps.
+- The planner joins gaps to `get_outlook(role_id, scenario_id)` priorities by
+  `skill_id` and consumes `adjusted_priority` directly.
+- Do not multiply the baseline by the adjusted priority or apply the adjustment
+  twice.
+- The plan preserves `baseline_priority`, `applied_adjustment`, the user's
+  reviewed skills and the selected role's fit score.
+
+### Course discovery and validation contract
+
+- Discovery searches trusted providers first and uses wider-web fallback when
+  trusted results are insufficient.
+- Each validation batch is bounded to at most 20 candidate courses.
+- Only successfully verified course records can be recommended. Invalid,
+  nonexistent or unverifiable records are withheld and logged.
+- An unknown price is not treated as free.
+- Without a `CourseSearchProvider`, planning uses only the verified local cache.
+
+### Current limitations
+
+- The current catalog contains no pre-approved courses, so a search provider or
+  previously verified cache entries are required for recommendations.
+- Generic HTML validation may withhold legitimate JavaScript-only course pages.
+- The current non-baseline scenario fixture supports Data Analyst only.
+- Budget and time are returned as course metadata and selection tie-breakers;
+  user filtering remains a frontend concern.
+- The module does not start an HTTP server.
