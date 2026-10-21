@@ -2,6 +2,7 @@
 
 import unicodedata
 
+from src.schemas.onet import CatalogTaxonomy
 from src.schemas.role import Skill, Taxonomy
 
 
@@ -10,7 +11,7 @@ def normalize_key(value: str) -> str:
     return " ".join(unicodedata.normalize("NFKC", value).casefold().split())
 
 
-def skill_index(taxonomy: Taxonomy) -> dict[str, Skill]:
+def skill_index(taxonomy: Taxonomy | CatalogTaxonomy) -> dict[str, Skill]:
     index = {}
     for skill in taxonomy.skills:
         for name in (skill.skill_id, skill.label, *skill.aliases):
@@ -22,7 +23,7 @@ def skill_index(taxonomy: Taxonomy) -> dict[str, Skill]:
 
 
 def normalize_entries(
-    entries: list[str], taxonomy: Taxonomy
+    entries: list[str], taxonomy: Taxonomy | CatalogTaxonomy
 ) -> tuple[list[tuple[Skill, list[str]]], list[str]]:
     """Resolve complete entries; aliases merge without adding scoring credit."""
     index = skill_index(taxonomy)

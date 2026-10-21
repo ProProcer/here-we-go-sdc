@@ -56,8 +56,9 @@ class CareerBackend:
         country="Malaysia",
         preferred_language="English",
         generated_at=None,
+        policy=None,
     ):
-        match = self.matcher.match_role(profile, role_id)
+        match = self.matcher.match_role(profile, role_id, policy=policy)
         return build_learning_plan(
             profile,
             match,

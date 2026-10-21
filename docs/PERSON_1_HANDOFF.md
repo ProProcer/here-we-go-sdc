@@ -2,14 +2,15 @@
 
 Person 1 now supplies a reproducible, validated O*NET® 31.0 catalog, source
 inventory, exclusion audit, paged read adapters, and an exploratory grouped
-coverage implementation for Person 2 to integrate. The source data are real;
+coverage implementation integrated into the shared Person 2–4 backend. The source data are real;
 the demonstration profiles and scoring assumptions are explicitly separate.
 
 The existing synthetic 0.1 catalog and all current default consumers remain
 operational. The new catalog uses **schema 0.2.0** because its software signals,
 occupational families, and unasserted task-to-skill links cannot truthfully be
 represented by the mock's flat requirements. Do not replace `get_roles()` or
-feed this catalog to the old matcher without adopting the versioned contract.
+mix the versioned results with legacy consumers. The migrated matcher dispatches
+to the 0.2 implementation when this catalog is supplied.
 
 ## Backend migration status
 
@@ -108,18 +109,20 @@ unknown. Coverage rejects unknown IDs and uncanonical profile labels.
 consumers. Use the paged list/detail adapters for HTTP delivery rather than
 transferring the full snapshot on every request. No HTTP server is added.
 
-## What changes for teammates
+## Teammate migration status
 
-| Owner | Required adoption work |
+| Owner | Current status |
 |---|---|
-| Person 2 | Select the 0.2 catalog explicitly; consume separate general/software data. Reuse `CoverageIndex` or port its documented policy, retain all score components, and integrate transfer/preferences without counting group familiarity twice. Never use the existing flat matcher on this catalog. |
-| Person 3 | Use source occupation/task IDs and map evidence to actual imported tasks. Treat unmapped skills and roles without reviewed evidence as insufficient evidence. Existing three-role scenarios/ledgers do not automatically cover the 910 roles. |
-| Person 4 | Preserve Person 2's reviewed gaps. General gaps can be learning objectives; software signals are optional learning candidates, not all mandatory courses. Adopt new IDs in course/SDG data and request an outlook using the same catalog. Do not promise eligibility for licensed/degree-gated occupations from short courses. |
-| Person 5 | Add a versioned catalog selector, paged list/detail routes, family labels, attribution, source dates and separate coverage components. Keep existing mock routes until consumers migrate together. Handle no software signal and unavailable task-skill/outlook evidence explicitly. |
+| Person 2 | Implemented: typed/CV intake, versioned matching, separate components, preferences and original-rank target pinning. Task-transfer credit stays disabled for unmapped source tasks. |
+| Person 3 | Implemented: catalog-aware outlooks, evidence validation/refresh/approval, isolated real ledger, insufficient-evidence handling and explicitly scoped synthetic scenarios. |
+| Person 4 | Implemented: versioned plans, score consistency, optional software selection, family-based provider metadata, MYR budgets and migrated SDG 4.4 connections. The verified course cache is empty rather than populated with unverified resources. |
+| Person 5 | Excluded at the user's request. No UI, routes, launch configuration or web dependencies were changed. Existing Person 1 read adapters remain available. |
 
-See [the migration guide](PERSON_1_MIGRATION.md) for field changes, IDs,
-formulas, safe fallbacks and copyable integration patterns. See
-[evaluation](PERSON_1_EVALUATION.md) for actual checks and limitations.
+Use `src.backend.CareerBackend` to share one real snapshot across Persons 2–4.
+See [the migration guide](PERSON_1_MIGRATION.md) for fields, IDs, formulas,
+examples, operational limitations and actual regression results. The original
+mock-specific defaults remain for compatibility; the shared backend selects the
+real catalog by default.
 
 ## Research basis and data rights
 

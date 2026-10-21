@@ -179,9 +179,11 @@ python -m unittest discover -s tests -v
 The migration adds integration coverage for catalog dispatch, score components,
 rank pinning, isolated evidence, scoped scenarios, refresh, software selection,
 unchanged fit, stale/tampered results, budget/currency limits and provider families.
-Original mock regression tests remain in the suite.
+Original mock regression tests remain in the suite. Custom matching policy
+weights are forwarded through `backend.learning_plan(..., policy=policy)` so
+its fit score stays consistent with matching under that policy.
 
-Actual verification: **159 tests passed** (149 existing plus 10 migration
+Actual verification: **160 tests passed** (149 existing plus 11 migration
 integration tests). Static checks passed for the changed Python files. The
 offline backend demo regenerated successfully. Person 5 entry point,
 configuration, dependencies and read-adapter files match their pre-migration

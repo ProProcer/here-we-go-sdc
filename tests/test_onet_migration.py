@@ -4,6 +4,7 @@ from datetime import UTC, datetime
 from pathlib import Path
 from tempfile import TemporaryDirectory
 
+from src.backend import CareerBackend
 from src.ingestion.selection import real_catalog
 from src.intelligence.evidence import load_evidence, validate_catalog_references
 from src.intelligence.feeds import ReviewedSource, refresh_evidence
@@ -18,6 +19,7 @@ from src.reskilling.course_catalog import (
     trusted_providers_for_family,
 )
 from src.reskilling.planner import build_learning_plan
+from src.schemas.onet import CoveragePolicy
 from src.schemas.onet_profile import OnetRoleMatch
 from src.schemas.roadmap import VerifiedCourse
 from src.schemas.trends import EvidenceLedger
@@ -289,6 +291,17 @@ class TestOnetMigration(unittest.TestCase):
         )
         self.assertTrue(
             result.model_dump(mode="json")["plan"]["software_learning_options"]
+        )
+
+    def test_backend_preserves_custom_matching_policy_in_plan(self):
+        backend = CareerBackend(self.catalog)
+        p = self.profile()
+        policy = CoveragePolicy(general_share=0.75, group_share=0.25)
+        expected = backend.matcher.match_role(p, BI, policy=policy)
+        result = backend.learning_plan(p, BI, policy=policy)
+        self.assertEqual(result.plan.fit_score, expected.fit_score)
+        self.assertNotEqual(
+            expected.fit_score, backend.matcher.match_role(p, BI).fit_score
         )
 
 
