@@ -5,14 +5,14 @@ import hashlib
 import json
 import sys
 from dataclasses import dataclass
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 from uuid import uuid4
 
 from pydantic import ValidationError
 
-from src.ingestion.catalog import load_role_catalog
-from src.intelligence.evidence import DEFAULT_EVIDENCE, load_evidence
+from src.ingestion.selection import Catalog, catalog_for_role
+from src.intelligence.evidence import load_evidence
 from src.intelligence.extractors import ExtractionError
 from src.intelligence.feeds import ReviewedSource
 from src.intelligence.proposers import (
@@ -22,12 +22,12 @@ from src.intelligence.proposers import (
 )
 from src.intelligence.storage import atomic_json
 from src.schemas.approval import FindingApproval
+from src.schemas.onet import OnetCatalog
 from src.schemas.proposals import (
     TaskSkillProposal,
     TaskSkillProposalRecord,
     UnmappedRoleSkill,
 )
-from src.schemas.role import RoleCatalog
 from src.schemas.trends import EvidenceSource, evidence_fingerprint
 
 DEFAULT_PROPOSALS = (
@@ -61,7 +61,7 @@ class ProposalContext:
     review: ReviewedSource
     approval: FindingApproval
     source: EvidenceSource
-    catalog: RoleCatalog
+    catalog: Catalog
     catalog_sha256: str
     packet: dict
     unmapped_skills: tuple[UnmappedRoleSkill, ...]
@@ -71,18 +71,19 @@ def load_proposal_context(
     review_path: Path,
     role_id: str,
     *,
-    evidence_path: Path = DEFAULT_EVIDENCE,
-    catalog: RoleCatalog | None = None,
+    evidence_path: Path | None = None,
+    catalog: Catalog | None = None,
 ) -> ProposalContext:
     """Accept approved AND admitted findings; a saved definition alone is insufficient."""
     review_path = Path(review_path).resolve()
     body = _read(review_path, MAX_REVIEW_BYTES)
+    catalog = catalog_for_role(role_id, catalog)
     review = ReviewedSource.model_validate_json(body)
     if review.approval is None:
         raise ValueError(
             "Select a finding admitted through the explicit approval command"
         )
-    ledger = load_evidence(evidence_path)
+    ledger = load_evidence(evidence_path, catalog=catalog)
     signal = next(
         (row for row in ledger.signals if row.signal_id == review.signal.signal_id),
         None,
@@ -101,7 +102,6 @@ def load_proposal_context(
         raise ValueError(
             "Accepted source metadata changed; review it before generating implications"
         )
-    catalog = catalog or load_role_catalog()
     role = next((row for row in catalog.roles if row.role_id == role_id), None)
     if role is None:
         raise ValueError("Unknown catalog role")
@@ -114,7 +114,17 @@ def load_proposal_context(
     }
     linked = set()
     task_packet = []
-    for task_id in role.task_ids:
+    selected_task_ids = role.task_ids
+    if isinstance(catalog, OnetCatalog):
+        reviewed_tasks = {
+            r.task_id for r in review.task_interpretations if r.role_id == role_id
+        }
+        if not reviewed_tasks:
+            raise ValueError(
+                "No reviewed task mapping exists for this O*NET role; approve a contextual task mapping before generating a proposal"
+            )
+        selected_task_ids = sorted(reviewed_tasks)
+    for task_id in selected_task_ids:
         task = tasks[task_id]
         allowed = [skill_id for skill_id in task.skill_ids if skill_id in requirements]
         linked.update(allowed)
@@ -209,18 +219,18 @@ def generate_task_skill_proposal(
     role_id: str,
     proposer: TaskSkillProposer,
     *,
-    evidence_path: Path = DEFAULT_EVIDENCE,
-    catalog: RoleCatalog | None = None,
+    evidence_path: Path | None = None,
+    catalog: Catalog | None = None,
     output_directory: Path = DEFAULT_PROPOSALS,
     now: datetime | None = None,
 ) -> tuple[TaskSkillProposalRecord, Path]:
     context = load_proposal_context(
         review_path, role_id, evidence_path=evidence_path, catalog=catalog
     )
-    generated_at = now or datetime.now(timezone.utc)
+    generated_at = now or datetime.now(UTC)
     if generated_at.utcoffset() is None:
         raise ValueError("Generation time must be timezone-aware")
-    generated_at = generated_at.astimezone(timezone.utc)
+    generated_at = generated_at.astimezone(UTC)
     if generated_at < context.approval.approved_at:
         raise ValueError("Generation cannot precede finding approval")
     input_digest = _digest(context.packet)
@@ -280,8 +290,8 @@ def generate_task_skill_proposal(
 def load_current_proposal(
     path: Path,
     *,
-    evidence_path: Path = DEFAULT_EVIDENCE,
-    catalog: RoleCatalog | None = None,
+    evidence_path: Path | None = None,
+    catalog: Catalog | None = None,
 ) -> TaskSkillProposalRecord:
     """Fail visibly when the approved input or catalog no longer matches a proposal."""
     record = TaskSkillProposalRecord.model_validate_json(
@@ -320,13 +330,13 @@ def main(argv: list[str] | None = None) -> int:
         command = commands.add_parser(name)
         command.add_argument("--review", type=Path, required=True)
         command.add_argument("--role", default="role:data_analyst")
-        command.add_argument("--ledger", type=Path, default=DEFAULT_EVIDENCE)
+        command.add_argument("--ledger", type=Path)
         if name == "generate":
             command.add_argument("--model")
             command.add_argument("--output-dir", type=Path, default=DEFAULT_PROPOSALS)
     checking = commands.add_parser("check")
     checking.add_argument("--proposal", type=Path, required=True)
-    checking.add_argument("--ledger", type=Path, default=DEFAULT_EVIDENCE)
+    checking.add_argument("--ledger", type=Path)
     args = parser.parse_args(argv)
     try:
         if args.command == "inspect":

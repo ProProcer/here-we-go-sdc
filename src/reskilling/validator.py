@@ -6,12 +6,13 @@ import json
 import re
 import socket
 import time
+from collections.abc import Callable, Iterable
 from dataclasses import dataclass
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from difflib import SequenceMatcher
 from html.parser import HTMLParser
 from http.client import HTTPException
-from typing import Callable, Iterable, Literal
+from typing import Literal
 from urllib.error import HTTPError, URLError
 from urllib.parse import urljoin, urlsplit
 from urllib.request import HTTPRedirectHandler, Request, build_opener
@@ -19,6 +20,7 @@ from urllib.request import HTTPRedirectHandler, Request, build_opener
 from pydantic import Field, HttpUrl, model_validator
 
 from src.ingestion.catalog import load_role_catalog
+from src.ingestion.selection import Catalog
 from src.schemas.roadmap import (
     CourseCost,
     CourseDuration,
@@ -26,8 +28,7 @@ from src.schemas.roadmap import (
     ValidationCheck,
     VerifiedCourse,
 )
-from src.schemas.role import Contract, RoleCatalog, SkillId
-
+from src.schemas.role import Contract, SkillId
 
 MAX_BYTES = 2 * 1024 * 1024
 TIMEOUT_SECONDS = 15
@@ -173,7 +174,7 @@ def fetch_course_page(url: str) -> FetchedPage:
             return FetchedPage(
                 final_url=final_url,
                 body=body,
-                fetched_at=datetime.now(timezone.utc),
+                fetched_at=datetime.now(UTC),
             )
     except (HTTPError, URLError, HTTPException, TimeoutError, OSError) as exc:
         raise ValueError("Course page could not be fetched safely") from exc
@@ -315,7 +316,7 @@ def _host_matches(final_url: str, domains: list[str]) -> bool:
     )
 
 
-def _skill_markers(catalog: RoleCatalog) -> dict[str, list[str]]:
+def _skill_markers(catalog: Catalog) -> dict[str, list[str]]:
     return {
         skill.skill_id: [skill.label, *skill.aliases]
         for skill in catalog.taxonomy.skills
@@ -323,7 +324,7 @@ def _skill_markers(catalog: RoleCatalog) -> dict[str, list[str]]:
 
 
 def _skills_match(
-    candidate: CourseCandidate, evidence: PageEvidence, catalog: RoleCatalog
+    candidate: CourseCandidate, evidence: PageEvidence, catalog: Catalog
 ) -> tuple[bool, str]:
     page = _normalized(evidence.text)
     markers = _skill_markers(catalog)
@@ -332,7 +333,10 @@ def _skills_match(
         choices = markers.get(skill_id)
         if not choices:
             missing.append(f"{skill_id} is absent from the shared taxonomy")
-        elif not any(_normalized(choice) in page for choice in choices):
+        elif not any(
+            re.search(r"(?<!\w)" + re.escape(_normalized(choice)) + r"(?!\w)", page)
+            for choice in choices
+        ):
             missing.append(f"{skill_id} has no documented page marker")
     detail = "; ".join(missing) if missing else "All skills have page evidence"
     return not missing, detail
@@ -343,9 +347,7 @@ def _cost_matches(cost: CourseCost, evidence: PageEvidence) -> bool:
     offers = [
         item
         for item in evidence.jsonld_objects
-        if item.get("@type") == "Offer"
-        or "price" in item
-        or "priceCurrency" in item
+        if item.get("@type") == "Offer" or "price" in item or "priceCurrency" in item
     ]
     if cost.access == "free":
         return "free" in text or any(
@@ -360,9 +362,7 @@ def _cost_matches(cost: CourseCost, evidence: PageEvidence) -> bool:
             amount_matches = float(offer.get("price")) == cost.amount
         except (TypeError, ValueError):
             amount_matches = False
-        currency_matches = (
-            str(offer.get("priceCurrency", "")).upper() == cost.currency
-        )
+        currency_matches = str(offer.get("priceCurrency", "")).upper() == cost.currency
         if amount_matches and currency_matches:
             return True
     amount_markers = {str(cost.amount), f"{cost.amount:.2f}"}
@@ -397,11 +397,11 @@ def validate_course_candidate(
     candidate: CourseCandidate,
     *,
     fetcher: PageFetcher = fetch_course_page,
-    catalog: RoleCatalog | None = None,
+    catalog: Catalog | None = None,
 ) -> ValidationOutcome:
     """Validate one candidate; uncertainty withholds it instead of guessing."""
 
-    checked_at = datetime.now(timezone.utc)
+    checked_at = datetime.now(UTC)
     try:
         page = fetcher(str(candidate.course_url))
         evidence = extract_page_evidence(page.body)
@@ -471,9 +471,7 @@ def validate_course_candidate(
     )
 
     titles = [evidence.title, *_jsonld_course_titles(evidence)]
-    title_ok = any(
-        _title_matches(candidate.title, title) for title in titles if title
-    )
+    title_ok = any(_title_matches(candidate.title, title) for title in titles if title)
     add(
         "course_title",
         title_ok,
@@ -604,7 +602,7 @@ def validate_course_candidates(
     *,
     max_candidates: int = 20,
     fetcher: PageFetcher = fetch_course_page,
-    catalog: RoleCatalog | None = None,
+    catalog: Catalog | None = None,
 ) -> list[ValidationOutcome]:
     """Validate no more than the explicit per-run candidate budget."""
 

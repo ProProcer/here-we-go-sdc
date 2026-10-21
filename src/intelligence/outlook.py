@@ -4,9 +4,15 @@ import json
 from pathlib import Path
 from typing import Literal
 
-from src.ingestion.catalog import load_role_catalog
-from src.intelligence.evidence import DEFAULT_EVIDENCE, load_evidence
-from src.intelligence.scenarios import DEFAULT_SCENARIOS, apply_scenario, load_scenarios
+from src.ingestion.selection import Catalog, catalog_for_role
+from src.intelligence.evidence import load_evidence
+from src.intelligence.scenarios import (
+    DEFAULT_SCENARIOS,
+    ONET_SCENARIOS,
+    apply_scenario,
+    load_scenarios,
+)
+from src.schemas.onet import OnetCatalog
 from src.schemas.role import Contract, RoleId, TaskId
 from src.schemas.scenario import ScenarioResult
 from src.schemas.trends import EvidenceSource, TrendSignal
@@ -37,18 +43,28 @@ class RoleOutlook(Contract):
     limitations: list[str]
 
 
+class OnetRoleOutlook(RoleOutlook):
+    schema_version: Literal["0.2.0"] = "0.2.0"
+    catalog_id: Literal["onet_31_0"] = "onet_31_0"
+    available_scenarios: list[str]
+
+
 def get_outlook(
     role_id: str,
     scenario_id: str = "baseline",
     *,
-    evidence_path: str | Path = DEFAULT_EVIDENCE,
-    scenarios_path: str | Path = DEFAULT_SCENARIOS,
-) -> RoleOutlook:
-    catalog = load_role_catalog()
-    ledger = load_evidence(evidence_path)
-    scenario = apply_scenario(
-        catalog, role_id, scenario_id, load_scenarios(scenarios_path)
-    )
+    evidence_path: str | Path | None = None,
+    scenarios_path: str | Path | None = None,
+    catalog: Catalog | None = None,
+) -> RoleOutlook | OnetRoleOutlook:
+    catalog = catalog_for_role(role_id, catalog)
+    ledger = load_evidence(evidence_path, catalog=catalog)
+    if scenarios_path is None:
+        scenarios_path = (
+            ONET_SCENARIOS if isinstance(catalog, OnetCatalog) else DEFAULT_SCENARIOS
+        )
+    scenarios = load_scenarios(scenarios_path)
+    scenario = apply_scenario(catalog, role_id, scenario_id, scenarios)
     roles = {role.role_id: role for role in catalog.roles}
     tasks = {task.task_id: task for task in catalog.taxonomy.tasks}
     role = roles[role_id]
@@ -80,7 +96,19 @@ def get_outlook(
     }
     signals = [row for row in ledger.signals if row.signal_id in used_signals]
     used_sources = {row.source_id for row in signals}
-    return RoleOutlook(
+    result_type = OnetRoleOutlook if isinstance(catalog, OnetCatalog) else RoleOutlook
+    extra = (
+        {
+            "available_scenarios": [
+                "baseline",
+                *[s.scenario_id for s in scenarios if s.role_id == role_id],
+            ]
+        }
+        if isinstance(catalog, OnetCatalog)
+        else {}
+    )
+    return result_type(
+        **extra,
         role_id=role_id,
         role_title=role.role_title,
         catalog_synthetic=catalog.synthetic,
@@ -92,7 +120,9 @@ def get_outlook(
         sources=[row for row in ledger.sources if row.source_id in used_sources],
         scenario=scenario,
         limitations=[
-            "Role requirements and task assignments come from Person 1's synthetic integration catalog.",
+            "Role requirements and task assignments come from Person 1's synthetic integration catalog."
+            if catalog.synthetic
+            else "Role/task records come from O*NET 31.0. Unmapped tasks and unreviewed evidence are not AI-impact findings.",
             "Task mappings are team interpretations, not measured task automation rates.",
             "Scenario adjustments are illustrative learning priorities, not employment forecasts or changes to personal fit.",
             "Outlook reads validated cached evidence. Run python -m src.intelligence.feeds to refresh the reviewed source; source publication dates may still be historical.",
@@ -100,9 +130,11 @@ def get_outlook(
     )
 
 
-def get_outlook_response(role_id: str, scenario_id: str = "baseline") -> dict:
+def get_outlook_response(
+    role_id: str, scenario_id: str = "baseline", *, catalog: Catalog | None = None
+) -> dict:
     """JSON adapter for Person 5; no HTTP server is started here."""
-    return get_outlook(role_id, scenario_id).model_dump(mode="json")
+    return get_outlook(role_id, scenario_id, catalog=catalog).model_dump(mode="json")
 
 
 if __name__ == "__main__":

@@ -6,6 +6,8 @@ from src.ingestion.catalog import load_role_catalog
 from src.profiles.intake import validate_profile
 from src.profiles.preferences import preference_alignment
 from src.profiles.transferability import transferable_requirements
+from src.schemas.onet import OnetCatalog
+from src.schemas.onet_profile import OnetRoleMatch
 from src.schemas.profile import (
     RoleMatch,
     ScoreBreakdown,
@@ -17,16 +19,20 @@ from src.schemas.role import RoleCatalog
 
 def match_roles(
     profile: SkillsProfile,
-    catalog: RoleCatalog | None = None,
+    catalog: RoleCatalog | OnetCatalog | None = None,
     *,
     top_n: int | None = None,
-) -> list[RoleMatch]:
+) -> list[RoleMatch] | list[OnetRoleMatch]:
     """Rank by full precision fit; append a target outside top_n with its original rank."""
     if top_n is not None and (
         isinstance(top_n, bool) or not isinstance(top_n, int) or top_n < 1
     ):
         raise ValueError("top_n must be a positive integer")
     catalog = catalog if catalog is not None else load_role_catalog()
+    if isinstance(catalog, OnetCatalog):
+        from src.profiles.onet_matching import OnetMatcher
+
+        return OnetMatcher(catalog).match(profile, top_n=top_n)
     # Revalidate incoming models because callers can mutate Pydantic instances.
     profile = validate_profile(
         SkillsProfile.model_validate(profile.model_dump()), catalog

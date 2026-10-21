@@ -9,7 +9,7 @@ import json
 import sys
 from collections.abc import Callable
 from dataclasses import dataclass
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from http.client import HTTPException
 from pathlib import Path
 from typing import get_args
@@ -18,8 +18,8 @@ from uuid import uuid4
 
 from pydantic import ValidationError
 
-from src.ingestion.catalog import load_role_catalog
-from src.intelligence.evidence import DEFAULT_EVIDENCE, load_evidence
+from src.ingestion.selection import catalog_for_role
+from src.intelligence.evidence import DEFAULT_EVIDENCE, ONET_EVIDENCE, load_evidence
 from src.intelligence.extraction import candidate_identity, ground_findings
 from src.intelligence.feeds import (
     DEFAULT_SNAPSHOTS,
@@ -83,10 +83,10 @@ def _read_artifact(path: Path) -> bytes:
 
 
 def _utc(now: datetime | None) -> datetime:
-    value = now or datetime.now(timezone.utc)
+    value = now or datetime.now(UTC)
     if value.utcoffset() is None:
         raise ValueError("Review time must be timezone-aware")
-    return value.astimezone(timezone.utc)
+    return value.astimezone(UTC)
 
 
 def _candidate_input(finding: GroundedFinding) -> CandidateFinding:
@@ -118,7 +118,11 @@ def _validate_mapping(mapping: ApprovedTaskMapping | None) -> None:
     if mapping is None:
         return
     role = next(
-        (row for row in load_role_catalog().roles if row.role_id == mapping.role_id),
+        (
+            row
+            for row in catalog_for_role(mapping.role_id).roles
+            if row.role_id == mapping.role_id
+        ),
         None,
     )
     if role is None or mapping.task_id not in role.task_ids:
@@ -271,8 +275,8 @@ def approve_plan(
     reviewer: str,
     approve: bool = False,
     expected_plan_sha256: str | None = None,
-    ledger_path: Path = DEFAULT_EVIDENCE,
-    snapshots_path: Path = DEFAULT_SNAPSHOTS,
+    ledger_path: Path | None = None,
+    snapshots_path: Path | None = None,
     definitions_directory: Path = DEFAULT_DEFINITIONS,
     fetcher: Callable[[str], bytes] = fetch_html,
     now: datetime | None = None,
@@ -302,14 +306,19 @@ def approve_plan(
         raise ValueError("Plan and candidate source fingerprints disagree")
     _validate_source(record)
     _validate_mapping(plan.task_mapping)
+    catalog = catalog_for_role(plan.task_mapping.role_id) if plan.task_mapping else None
     approved_at = _utc(now)
     if record.fetched_at.utcoffset() is None or record.fetched_at > plan.prepared_at:
         raise ValueError("Candidate fetch time must precede plan preparation")
     if approved_at < plan.prepared_at:
         raise ValueError("Approval cannot precede plan preparation")
-    ledger_path = Path(ledger_path)
+    is_onet = catalog is not None and not catalog.synthetic
+    ledger_path = Path(ledger_path or (ONET_EVIDENCE if is_onet else DEFAULT_EVIDENCE))
+    snapshots_path = snapshots_path or (
+        DEFAULT_SNAPSHOTS / "onet" if is_onet else DEFAULT_SNAPSHOTS
+    )
     ledger = (
-        load_evidence(ledger_path)
+        load_evidence(ledger_path, catalog=catalog)
         if ledger_path.exists()
         else EvidenceLedger(
             schema_version="0.1.0",
@@ -335,7 +344,7 @@ def approve_plan(
         plan, record, finding, report, ledger, reviewer, approved_at, digest
     )
     validate_page(body, review)
-    merge_review(ledger, review, approved_at)
+    merge_review(ledger, review, approved_at, catalog=catalog)
     review_path = (
         Path(definitions_directory) / f"approved_{digest[:24]}_{uuid4().hex[:12]}.json"
     )
@@ -348,6 +357,7 @@ def approve_plan(
         snapshots_path=snapshots_path,
         fetcher=lambda url: body,
         now=approved_at,
+        catalog=catalog,
     )
     return ApprovalResult(review_path, refresh)
 

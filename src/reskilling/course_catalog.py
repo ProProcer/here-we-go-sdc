@@ -1,9 +1,10 @@
 """Validated JSON repository for learning resources."""
 
 import json
-from datetime import datetime, timezone
+from collections.abc import Iterable
+from datetime import UTC, datetime
 from pathlib import Path
-from typing import Annotated, Iterable, Literal
+from typing import Annotated, Literal
 
 from pydantic import Field, ValidationError, model_validator
 
@@ -11,14 +12,11 @@ from src.intelligence.storage import atomic_json
 from src.schemas.roadmap import VerifiedCourse
 from src.schemas.role import Contract, SkillId
 
-
 ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_COURSE_CATALOG = ROOT / "data/processed/courses.json"
 
 ProviderId = Annotated[str, Field(pattern=r"^provider:[a-z0-9_]+$")]
-ProviderGroupId = Annotated[
-    str, Field(pattern=r"^provider_group:[a-z0-9_]+$")
-]
+ProviderGroupId = Annotated[str, Field(pattern=r"^provider_group:[a-z0-9_]+$")]
 
 
 class TrustedProvider(Contract):
@@ -30,10 +28,7 @@ class TrustedProvider(Contract):
     def validate_domains(self):
         normalized = [domain.strip().casefold() for domain in self.domains]
         if any(
-            not domain
-            or "/" in domain
-            or ":" in domain
-            or domain.startswith(".")
+            not domain or "/" in domain or ":" in domain or domain.startswith(".")
             for domain in normalized
         ):
             raise ValueError("Trusted-provider domains must be bare host names")
@@ -46,12 +41,15 @@ class ProviderGroup(Contract):
     group_id: ProviderGroupId
     label: str = Field(min_length=1)
     sector_ids: list[str] = Field(default_factory=list)
+    family_ids: list[str] = Field(default_factory=list)
     provider_ids: list[ProviderId] = Field(min_length=1)
 
     @model_validator(mode="after")
     def validate_unique_values(self):
         if len(self.sector_ids) != len(set(self.sector_ids)):
             raise ValueError("Provider-group sector IDs must be unique")
+        if len(self.family_ids) != len(set(self.family_ids)):
+            raise ValueError("Provider-group family IDs must be unique")
         if len(self.provider_ids) != len(set(self.provider_ids)):
             raise ValueError("Provider-group provider IDs must be unique")
         return self
@@ -131,14 +129,13 @@ class CourseCatalogStore:
         catalog = CourseCatalog.model_validate(
             {
                 "schema_version": "0.1.0",
-                "updated_at": datetime.now(timezone.utc),
+                "updated_at": datetime.now(UTC),
                 "trusted_providers": [
                     provider.model_dump(mode="json")
                     for provider in current.trusted_providers
                 ],
                 "provider_groups": [
-                    group.model_dump(mode="json")
-                    for group in current.provider_groups
+                    group.model_dump(mode="json") for group in current.provider_groups
                 ],
                 "courses": [course.model_dump(mode="json") for course in ordered],
             }
@@ -169,12 +166,26 @@ def trusted_providers_for_sector(
     for group in catalog.provider_groups:
         if group.group_id == "provider_group:general" or sector_id in group.sector_ids:
             selected_ids.extend(group.provider_ids)
-    providers = {provider.provider_id: provider for provider in catalog.trusted_providers}
+    providers = {
+        provider.provider_id: provider for provider in catalog.trusted_providers
+    }
     return [
         providers[provider_id]
         for provider_id in dict.fromkeys(selected_ids)
         if provider_id in providers
     ]
+
+
+def trusted_providers_for_family(
+    catalog: CourseCatalog, family_id: str
+) -> list[TrustedProvider]:
+    selected = {
+        pid
+        for group in catalog.provider_groups
+        if group.group_id == "provider_group:general" or family_id in group.family_ids
+        for pid in group.provider_ids
+    }
+    return [p for p in catalog.trusted_providers if p.provider_id in selected]
 
 
 def course_is_available(
@@ -218,9 +229,7 @@ def courses_for_skills(
         course
         for course in catalog.courses
         if requested.intersection(course.skill_ids)
-        and course_is_available(
-            course, country=country, verified_after=verified_after
-        )
+        and course_is_available(course, country=country, verified_after=verified_after)
     ]
 
     def ranking_key(course: VerifiedCourse):

@@ -7,7 +7,7 @@ validated ledger untouched and returns an explicit cached/unavailable result.
 import argparse
 import hashlib
 import time
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from html.parser import HTMLParser
 from http.client import HTTPException
 from pathlib import Path
@@ -17,8 +17,10 @@ from urllib.request import HTTPRedirectHandler, Request, build_opener
 
 from pydantic import Field, model_validator
 
+from src.ingestion.selection import Catalog, real_catalog
 from src.intelligence.evidence import (
     DEFAULT_EVIDENCE,
+    ONET_EVIDENCE,
     load_evidence,
     validate_catalog_references,
 )
@@ -26,6 +28,7 @@ from src.intelligence.reports import date_is_present, parse_report
 from src.intelligence.sources import load_registry
 from src.intelligence.storage import atomic_json
 from src.schemas.approval import FindingApproval, reviewed_definition_fingerprint
+from src.schemas.onet import OnetCatalog
 from src.schemas.role import Contract
 from src.schemas.sources import ApprovedSource, SourceRegistry
 from src.schemas.trends import (
@@ -224,7 +227,11 @@ def validate_page(body: bytes, review: ReviewedSource) -> None:
 
 
 def merge_review(
-    ledger: EvidenceLedger, review: ReviewedSource, retrieved_at: datetime
+    ledger: EvidenceLedger,
+    review: ReviewedSource,
+    retrieved_at: datetime,
+    *,
+    catalog: Catalog | None = None,
 ) -> EvidenceLedger:
     """Append the new dated claim; preserve the previous report and scenario data."""
     source = review.source.model_copy(update={"retrieved_at": retrieved_at.date()})
@@ -259,7 +266,7 @@ def merge_review(
         task_interpretations=list(mappings.values()),
         evidence_chains=list(chains.values()),
     )
-    return validate_catalog_references(candidate)
+    return validate_catalog_references(candidate, catalog)
 
 
 def get_refresh_status(
@@ -275,28 +282,39 @@ def get_refresh_status(
 def refresh_evidence(
     *,
     review_path: str | Path = DEFAULT_REVIEW,
-    ledger_path: str | Path = DEFAULT_EVIDENCE,
-    snapshots_path: str | Path = DEFAULT_SNAPSHOTS,
+    ledger_path: str | Path | None = None,
+    snapshots_path: str | Path | None = None,
     fetcher=fetch_html,
     now: datetime | None = None,
+    catalog: Catalog | None = None,
 ) -> RefreshResult:
-    now = now or datetime.now(timezone.utc)
-    ledger_path = Path(ledger_path)
-    snapshots_path = Path(snapshots_path)
+    now = now or datetime.now(UTC)
+    is_onet = isinstance(catalog, OnetCatalog)
+    ledger_path = Path(ledger_path or (ONET_EVIDENCE if is_onet else DEFAULT_EVIDENCE))
+    snapshots_path = Path(
+        snapshots_path or (DEFAULT_SNAPSHOTS / "onet" if is_onet else DEFAULT_SNAPSHOTS)
+    )
     url = APPROVED_URL
     cached = None
     try:
         if ledger_path.exists():
-            cached = load_evidence(ledger_path)
+            cached = load_evidence(ledger_path, catalog=catalog)
         review_bytes = Path(review_path).read_bytes()
         review = ReviewedSource.model_validate_json(review_bytes)
+        if (
+            any(r.role_id.startswith("role:onet_") for r in review.task_interpretations)
+            and not is_onet
+        ):
+            raise ValueError(
+                "Refreshing O*NET mappings requires an explicitly selected real catalog"
+            )
         url = str(review.source.source_url)
         body = fetcher(url)
         validate_page(body, review)
         base = cached or EvidenceLedger(
             schema_version="0.1.0", sources=[], signals=[], task_interpretations=[]
         )
-        candidate = merge_review(base, review, now)
+        candidate = merge_review(base, review, now, catalog=catalog)
         digest = hashlib.sha256(body).hexdigest()
         snapshot = (
             snapshots_path / f"{now.strftime('%Y%m%dT%H%M%S%fZ')}_{digest[:12]}.json"
@@ -345,11 +363,15 @@ def refresh_evidence(
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--review", type=Path, default=DEFAULT_REVIEW)
-    parser.add_argument("--ledger", type=Path, default=DEFAULT_EVIDENCE)
-    parser.add_argument("--snapshots", type=Path, default=DEFAULT_SNAPSHOTS)
+    parser.add_argument("--ledger", type=Path)
+    parser.add_argument("--snapshots", type=Path)
+    parser.add_argument("--catalog", choices=["mock", "onet"], default="mock")
     args = parser.parse_args()
     result = refresh_evidence(
-        review_path=args.review, ledger_path=args.ledger, snapshots_path=args.snapshots
+        review_path=args.review,
+        ledger_path=args.ledger,
+        snapshots_path=args.snapshots,
+        catalog=real_catalog() if args.catalog == "onet" else None,
     )
     print(result.model_dump_json(indent=2))
     return 0 if result.status in {"updated", "unchanged"} else 1

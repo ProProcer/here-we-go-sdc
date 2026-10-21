@@ -1,5 +1,7 @@
 # Person 2: typed profiles and weighted matching
 
+Real-catalog backend migration is implemented. See [the current migration guide](PERSON_1_MIGRATION.md) for the versioned Person 2–4 interfaces, real IDs, evidence isolation, optional software planning and limitations. The original mock-specific contracts below remain available for compatibility.
+
 The implemented Python services provide typed-skill intake, canonical skill
 normalization, editable profiles, explainable role matching, fictional CV
 parsing, transferability and preference scoring, and target-role pinning.

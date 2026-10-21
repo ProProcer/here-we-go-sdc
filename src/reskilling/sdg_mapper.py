@@ -1,16 +1,18 @@
 """Curated role-and-skill mappings to official UN SDG targets."""
 
 import json
+from collections.abc import Iterable
 from pathlib import Path
-from typing import Iterable, Literal
+from typing import Literal
 from urllib.parse import urlsplit
 
 from pydantic import Field, HttpUrl, ValidationError, model_validator
 
 from src.ingestion.catalog import load_role_catalog
+from src.ingestion.selection import Catalog
+from src.schemas.onet import OnetCatalog
 from src.schemas.roadmap import SDGConnection
-from src.schemas.role import Contract, RoleCatalog, RoleId, SkillId
-
+from src.schemas.role import Contract, RoleId, SkillId
 
 ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_SDG_MAPPINGS = ROOT / "data/processed/sdg_mappings.json"
@@ -53,7 +55,7 @@ class SDGRule(Contract):
 
 
 class SDGRuleSet(Contract):
-    schema_version: Literal["0.1.0"] = "0.1.0"
+    schema_version: Literal["0.1.0", "0.2.0"] = "0.1.0"
     rules: list[SDGRule] = Field(default_factory=list)
 
     @model_validator(mode="after")
@@ -83,9 +85,7 @@ def load_sdg_rules(path: str | Path = DEFAULT_SDG_MAPPINGS) -> SDGRuleSet:
         ) from exc
 
 
-def validate_sdg_catalog_references(
-    rules: SDGRuleSet, catalog: RoleCatalog
-) -> SDGRuleSet:
+def validate_sdg_catalog_references(rules: SDGRuleSet, catalog: Catalog) -> SDGRuleSet:
     """Reject stale role or skill IDs before mappings reach a learning plan."""
 
     known_roles = {role.role_id for role in catalog.roles}
@@ -111,7 +111,7 @@ def map_sdg_connections(
     skill_ids: Iterable[SkillId],
     *,
     rules: SDGRuleSet | None = None,
-    catalog: RoleCatalog | None = None,
+    catalog: Catalog | None = None,
 ) -> list[SDGConnection]:
     """Return only curated rules that match the selected role and planned skills."""
 
@@ -128,8 +128,13 @@ def map_sdg_connections(
     if not requested:
         return []
 
+    default_path = (
+        ROOT / "data/processed/onet/31.0/sdg_mappings.json"
+        if isinstance(catalog, OnetCatalog)
+        else DEFAULT_SDG_MAPPINGS
+    )
     rules = validate_sdg_catalog_references(
-        rules if rules is not None else load_sdg_rules(), catalog
+        rules if rules is not None else load_sdg_rules(default_path), catalog
     )
     applicable = [
         rule

@@ -9,18 +9,21 @@ import hashlib
 import json
 from pathlib import Path
 
-from src.ingestion.catalog import load_role_catalog
-from src.intelligence.evidence import DEFAULT_EVIDENCE, load_evidence
+from src.ingestion.selection import Catalog, catalog_for_role
+from src.intelligence.evidence import load_evidence
 
 
 def get_evidence_chain_response(
-    role_id: str = "role:data_analyst", *, evidence_path: str | Path = DEFAULT_EVIDENCE
+    role_id: str = "role:data_analyst",
+    *,
+    evidence_path: str | Path | None = None,
+    catalog: Catalog | None = None,
 ) -> dict:
-    catalog = load_role_catalog()
+    catalog = catalog_for_role(role_id, catalog)
     roles = {row.role_id: row for row in catalog.roles}
     if role_id not in roles:
         raise KeyError(role_id)
-    ledger = load_evidence(evidence_path)
+    ledger = load_evidence(evidence_path, catalog=catalog)
     sources = {row.source_id: row for row in ledger.sources}
     signals = {row.signal_id: row for row in ledger.signals}
     tasks = {row.task_id: row for row in catalog.taxonomy.tasks}
@@ -49,7 +52,7 @@ def get_evidence_chain_response(
         separators=(",", ":"),
     ).encode("utf-8")
     return {
-        "schema_version": "0.1.0",
+        "schema_version": "0.1.0" if catalog.synthetic else "0.2.0",
         "role_id": role_id,
         "role_title": roles[role_id].role_title,
         "catalog_synthetic": catalog.synthetic,
@@ -63,7 +66,7 @@ def get_evidence_chain_response(
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--role", default="role:data_analyst")
-    parser.add_argument("--ledger", type=Path, default=DEFAULT_EVIDENCE)
+    parser.add_argument("--ledger", type=Path)
     args = parser.parse_args()
     print(
         json.dumps(

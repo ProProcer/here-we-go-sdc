@@ -11,6 +11,12 @@ occupational families, and unasserted task-to-skill links cannot truthfully be
 represented by the mock's flat requirements. Do not replace `get_roles()` or
 feed this catalog to the old matcher without adopting the versioned contract.
 
+## Backend migration status
+
+Persons 2, 3 and 4 now have a shared real-catalog backend through `CareerBackend`.
+See the updated migration guide for implemented interfaces. Person 5 was
+explicitly excluded; UI/app files and dependencies are unchanged.
+
 ## Build and verify
 
 Use Python 3.10+ with the repository's pinned Pydantic dependency:

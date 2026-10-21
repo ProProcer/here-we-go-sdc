@@ -113,7 +113,10 @@ group/individual software coverage. Start with the
 [consumer migration guide](docs/PERSON_1_MIGRATION.md) and
 [actual evaluation](docs/PERSON_1_EVALUATION.md).
 The real catalog uses schema 0.2.0; current teammate defaults retain the mock
-until coordinated migration. O*NET data are licensed under CC BY 4.0 separately
+for compatibility. Persons 2–4 now use the real catalog through
+`src.backend.CareerBackend`; run `python -m src.backend` for the offline
+end-to-end example. Person 5 UI/HTTP work is excluded. O*NET data are licensed
+under CC BY 4.0 separately
 from this repository's Apache-2.0 code. See [data sources](docs/DATA_SOURCES.md).
 
 Person 3's **Data Analyst evidence and scenario module** is also implemented.

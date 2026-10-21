@@ -1,0 +1,40 @@
+[
+  {
+    "scenario_id": "moderate_ai_change",
+    "name": "Illustrative moderate ai change",
+    "synthetic": true,
+    "role_id": "role:onet_15_2051_01",
+    "affected_task_ids": [
+      "task:onet_16150",
+      "task:onet_16139"
+    ],
+    "assumptions": [
+      "Team-authored stress test: assume AI accelerates initial report preparation.",
+      "Human verification and learning unfamiliar workflows receive greater priority; this is not an observed effect or employment forecast."
+    ],
+    "skill_priority_adjustments": {
+      "skill:onet_2_a_2_a": 0.08,
+      "skill:onet_2_a_2_b": 0.06
+    },
+    "interpretation": "Illustrative changes to learning priorities for Business Intelligence Analysts only. Does not change personal fit or assert task-to-skill evidence."
+  },
+  {
+    "scenario_id": "rapid_ai_change",
+    "name": "Illustrative rapid ai change",
+    "synthetic": true,
+    "role_id": "role:onet_15_2051_01",
+    "affected_task_ids": [
+      "task:onet_16150",
+      "task:onet_16139"
+    ],
+    "assumptions": [
+      "Team-authored stress test: assume AI accelerates initial report preparation.",
+      "Human verification and learning unfamiliar workflows receive greater priority; this is not an observed effect or employment forecast."
+    ],
+    "skill_priority_adjustments": {
+      "skill:onet_2_a_2_a": 0.16,
+      "skill:onet_2_a_2_b": 0.12
+    },
+    "interpretation": "Illustrative changes to learning priorities for Business Intelligence Analysts only. Does not change personal fit or assert task-to-skill evidence."
+  }
+]

@@ -1,12 +1,12 @@
 """Validated typed-form intake and replacement-based human review."""
 
 from src.ingestion.catalog import load_role_catalog
+from src.ingestion.selection import Catalog
 from src.profiles.skill_normalizer import normalize_entries
 from src.schemas.profile import ProfileSkill, SkillsProfile
-from src.schemas.role import RoleCatalog
 
 
-def validate_profile(profile: SkillsProfile, catalog: RoleCatalog) -> SkillsProfile:
+def validate_profile(profile: SkillsProfile, catalog: Catalog) -> SkillsProfile:
     skills = {skill.skill_id: skill for skill in catalog.taxonomy.skills}
     if profile.desired_role_id is not None and profile.desired_role_id not in {
         r.role_id for r in catalog.roles
@@ -26,7 +26,7 @@ def create_profile(
     *,
     desired_role_id: str | None = None,
     interests: list[str] | None = None,
-    catalog: RoleCatalog | None = None,
+    catalog: Catalog | None = None,
 ) -> SkillsProfile:
     """Explicit typed entries are self-reported; proficiency remains unknown."""
     catalog = catalog if catalog is not None else load_role_catalog()
@@ -53,7 +53,7 @@ def review_profile(
     profile: SkillsProfile,
     skills: list[ProfileSkill | dict],
     *,
-    catalog: RoleCatalog | None = None,
+    catalog: Catalog | None = None,
 ) -> SkillsProfile:
     """Replace the full reviewed skill list; supports additions, removals and edits.
 
@@ -75,7 +75,7 @@ def create_profile_from_cv(
     content: bytes,
     filename: str,
     *,
-    catalog: RoleCatalog | None = None,
+    catalog: Catalog | None = None,
 ) -> SkillsProfile:
     """Parse a fictional document and propose unverified skills for human review."""
     from src.profiles.cv_parser import parse_cv

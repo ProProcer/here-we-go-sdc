@@ -4,11 +4,11 @@ import re
 import unicodedata
 
 from src.ingestion.catalog import load_role_catalog
+from src.ingestion.selection import Catalog
 from src.profiles.cv_parser import ParsedCV
 from src.profiles.intake import validate_profile
 from src.profiles.skill_normalizer import skill_index
 from src.schemas.profile import ProfileSkill, SkillsProfile
-from src.schemas.role import RoleCatalog
 
 # Reject whole clauses conservatively; this may miss positive skills in a negative sentence.
 NON_CLAIM = re.compile(
@@ -22,7 +22,7 @@ PERSONAL_LINE = re.compile(
 
 
 def extract_profile(
-    parsed: ParsedCV, profile_id: str, *, catalog: RoleCatalog | None = None
+    parsed: ParsedCV, profile_id: str, *, catalog: Catalog | None = None
 ) -> SkillsProfile:
     catalog = catalog if catalog is not None else load_role_catalog()
     index = skill_index(catalog.taxonomy)

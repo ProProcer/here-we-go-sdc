@@ -1,5 +1,7 @@
 # Person 4 handoff: learning planner and SDG engine
 
+Real-catalog backend migration is implemented. See [the current migration guide](PERSON_1_MIGRATION.md) for the versioned Person 2–4 interfaces, real IDs, evidence isolation, optional software planning and limitations. The original mock-specific contracts below remain available for compatibility.
+
 This handoff implements the internal Python subsystem that converts Person 2's
 reviewed role gaps and Person 3's scenario priorities into a prerequisite-aware
 learning plan. It also validates course candidates, maintains a JSON catalog,

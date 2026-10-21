@@ -2,6 +2,11 @@
 
 ## Real Person 1 catalog — separate version 0.2.0
 
+Persons 2–4 now consume this catalog through `src.backend.CareerBackend`.
+Matching returns `OnetRoleMatch` 0.2 and planning returns `OnetLearningPlan` 0.2;
+real outlooks use an isolated ledger. See the migration guide for complete
+contracts. Person 5 UI/HTTP adoption is excluded from this change.
+
 The real O*NET® 31.0 catalog and read/coverage adapters are implemented. See
 [Person 1 handoff](PERSON_1_HANDOFF.md),
 [migration contract](PERSON_1_MIGRATION.md) and

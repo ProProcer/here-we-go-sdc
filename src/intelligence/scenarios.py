@@ -3,12 +3,13 @@
 import json
 from pathlib import Path
 
-from src.schemas.role import RoleCatalog
+from src.ingestion.selection import Catalog
 from src.schemas.scenario import Scenario, ScenarioResult, SkillPriority
 
 DEFAULT_SCENARIOS = (
     Path(__file__).resolve().parents[2] / "data/synthetic/scenarios.json"
 )
+ONET_SCENARIOS = DEFAULT_SCENARIOS.parent / "onet_scenarios.json"
 
 
 def load_scenarios(path: str | Path = DEFAULT_SCENARIOS) -> list[Scenario]:
@@ -22,7 +23,7 @@ def load_scenarios(path: str | Path = DEFAULT_SCENARIOS) -> list[Scenario]:
 
 
 def apply_scenario(
-    catalog: RoleCatalog, role_id: str, scenario_id: str, scenarios: list[Scenario]
+    catalog: Catalog, role_id: str, scenario_id: str, scenarios: list[Scenario]
 ) -> ScenarioResult:
     roles = {role.role_id: role for role in catalog.roles}
     if role_id not in roles:
@@ -62,7 +63,13 @@ def apply_scenario(
         )
     return ScenarioResult(
         scenario_id=scenario_id,
-        name=scenario.name if scenario else "Baseline (synthetic role requirements)",
+        name=scenario.name
+        if scenario
+        else (
+            "Baseline (synthetic role requirements)"
+            if catalog.synthetic
+            else "Baseline (O*NET occupational ratings)"
+        ),
         synthetic=scenario is not None,
         assumptions=scenario.assumptions if scenario else [],
         affected_task_ids=scenario.affected_task_ids if scenario else [],
@@ -71,5 +78,7 @@ def apply_scenario(
         if scenario
         else (
             "Unadjusted catalog weights; the role catalog is synthetic. These are not measured demand or proficiency."
+            if catalog.synthetic
+            else "Unadjusted O*NET Importance/5 weights; not measured local demand, proficiency, or an employment forecast."
         ),
     )

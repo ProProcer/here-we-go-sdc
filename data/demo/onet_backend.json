@@ -1,0 +1,4927 @@
+{
+  "schema_version": "0.2.0",
+  "catalog_id": "onet_31_0",
+  "profile_is_synthetic": true,
+  "generated_at_is_fixed_for_reproducibility": true,
+  "profile": {
+    "schema_version": "0.1.0",
+    "profile_id": "synthetic:backend_demo",
+    "synthetic": true,
+    "desired_role_id": "role:onet_15_2051_01",
+    "skills": [
+      {
+        "skill_id": "skill:onet_2_a_1_a",
+        "label": "Reading Comprehension",
+        "level": "unknown",
+        "evidence": [
+          "Typed skill entry: Reading Comprehension"
+        ],
+        "confirmation": "self_reported"
+      },
+      {
+        "skill_id": "skill:python",
+        "label": "Python",
+        "level": "unknown",
+        "evidence": [
+          "Typed skill entry: Python"
+        ],
+        "confirmation": "self_reported"
+      },
+      {
+        "skill_id": "skill:software_5f0974ee455c4cd5",
+        "label": "Tableau",
+        "level": "unknown",
+        "evidence": [
+          "Typed skill entry: Tableau"
+        ],
+        "confirmation": "self_reported"
+      },
+      {
+        "skill_id": "skill:sql",
+        "label": "SQL",
+        "level": "unknown",
+        "evidence": [
+          "Typed skill entry: SQL"
+        ],
+        "confirmation": "self_reported"
+      }
+    ],
+    "interests": [],
+    "constraints": {
+      "budget_myr": null,
+      "hours_per_week": null
+    },
+    "warnings": []
+  },
+  "matches": [
+    {
+      "schema_version": "0.2.0",
+      "catalog_id": "onet_31_0",
+      "catalog_fingerprint": "c78c6863f9c1b15d1a35feaeb079ae924b43c5434b0736d61097a5ab3c55bf2f",
+      "profile_fingerprint": "4c690e8a4d2ccbc2432092b7136dd2d59bc431dcd33c572f350681fa60b0a059",
+      "role_id": "role:onet_19_2099_01",
+      "role_title": "Remote Sensing Scientists and Technologists",
+      "occupation_code": "19-2099.01",
+      "family_id": "family:soc_19",
+      "family": "Life, Physical, and Social Science",
+      "catalog_synthetic": false,
+      "rank": 1,
+      "fit_score": 52.07,
+      "score_breakdown": {
+        "method": "reviewed_onet_fit_v1",
+        "coverage": {
+          "method": "onet_grouped_coverage_v1",
+          "role_id": "role:onet_19_2099_01",
+          "score": 52.071466,
+          "general_coverage": 0.041429311237700675,
+          "software_group_coverage": 1.0,
+          "software_exact_coverage": 1.0,
+          "software_coverage": 1.0,
+          "effective_general_share": 0.5,
+          "policy": {
+            "general_share": 0.5,
+            "group_share": 0.5,
+            "basis": "exploratory_not_empirically_calibrated"
+          },
+          "matched_general_skill_ids": [
+            "skill:onet_2_a_1_a"
+          ],
+          "unconfirmed_general_skill_ids": [
+            "skill:onet_2_a_1_b",
+            "skill:onet_2_a_1_c",
+            "skill:onet_2_a_1_d",
+            "skill:onet_2_a_1_e",
+            "skill:onet_2_a_1_f",
+            "skill:onet_2_a_2_a",
+            "skill:onet_2_a_2_b",
+            "skill:onet_2_a_2_c",
+            "skill:onet_2_a_2_d",
+            "skill:onet_2_b_1_a",
+            "skill:onet_2_b_1_b",
+            "skill:onet_2_b_1_c",
+            "skill:onet_2_b_1_d",
+            "skill:onet_2_b_1_e",
+            "skill:onet_2_b_1_f",
+            "skill:onet_2_b_2_i",
+            "skill:onet_2_b_3_a",
+            "skill:onet_2_b_3_b",
+            "skill:onet_2_b_3_c",
+            "skill:onet_2_b_3_e",
+            "skill:onet_2_b_3_g",
+            "skill:onet_2_b_3_h",
+            "skill:onet_2_b_3_k",
+            "skill:onet_2_b_3_m",
+            "skill:onet_2_b_4_e",
+            "skill:onet_2_b_4_g",
+            "skill:onet_2_b_4_h",
+            "skill:onet_2_b_5_a",
+            "skill:onet_2_b_5_b",
+            "skill:onet_2_b_5_c",
+            "skill:onet_2_b_5_d"
+          ],
+          "matched_software_skill_ids": [
+            "skill:python"
+          ],
+          "software_learning_options": [],
+          "group_matches": {
+            "group:onet_2_e_7_e": [
+              "skill:python"
+            ]
+          },
+          "warnings": [
+            "Exploratory coverage of reviewed skill claims; not hiring probability or proficiency assessment.",
+            "Missing profile evidence means unconfirmed, not inability.",
+            "Software group credit indicates category familiarity, not interchangeable tools.",
+            "Software learning options are alternatives to inspect, not a checklist of mandatory courses.",
+            "Equal-share defaults are application assumptions; no empirical calibration is claimed.",
+            "Education, licenses and experience are not assessed; high coverage does not establish job eligibility."
+          ]
+        },
+        "readiness": 0.52071466,
+        "preferences": null,
+        "readiness_weight": 1.0,
+        "preference_weight": 0.0,
+        "transferability": 0,
+        "unrounded_score": 52.071466
+      },
+      "matched_skills": [
+        {
+          "skill_id": "skill:onet_2_a_1_a",
+          "label": "Reading Comprehension",
+          "importance": 0.8,
+          "coverage": 1,
+          "weighted_contribution": 0.8,
+          "evidence": [
+            "Typed skill entry: Reading Comprehension"
+          ],
+          "reason": "Self-reported or reviewed claim; proficiency is unassessed."
+        }
+      ],
+      "missing_skills": [
+        {
+          "skill_id": "skill:onet_2_a_1_b",
+          "label": "Active Listening",
+          "importance": 0.776,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_a_1_c",
+          "label": "Writing",
+          "importance": 0.776,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_a_1_d",
+          "label": "Speaking",
+          "importance": 0.776,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_a_1_e",
+          "label": "Mathematics",
+          "importance": 0.75,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_a_1_f",
+          "label": "Science",
+          "importance": 0.776,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_a_2_a",
+          "label": "Critical Thinking",
+          "importance": 0.8,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_a_2_b",
+          "label": "Active Learning",
+          "importance": 0.676,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_a_2_c",
+          "label": "Learning Strategies",
+          "importance": 0.624,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_a_2_d",
+          "label": "Monitoring",
+          "importance": 0.676,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_1_a",
+          "label": "Social Perceptiveness",
+          "importance": 0.576,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_1_b",
+          "label": "Coordination",
+          "importance": 0.6,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_1_c",
+          "label": "Persuasion",
+          "importance": 0.524,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_1_d",
+          "label": "Negotiation",
+          "importance": 0.5,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_1_e",
+          "label": "Instructing",
+          "importance": 0.6,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_1_f",
+          "label": "Service Orientation",
+          "importance": 0.576,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_2_i",
+          "label": "Complex Problem Solving",
+          "importance": 0.75,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_3_a",
+          "label": "Operations Analysis",
+          "importance": 0.65,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_3_b",
+          "label": "Technology Design",
+          "importance": 0.476,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_3_c",
+          "label": "Equipment Selection",
+          "importance": 0.3,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_3_e",
+          "label": "Programming",
+          "importance": 0.576,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_3_g",
+          "label": "Operations Monitoring",
+          "importance": 0.5,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_3_h",
+          "label": "Operation and Control",
+          "importance": 0.4,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_3_k",
+          "label": "Troubleshooting",
+          "importance": 0.3,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_3_m",
+          "label": "Quality Control Analysis",
+          "importance": 0.476,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_4_e",
+          "label": "Judgment and Decision Making",
+          "importance": 0.75,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_4_g",
+          "label": "Systems Analysis",
+          "importance": 0.724,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_4_h",
+          "label": "Systems Evaluation",
+          "importance": 0.724,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_5_a",
+          "label": "Time Management",
+          "importance": 0.576,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_5_b",
+          "label": "Management of Financial Resources",
+          "importance": 0.35,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_5_c",
+          "label": "Management of Material Resources",
+          "importance": 0.376,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_5_d",
+          "label": "Management of Personnel Resources",
+          "importance": 0.576,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        }
+      ],
+      "software_learning_options": [],
+      "matched_interests": [],
+      "manually_selected": false,
+      "pinned": false,
+      "warnings": [
+        "Exploratory coverage of reviewed skill claims; not hiring probability or proficiency assessment.",
+        "Missing profile evidence means unconfirmed, not inability.",
+        "Software group credit indicates category familiarity, not interchangeable tools.",
+        "Software learning options are alternatives to inspect, not a checklist of mandatory courses.",
+        "Equal-share defaults are application assumptions; no empirical calibration is claimed.",
+        "Education, licenses and experience are not assessed; high coverage does not establish job eligibility.",
+        "Task-based transfer credit is disabled: imported task-to-skill mappings are unavailable.",
+        "Preferences use exact occupation titles, aliases or occupational-family labels; target-role pinning never increases scores."
+      ]
+    },
+    {
+      "schema_version": "0.2.0",
+      "catalog_id": "onet_31_0",
+      "catalog_fingerprint": "c78c6863f9c1b15d1a35feaeb079ae924b43c5434b0736d61097a5ab3c55bf2f",
+      "profile_fingerprint": "4c690e8a4d2ccbc2432092b7136dd2d59bc431dcd33c572f350681fa60b0a059",
+      "role_id": "role:onet_19_1029_03",
+      "role_title": "Geneticists",
+      "occupation_code": "19-1029.03",
+      "family_id": "family:soc_19",
+      "family": "Life, Physical, and Social Science",
+      "catalog_synthetic": false,
+      "rank": 2,
+      "fit_score": 27.14,
+      "score_breakdown": {
+        "method": "reviewed_onet_fit_v1",
+        "coverage": {
+          "method": "onet_grouped_coverage_v1",
+          "role_id": "role:onet_19_1029_03",
+          "score": 27.138903,
+          "general_coverage": 0.042778057372924005,
+          "software_group_coverage": 1.0,
+          "software_exact_coverage": 0.0,
+          "software_coverage": 0.5,
+          "effective_general_share": 0.5,
+          "policy": {
+            "general_share": 0.5,
+            "group_share": 0.5,
+            "basis": "exploratory_not_empirically_calibrated"
+          },
+          "matched_general_skill_ids": [
+            "skill:onet_2_a_1_a"
+          ],
+          "unconfirmed_general_skill_ids": [
+            "skill:onet_2_a_1_b",
+            "skill:onet_2_a_1_c",
+            "skill:onet_2_a_1_d",
+            "skill:onet_2_a_1_e",
+            "skill:onet_2_a_1_f",
+            "skill:onet_2_a_2_a",
+            "skill:onet_2_a_2_b",
+            "skill:onet_2_a_2_c",
+            "skill:onet_2_a_2_d",
+            "skill:onet_2_b_1_a",
+            "skill:onet_2_b_1_b",
+            "skill:onet_2_b_1_c",
+            "skill:onet_2_b_1_d",
+            "skill:onet_2_b_1_e",
+            "skill:onet_2_b_1_f",
+            "skill:onet_2_b_2_i",
+            "skill:onet_2_b_3_a",
+            "skill:onet_2_b_3_b",
+            "skill:onet_2_b_3_e",
+            "skill:onet_2_b_3_g",
+            "skill:onet_2_b_3_h",
+            "skill:onet_2_b_3_k",
+            "skill:onet_2_b_3_m",
+            "skill:onet_2_b_4_e",
+            "skill:onet_2_b_4_g",
+            "skill:onet_2_b_4_h",
+            "skill:onet_2_b_5_a",
+            "skill:onet_2_b_5_b",
+            "skill:onet_2_b_5_c",
+            "skill:onet_2_b_5_d"
+          ],
+          "matched_software_skill_ids": [],
+          "software_learning_options": [
+            "skill:software_454349e422f05297"
+          ],
+          "group_matches": {
+            "group:onet_2_e_7_e": [
+              "skill:python"
+            ]
+          },
+          "warnings": [
+            "Exploratory coverage of reviewed skill claims; not hiring probability or proficiency assessment.",
+            "Missing profile evidence means unconfirmed, not inability.",
+            "Software group credit indicates category familiarity, not interchangeable tools.",
+            "Software learning options are alternatives to inspect, not a checklist of mandatory courses.",
+            "Equal-share defaults are application assumptions; no empirical calibration is claimed.",
+            "Education, licenses and experience are not assessed; high coverage does not establish job eligibility."
+          ]
+        },
+        "readiness": 0.27138903,
+        "preferences": null,
+        "readiness_weight": 1.0,
+        "preference_weight": 0.0,
+        "transferability": 0,
+        "unrounded_score": 27.138903
+      },
+      "matched_skills": [
+        {
+          "skill_id": "skill:onet_2_a_1_a",
+          "label": "Reading Comprehension",
+          "importance": 0.85,
+          "coverage": 1,
+          "weighted_contribution": 0.85,
+          "evidence": [
+            "Typed skill entry: Reading Comprehension"
+          ],
+          "reason": "Self-reported or reviewed claim; proficiency is unassessed."
+        }
+      ],
+      "missing_skills": [
+        {
+          "skill_id": "skill:onet_2_a_1_b",
+          "label": "Active Listening",
+          "importance": 0.8,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_a_1_c",
+          "label": "Writing",
+          "importance": 0.8,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_a_1_d",
+          "label": "Speaking",
+          "importance": 0.8,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_a_1_e",
+          "label": "Mathematics",
+          "importance": 0.776,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_a_1_f",
+          "label": "Science",
+          "importance": 0.824,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_a_2_a",
+          "label": "Critical Thinking",
+          "importance": 0.8,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_a_2_b",
+          "label": "Active Learning",
+          "importance": 0.8,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_a_2_c",
+          "label": "Learning Strategies",
+          "importance": 0.776,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_a_2_d",
+          "label": "Monitoring",
+          "importance": 0.75,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_1_a",
+          "label": "Social Perceptiveness",
+          "importance": 0.7,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_1_b",
+          "label": "Coordination",
+          "importance": 0.624,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_1_c",
+          "label": "Persuasion",
+          "importance": 0.624,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_1_d",
+          "label": "Negotiation",
+          "importance": 0.6,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_1_e",
+          "label": "Instructing",
+          "importance": 0.75,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_1_f",
+          "label": "Service Orientation",
+          "importance": 0.6,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_2_i",
+          "label": "Complex Problem Solving",
+          "importance": 0.8,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_3_a",
+          "label": "Operations Analysis",
+          "importance": 0.424,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_3_b",
+          "label": "Technology Design",
+          "importance": 0.376,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_3_e",
+          "label": "Programming",
+          "importance": 0.376,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_3_g",
+          "label": "Operations Monitoring",
+          "importance": 0.55,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_3_h",
+          "label": "Operation and Control",
+          "importance": 0.35,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_3_k",
+          "label": "Troubleshooting",
+          "importance": 0.4,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_3_m",
+          "label": "Quality Control Analysis",
+          "importance": 0.524,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_4_e",
+          "label": "Judgment and Decision Making",
+          "importance": 0.8,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_4_g",
+          "label": "Systems Analysis",
+          "importance": 0.724,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_4_h",
+          "label": "Systems Evaluation",
+          "importance": 0.6,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_5_a",
+          "label": "Time Management",
+          "importance": 0.6,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_5_b",
+          "label": "Management of Financial Resources",
+          "importance": 0.424,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_5_c",
+          "label": "Management of Material Resources",
+          "importance": 0.424,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_5_d",
+          "label": "Management of Personnel Resources",
+          "importance": 0.624,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        }
+      ],
+      "software_learning_options": [
+        {
+          "skill_id": "skill:software_454349e422f05297",
+          "label": "R",
+          "group_ids": [
+            "group:onet_2_e_7_e"
+          ],
+          "group_familiarity_evidenced": true,
+          "meaning": "optional_occupation_demand_signal"
+        }
+      ],
+      "matched_interests": [],
+      "manually_selected": false,
+      "pinned": false,
+      "warnings": [
+        "Exploratory coverage of reviewed skill claims; not hiring probability or proficiency assessment.",
+        "Missing profile evidence means unconfirmed, not inability.",
+        "Software group credit indicates category familiarity, not interchangeable tools.",
+        "Software learning options are alternatives to inspect, not a checklist of mandatory courses.",
+        "Equal-share defaults are application assumptions; no empirical calibration is claimed.",
+        "Education, licenses and experience are not assessed; high coverage does not establish job eligibility.",
+        "Task-based transfer credit is disabled: imported task-to-skill mappings are unavailable.",
+        "Preferences use exact occupation titles, aliases or occupational-family labels; target-role pinning never increases scores."
+      ]
+    },
+    {
+      "schema_version": "0.2.0",
+      "catalog_id": "onet_31_0",
+      "catalog_fingerprint": "c78c6863f9c1b15d1a35feaeb079ae924b43c5434b0736d61097a5ab3c55bf2f",
+      "profile_fingerprint": "4c690e8a4d2ccbc2432092b7136dd2d59bc431dcd33c572f350681fa60b0a059",
+      "role_id": "role:onet_19_2012_00",
+      "role_title": "Physicists",
+      "occupation_code": "19-2012.00",
+      "family_id": "family:soc_19",
+      "family": "Life, Physical, and Social Science",
+      "catalog_synthetic": false,
+      "rank": 3,
+      "fit_score": 27.02,
+      "score_breakdown": {
+        "method": "reviewed_onet_fit_v1",
+        "coverage": {
+          "method": "onet_grouped_coverage_v1",
+          "role_id": "role:onet_19_2012_00",
+          "score": 27.015948,
+          "general_coverage": 0.040318967834423444,
+          "software_group_coverage": 0.5,
+          "software_exact_coverage": 0.5,
+          "software_coverage": 0.5,
+          "effective_general_share": 0.5,
+          "policy": {
+            "general_share": 0.5,
+            "group_share": 0.5,
+            "basis": "exploratory_not_empirically_calibrated"
+          },
+          "matched_general_skill_ids": [
+            "skill:onet_2_a_1_a"
+          ],
+          "unconfirmed_general_skill_ids": [
+            "skill:onet_2_a_1_b",
+            "skill:onet_2_a_1_c",
+            "skill:onet_2_a_1_d",
+            "skill:onet_2_a_1_e",
+            "skill:onet_2_a_1_f",
+            "skill:onet_2_a_2_a",
+            "skill:onet_2_a_2_b",
+            "skill:onet_2_a_2_c",
+            "skill:onet_2_a_2_d",
+            "skill:onet_2_b_1_a",
+            "skill:onet_2_b_1_b",
+            "skill:onet_2_b_1_c",
+            "skill:onet_2_b_1_d",
+            "skill:onet_2_b_1_e",
+            "skill:onet_2_b_1_f",
+            "skill:onet_2_b_2_i",
+            "skill:onet_2_b_3_a",
+            "skill:onet_2_b_3_b",
+            "skill:onet_2_b_3_c",
+            "skill:onet_2_b_3_e",
+            "skill:onet_2_b_3_g",
+            "skill:onet_2_b_3_h",
+            "skill:onet_2_b_3_j",
+            "skill:onet_2_b_3_k",
+            "skill:onet_2_b_3_l",
+            "skill:onet_2_b_3_m",
+            "skill:onet_2_b_4_e",
+            "skill:onet_2_b_4_g",
+            "skill:onet_2_b_4_h",
+            "skill:onet_2_b_5_a",
+            "skill:onet_2_b_5_b",
+            "skill:onet_2_b_5_c",
+            "skill:onet_2_b_5_d"
+          ],
+          "matched_software_skill_ids": [
+            "skill:python"
+          ],
+          "software_learning_options": [
+            "skill:software_41de0116bb2584cf"
+          ],
+          "group_matches": {
+            "group:onet_2_e_7_e": [
+              "skill:python"
+            ]
+          },
+          "warnings": [
+            "Exploratory coverage of reviewed skill claims; not hiring probability or proficiency assessment.",
+            "Missing profile evidence means unconfirmed, not inability.",
+            "Software group credit indicates category familiarity, not interchangeable tools.",
+            "Software learning options are alternatives to inspect, not a checklist of mandatory courses.",
+            "Equal-share defaults are application assumptions; no empirical calibration is claimed.",
+            "Education, licenses and experience are not assessed; high coverage does not establish job eligibility."
+          ]
+        },
+        "readiness": 0.27015948,
+        "preferences": null,
+        "readiness_weight": 1.0,
+        "preference_weight": 0.0,
+        "transferability": 0,
+        "unrounded_score": 27.015948
+      },
+      "matched_skills": [
+        {
+          "skill_id": "skill:onet_2_a_1_a",
+          "label": "Reading Comprehension",
+          "importance": 0.9,
+          "coverage": 1,
+          "weighted_contribution": 0.9,
+          "evidence": [
+            "Typed skill entry: Reading Comprehension"
+          ],
+          "reason": "Self-reported or reviewed claim; proficiency is unassessed."
+        }
+      ],
+      "missing_skills": [
+        {
+          "skill_id": "skill:onet_2_a_1_b",
+          "label": "Active Listening",
+          "importance": 0.824,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_a_1_c",
+          "label": "Writing",
+          "importance": 0.876,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_a_1_d",
+          "label": "Speaking",
+          "importance": 0.9,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_a_1_e",
+          "label": "Mathematics",
+          "importance": 0.9,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_a_1_f",
+          "label": "Science",
+          "importance": 0.976,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_a_2_a",
+          "label": "Critical Thinking",
+          "importance": 0.924,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_a_2_b",
+          "label": "Active Learning",
+          "importance": 0.9,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_a_2_c",
+          "label": "Learning Strategies",
+          "importance": 0.8,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_a_2_d",
+          "label": "Monitoring",
+          "importance": 0.75,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_1_a",
+          "label": "Social Perceptiveness",
+          "importance": 0.65,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_1_b",
+          "label": "Coordination",
+          "importance": 0.624,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_1_c",
+          "label": "Persuasion",
+          "importance": 0.576,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_1_d",
+          "label": "Negotiation",
+          "importance": 0.524,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_1_e",
+          "label": "Instructing",
+          "importance": 0.776,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_1_f",
+          "label": "Service Orientation",
+          "importance": 0.576,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_2_i",
+          "label": "Complex Problem Solving",
+          "importance": 0.876,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_3_a",
+          "label": "Operations Analysis",
+          "importance": 0.624,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_3_b",
+          "label": "Technology Design",
+          "importance": 0.55,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_3_c",
+          "label": "Equipment Selection",
+          "importance": 0.424,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_3_e",
+          "label": "Programming",
+          "importance": 0.75,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_3_g",
+          "label": "Operations Monitoring",
+          "importance": 0.524,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_3_h",
+          "label": "Operation and Control",
+          "importance": 0.376,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_3_j",
+          "label": "Equipment Maintenance",
+          "importance": 0.3,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_3_k",
+          "label": "Troubleshooting",
+          "importance": 0.4,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_3_l",
+          "label": "Repairing",
+          "importance": 0.3,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_3_m",
+          "label": "Quality Control Analysis",
+          "importance": 0.524,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_4_e",
+          "label": "Judgment and Decision Making",
+          "importance": 0.75,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_4_g",
+          "label": "Systems Analysis",
+          "importance": 0.7,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_4_h",
+          "label": "Systems Evaluation",
+          "importance": 0.724,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_5_a",
+          "label": "Time Management",
+          "importance": 0.576,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_5_b",
+          "label": "Management of Financial Resources",
+          "importance": 0.424,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_5_c",
+          "label": "Management of Material Resources",
+          "importance": 0.424,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_5_d",
+          "label": "Management of Personnel Resources",
+          "importance": 0.6,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        }
+      ],
+      "software_learning_options": [
+        {
+          "skill_id": "skill:software_41de0116bb2584cf",
+          "label": "Eclipse IDE",
+          "group_ids": [
+            "group:onet_2_e_7_b"
+          ],
+          "group_familiarity_evidenced": false,
+          "meaning": "optional_occupation_demand_signal"
+        }
+      ],
+      "matched_interests": [],
+      "manually_selected": false,
+      "pinned": false,
+      "warnings": [
+        "Exploratory coverage of reviewed skill claims; not hiring probability or proficiency assessment.",
+        "Missing profile evidence means unconfirmed, not inability.",
+        "Software group credit indicates category familiarity, not interchangeable tools.",
+        "Software learning options are alternatives to inspect, not a checklist of mandatory courses.",
+        "Equal-share defaults are application assumptions; no empirical calibration is claimed.",
+        "Education, licenses and experience are not assessed; high coverage does not establish job eligibility.",
+        "Task-based transfer credit is disabled: imported task-to-skill mappings are unavailable.",
+        "Preferences use exact occupation titles, aliases or occupational-family labels; target-role pinning never increases scores."
+      ]
+    },
+    {
+      "schema_version": "0.2.0",
+      "catalog_id": "onet_31_0",
+      "catalog_fingerprint": "c78c6863f9c1b15d1a35feaeb079ae924b43c5434b0736d61097a5ab3c55bf2f",
+      "profile_fingerprint": "4c690e8a4d2ccbc2432092b7136dd2d59bc431dcd33c572f350681fa60b0a059",
+      "role_id": "role:onet_15_2051_01",
+      "role_title": "Business Intelligence Analysts",
+      "occupation_code": "15-2051.01",
+      "family_id": "family:soc_15",
+      "family": "Computer and Mathematical",
+      "catalog_synthetic": false,
+      "rank": 21,
+      "fit_score": 14.53,
+      "score_breakdown": {
+        "method": "reviewed_onet_fit_v1",
+        "coverage": {
+          "method": "onet_grouped_coverage_v1",
+          "role_id": "role:onet_15_2051_01",
+          "score": 14.531315,
+          "general_coverage": 0.04711980209683119,
+          "software_group_coverage": 0.2727272727272727,
+          "software_exact_coverage": 0.21428571428571427,
+          "software_coverage": 0.2435064935064935,
+          "effective_general_share": 0.5,
+          "policy": {
+            "general_share": 0.5,
+            "group_share": 0.5,
+            "basis": "exploratory_not_empirically_calibrated"
+          },
+          "matched_general_skill_ids": [
+            "skill:onet_2_a_1_a"
+          ],
+          "unconfirmed_general_skill_ids": [
+            "skill:onet_2_a_1_b",
+            "skill:onet_2_a_1_c",
+            "skill:onet_2_a_1_d",
+            "skill:onet_2_a_1_e",
+            "skill:onet_2_a_1_f",
+            "skill:onet_2_a_2_a",
+            "skill:onet_2_a_2_b",
+            "skill:onet_2_a_2_c",
+            "skill:onet_2_a_2_d",
+            "skill:onet_2_b_1_a",
+            "skill:onet_2_b_1_b",
+            "skill:onet_2_b_1_c",
+            "skill:onet_2_b_1_d",
+            "skill:onet_2_b_1_e",
+            "skill:onet_2_b_1_f",
+            "skill:onet_2_b_2_i",
+            "skill:onet_2_b_3_a",
+            "skill:onet_2_b_3_b",
+            "skill:onet_2_b_3_e",
+            "skill:onet_2_b_3_g",
+            "skill:onet_2_b_3_h",
+            "skill:onet_2_b_3_m",
+            "skill:onet_2_b_4_e",
+            "skill:onet_2_b_4_g",
+            "skill:onet_2_b_4_h",
+            "skill:onet_2_b_5_a",
+            "skill:onet_2_b_5_b",
+            "skill:onet_2_b_5_c",
+            "skill:onet_2_b_5_d"
+          ],
+          "matched_software_skill_ids": [
+            "skill:python",
+            "skill:software_5f0974ee455c4cd5",
+            "skill:sql"
+          ],
+          "software_learning_options": [
+            "skill:microsoft_excel",
+            "skill:microsoft_power_bi",
+            "skill:software_0c8e1cae0d7f35f4",
+            "skill:software_3deb2d2d35c24f36",
+            "skill:software_454349e422f05297",
+            "skill:software_841eef0a7343f781",
+            "skill:software_8ba5705dedf27b6e",
+            "skill:software_96166e27af5a3c43",
+            "skill:software_9d2f2e0ca2b14f57",
+            "skill:software_b2953d236aa4f40b",
+            "skill:software_de5a1adf4fedcce1"
+          ],
+          "group_matches": {
+            "group:onet_2_e_6_f": [
+              "skill:sql"
+            ],
+            "group:onet_2_e_6_m": [
+              "skill:software_5f0974ee455c4cd5"
+            ],
+            "group:onet_2_e_7_e": [
+              "skill:python"
+            ]
+          },
+          "warnings": [
+            "Exploratory coverage of reviewed skill claims; not hiring probability or proficiency assessment.",
+            "Missing profile evidence means unconfirmed, not inability.",
+            "Software group credit indicates category familiarity, not interchangeable tools.",
+            "Software learning options are alternatives to inspect, not a checklist of mandatory courses.",
+            "Equal-share defaults are application assumptions; no empirical calibration is claimed.",
+            "Education, licenses and experience are not assessed; high coverage does not establish job eligibility."
+          ]
+        },
+        "readiness": 0.14531315,
+        "preferences": null,
+        "readiness_weight": 1.0,
+        "preference_weight": 0.0,
+        "transferability": 0,
+        "unrounded_score": 14.531315
+      },
+      "matched_skills": [
+        {
+          "skill_id": "skill:onet_2_a_1_a",
+          "label": "Reading Comprehension",
+          "importance": 0.8,
+          "coverage": 1,
+          "weighted_contribution": 0.8,
+          "evidence": [
+            "Typed skill entry: Reading Comprehension"
+          ],
+          "reason": "Self-reported or reviewed claim; proficiency is unassessed."
+        }
+      ],
+      "missing_skills": [
+        {
+          "skill_id": "skill:onet_2_a_1_b",
+          "label": "Active Listening",
+          "importance": 0.776,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_a_1_c",
+          "label": "Writing",
+          "importance": 0.75,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_a_1_d",
+          "label": "Speaking",
+          "importance": 0.776,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_a_1_e",
+          "label": "Mathematics",
+          "importance": 0.7,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_a_1_f",
+          "label": "Science",
+          "importance": 0.324,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_a_2_a",
+          "label": "Critical Thinking",
+          "importance": 0.776,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_a_2_b",
+          "label": "Active Learning",
+          "importance": 0.776,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_a_2_c",
+          "label": "Learning Strategies",
+          "importance": 0.6,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_a_2_d",
+          "label": "Monitoring",
+          "importance": 0.624,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_1_a",
+          "label": "Social Perceptiveness",
+          "importance": 0.576,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_1_b",
+          "label": "Coordination",
+          "importance": 0.6,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_1_c",
+          "label": "Persuasion",
+          "importance": 0.576,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_1_d",
+          "label": "Negotiation",
+          "importance": 0.5,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_1_e",
+          "label": "Instructing",
+          "importance": 0.6,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_1_f",
+          "label": "Service Orientation",
+          "importance": 0.576,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_2_i",
+          "label": "Complex Problem Solving",
+          "importance": 0.676,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_3_a",
+          "label": "Operations Analysis",
+          "importance": 0.376,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_3_b",
+          "label": "Technology Design",
+          "importance": 0.324,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_3_e",
+          "label": "Programming",
+          "importance": 0.5,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_3_g",
+          "label": "Operations Monitoring",
+          "importance": 0.35,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_3_h",
+          "label": "Operation and Control",
+          "importance": 0.276,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_3_m",
+          "label": "Quality Control Analysis",
+          "importance": 0.4,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_4_e",
+          "label": "Judgment and Decision Making",
+          "importance": 0.724,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_4_g",
+          "label": "Systems Analysis",
+          "importance": 0.624,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_4_h",
+          "label": "Systems Evaluation",
+          "importance": 0.624,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_5_a",
+          "label": "Time Management",
+          "importance": 0.624,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_5_b",
+          "label": "Management of Financial Resources",
+          "importance": 0.376,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_5_c",
+          "label": "Management of Material Resources",
+          "importance": 0.35,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        },
+        {
+          "skill_id": "skill:onet_2_b_5_d",
+          "label": "Management of Personnel Resources",
+          "importance": 0.424,
+          "coverage": 0,
+          "weighted_contribution": 0.0,
+          "evidence": [],
+          "reason": "Not confirmed in the reviewed profile; not proof of inability."
+        }
+      ],
+      "software_learning_options": [
+        {
+          "skill_id": "skill:microsoft_excel",
+          "label": "Microsoft Excel",
+          "group_ids": [
+            "group:onet_2_e_4_i"
+          ],
+          "group_familiarity_evidenced": false,
+          "meaning": "optional_occupation_demand_signal"
+        },
+        {
+          "skill_id": "skill:microsoft_power_bi",
+          "label": "Microsoft Power BI",
+          "group_ids": [
+            "group:onet_2_e_6_m"
+          ],
+          "group_familiarity_evidenced": true,
+          "meaning": "optional_occupation_demand_signal"
+        },
+        {
+          "skill_id": "skill:software_0c8e1cae0d7f35f4",
+          "label": "Microsoft PowerPoint",
+          "group_ids": [
+            "group:onet_2_e_4_f"
+          ],
+          "group_familiarity_evidenced": false,
+          "meaning": "optional_occupation_demand_signal"
+        },
+        {
+          "skill_id": "skill:software_3deb2d2d35c24f36",
+          "label": "Microsoft Azure software",
+          "group_ids": [
+            "group:onet_2_e_7_b"
+          ],
+          "group_familiarity_evidenced": false,
+          "meaning": "optional_occupation_demand_signal"
+        },
+        {
+          "skill_id": "skill:software_454349e422f05297",
+          "label": "R",
+          "group_ids": [
+            "group:onet_2_e_7_e"
+          ],
+          "group_familiarity_evidenced": true,
+          "meaning": "optional_occupation_demand_signal"
+        },
+        {
+          "skill_id": "skill:software_841eef0a7343f781",
+          "label": "SAP software",
+          "group_ids": [
+            "group:onet_2_e_2_b"
+          ],
+          "group_familiarity_evidenced": false,
+          "meaning": "optional_occupation_demand_signal"
+        },
+        {
+          "skill_id": "skill:software_8ba5705dedf27b6e",
+          "label": "Amazon Web Services AWS software",
+          "group_ids": [
+            "group:onet_2_e_6_f"
+          ],
+          "group_familiarity_evidenced": true,
+          "meaning": "optional_occupation_demand_signal"
+        },
+        {
+          "skill_id": "skill:software_96166e27af5a3c43",
+          "label": "SAS",
+          "group_ids": [
+            "group:onet_2_e_9_d"
+          ],
+          "group_familiarity_evidenced": false,
+          "meaning": "optional_occupation_demand_signal"
+        },
+        {
+          "skill_id": "skill:software_9d2f2e0ca2b14f57",
+          "label": "Microsoft Office software",
+          "group_ids": [
+            "group:onet_2_e_1_k"
+          ],
+          "group_familiarity_evidenced": false,
+          "meaning": "optional_occupation_demand_signal"
+        },
+        {
+          "skill_id": "skill:software_b2953d236aa4f40b",
+          "label": "Salesforce software",
+          "group_ids": [
+            "group:onet_2_e_6_c"
+          ],
+          "group_familiarity_evidenced": false,
+          "meaning": "optional_occupation_demand_signal"
+        },
+        {
+          "skill_id": "skill:software_de5a1adf4fedcce1",
+          "label": "Snowflake",
+          "group_ids": [
+            "group:onet_2_e_6_g"
+          ],
+          "group_familiarity_evidenced": false,
+          "meaning": "optional_occupation_demand_signal"
+        }
+      ],
+      "matched_interests": [],
+      "manually_selected": true,
+      "pinned": true,
+      "warnings": [
+        "Exploratory coverage of reviewed skill claims; not hiring probability or proficiency assessment.",
+        "Missing profile evidence means unconfirmed, not inability.",
+        "Software group credit indicates category familiarity, not interchangeable tools.",
+        "Software learning options are alternatives to inspect, not a checklist of mandatory courses.",
+        "Equal-share defaults are application assumptions; no empirical calibration is claimed.",
+        "Education, licenses and experience are not assessed; high coverage does not establish job eligibility.",
+        "Task-based transfer credit is disabled: imported task-to-skill mappings are unavailable.",
+        "Preferences use exact occupation titles, aliases or occupational-family labels; target-role pinning never increases scores."
+      ]
+    }
+  ],
+  "selected_role_match": {
+    "schema_version": "0.2.0",
+    "catalog_id": "onet_31_0",
+    "catalog_fingerprint": "c78c6863f9c1b15d1a35feaeb079ae924b43c5434b0736d61097a5ab3c55bf2f",
+    "profile_fingerprint": "4c690e8a4d2ccbc2432092b7136dd2d59bc431dcd33c572f350681fa60b0a059",
+    "role_id": "role:onet_15_2051_01",
+    "role_title": "Business Intelligence Analysts",
+    "occupation_code": "15-2051.01",
+    "family_id": "family:soc_15",
+    "family": "Computer and Mathematical",
+    "catalog_synthetic": false,
+    "rank": 1,
+    "fit_score": 14.53,
+    "score_breakdown": {
+      "method": "reviewed_onet_fit_v1",
+      "coverage": {
+        "method": "onet_grouped_coverage_v1",
+        "role_id": "role:onet_15_2051_01",
+        "score": 14.531315,
+        "general_coverage": 0.04711980209683119,
+        "software_group_coverage": 0.2727272727272727,
+        "software_exact_coverage": 0.21428571428571427,
+        "software_coverage": 0.2435064935064935,
+        "effective_general_share": 0.5,
+        "policy": {
+          "general_share": 0.5,
+          "group_share": 0.5,
+          "basis": "exploratory_not_empirically_calibrated"
+        },
+        "matched_general_skill_ids": [
+          "skill:onet_2_a_1_a"
+        ],
+        "unconfirmed_general_skill_ids": [
+          "skill:onet_2_a_1_b",
+          "skill:onet_2_a_1_c",
+          "skill:onet_2_a_1_d",
+          "skill:onet_2_a_1_e",
+          "skill:onet_2_a_1_f",
+          "skill:onet_2_a_2_a",
+          "skill:onet_2_a_2_b",
+          "skill:onet_2_a_2_c",
+          "skill:onet_2_a_2_d",
+          "skill:onet_2_b_1_a",
+          "skill:onet_2_b_1_b",
+          "skill:onet_2_b_1_c",
+          "skill:onet_2_b_1_d",
+          "skill:onet_2_b_1_e",
+          "skill:onet_2_b_1_f",
+          "skill:onet_2_b_2_i",
+          "skill:onet_2_b_3_a",
+          "skill:onet_2_b_3_b",
+          "skill:onet_2_b_3_e",
+          "skill:onet_2_b_3_g",
+          "skill:onet_2_b_3_h",
+          "skill:onet_2_b_3_m",
+          "skill:onet_2_b_4_e",
+          "skill:onet_2_b_4_g",
+          "skill:onet_2_b_4_h",
+          "skill:onet_2_b_5_a",
+          "skill:onet_2_b_5_b",
+          "skill:onet_2_b_5_c",
+          "skill:onet_2_b_5_d"
+        ],
+        "matched_software_skill_ids": [
+          "skill:python",
+          "skill:software_5f0974ee455c4cd5",
+          "skill:sql"
+        ],
+        "software_learning_options": [
+          "skill:microsoft_excel",
+          "skill:microsoft_power_bi",
+          "skill:software_0c8e1cae0d7f35f4",
+          "skill:software_3deb2d2d35c24f36",
+          "skill:software_454349e422f05297",
+          "skill:software_841eef0a7343f781",
+          "skill:software_8ba5705dedf27b6e",
+          "skill:software_96166e27af5a3c43",
+          "skill:software_9d2f2e0ca2b14f57",
+          "skill:software_b2953d236aa4f40b",
+          "skill:software_de5a1adf4fedcce1"
+        ],
+        "group_matches": {
+          "group:onet_2_e_6_f": [
+            "skill:sql"
+          ],
+          "group:onet_2_e_6_m": [
+            "skill:software_5f0974ee455c4cd5"
+          ],
+          "group:onet_2_e_7_e": [
+            "skill:python"
+          ]
+        },
+        "warnings": [
+          "Exploratory coverage of reviewed skill claims; not hiring probability or proficiency assessment.",
+          "Missing profile evidence means unconfirmed, not inability.",
+          "Software group credit indicates category familiarity, not interchangeable tools.",
+          "Software learning options are alternatives to inspect, not a checklist of mandatory courses.",
+          "Equal-share defaults are application assumptions; no empirical calibration is claimed.",
+          "Education, licenses and experience are not assessed; high coverage does not establish job eligibility."
+        ]
+      },
+      "readiness": 0.14531315,
+      "preferences": null,
+      "readiness_weight": 1.0,
+      "preference_weight": 0.0,
+      "transferability": 0,
+      "unrounded_score": 14.531315
+    },
+    "matched_skills": [
+      {
+        "skill_id": "skill:onet_2_a_1_a",
+        "label": "Reading Comprehension",
+        "importance": 0.8,
+        "coverage": 1,
+        "weighted_contribution": 0.8,
+        "evidence": [
+          "Typed skill entry: Reading Comprehension"
+        ],
+        "reason": "Self-reported or reviewed claim; proficiency is unassessed."
+      }
+    ],
+    "missing_skills": [
+      {
+        "skill_id": "skill:onet_2_a_1_b",
+        "label": "Active Listening",
+        "importance": 0.776,
+        "coverage": 0,
+        "weighted_contribution": 0.0,
+        "evidence": [],
+        "reason": "Not confirmed in the reviewed profile; not proof of inability."
+      },
+      {
+        "skill_id": "skill:onet_2_a_1_c",
+        "label": "Writing",
+        "importance": 0.75,
+        "coverage": 0,
+        "weighted_contribution": 0.0,
+        "evidence": [],
+        "reason": "Not confirmed in the reviewed profile; not proof of inability."
+      },
+      {
+        "skill_id": "skill:onet_2_a_1_d",
+        "label": "Speaking",
+        "importance": 0.776,
+        "coverage": 0,
+        "weighted_contribution": 0.0,
+        "evidence": [],
+        "reason": "Not confirmed in the reviewed profile; not proof of inability."
+      },
+      {
+        "skill_id": "skill:onet_2_a_1_e",
+        "label": "Mathematics",
+        "importance": 0.7,
+        "coverage": 0,
+        "weighted_contribution": 0.0,
+        "evidence": [],
+        "reason": "Not confirmed in the reviewed profile; not proof of inability."
+      },
+      {
+        "skill_id": "skill:onet_2_a_1_f",
+        "label": "Science",
+        "importance": 0.324,
+        "coverage": 0,
+        "weighted_contribution": 0.0,
+        "evidence": [],
+        "reason": "Not confirmed in the reviewed profile; not proof of inability."
+      },
+      {
+        "skill_id": "skill:onet_2_a_2_a",
+        "label": "Critical Thinking",
+        "importance": 0.776,
+        "coverage": 0,
+        "weighted_contribution": 0.0,
+        "evidence": [],
+        "reason": "Not confirmed in the reviewed profile; not proof of inability."
+      },
+      {
+        "skill_id": "skill:onet_2_a_2_b",
+        "label": "Active Learning",
+        "importance": 0.776,
+        "coverage": 0,
+        "weighted_contribution": 0.0,
+        "evidence": [],
+        "reason": "Not confirmed in the reviewed profile; not proof of inability."
+      },
+      {
+        "skill_id": "skill:onet_2_a_2_c",
+        "label": "Learning Strategies",
+        "importance": 0.6,
+        "coverage": 0,
+        "weighted_contribution": 0.0,
+        "evidence": [],
+        "reason": "Not confirmed in the reviewed profile; not proof of inability."
+      },
+      {
+        "skill_id": "skill:onet_2_a_2_d",
+        "label": "Monitoring",
+        "importance": 0.624,
+        "coverage": 0,
+        "weighted_contribution": 0.0,
+        "evidence": [],
+        "reason": "Not confirmed in the reviewed profile; not proof of inability."
+      },
+      {
+        "skill_id": "skill:onet_2_b_1_a",
+        "label": "Social Perceptiveness",
+        "importance": 0.576,
+        "coverage": 0,
+        "weighted_contribution": 0.0,
+        "evidence": [],
+        "reason": "Not confirmed in the reviewed profile; not proof of inability."
+      },
+      {
+        "skill_id": "skill:onet_2_b_1_b",
+        "label": "Coordination",
+        "importance": 0.6,
+        "coverage": 0,
+        "weighted_contribution": 0.0,
+        "evidence": [],
+        "reason": "Not confirmed in the reviewed profile; not proof of inability."
+      },
+      {
+        "skill_id": "skill:onet_2_b_1_c",
+        "label": "Persuasion",
+        "importance": 0.576,
+        "coverage": 0,
+        "weighted_contribution": 0.0,
+        "evidence": [],
+        "reason": "Not confirmed in the reviewed profile; not proof of inability."
+      },
+      {
+        "skill_id": "skill:onet_2_b_1_d",
+        "label": "Negotiation",
+        "importance": 0.5,
+        "coverage": 0,
+        "weighted_contribution": 0.0,
+        "evidence": [],
+        "reason": "Not confirmed in the reviewed profile; not proof of inability."
+      },
+      {
+        "skill_id": "skill:onet_2_b_1_e",
+        "label": "Instructing",
+        "importance": 0.6,
+        "coverage": 0,
+        "weighted_contribution": 0.0,
+        "evidence": [],
+        "reason": "Not confirmed in the reviewed profile; not proof of inability."
+      },
+      {
+        "skill_id": "skill:onet_2_b_1_f",
+        "label": "Service Orientation",
+        "importance": 0.576,
+        "coverage": 0,
+        "weighted_contribution": 0.0,
+        "evidence": [],
+        "reason": "Not confirmed in the reviewed profile; not proof of inability."
+      },
+      {
+        "skill_id": "skill:onet_2_b_2_i",
+        "label": "Complex Problem Solving",
+        "importance": 0.676,
+        "coverage": 0,
+        "weighted_contribution": 0.0,
+        "evidence": [],
+        "reason": "Not confirmed in the reviewed profile; not proof of inability."
+      },
+      {
+        "skill_id": "skill:onet_2_b_3_a",
+        "label": "Operations Analysis",
+        "importance": 0.376,
+        "coverage": 0,
+        "weighted_contribution": 0.0,
+        "evidence": [],
+        "reason": "Not confirmed in the reviewed profile; not proof of inability."
+      },
+      {
+        "skill_id": "skill:onet_2_b_3_b",
+        "label": "Technology Design",
+        "importance": 0.324,
+        "coverage": 0,
+        "weighted_contribution": 0.0,
+        "evidence": [],
+        "reason": "Not confirmed in the reviewed profile; not proof of inability."
+      },
+      {
+        "skill_id": "skill:onet_2_b_3_e",
+        "label": "Programming",
+        "importance": 0.5,
+        "coverage": 0,
+        "weighted_contribution": 0.0,
+        "evidence": [],
+        "reason": "Not confirmed in the reviewed profile; not proof of inability."
+      },
+      {
+        "skill_id": "skill:onet_2_b_3_g",
+        "label": "Operations Monitoring",
+        "importance": 0.35,
+        "coverage": 0,
+        "weighted_contribution": 0.0,
+        "evidence": [],
+        "reason": "Not confirmed in the reviewed profile; not proof of inability."
+      },
+      {
+        "skill_id": "skill:onet_2_b_3_h",
+        "label": "Operation and Control",
+        "importance": 0.276,
+        "coverage": 0,
+        "weighted_contribution": 0.0,
+        "evidence": [],
+        "reason": "Not confirmed in the reviewed profile; not proof of inability."
+      },
+      {
+        "skill_id": "skill:onet_2_b_3_m",
+        "label": "Quality Control Analysis",
+        "importance": 0.4,
+        "coverage": 0,
+        "weighted_contribution": 0.0,
+        "evidence": [],
+        "reason": "Not confirmed in the reviewed profile; not proof of inability."
+      },
+      {
+        "skill_id": "skill:onet_2_b_4_e",
+        "label": "Judgment and Decision Making",
+        "importance": 0.724,
+        "coverage": 0,
+        "weighted_contribution": 0.0,
+        "evidence": [],
+        "reason": "Not confirmed in the reviewed profile; not proof of inability."
+      },
+      {
+        "skill_id": "skill:onet_2_b_4_g",
+        "label": "Systems Analysis",
+        "importance": 0.624,
+        "coverage": 0,
+        "weighted_contribution": 0.0,
+        "evidence": [],
+        "reason": "Not confirmed in the reviewed profile; not proof of inability."
+      },
+      {
+        "skill_id": "skill:onet_2_b_4_h",
+        "label": "Systems Evaluation",
+        "importance": 0.624,
+        "coverage": 0,
+        "weighted_contribution": 0.0,
+        "evidence": [],
+        "reason": "Not confirmed in the reviewed profile; not proof of inability."
+      },
+      {
+        "skill_id": "skill:onet_2_b_5_a",
+        "label": "Time Management",
+        "importance": 0.624,
+        "coverage": 0,
+        "weighted_contribution": 0.0,
+        "evidence": [],
+        "reason": "Not confirmed in the reviewed profile; not proof of inability."
+      },
+      {
+        "skill_id": "skill:onet_2_b_5_b",
+        "label": "Management of Financial Resources",
+        "importance": 0.376,
+        "coverage": 0,
+        "weighted_contribution": 0.0,
+        "evidence": [],
+        "reason": "Not confirmed in the reviewed profile; not proof of inability."
+      },
+      {
+        "skill_id": "skill:onet_2_b_5_c",
+        "label": "Management of Material Resources",
+        "importance": 0.35,
+        "coverage": 0,
+        "weighted_contribution": 0.0,
+        "evidence": [],
+        "reason": "Not confirmed in the reviewed profile; not proof of inability."
+      },
+      {
+        "skill_id": "skill:onet_2_b_5_d",
+        "label": "Management of Personnel Resources",
+        "importance": 0.424,
+        "coverage": 0,
+        "weighted_contribution": 0.0,
+        "evidence": [],
+        "reason": "Not confirmed in the reviewed profile; not proof of inability."
+      }
+    ],
+    "software_learning_options": [
+      {
+        "skill_id": "skill:microsoft_excel",
+        "label": "Microsoft Excel",
+        "group_ids": [
+          "group:onet_2_e_4_i"
+        ],
+        "group_familiarity_evidenced": false,
+        "meaning": "optional_occupation_demand_signal"
+      },
+      {
+        "skill_id": "skill:microsoft_power_bi",
+        "label": "Microsoft Power BI",
+        "group_ids": [
+          "group:onet_2_e_6_m"
+        ],
+        "group_familiarity_evidenced": true,
+        "meaning": "optional_occupation_demand_signal"
+      },
+      {
+        "skill_id": "skill:software_0c8e1cae0d7f35f4",
+        "label": "Microsoft PowerPoint",
+        "group_ids": [
+          "group:onet_2_e_4_f"
+        ],
+        "group_familiarity_evidenced": false,
+        "meaning": "optional_occupation_demand_signal"
+      },
+      {
+        "skill_id": "skill:software_3deb2d2d35c24f36",
+        "label": "Microsoft Azure software",
+        "group_ids": [
+          "group:onet_2_e_7_b"
+        ],
+        "group_familiarity_evidenced": false,
+        "meaning": "optional_occupation_demand_signal"
+      },
+      {
+        "skill_id": "skill:software_454349e422f05297",
+        "label": "R",
+        "group_ids": [
+          "group:onet_2_e_7_e"
+        ],
+        "group_familiarity_evidenced": true,
+        "meaning": "optional_occupation_demand_signal"
+      },
+      {
+        "skill_id": "skill:software_841eef0a7343f781",
+        "label": "SAP software",
+        "group_ids": [
+          "group:onet_2_e_2_b"
+        ],
+        "group_familiarity_evidenced": false,
+        "meaning": "optional_occupation_demand_signal"
+      },
+      {
+        "skill_id": "skill:software_8ba5705dedf27b6e",
+        "label": "Amazon Web Services AWS software",
+        "group_ids": [
+          "group:onet_2_e_6_f"
+        ],
+        "group_familiarity_evidenced": true,
+        "meaning": "optional_occupation_demand_signal"
+      },
+      {
+        "skill_id": "skill:software_96166e27af5a3c43",
+        "label": "SAS",
+        "group_ids": [
+          "group:onet_2_e_9_d"
+        ],
+        "group_familiarity_evidenced": false,
+        "meaning": "optional_occupation_demand_signal"
+      },
+      {
+        "skill_id": "skill:software_9d2f2e0ca2b14f57",
+        "label": "Microsoft Office software",
+        "group_ids": [
+          "group:onet_2_e_1_k"
+        ],
+        "group_familiarity_evidenced": false,
+        "meaning": "optional_occupation_demand_signal"
+      },
+      {
+        "skill_id": "skill:software_b2953d236aa4f40b",
+        "label": "Salesforce software",
+        "group_ids": [
+          "group:onet_2_e_6_c"
+        ],
+        "group_familiarity_evidenced": false,
+        "meaning": "optional_occupation_demand_signal"
+      },
+      {
+        "skill_id": "skill:software_de5a1adf4fedcce1",
+        "label": "Snowflake",
+        "group_ids": [
+          "group:onet_2_e_6_g"
+        ],
+        "group_familiarity_evidenced": false,
+        "meaning": "optional_occupation_demand_signal"
+      }
+    ],
+    "matched_interests": [],
+    "manually_selected": true,
+    "pinned": false,
+    "warnings": [
+      "Exploratory coverage of reviewed skill claims; not hiring probability or proficiency assessment.",
+      "Missing profile evidence means unconfirmed, not inability.",
+      "Software group credit indicates category familiarity, not interchangeable tools.",
+      "Software learning options are alternatives to inspect, not a checklist of mandatory courses.",
+      "Equal-share defaults are application assumptions; no empirical calibration is claimed.",
+      "Education, licenses and experience are not assessed; high coverage does not establish job eligibility.",
+      "Task-based transfer credit is disabled: imported task-to-skill mappings are unavailable.",
+      "Preferences use exact occupation titles, aliases or occupational-family labels; target-role pinning never increases scores."
+    ]
+  },
+  "baseline_outlook": {
+    "schema_version": "0.2.0",
+    "role_id": "role:onet_15_2051_01",
+    "role_title": "Business Intelligence Analysts",
+    "catalog_synthetic": false,
+    "baseline_label": "Insufficient evidence",
+    "tasks": [
+      {
+        "task_id": "task:onet_16134",
+        "label": "Provide technical support for existing reports, dashboards, or other tools.",
+        "evidence_status": "insufficient_evidence",
+        "interpretation": "No reviewed evidence mapping is available.",
+        "mapping_basis": null,
+        "evidence_scope": null,
+        "signal_ids": []
+      },
+      {
+        "task_id": "task:onet_16135",
+        "label": "Maintain library of model documents, templates, or other reusable knowledge assets.",
+        "evidence_status": "insufficient_evidence",
+        "interpretation": "No reviewed evidence mapping is available.",
+        "mapping_basis": null,
+        "evidence_scope": null,
+        "signal_ids": []
+      },
+      {
+        "task_id": "task:onet_16136",
+        "label": "Identify or monitor current and potential customers, using business intelligence tools.",
+        "evidence_status": "insufficient_evidence",
+        "interpretation": "No reviewed evidence mapping is available.",
+        "mapping_basis": null,
+        "evidence_scope": null,
+        "signal_ids": []
+      },
+      {
+        "task_id": "task:onet_16137",
+        "label": "Create or review technical design documentation to ensure the accurate development of reporting solutions.",
+        "evidence_status": "insufficient_evidence",
+        "interpretation": "No reviewed evidence mapping is available.",
+        "mapping_basis": null,
+        "evidence_scope": null,
+        "signal_ids": []
+      },
+      {
+        "task_id": "task:onet_16138",
+        "label": "Communicate with customers, competitors, suppliers, professional organizations, or others to stay abreast of industry or business trends.",
+        "evidence_status": "insufficient_evidence",
+        "interpretation": "No reviewed evidence mapping is available.",
+        "mapping_basis": null,
+        "evidence_scope": null,
+        "signal_ids": []
+      },
+      {
+        "task_id": "task:onet_16139",
+        "label": "Maintain or update business intelligence tools, databases, dashboards, systems, or methods.",
+        "evidence_status": "insufficient_evidence",
+        "interpretation": "No reviewed evidence mapping is available.",
+        "mapping_basis": null,
+        "evidence_scope": null,
+        "signal_ids": []
+      },
+      {
+        "task_id": "task:onet_16140",
+        "label": "Manage timely flow of business intelligence information to users.",
+        "evidence_status": "insufficient_evidence",
+        "interpretation": "No reviewed evidence mapping is available.",
+        "mapping_basis": null,
+        "evidence_scope": null,
+        "signal_ids": []
+      },
+      {
+        "task_id": "task:onet_16141",
+        "label": "Identify and analyze industry or geographic trends with business strategy implications.",
+        "evidence_status": "insufficient_evidence",
+        "interpretation": "No reviewed evidence mapping is available.",
+        "mapping_basis": null,
+        "evidence_scope": null,
+        "signal_ids": []
+      },
+      {
+        "task_id": "task:onet_16142",
+        "label": "Document specifications for business intelligence or information technology reports, dashboards, or other outputs.",
+        "evidence_status": "insufficient_evidence",
+        "interpretation": "No reviewed evidence mapping is available.",
+        "mapping_basis": null,
+        "evidence_scope": null,
+        "signal_ids": []
+      },
+      {
+        "task_id": "task:onet_16143",
+        "label": "Disseminate information regarding tools, reports, or metadata enhancements.",
+        "evidence_status": "insufficient_evidence",
+        "interpretation": "No reviewed evidence mapping is available.",
+        "mapping_basis": null,
+        "evidence_scope": null,
+        "signal_ids": []
+      },
+      {
+        "task_id": "task:onet_16144",
+        "label": "Create business intelligence tools or systems, including design of related databases, spreadsheets, or outputs.",
+        "evidence_status": "insufficient_evidence",
+        "interpretation": "No reviewed evidence mapping is available.",
+        "mapping_basis": null,
+        "evidence_scope": null,
+        "signal_ids": []
+      },
+      {
+        "task_id": "task:onet_16145",
+        "label": "Conduct or coordinate tests to ensure that intelligence is consistent with defined needs.",
+        "evidence_status": "insufficient_evidence",
+        "interpretation": "No reviewed evidence mapping is available.",
+        "mapping_basis": null,
+        "evidence_scope": null,
+        "signal_ids": []
+      },
+      {
+        "task_id": "task:onet_16146",
+        "label": "Collect business intelligence data from available industry reports, public information, field reports, or purchased sources.",
+        "evidence_status": "insufficient_evidence",
+        "interpretation": "No reviewed evidence mapping is available.",
+        "mapping_basis": null,
+        "evidence_scope": null,
+        "signal_ids": []
+      },
+      {
+        "task_id": "task:onet_16147",
+        "label": "Analyze technology trends to identify markets for future product development or to improve sales of existing products.",
+        "evidence_status": "insufficient_evidence",
+        "interpretation": "No reviewed evidence mapping is available.",
+        "mapping_basis": null,
+        "evidence_scope": null,
+        "signal_ids": []
+      },
+      {
+        "task_id": "task:onet_16148",
+        "label": "Analyze competitive market strategies through analysis of related product, market, or share trends.",
+        "evidence_status": "insufficient_evidence",
+        "interpretation": "No reviewed evidence mapping is available.",
+        "mapping_basis": null,
+        "evidence_scope": null,
+        "signal_ids": []
+      },
+      {
+        "task_id": "task:onet_16149",
+        "label": "Synthesize current business intelligence or trend data to support recommendations for action.",
+        "evidence_status": "insufficient_evidence",
+        "interpretation": "No reviewed evidence mapping is available.",
+        "mapping_basis": null,
+        "evidence_scope": null,
+        "signal_ids": []
+      },
+      {
+        "task_id": "task:onet_16150",
+        "label": "Generate standard or custom reports summarizing business, financial, or economic data for review by executives, managers, clients, and other stakeholders.",
+        "evidence_status": "insufficient_evidence",
+        "interpretation": "No reviewed evidence mapping is available.",
+        "mapping_basis": null,
+        "evidence_scope": null,
+        "signal_ids": []
+      }
+    ],
+    "signals": [],
+    "sources": [],
+    "scenario": {
+      "scenario_id": "baseline",
+      "name": "Baseline (O*NET occupational ratings)",
+      "synthetic": false,
+      "assumptions": [],
+      "affected_task_ids": [],
+      "skill_priorities": [
+        {
+          "skill_id": "skill:onet_2_a_1_a",
+          "baseline_priority": 0.8,
+          "adjusted_priority": 0.8,
+          "applied_adjustment": 0.0
+        },
+        {
+          "skill_id": "skill:onet_2_a_1_b",
+          "baseline_priority": 0.776,
+          "adjusted_priority": 0.776,
+          "applied_adjustment": 0.0
+        },
+        {
+          "skill_id": "skill:onet_2_a_1_c",
+          "baseline_priority": 0.75,
+          "adjusted_priority": 0.75,
+          "applied_adjustment": 0.0
+        },
+        {
+          "skill_id": "skill:onet_2_a_1_d",
+          "baseline_priority": 0.776,
+          "adjusted_priority": 0.776,
+          "applied_adjustment": 0.0
+        },
+        {
+          "skill_id": "skill:onet_2_a_1_e",
+          "baseline_priority": 0.7,
+          "adjusted_priority": 0.7,
+          "applied_adjustment": 0.0
+        },
+        {
+          "skill_id": "skill:onet_2_a_1_f",
+          "baseline_priority": 0.324,
+          "adjusted_priority": 0.324,
+          "applied_adjustment": 0.0
+        },
+        {
+          "skill_id": "skill:onet_2_a_2_a",
+          "baseline_priority": 0.776,
+          "adjusted_priority": 0.776,
+          "applied_adjustment": 0.0
+        },
+        {
+          "skill_id": "skill:onet_2_a_2_b",
+          "baseline_priority": 0.776,
+          "adjusted_priority": 0.776,
+          "applied_adjustment": 0.0
+        },
+        {
+          "skill_id": "skill:onet_2_a_2_c",
+          "baseline_priority": 0.6,
+          "adjusted_priority": 0.6,
+          "applied_adjustment": 0.0
+        },
+        {
+          "skill_id": "skill:onet_2_a_2_d",
+          "baseline_priority": 0.624,
+          "adjusted_priority": 0.624,
+          "applied_adjustment": 0.0
+        },
+        {
+          "skill_id": "skill:onet_2_b_1_a",
+          "baseline_priority": 0.576,
+          "adjusted_priority": 0.576,
+          "applied_adjustment": 0.0
+        },
+        {
+          "skill_id": "skill:onet_2_b_1_b",
+          "baseline_priority": 0.6,
+          "adjusted_priority": 0.6,
+          "applied_adjustment": 0.0
+        },
+        {
+          "skill_id": "skill:onet_2_b_1_c",
+          "baseline_priority": 0.576,
+          "adjusted_priority": 0.576,
+          "applied_adjustment": 0.0
+        },
+        {
+          "skill_id": "skill:onet_2_b_1_d",
+          "baseline_priority": 0.5,
+          "adjusted_priority": 0.5,
+          "applied_adjustment": 0.0
+        },
+        {
+          "skill_id": "skill:onet_2_b_1_e",
+          "baseline_priority": 0.6,
+          "adjusted_priority": 0.6,
+          "applied_adjustment": 0.0
+        },
+        {
+          "skill_id": "skill:onet_2_b_1_f",
+          "baseline_priority": 0.576,
+          "adjusted_priority": 0.576,
+          "applied_adjustment": 0.0
+        },
+        {
+          "skill_id": "skill:onet_2_b_2_i",
+          "baseline_priority": 0.676,
+          "adjusted_priority": 0.676,
+          "applied_adjustment": 0.0
+        },
+        {
+          "skill_id": "skill:onet_2_b_3_a",
+          "baseline_priority": 0.376,
+          "adjusted_priority": 0.376,
+          "applied_adjustment": 0.0
+        },
+        {
+          "skill_id": "skill:onet_2_b_3_b",
+          "baseline_priority": 0.324,
+          "adjusted_priority": 0.324,
+          "applied_adjustment": 0.0
+        },
+        {
+          "skill_id": "skill:onet_2_b_3_e",
+          "baseline_priority": 0.5,
+          "adjusted_priority": 0.5,
+          "applied_adjustment": 0.0
+        },
+        {
+          "skill_id": "skill:onet_2_b_3_g",
+          "baseline_priority": 0.35,
+          "adjusted_priority": 0.35,
+          "applied_adjustment": 0.0
+        },
+        {
+          "skill_id": "skill:onet_2_b_3_h",
+          "baseline_priority": 0.276,
+          "adjusted_priority": 0.276,
+          "applied_adjustment": 0.0
+        },
+        {
+          "skill_id": "skill:onet_2_b_3_m",
+          "baseline_priority": 0.4,
+          "adjusted_priority": 0.4,
+          "applied_adjustment": 0.0
+        },
+        {
+          "skill_id": "skill:onet_2_b_4_e",
+          "baseline_priority": 0.724,
+          "adjusted_priority": 0.724,
+          "applied_adjustment": 0.0
+        },
+        {
+          "skill_id": "skill:onet_2_b_4_g",
+          "baseline_priority": 0.624,
+          "adjusted_priority": 0.624,
+          "applied_adjustment": 0.0
+        },
+        {
+          "skill_id": "skill:onet_2_b_4_h",
+          "baseline_priority": 0.624,
+          "adjusted_priority": 0.624,
+          "applied_adjustment": 0.0
+        },
+        {
+          "skill_id": "skill:onet_2_b_5_a",
+          "baseline_priority": 0.624,
+          "adjusted_priority": 0.624,
+          "applied_adjustment": 0.0
+        },
+        {
+          "skill_id": "skill:onet_2_b_5_b",
+          "baseline_priority": 0.376,
+          "adjusted_priority": 0.376,
+          "applied_adjustment": 0.0
+        },
+        {
+          "skill_id": "skill:onet_2_b_5_c",
+          "baseline_priority": 0.35,
+          "adjusted_priority": 0.35,
+          "applied_adjustment": 0.0
+        },
+        {
+          "skill_id": "skill:onet_2_b_5_d",
+          "baseline_priority": 0.424,
+          "adjusted_priority": 0.424,
+          "applied_adjustment": 0.0
+        }
+      ],
+      "interpretation": "Unadjusted O*NET Importance/5 weights; not measured local demand, proficiency, or an employment forecast."
+    },
+    "limitations": [
+      "Role/task records come from O*NET 31.0. Unmapped tasks and unreviewed evidence are not AI-impact findings.",
+      "Task mappings are team interpretations, not measured task automation rates.",
+      "Scenario adjustments are illustrative learning priorities, not employment forecasts or changes to personal fit.",
+      "Outlook reads validated cached evidence. Run python -m src.intelligence.feeds to refresh the reviewed source; source publication dates may still be historical."
+    ],
+    "catalog_id": "onet_31_0",
+    "available_scenarios": [
+      "baseline",
+      "moderate_ai_change",
+      "rapid_ai_change"
+    ]
+  },
+  "rapid_outlook": {
+    "schema_version": "0.2.0",
+    "role_id": "role:onet_15_2051_01",
+    "role_title": "Business Intelligence Analysts",
+    "catalog_synthetic": false,
+    "baseline_label": "Insufficient evidence",
+    "tasks": [
+      {
+        "task_id": "task:onet_16134",
+        "label": "Provide technical support for existing reports, dashboards, or other tools.",
+        "evidence_status": "insufficient_evidence",
+        "interpretation": "No reviewed evidence mapping is available.",
+        "mapping_basis": null,
+        "evidence_scope": null,
+        "signal_ids": []
+      },
+      {
+        "task_id": "task:onet_16135",
+        "label": "Maintain library of model documents, templates, or other reusable knowledge assets.",
+        "evidence_status": "insufficient_evidence",
+        "interpretation": "No reviewed evidence mapping is available.",
+        "mapping_basis": null,
+        "evidence_scope": null,
+        "signal_ids": []
+      },
+      {
+        "task_id": "task:onet_16136",
+        "label": "Identify or monitor current and potential customers, using business intelligence tools.",
+        "evidence_status": "insufficient_evidence",
+        "interpretation": "No reviewed evidence mapping is available.",
+        "mapping_basis": null,
+        "evidence_scope": null,
+        "signal_ids": []
+      },
+      {
+        "task_id": "task:onet_16137",
+        "label": "Create or review technical design documentation to ensure the accurate development of reporting solutions.",
+        "evidence_status": "insufficient_evidence",
+        "interpretation": "No reviewed evidence mapping is available.",
+        "mapping_basis": null,
+        "evidence_scope": null,
+        "signal_ids": []
+      },
+      {
+        "task_id": "task:onet_16138",
+        "label": "Communicate with customers, competitors, suppliers, professional organizations, or others to stay abreast of industry or business trends.",
+        "evidence_status": "insufficient_evidence",
+        "interpretation": "No reviewed evidence mapping is available.",
+        "mapping_basis": null,
+        "evidence_scope": null,
+        "signal_ids": []
+      },
+      {
+        "task_id": "task:onet_16139",
+        "label": "Maintain or update business intelligence tools, databases, dashboards, systems, or methods.",
+        "evidence_status": "insufficient_evidence",
+        "interpretation": "No reviewed evidence mapping is available.",
+        "mapping_basis": null,
+        "evidence_scope": null,
+        "signal_ids": []
+      },
+      {
+        "task_id": "task:onet_16140",
+        "label": "Manage timely flow of business intelligence information to users.",
+        "evidence_status": "insufficient_evidence",
+        "interpretation": "No reviewed evidence mapping is available.",
+        "mapping_basis": null,
+        "evidence_scope": null,
+        "signal_ids": []
+      },
+      {
+        "task_id": "task:onet_16141",
+        "label": "Identify and analyze industry or geographic trends with business strategy implications.",
+        "evidence_status": "insufficient_evidence",
+        "interpretation": "No reviewed evidence mapping is available.",
+        "mapping_basis": null,
+        "evidence_scope": null,
+        "signal_ids": []
+      },
+      {
+        "task_id": "task:onet_16142",
+        "label": "Document specifications for business intelligence or information technology reports, dashboards, or other outputs.",
+        "evidence_status": "insufficient_evidence",
+        "interpretation": "No reviewed evidence mapping is available.",
+        "mapping_basis": null,
+        "evidence_scope": null,
+        "signal_ids": []
+      },
+      {
+        "task_id": "task:onet_16143",
+        "label": "Disseminate information regarding tools, reports, or metadata enhancements.",
+        "evidence_status": "insufficient_evidence",
+        "interpretation": "No reviewed evidence mapping is available.",
+        "mapping_basis": null,
+        "evidence_scope": null,
+        "signal_ids": []
+      },
+      {
+        "task_id": "task:onet_16144",
+        "label": "Create business intelligence tools or systems, including design of related databases, spreadsheets, or outputs.",
+        "evidence_status": "insufficient_evidence",
+        "interpretation": "No reviewed evidence mapping is available.",
+        "mapping_basis": null,
+        "evidence_scope": null,
+        "signal_ids": []
+      },
+      {
+        "task_id": "task:onet_16145",
+        "label": "Conduct or coordinate tests to ensure that intelligence is consistent with defined needs.",
+        "evidence_status": "insufficient_evidence",
+        "interpretation": "No reviewed evidence mapping is available.",
+        "mapping_basis": null,
+        "evidence_scope": null,
+        "signal_ids": []
+      },
+      {
+        "task_id": "task:onet_16146",
+        "label": "Collect business intelligence data from available industry reports, public information, field reports, or purchased sources.",
+        "evidence_status": "insufficient_evidence",
+        "interpretation": "No reviewed evidence mapping is available.",
+        "mapping_basis": null,
+        "evidence_scope": null,
+        "signal_ids": []
+      },
+      {
+        "task_id": "task:onet_16147",
+        "label": "Analyze technology trends to identify markets for future product development or to improve sales of existing products.",
+        "evidence_status": "insufficient_evidence",
+        "interpretation": "No reviewed evidence mapping is available.",
+        "mapping_basis": null,
+        "evidence_scope": null,
+        "signal_ids": []
+      },
+      {
+        "task_id": "task:onet_16148",
+        "label": "Analyze competitive market strategies through analysis of related product, market, or share trends.",
+        "evidence_status": "insufficient_evidence",
+        "interpretation": "No reviewed evidence mapping is available.",
+        "mapping_basis": null,
+        "evidence_scope": null,
+        "signal_ids": []
+      },
+      {
+        "task_id": "task:onet_16149",
+        "label": "Synthesize current business intelligence or trend data to support recommendations for action.",
+        "evidence_status": "insufficient_evidence",
+        "interpretation": "No reviewed evidence mapping is available.",
+        "mapping_basis": null,
+        "evidence_scope": null,
+        "signal_ids": []
+      },
+      {
+        "task_id": "task:onet_16150",
+        "label": "Generate standard or custom reports summarizing business, financial, or economic data for review by executives, managers, clients, and other stakeholders.",
+        "evidence_status": "insufficient_evidence",
+        "interpretation": "No reviewed evidence mapping is available.",
+        "mapping_basis": null,
+        "evidence_scope": null,
+        "signal_ids": []
+      }
+    ],
+    "signals": [],
+    "sources": [],
+    "scenario": {
+      "scenario_id": "rapid_ai_change",
+      "name": "Illustrative rapid ai change",
+      "synthetic": true,
+      "assumptions": [
+        "Team-authored stress test: assume AI accelerates initial report preparation.",
+        "Human verification and learning unfamiliar workflows receive greater priority; this is not an observed effect or employment forecast."
+      ],
+      "affected_task_ids": [
+        "task:onet_16150",
+        "task:onet_16139"
+      ],
+      "skill_priorities": [
+        {
+          "skill_id": "skill:onet_2_a_1_a",
+          "baseline_priority": 0.8,
+          "adjusted_priority": 0.8,
+          "applied_adjustment": 0.0
+        },
+        {
+          "skill_id": "skill:onet_2_a_1_b",
+          "baseline_priority": 0.776,
+          "adjusted_priority": 0.776,
+          "applied_adjustment": 0.0
+        },
+        {
+          "skill_id": "skill:onet_2_a_1_c",
+          "baseline_priority": 0.75,
+          "adjusted_priority": 0.75,
+          "applied_adjustment": 0.0
+        },
+        {
+          "skill_id": "skill:onet_2_a_1_d",
+          "baseline_priority": 0.776,
+          "adjusted_priority": 0.776,
+          "applied_adjustment": 0.0
+        },
+        {
+          "skill_id": "skill:onet_2_a_1_e",
+          "baseline_priority": 0.7,
+          "adjusted_priority": 0.7,
+          "applied_adjustment": 0.0
+        },
+        {
+          "skill_id": "skill:onet_2_a_1_f",
+          "baseline_priority": 0.324,
+          "adjusted_priority": 0.324,
+          "applied_adjustment": 0.0
+        },
+        {
+          "skill_id": "skill:onet_2_a_2_a",
+          "baseline_priority": 0.776,
+          "adjusted_priority": 0.936,
+          "applied_adjustment": 0.16
+        },
+        {
+          "skill_id": "skill:onet_2_a_2_b",
+          "baseline_priority": 0.776,
+          "adjusted_priority": 0.896,
+          "applied_adjustment": 0.12
+        },
+        {
+          "skill_id": "skill:onet_2_a_2_c",
+          "baseline_priority": 0.6,
+          "adjusted_priority": 0.6,
+          "applied_adjustment": 0.0
+        },
+        {
+          "skill_id": "skill:onet_2_a_2_d",
+          "baseline_priority": 0.624,
+          "adjusted_priority": 0.624,
+          "applied_adjustment": 0.0
+        },
+        {
+          "skill_id": "skill:onet_2_b_1_a",
+          "baseline_priority": 0.576,
+          "adjusted_priority": 0.576,
+          "applied_adjustment": 0.0
+        },
+        {
+          "skill_id": "skill:onet_2_b_1_b",
+          "baseline_priority": 0.6,
+          "adjusted_priority": 0.6,
+          "applied_adjustment": 0.0
+        },
+        {
+          "skill_id": "skill:onet_2_b_1_c",
+          "baseline_priority": 0.576,
+          "adjusted_priority": 0.576,
+          "applied_adjustment": 0.0
+        },
+        {
+          "skill_id": "skill:onet_2_b_1_d",
+          "baseline_priority": 0.5,
+          "adjusted_priority": 0.5,
+          "applied_adjustment": 0.0
+        },
+        {
+          "skill_id": "skill:onet_2_b_1_e",
+          "baseline_priority": 0.6,
+          "adjusted_priority": 0.6,
+          "applied_adjustment": 0.0
+        },
+        {
+          "skill_id": "skill:onet_2_b_1_f",
+          "baseline_priority": 0.576,
+          "adjusted_priority": 0.576,
+          "applied_adjustment": 0.0
+        },
+        {
+          "skill_id": "skill:onet_2_b_2_i",
+          "baseline_priority": 0.676,
+          "adjusted_priority": 0.676,
+          "applied_adjustment": 0.0
+        },
+        {
+          "skill_id": "skill:onet_2_b_3_a",
+          "baseline_priority": 0.376,
+          "adjusted_priority": 0.376,
+          "applied_adjustment": 0.0
+        },
+        {
+          "skill_id": "skill:onet_2_b_3_b",
+          "baseline_priority": 0.324,
+          "adjusted_priority": 0.324,
+          "applied_adjustment": 0.0
+        },
+        {
+          "skill_id": "skill:onet_2_b_3_e",
+          "baseline_priority": 0.5,
+          "adjusted_priority": 0.5,
+          "applied_adjustment": 0.0
+        },
+        {
+          "skill_id": "skill:onet_2_b_3_g",
+          "baseline_priority": 0.35,
+          "adjusted_priority": 0.35,
+          "applied_adjustment": 0.0
+        },
+        {
+          "skill_id": "skill:onet_2_b_3_h",
+          "baseline_priority": 0.276,
+          "adjusted_priority": 0.276,
+          "applied_adjustment": 0.0
+        },
+        {
+          "skill_id": "skill:onet_2_b_3_m",
+          "baseline_priority": 0.4,
+          "adjusted_priority": 0.4,
+          "applied_adjustment": 0.0
+        },
+        {
+          "skill_id": "skill:onet_2_b_4_e",
+          "baseline_priority": 0.724,
+          "adjusted_priority": 0.724,
+          "applied_adjustment": 0.0
+        },
+        {
+          "skill_id": "skill:onet_2_b_4_g",
+          "baseline_priority": 0.624,
+          "adjusted_priority": 0.624,
+          "applied_adjustment": 0.0
+        },
+        {
+          "skill_id": "skill:onet_2_b_4_h",
+          "baseline_priority": 0.624,
+          "adjusted_priority": 0.624,
+          "applied_adjustment": 0.0
+        },
+        {
+          "skill_id": "skill:onet_2_b_5_a",
+          "baseline_priority": 0.624,
+          "adjusted_priority": 0.624,
+          "applied_adjustment": 0.0
+        },
+        {
+          "skill_id": "skill:onet_2_b_5_b",
+          "baseline_priority": 0.376,
+          "adjusted_priority": 0.376,
+          "applied_adjustment": 0.0
+        },
+        {
+          "skill_id": "skill:onet_2_b_5_c",
+          "baseline_priority": 0.35,
+          "adjusted_priority": 0.35,
+          "applied_adjustment": 0.0
+        },
+        {
+          "skill_id": "skill:onet_2_b_5_d",
+          "baseline_priority": 0.424,
+          "adjusted_priority": 0.424,
+          "applied_adjustment": 0.0
+        }
+      ],
+      "interpretation": "Illustrative changes to learning priorities for Business Intelligence Analysts only. Does not change personal fit or assert task-to-skill evidence."
+    },
+    "limitations": [
+      "Role/task records come from O*NET 31.0. Unmapped tasks and unreviewed evidence are not AI-impact findings.",
+      "Task mappings are team interpretations, not measured task automation rates.",
+      "Scenario adjustments are illustrative learning priorities, not employment forecasts or changes to personal fit.",
+      "Outlook reads validated cached evidence. Run python -m src.intelligence.feeds to refresh the reviewed source; source publication dates may still be historical."
+    ],
+    "catalog_id": "onet_31_0",
+    "available_scenarios": [
+      "baseline",
+      "moderate_ai_change",
+      "rapid_ai_change"
+    ]
+  },
+  "baseline_plan": {
+    "plan": {
+      "schema_version": "0.2.0",
+      "generated_at": "2026-10-21T00:00:00Z",
+      "profile_id": "synthetic:backend_demo",
+      "role_id": "role:onet_15_2051_01",
+      "scenario_id": "baseline",
+      "fit_score": 14.53,
+      "reviewed_skills": [
+        {
+          "skill_id": "skill:onet_2_a_1_a",
+          "label": "Reading Comprehension",
+          "level": "unknown",
+          "evidence": [
+            "Typed skill entry: Reading Comprehension"
+          ],
+          "confirmation": "self_reported"
+        },
+        {
+          "skill_id": "skill:python",
+          "label": "Python",
+          "level": "unknown",
+          "evidence": [
+            "Typed skill entry: Python"
+          ],
+          "confirmation": "self_reported"
+        },
+        {
+          "skill_id": "skill:software_5f0974ee455c4cd5",
+          "label": "Tableau",
+          "level": "unknown",
+          "evidence": [
+            "Typed skill entry: Tableau"
+          ],
+          "confirmation": "self_reported"
+        },
+        {
+          "skill_id": "skill:sql",
+          "label": "SQL",
+          "level": "unknown",
+          "evidence": [
+            "Typed skill entry: SQL"
+          ],
+          "confirmation": "self_reported"
+        }
+      ],
+      "prioritized_gaps": [
+        {
+          "skill_id": "skill:onet_2_a_1_b",
+          "label": "Active Listening",
+          "gap_reason": "Not confirmed in the reviewed profile; not proof of inability.",
+          "person2_importance": 0.776,
+          "baseline_priority": 0.776,
+          "applied_adjustment": 0.0,
+          "adjusted_priority": 0.776
+        },
+        {
+          "skill_id": "skill:onet_2_a_1_d",
+          "label": "Speaking",
+          "gap_reason": "Not confirmed in the reviewed profile; not proof of inability.",
+          "person2_importance": 0.776,
+          "baseline_priority": 0.776,
+          "applied_adjustment": 0.0,
+          "adjusted_priority": 0.776
+        },
+        {
+          "skill_id": "skill:onet_2_a_2_a",
+          "label": "Critical Thinking",
+          "gap_reason": "Not confirmed in the reviewed profile; not proof of inability.",
+          "person2_importance": 0.776,
+          "baseline_priority": 0.776,
+          "applied_adjustment": 0.0,
+          "adjusted_priority": 0.776
+        },
+        {
+          "skill_id": "skill:onet_2_a_2_b",
+          "label": "Active Learning",
+          "gap_reason": "Not confirmed in the reviewed profile; not proof of inability.",
+          "person2_importance": 0.776,
+          "baseline_priority": 0.776,
+          "applied_adjustment": 0.0,
+          "adjusted_priority": 0.776
+        },
+        {
+          "skill_id": "skill:onet_2_a_1_c",
+          "label": "Writing",
+          "gap_reason": "Not confirmed in the reviewed profile; not proof of inability.",
+          "person2_importance": 0.75,
+          "baseline_priority": 0.75,
+          "applied_adjustment": 0.0,
+          "adjusted_priority": 0.75
+        },
+        {
+          "skill_id": "skill:onet_2_b_4_e",
+          "label": "Judgment and Decision Making",
+          "gap_reason": "Not confirmed in the reviewed profile; not proof of inability.",
+          "person2_importance": 0.724,
+          "baseline_priority": 0.724,
+          "applied_adjustment": 0.0,
+          "adjusted_priority": 0.724
+        },
+        {
+          "skill_id": "skill:onet_2_a_1_e",
+          "label": "Mathematics",
+          "gap_reason": "Not confirmed in the reviewed profile; not proof of inability.",
+          "person2_importance": 0.7,
+          "baseline_priority": 0.7,
+          "applied_adjustment": 0.0,
+          "adjusted_priority": 0.7
+        },
+        {
+          "skill_id": "skill:onet_2_b_2_i",
+          "label": "Complex Problem Solving",
+          "gap_reason": "Not confirmed in the reviewed profile; not proof of inability.",
+          "person2_importance": 0.676,
+          "baseline_priority": 0.676,
+          "applied_adjustment": 0.0,
+          "adjusted_priority": 0.676
+        },
+        {
+          "skill_id": "skill:onet_2_a_2_d",
+          "label": "Monitoring",
+          "gap_reason": "Not confirmed in the reviewed profile; not proof of inability.",
+          "person2_importance": 0.624,
+          "baseline_priority": 0.624,
+          "applied_adjustment": 0.0,
+          "adjusted_priority": 0.624
+        },
+        {
+          "skill_id": "skill:onet_2_b_4_g",
+          "label": "Systems Analysis",
+          "gap_reason": "Not confirmed in the reviewed profile; not proof of inability.",
+          "person2_importance": 0.624,
+          "baseline_priority": 0.624,
+          "applied_adjustment": 0.0,
+          "adjusted_priority": 0.624
+        },
+        {
+          "skill_id": "skill:onet_2_b_4_h",
+          "label": "Systems Evaluation",
+          "gap_reason": "Not confirmed in the reviewed profile; not proof of inability.",
+          "person2_importance": 0.624,
+          "baseline_priority": 0.624,
+          "applied_adjustment": 0.0,
+          "adjusted_priority": 0.624
+        },
+        {
+          "skill_id": "skill:onet_2_b_5_a",
+          "label": "Time Management",
+          "gap_reason": "Not confirmed in the reviewed profile; not proof of inability.",
+          "person2_importance": 0.624,
+          "baseline_priority": 0.624,
+          "applied_adjustment": 0.0,
+          "adjusted_priority": 0.624
+        },
+        {
+          "skill_id": "skill:onet_2_a_2_c",
+          "label": "Learning Strategies",
+          "gap_reason": "Not confirmed in the reviewed profile; not proof of inability.",
+          "person2_importance": 0.6,
+          "baseline_priority": 0.6,
+          "applied_adjustment": 0.0,
+          "adjusted_priority": 0.6
+        },
+        {
+          "skill_id": "skill:onet_2_b_1_b",
+          "label": "Coordination",
+          "gap_reason": "Not confirmed in the reviewed profile; not proof of inability.",
+          "person2_importance": 0.6,
+          "baseline_priority": 0.6,
+          "applied_adjustment": 0.0,
+          "adjusted_priority": 0.6
+        },
+        {
+          "skill_id": "skill:onet_2_b_1_e",
+          "label": "Instructing",
+          "gap_reason": "Not confirmed in the reviewed profile; not proof of inability.",
+          "person2_importance": 0.6,
+          "baseline_priority": 0.6,
+          "applied_adjustment": 0.0,
+          "adjusted_priority": 0.6
+        },
+        {
+          "skill_id": "skill:onet_2_b_1_a",
+          "label": "Social Perceptiveness",
+          "gap_reason": "Not confirmed in the reviewed profile; not proof of inability.",
+          "person2_importance": 0.576,
+          "baseline_priority": 0.576,
+          "applied_adjustment": 0.0,
+          "adjusted_priority": 0.576
+        },
+        {
+          "skill_id": "skill:onet_2_b_1_c",
+          "label": "Persuasion",
+          "gap_reason": "Not confirmed in the reviewed profile; not proof of inability.",
+          "person2_importance": 0.576,
+          "baseline_priority": 0.576,
+          "applied_adjustment": 0.0,
+          "adjusted_priority": 0.576
+        },
+        {
+          "skill_id": "skill:onet_2_b_1_f",
+          "label": "Service Orientation",
+          "gap_reason": "Not confirmed in the reviewed profile; not proof of inability.",
+          "person2_importance": 0.576,
+          "baseline_priority": 0.576,
+          "applied_adjustment": 0.0,
+          "adjusted_priority": 0.576
+        },
+        {
+          "skill_id": "skill:microsoft_excel",
+          "label": "Microsoft Excel",
+          "gap_reason": "User-selected optional software objective; 0.5 is application learning priority, not measured tool importance.",
+          "person2_importance": 0.5,
+          "baseline_priority": 0.5,
+          "applied_adjustment": 0.0,
+          "adjusted_priority": 0.5
+        },
+        {
+          "skill_id": "skill:onet_2_b_1_d",
+          "label": "Negotiation",
+          "gap_reason": "Not confirmed in the reviewed profile; not proof of inability.",
+          "person2_importance": 0.5,
+          "baseline_priority": 0.5,
+          "applied_adjustment": 0.0,
+          "adjusted_priority": 0.5
+        },
+        {
+          "skill_id": "skill:onet_2_b_3_e",
+          "label": "Programming",
+          "gap_reason": "Not confirmed in the reviewed profile; not proof of inability.",
+          "person2_importance": 0.5,
+          "baseline_priority": 0.5,
+          "applied_adjustment": 0.0,
+          "adjusted_priority": 0.5
+        },
+        {
+          "skill_id": "skill:onet_2_b_5_d",
+          "label": "Management of Personnel Resources",
+          "gap_reason": "Not confirmed in the reviewed profile; not proof of inability.",
+          "person2_importance": 0.424,
+          "baseline_priority": 0.424,
+          "applied_adjustment": 0.0,
+          "adjusted_priority": 0.424
+        },
+        {
+          "skill_id": "skill:onet_2_b_3_m",
+          "label": "Quality Control Analysis",
+          "gap_reason": "Not confirmed in the reviewed profile; not proof of inability.",
+          "person2_importance": 0.4,
+          "baseline_priority": 0.4,
+          "applied_adjustment": 0.0,
+          "adjusted_priority": 0.4
+        },
+        {
+          "skill_id": "skill:onet_2_b_3_a",
+          "label": "Operations Analysis",
+          "gap_reason": "Not confirmed in the reviewed profile; not proof of inability.",
+          "person2_importance": 0.376,
+          "baseline_priority": 0.376,
+          "applied_adjustment": 0.0,
+          "adjusted_priority": 0.376
+        },
+        {
+          "skill_id": "skill:onet_2_b_5_b",
+          "label": "Management of Financial Resources",
+          "gap_reason": "Not confirmed in the reviewed profile; not proof of inability.",
+          "person2_importance": 0.376,
+          "baseline_priority": 0.376,
+          "applied_adjustment": 0.0,
+          "adjusted_priority": 0.376
+        },
+        {
+          "skill_id": "skill:onet_2_b_3_g",
+          "label": "Operations Monitoring",
+          "gap_reason": "Not confirmed in the reviewed profile; not proof of inability.",
+          "person2_importance": 0.35,
+          "baseline_priority": 0.35,
+          "applied_adjustment": 0.0,
+          "adjusted_priority": 0.35
+        },
+        {
+          "skill_id": "skill:onet_2_b_5_c",
+          "label": "Management of Material Resources",
+          "gap_reason": "Not confirmed in the reviewed profile; not proof of inability.",
+          "person2_importance": 0.35,
+          "baseline_priority": 0.35,
+          "applied_adjustment": 0.0,
+          "adjusted_priority": 0.35
+        },
+        {
+          "skill_id": "skill:onet_2_a_1_f",
+          "label": "Science",
+          "gap_reason": "Not confirmed in the reviewed profile; not proof of inability.",
+          "person2_importance": 0.324,
+          "baseline_priority": 0.324,
+          "applied_adjustment": 0.0,
+          "adjusted_priority": 0.324
+        },
+        {
+          "skill_id": "skill:onet_2_b_3_b",
+          "label": "Technology Design",
+          "gap_reason": "Not confirmed in the reviewed profile; not proof of inability.",
+          "person2_importance": 0.324,
+          "baseline_priority": 0.324,
+          "applied_adjustment": 0.0,
+          "adjusted_priority": 0.324
+        },
+        {
+          "skill_id": "skill:onet_2_b_3_h",
+          "label": "Operation and Control",
+          "gap_reason": "Not confirmed in the reviewed profile; not proof of inability.",
+          "person2_importance": 0.276,
+          "baseline_priority": 0.276,
+          "applied_adjustment": 0.0,
+          "adjusted_priority": 0.276
+        }
+      ],
+      "selected_courses": [],
+      "milestones": [
+        {
+          "stage": "core_skills",
+          "title": "Core Skills",
+          "objective": "Address the selected role's prioritized skill gaps.",
+          "steps": [
+            {
+              "order": 1,
+              "skill_ids": [
+                "skill:onet_2_a_1_b"
+              ],
+              "learning_goal": "Develop Active Listening through a documented self-study objective while no verified course is available.",
+              "course_id": null,
+              "estimated_hours": null,
+              "prerequisite_skill_ids": [],
+              "practice_activity": "Create a small Business Intelligence Analysts exercise demonstrating Active Listening.",
+              "completion_evidence": "Save the exercise, notes, and review criteria.",
+              "resource_status": "verified_resource_not_found"
+            },
+            {
+              "order": 2,
+              "skill_ids": [
+                "skill:onet_2_a_1_d"
+              ],
+              "learning_goal": "Develop Speaking through a documented self-study objective while no verified course is available.",
+              "course_id": null,
+              "estimated_hours": null,
+              "prerequisite_skill_ids": [],
+              "practice_activity": "Create a small Business Intelligence Analysts exercise demonstrating Speaking.",
+              "completion_evidence": "Save the exercise, notes, and review criteria.",
+              "resource_status": "verified_resource_not_found"
+            },
+            {
+              "order": 3,
+              "skill_ids": [
+                "skill:onet_2_a_2_a"
+              ],
+              "learning_goal": "Develop Critical Thinking through a documented self-study objective while no verified course is available.",
+              "course_id": null,
+              "estimated_hours": null,
+              "prerequisite_skill_ids": [],
+              "practice_activity": "Create a small Business Intelligence Analysts exercise demonstrating Critical Thinking.",
+              "completion_evidence": "Save the exercise, notes, and review criteria.",
+              "resource_status": "verified_resource_not_found"
+            },
+            {
+              "order": 4,
+              "skill_ids": [
+                "skill:onet_2_a_2_b"
+              ],
+              "learning_goal": "Develop Active Learning through a documented self-study objective while no verified course is available.",
+              "course_id": null,
+              "estimated_hours": null,
+              "prerequisite_skill_ids": [],
+              "practice_activity": "Create a small Business Intelligence Analysts exercise demonstrating Active Learning.",
+              "completion_evidence": "Save the exercise, notes, and review criteria.",
+              "resource_status": "verified_resource_not_found"
+            },
+            {
+              "order": 5,
+              "skill_ids": [
+                "skill:onet_2_a_1_c"
+              ],
+              "learning_goal": "Develop Writing through a documented self-study objective while no verified course is available.",
+              "course_id": null,
+              "estimated_hours": null,
+              "prerequisite_skill_ids": [],
+              "practice_activity": "Create a small Business Intelligence Analysts exercise demonstrating Writing.",
+              "completion_evidence": "Save the exercise, notes, and review criteria.",
+              "resource_status": "verified_resource_not_found"
+            },
+            {
+              "order": 6,
+              "skill_ids": [
+                "skill:onet_2_b_4_e"
+              ],
+              "learning_goal": "Develop Judgment and Decision Making through a documented self-study objective while no verified course is available.",
+              "course_id": null,
+              "estimated_hours": null,
+              "prerequisite_skill_ids": [],
+              "practice_activity": "Create a small Business Intelligence Analysts exercise demonstrating Judgment and Decision Making.",
+              "completion_evidence": "Save the exercise, notes, and review criteria.",
+              "resource_status": "verified_resource_not_found"
+            },
+            {
+              "order": 7,
+              "skill_ids": [
+                "skill:onet_2_a_1_e"
+              ],
+              "learning_goal": "Develop Mathematics through a documented self-study objective while no verified course is available.",
+              "course_id": null,
+              "estimated_hours": null,
+              "prerequisite_skill_ids": [],
+              "practice_activity": "Create a small Business Intelligence Analysts exercise demonstrating Mathematics.",
+              "completion_evidence": "Save the exercise, notes, and review criteria.",
+              "resource_status": "verified_resource_not_found"
+            },
+            {
+              "order": 8,
+              "skill_ids": [
+                "skill:onet_2_b_2_i"
+              ],
+              "learning_goal": "Develop Complex Problem Solving through a documented self-study objective while no verified course is available.",
+              "course_id": null,
+              "estimated_hours": null,
+              "prerequisite_skill_ids": [],
+              "practice_activity": "Create a small Business Intelligence Analysts exercise demonstrating Complex Problem Solving.",
+              "completion_evidence": "Save the exercise, notes, and review criteria.",
+              "resource_status": "verified_resource_not_found"
+            },
+            {
+              "order": 9,
+              "skill_ids": [
+                "skill:onet_2_a_2_d"
+              ],
+              "learning_goal": "Develop Monitoring through a documented self-study objective while no verified course is available.",
+              "course_id": null,
+              "estimated_hours": null,
+              "prerequisite_skill_ids": [],
+              "practice_activity": "Create a small Business Intelligence Analysts exercise demonstrating Monitoring.",
+              "completion_evidence": "Save the exercise, notes, and review criteria.",
+              "resource_status": "verified_resource_not_found"
+            },
+            {
+              "order": 10,
+              "skill_ids": [
+                "skill:onet_2_b_4_g"
+              ],
+              "learning_goal": "Develop Systems Analysis through a documented self-study objective while no verified course is available.",
+              "course_id": null,
+              "estimated_hours": null,
+              "prerequisite_skill_ids": [],
+              "practice_activity": "Create a small Business Intelligence Analysts exercise demonstrating Systems Analysis.",
+              "completion_evidence": "Save the exercise, notes, and review criteria.",
+              "resource_status": "verified_resource_not_found"
+            },
+            {
+              "order": 11,
+              "skill_ids": [
+                "skill:onet_2_b_4_h"
+              ],
+              "learning_goal": "Develop Systems Evaluation through a documented self-study objective while no verified course is available.",
+              "course_id": null,
+              "estimated_hours": null,
+              "prerequisite_skill_ids": [],
+              "practice_activity": "Create a small Business Intelligence Analysts exercise demonstrating Systems Evaluation.",
+              "completion_evidence": "Save the exercise, notes, and review criteria.",
+              "resource_status": "verified_resource_not_found"
+            },
+            {
+              "order": 12,
+              "skill_ids": [
+                "skill:onet_2_b_5_a"
+              ],
+              "learning_goal": "Develop Time Management through a documented self-study objective while no verified course is available.",
+              "course_id": null,
+              "estimated_hours": null,
+              "prerequisite_skill_ids": [],
+              "practice_activity": "Create a small Business Intelligence Analysts exercise demonstrating Time Management.",
+              "completion_evidence": "Save the exercise, notes, and review criteria.",
+              "resource_status": "verified_resource_not_found"
+            },
+            {
+              "order": 13,
+              "skill_ids": [
+                "skill:onet_2_a_2_c"
+              ],
+              "learning_goal": "Develop Learning Strategies through a documented self-study objective while no verified course is available.",
+              "course_id": null,
+              "estimated_hours": null,
+              "prerequisite_skill_ids": [],
+              "practice_activity": "Create a small Business Intelligence Analysts exercise demonstrating Learning Strategies.",
+              "completion_evidence": "Save the exercise, notes, and review criteria.",
+              "resource_status": "verified_resource_not_found"
+            },
+            {
+              "order": 14,
+              "skill_ids": [
+                "skill:onet_2_b_1_b"
+              ],
+              "learning_goal": "Develop Coordination through a documented self-study objective while no verified course is available.",
+              "course_id": null,
+              "estimated_hours": null,
+              "prerequisite_skill_ids": [],
+              "practice_activity": "Create a small Business Intelligence Analysts exercise demonstrating Coordination.",
+              "completion_evidence": "Save the exercise, notes, and review criteria.",
+              "resource_status": "verified_resource_not_found"
+            },
+            {
+              "order": 15,
+              "skill_ids": [
+                "skill:onet_2_b_1_e"
+              ],
+              "learning_goal": "Develop Instructing through a documented self-study objective while no verified course is available.",
+              "course_id": null,
+              "estimated_hours": null,
+              "prerequisite_skill_ids": [],
+              "practice_activity": "Create a small Business Intelligence Analysts exercise demonstrating Instructing.",
+              "completion_evidence": "Save the exercise, notes, and review criteria.",
+              "resource_status": "verified_resource_not_found"
+            },
+            {
+              "order": 16,
+              "skill_ids": [
+                "skill:onet_2_b_1_a"
+              ],
+              "learning_goal": "Develop Social Perceptiveness through a documented self-study objective while no verified course is available.",
+              "course_id": null,
+              "estimated_hours": null,
+              "prerequisite_skill_ids": [],
+              "practice_activity": "Create a small Business Intelligence Analysts exercise demonstrating Social Perceptiveness.",
+              "completion_evidence": "Save the exercise, notes, and review criteria.",
+              "resource_status": "verified_resource_not_found"
+            },
+            {
+              "order": 17,
+              "skill_ids": [
+                "skill:onet_2_b_1_c"
+              ],
+              "learning_goal": "Develop Persuasion through a documented self-study objective while no verified course is available.",
+              "course_id": null,
+              "estimated_hours": null,
+              "prerequisite_skill_ids": [],
+              "practice_activity": "Create a small Business Intelligence Analysts exercise demonstrating Persuasion.",
+              "completion_evidence": "Save the exercise, notes, and review criteria.",
+              "resource_status": "verified_resource_not_found"
+            },
+            {
+              "order": 18,
+              "skill_ids": [
+                "skill:onet_2_b_1_f"
+              ],
+              "learning_goal": "Develop Service Orientation through a documented self-study objective while no verified course is available.",
+              "course_id": null,
+              "estimated_hours": null,
+              "prerequisite_skill_ids": [],
+              "practice_activity": "Create a small Business Intelligence Analysts exercise demonstrating Service Orientation.",
+              "completion_evidence": "Save the exercise, notes, and review criteria.",
+              "resource_status": "verified_resource_not_found"
+            },
+            {
+              "order": 19,
+              "skill_ids": [
+                "skill:microsoft_excel"
+              ],
+              "learning_goal": "Develop Microsoft Excel through a documented self-study objective while no verified course is available.",
+              "course_id": null,
+              "estimated_hours": null,
+              "prerequisite_skill_ids": [],
+              "practice_activity": "Create a small Business Intelligence Analysts exercise demonstrating Microsoft Excel.",
+              "completion_evidence": "Save the exercise, notes, and review criteria.",
+              "resource_status": "verified_resource_not_found"
+            },
+            {
+              "order": 20,
+              "skill_ids": [
+                "skill:onet_2_b_1_d"
+              ],
+              "learning_goal": "Develop Negotiation through a documented self-study objective while no verified course is available.",
+              "course_id": null,
+              "estimated_hours": null,
+              "prerequisite_skill_ids": [],
+              "practice_activity": "Create a small Business Intelligence Analysts exercise demonstrating Negotiation.",
+              "completion_evidence": "Save the exercise, notes, and review criteria.",
+              "resource_status": "verified_resource_not_found"
+            },
+            {
+              "order": 21,
+              "skill_ids": [
+                "skill:onet_2_b_3_e"
+              ],
+              "learning_goal": "Develop Programming through a documented self-study objective while no verified course is available.",
+              "course_id": null,
+              "estimated_hours": null,
+              "prerequisite_skill_ids": [],
+              "practice_activity": "Create a small Business Intelligence Analysts exercise demonstrating Programming.",
+              "completion_evidence": "Save the exercise, notes, and review criteria.",
+              "resource_status": "verified_resource_not_found"
+            },
+            {
+              "order": 22,
+              "skill_ids": [
+                "skill:onet_2_b_5_d"
+              ],
+              "learning_goal": "Develop Management of Personnel Resources through a documented self-study objective while no verified course is available.",
+              "course_id": null,
+              "estimated_hours": null,
+              "prerequisite_skill_ids": [],
+              "practice_activity": "Create a small Business Intelligence Analysts exercise demonstrating Management of Personnel Resources.",
+              "completion_evidence": "Save the exercise, notes, and review criteria.",
+              "resource_status": "verified_resource_not_found"
+            },
+            {
+              "order": 23,
+              "skill_ids": [
+                "skill:onet_2_b_3_m"
+              ],
+              "learning_goal": "Develop Quality Control Analysis through a documented self-study objective while no verified course is available.",
+              "course_id": null,
+              "estimated_hours": null,
+              "prerequisite_skill_ids": [],
+              "practice_activity": "Create a small Business Intelligence Analysts exercise demonstrating Quality Control Analysis.",
+              "completion_evidence": "Save the exercise, notes, and review criteria.",
+              "resource_status": "verified_resource_not_found"
+            },
+            {
+              "order": 24,
+              "skill_ids": [
+                "skill:onet_2_b_3_a"
+              ],
+              "learning_goal": "Develop Operations Analysis through a documented self-study objective while no verified course is available.",
+              "course_id": null,
+              "estimated_hours": null,
+              "prerequisite_skill_ids": [],
+              "practice_activity": "Create a small Business Intelligence Analysts exercise demonstrating Operations Analysis.",
+              "completion_evidence": "Save the exercise, notes, and review criteria.",
+              "resource_status": "verified_resource_not_found"
+            },
+            {
+              "order": 25,
+              "skill_ids": [
+                "skill:onet_2_b_5_b"
+              ],
+              "learning_goal": "Develop Management of Financial Resources through a documented self-study objective while no verified course is available.",
+              "course_id": null,
+              "estimated_hours": null,
+              "prerequisite_skill_ids": [],
+              "practice_activity": "Create a small Business Intelligence Analysts exercise demonstrating Management of Financial Resources.",
+              "completion_evidence": "Save the exercise, notes, and review criteria.",
+              "resource_status": "verified_resource_not_found"
+            },
+            {
+              "order": 26,
+              "skill_ids": [
+                "skill:onet_2_b_3_g"
+              ],
+              "learning_goal": "Develop Operations Monitoring through a documented self-study objective while no verified course is available.",
+              "course_id": null,
+              "estimated_hours": null,
+              "prerequisite_skill_ids": [],
+              "practice_activity": "Create a small Business Intelligence Analysts exercise demonstrating Operations Monitoring.",
+              "completion_evidence": "Save the exercise, notes, and review criteria.",
+              "resource_status": "verified_resource_not_found"
+            },
+            {
+              "order": 27,
+              "skill_ids": [
+                "skill:onet_2_b_5_c"
+              ],
+              "learning_goal": "Develop Management of Material Resources through a documented self-study objective while no verified course is available.",
+              "course_id": null,
+              "estimated_hours": null,
+              "prerequisite_skill_ids": [],
+              "practice_activity": "Create a small Business Intelligence Analysts exercise demonstrating Management of Material Resources.",
+              "completion_evidence": "Save the exercise, notes, and review criteria.",
+              "resource_status": "verified_resource_not_found"
+            },
+            {
+              "order": 28,
+              "skill_ids": [
+                "skill:onet_2_a_1_f"
+              ],
+              "learning_goal": "Develop Science through a documented self-study objective while no verified course is available.",
+              "course_id": null,
+              "estimated_hours": null,
+              "prerequisite_skill_ids": [],
+              "practice_activity": "Create a small Business Intelligence Analysts exercise demonstrating Science.",
+              "completion_evidence": "Save the exercise, notes, and review criteria.",
+              "resource_status": "verified_resource_not_found"
+            },
+            {
+              "order": 29,
+              "skill_ids": [
+                "skill:onet_2_b_3_b"
+              ],
+              "learning_goal": "Develop Technology Design through a documented self-study objective while no verified course is available.",
+              "course_id": null,
+              "estimated_hours": null,
+              "prerequisite_skill_ids": [],
+              "practice_activity": "Create a small Business Intelligence Analysts exercise demonstrating Technology Design.",
+              "completion_evidence": "Save the exercise, notes, and review criteria.",
+              "resource_status": "verified_resource_not_found"
+            },
+            {
+              "order": 30,
+              "skill_ids": [
+                "skill:onet_2_b_3_h"
+              ],
+              "learning_goal": "Develop Operation and Control through a documented self-study objective while no verified course is available.",
+              "course_id": null,
+              "estimated_hours": null,
+              "prerequisite_skill_ids": [],
+              "practice_activity": "Create a small Business Intelligence Analysts exercise demonstrating Operation and Control.",
+              "completion_evidence": "Save the exercise, notes, and review criteria.",
+              "resource_status": "verified_resource_not_found"
+            }
+          ]
+        }
+      ],
+      "uncovered_skill_ids": [
+        "skill:microsoft_excel",
+        "skill:onet_2_a_1_b",
+        "skill:onet_2_a_1_c",
+        "skill:onet_2_a_1_d",
+        "skill:onet_2_a_1_e",
+        "skill:onet_2_a_1_f",
+        "skill:onet_2_a_2_a",
+        "skill:onet_2_a_2_b",
+        "skill:onet_2_a_2_c",
+        "skill:onet_2_a_2_d",
+        "skill:onet_2_b_1_a",
+        "skill:onet_2_b_1_b",
+        "skill:onet_2_b_1_c",
+        "skill:onet_2_b_1_d",
+        "skill:onet_2_b_1_e",
+        "skill:onet_2_b_1_f",
+        "skill:onet_2_b_2_i",
+        "skill:onet_2_b_3_a",
+        "skill:onet_2_b_3_b",
+        "skill:onet_2_b_3_e",
+        "skill:onet_2_b_3_g",
+        "skill:onet_2_b_3_h",
+        "skill:onet_2_b_3_m",
+        "skill:onet_2_b_4_e",
+        "skill:onet_2_b_4_g",
+        "skill:onet_2_b_4_h",
+        "skill:onet_2_b_5_a",
+        "skill:onet_2_b_5_b",
+        "skill:onet_2_b_5_c",
+        "skill:onet_2_b_5_d"
+      ],
+      "total_estimated_hours": null,
+      "cost_totals": [],
+      "sdg_connections": [
+        {
+          "role_id": "role:onet_15_2051_01",
+          "skill_ids": [
+            "skill:microsoft_excel",
+            "skill:onet_2_a_1_b",
+            "skill:onet_2_a_1_c",
+            "skill:onet_2_a_1_d",
+            "skill:onet_2_a_1_e",
+            "skill:onet_2_a_1_f",
+            "skill:onet_2_a_2_a",
+            "skill:onet_2_a_2_b",
+            "skill:onet_2_a_2_c",
+            "skill:onet_2_a_2_d",
+            "skill:onet_2_b_1_a",
+            "skill:onet_2_b_1_b",
+            "skill:onet_2_b_1_c",
+            "skill:onet_2_b_1_d",
+            "skill:onet_2_b_1_e",
+            "skill:onet_2_b_1_f",
+            "skill:onet_2_b_2_i",
+            "skill:onet_2_b_3_a",
+            "skill:onet_2_b_3_b",
+            "skill:onet_2_b_3_e",
+            "skill:onet_2_b_3_g",
+            "skill:onet_2_b_3_h",
+            "skill:onet_2_b_3_m",
+            "skill:onet_2_b_4_e",
+            "skill:onet_2_b_4_g",
+            "skill:onet_2_b_4_h",
+            "skill:onet_2_b_5_a",
+            "skill:onet_2_b_5_b",
+            "skill:onet_2_b_5_c",
+            "skill:onet_2_b_5_d"
+          ],
+          "sdg_id": "SDG 4",
+          "target_id": "4.4",
+          "contribution": "indirect",
+          "rationale": "Developing role-relevant skills through a learning pathway supports the preparation objective of SDG 4.4. This is an inferred training connection, not evidence of employment, qualification, or measured SDG outcomes.",
+          "evidence_url": "https://sdgs.un.org/goals/goal4",
+          "evidence_kind": "inferred"
+        }
+      ],
+      "warnings": [
+        "Exploratory coverage of reviewed skill claims; not hiring probability or proficiency assessment.",
+        "Missing profile evidence means unconfirmed, not inability.",
+        "Software group credit indicates category familiarity, not interchangeable tools.",
+        "Software learning options are alternatives to inspect, not a checklist of mandatory courses.",
+        "Equal-share defaults are application assumptions; no empirical calibration is claimed.",
+        "Education, licenses and experience are not assessed; high coverage does not establish job eligibility.",
+        "Task-based transfer credit is disabled: imported task-to-skill mappings are unavailable.",
+        "Preferences use exact occupation titles, aliases or occupational-family labels; target-role pinning never increases scores.",
+        "No scenario priority was available for skill:microsoft_excel; Person 2 importance was retained without adjustment.",
+        "Only explicitly selected optional software is included in the learning plan.",
+        "Budget is enforced in MYR; foreign-currency paid routes are withheld rather than guessing exchange rates.",
+        "No budget supplied; only verified zero-cost access routes are eligible.",
+        "No search provider configured for skill:onet_2_a_1_b; using verified cache only.",
+        "No search provider configured for skill:onet_2_a_1_d; using verified cache only.",
+        "No search provider configured for skill:onet_2_a_2_a; using verified cache only.",
+        "No search provider configured for skill:onet_2_a_2_b; using verified cache only.",
+        "No search provider configured for skill:onet_2_a_1_c; using verified cache only.",
+        "No search provider configured for skill:onet_2_b_4_e; using verified cache only.",
+        "No search provider configured for skill:onet_2_a_1_e; using verified cache only.",
+        "No search provider configured for skill:onet_2_b_2_i; using verified cache only.",
+        "No search provider configured for skill:onet_2_a_2_d; using verified cache only.",
+        "No search provider configured for skill:onet_2_b_4_g; using verified cache only.",
+        "No search provider configured for skill:onet_2_b_4_h; using verified cache only.",
+        "No search provider configured for skill:onet_2_b_5_a; using verified cache only.",
+        "No search provider configured for skill:onet_2_a_2_c; using verified cache only.",
+        "No search provider configured for skill:onet_2_b_1_b; using verified cache only.",
+        "No search provider configured for skill:onet_2_b_1_e; using verified cache only.",
+        "No search provider configured for skill:onet_2_b_1_a; using verified cache only.",
+        "No search provider configured for skill:onet_2_b_1_c; using verified cache only.",
+        "No search provider configured for skill:onet_2_b_1_f; using verified cache only.",
+        "No search provider configured for skill:microsoft_excel; using verified cache only.",
+        "No search provider configured for skill:onet_2_b_1_d; using verified cache only.",
+        "No search provider configured for skill:onet_2_b_3_e; using verified cache only.",
+        "No search provider configured for skill:onet_2_b_5_d; using verified cache only.",
+        "No search provider configured for skill:onet_2_b_3_m; using verified cache only.",
+        "No search provider configured for skill:onet_2_b_3_a; using verified cache only.",
+        "No search provider configured for skill:onet_2_b_5_b; using verified cache only.",
+        "No search provider configured for skill:onet_2_b_3_g; using verified cache only.",
+        "No search provider configured for skill:onet_2_b_5_c; using verified cache only.",
+        "No search provider configured for skill:onet_2_a_1_f; using verified cache only.",
+        "No search provider configured for skill:onet_2_b_3_b; using verified cache only.",
+        "No search provider configured for skill:onet_2_b_3_h; using verified cache only.",
+        "Verified resources were not found for: skill:microsoft_excel, skill:onet_2_a_1_b, skill:onet_2_a_1_c, skill:onet_2_a_1_d, skill:onet_2_a_1_e, skill:onet_2_a_1_f, skill:onet_2_a_2_a, skill:onet_2_a_2_b, skill:onet_2_a_2_c, skill:onet_2_a_2_d, skill:onet_2_b_1_a, skill:onet_2_b_1_b, skill:onet_2_b_1_c, skill:onet_2_b_1_d, skill:onet_2_b_1_e, skill:onet_2_b_1_f, skill:onet_2_b_2_i, skill:onet_2_b_3_a, skill:onet_2_b_3_b, skill:onet_2_b_3_e, skill:onet_2_b_3_g, skill:onet_2_b_3_h, skill:onet_2_b_3_m, skill:onet_2_b_4_e, skill:onet_2_b_4_g, skill:onet_2_b_4_h, skill:onet_2_b_5_a, skill:onet_2_b_5_b, skill:onet_2_b_5_c, skill:onet_2_b_5_d"
+      ],
+      "catalog_id": "onet_31_0",
+      "family_id": "family:soc_15",
+      "family": "Computer and Mathematical",
+      "score_method": "reviewed_onet_fit_v1",
+      "software_learning_options": [
+        {
+          "skill_id": "skill:microsoft_excel",
+          "label": "Microsoft Excel",
+          "group_ids": [
+            "group:onet_2_e_4_i"
+          ],
+          "group_familiarity_evidenced": false,
+          "meaning": "optional_occupation_demand_signal"
+        },
+        {
+          "skill_id": "skill:microsoft_power_bi",
+          "label": "Microsoft Power BI",
+          "group_ids": [
+            "group:onet_2_e_6_m"
+          ],
+          "group_familiarity_evidenced": true,
+          "meaning": "optional_occupation_demand_signal"
+        },
+        {
+          "skill_id": "skill:software_0c8e1cae0d7f35f4",
+          "label": "Microsoft PowerPoint",
+          "group_ids": [
+            "group:onet_2_e_4_f"
+          ],
+          "group_familiarity_evidenced": false,
+          "meaning": "optional_occupation_demand_signal"
+        },
+        {
+          "skill_id": "skill:software_3deb2d2d35c24f36",
+          "label": "Microsoft Azure software",
+          "group_ids": [
+            "group:onet_2_e_7_b"
+          ],
+          "group_familiarity_evidenced": false,
+          "meaning": "optional_occupation_demand_signal"
+        },
+        {
+          "skill_id": "skill:software_454349e422f05297",
+          "label": "R",
+          "group_ids": [
+            "group:onet_2_e_7_e"
+          ],
+          "group_familiarity_evidenced": true,
+          "meaning": "optional_occupation_demand_signal"
+        },
+        {
+          "skill_id": "skill:software_841eef0a7343f781",
+          "label": "SAP software",
+          "group_ids": [
+            "group:onet_2_e_2_b"
+          ],
+          "group_familiarity_evidenced": false,
+          "meaning": "optional_occupation_demand_signal"
+        },
+        {
+          "skill_id": "skill:software_8ba5705dedf27b6e",
+          "label": "Amazon Web Services AWS software",
+          "group_ids": [
+            "group:onet_2_e_6_f"
+          ],
+          "group_familiarity_evidenced": true,
+          "meaning": "optional_occupation_demand_signal"
+        },
+        {
+          "skill_id": "skill:software_96166e27af5a3c43",
+          "label": "SAS",
+          "group_ids": [
+            "group:onet_2_e_9_d"
+          ],
+          "group_familiarity_evidenced": false,
+          "meaning": "optional_occupation_demand_signal"
+        },
+        {
+          "skill_id": "skill:software_9d2f2e0ca2b14f57",
+          "label": "Microsoft Office software",
+          "group_ids": [
+            "group:onet_2_e_1_k"
+          ],
+          "group_familiarity_evidenced": false,
+          "meaning": "optional_occupation_demand_signal"
+        },
+        {
+          "skill_id": "skill:software_b2953d236aa4f40b",
+          "label": "Salesforce software",
+          "group_ids": [
+            "group:onet_2_e_6_c"
+          ],
+          "group_familiarity_evidenced": false,
+          "meaning": "optional_occupation_demand_signal"
+        },
+        {
+          "skill_id": "skill:software_de5a1adf4fedcce1",
+          "label": "Snowflake",
+          "group_ids": [
+            "group:onet_2_e_6_g"
+          ],
+          "group_familiarity_evidenced": false,
+          "meaning": "optional_occupation_demand_signal"
+        }
+      ],
+      "selected_software_skill_ids": [
+        "skill:microsoft_excel"
+      ],
+      "budget_myr": 0.0
+    },
+    "validation_logs": []
+  },
+  "rapid_plan": {
+    "plan": {
+      "schema_version": "0.2.0",
+      "generated_at": "2026-10-21T00:00:00Z",
+      "profile_id": "synthetic:backend_demo",
+      "role_id": "role:onet_15_2051_01",
+      "scenario_id": "rapid_ai_change",
+      "fit_score": 14.53,
+      "reviewed_skills": [
+        {
+          "skill_id": "skill:onet_2_a_1_a",
+          "label": "Reading Comprehension",
+          "level": "unknown",
+          "evidence": [
+            "Typed skill entry: Reading Comprehension"
+          ],
+          "confirmation": "self_reported"
+        },
+        {
+          "skill_id": "skill:python",
+          "label": "Python",
+          "level": "unknown",
+          "evidence": [
+            "Typed skill entry: Python"
+          ],
+          "confirmation": "self_reported"
+        },
+        {
+          "skill_id": "skill:software_5f0974ee455c4cd5",
+          "label": "Tableau",
+          "level": "unknown",
+          "evidence": [
+            "Typed skill entry: Tableau"
+          ],
+          "confirmation": "self_reported"
+        },
+        {
+          "skill_id": "skill:sql",
+          "label": "SQL",
+          "level": "unknown",
+          "evidence": [
+            "Typed skill entry: SQL"
+          ],
+          "confirmation": "self_reported"
+        }
+      ],
+      "prioritized_gaps": [
+        {
+          "skill_id": "skill:onet_2_a_2_a",
+          "label": "Critical Thinking",
+          "gap_reason": "Not confirmed in the reviewed profile; not proof of inability.",
+          "person2_importance": 0.776,
+          "baseline_priority": 0.776,
+          "applied_adjustment": 0.16,
+          "adjusted_priority": 0.936
+        },
+        {
+          "skill_id": "skill:onet_2_a_2_b",
+          "label": "Active Learning",
+          "gap_reason": "Not confirmed in the reviewed profile; not proof of inability.",
+          "person2_importance": 0.776,
+          "baseline_priority": 0.776,
+          "applied_adjustment": 0.12,
+          "adjusted_priority": 0.896
+        },
+        {
+          "skill_id": "skill:onet_2_a_1_b",
+          "label": "Active Listening",
+          "gap_reason": "Not confirmed in the reviewed profile; not proof of inability.",
+          "person2_importance": 0.776,
+          "baseline_priority": 0.776,
+          "applied_adjustment": 0.0,
+          "adjusted_priority": 0.776
+        },
+        {
+          "skill_id": "skill:onet_2_a_1_d",
+          "label": "Speaking",
+          "gap_reason": "Not confirmed in the reviewed profile; not proof of inability.",
+          "person2_importance": 0.776,
+          "baseline_priority": 0.776,
+          "applied_adjustment": 0.0,
+          "adjusted_priority": 0.776
+        },
+        {
+          "skill_id": "skill:onet_2_a_1_c",
+          "label": "Writing",
+          "gap_reason": "Not confirmed in the reviewed profile; not proof of inability.",
+          "person2_importance": 0.75,
+          "baseline_priority": 0.75,
+          "applied_adjustment": 0.0,
+          "adjusted_priority": 0.75
+        },
+        {
+          "skill_id": "skill:onet_2_b_4_e",
+          "label": "Judgment and Decision Making",
+          "gap_reason": "Not confirmed in the reviewed profile; not proof of inability.",
+          "person2_importance": 0.724,
+          "baseline_priority": 0.724,
+          "applied_adjustment": 0.0,
+          "adjusted_priority": 0.724
+        },
+        {
+          "skill_id": "skill:onet_2_a_1_e",
+          "label": "Mathematics",
+          "gap_reason": "Not confirmed in the reviewed profile; not proof of inability.",
+          "person2_importance": 0.7,
+          "baseline_priority": 0.7,
+          "applied_adjustment": 0.0,
+          "adjusted_priority": 0.7
+        },
+        {
+          "skill_id": "skill:onet_2_b_2_i",
+          "label": "Complex Problem Solving",
+          "gap_reason": "Not confirmed in the reviewed profile; not proof of inability.",
+          "person2_importance": 0.676,
+          "baseline_priority": 0.676,
+          "applied_adjustment": 0.0,
+          "adjusted_priority": 0.676
+        },
+        {
+          "skill_id": "skill:onet_2_a_2_d",
+          "label": "Monitoring",
+          "gap_reason": "Not confirmed in the reviewed profile; not proof of inability.",
+          "person2_importance": 0.624,
+          "baseline_priority": 0.624,
+          "applied_adjustment": 0.0,
+          "adjusted_priority": 0.624
+        },
+        {
+          "skill_id": "skill:onet_2_b_4_g",
+          "label": "Systems Analysis",
+          "gap_reason": "Not confirmed in the reviewed profile; not proof of inability.",
+          "person2_importance": 0.624,
+          "baseline_priority": 0.624,
+          "applied_adjustment": 0.0,
+          "adjusted_priority": 0.624
+        },
+        {
+          "skill_id": "skill:onet_2_b_4_h",
+          "label": "Systems Evaluation",
+          "gap_reason": "Not confirmed in the reviewed profile; not proof of inability.",
+          "person2_importance": 0.624,
+          "baseline_priority": 0.624,
+          "applied_adjustment": 0.0,
+          "adjusted_priority": 0.624
+        },
+        {
+          "skill_id": "skill:onet_2_b_5_a",
+          "label": "Time Management",
+          "gap_reason": "Not confirmed in the reviewed profile; not proof of inability.",
+          "person2_importance": 0.624,
+          "baseline_priority": 0.624,
+          "applied_adjustment": 0.0,
+          "adjusted_priority": 0.624
+        },
+        {
+          "skill_id": "skill:onet_2_a_2_c",
+          "label": "Learning Strategies",
+          "gap_reason": "Not confirmed in the reviewed profile; not proof of inability.",
+          "person2_importance": 0.6,
+          "baseline_priority": 0.6,
+          "applied_adjustment": 0.0,
+          "adjusted_priority": 0.6
+        },
+        {
+          "skill_id": "skill:onet_2_b_1_b",
+          "label": "Coordination",
+          "gap_reason": "Not confirmed in the reviewed profile; not proof of inability.",
+          "person2_importance": 0.6,
+          "baseline_priority": 0.6,
+          "applied_adjustment": 0.0,
+          "adjusted_priority": 0.6
+        },
+        {
+          "skill_id": "skill:onet_2_b_1_e",
+          "label": "Instructing",
+          "gap_reason": "Not confirmed in the reviewed profile; not proof of inability.",
+          "person2_importance": 0.6,
+          "baseline_priority": 0.6,
+          "applied_adjustment": 0.0,
+          "adjusted_priority": 0.6
+        },
+        {
+          "skill_id": "skill:onet_2_b_1_a",
+          "label": "Social Perceptiveness",
+          "gap_reason": "Not confirmed in the reviewed profile; not proof of inability.",
+          "person2_importance": 0.576,
+          "baseline_priority": 0.576,
+          "applied_adjustment": 0.0,
+          "adjusted_priority": 0.576
+        },
+        {
+          "skill_id": "skill:onet_2_b_1_c",
+          "label": "Persuasion",
+          "gap_reason": "Not confirmed in the reviewed profile; not proof of inability.",
+          "person2_importance": 0.576,
+          "baseline_priority": 0.576,
+          "applied_adjustment": 0.0,
+          "adjusted_priority": 0.576
+        },
+        {
+          "skill_id": "skill:onet_2_b_1_f",
+          "label": "Service Orientation",
+          "gap_reason": "Not confirmed in the reviewed profile; not proof of inability.",
+          "person2_importance": 0.576,
+          "baseline_priority": 0.576,
+          "applied_adjustment": 0.0,
+          "adjusted_priority": 0.576
+        },
+        {
+          "skill_id": "skill:microsoft_excel",
+          "label": "Microsoft Excel",
+          "gap_reason": "User-selected optional software objective; 0.5 is application learning priority, not measured tool importance.",
+          "person2_importance": 0.5,
+          "baseline_priority": 0.5,
+          "applied_adjustment": 0.0,
+          "adjusted_priority": 0.5
+        },
+        {
+          "skill_id": "skill:onet_2_b_1_d",
+          "label": "Negotiation",
+          "gap_reason": "Not confirmed in the reviewed profile; not proof of inability.",
+          "person2_importance": 0.5,
+          "baseline_priority": 0.5,
+          "applied_adjustment": 0.0,
+          "adjusted_priority": 0.5
+        },
+        {
+          "skill_id": "skill:onet_2_b_3_e",
+          "label": "Programming",
+          "gap_reason": "Not confirmed in the reviewed profile; not proof of inability.",
+          "person2_importance": 0.5,
+          "baseline_priority": 0.5,
+          "applied_adjustment": 0.0,
+          "adjusted_priority": 0.5
+        },
+        {
+          "skill_id": "skill:onet_2_b_5_d",
+          "label": "Management of Personnel Resources",
+          "gap_reason": "Not confirmed in the reviewed profile; not proof of inability.",
+          "person2_importance": 0.424,
+          "baseline_priority": 0.424,
+          "applied_adjustment": 0.0,
+          "adjusted_priority": 0.424
+        },
+        {
+          "skill_id": "skill:onet_2_b_3_m",
+          "label": "Quality Control Analysis",
+          "gap_reason": "Not confirmed in the reviewed profile; not proof of inability.",
+          "person2_importance": 0.4,
+          "baseline_priority": 0.4,
+          "applied_adjustment": 0.0,
+          "adjusted_priority": 0.4
+        },
+        {
+          "skill_id": "skill:onet_2_b_3_a",
+          "label": "Operations Analysis",
+          "gap_reason": "Not confirmed in the reviewed profile; not proof of inability.",
+          "person2_importance": 0.376,
+          "baseline_priority": 0.376,
+          "applied_adjustment": 0.0,
+          "adjusted_priority": 0.376
+        },
+        {
+          "skill_id": "skill:onet_2_b_5_b",
+          "label": "Management of Financial Resources",
+          "gap_reason": "Not confirmed in the reviewed profile; not proof of inability.",
+          "person2_importance": 0.376,
+          "baseline_priority": 0.376,
+          "applied_adjustment": 0.0,
+          "adjusted_priority": 0.376
+        },
+        {
+          "skill_id": "skill:onet_2_b_3_g",
+          "label": "Operations Monitoring",
+          "gap_reason": "Not confirmed in the reviewed profile; not proof of inability.",
+          "person2_importance": 0.35,
+          "baseline_priority": 0.35,
+          "applied_adjustment": 0.0,
+          "adjusted_priority": 0.35
+        },
+        {
+          "skill_id": "skill:onet_2_b_5_c",
+          "label": "Management of Material Resources",
+          "gap_reason": "Not confirmed in the reviewed profile; not proof of inability.",
+          "person2_importance": 0.35,
+          "baseline_priority": 0.35,
+          "applied_adjustment": 0.0,
+          "adjusted_priority": 0.35
+        },
+        {
+          "skill_id": "skill:onet_2_a_1_f",
+          "label": "Science",
+          "gap_reason": "Not confirmed in the reviewed profile; not proof of inability.",
+          "person2_importance": 0.324,
+          "baseline_priority": 0.324,
+          "applied_adjustment": 0.0,
+          "adjusted_priority": 0.324
+        },
+        {
+          "skill_id": "skill:onet_2_b_3_b",
+          "label": "Technology Design",
+          "gap_reason": "Not confirmed in the reviewed profile; not proof of inability.",
+          "person2_importance": 0.324,
+          "baseline_priority": 0.324,
+          "applied_adjustment": 0.0,
+          "adjusted_priority": 0.324
+        },
+        {
+          "skill_id": "skill:onet_2_b_3_h",
+          "label": "Operation and Control",
+          "gap_reason": "Not confirmed in the reviewed profile; not proof of inability.",
+          "person2_importance": 0.276,
+          "baseline_priority": 0.276,
+          "applied_adjustment": 0.0,
+          "adjusted_priority": 0.276
+        }
+      ],
+      "selected_courses": [],
+      "milestones": [
+        {
+          "stage": "core_skills",
+          "title": "Core Skills",
+          "objective": "Address the selected role's prioritized skill gaps.",
+          "steps": [
+            {
+              "order": 1,
+              "skill_ids": [
+                "skill:onet_2_a_2_a"
+              ],
+              "learning_goal": "Develop Critical Thinking through a documented self-study objective while no verified course is available.",
+              "course_id": null,
+              "estimated_hours": null,
+              "prerequisite_skill_ids": [],
+              "practice_activity": "Create a small Business Intelligence Analysts exercise demonstrating Critical Thinking.",
+              "completion_evidence": "Save the exercise, notes, and review criteria.",
+              "resource_status": "verified_resource_not_found"
+            },
+            {
+              "order": 2,
+              "skill_ids": [
+                "skill:onet_2_a_2_b"
+              ],
+              "learning_goal": "Develop Active Learning through a documented self-study objective while no verified course is available.",
+              "course_id": null,
+              "estimated_hours": null,
+              "prerequisite_skill_ids": [],
+              "practice_activity": "Create a small Business Intelligence Analysts exercise demonstrating Active Learning.",
+              "completion_evidence": "Save the exercise, notes, and review criteria.",
+              "resource_status": "verified_resource_not_found"
+            },
+            {
+              "order": 3,
+              "skill_ids": [
+                "skill:onet_2_a_1_b"
+              ],
+              "learning_goal": "Develop Active Listening through a documented self-study objective while no verified course is available.",
+              "course_id": null,
+              "estimated_hours": null,
+              "prerequisite_skill_ids": [],
+              "practice_activity": "Create a small Business Intelligence Analysts exercise demonstrating Active Listening.",
+              "completion_evidence": "Save the exercise, notes, and review criteria.",
+              "resource_status": "verified_resource_not_found"
+            },
+            {
+              "order": 4,
+              "skill_ids": [
+                "skill:onet_2_a_1_d"
+              ],
+              "learning_goal": "Develop Speaking through a documented self-study objective while no verified course is available.",
+              "course_id": null,
+              "estimated_hours": null,
+              "prerequisite_skill_ids": [],
+              "practice_activity": "Create a small Business Intelligence Analysts exercise demonstrating Speaking.",
+              "completion_evidence": "Save the exercise, notes, and review criteria.",
+              "resource_status": "verified_resource_not_found"
+            },
+            {
+              "order": 5,
+              "skill_ids": [
+                "skill:onet_2_a_1_c"
+              ],
+              "learning_goal": "Develop Writing through a documented self-study objective while no verified course is available.",
+              "course_id": null,
+              "estimated_hours": null,
+              "prerequisite_skill_ids": [],
+              "practice_activity": "Create a small Business Intelligence Analysts exercise demonstrating Writing.",
+              "completion_evidence": "Save the exercise, notes, and review criteria.",
+              "resource_status": "verified_resource_not_found"
+            },
+            {
+              "order": 6,
+              "skill_ids": [
+                "skill:onet_2_b_4_e"
+              ],
+              "learning_goal": "Develop Judgment and Decision Making through a documented self-study objective while no verified course is available.",
+              "course_id": null,
+              "estimated_hours": null,
+              "prerequisite_skill_ids": [],
+              "practice_activity": "Create a small Business Intelligence Analysts exercise demonstrating Judgment and Decision Making.",
+              "completion_evidence": "Save the exercise, notes, and review criteria.",
+              "resource_status": "verified_resource_not_found"
+            },
+            {
+              "order": 7,
+              "skill_ids": [
+                "skill:onet_2_a_1_e"
+              ],
+              "learning_goal": "Develop Mathematics through a documented self-study objective while no verified course is available.",
+              "course_id": null,
+              "estimated_hours": null,
+              "prerequisite_skill_ids": [],
+              "practice_activity": "Create a small Business Intelligence Analysts exercise demonstrating Mathematics.",
+              "completion_evidence": "Save the exercise, notes, and review criteria.",
+              "resource_status": "verified_resource_not_found"
+            },
+            {
+              "order": 8,
+              "skill_ids": [
+                "skill:onet_2_b_2_i"
+              ],
+              "learning_goal": "Develop Complex Problem Solving through a documented self-study objective while no verified course is available.",
+              "course_id": null,
+              "estimated_hours": null,
+              "prerequisite_skill_ids": [],
+              "practice_activity": "Create a small Business Intelligence Analysts exercise demonstrating Complex Problem Solving.",
+              "completion_evidence": "Save the exercise, notes, and review criteria.",
+              "resource_status": "verified_resource_not_found"
+            },
+            {
+              "order": 9,
+              "skill_ids": [
+                "skill:onet_2_a_2_d"
+              ],
+              "learning_goal": "Develop Monitoring through a documented self-study objective while no verified course is available.",
+              "course_id": null,
+              "estimated_hours": null,
+              "prerequisite_skill_ids": [],
+              "practice_activity": "Create a small Business Intelligence Analysts exercise demonstrating Monitoring.",
+              "completion_evidence": "Save the exercise, notes, and review criteria.",
+              "resource_status": "verified_resource_not_found"
+            },
+            {
+              "order": 10,
+              "skill_ids": [
+                "skill:onet_2_b_4_g"
+              ],
+              "learning_goal": "Develop Systems Analysis through a documented self-study objective while no verified course is available.",
+              "course_id": null,
+              "estimated_hours": null,
+              "prerequisite_skill_ids": [],
+              "practice_activity": "Create a small Business Intelligence Analysts exercise demonstrating Systems Analysis.",
+              "completion_evidence": "Save the exercise, notes, and review criteria.",
+              "resource_status": "verified_resource_not_found"
+            },
+            {
+              "order": 11,
+              "skill_ids": [
+                "skill:onet_2_b_4_h"
+              ],
+              "learning_goal": "Develop Systems Evaluation through a documented self-study objective while no verified course is available.",
+              "course_id": null,
+              "estimated_hours": null,
+              "prerequisite_skill_ids": [],
+              "practice_activity": "Create a small Business Intelligence Analysts exercise demonstrating Systems Evaluation.",
+              "completion_evidence": "Save the exercise, notes, and review criteria.",
+              "resource_status": "verified_resource_not_found"
+            },
+            {
+              "order": 12,
+              "skill_ids": [
+                "skill:onet_2_b_5_a"
+              ],
+              "learning_goal": "Develop Time Management through a documented self-study objective while no verified course is available.",
+              "course_id": null,
+              "estimated_hours": null,
+              "prerequisite_skill_ids": [],
+              "practice_activity": "Create a small Business Intelligence Analysts exercise demonstrating Time Management.",
+              "completion_evidence": "Save the exercise, notes, and review criteria.",
+              "resource_status": "verified_resource_not_found"
+            },
+            {
+              "order": 13,
+              "skill_ids": [
+                "skill:onet_2_a_2_c"
+              ],
+              "learning_goal": "Develop Learning Strategies through a documented self-study objective while no verified course is available.",
+              "course_id": null,
+              "estimated_hours": null,
+              "prerequisite_skill_ids": [],
+              "practice_activity": "Create a small Business Intelligence Analysts exercise demonstrating Learning Strategies.",
+              "completion_evidence": "Save the exercise, notes, and review criteria.",
+              "resource_status": "verified_resource_not_found"
+            },
+            {
+              "order": 14,
+              "skill_ids": [
+                "skill:onet_2_b_1_b"
+              ],
+              "learning_goal": "Develop Coordination through a documented self-study objective while no verified course is available.",
+              "course_id": null,
+              "estimated_hours": null,
+              "prerequisite_skill_ids": [],
+              "practice_activity": "Create a small Business Intelligence Analysts exercise demonstrating Coordination.",
+              "completion_evidence": "Save the exercise, notes, and review criteria.",
+              "resource_status": "verified_resource_not_found"
+            },
+            {
+              "order": 15,
+              "skill_ids": [
+                "skill:onet_2_b_1_e"
+              ],
+              "learning_goal": "Develop Instructing through a documented self-study objective while no verified course is available.",
+              "course_id": null,
+              "estimated_hours": null,
+              "prerequisite_skill_ids": [],
+              "practice_activity": "Create a small Business Intelligence Analysts exercise demonstrating Instructing.",
+              "completion_evidence": "Save the exercise, notes, and review criteria.",
+              "resource_status": "verified_resource_not_found"
+            },
+            {
+              "order": 16,
+              "skill_ids": [
+                "skill:onet_2_b_1_a"
+              ],
+              "learning_goal": "Develop Social Perceptiveness through a documented self-study objective while no verified course is available.",
+              "course_id": null,
+              "estimated_hours": null,
+              "prerequisite_skill_ids": [],
+              "practice_activity": "Create a small Business Intelligence Analysts exercise demonstrating Social Perceptiveness.",
+              "completion_evidence": "Save the exercise, notes, and review criteria.",
+              "resource_status": "verified_resource_not_found"
+            },
+            {
+              "order": 17,
+              "skill_ids": [
+                "skill:onet_2_b_1_c"
+              ],
+              "learning_goal": "Develop Persuasion through a documented self-study objective while no verified course is available.",
+              "course_id": null,
+              "estimated_hours": null,
+              "prerequisite_skill_ids": [],
+              "practice_activity": "Create a small Business Intelligence Analysts exercise demonstrating Persuasion.",
+              "completion_evidence": "Save the exercise, notes, and review criteria.",
+              "resource_status": "verified_resource_not_found"
+            },
+            {
+              "order": 18,
+              "skill_ids": [
+                "skill:onet_2_b_1_f"
+              ],
+              "learning_goal": "Develop Service Orientation through a documented self-study objective while no verified course is available.",
+              "course_id": null,
+              "estimated_hours": null,
+              "prerequisite_skill_ids": [],
+              "practice_activity": "Create a small Business Intelligence Analysts exercise demonstrating Service Orientation.",
+              "completion_evidence": "Save the exercise, notes, and review criteria.",
+              "resource_status": "verified_resource_not_found"
+            },
+            {
+              "order": 19,
+              "skill_ids": [
+                "skill:microsoft_excel"
+              ],
+              "learning_goal": "Develop Microsoft Excel through a documented self-study objective while no verified course is available.",
+              "course_id": null,
+              "estimated_hours": null,
+              "prerequisite_skill_ids": [],
+              "practice_activity": "Create a small Business Intelligence Analysts exercise demonstrating Microsoft Excel.",
+              "completion_evidence": "Save the exercise, notes, and review criteria.",
+              "resource_status": "verified_resource_not_found"
+            },
+            {
+              "order": 20,
+              "skill_ids": [
+                "skill:onet_2_b_1_d"
+              ],
+              "learning_goal": "Develop Negotiation through a documented self-study objective while no verified course is available.",
+              "course_id": null,
+              "estimated_hours": null,
+              "prerequisite_skill_ids": [],
+              "practice_activity": "Create a small Business Intelligence Analysts exercise demonstrating Negotiation.",
+              "completion_evidence": "Save the exercise, notes, and review criteria.",
+              "resource_status": "verified_resource_not_found"
+            },
+            {
+              "order": 21,
+              "skill_ids": [
+                "skill:onet_2_b_3_e"
+              ],
+              "learning_goal": "Develop Programming through a documented self-study objective while no verified course is available.",
+              "course_id": null,
+              "estimated_hours": null,
+              "prerequisite_skill_ids": [],
+              "practice_activity": "Create a small Business Intelligence Analysts exercise demonstrating Programming.",
+              "completion_evidence": "Save the exercise, notes, and review criteria.",
+              "resource_status": "verified_resource_not_found"
+            },
+            {
+              "order": 22,
+              "skill_ids": [
+                "skill:onet_2_b_5_d"
+              ],
+              "learning_goal": "Develop Management of Personnel Resources through a documented self-study objective while no verified course is available.",
+              "course_id": null,
+              "estimated_hours": null,
+              "prerequisite_skill_ids": [],
+              "practice_activity": "Create a small Business Intelligence Analysts exercise demonstrating Management of Personnel Resources.",
+              "completion_evidence": "Save the exercise, notes, and review criteria.",
+              "resource_status": "verified_resource_not_found"
+            },
+            {
+              "order": 23,
+              "skill_ids": [
+                "skill:onet_2_b_3_m"
+              ],
+              "learning_goal": "Develop Quality Control Analysis through a documented self-study objective while no verified course is available.",
+              "course_id": null,
+              "estimated_hours": null,
+              "prerequisite_skill_ids": [],
+              "practice_activity": "Create a small Business Intelligence Analysts exercise demonstrating Quality Control Analysis.",
+              "completion_evidence": "Save the exercise, notes, and review criteria.",
+              "resource_status": "verified_resource_not_found"
+            },
+            {
+              "order": 24,
+              "skill_ids": [
+                "skill:onet_2_b_3_a"
+              ],
+              "learning_goal": "Develop Operations Analysis through a documented self-study objective while no verified course is available.",
+              "course_id": null,
+              "estimated_hours": null,
+              "prerequisite_skill_ids": [],
+              "practice_activity": "Create a small Business Intelligence Analysts exercise demonstrating Operations Analysis.",
+              "completion_evidence": "Save the exercise, notes, and review criteria.",
+              "resource_status": "verified_resource_not_found"
+            },
+            {
+              "order": 25,
+              "skill_ids": [
+                "skill:onet_2_b_5_b"
+              ],
+              "learning_goal": "Develop Management of Financial Resources through a documented self-study objective while no verified course is available.",
+              "course_id": null,
+              "estimated_hours": null,
+              "prerequisite_skill_ids": [],
+              "practice_activity": "Create a small Business Intelligence Analysts exercise demonstrating Management of Financial Resources.",
+              "completion_evidence": "Save the exercise, notes, and review criteria.",
+              "resource_status": "verified_resource_not_found"
+            },
+            {
+              "order": 26,
+              "skill_ids": [
+                "skill:onet_2_b_3_g"
+              ],
+              "learning_goal": "Develop Operations Monitoring through a documented self-study objective while no verified course is available.",
+              "course_id": null,
+              "estimated_hours": null,
+              "prerequisite_skill_ids": [],
+              "practice_activity": "Create a small Business Intelligence Analysts exercise demonstrating Operations Monitoring.",
+              "completion_evidence": "Save the exercise, notes, and review criteria.",
+              "resource_status": "verified_resource_not_found"
+            },
+            {
+              "order": 27,
+              "skill_ids": [
+                "skill:onet_2_b_5_c"
+              ],
+              "learning_goal": "Develop Management of Material Resources through a documented self-study objective while no verified course is available.",
+              "course_id": null,
+              "estimated_hours": null,
+              "prerequisite_skill_ids": [],
+              "practice_activity": "Create a small Business Intelligence Analysts exercise demonstrating Management of Material Resources.",
+              "completion_evidence": "Save the exercise, notes, and review criteria.",
+              "resource_status": "verified_resource_not_found"
+            },
+            {
+              "order": 28,
+              "skill_ids": [
+                "skill:onet_2_a_1_f"
+              ],
+              "learning_goal": "Develop Science through a documented self-study objective while no verified course is available.",
+              "course_id": null,
+              "estimated_hours": null,
+              "prerequisite_skill_ids": [],
+              "practice_activity": "Create a small Business Intelligence Analysts exercise demonstrating Science.",
+              "completion_evidence": "Save the exercise, notes, and review criteria.",
+              "resource_status": "verified_resource_not_found"
+            },
+            {
+              "order": 29,
+              "skill_ids": [
+                "skill:onet_2_b_3_b"
+              ],
+              "learning_goal": "Develop Technology Design through a documented self-study objective while no verified course is available.",
+              "course_id": null,
+              "estimated_hours": null,
+              "prerequisite_skill_ids": [],
+              "practice_activity": "Create a small Business Intelligence Analysts exercise demonstrating Technology Design.",
+              "completion_evidence": "Save the exercise, notes, and review criteria.",
+              "resource_status": "verified_resource_not_found"
+            },
+            {
+              "order": 30,
+              "skill_ids": [
+                "skill:onet_2_b_3_h"
+              ],
+              "learning_goal": "Develop Operation and Control through a documented self-study objective while no verified course is available.",
+              "course_id": null,
+              "estimated_hours": null,
+              "prerequisite_skill_ids": [],
+              "practice_activity": "Create a small Business Intelligence Analysts exercise demonstrating Operation and Control.",
+              "completion_evidence": "Save the exercise, notes, and review criteria.",
+              "resource_status": "verified_resource_not_found"
+            }
+          ]
+        }
+      ],
+      "uncovered_skill_ids": [
+        "skill:microsoft_excel",
+        "skill:onet_2_a_1_b",
+        "skill:onet_2_a_1_c",
+        "skill:onet_2_a_1_d",
+        "skill:onet_2_a_1_e",
+        "skill:onet_2_a_1_f",
+        "skill:onet_2_a_2_a",
+        "skill:onet_2_a_2_b",
+        "skill:onet_2_a_2_c",
+        "skill:onet_2_a_2_d",
+        "skill:onet_2_b_1_a",
+        "skill:onet_2_b_1_b",
+        "skill:onet_2_b_1_c",
+        "skill:onet_2_b_1_d",
+        "skill:onet_2_b_1_e",
+        "skill:onet_2_b_1_f",
+        "skill:onet_2_b_2_i",
+        "skill:onet_2_b_3_a",
+        "skill:onet_2_b_3_b",
+        "skill:onet_2_b_3_e",
+        "skill:onet_2_b_3_g",
+        "skill:onet_2_b_3_h",
+        "skill:onet_2_b_3_m",
+        "skill:onet_2_b_4_e",
+        "skill:onet_2_b_4_g",
+        "skill:onet_2_b_4_h",
+        "skill:onet_2_b_5_a",
+        "skill:onet_2_b_5_b",
+        "skill:onet_2_b_5_c",
+        "skill:onet_2_b_5_d"
+      ],
+      "total_estimated_hours": null,
+      "cost_totals": [],
+      "sdg_connections": [
+        {
+          "role_id": "role:onet_15_2051_01",
+          "skill_ids": [
+            "skill:microsoft_excel",
+            "skill:onet_2_a_1_b",
+            "skill:onet_2_a_1_c",
+            "skill:onet_2_a_1_d",
+            "skill:onet_2_a_1_e",
+            "skill:onet_2_a_1_f",
+            "skill:onet_2_a_2_a",
+            "skill:onet_2_a_2_b",
+            "skill:onet_2_a_2_c",
+            "skill:onet_2_a_2_d",
+            "skill:onet_2_b_1_a",
+            "skill:onet_2_b_1_b",
+            "skill:onet_2_b_1_c",
+            "skill:onet_2_b_1_d",
+            "skill:onet_2_b_1_e",
+            "skill:onet_2_b_1_f",
+            "skill:onet_2_b_2_i",
+            "skill:onet_2_b_3_a",
+            "skill:onet_2_b_3_b",
+            "skill:onet_2_b_3_e",
+            "skill:onet_2_b_3_g",
+            "skill:onet_2_b_3_h",
+            "skill:onet_2_b_3_m",
+            "skill:onet_2_b_4_e",
+            "skill:onet_2_b_4_g",
+            "skill:onet_2_b_4_h",
+            "skill:onet_2_b_5_a",
+            "skill:onet_2_b_5_b",
+            "skill:onet_2_b_5_c",
+            "skill:onet_2_b_5_d"
+          ],
+          "sdg_id": "SDG 4",
+          "target_id": "4.4",
+          "contribution": "indirect",
+          "rationale": "Developing role-relevant skills through a learning pathway supports the preparation objective of SDG 4.4. This is an inferred training connection, not evidence of employment, qualification, or measured SDG outcomes.",
+          "evidence_url": "https://sdgs.un.org/goals/goal4",
+          "evidence_kind": "inferred"
+        }
+      ],
+      "warnings": [
+        "Exploratory coverage of reviewed skill claims; not hiring probability or proficiency assessment.",
+        "Missing profile evidence means unconfirmed, not inability.",
+        "Software group credit indicates category familiarity, not interchangeable tools.",
+        "Software learning options are alternatives to inspect, not a checklist of mandatory courses.",
+        "Equal-share defaults are application assumptions; no empirical calibration is claimed.",
+        "Education, licenses and experience are not assessed; high coverage does not establish job eligibility.",
+        "Task-based transfer credit is disabled: imported task-to-skill mappings are unavailable.",
+        "Preferences use exact occupation titles, aliases or occupational-family labels; target-role pinning never increases scores.",
+        "No scenario priority was available for skill:microsoft_excel; Person 2 importance was retained without adjustment.",
+        "Only explicitly selected optional software is included in the learning plan.",
+        "Budget is enforced in MYR; foreign-currency paid routes are withheld rather than guessing exchange rates.",
+        "No budget supplied; only verified zero-cost access routes are eligible.",
+        "No search provider configured for skill:onet_2_a_2_a; using verified cache only.",
+        "No search provider configured for skill:onet_2_a_2_b; using verified cache only.",
+        "No search provider configured for skill:onet_2_a_1_b; using verified cache only.",
+        "No search provider configured for skill:onet_2_a_1_d; using verified cache only.",
+        "No search provider configured for skill:onet_2_a_1_c; using verified cache only.",
+        "No search provider configured for skill:onet_2_b_4_e; using verified cache only.",
+        "No search provider configured for skill:onet_2_a_1_e; using verified cache only.",
+        "No search provider configured for skill:onet_2_b_2_i; using verified cache only.",
+        "No search provider configured for skill:onet_2_a_2_d; using verified cache only.",
+        "No search provider configured for skill:onet_2_b_4_g; using verified cache only.",
+        "No search provider configured for skill:onet_2_b_4_h; using verified cache only.",
+        "No search provider configured for skill:onet_2_b_5_a; using verified cache only.",
+        "No search provider configured for skill:onet_2_a_2_c; using verified cache only.",
+        "No search provider configured for skill:onet_2_b_1_b; using verified cache only.",
+        "No search provider configured for skill:onet_2_b_1_e; using verified cache only.",
+        "No search provider configured for skill:onet_2_b_1_a; using verified cache only.",
+        "No search provider configured for skill:onet_2_b_1_c; using verified cache only.",
+        "No search provider configured for skill:onet_2_b_1_f; using verified cache only.",
+        "No search provider configured for skill:microsoft_excel; using verified cache only.",
+        "No search provider configured for skill:onet_2_b_1_d; using verified cache only.",
+        "No search provider configured for skill:onet_2_b_3_e; using verified cache only.",
+        "No search provider configured for skill:onet_2_b_5_d; using verified cache only.",
+        "No search provider configured for skill:onet_2_b_3_m; using verified cache only.",
+        "No search provider configured for skill:onet_2_b_3_a; using verified cache only.",
+        "No search provider configured for skill:onet_2_b_5_b; using verified cache only.",
+        "No search provider configured for skill:onet_2_b_3_g; using verified cache only.",
+        "No search provider configured for skill:onet_2_b_5_c; using verified cache only.",
+        "No search provider configured for skill:onet_2_a_1_f; using verified cache only.",
+        "No search provider configured for skill:onet_2_b_3_b; using verified cache only.",
+        "No search provider configured for skill:onet_2_b_3_h; using verified cache only.",
+        "Verified resources were not found for: skill:microsoft_excel, skill:onet_2_a_1_b, skill:onet_2_a_1_c, skill:onet_2_a_1_d, skill:onet_2_a_1_e, skill:onet_2_a_1_f, skill:onet_2_a_2_a, skill:onet_2_a_2_b, skill:onet_2_a_2_c, skill:onet_2_a_2_d, skill:onet_2_b_1_a, skill:onet_2_b_1_b, skill:onet_2_b_1_c, skill:onet_2_b_1_d, skill:onet_2_b_1_e, skill:onet_2_b_1_f, skill:onet_2_b_2_i, skill:onet_2_b_3_a, skill:onet_2_b_3_b, skill:onet_2_b_3_e, skill:onet_2_b_3_g, skill:onet_2_b_3_h, skill:onet_2_b_3_m, skill:onet_2_b_4_e, skill:onet_2_b_4_g, skill:onet_2_b_4_h, skill:onet_2_b_5_a, skill:onet_2_b_5_b, skill:onet_2_b_5_c, skill:onet_2_b_5_d"
+      ],
+      "catalog_id": "onet_31_0",
+      "family_id": "family:soc_15",
+      "family": "Computer and Mathematical",
+      "score_method": "reviewed_onet_fit_v1",
+      "software_learning_options": [
+        {
+          "skill_id": "skill:microsoft_excel",
+          "label": "Microsoft Excel",
+          "group_ids": [
+            "group:onet_2_e_4_i"
+          ],
+          "group_familiarity_evidenced": false,
+          "meaning": "optional_occupation_demand_signal"
+        },
+        {
+          "skill_id": "skill:microsoft_power_bi",
+          "label": "Microsoft Power BI",
+          "group_ids": [
+            "group:onet_2_e_6_m"
+          ],
+          "group_familiarity_evidenced": true,
+          "meaning": "optional_occupation_demand_signal"
+        },
+        {
+          "skill_id": "skill:software_0c8e1cae0d7f35f4",
+          "label": "Microsoft PowerPoint",
+          "group_ids": [
+            "group:onet_2_e_4_f"
+          ],
+          "group_familiarity_evidenced": false,
+          "meaning": "optional_occupation_demand_signal"
+        },
+        {
+          "skill_id": "skill:software_3deb2d2d35c24f36",
+          "label": "Microsoft Azure software",
+          "group_ids": [
+            "group:onet_2_e_7_b"
+          ],
+          "group_familiarity_evidenced": false,
+          "meaning": "optional_occupation_demand_signal"
+        },
+        {
+          "skill_id": "skill:software_454349e422f05297",
+          "label": "R",
+          "group_ids": [
+            "group:onet_2_e_7_e"
+          ],
+          "group_familiarity_evidenced": true,
+          "meaning": "optional_occupation_demand_signal"
+        },
+        {
+          "skill_id": "skill:software_841eef0a7343f781",
+          "label": "SAP software",
+          "group_ids": [
+            "group:onet_2_e_2_b"
+          ],
+          "group_familiarity_evidenced": false,
+          "meaning": "optional_occupation_demand_signal"
+        },
+        {
+          "skill_id": "skill:software_8ba5705dedf27b6e",
+          "label": "Amazon Web Services AWS software",
+          "group_ids": [
+            "group:onet_2_e_6_f"
+          ],
+          "group_familiarity_evidenced": true,
+          "meaning": "optional_occupation_demand_signal"
+        },
+        {
+          "skill_id": "skill:software_96166e27af5a3c43",
+          "label": "SAS",
+          "group_ids": [
+            "group:onet_2_e_9_d"
+          ],
+          "group_familiarity_evidenced": false,
+          "meaning": "optional_occupation_demand_signal"
+        },
+        {
+          "skill_id": "skill:software_9d2f2e0ca2b14f57",
+          "label": "Microsoft Office software",
+          "group_ids": [
+            "group:onet_2_e_1_k"
+          ],
+          "group_familiarity_evidenced": false,
+          "meaning": "optional_occupation_demand_signal"
+        },
+        {
+          "skill_id": "skill:software_b2953d236aa4f40b",
+          "label": "Salesforce software",
+          "group_ids": [
+            "group:onet_2_e_6_c"
+          ],
+          "group_familiarity_evidenced": false,
+          "meaning": "optional_occupation_demand_signal"
+        },
+        {
+          "skill_id": "skill:software_de5a1adf4fedcce1",
+          "label": "Snowflake",
+          "group_ids": [
+            "group:onet_2_e_6_g"
+          ],
+          "group_familiarity_evidenced": false,
+          "meaning": "optional_occupation_demand_signal"
+        }
+      ],
+      "selected_software_skill_ids": [
+        "skill:microsoft_excel"
+      ],
+      "budget_myr": 0.0
+    },
+    "validation_logs": []
+  }
+}

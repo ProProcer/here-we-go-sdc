@@ -1,5 +1,7 @@
 # Person 2: matching and CV intake
 
+Real-catalog backend migration is implemented. See [the current migration guide](PERSON_1_MIGRATION.md) for the versioned Person 2–4 interfaces, real IDs, evidence isolation, optional software planning and limitations. The original mock-specific contracts below remain available for compatibility.
+
 Current module handoff. Person 1's catalog and Person 3's outlooks are unchanged.
 No HTTP routes, review screen or actual Replit execution are added. The v2 method
 and additive response fields are proposals requiring consumer coordination.
