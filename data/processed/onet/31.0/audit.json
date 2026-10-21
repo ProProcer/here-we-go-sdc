@@ -1,0 +1,1069 @@
+{
+  "release": "31.0",
+  "input_occupations": 1016,
+  "included_occupations": 910,
+  "excluded_occupations": 106,
+  "general_requirements": 28335,
+  "software_associations": 31194,
+  "tasks": 18592,
+  "software_groups": 134,
+  "filters": {
+    "irrelevant_pairs_excluded": 3515,
+    "suppressed_levels_withheld": 146
+  },
+  "general_per_role": {
+    "min": 19,
+    "median": 31.0,
+    "max": 35,
+    "zero_occupations": 0
+  },
+  "software_per_role": {
+    "min": 1,
+    "median": 21.0,
+    "max": 430,
+    "zero_occupations": 0
+  },
+  "in_demand_per_role": {
+    "min": 0,
+    "median": 1.0,
+    "max": 38,
+    "zero_occupations": 423
+  },
+  "task_skill_mapping": "unavailable_not_inferred",
+  "excluded": [
+    {
+      "occupation_code": "11-1031.00",
+      "title": "Legislators",
+      "reasons": [
+        "missing_essential_ratings",
+        "missing_transferable_ratings"
+      ]
+    },
+    {
+      "occupation_code": "11-9039.00",
+      "title": "Education Administrators, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "11-9179.00",
+      "title": "Personal Service Managers, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "11-9199.00",
+      "title": "Managers, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "13-1199.00",
+      "title": "Business Operations Specialists, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "13-2051.00",
+      "title": "Financial and Investment Analysts",
+      "reasons": [
+        "missing_essential_ratings",
+        "missing_transferable_ratings"
+      ]
+    },
+    {
+      "occupation_code": "13-2054.00",
+      "title": "Financial Risk Specialists",
+      "reasons": [
+        "missing_essential_ratings",
+        "missing_transferable_ratings"
+      ]
+    },
+    {
+      "occupation_code": "13-2099.00",
+      "title": "Financial Specialists, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "15-1299.00",
+      "title": "Computer Occupations, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "15-2099.00",
+      "title": "Mathematical Science Occupations, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "17-2199.00",
+      "title": "Engineers, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "17-3019.00",
+      "title": "Drafters, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "17-3028.00",
+      "title": "Calibration Technologists and Technicians",
+      "reasons": [
+        "missing_essential_ratings",
+        "missing_transferable_ratings"
+      ]
+    },
+    {
+      "occupation_code": "17-3029.00",
+      "title": "Engineering Technologists and Technicians, Except Drafters, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "19-1029.00",
+      "title": "Biological Scientists, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "19-1099.00",
+      "title": "Life Scientists, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "19-2099.00",
+      "title": "Physical Scientists, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "19-3039.00",
+      "title": "Psychologists, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "19-3099.00",
+      "title": "Social Scientists and Related Workers, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "19-4044.00",
+      "title": "Hydrologic Technicians",
+      "reasons": [
+        "missing_essential_ratings",
+        "missing_transferable_ratings"
+      ]
+    },
+    {
+      "occupation_code": "19-4099.00",
+      "title": "Life, Physical, and Social Science Technicians, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "21-1019.00",
+      "title": "Counselors, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "21-1029.00",
+      "title": "Social Workers, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "21-1099.00",
+      "title": "Community and Social Service Specialists, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "21-2099.00",
+      "title": "Religious Workers, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "23-2099.00",
+      "title": "Legal Support Workers, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "25-1069.00",
+      "title": "Social Sciences Teachers, Postsecondary, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "25-1199.00",
+      "title": "Postsecondary Teachers, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "25-2059.00",
+      "title": "Special Education Teachers, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "25-3099.00",
+      "title": "Teachers and Instructors, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "25-9049.00",
+      "title": "Teaching Assistants, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "25-9099.00",
+      "title": "Educational Instruction and Library Workers, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "27-1019.00",
+      "title": "Artists and Related Workers, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "27-1029.00",
+      "title": "Designers, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "27-2099.00",
+      "title": "Entertainers and Performers, Sports and Related Workers, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "27-3099.00",
+      "title": "Media and Communication Workers, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "27-4015.00",
+      "title": "Lighting Technicians",
+      "reasons": [
+        "missing_essential_ratings",
+        "missing_transferable_ratings"
+      ]
+    },
+    {
+      "occupation_code": "27-4099.00",
+      "title": "Media and Communication Equipment Workers, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "29-1029.00",
+      "title": "Dentists, All Other Specialists",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "29-1129.00",
+      "title": "Therapists, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "29-1212.00",
+      "title": "Cardiologists",
+      "reasons": [
+        "missing_essential_ratings",
+        "missing_transferable_ratings"
+      ]
+    },
+    {
+      "occupation_code": "29-1229.00",
+      "title": "Physicians, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "29-1242.00",
+      "title": "Orthopedic Surgeons, Except Pediatric",
+      "reasons": [
+        "missing_essential_ratings",
+        "missing_transferable_ratings"
+      ]
+    },
+    {
+      "occupation_code": "29-1243.00",
+      "title": "Pediatric Surgeons",
+      "reasons": [
+        "missing_essential_ratings",
+        "missing_transferable_ratings"
+      ]
+    },
+    {
+      "occupation_code": "29-1249.00",
+      "title": "Surgeons, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "29-1299.00",
+      "title": "Healthcare Diagnosing or Treating Practitioners, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "29-2042.00",
+      "title": "Emergency Medical Technicians",
+      "reasons": [
+        "missing_essential_ratings",
+        "missing_transferable_ratings"
+      ]
+    },
+    {
+      "occupation_code": "29-2099.00",
+      "title": "Health Technologists and Technicians, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "29-9021.00",
+      "title": "Health Information Technologists and Medical Registrars",
+      "reasons": [
+        "missing_essential_ratings",
+        "missing_transferable_ratings"
+      ]
+    },
+    {
+      "occupation_code": "29-9099.00",
+      "title": "Healthcare Practitioners and Technical Workers, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "31-9099.00",
+      "title": "Healthcare Support Workers, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "33-1099.00",
+      "title": "First-Line Supervisors of Protective Service Workers, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "33-9099.00",
+      "title": "Protective Service Workers, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "35-2019.00",
+      "title": "Cooks, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "35-9099.00",
+      "title": "Food Preparation and Serving Related Workers, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "37-2019.00",
+      "title": "Building Cleaning Workers, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "37-3019.00",
+      "title": "Grounds Maintenance Workers, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "39-3019.00",
+      "title": "Gambling Service Workers, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "39-3099.00",
+      "title": "Entertainment Attendants and Related Workers, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "39-4012.00",
+      "title": "Crematory Operators",
+      "reasons": [
+        "missing_essential_ratings",
+        "missing_transferable_ratings"
+      ]
+    },
+    {
+      "occupation_code": "39-9099.00",
+      "title": "Personal Care and Service Workers, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "41-9099.00",
+      "title": "Sales and Related Workers, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "43-2099.00",
+      "title": "Communications Equipment Operators, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "43-3099.00",
+      "title": "Financial Clerks, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "43-4199.00",
+      "title": "Information and Record Clerks, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "43-9199.00",
+      "title": "Office and Administrative Support Workers, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "45-2099.00",
+      "title": "Agricultural Workers, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "45-4029.00",
+      "title": "Logging Workers, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "47-3019.00",
+      "title": "Helpers, Construction Trades, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "47-4099.00",
+      "title": "Construction and Related Workers, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "47-5049.00",
+      "title": "Underground Mining Machine Operators, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "47-5099.00",
+      "title": "Extraction Workers, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "49-9069.00",
+      "title": "Precision Instrument and Equipment Repairers, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "49-9099.00",
+      "title": "Installation, Maintenance, and Repair Workers, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "51-2099.00",
+      "title": "Assemblers and Fabricators, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "51-3099.00",
+      "title": "Food Processing Workers, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "51-4199.00",
+      "title": "Metal Workers and Plastic Workers, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "51-6099.00",
+      "title": "Textile, Apparel, and Furnishings Workers, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "51-7099.00",
+      "title": "Woodworkers, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "51-8099.00",
+      "title": "Plant and System Operators, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "51-9199.00",
+      "title": "Production Workers, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "53-1049.00",
+      "title": "First-Line Supervisors of Transportation Workers, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "53-3054.00",
+      "title": "Taxi Drivers",
+      "reasons": [
+        "missing_essential_ratings",
+        "missing_transferable_ratings"
+      ]
+    },
+    {
+      "occupation_code": "53-3099.00",
+      "title": "Motor Vehicle Operators, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "53-4099.00",
+      "title": "Rail Transportation Workers, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "53-6099.00",
+      "title": "Transportation Workers, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "53-7199.00",
+      "title": "Material Moving Workers, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "55-1011.00",
+      "title": "Air Crew Officers",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "55-1012.00",
+      "title": "Aircraft Launch and Recovery Officers",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "55-1013.00",
+      "title": "Armored Assault Vehicle Officers",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "55-1014.00",
+      "title": "Artillery and Missile Officers",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "55-1015.00",
+      "title": "Command and Control Center Officers",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "55-1016.00",
+      "title": "Infantry Officers",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "55-1017.00",
+      "title": "Special Forces Officers",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "55-1019.00",
+      "title": "Military Officer Special and Tactical Operations Leaders, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "55-2011.00",
+      "title": "First-Line Supervisors of Air Crew Members",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "55-2012.00",
+      "title": "First-Line Supervisors of Weapons Specialists/Crew Members",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "55-2013.00",
+      "title": "First-Line Supervisors of All Other Tactical Operations Specialists",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "55-3011.00",
+      "title": "Air Crew Members",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "55-3012.00",
+      "title": "Aircraft Launch and Recovery Specialists",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "55-3013.00",
+      "title": "Armored Assault Vehicle Crew Members",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "55-3014.00",
+      "title": "Artillery and Missile Crew Members",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "55-3015.00",
+      "title": "Command and Control Center Specialists",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "55-3016.00",
+      "title": "Infantry",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "55-3018.00",
+      "title": "Special Forces",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    },
+    {
+      "occupation_code": "55-3019.00",
+      "title": "Military Enlisted Tactical Operations and Air/Weapons Specialists and Crew Members, All Other",
+      "reasons": [
+        "missing_tasks",
+        "missing_essential_ratings",
+        "missing_transferable_ratings",
+        "missing_software_examples"
+      ]
+    }
+  ]
+}

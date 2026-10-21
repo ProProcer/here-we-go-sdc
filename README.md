@@ -106,6 +106,16 @@ Person 1's **synthetic role catalog mock** is ready for integration. See
 usage and the proposed `GET /api/roles` adapter. This is a module handoff; the
 complete app is still to be implemented.
 
+Person 1 also supplies a **real O*NET® 31.0 catalog** with 910 occupations,
+source provenance, an exclusion audit, versioned read adapters and exploratory
+group/individual software coverage. Start with the
+[Person 1 handoff](docs/PERSON_1_HANDOFF.md),
+[consumer migration guide](docs/PERSON_1_MIGRATION.md) and
+[actual evaluation](docs/PERSON_1_EVALUATION.md).
+The real catalog uses schema 0.2.0; current teammate defaults retain the mock
+until coordinated migration. O*NET data are licensed under CC BY 4.0 separately
+from this repository's Apache-2.0 code. See [data sources](docs/DATA_SOURCES.md).
+
 Person 3's **Data Analyst evidence and scenario module** is also implemented.
 The [first evidence-chain deliverable](docs/ROLE_3_EVIDENCE_CHAIN.md) connects a
 refreshable cited finding to a proposed task interpretation and explained

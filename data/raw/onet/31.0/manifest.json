@@ -1,0 +1,48 @@
+{
+  "release": "31.0",
+  "verified_at": "2026-10-21",
+  "downloaded_at": null,
+  "downloaded_at_note": "Original download dates were not recorded; do not infer them from filesystem times.",
+  "files": {
+    "content_model_reference.csv": {
+      "sha256": "370033744006dbd5df048431d42a402f6741a00a229b6d0f4e4f4249b6399c04",
+      "rows": 3006,
+      "documentation_url": "https://www.onetcenter.org/dictionary/31.0/csv/content_model_reference.html"
+    },
+    "essential_skills.csv": {
+      "sha256": "68c4d31d8c55077238395dca40cc4e6d32e6a608b5474bb8264b1f98ae415bd7",
+      "rows": 18200,
+      "documentation_url": "https://www.onetcenter.org/dictionary/31.0/csv/essential_skills.html"
+    },
+    "job_titles.csv": {
+      "sha256": "75a3b46d6edc5996117c10c9ed488c9a06f7495d02969e9d12873ab14a21540c",
+      "rows": 54269,
+      "documentation_url": "https://www.onetcenter.org/dictionary/31.0/csv/job_titles.html"
+    },
+    "occupation_data.csv": {
+      "sha256": "a09eae1d6609686e44e05b7290993a1c8b523d8ca224bc0eedc194c855c3ee02",
+      "rows": 1016,
+      "documentation_url": "https://www.onetcenter.org/dictionary/31.0/csv/occupation_data.html"
+    },
+    "scales_reference.csv": {
+      "sha256": "bcba23858ce21ecaacbde303a8993e35d46724b4afb8c9ec2b10e04f42adcfc9",
+      "rows": 33,
+      "documentation_url": "https://www.onetcenter.org/dictionary/31.0/csv/scales_reference.html"
+    },
+    "software_skills.csv": {
+      "sha256": "6aabb96b464288db849580e6510530efff3f80e25dde2bb23f1fc36bb526b016",
+      "rows": 31821,
+      "documentation_url": "https://www.onetcenter.org/dictionary/31.0/csv/software_skills.html"
+    },
+    "task_statements.csv": {
+      "sha256": "4568e14d8db6f05551ad37e056e909b13ebae4a26bcb5ff915bb5f281d582c57",
+      "rows": 18838,
+      "documentation_url": "https://www.onetcenter.org/dictionary/31.0/csv/task_statements.html"
+    },
+    "transferable_skills.csv": {
+      "sha256": "f17d0419e818a3bf2f55076510c76c4aef01cc8f5aee2670d2f44f6f44ac60f7",
+      "rows": 45500,
+      "documentation_url": "https://www.onetcenter.org/dictionary/31.0/csv/transferable_skills.html"
+    }
+  }
+}

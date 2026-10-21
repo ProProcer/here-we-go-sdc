@@ -1,0 +1,5938 @@
+{
+  "schema_version": "0.2.0",
+  "profile_is_synthetic": true,
+  "catalog_is_synthetic": false,
+  "profile": {
+    "schema_version": "0.1.0",
+    "profile_id": "synthetic:onet_demo",
+    "synthetic": true,
+    "desired_role_id": null,
+    "skills": [
+      {
+        "skill_id": "skill:onet_2_a_1_a",
+        "label": "Reading Comprehension",
+        "level": "unknown",
+        "evidence": [
+          "Typed skill entry: Reading Comprehension"
+        ],
+        "confirmation": "self_reported"
+      },
+      {
+        "skill_id": "skill:onet_2_a_2_a",
+        "label": "Critical Thinking",
+        "level": "unknown",
+        "evidence": [
+          "Typed skill entry: Critical Thinking"
+        ],
+        "confirmation": "self_reported"
+      },
+      {
+        "skill_id": "skill:python",
+        "label": "Python",
+        "level": "unknown",
+        "evidence": [
+          "Typed skill entry: Python"
+        ],
+        "confirmation": "self_reported"
+      },
+      {
+        "skill_id": "skill:software_5f0974ee455c4cd5",
+        "label": "Tableau",
+        "level": "unknown",
+        "evidence": [
+          "Typed skill entry: Tableau"
+        ],
+        "confirmation": "self_reported"
+      },
+      {
+        "skill_id": "skill:sql",
+        "label": "SQL",
+        "level": "unknown",
+        "evidence": [
+          "Typed skill entry: SQL"
+        ],
+        "confirmation": "self_reported"
+      }
+    ],
+    "interests": [],
+    "constraints": {
+      "budget_myr": null,
+      "hours_per_week": null
+    },
+    "warnings": []
+  },
+  "selected_role": {
+    "schema_version": "0.2.0",
+    "catalog_id": "onet_31_0",
+    "role": {
+      "role_id": "role:onet_15_2051_01",
+      "occupation_code": "15-2051.01",
+      "role_title": "Business Intelligence Analysts",
+      "description": "Produce financial and market intelligence by querying data repositories and generating periodic reports. Devise methods for identifying data patterns and trends in available information sources.",
+      "aliases": [
+        "Analytical Data Miner",
+        "BI Analyst",
+        "BI Consultant",
+        "BI Coordinator",
+        "BI Specialist",
+        "Business Analyst",
+        "Business Consultant",
+        "Business Data Analyst",
+        "Business Database Analyst",
+        "Business Information Analyst",
+        "Business Intelligence Analyst (BI Analyst)",
+        "Business Intelligence Consultant (BI Consultant)",
+        "Business Intelligence Coordinator (BI Coordinator)",
+        "Business Intelligence Engineer",
+        "Business Intelligence Specialist (BI Specialist)",
+        "Business Process Analyst",
+        "Business Systems Analyst",
+        "Business Systems Consultant",
+        "Business Technology Consultant",
+        "Competitive Intelligence Analyst",
+        "Data Analyst",
+        "EDI Analyst",
+        "EDI Analyst (Electronic Data Interchange Analyst)",
+        "Information Analyst",
+        "Information Specialist",
+        "Intelligence Analyst",
+        "Market Intelligence Analyst",
+        "Market Intelligence Consultant",
+        "Marketing Database Analyst",
+        "Reporting Analyst",
+        "Reports Analyst",
+        "Strategic Business and Technology Intelligence Consultant"
+      ],
+      "family_id": "family:soc_15",
+      "task_ids": [
+        "task:onet_16134",
+        "task:onet_16135",
+        "task:onet_16136",
+        "task:onet_16137",
+        "task:onet_16138",
+        "task:onet_16139",
+        "task:onet_16140",
+        "task:onet_16141",
+        "task:onet_16142",
+        "task:onet_16143",
+        "task:onet_16144",
+        "task:onet_16145",
+        "task:onet_16146",
+        "task:onet_16147",
+        "task:onet_16148",
+        "task:onet_16149",
+        "task:onet_16150"
+      ],
+      "source_ids": [
+        "source:onet_31_0_occupation_data",
+        "source:onet_31_0_job_titles",
+        "source:onet_31_0_task_statements"
+      ],
+      "latest_rating_month": "2024-08",
+      "synthetic": false
+    },
+    "general_requirements": [
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:onet_2_a_1_a",
+        "importance": 0.8,
+        "source_importance": 4.0,
+        "source_level": 4.25,
+        "level_suppressed": false,
+        "updated_month": "2024-08",
+        "evidence_ids": [
+          "source:onet_31_0_essential_skills"
+        ],
+        "weight_basis": "source_importance_divided_by_5"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:onet_2_a_1_b",
+        "importance": 0.776,
+        "source_importance": 3.88,
+        "source_level": 4.0,
+        "level_suppressed": false,
+        "updated_month": "2024-08",
+        "evidence_ids": [
+          "source:onet_31_0_essential_skills"
+        ],
+        "weight_basis": "source_importance_divided_by_5"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:onet_2_a_1_c",
+        "importance": 0.75,
+        "source_importance": 3.75,
+        "source_level": 4.0,
+        "level_suppressed": false,
+        "updated_month": "2024-08",
+        "evidence_ids": [
+          "source:onet_31_0_essential_skills"
+        ],
+        "weight_basis": "source_importance_divided_by_5"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:onet_2_a_1_d",
+        "importance": 0.776,
+        "source_importance": 3.88,
+        "source_level": 4.0,
+        "level_suppressed": false,
+        "updated_month": "2024-08",
+        "evidence_ids": [
+          "source:onet_31_0_essential_skills"
+        ],
+        "weight_basis": "source_importance_divided_by_5"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:onet_2_a_1_e",
+        "importance": 0.7,
+        "source_importance": 3.5,
+        "source_level": 3.88,
+        "level_suppressed": false,
+        "updated_month": "2024-08",
+        "evidence_ids": [
+          "source:onet_31_0_essential_skills"
+        ],
+        "weight_basis": "source_importance_divided_by_5"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:onet_2_a_1_f",
+        "importance": 0.324,
+        "source_importance": 1.62,
+        "source_level": 0.75,
+        "level_suppressed": false,
+        "updated_month": "2024-08",
+        "evidence_ids": [
+          "source:onet_31_0_essential_skills"
+        ],
+        "weight_basis": "source_importance_divided_by_5"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:onet_2_a_2_a",
+        "importance": 0.776,
+        "source_importance": 3.88,
+        "source_level": 4.25,
+        "level_suppressed": false,
+        "updated_month": "2024-08",
+        "evidence_ids": [
+          "source:onet_31_0_essential_skills"
+        ],
+        "weight_basis": "source_importance_divided_by_5"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:onet_2_a_2_b",
+        "importance": 0.776,
+        "source_importance": 3.88,
+        "source_level": 4.12,
+        "level_suppressed": false,
+        "updated_month": "2024-08",
+        "evidence_ids": [
+          "source:onet_31_0_essential_skills"
+        ],
+        "weight_basis": "source_importance_divided_by_5"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:onet_2_a_2_c",
+        "importance": 0.6,
+        "source_importance": 3.0,
+        "source_level": 3.0,
+        "level_suppressed": false,
+        "updated_month": "2024-08",
+        "evidence_ids": [
+          "source:onet_31_0_essential_skills"
+        ],
+        "weight_basis": "source_importance_divided_by_5"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:onet_2_a_2_d",
+        "importance": 0.624,
+        "source_importance": 3.12,
+        "source_level": 3.25,
+        "level_suppressed": false,
+        "updated_month": "2024-08",
+        "evidence_ids": [
+          "source:onet_31_0_essential_skills"
+        ],
+        "weight_basis": "source_importance_divided_by_5"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:onet_2_b_1_a",
+        "importance": 0.576,
+        "source_importance": 2.88,
+        "source_level": 2.88,
+        "level_suppressed": false,
+        "updated_month": "2024-08",
+        "evidence_ids": [
+          "source:onet_31_0_transferable_skills"
+        ],
+        "weight_basis": "source_importance_divided_by_5"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:onet_2_b_1_b",
+        "importance": 0.6,
+        "source_importance": 3.0,
+        "source_level": 3.0,
+        "level_suppressed": false,
+        "updated_month": "2024-08",
+        "evidence_ids": [
+          "source:onet_31_0_transferable_skills"
+        ],
+        "weight_basis": "source_importance_divided_by_5"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:onet_2_b_1_c",
+        "importance": 0.576,
+        "source_importance": 2.88,
+        "source_level": 3.0,
+        "level_suppressed": false,
+        "updated_month": "2024-08",
+        "evidence_ids": [
+          "source:onet_31_0_transferable_skills"
+        ],
+        "weight_basis": "source_importance_divided_by_5"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:onet_2_b_1_d",
+        "importance": 0.5,
+        "source_importance": 2.5,
+        "source_level": 2.88,
+        "level_suppressed": false,
+        "updated_month": "2024-08",
+        "evidence_ids": [
+          "source:onet_31_0_transferable_skills"
+        ],
+        "weight_basis": "source_importance_divided_by_5"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:onet_2_b_1_e",
+        "importance": 0.6,
+        "source_importance": 3.0,
+        "source_level": 3.0,
+        "level_suppressed": false,
+        "updated_month": "2024-08",
+        "evidence_ids": [
+          "source:onet_31_0_transferable_skills"
+        ],
+        "weight_basis": "source_importance_divided_by_5"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:onet_2_b_1_f",
+        "importance": 0.576,
+        "source_importance": 2.88,
+        "source_level": 2.88,
+        "level_suppressed": false,
+        "updated_month": "2024-08",
+        "evidence_ids": [
+          "source:onet_31_0_transferable_skills"
+        ],
+        "weight_basis": "source_importance_divided_by_5"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:onet_2_b_2_i",
+        "importance": 0.676,
+        "source_importance": 3.38,
+        "source_level": 3.75,
+        "level_suppressed": false,
+        "updated_month": "2024-08",
+        "evidence_ids": [
+          "source:onet_31_0_transferable_skills"
+        ],
+        "weight_basis": "source_importance_divided_by_5"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:onet_2_b_3_a",
+        "importance": 0.376,
+        "source_importance": 1.88,
+        "source_level": 1.62,
+        "level_suppressed": false,
+        "updated_month": "2024-08",
+        "evidence_ids": [
+          "source:onet_31_0_transferable_skills"
+        ],
+        "weight_basis": "source_importance_divided_by_5"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:onet_2_b_3_b",
+        "importance": 0.324,
+        "source_importance": 1.62,
+        "source_level": 0.88,
+        "level_suppressed": false,
+        "updated_month": "2024-08",
+        "evidence_ids": [
+          "source:onet_31_0_transferable_skills"
+        ],
+        "weight_basis": "source_importance_divided_by_5"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:onet_2_b_3_e",
+        "importance": 0.5,
+        "source_importance": 2.5,
+        "source_level": 2.5,
+        "level_suppressed": false,
+        "updated_month": "2024-08",
+        "evidence_ids": [
+          "source:onet_31_0_transferable_skills"
+        ],
+        "weight_basis": "source_importance_divided_by_5"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:onet_2_b_3_g",
+        "importance": 0.35,
+        "source_importance": 1.75,
+        "source_level": 1.12,
+        "level_suppressed": false,
+        "updated_month": "2024-08",
+        "evidence_ids": [
+          "source:onet_31_0_transferable_skills"
+        ],
+        "weight_basis": "source_importance_divided_by_5"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:onet_2_b_3_h",
+        "importance": 0.276,
+        "source_importance": 1.38,
+        "source_level": 0.38,
+        "level_suppressed": false,
+        "updated_month": "2024-08",
+        "evidence_ids": [
+          "source:onet_31_0_transferable_skills"
+        ],
+        "weight_basis": "source_importance_divided_by_5"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:onet_2_b_3_m",
+        "importance": 0.4,
+        "source_importance": 2.0,
+        "source_level": 1.5,
+        "level_suppressed": false,
+        "updated_month": "2024-08",
+        "evidence_ids": [
+          "source:onet_31_0_transferable_skills"
+        ],
+        "weight_basis": "source_importance_divided_by_5"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:onet_2_b_4_e",
+        "importance": 0.724,
+        "source_importance": 3.62,
+        "source_level": 4.0,
+        "level_suppressed": false,
+        "updated_month": "2024-08",
+        "evidence_ids": [
+          "source:onet_31_0_transferable_skills"
+        ],
+        "weight_basis": "source_importance_divided_by_5"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:onet_2_b_4_g",
+        "importance": 0.624,
+        "source_importance": 3.12,
+        "source_level": 3.75,
+        "level_suppressed": false,
+        "updated_month": "2024-08",
+        "evidence_ids": [
+          "source:onet_31_0_transferable_skills"
+        ],
+        "weight_basis": "source_importance_divided_by_5"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:onet_2_b_4_h",
+        "importance": 0.624,
+        "source_importance": 3.12,
+        "source_level": 3.75,
+        "level_suppressed": false,
+        "updated_month": "2024-08",
+        "evidence_ids": [
+          "source:onet_31_0_transferable_skills"
+        ],
+        "weight_basis": "source_importance_divided_by_5"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:onet_2_b_5_a",
+        "importance": 0.624,
+        "source_importance": 3.12,
+        "source_level": 3.0,
+        "level_suppressed": false,
+        "updated_month": "2024-08",
+        "evidence_ids": [
+          "source:onet_31_0_transferable_skills"
+        ],
+        "weight_basis": "source_importance_divided_by_5"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:onet_2_b_5_b",
+        "importance": 0.376,
+        "source_importance": 1.88,
+        "source_level": 1.75,
+        "level_suppressed": false,
+        "updated_month": "2024-08",
+        "evidence_ids": [
+          "source:onet_31_0_transferable_skills"
+        ],
+        "weight_basis": "source_importance_divided_by_5"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:onet_2_b_5_c",
+        "importance": 0.35,
+        "source_importance": 1.75,
+        "source_level": 1.25,
+        "level_suppressed": false,
+        "updated_month": "2024-08",
+        "evidence_ids": [
+          "source:onet_31_0_transferable_skills"
+        ],
+        "weight_basis": "source_importance_divided_by_5"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:onet_2_b_5_d",
+        "importance": 0.424,
+        "source_importance": 2.12,
+        "source_level": 2.0,
+        "level_suppressed": false,
+        "updated_month": "2024-08",
+        "evidence_ids": [
+          "source:onet_31_0_transferable_skills"
+        ],
+        "weight_basis": "source_importance_divided_by_5"
+      }
+    ],
+    "software_associations": [
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:java",
+        "group_id": "group:onet_2_e_7_e",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:microsoft_excel",
+        "group_id": "group:onet_2_e_4_i",
+        "in_demand": true,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:microsoft_power_bi",
+        "group_id": "group:onet_2_e_6_m",
+        "in_demand": true,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:python",
+        "group_id": "group:onet_2_e_7_e",
+        "in_demand": true,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_00c71ffa049752eb",
+        "group_id": "group:onet_2_e_14_c",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_00fe2b965abaa9b0",
+        "group_id": "group:onet_2_e_7_h",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_02c6bb0bff5f9bb6",
+        "group_id": "group:onet_2_e_7_b",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_05fffcfc7fc605ff",
+        "group_id": "group:onet_2_e_6_e",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_0826f18d16ed75cc",
+        "group_id": "group:onet_2_e_7_h",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_09d73c9a02b83f48",
+        "group_id": "group:onet_2_e_6_m",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_09f25c69a7726d83",
+        "group_id": "group:onet_2_e_7_e",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_0a18ff1d348e70cb",
+        "group_id": "group:onet_2_e_4_g",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_0b07b7d671c2ab82",
+        "group_id": "group:onet_2_e_7_b",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_0b632cb602d5daf3",
+        "group_id": "group:onet_2_e_6_m",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_0c8e1cae0d7f35f4",
+        "group_id": "group:onet_2_e_4_f",
+        "in_demand": true,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_0ee8126f0f289c04",
+        "group_id": "group:onet_2_e_7_h",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_0f3ecdd7ce4cf728",
+        "group_id": "group:onet_2_e_12_b",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_0fe9a70dbe802f28",
+        "group_id": "group:onet_2_e_6_g",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_1275a9b1e81f5a3e",
+        "group_id": "group:onet_2_e_7_f",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_127c8cf59f228bb0",
+        "group_id": "group:onet_2_e_7_e",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_12a5d18ee896e599",
+        "group_id": "group:onet_2_e_7_h",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_131f6928eda54a9e",
+        "group_id": "group:onet_2_e_2_b",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_190a42ffcf08c397",
+        "group_id": "group:onet_2_e_2_b",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_1a16b869ad621344",
+        "group_id": "group:onet_2_e_7_h",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_1cc9a79bdaf09793",
+        "group_id": "group:onet_2_e_6_d",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_1df874745fcd3dd0",
+        "group_id": "group:onet_2_e_9_i",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_1e5ae7fb740941c8",
+        "group_id": "group:onet_2_e_13_c",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_222a1e060299c3ed",
+        "group_id": "group:onet_2_e_7_b",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_236ca04670b32cd6",
+        "group_id": "group:onet_2_e_9_i",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_23ecb5310876641b",
+        "group_id": "group:onet_2_e_7_b",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_245ff9068b30ab30",
+        "group_id": "group:onet_2_e_4_g",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_24e6654bfd1ab85b",
+        "group_id": "group:onet_2_e_4_c",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_27b9ec45abb39684",
+        "group_id": "group:onet_2_e_9_d",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_28662759fcf7454b",
+        "group_id": "group:onet_2_e_11_a",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_2e7d2c03a9507ae2",
+        "group_id": "group:onet_2_e_7_b",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_32427103359561e1",
+        "group_id": "group:onet_2_e_11_e",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_32ff1080ac1d49a9",
+        "group_id": "group:onet_2_e_4_d",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_33d0ae1937c6ae5a",
+        "group_id": "group:onet_2_e_9_d",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_34b5771965db2269",
+        "group_id": "group:onet_2_e_6_f",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_358757da6e32f176",
+        "group_id": "group:onet_2_e_7_g",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_366e1272bfc01a76",
+        "group_id": "group:onet_2_e_15_f",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_3733d5a814d5fcca",
+        "group_id": "group:onet_2_e_7_e",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_37d2b12d5d9abc2a",
+        "group_id": "group:onet_2_e_13_c",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_3be3e2d954ceb9de",
+        "group_id": "group:onet_2_e_6_i",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_3d59f7548e1af215",
+        "group_id": "group:onet_2_e_4_g",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_3d71079cbf751bb3",
+        "group_id": "group:onet_2_e_13_c",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_3deb2d2d35c24f36",
+        "group_id": "group:onet_2_e_7_b",
+        "in_demand": true,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_3e79ff7ae98a7fea",
+        "group_id": "group:onet_2_e_6_c",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_3f31abef13f21b0f",
+        "group_id": "group:onet_2_e_6_d",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_40c57bb53c07338b",
+        "group_id": "group:onet_2_e_6_f",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_40cea1fd091bafe9",
+        "group_id": "group:onet_2_e_7_h",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_41de0116bb2584cf",
+        "group_id": "group:onet_2_e_7_b",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_430005175c4c7810",
+        "group_id": "group:onet_2_e_6_d",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_446f35ff434b7646",
+        "group_id": "group:onet_2_e_6_f",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_454349e422f05297",
+        "group_id": "group:onet_2_e_7_e",
+        "in_demand": true,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_4646b6c78248ba62",
+        "group_id": "group:onet_2_e_6_e",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_46a2113d22076e0a",
+        "group_id": "group:onet_2_e_1_e",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_47309a4d5f173d73",
+        "group_id": "group:onet_2_e_9_c",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_47f73a1df2f9889c",
+        "group_id": "group:onet_2_e_7_c",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_4a5efffd88ecf2ea",
+        "group_id": "group:onet_2_e_7_h",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_4b050941b7aef8cd",
+        "group_id": "group:onet_2_e_2_b",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_4ca228828bb4d557",
+        "group_id": "group:onet_2_e_9_i",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_4cd0e21a9a0795a1",
+        "group_id": "group:onet_2_e_7_b",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_4e6642d197b4e68f",
+        "group_id": "group:onet_2_e_2_b",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_4e8011c5f8e0417d",
+        "group_id": "group:onet_2_e_7_e",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_5077841ff0064e12",
+        "group_id": "group:onet_2_e_10_b",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_5201466784908b3b",
+        "group_id": "group:onet_2_e_7_d",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_52264ab7d060c1fd",
+        "group_id": "group:onet_2_e_6_d",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_5ac9e00a51a74d37",
+        "group_id": "group:onet_2_e_13_c",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_5b1f182899f601bb",
+        "group_id": "group:onet_2_e_11_a",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_5efb2d6277ef98cd",
+        "group_id": "group:onet_2_e_2_b",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_5f0974ee455c4cd5",
+        "group_id": "group:onet_2_e_6_m",
+        "in_demand": true,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_5f63c8d6591e9598",
+        "group_id": "group:onet_2_e_7_h",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_5f995543c5f7d297",
+        "group_id": "group:onet_2_e_7_h",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_5ffdde1fb945edb0",
+        "group_id": "group:onet_2_e_6_f",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_62fa52b9d94790dc",
+        "group_id": "group:onet_2_e_1_l",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_63d84a1e0dd27a11",
+        "group_id": "group:onet_2_e_2_b",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_6660c31239bd987e",
+        "group_id": "group:onet_2_e_6_c",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_667e827ac2e594ed",
+        "group_id": "group:onet_2_e_6_i",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_66acfcfe42401326",
+        "group_id": "group:onet_2_e_10_a",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_66e15c2a8f555072",
+        "group_id": "group:onet_2_e_7_h",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_6a361552704380d4",
+        "group_id": "group:onet_2_e_6_m",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_6b4aceeb25efc42c",
+        "group_id": "group:onet_2_e_6_d",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_6d58dfbe672fc034",
+        "group_id": "group:onet_2_e_7_h",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_74db68ed16d2d4f7",
+        "group_id": "group:onet_2_e_6_g",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_76b68ab25061f3b1",
+        "group_id": "group:onet_2_e_2_b",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_77fe460fd5b42382",
+        "group_id": "group:onet_2_e_4_d",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_7804a56a5c7636cc",
+        "group_id": "group:onet_2_e_13_c",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_787aa709e0161e6f",
+        "group_id": "group:onet_2_e_6_f",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_78a2d62c85936172",
+        "group_id": "group:onet_2_e_7_e",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_794948bed6d0f4f7",
+        "group_id": "group:onet_2_e_6_m",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_7cb848452ac5a6d5",
+        "group_id": "group:onet_2_e_7_b",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_7d8a0838ce8e19b2",
+        "group_id": "group:onet_2_e_7_h",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_7d92286f535092e9",
+        "group_id": "group:onet_2_e_6_d",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_7e4100b30463210d",
+        "group_id": "group:onet_2_e_6_f",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_7f0a76ce26d240f3",
+        "group_id": "group:onet_2_e_1_e",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_822c4a02267dceb0",
+        "group_id": "group:onet_2_e_6_k",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_82e23ef0a4efee4f",
+        "group_id": "group:onet_2_e_6_l",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_841eef0a7343f781",
+        "group_id": "group:onet_2_e_2_b",
+        "in_demand": true,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_876b1c30f504d2c0",
+        "group_id": "group:onet_2_e_9_d",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_877159ff3b7144d9",
+        "group_id": "group:onet_2_e_13_c",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_885c4528383cb0b8",
+        "group_id": "group:onet_2_e_6_e",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_8878e589c640ad9e",
+        "group_id": "group:onet_2_e_7_h",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_8925e25ef6bb6bbc",
+        "group_id": "group:onet_2_e_9_i",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_8ba5705dedf27b6e",
+        "group_id": "group:onet_2_e_6_f",
+        "in_demand": true,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_8ba8d1f667a85b6f",
+        "group_id": "group:onet_2_e_6_d",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_8bcf11933046c744",
+        "group_id": "group:onet_2_e_7_b",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_8c8c83d967c49f1f",
+        "group_id": "group:onet_2_e_5_b",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_932632a5221554ae",
+        "group_id": "group:onet_2_e_11_e",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_947ec3c962a1c440",
+        "group_id": "group:onet_2_e_13_c",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_94e58916161f2693",
+        "group_id": "group:onet_2_e_6_m",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_951a4d36e0a9018b",
+        "group_id": "group:onet_2_e_7_e",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_96166e27af5a3c43",
+        "group_id": "group:onet_2_e_9_d",
+        "in_demand": true,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_96c88d4178b25942",
+        "group_id": "group:onet_2_e_2_b",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_96dd87fae699b9a3",
+        "group_id": "group:onet_2_e_6_f",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_9892ecde91070c24",
+        "group_id": "group:onet_2_e_11_e",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_98dde01cf18d12e3",
+        "group_id": "group:onet_2_e_7_c",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_9a0b4e38959742f4",
+        "group_id": "group:onet_2_e_16_a",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_9a73a0498b578d61",
+        "group_id": "group:onet_2_e_7_b",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_9a881b9b9f238494",
+        "group_id": "group:onet_2_e_5_c",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_9b9542f38910df8f",
+        "group_id": "group:onet_2_e_7_b",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_9c319a88eacb0f96",
+        "group_id": "group:onet_2_e_7_c",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_9d2f2e0ca2b14f57",
+        "group_id": "group:onet_2_e_1_k",
+        "in_demand": true,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_9e7ff1650d12cfff",
+        "group_id": "group:onet_2_e_6_g",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_a056f5a5293c99af",
+        "group_id": "group:onet_2_e_13_c",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_a10e832f717051c4",
+        "group_id": "group:onet_2_e_14_d",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_a1c176cc5c0cbe6d",
+        "group_id": "group:onet_2_e_7_e",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_a33603bf79f74b05",
+        "group_id": "group:onet_2_e_7_e",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_a478b4566be5cb00",
+        "group_id": "group:onet_2_e_6_j",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_a59ce6dc1e6f7053",
+        "group_id": "group:onet_2_e_6_d",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_a69ec880b9edefd5",
+        "group_id": "group:onet_2_e_7_h",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_aa2cab99b5093c7d",
+        "group_id": "group:onet_2_e_2_d",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_aa43b8cf4c7ce3c0",
+        "group_id": "group:onet_2_e_7_b",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_aa7fbc61f1c59047",
+        "group_id": "group:onet_2_e_6_j",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_ae1b8c8635429669",
+        "group_id": "group:onet_2_e_6_d",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_b0431585f78e27af",
+        "group_id": "group:onet_2_e_6_g",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_b2953d236aa4f40b",
+        "group_id": "group:onet_2_e_6_c",
+        "in_demand": true,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_b2b5f6edf0c81741",
+        "group_id": "group:onet_2_e_14_d",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_b2c348e934da29c1",
+        "group_id": "group:onet_2_e_13_c",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_b5809154ea75245b",
+        "group_id": "group:onet_2_e_6_f",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_b5b2e3e4c0fc2476",
+        "group_id": "group:onet_2_e_8_h",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_b6a91076a1dfc914",
+        "group_id": "group:onet_2_e_6_f",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_b8851668526c8a3e",
+        "group_id": "group:onet_2_e_12_a",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_b9138194ffe9e7c8",
+        "group_id": "group:onet_2_e_7_b",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_ba19c4d4a63eb753",
+        "group_id": "group:onet_2_e_2_d",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_bb9f6a66ae451b65",
+        "group_id": "group:onet_2_e_7_c",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_bc96289a9cce49dc",
+        "group_id": "group:onet_2_e_7_c",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_bd49db6656673ff9",
+        "group_id": "group:onet_2_e_8_h",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_be3c8fa0216ba4e1",
+        "group_id": "group:onet_2_e_13_c",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_bee2e2575bb1ab94",
+        "group_id": "group:onet_2_e_2_d",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_bfacc8e46ad9b0f3",
+        "group_id": "group:onet_2_e_13_c",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_bfcb3adc9e99751a",
+        "group_id": "group:onet_2_e_7_b",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_bfed7a7e66872f2d",
+        "group_id": "group:onet_2_e_17_a",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_c00bbd8c541a9980",
+        "group_id": "group:onet_2_e_6_f",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_c0b0109d9439de57",
+        "group_id": "group:onet_2_e_10_a",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_c1b425f9ff48b6e7",
+        "group_id": "group:onet_2_e_6_h",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_c1c5dec32e8ea80a",
+        "group_id": "group:onet_2_e_9_d",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_c71448b910645238",
+        "group_id": "group:onet_2_e_6_i",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_caf90169eefa5f80",
+        "group_id": "group:onet_2_e_13_c",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_cedb1bac7efcd7db",
+        "group_id": "group:onet_2_e_7_e",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_cef9ac934fa8514b",
+        "group_id": "group:onet_2_e_4_f",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_d0ddf6c331305845",
+        "group_id": "group:onet_2_e_10_a",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_d2102fe0809680ce",
+        "group_id": "group:onet_2_e_1_c",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_d2eab8ec083802ca",
+        "group_id": "group:onet_2_e_6_m",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_d3e4f4a00b4b3775",
+        "group_id": "group:onet_2_e_6_f",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_d42c1474fc09593f",
+        "group_id": "group:onet_2_e_7_c",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_d4605bbebf949183",
+        "group_id": "group:onet_2_e_6_d",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_d64ffc4768872eee",
+        "group_id": "group:onet_2_e_6_d",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_d6e472bc327f9a04",
+        "group_id": "group:onet_2_e_10_b",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_d6fc15244e4566a2",
+        "group_id": "group:onet_2_e_16_a",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_d89d2273901659ba",
+        "group_id": "group:onet_2_e_6_e",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_d8ae42a36f37e2cd",
+        "group_id": "group:onet_2_e_5_a",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_db72d32fa60d32af",
+        "group_id": "group:onet_2_e_2_a",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_dc20ddfc547d7b93",
+        "group_id": "group:onet_2_e_6_e",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_dd05736c27712c92",
+        "group_id": "group:onet_2_e_6_d",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_de16216f1e29a016",
+        "group_id": "group:onet_2_e_7_h",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_de5a1adf4fedcce1",
+        "group_id": "group:onet_2_e_6_g",
+        "in_demand": true,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_df2eba0fd4ffe97c",
+        "group_id": "group:onet_2_e_1_c",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_e137b1e5f4a2d38b",
+        "group_id": "group:onet_2_e_5_b",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_e35438df540072cf",
+        "group_id": "group:onet_2_e_2_a",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_e80ff6c9a6edb83b",
+        "group_id": "group:onet_2_e_7_h",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_e9c8a55bdefd7d39",
+        "group_id": "group:onet_2_e_6_e",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_ecef2d003916c575",
+        "group_id": "group:onet_2_e_7_b",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_ed0508f499eeca05",
+        "group_id": "group:onet_2_e_2_b",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_ed346bb14786b438",
+        "group_id": "group:onet_2_e_6_f",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_eda71746c01c3f46",
+        "group_id": "group:onet_2_e_7_h",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_ee5e43de9f8c0ad2",
+        "group_id": "group:onet_2_e_9_i",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_eeb6b9630e48e08b",
+        "group_id": "group:onet_2_e_16_a",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_f0c1dcc0abfa3b7c",
+        "group_id": "group:onet_2_e_4_k",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_f0c929a9e723bc62",
+        "group_id": "group:onet_2_e_7_e",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_f2cd46968894ef1c",
+        "group_id": "group:onet_2_e_1_e",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_f42ef2f09e77cfdb",
+        "group_id": "group:onet_2_e_1_l",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_f46a0603658523ff",
+        "group_id": "group:onet_2_e_6_c",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_f509d55660823494",
+        "group_id": "group:onet_2_e_6_e",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_f52ea0aad0e344c7",
+        "group_id": "group:onet_2_e_9_d",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_f6fce77d4a6f6d04",
+        "group_id": "group:onet_2_e_6_d",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_f92a2ff7dd10e4fe",
+        "group_id": "group:onet_2_e_6_e",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_f9dd403240140d04",
+        "group_id": "group:onet_2_e_7_b",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_fa0578afe7b7100e",
+        "group_id": "group:onet_2_e_7_b",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_fb95c0c604a9fc22",
+        "group_id": "group:onet_2_e_2_b",
+        "in_demand": false,
+        "hot_technology": false,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_fbba8bfa09e11cd5",
+        "group_id": "group:onet_2_e_1_p",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:software_fc9560c0c055d37a",
+        "group_id": "group:onet_2_e_6_m",
+        "in_demand": false,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "skill_id": "skill:sql",
+        "group_id": "group:onet_2_e_6_f",
+        "in_demand": true,
+        "hot_technology": true,
+        "evidence_ids": [
+          "source:onet_31_0_software_skills"
+        ],
+        "meaning": "occupation_example_not_universal_requirement"
+      }
+    ],
+    "skills": [
+      {
+        "skill_id": "skill:java",
+        "label": "Java",
+        "aliases": [
+          "Oracle Java"
+        ],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:microsoft_excel",
+        "label": "Microsoft Excel",
+        "aliases": [
+          "Excel"
+        ],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:microsoft_power_bi",
+        "label": "Microsoft Power BI",
+        "aliases": [
+          "Power BI"
+        ],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:onet_2_a_1_a",
+        "label": "Reading Comprehension",
+        "aliases": [],
+        "kind": "general",
+        "element_id": "2.A.1.a",
+        "description": "Understanding written sentences and paragraphs in work-related documents."
+      },
+      {
+        "skill_id": "skill:onet_2_a_1_b",
+        "label": "Active Listening",
+        "aliases": [],
+        "kind": "general",
+        "element_id": "2.A.1.b",
+        "description": "Giving full attention to what other people are saying, taking time to understand the points being made, asking questions as appropriate, and not interrupting at inappropriate times."
+      },
+      {
+        "skill_id": "skill:onet_2_a_1_c",
+        "label": "Writing",
+        "aliases": [],
+        "kind": "general",
+        "element_id": "2.A.1.c",
+        "description": "Communicating effectively in writing as appropriate for the needs of the audience."
+      },
+      {
+        "skill_id": "skill:onet_2_a_1_d",
+        "label": "Speaking",
+        "aliases": [],
+        "kind": "general",
+        "element_id": "2.A.1.d",
+        "description": "Talking to others to convey information effectively."
+      },
+      {
+        "skill_id": "skill:onet_2_a_1_e",
+        "label": "Mathematics",
+        "aliases": [],
+        "kind": "general",
+        "element_id": "2.A.1.e",
+        "description": "Using mathematics to solve problems."
+      },
+      {
+        "skill_id": "skill:onet_2_a_1_f",
+        "label": "Science",
+        "aliases": [],
+        "kind": "general",
+        "element_id": "2.A.1.f",
+        "description": "Using scientific rules and methods to solve problems."
+      },
+      {
+        "skill_id": "skill:onet_2_a_2_a",
+        "label": "Critical Thinking",
+        "aliases": [],
+        "kind": "general",
+        "element_id": "2.A.2.a",
+        "description": "Using logic and reasoning to identify the strengths and weaknesses of alternative solutions, conclusions, or approaches to problems."
+      },
+      {
+        "skill_id": "skill:onet_2_a_2_b",
+        "label": "Active Learning",
+        "aliases": [],
+        "kind": "general",
+        "element_id": "2.A.2.b",
+        "description": "Understanding the implications of new information for both current and future problem-solving and decision-making."
+      },
+      {
+        "skill_id": "skill:onet_2_a_2_c",
+        "label": "Learning Strategies",
+        "aliases": [],
+        "kind": "general",
+        "element_id": "2.A.2.c",
+        "description": "Selecting and using training/instructional methods and procedures appropriate for the situation when learning or teaching new things."
+      },
+      {
+        "skill_id": "skill:onet_2_a_2_d",
+        "label": "Monitoring",
+        "aliases": [],
+        "kind": "general",
+        "element_id": "2.A.2.d",
+        "description": "Monitoring/Assessing performance of yourself, other individuals, or organizations to make improvements or take corrective action."
+      },
+      {
+        "skill_id": "skill:onet_2_b_1_a",
+        "label": "Social Perceptiveness",
+        "aliases": [],
+        "kind": "general",
+        "element_id": "2.B.1.a",
+        "description": "Being aware of others' reactions and understanding why they react as they do."
+      },
+      {
+        "skill_id": "skill:onet_2_b_1_b",
+        "label": "Coordination",
+        "aliases": [],
+        "kind": "general",
+        "element_id": "2.B.1.b",
+        "description": "Adjusting actions in relation to others' actions."
+      },
+      {
+        "skill_id": "skill:onet_2_b_1_c",
+        "label": "Persuasion",
+        "aliases": [],
+        "kind": "general",
+        "element_id": "2.B.1.c",
+        "description": "Persuading others to change their minds or behavior."
+      },
+      {
+        "skill_id": "skill:onet_2_b_1_d",
+        "label": "Negotiation",
+        "aliases": [],
+        "kind": "general",
+        "element_id": "2.B.1.d",
+        "description": "Bringing others together and trying to reconcile differences."
+      },
+      {
+        "skill_id": "skill:onet_2_b_1_e",
+        "label": "Instructing",
+        "aliases": [],
+        "kind": "general",
+        "element_id": "2.B.1.e",
+        "description": "Teaching others how to do something."
+      },
+      {
+        "skill_id": "skill:onet_2_b_1_f",
+        "label": "Service Orientation",
+        "aliases": [],
+        "kind": "general",
+        "element_id": "2.B.1.f",
+        "description": "Actively looking for ways to help people."
+      },
+      {
+        "skill_id": "skill:onet_2_b_2_i",
+        "label": "Complex Problem Solving",
+        "aliases": [],
+        "kind": "general",
+        "element_id": "2.B.2.i",
+        "description": "Identifying complex problems and reviewing related information to develop and evaluate options and implement solutions."
+      },
+      {
+        "skill_id": "skill:onet_2_b_3_a",
+        "label": "Operations Analysis",
+        "aliases": [],
+        "kind": "general",
+        "element_id": "2.B.3.a",
+        "description": "Analyzing needs and product requirements to create a design."
+      },
+      {
+        "skill_id": "skill:onet_2_b_3_b",
+        "label": "Technology Design",
+        "aliases": [],
+        "kind": "general",
+        "element_id": "2.B.3.b",
+        "description": "Generating or adapting equipment and technology to serve user needs."
+      },
+      {
+        "skill_id": "skill:onet_2_b_3_e",
+        "label": "Programming",
+        "aliases": [],
+        "kind": "general",
+        "element_id": "2.B.3.e",
+        "description": "Writing computer programs for various purposes."
+      },
+      {
+        "skill_id": "skill:onet_2_b_3_g",
+        "label": "Operations Monitoring",
+        "aliases": [],
+        "kind": "general",
+        "element_id": "2.B.3.g",
+        "description": "Watching gauges, dials, or other indicators to make sure a machine is working properly."
+      },
+      {
+        "skill_id": "skill:onet_2_b_3_h",
+        "label": "Operation and Control",
+        "aliases": [],
+        "kind": "general",
+        "element_id": "2.B.3.h",
+        "description": "Controlling operations of equipment or systems."
+      },
+      {
+        "skill_id": "skill:onet_2_b_3_m",
+        "label": "Quality Control Analysis",
+        "aliases": [],
+        "kind": "general",
+        "element_id": "2.B.3.m",
+        "description": "Conducting tests and inspections of products, services, or processes to evaluate quality or performance."
+      },
+      {
+        "skill_id": "skill:onet_2_b_4_e",
+        "label": "Judgment and Decision Making",
+        "aliases": [],
+        "kind": "general",
+        "element_id": "2.B.4.e",
+        "description": "Considering the relative costs and benefits of potential actions to choose the most appropriate one."
+      },
+      {
+        "skill_id": "skill:onet_2_b_4_g",
+        "label": "Systems Analysis",
+        "aliases": [],
+        "kind": "general",
+        "element_id": "2.B.4.g",
+        "description": "Determining how a system should work and how changes in conditions, operations, and the environment will affect outcomes."
+      },
+      {
+        "skill_id": "skill:onet_2_b_4_h",
+        "label": "Systems Evaluation",
+        "aliases": [],
+        "kind": "general",
+        "element_id": "2.B.4.h",
+        "description": "Identifying measures or indicators of system performance and the actions needed to improve or correct performance, relative to the goals of the system."
+      },
+      {
+        "skill_id": "skill:onet_2_b_5_a",
+        "label": "Time Management",
+        "aliases": [],
+        "kind": "general",
+        "element_id": "2.B.5.a",
+        "description": "Managing one's own time and the time of others."
+      },
+      {
+        "skill_id": "skill:onet_2_b_5_b",
+        "label": "Management of Financial Resources",
+        "aliases": [],
+        "kind": "general",
+        "element_id": "2.B.5.b",
+        "description": "Determining how money will be spent to get the work done, and accounting for these expenditures."
+      },
+      {
+        "skill_id": "skill:onet_2_b_5_c",
+        "label": "Management of Material Resources",
+        "aliases": [],
+        "kind": "general",
+        "element_id": "2.B.5.c",
+        "description": "Obtaining and seeing to the appropriate use of equipment, facilities, and materials needed to do certain work."
+      },
+      {
+        "skill_id": "skill:onet_2_b_5_d",
+        "label": "Management of Personnel Resources",
+        "aliases": [],
+        "kind": "general",
+        "element_id": "2.B.5.d",
+        "description": "Motivating, developing, and directing people as they work, identifying the best people for the job."
+      },
+      {
+        "skill_id": "skill:python",
+        "label": "Python",
+        "aliases": [
+          "python3"
+        ],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_00c71ffa049752eb",
+        "label": "Virtual private networking VPN software",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_00fe2b965abaa9b0",
+        "label": "Extensible hypertext markup language XHTML",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_02c6bb0bff5f9bb6",
+        "label": "Apache Ant",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_05fffcfc7fc605ff",
+        "label": "SAP Crystal Reports",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_0826f18d16ed75cc",
+        "label": "Hypertext markup language HTML",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_09d73c9a02b83f48",
+        "label": "Google Looker Analytics",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_09f25c69a7726d83",
+        "label": "Jupyter Notebook",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_0a18ff1d348e70cb",
+        "label": "Adobe Dreamweaver",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_0b07b7d671c2ab82",
+        "label": "Oracle SQL Developer",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_0b632cb602d5daf3",
+        "label": "Oracle Business Intelligence Enterprise Edition",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_0c8e1cae0d7f35f4",
+        "label": "Microsoft PowerPoint",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_0ee8126f0f289c04",
+        "label": "Oracle JavaServer Pages JSP",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_0f3ecdd7ce4cf728",
+        "label": "IBM Domino",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_0fe9a70dbe802f28",
+        "label": "Google Analytics",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_1275a9b1e81f5a3e",
+        "label": "Hewlett Packard LoadRunner",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_127c8cf59f228bb0",
+        "label": "jQuery",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_12a5d18ee896e599",
+        "label": "PHP",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_131f6928eda54a9e",
+        "label": "Oracle Fusion Applications",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_190a42ffcf08c397",
+        "label": "NetSuite ERP",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_1a16b869ad621344",
+        "label": "Drupal",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_1cc9a79bdaf09793",
+        "label": "MongoDB",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_1df874745fcd3dd0",
+        "label": "Medical condition coding software",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_1e5ae7fb740941c8",
+        "label": "KornShell",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_222a1e060299c3ed",
+        "label": "Business Objects Data Integrator",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_236ca04670b32cd6",
+        "label": "MEDITECH software",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_23ecb5310876641b",
+        "label": "Microsoft Visual Basic for Applications VBA",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_245ff9068b30ab30",
+        "label": "Google Sites",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_24e6654bfd1ab85b",
+        "label": "YouTube",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_27b9ec45abb39684",
+        "label": "IBM SPSS Statistics",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_28662759fcf7454b",
+        "label": "Wireshark",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_2e7d2c03a9507ae2",
+        "label": "C",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_32427103359561e1",
+        "label": "Oracle Cloud software",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_32ff1080ac1d49a9",
+        "label": "Microsoft Word",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_33d0ae1937c6ae5a",
+        "label": "The MathWorks MATLAB",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_34b5771965db2269",
+        "label": "Transact-SQL",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_358757da6e32f176",
+        "label": "Unified modeling language UML",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_366e1272bfc01a76",
+        "label": "Veritas NetBackup",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_3733d5a814d5fcca",
+        "label": "Microsoft ActiveX",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_37d2b12d5d9abc2a",
+        "label": "Bash",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_3be3e2d954ceb9de",
+        "label": "Data modeling software",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_3d59f7548e1af215",
+        "label": "Facebook",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_3d71079cbf751bb3",
+        "label": "Shell script",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_3deb2d2d35c24f36",
+        "label": "Microsoft Azure software",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_3e79ff7ae98a7fea",
+        "label": "Oracle Eloqua",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_3f31abef13f21b0f",
+        "label": "Apache Pig",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_40c57bb53c07338b",
+        "label": "Airtable",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_40cea1fd091bafe9",
+        "label": "AJAX",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_41de0116bb2584cf",
+        "label": "Eclipse IDE",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_430005175c4c7810",
+        "label": "MySQL",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_446f35ff434b7646",
+        "label": "Amazon Redshift",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_454349e422f05297",
+        "label": "R",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_4646b6c78248ba62",
+        "label": "Information Builders WebFOCUS",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_46a2113d22076e0a",
+        "label": "Oracle Primavera Enterprise Project Portfolio Management",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_47309a4d5f173d73",
+        "label": "PTC Creo Parametric",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_47f73a1df2f9889c",
+        "label": "Microsoft Power Platform software",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_4a5efffd88ecf2ea",
+        "label": "Apache Struts",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_4b050941b7aef8cd",
+        "label": "SAP ERP",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_4ca228828bb4d557",
+        "label": "Medical procedure coding software",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_4cd0e21a9a0795a1",
+        "label": "Go",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_4e6642d197b4e68f",
+        "label": "Oracle PeopleSoft Financials",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_4e8011c5f8e0417d",
+        "label": "Apache Groovy",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_5077841ff0064e12",
+        "label": "Skype",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_5201466784908b3b",
+        "label": "Salesforce Visualforce",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_52264ab7d060c1fd",
+        "label": "Apache Cassandra",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_5ac9e00a51a74d37",
+        "label": "Job control language JCL",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_5b1f182899f601bb",
+        "label": "Nagios",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_5efb2d6277ef98cd",
+        "label": "SAP Business Objects",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_5f0974ee455c4cd5",
+        "label": "Tableau",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_5f63c8d6591e9598",
+        "label": "Apache Tomcat",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_5f995543c5f7d297",
+        "label": "Microsoft ASP.NET",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_5ffdde1fb945edb0",
+        "label": "Database software",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_62fa52b9d94790dc",
+        "label": "Google Ads",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_63d84a1e0dd27a11",
+        "label": "Oracle Hyperion",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_6660c31239bd987e",
+        "label": "Oracle Siebel Marketing Resource Management",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_667e827ac2e594ed",
+        "label": "Informatica software",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_66acfcfe42401326",
+        "label": "Red Hat WildFly",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_66e15c2a8f555072",
+        "label": "JavaScript Object Notation JSON",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_6a361552704380d4",
+        "label": "Alteryx software",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_6b4aceeb25efc42c",
+        "label": "Apache Hadoop",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_6d58dfbe672fc034",
+        "label": "Ruby on Rails",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_74db68ed16d2d4f7",
+        "label": "Informatica Data Explorer",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_76b68ab25061f3b1",
+        "label": "Oracle JD Edwards EnterpriseOne",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_77fe460fd5b42382",
+        "label": "Google Docs",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_7804a56a5c7636cc",
+        "label": "Ubuntu",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_787aa709e0161e6f",
+        "label": "Oracle Database",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_78a2d62c85936172",
+        "label": "Advanced business application programming ABAP",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_794948bed6d0f4f7",
+        "label": "IBM Cognos Impromptu",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_7cb848452ac5a6d5",
+        "label": "Common business oriented language COBOL",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_7d8a0838ce8e19b2",
+        "label": "Django",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_7d92286f535092e9",
+        "label": "Oracle PL/SQL",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_7e4100b30463210d",
+        "label": "Amazon Elastic Compute Cloud EC2",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_7f0a76ce26d240f3",
+        "label": "Microsoft Project",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_822c4a02267dceb0",
+        "label": "Apache HTTP Server",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_82e23ef0a4efee4f",
+        "label": "Customer information control system CICS",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_841eef0a7343f781",
+        "label": "SAP software",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_876b1c30f504d2c0",
+        "label": "StataCorp Stata",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_877159ff3b7144d9",
+        "label": "UNIX Shell",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_885c4528383cb0b8",
+        "label": "Reporting software",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_8878e589c640ad9e",
+        "label": "Enterprise JavaBeans",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_8925e25ef6bb6bbc",
+        "label": "Epic Systems",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_8ba5705dedf27b6e",
+        "label": "Amazon Web Services AWS software",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_8ba8d1f667a85b6f",
+        "label": "Teradata Database",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_8bcf11933046c744",
+        "label": "Apache Kafka",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_8c8c83d967c49f1f",
+        "label": "Microsoft SharePoint",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_932632a5221554ae",
+        "label": "IBM WebSphere",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_947ec3c962a1c440",
+        "label": "Oracle Solaris",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_94e58916161f2693",
+        "label": "MicroStrategy",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_951a4d36e0a9018b",
+        "label": "C#",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_96166e27af5a3c43",
+        "label": "SAS",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_96c88d4178b25942",
+        "label": "Oracle PeopleSoft",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_96dd87fae699b9a3",
+        "label": "FileMaker Pro",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_9892ecde91070c24",
+        "label": "Splunk Enterprise",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_98dde01cf18d12e3",
+        "label": "IBM InfoSphere DataStage",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_9a0b4e38959742f4",
+        "label": "Microsoft Outlook",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_9a73a0498b578d61",
+        "label": "Adobe ActionScript",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_9a881b9b9f238494",
+        "label": "Git",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_9b9542f38910df8f",
+        "label": "Microsoft Visual Basic",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_9c319a88eacb0f96",
+        "label": "Microsoft SQL Server Integration Services SSIS",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_9d2f2e0ca2b14f57",
+        "label": "Microsoft Office software",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_9e7ff1650d12cfff",
+        "label": "SAP NetWeaver BW",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_a056f5a5293c99af",
+        "label": "Microsoft Windows Server",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_a10e832f717051c4",
+        "label": "NortonLifeLock cybersecurity software",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_a1c176cc5c0cbe6d",
+        "label": "Scala",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_a33603bf79f74b05",
+        "label": "Swift",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_a478b4566be5cb00",
+        "label": "PostgreSQL",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_a59ce6dc1e6f7053",
+        "label": "Relational database management software",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_a69ec880b9edefd5",
+        "label": "Ext JS",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_aa2cab99b5093c7d",
+        "label": "Oracle E-Business Suite Financials",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_aa43b8cf4c7ce3c0",
+        "label": "Integrated development environment IDE software",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_aa7fbc61f1c59047",
+        "label": "Hibernate ORM",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_ae1b8c8635429669",
+        "label": "Elasticsearch",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_b0431585f78e27af",
+        "label": "Data warehouse software",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_b2953d236aa4f40b",
+        "label": "Salesforce software",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_b2b5f6edf0c81741",
+        "label": "McAfee",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_b2c348e934da29c1",
+        "label": "UNIX",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_b5809154ea75245b",
+        "label": "Oracle Essbase",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_b5b2e3e4c0fc2476",
+        "label": "Geographic information system GIS software",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_b6a91076a1dfc914",
+        "label": "IBM DB2",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_b8851668526c8a3e",
+        "label": "Citrix cloud computing software",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_b9138194ffe9e7c8",
+        "label": "Ruby",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_ba19c4d4a63eb753",
+        "label": "Delphi Technology",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_bb9f6a66ae451b65",
+        "label": "SAP BusinessObjects Data Integrator",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_bc96289a9cce49dc",
+        "label": "Microsoft Power Automate",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_bd49db6656673ff9",
+        "label": "ESRI ArcGIS software",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_be3c8fa0216ba4e1",
+        "label": "Hewlett Packard HP-UX",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_bee2e2575bb1ab94",
+        "label": "IBM Unica Enterprise",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_bfacc8e46ad9b0f3",
+        "label": "Red Hat Enterprise Linux",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_bfcb3adc9e99751a",
+        "label": "Microsoft Visual Studio",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_bfed7a7e66872f2d",
+        "label": "IBM Power Systems software",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_c00bbd8c541a9980",
+        "label": "Microsoft Access",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_c0b0109d9439de57",
+        "label": "GitHub",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_c1b425f9ff48b6e7",
+        "label": "LexisNexis",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_c1c5dec32e8ea80a",
+        "label": "Rogue Wave Software IMSL Numerical Libraries",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_c71448b910645238",
+        "label": "Quest Erwin Data Modeler",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_caf90169eefa5f80",
+        "label": "Linux",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_cedb1bac7efcd7db",
+        "label": "C++",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_cef9ac934fa8514b",
+        "label": "Google Slides",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_d0ddf6c331305845",
+        "label": "Oracle WebLogic Server",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_d2102fe0809680ce",
+        "label": "Oracle Taleo",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_d2eab8ec083802ca",
+        "label": "Qlik Tech QlikView",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_d3e4f4a00b4b3775",
+        "label": "Oracle JDBC",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_d42c1474fc09593f",
+        "label": "Extensible markup language XML",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_d4605bbebf949183",
+        "label": "NoSQL",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_d64ffc4768872eee",
+        "label": "Apache Hive",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_d6e472bc327f9a04",
+        "label": "Eko",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_d6fc15244e4566a2",
+        "label": "IBM Notes",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_d89d2273901659ba",
+        "label": "Microsoft SQL Server Reporting Services SSRS",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_d8ae42a36f37e2cd",
+        "label": "Atlassian JIRA",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_db72d32fa60d32af",
+        "label": "Fund accounting software",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_dc20ddfc547d7b93",
+        "label": "Actuate Eclipse BIRT",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_dd05736c27712c92",
+        "label": "Apache Solr",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_de16216f1e29a016",
+        "label": "Dynamic hypertext markup language DHTML",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_de5a1adf4fedcce1",
+        "label": "Snowflake",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_df2eba0fd4ffe97c",
+        "label": "Human resource management software HRMS",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_e137b1e5f4a2d38b",
+        "label": "Adobe Acrobat",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_e35438df540072cf",
+        "label": "Tax software",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_e80ff6c9a6edb83b",
+        "label": "Microsoft Active Server Pages ASP",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_e9c8a55bdefd7d39",
+        "label": "SiSense Prism",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_ecef2d003916c575",
+        "label": "Microsoft .NET Framework",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_ed0508f499eeca05",
+        "label": "Microsoft Dynamics GP",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_ed346bb14786b438",
+        "label": "Microsoft SQL Server",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_eda71746c01c3f46",
+        "label": "JavaScript",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_ee5e43de9f8c0ad2",
+        "label": "Healthcare common procedure coding system HCPCS",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_eeb6b9630e48e08b",
+        "label": "Microsoft Exchange",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_f0c1dcc0abfa3b7c",
+        "label": "Microsoft Publisher",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_f0c929a9e723bc62",
+        "label": "Perl",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_f2cd46968894ef1c",
+        "label": "Atlassian Confluence",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_f42ef2f09e77cfdb",
+        "label": "Marketo Marketing Automation",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_f46a0603658523ff",
+        "label": "Blackbaud The Raiser's Edge",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_f509d55660823494",
+        "label": "Panorama NovaView",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_f52ea0aad0e344c7",
+        "label": "Minitab",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_f6fce77d4a6f6d04",
+        "label": "Amazon DynamoDB",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_f92a2ff7dd10e4fe",
+        "label": "Microsoft Proclarity",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_f9dd403240140d04",
+        "label": "Microsoft Visual Basic Scripting Edition VBScript",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_fa0578afe7b7100e",
+        "label": "Microsoft PowerShell",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_fb95c0c604a9fc22",
+        "label": "Microsoft Dynamics",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_fbba8bfa09e11cd5",
+        "label": "Microsoft Visio",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:software_fc9560c0c055d37a",
+        "label": "Apache Spark",
+        "aliases": [],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      },
+      {
+        "skill_id": "skill:sql",
+        "label": "SQL",
+        "aliases": [
+          "Structured query language SQL"
+        ],
+        "kind": "software",
+        "element_id": null,
+        "description": null
+      }
+    ],
+    "tasks": [
+      {
+        "task_id": "task:onet_16134",
+        "label": "Provide technical support for existing reports, dashboards, or other tools.",
+        "source_task_id": "16134",
+        "task_type": "Core",
+        "source_updated_month": "2024-08",
+        "skill_ids": [],
+        "mapping_status": "unmapped"
+      },
+      {
+        "task_id": "task:onet_16135",
+        "label": "Maintain library of model documents, templates, or other reusable knowledge assets.",
+        "source_task_id": "16135",
+        "task_type": "Core",
+        "source_updated_month": "2024-08",
+        "skill_ids": [],
+        "mapping_status": "unmapped"
+      },
+      {
+        "task_id": "task:onet_16136",
+        "label": "Identify or monitor current and potential customers, using business intelligence tools.",
+        "source_task_id": "16136",
+        "task_type": "Core",
+        "source_updated_month": "2024-08",
+        "skill_ids": [],
+        "mapping_status": "unmapped"
+      },
+      {
+        "task_id": "task:onet_16137",
+        "label": "Create or review technical design documentation to ensure the accurate development of reporting solutions.",
+        "source_task_id": "16137",
+        "task_type": "Core",
+        "source_updated_month": "2024-08",
+        "skill_ids": [],
+        "mapping_status": "unmapped"
+      },
+      {
+        "task_id": "task:onet_16138",
+        "label": "Communicate with customers, competitors, suppliers, professional organizations, or others to stay abreast of industry or business trends.",
+        "source_task_id": "16138",
+        "task_type": "Core",
+        "source_updated_month": "2024-08",
+        "skill_ids": [],
+        "mapping_status": "unmapped"
+      },
+      {
+        "task_id": "task:onet_16139",
+        "label": "Maintain or update business intelligence tools, databases, dashboards, systems, or methods.",
+        "source_task_id": "16139",
+        "task_type": "Core",
+        "source_updated_month": "2024-08",
+        "skill_ids": [],
+        "mapping_status": "unmapped"
+      },
+      {
+        "task_id": "task:onet_16140",
+        "label": "Manage timely flow of business intelligence information to users.",
+        "source_task_id": "16140",
+        "task_type": "Core",
+        "source_updated_month": "2024-08",
+        "skill_ids": [],
+        "mapping_status": "unmapped"
+      },
+      {
+        "task_id": "task:onet_16141",
+        "label": "Identify and analyze industry or geographic trends with business strategy implications.",
+        "source_task_id": "16141",
+        "task_type": "Core",
+        "source_updated_month": "2024-08",
+        "skill_ids": [],
+        "mapping_status": "unmapped"
+      },
+      {
+        "task_id": "task:onet_16142",
+        "label": "Document specifications for business intelligence or information technology reports, dashboards, or other outputs.",
+        "source_task_id": "16142",
+        "task_type": "Core",
+        "source_updated_month": "2024-08",
+        "skill_ids": [],
+        "mapping_status": "unmapped"
+      },
+      {
+        "task_id": "task:onet_16143",
+        "label": "Disseminate information regarding tools, reports, or metadata enhancements.",
+        "source_task_id": "16143",
+        "task_type": "Core",
+        "source_updated_month": "2024-08",
+        "skill_ids": [],
+        "mapping_status": "unmapped"
+      },
+      {
+        "task_id": "task:onet_16144",
+        "label": "Create business intelligence tools or systems, including design of related databases, spreadsheets, or outputs.",
+        "source_task_id": "16144",
+        "task_type": "Core",
+        "source_updated_month": "2024-08",
+        "skill_ids": [],
+        "mapping_status": "unmapped"
+      },
+      {
+        "task_id": "task:onet_16145",
+        "label": "Conduct or coordinate tests to ensure that intelligence is consistent with defined needs.",
+        "source_task_id": "16145",
+        "task_type": "Core",
+        "source_updated_month": "2024-08",
+        "skill_ids": [],
+        "mapping_status": "unmapped"
+      },
+      {
+        "task_id": "task:onet_16146",
+        "label": "Collect business intelligence data from available industry reports, public information, field reports, or purchased sources.",
+        "source_task_id": "16146",
+        "task_type": "Core",
+        "source_updated_month": "2024-08",
+        "skill_ids": [],
+        "mapping_status": "unmapped"
+      },
+      {
+        "task_id": "task:onet_16147",
+        "label": "Analyze technology trends to identify markets for future product development or to improve sales of existing products.",
+        "source_task_id": "16147",
+        "task_type": "Core",
+        "source_updated_month": "2024-08",
+        "skill_ids": [],
+        "mapping_status": "unmapped"
+      },
+      {
+        "task_id": "task:onet_16148",
+        "label": "Analyze competitive market strategies through analysis of related product, market, or share trends.",
+        "source_task_id": "16148",
+        "task_type": "Core",
+        "source_updated_month": "2024-08",
+        "skill_ids": [],
+        "mapping_status": "unmapped"
+      },
+      {
+        "task_id": "task:onet_16149",
+        "label": "Synthesize current business intelligence or trend data to support recommendations for action.",
+        "source_task_id": "16149",
+        "task_type": "Core",
+        "source_updated_month": "2024-08",
+        "skill_ids": [],
+        "mapping_status": "unmapped"
+      },
+      {
+        "task_id": "task:onet_16150",
+        "label": "Generate standard or custom reports summarizing business, financial, or economic data for review by executives, managers, clients, and other stakeholders.",
+        "source_task_id": "16150",
+        "task_type": "Core",
+        "source_updated_month": "2024-08",
+        "skill_ids": [],
+        "mapping_status": "unmapped"
+      }
+    ],
+    "software_groups": [
+      {
+        "group_id": "group:onet_2_e_10_a",
+        "label": "Application server software",
+        "element_id": "2.E.10.a",
+        "skill_ids": [
+          "skill:software_66acfcfe42401326",
+          "skill:software_c0b0109d9439de57",
+          "skill:software_d0ddf6c331305845"
+        ],
+        "meaning": "category_familiarity_not_tool_equivalence"
+      },
+      {
+        "group_id": "group:onet_2_e_10_b",
+        "label": "Desktop communications software",
+        "element_id": "2.E.10.b",
+        "skill_ids": [
+          "skill:software_5077841ff0064e12",
+          "skill:software_d6e472bc327f9a04"
+        ],
+        "meaning": "category_familiarity_not_tool_equivalence"
+      },
+      {
+        "group_id": "group:onet_2_e_11_a",
+        "label": "Network monitoring software",
+        "element_id": "2.E.11.a",
+        "skill_ids": [
+          "skill:software_28662759fcf7454b",
+          "skill:software_5b1f182899f601bb"
+        ],
+        "meaning": "category_familiarity_not_tool_equivalence"
+      },
+      {
+        "group_id": "group:onet_2_e_11_e",
+        "label": "Cloud-based management software",
+        "element_id": "2.E.11.e",
+        "skill_ids": [
+          "skill:software_32427103359561e1",
+          "skill:software_932632a5221554ae",
+          "skill:software_9892ecde91070c24"
+        ],
+        "meaning": "category_familiarity_not_tool_equivalence"
+      },
+      {
+        "group_id": "group:onet_2_e_12_a",
+        "label": "Access software",
+        "element_id": "2.E.12.a",
+        "skill_ids": [
+          "skill:software_b8851668526c8a3e"
+        ],
+        "meaning": "category_familiarity_not_tool_equivalence"
+      },
+      {
+        "group_id": "group:onet_2_e_12_b",
+        "label": "Communications server software",
+        "element_id": "2.E.12.b",
+        "skill_ids": [
+          "skill:software_0f3ecdd7ce4cf728"
+        ],
+        "meaning": "category_familiarity_not_tool_equivalence"
+      },
+      {
+        "group_id": "group:onet_2_e_13_c",
+        "label": "Operating system software",
+        "element_id": "2.E.13.c",
+        "skill_ids": [
+          "skill:software_1e5ae7fb740941c8",
+          "skill:software_37d2b12d5d9abc2a",
+          "skill:software_3d71079cbf751bb3",
+          "skill:software_5ac9e00a51a74d37",
+          "skill:software_7804a56a5c7636cc",
+          "skill:software_877159ff3b7144d9",
+          "skill:software_947ec3c962a1c440",
+          "skill:software_a056f5a5293c99af",
+          "skill:software_b2c348e934da29c1",
+          "skill:software_be3c8fa0216ba4e1",
+          "skill:software_bfacc8e46ad9b0f3",
+          "skill:software_caf90169eefa5f80"
+        ],
+        "meaning": "category_familiarity_not_tool_equivalence"
+      },
+      {
+        "group_id": "group:onet_2_e_14_c",
+        "label": "Network security and virtual private network VPN equipment software",
+        "element_id": "2.E.14.c",
+        "skill_ids": [
+          "skill:software_00c71ffa049752eb"
+        ],
+        "meaning": "category_familiarity_not_tool_equivalence"
+      },
+      {
+        "group_id": "group:onet_2_e_14_d",
+        "label": "Transaction security and virus protection software",
+        "element_id": "2.E.14.d",
+        "skill_ids": [
+          "skill:software_a10e832f717051c4",
+          "skill:software_b2b5f6edf0c81741"
+        ],
+        "meaning": "category_familiarity_not_tool_equivalence"
+      },
+      {
+        "group_id": "group:onet_2_e_15_f",
+        "label": "Backup or archival software",
+        "element_id": "2.E.15.f",
+        "skill_ids": [
+          "skill:software_366e1272bfc01a76"
+        ],
+        "meaning": "category_familiarity_not_tool_equivalence"
+      },
+      {
+        "group_id": "group:onet_2_e_16_a",
+        "label": "Electronic mail software",
+        "element_id": "2.E.16.a",
+        "skill_ids": [
+          "skill:software_9a0b4e38959742f4",
+          "skill:software_d6fc15244e4566a2",
+          "skill:software_eeb6b9630e48e08b"
+        ],
+        "meaning": "category_familiarity_not_tool_equivalence"
+      },
+      {
+        "group_id": "group:onet_2_e_17_a",
+        "label": "Enterprise system management software",
+        "element_id": "2.E.17.a",
+        "skill_ids": [
+          "skill:software_bfed7a7e66872f2d"
+        ],
+        "meaning": "category_familiarity_not_tool_equivalence"
+      },
+      {
+        "group_id": "group:onet_2_e_1_c",
+        "label": "Human resources software",
+        "element_id": "2.E.1.c",
+        "skill_ids": [
+          "skill:software_d2102fe0809680ce",
+          "skill:software_df2eba0fd4ffe97c"
+        ],
+        "meaning": "category_familiarity_not_tool_equivalence"
+      },
+      {
+        "group_id": "group:onet_2_e_1_e",
+        "label": "Project management software",
+        "element_id": "2.E.1.e",
+        "skill_ids": [
+          "skill:software_46a2113d22076e0a",
+          "skill:software_7f0a76ce26d240f3",
+          "skill:software_f2cd46968894ef1c"
+        ],
+        "meaning": "category_familiarity_not_tool_equivalence"
+      },
+      {
+        "group_id": "group:onet_2_e_1_k",
+        "label": "Office suite software",
+        "element_id": "2.E.1.k",
+        "skill_ids": [
+          "skill:software_9d2f2e0ca2b14f57"
+        ],
+        "meaning": "category_familiarity_not_tool_equivalence"
+      },
+      {
+        "group_id": "group:onet_2_e_1_l",
+        "label": "Sales and marketing software",
+        "element_id": "2.E.1.l",
+        "skill_ids": [
+          "skill:software_62fa52b9d94790dc",
+          "skill:software_f42ef2f09e77cfdb"
+        ],
+        "meaning": "category_familiarity_not_tool_equivalence"
+      },
+      {
+        "group_id": "group:onet_2_e_1_p",
+        "label": "Process mapping and design software",
+        "element_id": "2.E.1.p",
+        "skill_ids": [
+          "skill:software_fbba8bfa09e11cd5"
+        ],
+        "meaning": "category_familiarity_not_tool_equivalence"
+      },
+      {
+        "group_id": "group:onet_2_e_2_a",
+        "label": "Accounting software",
+        "element_id": "2.E.2.a",
+        "skill_ids": [
+          "skill:software_db72d32fa60d32af",
+          "skill:software_e35438df540072cf"
+        ],
+        "meaning": "category_familiarity_not_tool_equivalence"
+      },
+      {
+        "group_id": "group:onet_2_e_2_b",
+        "label": "Enterprise resource planning ERP software",
+        "element_id": "2.E.2.b",
+        "skill_ids": [
+          "skill:software_131f6928eda54a9e",
+          "skill:software_190a42ffcf08c397",
+          "skill:software_4b050941b7aef8cd",
+          "skill:software_4e6642d197b4e68f",
+          "skill:software_5efb2d6277ef98cd",
+          "skill:software_63d84a1e0dd27a11",
+          "skill:software_76b68ab25061f3b1",
+          "skill:software_841eef0a7343f781",
+          "skill:software_96c88d4178b25942",
+          "skill:software_ed0508f499eeca05",
+          "skill:software_fb95c0c604a9fc22"
+        ],
+        "meaning": "category_familiarity_not_tool_equivalence"
+      },
+      {
+        "group_id": "group:onet_2_e_2_d",
+        "label": "Financial analysis software",
+        "element_id": "2.E.2.d",
+        "skill_ids": [
+          "skill:software_aa2cab99b5093c7d",
+          "skill:software_ba19c4d4a63eb753",
+          "skill:software_bee2e2575bb1ab94"
+        ],
+        "meaning": "category_familiarity_not_tool_equivalence"
+      },
+      {
+        "group_id": "group:onet_2_e_4_c",
+        "label": "Video creation and editing software",
+        "element_id": "2.E.4.c",
+        "skill_ids": [
+          "skill:software_24e6654bfd1ab85b"
+        ],
+        "meaning": "category_familiarity_not_tool_equivalence"
+      },
+      {
+        "group_id": "group:onet_2_e_4_d",
+        "label": "Word processing software",
+        "element_id": "2.E.4.d",
+        "skill_ids": [
+          "skill:software_32ff1080ac1d49a9",
+          "skill:software_77fe460fd5b42382"
+        ],
+        "meaning": "category_familiarity_not_tool_equivalence"
+      },
+      {
+        "group_id": "group:onet_2_e_4_f",
+        "label": "Presentation software",
+        "element_id": "2.E.4.f",
+        "skill_ids": [
+          "skill:software_0c8e1cae0d7f35f4",
+          "skill:software_cef9ac934fa8514b"
+        ],
+        "meaning": "category_familiarity_not_tool_equivalence"
+      },
+      {
+        "group_id": "group:onet_2_e_4_g",
+        "label": "Web page creation and editing software",
+        "element_id": "2.E.4.g",
+        "skill_ids": [
+          "skill:software_0a18ff1d348e70cb",
+          "skill:software_245ff9068b30ab30",
+          "skill:software_3d59f7548e1af215"
+        ],
+        "meaning": "category_familiarity_not_tool_equivalence"
+      },
+      {
+        "group_id": "group:onet_2_e_4_i",
+        "label": "Spreadsheet software",
+        "element_id": "2.E.4.i",
+        "skill_ids": [
+          "skill:microsoft_excel"
+        ],
+        "meaning": "category_familiarity_not_tool_equivalence"
+      },
+      {
+        "group_id": "group:onet_2_e_4_k",
+        "label": "Desktop publishing software",
+        "element_id": "2.E.4.k",
+        "skill_ids": [
+          "skill:software_f0c1dcc0abfa3b7c"
+        ],
+        "meaning": "category_familiarity_not_tool_equivalence"
+      },
+      {
+        "group_id": "group:onet_2_e_5_a",
+        "label": "Content workflow software",
+        "element_id": "2.E.5.a",
+        "skill_ids": [
+          "skill:software_d8ae42a36f37e2cd"
+        ],
+        "meaning": "category_familiarity_not_tool_equivalence"
+      },
+      {
+        "group_id": "group:onet_2_e_5_b",
+        "label": "Document management software",
+        "element_id": "2.E.5.b",
+        "skill_ids": [
+          "skill:software_8c8c83d967c49f1f",
+          "skill:software_e137b1e5f4a2d38b"
+        ],
+        "meaning": "category_familiarity_not_tool_equivalence"
+      },
+      {
+        "group_id": "group:onet_2_e_5_c",
+        "label": "File versioning software",
+        "element_id": "2.E.5.c",
+        "skill_ids": [
+          "skill:software_9a881b9b9f238494"
+        ],
+        "meaning": "category_familiarity_not_tool_equivalence"
+      },
+      {
+        "group_id": "group:onet_2_e_6_c",
+        "label": "Customer relationship management CRM software",
+        "element_id": "2.E.6.c",
+        "skill_ids": [
+          "skill:software_3e79ff7ae98a7fea",
+          "skill:software_6660c31239bd987e",
+          "skill:software_b2953d236aa4f40b",
+          "skill:software_f46a0603658523ff"
+        ],
+        "meaning": "category_familiarity_not_tool_equivalence"
+      },
+      {
+        "group_id": "group:onet_2_e_6_d",
+        "label": "Data base management system software",
+        "element_id": "2.E.6.d",
+        "skill_ids": [
+          "skill:software_1cc9a79bdaf09793",
+          "skill:software_3f31abef13f21b0f",
+          "skill:software_430005175c4c7810",
+          "skill:software_52264ab7d060c1fd",
+          "skill:software_6b4aceeb25efc42c",
+          "skill:software_7d92286f535092e9",
+          "skill:software_8ba8d1f667a85b6f",
+          "skill:software_a59ce6dc1e6f7053",
+          "skill:software_ae1b8c8635429669",
+          "skill:software_d4605bbebf949183",
+          "skill:software_d64ffc4768872eee",
+          "skill:software_dd05736c27712c92",
+          "skill:software_f6fce77d4a6f6d04"
+        ],
+        "meaning": "category_familiarity_not_tool_equivalence"
+      },
+      {
+        "group_id": "group:onet_2_e_6_e",
+        "label": "Data base reporting software",
+        "element_id": "2.E.6.e",
+        "skill_ids": [
+          "skill:software_05fffcfc7fc605ff",
+          "skill:software_4646b6c78248ba62",
+          "skill:software_885c4528383cb0b8",
+          "skill:software_d89d2273901659ba",
+          "skill:software_dc20ddfc547d7b93",
+          "skill:software_e9c8a55bdefd7d39",
+          "skill:software_f509d55660823494",
+          "skill:software_f92a2ff7dd10e4fe"
+        ],
+        "meaning": "category_familiarity_not_tool_equivalence"
+      },
+      {
+        "group_id": "group:onet_2_e_6_f",
+        "label": "Data base user interface and query software",
+        "element_id": "2.E.6.f",
+        "skill_ids": [
+          "skill:software_34b5771965db2269",
+          "skill:software_40c57bb53c07338b",
+          "skill:software_446f35ff434b7646",
+          "skill:software_5ffdde1fb945edb0",
+          "skill:software_787aa709e0161e6f",
+          "skill:software_7e4100b30463210d",
+          "skill:software_8ba5705dedf27b6e",
+          "skill:software_96dd87fae699b9a3",
+          "skill:software_b5809154ea75245b",
+          "skill:software_b6a91076a1dfc914",
+          "skill:software_c00bbd8c541a9980",
+          "skill:software_d3e4f4a00b4b3775",
+          "skill:software_ed346bb14786b438",
+          "skill:sql"
+        ],
+        "meaning": "category_familiarity_not_tool_equivalence"
+      },
+      {
+        "group_id": "group:onet_2_e_6_g",
+        "label": "Data mining software",
+        "element_id": "2.E.6.g",
+        "skill_ids": [
+          "skill:software_0fe9a70dbe802f28",
+          "skill:software_74db68ed16d2d4f7",
+          "skill:software_9e7ff1650d12cfff",
+          "skill:software_b0431585f78e27af",
+          "skill:software_de5a1adf4fedcce1"
+        ],
+        "meaning": "category_familiarity_not_tool_equivalence"
+      },
+      {
+        "group_id": "group:onet_2_e_6_h",
+        "label": "Information retrieval or search software",
+        "element_id": "2.E.6.h",
+        "skill_ids": [
+          "skill:software_c1b425f9ff48b6e7"
+        ],
+        "meaning": "category_familiarity_not_tool_equivalence"
+      },
+      {
+        "group_id": "group:onet_2_e_6_i",
+        "label": "Metadata management software",
+        "element_id": "2.E.6.i",
+        "skill_ids": [
+          "skill:software_3be3e2d954ceb9de",
+          "skill:software_667e827ac2e594ed",
+          "skill:software_c71448b910645238"
+        ],
+        "meaning": "category_familiarity_not_tool_equivalence"
+      },
+      {
+        "group_id": "group:onet_2_e_6_j",
+        "label": "Object oriented data base management software",
+        "element_id": "2.E.6.j",
+        "skill_ids": [
+          "skill:software_a478b4566be5cb00",
+          "skill:software_aa7fbc61f1c59047"
+        ],
+        "meaning": "category_familiarity_not_tool_equivalence"
+      },
+      {
+        "group_id": "group:onet_2_e_6_k",
+        "label": "Portal server software",
+        "element_id": "2.E.6.k",
+        "skill_ids": [
+          "skill:software_822c4a02267dceb0"
+        ],
+        "meaning": "category_familiarity_not_tool_equivalence"
+      },
+      {
+        "group_id": "group:onet_2_e_6_l",
+        "label": "Transaction server software",
+        "element_id": "2.E.6.l",
+        "skill_ids": [
+          "skill:software_82e23ef0a4efee4f"
+        ],
+        "meaning": "category_familiarity_not_tool_equivalence"
+      },
+      {
+        "group_id": "group:onet_2_e_6_m",
+        "label": "Business intelligence and data analysis software",
+        "element_id": "2.E.6.m",
+        "skill_ids": [
+          "skill:microsoft_power_bi",
+          "skill:software_09d73c9a02b83f48",
+          "skill:software_0b632cb602d5daf3",
+          "skill:software_5f0974ee455c4cd5",
+          "skill:software_6a361552704380d4",
+          "skill:software_794948bed6d0f4f7",
+          "skill:software_94e58916161f2693",
+          "skill:software_d2eab8ec083802ca",
+          "skill:software_fc9560c0c055d37a"
+        ],
+        "meaning": "category_familiarity_not_tool_equivalence"
+      },
+      {
+        "group_id": "group:onet_2_e_7_b",
+        "label": "Development environment software",
+        "element_id": "2.E.7.b",
+        "skill_ids": [
+          "skill:software_02c6bb0bff5f9bb6",
+          "skill:software_0b07b7d671c2ab82",
+          "skill:software_222a1e060299c3ed",
+          "skill:software_23ecb5310876641b",
+          "skill:software_2e7d2c03a9507ae2",
+          "skill:software_3deb2d2d35c24f36",
+          "skill:software_41de0116bb2584cf",
+          "skill:software_4cd0e21a9a0795a1",
+          "skill:software_7cb848452ac5a6d5",
+          "skill:software_8bcf11933046c744",
+          "skill:software_9a73a0498b578d61",
+          "skill:software_9b9542f38910df8f",
+          "skill:software_aa43b8cf4c7ce3c0",
+          "skill:software_b9138194ffe9e7c8",
+          "skill:software_bfcb3adc9e99751a",
+          "skill:software_ecef2d003916c575",
+          "skill:software_f9dd403240140d04",
+          "skill:software_fa0578afe7b7100e"
+        ],
+        "meaning": "category_familiarity_not_tool_equivalence"
+      },
+      {
+        "group_id": "group:onet_2_e_7_c",
+        "label": "Enterprise application integration software",
+        "element_id": "2.E.7.c",
+        "skill_ids": [
+          "skill:software_47f73a1df2f9889c",
+          "skill:software_98dde01cf18d12e3",
+          "skill:software_9c319a88eacb0f96",
+          "skill:software_bb9f6a66ae451b65",
+          "skill:software_bc96289a9cce49dc",
+          "skill:software_d42c1474fc09593f"
+        ],
+        "meaning": "category_familiarity_not_tool_equivalence"
+      },
+      {
+        "group_id": "group:onet_2_e_7_d",
+        "label": "Graphical user interface development software",
+        "element_id": "2.E.7.d",
+        "skill_ids": [
+          "skill:software_5201466784908b3b"
+        ],
+        "meaning": "category_familiarity_not_tool_equivalence"
+      },
+      {
+        "group_id": "group:onet_2_e_7_e",
+        "label": "Object or component oriented development software",
+        "element_id": "2.E.7.e",
+        "skill_ids": [
+          "skill:java",
+          "skill:python",
+          "skill:software_09f25c69a7726d83",
+          "skill:software_127c8cf59f228bb0",
+          "skill:software_3733d5a814d5fcca",
+          "skill:software_454349e422f05297",
+          "skill:software_4e8011c5f8e0417d",
+          "skill:software_78a2d62c85936172",
+          "skill:software_951a4d36e0a9018b",
+          "skill:software_a1c176cc5c0cbe6d",
+          "skill:software_a33603bf79f74b05",
+          "skill:software_cedb1bac7efcd7db",
+          "skill:software_f0c929a9e723bc62"
+        ],
+        "meaning": "category_familiarity_not_tool_equivalence"
+      },
+      {
+        "group_id": "group:onet_2_e_7_f",
+        "label": "Program testing software",
+        "element_id": "2.E.7.f",
+        "skill_ids": [
+          "skill:software_1275a9b1e81f5a3e"
+        ],
+        "meaning": "category_familiarity_not_tool_equivalence"
+      },
+      {
+        "group_id": "group:onet_2_e_7_g",
+        "label": "Requirements analysis and system architecture software",
+        "element_id": "2.E.7.g",
+        "skill_ids": [
+          "skill:software_358757da6e32f176"
+        ],
+        "meaning": "category_familiarity_not_tool_equivalence"
+      },
+      {
+        "group_id": "group:onet_2_e_7_h",
+        "label": "Web platform development software",
+        "element_id": "2.E.7.h",
+        "skill_ids": [
+          "skill:software_00fe2b965abaa9b0",
+          "skill:software_0826f18d16ed75cc",
+          "skill:software_0ee8126f0f289c04",
+          "skill:software_12a5d18ee896e599",
+          "skill:software_1a16b869ad621344",
+          "skill:software_40cea1fd091bafe9",
+          "skill:software_4a5efffd88ecf2ea",
+          "skill:software_5f63c8d6591e9598",
+          "skill:software_5f995543c5f7d297",
+          "skill:software_66e15c2a8f555072",
+          "skill:software_6d58dfbe672fc034",
+          "skill:software_7d8a0838ce8e19b2",
+          "skill:software_8878e589c640ad9e",
+          "skill:software_a69ec880b9edefd5",
+          "skill:software_de16216f1e29a016",
+          "skill:software_e80ff6c9a6edb83b",
+          "skill:software_eda71746c01c3f46"
+        ],
+        "meaning": "category_familiarity_not_tool_equivalence"
+      },
+      {
+        "group_id": "group:onet_2_e_8_h",
+        "label": "Geographic information system",
+        "element_id": "2.E.8.h",
+        "skill_ids": [
+          "skill:software_b5b2e3e4c0fc2476",
+          "skill:software_bd49db6656673ff9"
+        ],
+        "meaning": "category_familiarity_not_tool_equivalence"
+      },
+      {
+        "group_id": "group:onet_2_e_9_c",
+        "label": "Computer aided design CAD software",
+        "element_id": "2.E.9.c",
+        "skill_ids": [
+          "skill:software_47309a4d5f173d73"
+        ],
+        "meaning": "category_familiarity_not_tool_equivalence"
+      },
+      {
+        "group_id": "group:onet_2_e_9_d",
+        "label": "Analytical or scientific software",
+        "element_id": "2.E.9.d",
+        "skill_ids": [
+          "skill:software_27b9ec45abb39684",
+          "skill:software_33d0ae1937c6ae5a",
+          "skill:software_876b1c30f504d2c0",
+          "skill:software_96166e27af5a3c43",
+          "skill:software_c1c5dec32e8ea80a",
+          "skill:software_f52ea0aad0e344c7"
+        ],
+        "meaning": "category_familiarity_not_tool_equivalence"
+      },
+      {
+        "group_id": "group:onet_2_e_9_i",
+        "label": "Medical software",
+        "element_id": "2.E.9.i",
+        "skill_ids": [
+          "skill:software_1df874745fcd3dd0",
+          "skill:software_236ca04670b32cd6",
+          "skill:software_4ca228828bb4d557",
+          "skill:software_8925e25ef6bb6bbc",
+          "skill:software_ee5e43de9f8c0ad2"
+        ],
+        "meaning": "category_familiarity_not_tool_equivalence"
+      }
+    ],
+    "limitations": [
+      "U.S. occupational descriptions and ratings; not verified Malaysian hiring demand.",
+      "O*NET release freshness is distinct from individual record update months.",
+      "General weights are source Importance / 5, not probabilities or proficiency thresholds.",
+      "Software observations are examples, not requirements every worker must meet.",
+      "In Demand is a binary occupation-specific signal, not a measured importance weight.",
+      "Software categories support familiarity credit, not tool equivalence or assessed proficiency.",
+      "Imported task-to-skill links are unavailable and remain empty; do not infer transfer from co-occurrence.",
+      "Education, licensing, experience, knowledge, abilities and Job Zones are not eligibility checks in this catalog.",
+      "The grouped coverage baseline is exploratory and has not been validated against hiring outcomes."
+    ],
+    "provenance": {
+      "release": "31.0",
+      "release_month": "2026-08",
+      "verified_at": "2026-10-21",
+      "downloaded_at": null,
+      "geography": "United States",
+      "license": "CC-BY-4.0",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "source_url": "https://www.onetcenter.org/database.html",
+      "attribution": "Contains adapted information from the O*NET 31.0 Database by USDOL/ETA, used under CC BY 4.0. O*NET is a trademark of USDOL/ETA. FutureReady AI modified the information; USDOL/ETA has not approved, endorsed, or tested these modifications.",
+      "modifications": [
+        "Coverage filtering and explicit exclusions",
+        "Normalized identifiers and exact aliases",
+        "Importance divided by 5; irrelevant pairs omitted; suppressed levels withheld",
+        "SOC occupational families, not industry sectors",
+        "Software categories exposed for familiarity, not equivalence",
+        "Task-to-skill mappings left unasserted"
+      ],
+      "inputs": [
+        {
+          "filename": "content_model_reference.csv",
+          "sha256": "370033744006dbd5df048431d42a402f6741a00a229b6d0f4e4f4249b6399c04",
+          "rows": 3006,
+          "documentation_url": "https://www.onetcenter.org/dictionary/31.0/csv/content_model_reference.html"
+        },
+        {
+          "filename": "essential_skills.csv",
+          "sha256": "68c4d31d8c55077238395dca40cc4e6d32e6a608b5474bb8264b1f98ae415bd7",
+          "rows": 18200,
+          "documentation_url": "https://www.onetcenter.org/dictionary/31.0/csv/essential_skills.html"
+        },
+        {
+          "filename": "job_titles.csv",
+          "sha256": "75a3b46d6edc5996117c10c9ed488c9a06f7495d02969e9d12873ab14a21540c",
+          "rows": 54269,
+          "documentation_url": "https://www.onetcenter.org/dictionary/31.0/csv/job_titles.html"
+        },
+        {
+          "filename": "occupation_data.csv",
+          "sha256": "a09eae1d6609686e44e05b7290993a1c8b523d8ca224bc0eedc194c855c3ee02",
+          "rows": 1016,
+          "documentation_url": "https://www.onetcenter.org/dictionary/31.0/csv/occupation_data.html"
+        },
+        {
+          "filename": "scales_reference.csv",
+          "sha256": "bcba23858ce21ecaacbde303a8993e35d46724b4afb8c9ec2b10e04f42adcfc9",
+          "rows": 33,
+          "documentation_url": "https://www.onetcenter.org/dictionary/31.0/csv/scales_reference.html"
+        },
+        {
+          "filename": "software_skills.csv",
+          "sha256": "6aabb96b464288db849580e6510530efff3f80e25dde2bb23f1fc36bb526b016",
+          "rows": 31821,
+          "documentation_url": "https://www.onetcenter.org/dictionary/31.0/csv/software_skills.html"
+        },
+        {
+          "filename": "task_statements.csv",
+          "sha256": "4568e14d8db6f05551ad37e056e909b13ebae4a26bcb5ff915bb5f281d582c57",
+          "rows": 18838,
+          "documentation_url": "https://www.onetcenter.org/dictionary/31.0/csv/task_statements.html"
+        },
+        {
+          "filename": "transferable_skills.csv",
+          "sha256": "f17d0419e818a3bf2f55076510c76c4aef01cc8f5aee2670d2f44f6f44ac60f7",
+          "rows": 45500,
+          "documentation_url": "https://www.onetcenter.org/dictionary/31.0/csv/transferable_skills.html"
+        }
+      ]
+    }
+  },
+  "selected_coverage": {
+    "method": "onet_grouped_coverage_v1",
+    "role_id": "role:onet_15_2051_01",
+    "score": 16.816625,
+    "general_coverage": 0.09282601013075745,
+    "software_group_coverage": 0.2727272727272727,
+    "software_exact_coverage": 0.21428571428571427,
+    "software_coverage": 0.2435064935064935,
+    "effective_general_share": 0.5,
+    "policy": {
+      "general_share": 0.5,
+      "group_share": 0.5,
+      "basis": "exploratory_not_empirically_calibrated"
+    },
+    "matched_general_skill_ids": [
+      "skill:onet_2_a_1_a",
+      "skill:onet_2_a_2_a"
+    ],
+    "unconfirmed_general_skill_ids": [
+      "skill:onet_2_a_1_b",
+      "skill:onet_2_a_1_c",
+      "skill:onet_2_a_1_d",
+      "skill:onet_2_a_1_e",
+      "skill:onet_2_a_1_f",
+      "skill:onet_2_a_2_b",
+      "skill:onet_2_a_2_c",
+      "skill:onet_2_a_2_d",
+      "skill:onet_2_b_1_a",
+      "skill:onet_2_b_1_b",
+      "skill:onet_2_b_1_c",
+      "skill:onet_2_b_1_d",
+      "skill:onet_2_b_1_e",
+      "skill:onet_2_b_1_f",
+      "skill:onet_2_b_2_i",
+      "skill:onet_2_b_3_a",
+      "skill:onet_2_b_3_b",
+      "skill:onet_2_b_3_e",
+      "skill:onet_2_b_3_g",
+      "skill:onet_2_b_3_h",
+      "skill:onet_2_b_3_m",
+      "skill:onet_2_b_4_e",
+      "skill:onet_2_b_4_g",
+      "skill:onet_2_b_4_h",
+      "skill:onet_2_b_5_a",
+      "skill:onet_2_b_5_b",
+      "skill:onet_2_b_5_c",
+      "skill:onet_2_b_5_d"
+    ],
+    "matched_software_skill_ids": [
+      "skill:python",
+      "skill:software_5f0974ee455c4cd5",
+      "skill:sql"
+    ],
+    "software_learning_options": [
+      "skill:microsoft_excel",
+      "skill:microsoft_power_bi",
+      "skill:software_0c8e1cae0d7f35f4",
+      "skill:software_3deb2d2d35c24f36",
+      "skill:software_454349e422f05297",
+      "skill:software_841eef0a7343f781",
+      "skill:software_8ba5705dedf27b6e",
+      "skill:software_96166e27af5a3c43",
+      "skill:software_9d2f2e0ca2b14f57",
+      "skill:software_b2953d236aa4f40b",
+      "skill:software_de5a1adf4fedcce1"
+    ],
+    "group_matches": {
+      "group:onet_2_e_6_f": [
+        "skill:sql"
+      ],
+      "group:onet_2_e_6_m": [
+        "skill:software_5f0974ee455c4cd5"
+      ],
+      "group:onet_2_e_7_e": [
+        "skill:python"
+      ]
+    },
+    "warnings": [
+      "Exploratory coverage of reviewed skill claims; not hiring probability or proficiency assessment.",
+      "Missing profile evidence means unconfirmed, not inability.",
+      "Software group credit indicates category familiarity, not interchangeable tools.",
+      "Software learning options are alternatives to inspect, not a checklist of mandatory courses.",
+      "Equal-share defaults are application assumptions; no empirical calibration is claimed.",
+      "Education, licenses and experience are not assessed; high coverage does not establish job eligibility."
+    ]
+  },
+  "top_5_exploratory_coverage": [
+    {
+      "method": "onet_grouped_coverage_v1",
+      "role_id": "role:onet_19_2099_01",
+      "score": 54.142931,
+      "general_coverage": 0.08285862247540135,
+      "software_group_coverage": 1.0,
+      "software_exact_coverage": 1.0,
+      "software_coverage": 1.0,
+      "effective_general_share": 0.5,
+      "policy": {
+        "general_share": 0.5,
+        "group_share": 0.5,
+        "basis": "exploratory_not_empirically_calibrated"
+      },
+      "matched_general_skill_ids": [
+        "skill:onet_2_a_1_a",
+        "skill:onet_2_a_2_a"
+      ],
+      "unconfirmed_general_skill_ids": [
+        "skill:onet_2_a_1_b",
+        "skill:onet_2_a_1_c",
+        "skill:onet_2_a_1_d",
+        "skill:onet_2_a_1_e",
+        "skill:onet_2_a_1_f",
+        "skill:onet_2_a_2_b",
+        "skill:onet_2_a_2_c",
+        "skill:onet_2_a_2_d",
+        "skill:onet_2_b_1_a",
+        "skill:onet_2_b_1_b",
+        "skill:onet_2_b_1_c",
+        "skill:onet_2_b_1_d",
+        "skill:onet_2_b_1_e",
+        "skill:onet_2_b_1_f",
+        "skill:onet_2_b_2_i",
+        "skill:onet_2_b_3_a",
+        "skill:onet_2_b_3_b",
+        "skill:onet_2_b_3_c",
+        "skill:onet_2_b_3_e",
+        "skill:onet_2_b_3_g",
+        "skill:onet_2_b_3_h",
+        "skill:onet_2_b_3_k",
+        "skill:onet_2_b_3_m",
+        "skill:onet_2_b_4_e",
+        "skill:onet_2_b_4_g",
+        "skill:onet_2_b_4_h",
+        "skill:onet_2_b_5_a",
+        "skill:onet_2_b_5_b",
+        "skill:onet_2_b_5_c",
+        "skill:onet_2_b_5_d"
+      ],
+      "matched_software_skill_ids": [
+        "skill:python"
+      ],
+      "software_learning_options": [],
+      "group_matches": {
+        "group:onet_2_e_7_e": [
+          "skill:python"
+        ]
+      },
+      "warnings": [
+        "Exploratory coverage of reviewed skill claims; not hiring probability or proficiency assessment.",
+        "Missing profile evidence means unconfirmed, not inability.",
+        "Software group credit indicates category familiarity, not interchangeable tools.",
+        "Software learning options are alternatives to inspect, not a checklist of mandatory courses.",
+        "Equal-share defaults are application assumptions; no empirical calibration is claimed.",
+        "Education, licenses and experience are not assessed; high coverage does not establish job eligibility."
+      ]
+    },
+    {
+      "method": "onet_grouped_coverage_v1",
+      "role_id": "role:onet_19_1029_03",
+      "score": 29.151988,
+      "general_coverage": 0.08303975842979365,
+      "software_group_coverage": 1.0,
+      "software_exact_coverage": 0.0,
+      "software_coverage": 0.5,
+      "effective_general_share": 0.5,
+      "policy": {
+        "general_share": 0.5,
+        "group_share": 0.5,
+        "basis": "exploratory_not_empirically_calibrated"
+      },
+      "matched_general_skill_ids": [
+        "skill:onet_2_a_1_a",
+        "skill:onet_2_a_2_a"
+      ],
+      "unconfirmed_general_skill_ids": [
+        "skill:onet_2_a_1_b",
+        "skill:onet_2_a_1_c",
+        "skill:onet_2_a_1_d",
+        "skill:onet_2_a_1_e",
+        "skill:onet_2_a_1_f",
+        "skill:onet_2_a_2_b",
+        "skill:onet_2_a_2_c",
+        "skill:onet_2_a_2_d",
+        "skill:onet_2_b_1_a",
+        "skill:onet_2_b_1_b",
+        "skill:onet_2_b_1_c",
+        "skill:onet_2_b_1_d",
+        "skill:onet_2_b_1_e",
+        "skill:onet_2_b_1_f",
+        "skill:onet_2_b_2_i",
+        "skill:onet_2_b_3_a",
+        "skill:onet_2_b_3_b",
+        "skill:onet_2_b_3_e",
+        "skill:onet_2_b_3_g",
+        "skill:onet_2_b_3_h",
+        "skill:onet_2_b_3_k",
+        "skill:onet_2_b_3_m",
+        "skill:onet_2_b_4_e",
+        "skill:onet_2_b_4_g",
+        "skill:onet_2_b_4_h",
+        "skill:onet_2_b_5_a",
+        "skill:onet_2_b_5_b",
+        "skill:onet_2_b_5_c",
+        "skill:onet_2_b_5_d"
+      ],
+      "matched_software_skill_ids": [],
+      "software_learning_options": [
+        "skill:software_454349e422f05297"
+      ],
+      "group_matches": {
+        "group:onet_2_e_7_e": [
+          "skill:python"
+        ]
+      },
+      "warnings": [
+        "Exploratory coverage of reviewed skill claims; not hiring probability or proficiency assessment.",
+        "Missing profile evidence means unconfirmed, not inability.",
+        "Software group credit indicates category familiarity, not interchangeable tools.",
+        "Software learning options are alternatives to inspect, not a checklist of mandatory courses.",
+        "Equal-share defaults are application assumptions; no empirical calibration is claimed.",
+        "Education, licenses and experience are not assessed; high coverage does not establish job eligibility."
+      ]
+    },
+    {
+      "method": "onet_grouped_coverage_v1",
+      "role_id": "role:onet_19_2012_00",
+      "score": 29.085655,
+      "general_coverage": 0.08171310814443151,
+      "software_group_coverage": 0.5,
+      "software_exact_coverage": 0.5,
+      "software_coverage": 0.5,
+      "effective_general_share": 0.5,
+      "policy": {
+        "general_share": 0.5,
+        "group_share": 0.5,
+        "basis": "exploratory_not_empirically_calibrated"
+      },
+      "matched_general_skill_ids": [
+        "skill:onet_2_a_1_a",
+        "skill:onet_2_a_2_a"
+      ],
+      "unconfirmed_general_skill_ids": [
+        "skill:onet_2_a_1_b",
+        "skill:onet_2_a_1_c",
+        "skill:onet_2_a_1_d",
+        "skill:onet_2_a_1_e",
+        "skill:onet_2_a_1_f",
+        "skill:onet_2_a_2_b",
+        "skill:onet_2_a_2_c",
+        "skill:onet_2_a_2_d",
+        "skill:onet_2_b_1_a",
+        "skill:onet_2_b_1_b",
+        "skill:onet_2_b_1_c",
+        "skill:onet_2_b_1_d",
+        "skill:onet_2_b_1_e",
+        "skill:onet_2_b_1_f",
+        "skill:onet_2_b_2_i",
+        "skill:onet_2_b_3_a",
+        "skill:onet_2_b_3_b",
+        "skill:onet_2_b_3_c",
+        "skill:onet_2_b_3_e",
+        "skill:onet_2_b_3_g",
+        "skill:onet_2_b_3_h",
+        "skill:onet_2_b_3_j",
+        "skill:onet_2_b_3_k",
+        "skill:onet_2_b_3_l",
+        "skill:onet_2_b_3_m",
+        "skill:onet_2_b_4_e",
+        "skill:onet_2_b_4_g",
+        "skill:onet_2_b_4_h",
+        "skill:onet_2_b_5_a",
+        "skill:onet_2_b_5_b",
+        "skill:onet_2_b_5_c",
+        "skill:onet_2_b_5_d"
+      ],
+      "matched_software_skill_ids": [
+        "skill:python"
+      ],
+      "software_learning_options": [
+        "skill:software_41de0116bb2584cf"
+      ],
+      "group_matches": {
+        "group:onet_2_e_7_e": [
+          "skill:python"
+        ]
+      },
+      "warnings": [
+        "Exploratory coverage of reviewed skill claims; not hiring probability or proficiency assessment.",
+        "Missing profile evidence means unconfirmed, not inability.",
+        "Software group credit indicates category familiarity, not interchangeable tools.",
+        "Software learning options are alternatives to inspect, not a checklist of mandatory courses.",
+        "Equal-share defaults are application assumptions; no empirical calibration is claimed.",
+        "Education, licenses and experience are not assessed; high coverage does not establish job eligibility."
+      ]
+    },
+    {
+      "method": "onet_grouped_coverage_v1",
+      "role_id": "role:onet_19_3092_00",
+      "score": 25.597473,
+      "general_coverage": 0.09528279746538372,
+      "software_group_coverage": 0.5,
+      "software_exact_coverage": 0.3333333333333333,
+      "software_coverage": 0.41666666666666663,
+      "effective_general_share": 0.5,
+      "policy": {
+        "general_share": 0.5,
+        "group_share": 0.5,
+        "basis": "exploratory_not_empirically_calibrated"
+      },
+      "matched_general_skill_ids": [
+        "skill:onet_2_a_1_a",
+        "skill:onet_2_a_2_a"
+      ],
+      "unconfirmed_general_skill_ids": [
+        "skill:onet_2_a_1_b",
+        "skill:onet_2_a_1_c",
+        "skill:onet_2_a_1_d",
+        "skill:onet_2_a_1_e",
+        "skill:onet_2_a_1_f",
+        "skill:onet_2_a_2_b",
+        "skill:onet_2_a_2_c",
+        "skill:onet_2_a_2_d",
+        "skill:onet_2_b_1_a",
+        "skill:onet_2_b_1_b",
+        "skill:onet_2_b_1_c",
+        "skill:onet_2_b_1_d",
+        "skill:onet_2_b_1_e",
+        "skill:onet_2_b_1_f",
+        "skill:onet_2_b_2_i",
+        "skill:onet_2_b_3_a",
+        "skill:onet_2_b_3_b",
+        "skill:onet_2_b_3_e",
+        "skill:onet_2_b_3_g",
+        "skill:onet_2_b_3_m",
+        "skill:onet_2_b_4_e",
+        "skill:onet_2_b_4_g",
+        "skill:onet_2_b_4_h",
+        "skill:onet_2_b_5_a",
+        "skill:onet_2_b_5_b",
+        "skill:onet_2_b_5_c",
+        "skill:onet_2_b_5_d"
+      ],
+      "matched_software_skill_ids": [
+        "skill:python",
+        "skill:sql"
+      ],
+      "software_learning_options": [
+        "skill:software_07d6c67c124b9e53",
+        "skill:software_8bf8a9bd598159b8",
+        "skill:software_b5b2e3e4c0fc2476",
+        "skill:software_bd49db6656673ff9"
+      ],
+      "group_matches": {
+        "group:onet_2_e_6_f": [
+          "skill:sql"
+        ],
+        "group:onet_2_e_7_e": [
+          "skill:python"
+        ]
+      },
+      "warnings": [
+        "Exploratory coverage of reviewed skill claims; not hiring probability or proficiency assessment.",
+        "Missing profile evidence means unconfirmed, not inability.",
+        "Software group credit indicates category familiarity, not interchangeable tools.",
+        "Software learning options are alternatives to inspect, not a checklist of mandatory courses.",
+        "Equal-share defaults are application assumptions; no empirical calibration is claimed.",
+        "Education, licenses and experience are not assessed; high coverage does not establish job eligibility."
+      ]
+    },
+    {
+      "method": "onet_grouped_coverage_v1",
+      "role_id": "role:onet_15_2041_00",
+      "score": 23.940322,
+      "general_coverage": 0.09244280101687082,
+      "software_group_coverage": 0.5,
+      "software_exact_coverage": 0.2727272727272727,
+      "software_coverage": 0.38636363636363635,
+      "effective_general_share": 0.5,
+      "policy": {
+        "general_share": 0.5,
+        "group_share": 0.5,
+        "basis": "exploratory_not_empirically_calibrated"
+      },
+      "matched_general_skill_ids": [
+        "skill:onet_2_a_1_a",
+        "skill:onet_2_a_2_a"
+      ],
+      "unconfirmed_general_skill_ids": [
+        "skill:onet_2_a_1_b",
+        "skill:onet_2_a_1_c",
+        "skill:onet_2_a_1_d",
+        "skill:onet_2_a_1_e",
+        "skill:onet_2_a_1_f",
+        "skill:onet_2_a_2_b",
+        "skill:onet_2_a_2_c",
+        "skill:onet_2_a_2_d",
+        "skill:onet_2_b_1_a",
+        "skill:onet_2_b_1_b",
+        "skill:onet_2_b_1_c",
+        "skill:onet_2_b_1_d",
+        "skill:onet_2_b_1_e",
+        "skill:onet_2_b_1_f",
+        "skill:onet_2_b_2_i",
+        "skill:onet_2_b_3_a",
+        "skill:onet_2_b_3_b",
+        "skill:onet_2_b_3_e",
+        "skill:onet_2_b_3_g",
+        "skill:onet_2_b_3_m",
+        "skill:onet_2_b_4_e",
+        "skill:onet_2_b_4_g",
+        "skill:onet_2_b_4_h",
+        "skill:onet_2_b_5_a",
+        "skill:onet_2_b_5_b",
+        "skill:onet_2_b_5_c",
+        "skill:onet_2_b_5_d"
+      ],
+      "matched_software_skill_ids": [
+        "skill:python",
+        "skill:software_5f0974ee455c4cd5",
+        "skill:sql"
+      ],
+      "software_learning_options": [
+        "skill:microsoft_excel",
+        "skill:software_27b9ec45abb39684",
+        "skill:software_43f6b278a0b00d48",
+        "skill:software_454349e422f05297",
+        "skill:software_6e41d799ef604e41",
+        "skill:software_876b1c30f504d2c0",
+        "skill:software_96166e27af5a3c43",
+        "skill:software_9d2f2e0ca2b14f57"
+      ],
+      "group_matches": {
+        "group:onet_2_e_6_f": [
+          "skill:sql"
+        ],
+        "group:onet_2_e_6_m": [
+          "skill:software_5f0974ee455c4cd5"
+        ],
+        "group:onet_2_e_7_e": [
+          "skill:python"
+        ]
+      },
+      "warnings": [
+        "Exploratory coverage of reviewed skill claims; not hiring probability or proficiency assessment.",
+        "Missing profile evidence means unconfirmed, not inability.",
+        "Software group credit indicates category familiarity, not interchangeable tools.",
+        "Software learning options are alternatives to inspect, not a checklist of mandatory courses.",
+        "Equal-share defaults are application assumptions; no empirical calibration is claimed.",
+        "Education, licenses and experience are not assessed; high coverage does not establish job eligibility."
+      ]
+    }
+  ],
+  "ranking_warning": "Cross-occupation coverage is exploratory; it omits qualification, domain-knowledge and licensing checks and is not career eligibility."
+}

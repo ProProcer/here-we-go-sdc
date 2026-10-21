@@ -1,5 +1,18 @@
 # Person 1 mock handoff — version 0.1.0
 
+## Real Person 1 catalog — separate version 0.2.0
+
+The real O*NET® 31.0 catalog and read/coverage adapters are implemented. See
+[Person 1 handoff](PERSON_1_HANDOFF.md),
+[migration contract](PERSON_1_MIGRATION.md) and
+[evaluation](PERSON_1_EVALUATION.md). Load with
+`src.ingestion.onet.load_onet_catalog()`; use the framework-independent
+`src.ingestion.onet_api.list_onet_roles()` and `get_onet_role()` adapters for
+versioned routes. The original `load_role_catalog()` / `get_roles()` defaults
+and the mock contract below are unchanged. The new schema separates general
+requirements from software observations and category familiarity; it cannot be
+passed to the old flat matcher as a drop-in replacement.
+
 Person 2 provides proposed profile and matching contracts, bounded fictional CV
 intake, explicit transfer/preference explanations and top-N target pinning.
 See [the current Person 2 handoff](PERSON_2_MATCHING_AND_CV_INTAKE.md) for functions, scoring,

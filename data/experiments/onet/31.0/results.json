@@ -1,0 +1,1466 @@
+{
+  "method": "purposive_six_occupation_sample_and_full_catalog_structural_checks",
+  "catalog_fingerprint": "c78c6863f9c1b15d1a35feaeb079ae924b43c5434b0736d61097a5ab3c55bf2f",
+  "sample_is_representative": false,
+  "profiles_are_synthetic": true,
+  "no_hiring_or_transfer_calibration": true,
+  "policy_decision": "Use equal group/exact and equal general/software shares as explicit provisional defaults; sensitivity does not identify optimal weights.",
+  "flat_pool_software_share_if_every_example_weight_one": {
+    "min": 0.05603496581867085,
+    "median": 0.5429064391606726,
+    "max": 0.9574704965486528
+  },
+  "invariants_passed": {
+    "empty_and_full_boundary_roles": 910,
+    "monotonic_additions": 59529,
+    "missing_software_fallback_roles": 423,
+    "no_false_exact_tool_equivalence": 1
+  },
+  "sample": [
+    {
+      "occupation_code": "13-2011.00",
+      "title": "Accountants and Auditors",
+      "general_count": 27,
+      "software_count": 237,
+      "in_demand_count": 6,
+      "top_general": [
+        {
+          "skill": "Reading Comprehension",
+          "source_importance": 3.88
+        },
+        {
+          "skill": "Active Listening",
+          "source_importance": 3.5
+        },
+        {
+          "skill": "Writing",
+          "source_importance": 3.5
+        },
+        {
+          "skill": "Critical Thinking",
+          "source_importance": 3.5
+        },
+        {
+          "skill": "Complex Problem Solving",
+          "source_importance": 3.5
+        }
+      ],
+      "in_demand_software": [
+        "Microsoft Excel",
+        "Microsoft PowerPoint",
+        "Intuit QuickBooks",
+        "SAP software",
+        "Microsoft Outlook",
+        "Microsoft Office software"
+      ],
+      "categories": [
+        "Accounting software",
+        "Analytical or scientific software",
+        "Billing and invoicing software",
+        "Business intelligence and data analysis software",
+        "Compliance software",
+        "Customer relationship management CRM software",
+        "Data base management system software",
+        "Data base reporting software",
+        "Data base user interface and query software",
+        "Data mining software",
+        "Desktop communications software",
+        "Desktop publishing software",
+        "Development environment software",
+        "Document management software",
+        "Electronic mail software",
+        "Enterprise application integration software",
+        "Enterprise resource planning ERP software",
+        "Enterprise system management software",
+        "Financial analysis software",
+        "Human resources software",
+        "Information retrieval or search software",
+        "Inventory management software",
+        "Medical software",
+        "Object or component oriented development software",
+        "Office suite software",
+        "Operating system software",
+        "Presentation software",
+        "Process mapping and design software",
+        "Project management software",
+        "Risk management data and analysis software",
+        "Spreadsheet software",
+        "Tax preparation software",
+        "Time accounting software",
+        "Transaction security and virus protection software",
+        "Transaction server software",
+        "Video creation and editing software",
+        "Word processing software"
+      ]
+    },
+    {
+      "occupation_code": "15-1252.00",
+      "title": "Software Developers",
+      "general_count": 33,
+      "software_count": 430,
+      "in_demand_count": 30,
+      "top_general": [
+        {
+          "skill": "Programming",
+          "source_importance": 4.0
+        },
+        {
+          "skill": "Critical Thinking",
+          "source_importance": 3.88
+        },
+        {
+          "skill": "Judgment and Decision Making",
+          "source_importance": 3.62
+        },
+        {
+          "skill": "Reading Comprehension",
+          "source_importance": 3.5
+        },
+        {
+          "skill": "Active Learning",
+          "source_importance": 3.5
+        }
+      ],
+      "in_demand_software": [
+        "Java",
+        "Python",
+        "Hypertext markup language HTML",
+        "Jenkins CI",
+        "React",
+        "C",
+        "Node.js",
+        "Microsoft Azure software",
+        "Go",
+        "IBM Terraform",
+        "RESTful API",
+        "Amazon Web Services AWS software",
+        "Apache Kafka",
+        "Kubernetes",
+        "C#",
+        "TypeScript",
+        "Git",
+        "Spring Boot",
+        "PostgreSQL",
+        "Spring Framework",
+        "Cascading style sheets CSS",
+        "GitHub",
+        "Linux",
+        "C++",
+        "NoSQL",
+        "Docker",
+        "Atlassian JIRA",
+        "JavaScript",
+        "Google Angular",
+        "SQL"
+      ],
+      "categories": [
+        "Access software",
+        "Administration software",
+        "Analytical or scientific software",
+        "Application server software",
+        "Authentication server software",
+        "Backup or archival software",
+        "Business intelligence and data analysis software",
+        "Cloud-based data access and sharing software",
+        "Cloud-based management software",
+        "Clustering software",
+        "Communications server software",
+        "Computer based training software",
+        "Configuration management software",
+        "Content workflow software",
+        "Customer relationship management CRM software",
+        "Data base management system software",
+        "Data base reporting software",
+        "Data base user interface and query software",
+        "Data mining software",
+        "Desktop communications software",
+        "Desktop publishing software",
+        "Development environment software",
+        "Device drivers or system software",
+        "Document management software",
+        "Electronic mail software",
+        "Enterprise application integration software",
+        "Enterprise resource planning ERP software",
+        "Enterprise system management software",
+        "Expert system software",
+        "File versioning software",
+        "Filesystem software",
+        "Financial analysis software",
+        "Graphical user interface development software",
+        "Graphics or photo imaging software",
+        "Information retrieval or search software",
+        "Instant messaging software",
+        "Internet directory services software",
+        "Internet protocol IP multimedia subsystem software",
+        "Map creation software",
+        "Metadata management software",
+        "Network conferencing software",
+        "Network monitoring software",
+        "Network operation system software",
+        "Network security and virtual private network VPN equipment software",
+        "Object or component oriented development software",
+        "Object oriented data base management software",
+        "Office suite software",
+        "Operating system software",
+        "Platform interconnectivity software",
+        "Portal server software",
+        "Presentation software",
+        "Procedure management software",
+        "Process mapping and design software",
+        "Program testing software",
+        "Project management software",
+        "Requirements analysis and system architecture software",
+        "Sales and marketing software",
+        "Spreadsheet software",
+        "Storage networking software",
+        "Switch or router software",
+        "Transaction security and virus protection software",
+        "Transaction server software",
+        "Video conferencing software",
+        "Video creation and editing software",
+        "Web page creation and editing software",
+        "Web platform development software",
+        "Word processing software"
+      ]
+    },
+    {
+      "occupation_code": "15-2051.01",
+      "title": "Business Intelligence Analysts",
+      "general_count": 30,
+      "software_count": 203,
+      "in_demand_count": 14,
+      "top_general": [
+        {
+          "skill": "Reading Comprehension",
+          "source_importance": 4.0
+        },
+        {
+          "skill": "Active Listening",
+          "source_importance": 3.88
+        },
+        {
+          "skill": "Speaking",
+          "source_importance": 3.88
+        },
+        {
+          "skill": "Critical Thinking",
+          "source_importance": 3.88
+        },
+        {
+          "skill": "Active Learning",
+          "source_importance": 3.88
+        }
+      ],
+      "in_demand_software": [
+        "Microsoft Excel",
+        "Microsoft Power BI",
+        "Python",
+        "Microsoft PowerPoint",
+        "Microsoft Azure software",
+        "R",
+        "Tableau",
+        "SAP software",
+        "Amazon Web Services AWS software",
+        "SAS",
+        "Microsoft Office software",
+        "Salesforce software",
+        "Snowflake",
+        "SQL"
+      ],
+      "categories": [
+        "Access software",
+        "Accounting software",
+        "Analytical or scientific software",
+        "Application server software",
+        "Backup or archival software",
+        "Business intelligence and data analysis software",
+        "Cloud-based management software",
+        "Communications server software",
+        "Computer aided design CAD software",
+        "Content workflow software",
+        "Customer relationship management CRM software",
+        "Data base management system software",
+        "Data base reporting software",
+        "Data base user interface and query software",
+        "Data mining software",
+        "Desktop communications software",
+        "Desktop publishing software",
+        "Development environment software",
+        "Document management software",
+        "Electronic mail software",
+        "Enterprise application integration software",
+        "Enterprise resource planning ERP software",
+        "Enterprise system management software",
+        "File versioning software",
+        "Financial analysis software",
+        "Geographic information system",
+        "Graphical user interface development software",
+        "Human resources software",
+        "Information retrieval or search software",
+        "Medical software",
+        "Metadata management software",
+        "Network monitoring software",
+        "Network security and virtual private network VPN equipment software",
+        "Object or component oriented development software",
+        "Object oriented data base management software",
+        "Office suite software",
+        "Operating system software",
+        "Portal server software",
+        "Presentation software",
+        "Process mapping and design software",
+        "Program testing software",
+        "Project management software",
+        "Requirements analysis and system architecture software",
+        "Sales and marketing software",
+        "Spreadsheet software",
+        "Transaction security and virus protection software",
+        "Transaction server software",
+        "Video creation and editing software",
+        "Web page creation and editing software",
+        "Web platform development software",
+        "Word processing software"
+      ]
+    },
+    {
+      "occupation_code": "29-1141.00",
+      "title": "Registered Nurses",
+      "general_count": 32,
+      "software_count": 43,
+      "in_demand_count": 0,
+      "top_general": [
+        {
+          "skill": "Social Perceptiveness",
+          "source_importance": 4.12
+        },
+        {
+          "skill": "Active Listening",
+          "source_importance": 4.0
+        },
+        {
+          "skill": "Speaking",
+          "source_importance": 4.0
+        },
+        {
+          "skill": "Critical Thinking",
+          "source_importance": 4.0
+        },
+        {
+          "skill": "Coordination",
+          "source_importance": 4.0
+        }
+      ],
+      "in_demand_software": [],
+      "categories": [
+        "Business intelligence and data analysis software",
+        "Calendar and scheduling software",
+        "Categorization or classification software",
+        "Cloud-based data access and sharing software",
+        "Data base user interface and query software",
+        "Document management software",
+        "Electronic mail software",
+        "Human resources software",
+        "Information retrieval or search software",
+        "Medical software",
+        "Office suite software",
+        "Operating system software",
+        "Presentation software",
+        "Project management software",
+        "Spreadsheet software",
+        "Time accounting software",
+        "Video conferencing software",
+        "Video creation and editing software",
+        "Web page creation and editing software",
+        "Word processing software"
+      ]
+    },
+    {
+      "occupation_code": "43-4051.00",
+      "title": "Customer Service Representatives",
+      "general_count": 27,
+      "software_count": 112,
+      "in_demand_count": 3,
+      "top_general": [
+        {
+          "skill": "Active Listening",
+          "source_importance": 4.0
+        },
+        {
+          "skill": "Service Orientation",
+          "source_importance": 4.0
+        },
+        {
+          "skill": "Speaking",
+          "source_importance": 3.88
+        },
+        {
+          "skill": "Reading Comprehension",
+          "source_importance": 3.38
+        },
+        {
+          "skill": "Critical Thinking",
+          "source_importance": 3.25
+        }
+      ],
+      "in_demand_software": [
+        "Microsoft Excel",
+        "Microsoft Outlook",
+        "Microsoft Office software"
+      ],
+      "categories": [
+        "Access software",
+        "Accounting software",
+        "Backup or archival software",
+        "Business intelligence and data analysis software",
+        "Cloud-based data access and sharing software",
+        "Communications server software",
+        "Computer based training software",
+        "Contact center software",
+        "Customer relationship management CRM software",
+        "Data base reporting software",
+        "Data base user interface and query software",
+        "Desktop communications software",
+        "Desktop publishing software",
+        "Document management software",
+        "Electronic mail software",
+        "Enterprise resource planning ERP software",
+        "Enterprise system management software",
+        "Fax software",
+        "Financial analysis software",
+        "Graphics or photo imaging software",
+        "Helpdesk or call center software",
+        "Human resources software",
+        "Information retrieval or search software",
+        "Instant messaging software",
+        "Internet browser software",
+        "Internet protocol IP multimedia subsystem software",
+        "Materials requirements planning logistics and supply chain software",
+        "Medical software",
+        "Mobile messaging service software",
+        "Multi-media educational software",
+        "Network conferencing software",
+        "Network security and virtual private network VPN equipment software",
+        "Office suite software",
+        "Operating system software",
+        "Point of sale POS software",
+        "Presentation software",
+        "Project management software",
+        "Spreadsheet software",
+        "Time accounting software",
+        "Transaction security and virus protection software",
+        "Video conferencing software",
+        "Video creation and editing software",
+        "Voice recognition software",
+        "Web page creation and editing software",
+        "Word processing software"
+      ]
+    },
+    {
+      "occupation_code": "47-2111.00",
+      "title": "Electricians",
+      "general_count": 34,
+      "software_count": 30,
+      "in_demand_count": 0,
+      "top_general": [
+        {
+          "skill": "Troubleshooting",
+          "source_importance": 4.0
+        },
+        {
+          "skill": "Repairing",
+          "source_importance": 3.5
+        },
+        {
+          "skill": "Active Listening",
+          "source_importance": 3.38
+        },
+        {
+          "skill": "Speaking",
+          "source_importance": 3.38
+        },
+        {
+          "skill": "Critical Thinking",
+          "source_importance": 3.38
+        }
+      ],
+      "in_demand_software": [],
+      "categories": [
+        "Accounting software",
+        "Analytical or scientific software",
+        "Computer aided design CAD software",
+        "Data base user interface and query software",
+        "Document management software",
+        "Electronic mail software",
+        "Enterprise resource planning ERP software",
+        "Industrial control software",
+        "Office suite software",
+        "Operating system software",
+        "Process mapping and design software",
+        "Project management software",
+        "Spreadsheet software",
+        "Word processing software"
+      ]
+    }
+  ],
+  "sensitivity": [
+    {
+      "role": "Accountants and Auditors",
+      "synthetic_profile": "general_only",
+      "minimum": 25.0,
+      "maximum": 75.0,
+      "scores": [
+        {
+          "general_share": 0.25,
+          "group_share": 0.25,
+          "score": 25.0
+        },
+        {
+          "general_share": 0.25,
+          "group_share": 0.5,
+          "score": 25.0
+        },
+        {
+          "general_share": 0.25,
+          "group_share": 0.75,
+          "score": 25.0
+        },
+        {
+          "general_share": 0.5,
+          "group_share": 0.25,
+          "score": 50.0
+        },
+        {
+          "general_share": 0.5,
+          "group_share": 0.5,
+          "score": 50.0
+        },
+        {
+          "general_share": 0.5,
+          "group_share": 0.75,
+          "score": 50.0
+        },
+        {
+          "general_share": 0.75,
+          "group_share": 0.25,
+          "score": 75.0
+        },
+        {
+          "general_share": 0.75,
+          "group_share": 0.5,
+          "score": 75.0
+        },
+        {
+          "general_share": 0.75,
+          "group_share": 0.75,
+          "score": 75.0
+        }
+      ]
+    },
+    {
+      "role": "Accountants and Auditors",
+      "synthetic_profile": "software_only",
+      "minimum": 25.0,
+      "maximum": 75.0,
+      "scores": [
+        {
+          "general_share": 0.25,
+          "group_share": 0.25,
+          "score": 75.0
+        },
+        {
+          "general_share": 0.25,
+          "group_share": 0.5,
+          "score": 75.0
+        },
+        {
+          "general_share": 0.25,
+          "group_share": 0.75,
+          "score": 75.0
+        },
+        {
+          "general_share": 0.5,
+          "group_share": 0.25,
+          "score": 50.0
+        },
+        {
+          "general_share": 0.5,
+          "group_share": 0.5,
+          "score": 50.0
+        },
+        {
+          "general_share": 0.5,
+          "group_share": 0.75,
+          "score": 50.0
+        },
+        {
+          "general_share": 0.75,
+          "group_share": 0.25,
+          "score": 25.0
+        },
+        {
+          "general_share": 0.75,
+          "group_share": 0.5,
+          "score": 25.0
+        },
+        {
+          "general_share": 0.75,
+          "group_share": 0.75,
+          "score": 25.0
+        }
+      ]
+    },
+    {
+      "role": "Accountants and Auditors",
+      "synthetic_profile": "half_general_half_software",
+      "minimum": 50.418097,
+      "maximum": 51.254292,
+      "scores": [
+        {
+          "general_share": 0.25,
+          "group_share": 0.25,
+          "score": 50.418097
+        },
+        {
+          "general_share": 0.25,
+          "group_share": 0.5,
+          "score": 50.418097
+        },
+        {
+          "general_share": 0.25,
+          "group_share": 0.75,
+          "score": 50.418097
+        },
+        {
+          "general_share": 0.5,
+          "group_share": 0.25,
+          "score": 50.836195
+        },
+        {
+          "general_share": 0.5,
+          "group_share": 0.5,
+          "score": 50.836195
+        },
+        {
+          "general_share": 0.5,
+          "group_share": 0.75,
+          "score": 50.836195
+        },
+        {
+          "general_share": 0.75,
+          "group_share": 0.25,
+          "score": 51.254292
+        },
+        {
+          "general_share": 0.75,
+          "group_share": 0.5,
+          "score": 51.254292
+        },
+        {
+          "general_share": 0.75,
+          "group_share": 0.75,
+          "score": 51.254292
+        }
+      ]
+    },
+    {
+      "role": "Software Developers",
+      "synthetic_profile": "general_only",
+      "minimum": 25.0,
+      "maximum": 75.0,
+      "scores": [
+        {
+          "general_share": 0.25,
+          "group_share": 0.25,
+          "score": 25.0
+        },
+        {
+          "general_share": 0.25,
+          "group_share": 0.5,
+          "score": 25.0
+        },
+        {
+          "general_share": 0.25,
+          "group_share": 0.75,
+          "score": 25.0
+        },
+        {
+          "general_share": 0.5,
+          "group_share": 0.25,
+          "score": 50.0
+        },
+        {
+          "general_share": 0.5,
+          "group_share": 0.5,
+          "score": 50.0
+        },
+        {
+          "general_share": 0.5,
+          "group_share": 0.75,
+          "score": 50.0
+        },
+        {
+          "general_share": 0.75,
+          "group_share": 0.25,
+          "score": 75.0
+        },
+        {
+          "general_share": 0.75,
+          "group_share": 0.5,
+          "score": 75.0
+        },
+        {
+          "general_share": 0.75,
+          "group_share": 0.75,
+          "score": 75.0
+        }
+      ]
+    },
+    {
+      "role": "Software Developers",
+      "synthetic_profile": "software_only",
+      "minimum": 25.0,
+      "maximum": 75.0,
+      "scores": [
+        {
+          "general_share": 0.25,
+          "group_share": 0.25,
+          "score": 75.0
+        },
+        {
+          "general_share": 0.25,
+          "group_share": 0.5,
+          "score": 75.0
+        },
+        {
+          "general_share": 0.25,
+          "group_share": 0.75,
+          "score": 75.0
+        },
+        {
+          "general_share": 0.5,
+          "group_share": 0.25,
+          "score": 50.0
+        },
+        {
+          "general_share": 0.5,
+          "group_share": 0.5,
+          "score": 50.0
+        },
+        {
+          "general_share": 0.5,
+          "group_share": 0.75,
+          "score": 50.0
+        },
+        {
+          "general_share": 0.75,
+          "group_share": 0.25,
+          "score": 25.0
+        },
+        {
+          "general_share": 0.75,
+          "group_share": 0.5,
+          "score": 25.0
+        },
+        {
+          "general_share": 0.75,
+          "group_share": 0.75,
+          "score": 25.0
+        }
+      ]
+    },
+    {
+      "role": "Software Developers",
+      "synthetic_profile": "half_general_half_software",
+      "minimum": 52.023342,
+      "maximum": 59.702225,
+      "scores": [
+        {
+          "general_share": 0.25,
+          "group_share": 0.25,
+          "score": 53.452225
+        },
+        {
+          "general_share": 0.25,
+          "group_share": 0.5,
+          "score": 56.577225
+        },
+        {
+          "general_share": 0.25,
+          "group_share": 0.75,
+          "score": 59.702225
+        },
+        {
+          "general_share": 0.5,
+          "group_share": 0.25,
+          "score": 52.737784
+        },
+        {
+          "general_share": 0.5,
+          "group_share": 0.5,
+          "score": 54.821117
+        },
+        {
+          "general_share": 0.5,
+          "group_share": 0.75,
+          "score": 56.90445
+        },
+        {
+          "general_share": 0.75,
+          "group_share": 0.25,
+          "score": 52.023342
+        },
+        {
+          "general_share": 0.75,
+          "group_share": 0.5,
+          "score": 53.065009
+        },
+        {
+          "general_share": 0.75,
+          "group_share": 0.75,
+          "score": 54.106675
+        }
+      ]
+    },
+    {
+      "role": "Business Intelligence Analysts",
+      "synthetic_profile": "general_only",
+      "minimum": 25.0,
+      "maximum": 75.0,
+      "scores": [
+        {
+          "general_share": 0.25,
+          "group_share": 0.25,
+          "score": 25.0
+        },
+        {
+          "general_share": 0.25,
+          "group_share": 0.5,
+          "score": 25.0
+        },
+        {
+          "general_share": 0.25,
+          "group_share": 0.75,
+          "score": 25.0
+        },
+        {
+          "general_share": 0.5,
+          "group_share": 0.25,
+          "score": 50.0
+        },
+        {
+          "general_share": 0.5,
+          "group_share": 0.5,
+          "score": 50.0
+        },
+        {
+          "general_share": 0.5,
+          "group_share": 0.75,
+          "score": 50.0
+        },
+        {
+          "general_share": 0.75,
+          "group_share": 0.25,
+          "score": 75.0
+        },
+        {
+          "general_share": 0.75,
+          "group_share": 0.5,
+          "score": 75.0
+        },
+        {
+          "general_share": 0.75,
+          "group_share": 0.75,
+          "score": 75.0
+        }
+      ]
+    },
+    {
+      "role": "Business Intelligence Analysts",
+      "synthetic_profile": "software_only",
+      "minimum": 25.0,
+      "maximum": 75.0,
+      "scores": [
+        {
+          "general_share": 0.25,
+          "group_share": 0.25,
+          "score": 75.0
+        },
+        {
+          "general_share": 0.25,
+          "group_share": 0.5,
+          "score": 75.0
+        },
+        {
+          "general_share": 0.25,
+          "group_share": 0.75,
+          "score": 75.0
+        },
+        {
+          "general_share": 0.5,
+          "group_share": 0.25,
+          "score": 50.0
+        },
+        {
+          "general_share": 0.5,
+          "group_share": 0.5,
+          "score": 50.0
+        },
+        {
+          "general_share": 0.5,
+          "group_share": 0.75,
+          "score": 50.0
+        },
+        {
+          "general_share": 0.75,
+          "group_share": 0.25,
+          "score": 25.0
+        },
+        {
+          "general_share": 0.75,
+          "group_share": 0.5,
+          "score": 25.0
+        },
+        {
+          "general_share": 0.75,
+          "group_share": 0.75,
+          "score": 25.0
+        }
+      ]
+    },
+    {
+      "role": "Business Intelligence Analysts",
+      "synthetic_profile": "half_general_half_software",
+      "minimum": 51.793196,
+      "maximum": 57.984096,
+      "scores": [
+        {
+          "general_share": 0.25,
+          "group_share": 0.25,
+          "score": 52.870459
+        },
+        {
+          "general_share": 0.25,
+          "group_share": 0.5,
+          "score": 55.427278
+        },
+        {
+          "general_share": 0.25,
+          "group_share": 0.75,
+          "score": 57.984096
+        },
+        {
+          "general_share": 0.5,
+          "group_share": 0.25,
+          "score": 52.331828
+        },
+        {
+          "general_share": 0.5,
+          "group_share": 0.5,
+          "score": 54.036373
+        },
+        {
+          "general_share": 0.5,
+          "group_share": 0.75,
+          "score": 55.740919
+        },
+        {
+          "general_share": 0.75,
+          "group_share": 0.25,
+          "score": 51.793196
+        },
+        {
+          "general_share": 0.75,
+          "group_share": 0.5,
+          "score": 52.645469
+        },
+        {
+          "general_share": 0.75,
+          "group_share": 0.75,
+          "score": 53.497742
+        }
+      ]
+    },
+    {
+      "role": "Registered Nurses",
+      "synthetic_profile": "general_only",
+      "minimum": 100.0,
+      "maximum": 100.0,
+      "scores": [
+        {
+          "general_share": 0.25,
+          "group_share": 0.25,
+          "score": 100.0
+        },
+        {
+          "general_share": 0.25,
+          "group_share": 0.5,
+          "score": 100.0
+        },
+        {
+          "general_share": 0.25,
+          "group_share": 0.75,
+          "score": 100.0
+        },
+        {
+          "general_share": 0.5,
+          "group_share": 0.25,
+          "score": 100.0
+        },
+        {
+          "general_share": 0.5,
+          "group_share": 0.5,
+          "score": 100.0
+        },
+        {
+          "general_share": 0.5,
+          "group_share": 0.75,
+          "score": 100.0
+        },
+        {
+          "general_share": 0.75,
+          "group_share": 0.25,
+          "score": 100.0
+        },
+        {
+          "general_share": 0.75,
+          "group_share": 0.5,
+          "score": 100.0
+        },
+        {
+          "general_share": 0.75,
+          "group_share": 0.75,
+          "score": 100.0
+        }
+      ]
+    },
+    {
+      "role": "Registered Nurses",
+      "synthetic_profile": "software_only",
+      "minimum": 0.0,
+      "maximum": 0.0,
+      "scores": [
+        {
+          "general_share": 0.25,
+          "group_share": 0.25,
+          "score": 0.0
+        },
+        {
+          "general_share": 0.25,
+          "group_share": 0.5,
+          "score": 0.0
+        },
+        {
+          "general_share": 0.25,
+          "group_share": 0.75,
+          "score": 0.0
+        },
+        {
+          "general_share": 0.5,
+          "group_share": 0.25,
+          "score": 0.0
+        },
+        {
+          "general_share": 0.5,
+          "group_share": 0.5,
+          "score": 0.0
+        },
+        {
+          "general_share": 0.5,
+          "group_share": 0.75,
+          "score": 0.0
+        },
+        {
+          "general_share": 0.75,
+          "group_share": 0.25,
+          "score": 0.0
+        },
+        {
+          "general_share": 0.75,
+          "group_share": 0.5,
+          "score": 0.0
+        },
+        {
+          "general_share": 0.75,
+          "group_share": 0.75,
+          "score": 0.0
+        }
+      ]
+    },
+    {
+      "role": "Registered Nurses",
+      "synthetic_profile": "half_general_half_software",
+      "minimum": 50.319917,
+      "maximum": 50.319917,
+      "scores": [
+        {
+          "general_share": 0.25,
+          "group_share": 0.25,
+          "score": 50.319917
+        },
+        {
+          "general_share": 0.25,
+          "group_share": 0.5,
+          "score": 50.319917
+        },
+        {
+          "general_share": 0.25,
+          "group_share": 0.75,
+          "score": 50.319917
+        },
+        {
+          "general_share": 0.5,
+          "group_share": 0.25,
+          "score": 50.319917
+        },
+        {
+          "general_share": 0.5,
+          "group_share": 0.5,
+          "score": 50.319917
+        },
+        {
+          "general_share": 0.5,
+          "group_share": 0.75,
+          "score": 50.319917
+        },
+        {
+          "general_share": 0.75,
+          "group_share": 0.25,
+          "score": 50.319917
+        },
+        {
+          "general_share": 0.75,
+          "group_share": 0.5,
+          "score": 50.319917
+        },
+        {
+          "general_share": 0.75,
+          "group_share": 0.75,
+          "score": 50.319917
+        }
+      ]
+    },
+    {
+      "role": "Customer Service Representatives",
+      "synthetic_profile": "general_only",
+      "minimum": 25.0,
+      "maximum": 75.0,
+      "scores": [
+        {
+          "general_share": 0.25,
+          "group_share": 0.25,
+          "score": 25.0
+        },
+        {
+          "general_share": 0.25,
+          "group_share": 0.5,
+          "score": 25.0
+        },
+        {
+          "general_share": 0.25,
+          "group_share": 0.75,
+          "score": 25.0
+        },
+        {
+          "general_share": 0.5,
+          "group_share": 0.25,
+          "score": 50.0
+        },
+        {
+          "general_share": 0.5,
+          "group_share": 0.5,
+          "score": 50.0
+        },
+        {
+          "general_share": 0.5,
+          "group_share": 0.75,
+          "score": 50.0
+        },
+        {
+          "general_share": 0.75,
+          "group_share": 0.25,
+          "score": 75.0
+        },
+        {
+          "general_share": 0.75,
+          "group_share": 0.5,
+          "score": 75.0
+        },
+        {
+          "general_share": 0.75,
+          "group_share": 0.75,
+          "score": 75.0
+        }
+      ]
+    },
+    {
+      "role": "Customer Service Representatives",
+      "synthetic_profile": "software_only",
+      "minimum": 25.0,
+      "maximum": 75.0,
+      "scores": [
+        {
+          "general_share": 0.25,
+          "group_share": 0.25,
+          "score": 75.0
+        },
+        {
+          "general_share": 0.25,
+          "group_share": 0.5,
+          "score": 75.0
+        },
+        {
+          "general_share": 0.25,
+          "group_share": 0.75,
+          "score": 75.0
+        },
+        {
+          "general_share": 0.5,
+          "group_share": 0.25,
+          "score": 50.0
+        },
+        {
+          "general_share": 0.5,
+          "group_share": 0.5,
+          "score": 50.0
+        },
+        {
+          "general_share": 0.5,
+          "group_share": 0.75,
+          "score": 50.0
+        },
+        {
+          "general_share": 0.75,
+          "group_share": 0.25,
+          "score": 25.0
+        },
+        {
+          "general_share": 0.75,
+          "group_share": 0.5,
+          "score": 25.0
+        },
+        {
+          "general_share": 0.75,
+          "group_share": 0.75,
+          "score": 25.0
+        }
+      ]
+    },
+    {
+      "role": "Customer Service Representatives",
+      "synthetic_profile": "half_general_half_software",
+      "minimum": 55.782689,
+      "maximum": 63.038674,
+      "scores": [
+        {
+          "general_share": 0.25,
+          "group_share": 0.25,
+          "score": 63.038674
+        },
+        {
+          "general_share": 0.25,
+          "group_share": 0.5,
+          "score": 63.038674
+        },
+        {
+          "general_share": 0.25,
+          "group_share": 0.75,
+          "score": 63.038674
+        },
+        {
+          "general_share": 0.5,
+          "group_share": 0.25,
+          "score": 59.410681
+        },
+        {
+          "general_share": 0.5,
+          "group_share": 0.5,
+          "score": 59.410681
+        },
+        {
+          "general_share": 0.5,
+          "group_share": 0.75,
+          "score": 59.410681
+        },
+        {
+          "general_share": 0.75,
+          "group_share": 0.25,
+          "score": 55.782689
+        },
+        {
+          "general_share": 0.75,
+          "group_share": 0.5,
+          "score": 55.782689
+        },
+        {
+          "general_share": 0.75,
+          "group_share": 0.75,
+          "score": 55.782689
+        }
+      ]
+    },
+    {
+      "role": "Electricians",
+      "synthetic_profile": "general_only",
+      "minimum": 100.0,
+      "maximum": 100.0,
+      "scores": [
+        {
+          "general_share": 0.25,
+          "group_share": 0.25,
+          "score": 100.0
+        },
+        {
+          "general_share": 0.25,
+          "group_share": 0.5,
+          "score": 100.0
+        },
+        {
+          "general_share": 0.25,
+          "group_share": 0.75,
+          "score": 100.0
+        },
+        {
+          "general_share": 0.5,
+          "group_share": 0.25,
+          "score": 100.0
+        },
+        {
+          "general_share": 0.5,
+          "group_share": 0.5,
+          "score": 100.0
+        },
+        {
+          "general_share": 0.5,
+          "group_share": 0.75,
+          "score": 100.0
+        },
+        {
+          "general_share": 0.75,
+          "group_share": 0.25,
+          "score": 100.0
+        },
+        {
+          "general_share": 0.75,
+          "group_share": 0.5,
+          "score": 100.0
+        },
+        {
+          "general_share": 0.75,
+          "group_share": 0.75,
+          "score": 100.0
+        }
+      ]
+    },
+    {
+      "role": "Electricians",
+      "synthetic_profile": "software_only",
+      "minimum": 0.0,
+      "maximum": 0.0,
+      "scores": [
+        {
+          "general_share": 0.25,
+          "group_share": 0.25,
+          "score": 0.0
+        },
+        {
+          "general_share": 0.25,
+          "group_share": 0.5,
+          "score": 0.0
+        },
+        {
+          "general_share": 0.25,
+          "group_share": 0.75,
+          "score": 0.0
+        },
+        {
+          "general_share": 0.5,
+          "group_share": 0.25,
+          "score": 0.0
+        },
+        {
+          "general_share": 0.5,
+          "group_share": 0.5,
+          "score": 0.0
+        },
+        {
+          "general_share": 0.5,
+          "group_share": 0.75,
+          "score": 0.0
+        },
+        {
+          "general_share": 0.75,
+          "group_share": 0.25,
+          "score": 0.0
+        },
+        {
+          "general_share": 0.75,
+          "group_share": 0.5,
+          "score": 0.0
+        },
+        {
+          "general_share": 0.75,
+          "group_share": 0.75,
+          "score": 0.0
+        }
+      ]
+    },
+    {
+      "role": "Electricians",
+      "synthetic_profile": "half_general_half_software",
+      "minimum": 50.737028,
+      "maximum": 50.737028,
+      "scores": [
+        {
+          "general_share": 0.25,
+          "group_share": 0.25,
+          "score": 50.737028
+        },
+        {
+          "general_share": 0.25,
+          "group_share": 0.5,
+          "score": 50.737028
+        },
+        {
+          "general_share": 0.25,
+          "group_share": 0.75,
+          "score": 50.737028
+        },
+        {
+          "general_share": 0.5,
+          "group_share": 0.25,
+          "score": 50.737028
+        },
+        {
+          "general_share": 0.5,
+          "group_share": 0.5,
+          "score": 50.737028
+        },
+        {
+          "general_share": 0.5,
+          "group_share": 0.75,
+          "score": 50.737028
+        },
+        {
+          "general_share": 0.75,
+          "group_share": 0.25,
+          "score": 50.737028
+        },
+        {
+          "general_share": 0.75,
+          "group_share": 0.5,
+          "score": 50.737028
+        },
+        {
+          "general_share": 0.75,
+          "group_share": 0.75,
+          "score": 50.737028
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Synthetic profiles test behavior, not predictive accuracy.",
+    "Group familiarity is not validated transfer or demonstrated task capability.",
+    "No proficiency level is inferred or compared to O*NET Level.",
+    "Equal shares remain adjustable by Person 2 after independent reviewed-profile evaluation."
+  ]
+}
