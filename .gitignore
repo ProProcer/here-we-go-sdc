@@ -27,3 +27,7 @@ dist/
 .idea/
 Thumbs.db
 Desktop.ini
+
+# Local VibeWise learning notes (including legacy state)
+.vibe-wise/
+.sensible-vibes/
