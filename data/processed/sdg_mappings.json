@@ -1,0 +1,71 @@
+{
+  "schema_version": "0.1.0",
+  "rules": [
+    {
+      "rule_id": "sdg_rule:career_skills_target_4_4",
+      "role_ids": [],
+      "skill_ids": [
+        "skill:python",
+        "skill:sql",
+        "skill:statistics",
+        "skill:spreadsheets",
+        "skill:data_visualization",
+        "skill:requirements_analysis",
+        "skill:communication",
+        "skill:it_troubleshooting"
+      ],
+      "match": "any_skill",
+      "sdg_id": "SDG 4",
+      "target_id": "4.4",
+      "contribution": "direct",
+      "rationale": "The learning pathway develops technical or vocational capabilities relevant to employment; it does not claim that course completion guarantees employment.",
+      "evidence_url": "https://sdgs.un.org/goals/goal4"
+    },
+    {
+      "rule_id": "sdg_rule:data_analyst_target_8_2",
+      "role_ids": ["role:data_analyst"],
+      "skill_ids": [
+        "skill:python",
+        "skill:sql",
+        "skill:statistics",
+        "skill:data_visualization"
+      ],
+      "match": "any_skill",
+      "sdg_id": "SDG 8",
+      "target_id": "8.2",
+      "contribution": "indirect",
+      "rationale": "Applying analytical and data tools can support technology-enabled productivity and innovation, but the pathway does not measure economy-wide productivity change.",
+      "evidence_url": "https://sdgs.un.org/goals/goal8"
+    },
+    {
+      "rule_id": "sdg_rule:business_analyst_target_8_2",
+      "role_ids": ["role:business_analyst"],
+      "skill_ids": [
+        "skill:requirements_analysis",
+        "skill:communication",
+        "skill:spreadsheets",
+        "skill:data_visualization"
+      ],
+      "match": "any_skill",
+      "sdg_id": "SDG 8",
+      "target_id": "8.2",
+      "contribution": "indirect",
+      "rationale": "Requirements and analysis skills can support better technology adoption and work processes, without implying a measured productivity increase.",
+      "evidence_url": "https://sdgs.un.org/goals/goal8"
+    },
+    {
+      "rule_id": "sdg_rule:it_support_target_8_2",
+      "role_ids": ["role:it_support_specialist"],
+      "skill_ids": [
+        "skill:it_troubleshooting",
+        "skill:communication"
+      ],
+      "match": "any_skill",
+      "sdg_id": "SDG 8",
+      "target_id": "8.2",
+      "contribution": "indirect",
+      "rationale": "IT support capabilities can help people use workplace technology reliably; this is an indirect connection and not evidence of measured productivity growth.",
+      "evidence_url": "https://sdgs.un.org/goals/goal8"
+    }
+  ]
+}

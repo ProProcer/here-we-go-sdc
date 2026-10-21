@@ -1,0 +1,190 @@
+{
+  "schema_version": "0.1.0",
+  "updated_at": "2026-10-21T00:00:00Z",
+  "trusted_providers": [
+    {
+      "provider_id": "provider:coursera",
+      "name": "Coursera",
+      "domains": ["coursera.org"]
+    },
+    {
+      "provider_id": "provider:edx",
+      "name": "edX",
+      "domains": ["edx.org"]
+    },
+    {
+      "provider_id": "provider:futurelearn",
+      "name": "FutureLearn",
+      "domains": ["futurelearn.com"]
+    },
+    {
+      "provider_id": "provider:openlearn",
+      "name": "OpenLearn",
+      "domains": ["open.edu"]
+    },
+    {
+      "provider_id": "provider:khan_academy",
+      "name": "Khan Academy",
+      "domains": ["khanacademy.org"]
+    },
+    {
+      "provider_id": "provider:microsoft_learn",
+      "name": "Microsoft Learn",
+      "domains": ["learn.microsoft.com"]
+    },
+    {
+      "provider_id": "provider:cisco_skills_for_all",
+      "name": "Cisco Skills for All",
+      "domains": ["skillsforall.com"]
+    },
+    {
+      "provider_id": "provider:mit_open_courseware",
+      "name": "MIT OpenCourseWare",
+      "domains": ["ocw.mit.edu"]
+    },
+    {
+      "provider_id": "provider:freecodecamp",
+      "name": "freeCodeCamp",
+      "domains": ["freecodecamp.org"]
+    },
+    {
+      "provider_id": "provider:udacity",
+      "name": "Udacity",
+      "domains": ["udacity.com"]
+    },
+    {
+      "provider_id": "provider:openwho",
+      "name": "OpenWHO",
+      "domains": ["openwho.org"]
+    },
+    {
+      "provider_id": "provider:nptel",
+      "name": "NPTEL",
+      "domains": ["nptel.ac.in"]
+    },
+    {
+      "provider_id": "provider:swayam",
+      "name": "SWAYAM",
+      "domains": ["swayam.gov.in"]
+    },
+    {
+      "provider_id": "provider:fao_elearning",
+      "name": "FAO eLearning Academy",
+      "domains": ["elearning.fao.org"]
+    },
+    {
+      "provider_id": "provider:unssc",
+      "name": "United Nations System Staff College",
+      "domains": ["unssc.org"]
+    }
+  ],
+  "provider_groups": [
+    {
+      "group_id": "provider_group:general",
+      "label": "General and university learning",
+      "sector_ids": [],
+      "provider_ids": [
+        "provider:coursera",
+        "provider:edx",
+        "provider:futurelearn",
+        "provider:openlearn",
+        "provider:khan_academy"
+      ]
+    },
+    {
+      "group_id": "provider_group:technology",
+      "label": "Technology and information services",
+      "sector_ids": ["sector:information_services"],
+      "provider_ids": [
+        "provider:microsoft_learn",
+        "provider:cisco_skills_for_all",
+        "provider:mit_open_courseware",
+        "provider:freecodecamp",
+        "provider:udacity"
+      ]
+    },
+    {
+      "group_id": "provider_group:business",
+      "label": "Business and finance",
+      "sector_ids": ["sector:business_services", "sector:finance"],
+      "provider_ids": [
+        "provider:coursera",
+        "provider:edx",
+        "provider:openlearn"
+      ]
+    },
+    {
+      "group_id": "provider_group:healthcare",
+      "label": "Healthcare and public health",
+      "sector_ids": ["sector:healthcare", "sector:public_health"],
+      "provider_ids": [
+        "provider:openwho",
+        "provider:coursera",
+        "provider:edx"
+      ]
+    },
+    {
+      "group_id": "provider_group:education",
+      "label": "Education and teaching",
+      "sector_ids": ["sector:education"],
+      "provider_ids": [
+        "provider:khan_academy",
+        "provider:openlearn",
+        "provider:futurelearn"
+      ]
+    },
+    {
+      "group_id": "provider_group:engineering",
+      "label": "Engineering",
+      "sector_ids": ["sector:engineering"],
+      "provider_ids": [
+        "provider:mit_open_courseware",
+        "provider:nptel",
+        "provider:swayam",
+        "provider:edx"
+      ]
+    },
+    {
+      "group_id": "provider_group:vocational",
+      "label": "Vocational, manufacturing and skilled trades",
+      "sector_ids": ["sector:skilled_trades", "sector:manufacturing"],
+      "provider_ids": [
+        "provider:nptel",
+        "provider:swayam",
+        "provider:edx",
+        "provider:futurelearn"
+      ]
+    },
+    {
+      "group_id": "provider_group:agriculture",
+      "label": "Agriculture and food systems",
+      "sector_ids": ["sector:agriculture", "sector:food_systems"],
+      "provider_ids": [
+        "provider:fao_elearning",
+        "provider:swayam",
+        "provider:futurelearn"
+      ]
+    },
+    {
+      "group_id": "provider_group:public_service",
+      "label": "Public service and international development",
+      "sector_ids": ["sector:public_service", "sector:international_development"],
+      "provider_ids": [
+        "provider:unssc",
+        "provider:openwho",
+        "provider:edx"
+      ]
+    },
+    {
+      "group_id": "provider_group:creative_hospitality",
+      "label": "Creative industries and hospitality",
+      "sector_ids": ["sector:creative_industries", "sector:hospitality"],
+      "provider_ids": [
+        "provider:futurelearn",
+        "provider:coursera",
+        "provider:openlearn"
+      ]
+    }
+  ],
+  "courses": []
+}
