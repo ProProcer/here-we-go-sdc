@@ -27,6 +27,7 @@ dist/
 .idea/
 Thumbs.db
 Desktop.ini
+*:Zone.Identifier
 
 # Local VibeWise learning notes (including legacy state)
 .vibe-wise/
