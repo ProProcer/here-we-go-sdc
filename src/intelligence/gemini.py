@@ -3,8 +3,10 @@
 import json
 import os
 import re
+import time
 from dataclasses import dataclass, field
 from http.client import HTTPException
+from random import uniform
 from typing import Generic, Self, TypeVar
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, build_opener
@@ -17,7 +19,14 @@ from src.intelligence.reports import ParsedReport
 from src.schemas.extraction import ExtractionBatch
 from src.schemas.sources import ApprovedSource
 
-DEFAULT_MODEL = "gemini-3.5-flash-lite"
+DEFAULT_MODEL = "gemini-3.1-flash-lite"
+DEFAULT_FALLBACK_MODELS = (
+    "gemini-3.5-flash-lite",
+    "gemini-3.6-flash",
+    "gemini-3.8-flash",
+)
+TEMPORARY_HTTP_CODES = {408, 500, 502, 503, 504}
+MAX_GENERATION_SECONDS = 90
 PROMPT_VERSION = "candidate-findings-v1"
 API_ROOT = "https://generativelanguage.googleapis.com/v1beta/models"
 MAX_RESPONSE_BYTES = 256 * 1024
@@ -78,28 +87,48 @@ Return only the requested JSON. All outputs remain pending human review.
 class StructuredResponse(Generic[ResponseT]):
     value: ResponseT
     returned_model: str
+    request_attempts: tuple[dict, ...] = ()
+
+
+class TemporaryModelError(RuntimeError):
+    """Only sanitized transport/availability information may cross this boundary."""
 
 
 @dataclass(frozen=True)
 class GeminiClient:
     api_key: SecretStr = field(repr=False)
     model: str = DEFAULT_MODEL
+    fallback_models: tuple[str, ...] = ()
 
     def __post_init__(self):
         if not self.api_key.get_secret_value().strip():
             raise ExtractionError(
                 "Set GEMINI_API_KEY in the process environment before calling Gemini."
             )
-        if not re.fullmatch(r"gemini-[a-zA-Z0-9.-]+", self.model):
+        models = (self.model, *self.fallback_models)
+        if len(models) > 6 or any(
+            not isinstance(model, str)
+            or not re.fullmatch(r"gemini-[a-zA-Z0-9.-]+", model)
+            for model in models
+        ):
             raise ExtractionError(
-                "GEMINI_MODEL must be a Gemini model ID, without a URL or path."
+                "Use at most six Gemini model IDs, without URLs or paths."
             )
 
     @classmethod
     def from_environment(cls, model: str | None = None) -> Self:
+        configured = os.environ.get("GEMINI_FALLBACK_MODELS")
+        fallback = (
+            DEFAULT_FALLBACK_MODELS
+            if configured is None
+            else ()
+            if configured.strip().casefold() == "none"
+            else tuple(m.strip() for m in configured.split(",") if m.strip())
+        )
         return cls(
             SecretStr(os.environ.get("GEMINI_API_KEY", "")),
             model or os.environ.get("GEMINI_MODEL", DEFAULT_MODEL),
+            fallback,
         )
 
     def generate(
@@ -119,7 +148,6 @@ class GeminiClient:
                 }
             ],
             "generationConfig": {
-                "temperature": 0,
                 "maxOutputTokens": 4096,
                 "responseMimeType": "application/json",
                 "responseJsonSchema": json_schema
@@ -127,8 +155,41 @@ class GeminiClient:
                 else gemini_json_schema(response_model),
             },
         }
+        # Only availability failures can move to another model. An invalid,
+        # blocked or semantically rejected result must not get another opinion.
+        deadline = time.monotonic() + MAX_GENERATION_SECONDS
+        attempts = []
+        models = tuple(dict.fromkeys((self.model, *self.fallback_models)))
+        for index, model in enumerate(models):
+            if index:
+                delay = min(2 ** (index - 1), 8) + uniform(0, 0.25)
+                if time.monotonic() + delay >= deadline:
+                    break
+                time.sleep(delay)
+            remaining = deadline - time.monotonic()
+            if remaining <= 0:
+                break
+            try:
+                body = self._request(
+                    model, payload, timeout=min(REQUEST_TIMEOUT_SECONDS, remaining)
+                )
+            except TemporaryModelError as error:
+                attempts.append({"model": model, "outcome": str(error)})
+                continue
+            result = self._parse_response(body, response_model, attempted_model=model)
+            attempts.append({"model": model, "outcome": "success"})
+            return StructuredResponse(
+                result.value, result.returned_model, tuple(attempts)
+            )
+        outcomes = "; ".join(f"{a['model']}: {a['outcome']}" for a in attempts)
+        raise ExtractionError(
+            "Gemini temporary availability attempts exhausted; no valid output returned. "
+            + outcomes
+        ) from None
+
+    def _request(self, model, payload, *, timeout):
         request = Request(
-            f"{API_ROOT}/{self.model}:generateContent",
+            f"{API_ROOT}/{model}:generateContent",
             data=json.dumps(payload, ensure_ascii=False).encode("utf-8"),
             headers={
                 "Content-Type": "application/json",
@@ -138,10 +199,9 @@ class GeminiClient:
             method="POST",
         )
         try:
-            # No automatic retries or redirects: keep quota use explicit and
-            # never forward the authentication header to a different URL.
+            # Never forward the authentication header to a different URL.
             with build_opener(RejectRedirects()).open(
-                request, timeout=REQUEST_TIMEOUT_SECONDS
+                request, timeout=timeout
             ) as response:
                 if (
                     response.status != 200
@@ -154,6 +214,8 @@ class GeminiClient:
                 if len(body) > MAX_RESPONSE_BYTES:
                     raise ExtractionError("Gemini response exceeds the size limit.")
         except HTTPError as error:
+            if error.code in TEMPORARY_HTTP_CODES:
+                raise TemporaryModelError(f"HTTP {error.code}") from None
             if error.code == 429:
                 message = "Gemini quota/rate limit reached (HTTP 429). Retry later or select an available model."
             elif error.code in {400, 401, 403}:
@@ -162,13 +224,11 @@ class GeminiClient:
                 message = f"Gemini request failed (HTTP {error.code})."
             raise ExtractionError(message) from None
         except (OSError, URLError, HTTPException, ValueError):
-            raise ExtractionError(
-                "Gemini transport failed; no output was saved."
-            ) from None
-        return self._parse_response(body, response_model)
+            raise TemporaryModelError("transport_error") from None
+        return body
 
     def _parse_response(
-        self, body: bytes, response_model: type[ResponseT]
+        self, body: bytes, response_model: type[ResponseT], *, attempted_model=None
     ) -> StructuredResponse[ResponseT]:
         try:
             payload = json.loads(body)
@@ -196,7 +256,9 @@ class GeminiClient:
                 part.get("text", "") for part in parts if not part.get("thought")
             )
             parsed = response_model.model_validate_json(text)
-            returned_model = payload.get("modelVersion") or self.model
+            returned_model = (
+                payload.get("modelVersion") or attempted_model or self.model
+            )
             if not isinstance(returned_model, str):
                 raise TypeError("Invalid model version")
             return StructuredResponse(parsed, returned_model)

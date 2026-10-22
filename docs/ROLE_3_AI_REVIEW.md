@@ -125,7 +125,9 @@ human approval. Older immutable review files remain available, and restoration
 of an older Actions queue can recover newer matching committed review files.
 Failed attempts do not overwrite earlier reviews and are retried fairly on later
 runs. A separate legacy extraction stage remains capped at three approved
-sources. There are no hidden retries within an individual model request.
+sources. The [model fallback policy](ROLE_3_MODEL_FALLBACK.md) now uses 3.1 Flash-Lite
+first and bounds temporary-error attempts across alternative models; the two
+review passes are logical calls and may each make additional fallback requests.
 
 Only public report text, public study metadata and public occupation/task context
 are sent to Gemini. Reviewer identity, private profiles, Git credentials and API

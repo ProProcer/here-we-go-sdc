@@ -25,10 +25,12 @@ python -m src.intelligence.extraction --url https://www.anthropic.com/research/a
 ```
 
 The CLI reads environment variables; it does not automatically load `.env`.
-`GEMINI_MODEL` or `--model` overrides the default `gemini-3.5-flash-lite`.
+`GEMINI_MODEL` or `--model` overrides the default `gemini-3.1-flash-lite`.
 Actual availability and quotas depend on the Google project. The implementation
-does not enable billing or silently switch models. It makes one generation
-request per run, with no automatic retries.
+does not enable billing. One logical generation can try alternative models on
+temporary availability failures under the [bounded fallback policy](ROLE_3_MODEL_FALLBACK.md).
+The saved candidate records the actual successful model version; invalid output
+and evidence-validation failures never trigger a switch to another model.
 
 For a fetch/parser check without credentials, a model call or saved article:
 
@@ -140,4 +142,4 @@ check, not a measured extraction-accuracy evaluation.
 
 Gemini implementation references: [structured outputs](https://ai.google.dev/gemini-api/docs/generate-content/structured-output),
 [REST API](https://ai.google.dev/api/generate-content), and
-[model documentation](https://ai.google.dev/gemini-api/docs/models/gemini-3.5-flash-lite).
+[model documentation](https://ai.google.dev/gemini-api/docs/models/gemini-3.1-flash-lite).

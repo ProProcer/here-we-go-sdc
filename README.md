@@ -132,6 +132,8 @@ articles and study leads, challenges its draft and produces a short
 The [shared skill-evidence layer](docs/ROLE_3_SHARED_SKILL_EVIDENCE.md) reviews
 sources independently of any role, assesses new/changed skills against stored
 findings, and lets new roles reuse existing approved conditional mappings offline.
+Its [low-cost model fallback policy](docs/ROLE_3_MODEL_FALLBACK.md) handles temporary
+model failures with bounded attempts and preserves the actual model provenance.
 The [first evidence-chain deliverable](docs/ROLE_3_EVIDENCE_CHAIN.md) connects a
 refreshable cited finding to a proposed task interpretation and explained
 Python/SQL skill implications. It includes an offline example and live-fetch

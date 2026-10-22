@@ -442,7 +442,15 @@ def review_one(
         "prompt_version": PROMPT_VERSION,
         "requested_model": client.model,
         "returned_models": [first.returned_model, second.returned_model],
-        "model_calls": 2,
+        "request_attempts": [
+            list(getattr(first, "request_attempts", ())),
+            list(getattr(second, "request_attempts", ())),
+        ],
+        "logical_model_calls": 2,
+        "model_calls": sum(
+            len(getattr(response, "request_attempts", ())) or 1
+            for response in (first, second)
+        ),
         "deterministic_checks": {
             "configured_publisher_scope": True,
             "publication_date_in_visible_article": True,
@@ -661,6 +669,10 @@ def write_brief(state_path=STATE):
             f"**Suggested action: {effective_recommendation(record)}** · Checked: {record['reviewed_at']}",
             "",
             f"{'Scope' if record.get('review_scope') == 'shared_work_evidence' else 'Target role'}: {_md(record['role_title'])}",
+            "",
+            "Models answering (draft / skeptic): "
+            + " / ".join(_md(m) for m in record["returned_models"]),
+            f"Model requests: {record['model_calls']} (two review passes; includes any fallback attempts).",
             "",
             _md(draft["summary"]),
             "",

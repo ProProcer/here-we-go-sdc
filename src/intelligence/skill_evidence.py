@@ -344,6 +344,12 @@ def run_assessments(
                     "returned_models": [first.returned_model, second.returned_model]
                     if news_id in results
                     else [],
+                    "request_attempts": [
+                        list(getattr(response, "request_attempts", ()))
+                        for response in (first, second)
+                    ]
+                    if news_id in results
+                    else [],
                     "assessed_at": now.isoformat(),
                     "assessment": result,
                     "challenge": challenge,
@@ -499,6 +505,11 @@ def write_skill_brief(
         lines += [f"- Check: {_md(c)}" for c in a["human_checks"]]
         if record["challenge"]:
             lines += [f"- Skeptic: {_md(record['challenge']['reason'])}"]
+        if record["returned_models"]:
+            lines += [
+                "- Models answering (draft / skeptic): "
+                + " / ".join(_md(m) for m in record["returned_models"])
+            ]
         for finding in item["news"]["packet"]["findings"]:
             if finding["finding_index"] in a["finding_indices"]:
                 lines += [

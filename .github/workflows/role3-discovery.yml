@@ -9,6 +9,7 @@ on:
     paths:
       - '.github/workflows/role3-discovery.yml'
       - 'src/intelligence/discovery.py'
+      - 'src/intelligence/gemini.py'
       - 'src/intelligence/source_review.py'
       - 'src/intelligence/skill_evidence.py'
       - 'src/intelligence/review_retrieval.py'
@@ -55,7 +56,8 @@ jobs:
       - name: Discover reports and optionally extract approved sources
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GEMINI_MODEL: ${{ vars.GEMINI_MODEL || 'gemini-3.5-flash-lite' }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL || 'gemini-3.1-flash-lite' }}
+          GEMINI_FALLBACK_MODELS: ${{ vars.GEMINI_FALLBACK_MODELS || 'gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.8-flash' }}
         shell: bash
         run: |
           if [ -n "$GEMINI_API_KEY" ]; then
@@ -66,7 +68,8 @@ jobs:
       - name: AI source checks and human review brief
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GEMINI_MODEL: ${{ vars.GEMINI_MODEL || 'gemini-3.5-flash-lite' }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL || 'gemini-3.1-flash-lite' }}
+          GEMINI_FALLBACK_MODELS: ${{ vars.GEMINI_FALLBACK_MODELS || 'gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.8-flash' }}
         shell: bash
         run: |
           if [ -n "$GEMINI_API_KEY" ]; then
@@ -78,7 +81,8 @@ jobs:
         if: always()
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GEMINI_MODEL: ${{ vars.GEMINI_MODEL || 'gemini-3.5-flash-lite' }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL || 'gemini-3.1-flash-lite' }}
+          GEMINI_FALLBACK_MODELS: ${{ vars.GEMINI_FALLBACK_MODELS || 'gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.8-flash' }}
         shell: bash
         run: |
           if [ -n "$GEMINI_API_KEY" ]; then

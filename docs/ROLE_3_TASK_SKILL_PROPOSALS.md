@@ -10,7 +10,8 @@ numeric weights.
 
 Set `GEMINI_API_KEY` in your environment as described in
 [the extraction guide](ROLE_3_EXTRACTION.md). The same model setting applies:
-`GEMINI_MODEL`, or `--model`, defaults to `gemini-3.5-flash-lite`.
+`GEMINI_MODEL`, or `--model`, defaults to `gemini-3.1-flash-lite` and uses the
+same [bounded fallback policy](ROLE_3_MODEL_FALLBACK.md) for temporary failures.
 
 ```powershell
 python -m src.intelligence.proposals generate --review data/sources/approved_candidates/approved_88706a14b2cdd79b2546b84b_e601e6fc7679.json --role role:data_analyst

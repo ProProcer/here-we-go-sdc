@@ -50,7 +50,9 @@ and source approval refetches the article to detect changed text.
 The initial O*NET catalog contains **8,687 skill entries**, including 35 general
 skills and many named software examples. Full initial mapping is a substantial
 backfill. The default daily limit is three batches, each covering one skill and
-up to eight articles, with at most two Gemini calls per batch. General skills go
+up to eight articles, with two logical Gemini calls per batch. The
+[low-cost fallback policy](ROLE_3_MODEL_FALLBACK.md) bounds additional requests
+when a model is temporarily unavailable. General skills go
 first during the initial import; new/changed definitions and unattempted jobs
 are prioritised, with fair retries after failures. Every report shows completed
 pairs, pending pairs and articles awaiting shared review. It must not be described
