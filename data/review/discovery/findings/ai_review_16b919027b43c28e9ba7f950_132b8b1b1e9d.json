@@ -1,0 +1,73 @@
+{
+  "findings": [
+    {
+      "claim": "Participants found it easier to locate specific objects and identify directions referred to by the agent.",
+      "evidence_type": "benchmark",
+      "support": {
+        "passage_id": "p0035",
+        "quote": "Significant gains in spatial grounding",
+        "section": "AgentHands: Generating interactive hand gestures for spatially grounded agent conversations in XR > User study > Results",
+        "passage_sha256": "049892ab2bcd4ad1656bcb98a7f0480476f187f422e6b1e51a500cc4060b45c3",
+        "quote_start": 0,
+        "quote_end": 38
+      },
+      "study_period": {
+        "start": null,
+        "end": null,
+        "passage_id": null
+      },
+      "limitations": [
+        "AI-reviewed context; external abstracts do not establish independent corroboration or workplace outcomes."
+      ],
+      "candidate_id": "candidate:cd1effccc223b5d7b8be1618",
+      "study_period_passage_sha256": null,
+      "review_status": "pending_review"
+    },
+    {
+      "claim": "Participants found the instructions easier to understand and remember during procedural tasks.",
+      "evidence_type": "observed_usage",
+      "support": {
+        "passage_id": "p0038",
+        "quote": "Reduced cognitive load",
+        "section": "AgentHands: Generating interactive hand gestures for spatially grounded agent conversations in XR > User study > Results",
+        "passage_sha256": "5f51b347710150d95a79af6f649de4bb693ff9db69873feae6fafb495982e6c9",
+        "quote_start": 0,
+        "quote_end": 22
+      },
+      "study_period": {
+        "start": null,
+        "end": null,
+        "passage_id": null
+      },
+      "limitations": [
+        "AI-reviewed context; external abstracts do not establish independent corroboration or workplace outcomes."
+      ],
+      "candidate_id": "candidate:f9088d143cfc6c500c9ef06f",
+      "study_period_passage_sha256": null,
+      "review_status": "pending_review"
+    }
+  ],
+  "no_findings_reason": null,
+  "schema_version": "0.1.0",
+  "record_type": "candidate_extraction",
+  "review_status": "pending_review",
+  "source": {
+    "source_id": "source:discovered_16b919027b43c28e9ba7f950",
+    "source_url": "https://research.google/blog/agenthands-generating-interactive-hand-gestures-for-spatially-grounded-agent-conversations-in-xr/",
+    "publisher": "Google Research",
+    "published_at": "2026-08-25"
+  },
+  "report_title": "AgentHands: Generating interactive hand gestures for spatially grounded agent conversations in XR",
+  "fetched_at": "2026-10-22T08:43:23.343634Z",
+  "response_sha256": "e478d113d6d76150f3359a060d64bb7a8ee99f770c515b7757f037aa3b8c000a",
+  "parsed_text_sha256": "5ccfed412c858e307cced17e3a35b3815251b35f41971bcc3d815743317ae504",
+  "passage_count": 57,
+  "parsed_characters": 17099,
+  "provider": "gemini",
+  "requested_model": "gemini-3.5-flash-lite",
+  "returned_model": "gemini-3.5-flash-lite",
+  "prompt_version": "source-review-v2",
+  "limitations": [
+    "AI review requires human approval; quote checks do not independently prove semantic correctness."
+  ]
+}

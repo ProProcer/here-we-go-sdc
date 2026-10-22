@@ -1,0 +1,184 @@
+{
+  "schema_version": "0.1.0",
+  "record_type": "ai_source_review",
+  "status": "pending_human_review",
+  "discovery_id": "dd1029b4b030aba3c24c66f5",
+  "reviewed_at": "2026-10-22T08:36:23.033347+00:00",
+  "source": {
+    "source_id": "source:discovered_dd1029b4b030aba3c24c66f5",
+    "source_url": "https://research.google/blog/grounding-ai-agents-in-biological-reality-building-blocks-for-autonomous-wet-labs/",
+    "publisher": "Google Research",
+    "published_at": "2026-10-16"
+  },
+  "article_title": "Grounding AI agents in biological reality: Building blocks for autonomous wet labs",
+  "source_item_sha256": "836df9a29216fcc620eb64e8a74eab11934f1e1aae697cbc2c8943dc356cb874",
+  "context_sha256": "7b1721bd712fb699b0f0e345608f547446a38e259dfc6f222ea7f2bfd94aab8c",
+  "role_id": "role:onet_15_2051_01",
+  "role_title": "Business Intelligence Analysts",
+  "prompt_version": "source-review-v2",
+  "requested_model": "gemini-3.5-flash-lite",
+  "returned_models": [
+    "gemini-3.5-flash-lite",
+    "gemini-3.5-flash-lite"
+  ],
+  "model_calls": 2,
+  "parsed_text_sha256": "28e28c894c41f795dd381000f272cdf9ed9d01c931148441a462421d946e2061",
+  "documents": [
+    {
+      "document_id": "primary",
+      "url": "https://research.google/blog/grounding-ai-agents-in-biological-reality-building-blocks-for-autonomous-wet-labs/",
+      "title": "Grounding AI agents in biological reality: Building blocks for autonomous wet labs",
+      "kind": "publisher_article",
+      "coverage": "readable_article_text",
+      "response_sha256": "6d8b8c31fc8fd279a76f5c56af1faea0b8febcf91b4328ea9b194f87151cd03e",
+      "parsed_text_sha256": "28e28c894c41f795dd381000f272cdf9ed9d01c931148441a462421d946e2061"
+    },
+    {
+      "document_id": "related_1",
+      "url": "https://doi.org/10.61700/jbn2c5tcpv93w2419",
+      "title": "Building Autonomous AI Agents for Scientific Research",
+      "kind": "related_study_metadata_candidate",
+      "coverage": "publisher_metadata_and_abstract_only",
+      "response_sha256": "c06a91282a531709463892b96c02401760f52115196610e0526386b0a49b23f7",
+      "notices": []
+    },
+    {
+      "document_id": "related_2",
+      "url": "https://doi.org/10.1007/979-8-8688-2797-6_16",
+      "title": "Building Blocks of Oracle Autonomous AI Lakehouse",
+      "kind": "related_study_metadata_candidate",
+      "coverage": "metadata_only_no_results_checked",
+      "response_sha256": "c06a91282a531709463892b96c02401760f52115196610e0526386b0a49b23f7",
+      "notices": []
+    },
+    {
+      "document_id": "related_3",
+      "url": "https://doi.org/10.2139/ssrn.6143087",
+      "title": "Reality Distortion Attacks on Autonomous Security Agents: Manipulating Internal World Models in AI Defenders",
+      "kind": "related_study_metadata_candidate",
+      "coverage": "publisher_metadata_and_abstract_only",
+      "response_sha256": "c06a91282a531709463892b96c02401760f52115196610e0526386b0a49b23f7",
+      "notices": []
+    }
+  ],
+  "retrieval_attempts": [
+    {
+      "url": "https://api.crossref.org/works?query.bibliographic=Grounding+AI+agents+in+biological+reality%3A+Building+blocks+for+autonomous+wet+labs&rows=3",
+      "status": "retrieved",
+      "matches": 3,
+      "coverage": "metadata_candidates_not_confirmed_corroboration"
+    }
+  ],
+  "draft": {
+    "summary": "Google Research describes autonomous AI agents designed to navigate physical laboratory workflows through frameworks like VERID and closed-loop molecular design.",
+    "findings": [
+      {
+        "claim": "VERID provides a live stateful 3D volumetric entity tree that tracks robotic arm geometry and individual well volumes.",
+        "evidence_type": "other",
+        "reference": {
+          "document_id": "primary",
+          "passage_id": "p0013"
+        },
+        "quote": "a live, stateful 3D volumetric entity tree"
+      },
+      {
+        "claim": "Aptamer discovery cycles take 7 to 10 days because DNA can be chemically synthesized in pooled libraries.",
+        "evidence_type": "observed_usage",
+        "reference": {
+          "document_id": "primary",
+          "passage_id": "p0023"
+        },
+        "quote": "takes just 7–10 days"
+      }
+    ],
+    "checks": [
+      {
+        "dimension": "authorship",
+        "status": "supported",
+        "explanation": "Google researchers",
+        "references": [
+          {
+            "document_id": "primary",
+            "passage_id": "p0002"
+          }
+        ]
+      },
+      {
+        "dimension": "methods",
+        "status": "supported",
+        "explanation": "Wet-lab robotics",
+        "references": [
+          {
+            "document_id": "primary",
+            "passage_id": "p0013"
+          }
+        ]
+      },
+      {
+        "dimension": "limitations",
+        "status": "supported",
+        "explanation": "Complex biology",
+        "references": [
+          {
+            "document_id": "primary",
+            "passage_id": "p0030"
+          }
+        ]
+      },
+      {
+        "dimension": "role_relevance",
+        "status": "not_found",
+        "explanation": "Unrelated biology",
+        "references": []
+      }
+    ],
+    "cross_source_status": "not_established",
+    "cross_source_explanation": "No independent corroboration retrieved.",
+    "cross_source_references": [],
+    "recommendation": "skip_for_role",
+    "human_checks": [
+      "Verify if biological laboratory automation applies to business intelligence tasks."
+    ]
+  },
+  "challenge": {
+    "findings": [
+      {
+        "finding_index": 0,
+        "verdict": "supported",
+        "reason": "Directly matches passage text."
+      },
+      {
+        "finding_index": 1,
+        "verdict": "supported",
+        "reason": "Directly quoted and supported."
+      }
+    ],
+    "checks_supported": true,
+    "cross_source_supported": false,
+    "recommendation_supported": true,
+    "unresolved_issues": [
+      "No independent cross-source corroboration."
+    ]
+  },
+  "quote_checks": [
+    {
+      "passage_sha256": "446cddf413fe76f3a43db536cc2008b7b23ed03b6e708d60daf1a46706602cb5",
+      "quote_start": 279,
+      "quote_end": 321
+    },
+    {
+      "passage_sha256": "4ec47c935cf76c55eaed58bab5c09bfc94a749cf3d80294b00944da819bffc0a",
+      "quote_start": 551,
+      "quote_end": 571
+    }
+  ],
+  "recommendation": "skip_for_role",
+  "supported_finding_indices": [
+    0,
+    1
+  ],
+  "correction_notices": [],
+  "human_signoff_claimed": false,
+  "independent_empirical_verification_claimed": false,
+  "candidate_path": "findings/ai_review_dd1029b4b030aba3c24c66f5_1fa0394c42e2.json"
+}

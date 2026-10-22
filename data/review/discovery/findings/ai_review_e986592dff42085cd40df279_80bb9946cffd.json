@@ -1,0 +1,73 @@
+{
+  "findings": [
+    {
+      "claim": "An end-to-end coding agent pipeline raised Qwen3.5-9B Pass@1 on SWE-bench Verified from 41.8% to 56.4%.",
+      "evidence_type": "benchmark",
+      "support": {
+        "passage_id": "p0012",
+        "quote": "raised Qwen3.5-9B from 41.8% to 56.4% Pass@1",
+        "section": "Agent Lightning v1.0: A 3,500-Line Lightweight Agentic RL Framework for Training Agents with Real Harnesses > At a glance",
+        "passage_sha256": "dcb3f84a74d6cc814c01f57dcb01dcc6362929cc74d306fde5c38ef75618d274",
+        "quote_start": 68,
+        "quote_end": 112
+      },
+      "study_period": {
+        "start": null,
+        "end": null,
+        "passage_id": null
+      },
+      "limitations": [
+        "AI-reviewed context; external abstracts do not establish independent corroboration or workplace outcomes."
+      ],
+      "candidate_id": "candidate:01176a0420d4d781fe9a12dc",
+      "study_period_passage_sha256": null,
+      "review_status": "pending_review"
+    },
+    {
+      "claim": "Agent Lightning v1.0 implements a complete Harnessed Agentic RL system in roughly 3,500 lines of code.",
+      "evidence_type": "observed_usage",
+      "support": {
+        "passage_id": "p0016",
+        "quote": "about 3,500 lines of code",
+        "section": "Agent Lightning v1.0: A 3,500-Line Lightweight Agentic RL Framework for Training Agents with Real Harnesses > At a glance",
+        "passage_sha256": "30b3c836f247240dfba6c243f980731b4e77a93cb7f645d969263bde8c90e161",
+        "quote_start": 37,
+        "quote_end": 62
+      },
+      "study_period": {
+        "start": null,
+        "end": null,
+        "passage_id": null
+      },
+      "limitations": [
+        "AI-reviewed context; external abstracts do not establish independent corroboration or workplace outcomes."
+      ],
+      "candidate_id": "candidate:53d0e1ceebfbd67983d9f022",
+      "study_period_passage_sha256": null,
+      "review_status": "pending_review"
+    }
+  ],
+  "no_findings_reason": null,
+  "schema_version": "0.1.0",
+  "record_type": "candidate_extraction",
+  "review_status": "pending_review",
+  "source": {
+    "source_id": "source:discovered_e986592dff42085cd40df279",
+    "source_url": "https://www.microsoft.com/en-us/research/blog/agent-lightning-v1-0-a-3500-line-lightweight-agentic-rl-framework-for-training-agents-with-real-harnesses/",
+    "publisher": "Microsoft Research",
+    "published_at": "2026-10-07"
+  },
+  "report_title": "Agent Lightning v1.0: A 3,500-Line Lightweight Agentic RL Framework for Training Agents with Real Harnesses",
+  "fetched_at": "2026-10-22T08:39:38.576971Z",
+  "response_sha256": "97ddf2523fdc1ea6d536c2eec57c0e09ae6ed2bf16b39e9f7836cb7e3449e6ed",
+  "parsed_text_sha256": "ff24e0132027a11b69d1b3506484dade220167d9fd8a11ac291fcb7149fb865e",
+  "passage_count": 43,
+  "parsed_characters": 15211,
+  "provider": "gemini",
+  "requested_model": "gemini-3.5-flash-lite",
+  "returned_model": "gemini-3.5-flash-lite",
+  "prompt_version": "source-review-v2",
+  "limitations": [
+    "AI review requires human approval; quote checks do not independently prove semantic correctness."
+  ]
+}

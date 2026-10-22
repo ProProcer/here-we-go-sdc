@@ -1,0 +1,188 @@
+{
+  "schema_version": "0.1.0",
+  "record_type": "ai_source_review",
+  "status": "pending_human_review",
+  "discovery_id": "16b919027b43c28e9ba7f950",
+  "reviewed_at": "2026-10-22T08:43:23.343634+00:00",
+  "source": {
+    "source_id": "source:discovered_16b919027b43c28e9ba7f950",
+    "source_url": "https://research.google/blog/agenthands-generating-interactive-hand-gestures-for-spatially-grounded-agent-conversations-in-xr/",
+    "publisher": "Google Research",
+    "published_at": "2026-08-25"
+  },
+  "article_title": "AgentHands: Generating interactive hand gestures for spatially grounded agent conversations in XR",
+  "source_item_sha256": "378450ec1b4ebb7ca46722616d6219e410f02d7bb6025c42b1f1b0247a6b16be",
+  "context_sha256": "7b1721bd712fb699b0f0e345608f547446a38e259dfc6f222ea7f2bfd94aab8c",
+  "role_id": "role:onet_15_2051_01",
+  "role_title": "Business Intelligence Analysts",
+  "prompt_version": "source-review-v2",
+  "requested_model": "gemini-3.5-flash-lite",
+  "returned_models": [
+    "gemini-3.5-flash-lite",
+    "gemini-3.5-flash-lite"
+  ],
+  "model_calls": 2,
+  "deterministic_checks": {
+    "configured_publisher_scope": true,
+    "publication_date_in_visible_article": true,
+    "grounded_primary_quotes": 2,
+    "challenge_checked_every_finding": true
+  },
+  "parsed_text_sha256": "5ccfed412c858e307cced17e3a35b3815251b35f41971bcc3d815743317ae504",
+  "documents": [
+    {
+      "document_id": "primary",
+      "url": "https://research.google/blog/agenthands-generating-interactive-hand-gestures-for-spatially-grounded-agent-conversations-in-xr/",
+      "title": "AgentHands: Generating interactive hand gestures for spatially grounded agent conversations in XR",
+      "kind": "publisher_article",
+      "coverage": "readable_article_text",
+      "response_sha256": "e478d113d6d76150f3359a060d64bb7a8ee99f770c515b7757f037aa3b8c000a",
+      "parsed_text_sha256": "5ccfed412c858e307cced17e3a35b3815251b35f41971bcc3d815743317ae504"
+    },
+    {
+      "document_id": "related_1",
+      "url": "https://doi.org/10.1145/3772318.3790938",
+      "title": "AgentHands: Generating Interactive Hand Gestures for Spatially Grounded Agent Conversations in XR",
+      "kind": "related_study_metadata_candidate",
+      "coverage": "metadata_only_no_results_checked",
+      "response_sha256": "d93075a3b8d3737cd0c3b53b6a67e6574b7277fff42ed1567aa9030e1f15aa84",
+      "notices": []
+    },
+    {
+      "document_id": "related_2",
+      "url": "https://doi.org/10.1109/fit.2013.23",
+      "title": "Interactive Control through Hand Gestures",
+      "kind": "related_study_metadata_candidate",
+      "coverage": "metadata_only_no_results_checked",
+      "response_sha256": "d93075a3b8d3737cd0c3b53b6a67e6574b7277fff42ed1567aa9030e1f15aa84",
+      "notices": []
+    },
+    {
+      "document_id": "related_3",
+      "url": "https://doi.org/10.22214/ijraset.2023.49456",
+      "title": "Interactive Computer System Using Hand Gestures",
+      "kind": "related_study_metadata_candidate",
+      "coverage": "publisher_metadata_and_abstract_only",
+      "response_sha256": "d93075a3b8d3737cd0c3b53b6a67e6574b7277fff42ed1567aa9030e1f15aa84",
+      "notices": []
+    }
+  ],
+  "retrieval_attempts": [
+    {
+      "url": "https://api.crossref.org/works?query.title=AgentHands%3A+Generating+interactive+hand+gestures+for+spatially+grounded+agent+conversations+in+XR&rows=3",
+      "status": "retrieved",
+      "matches": 3,
+      "coverage": "metadata_candidates_not_confirmed_corroboration"
+    }
+  ],
+  "draft": {
+    "summary": "The research introduces AgentHands, an LLM-powered XR prototype featuring synchronized hand gestures, and evaluates it via a user study.",
+    "findings": [
+      {
+        "claim": "Participants found it easier to locate specific objects and identify directions referred to by the agent.",
+        "evidence_type": "benchmark",
+        "reference": {
+          "document_id": "primary",
+          "passage_id": "p0035"
+        },
+        "quote": "Significant gains in spatial grounding"
+      },
+      {
+        "claim": "Participants found the instructions easier to understand and remember during procedural tasks.",
+        "evidence_type": "observed_usage",
+        "reference": {
+          "document_id": "primary",
+          "passage_id": "p0038"
+        },
+        "quote": "Reduced cognitive load"
+      }
+    ],
+    "checks": [
+      {
+        "dimension": "authorship",
+        "status": "supported",
+        "explanation": "Google Research authors",
+        "references": [
+          {
+            "document_id": "primary",
+            "passage_id": "p0002"
+          }
+        ]
+      },
+      {
+        "dimension": "methods",
+        "status": "supported",
+        "explanation": "Within-subjects user study",
+        "references": [
+          {
+            "document_id": "primary",
+            "passage_id": "p0030"
+          }
+        ]
+      },
+      {
+        "dimension": "limitations",
+        "status": "not_found",
+        "explanation": "No limitations discussed",
+        "references": []
+      },
+      {
+        "dimension": "role_relevance",
+        "status": "not_found",
+        "explanation": "Unrelated to analytics",
+        "references": []
+      }
+    ],
+    "cross_source_status": "not_established",
+    "cross_source_explanation": "Only bibliographic metadata was retrieved; corroboration remains unknown.",
+    "cross_source_references": [],
+    "recommendation": "skip_for_role",
+    "human_checks": [
+      "Verify relevance to business intelligence tasks."
+    ]
+  },
+  "automatic_corrections": [
+    "Downgraded metadata-only comparison; research results were not retrieved."
+  ],
+  "challenge": {
+    "findings": [
+      {
+        "finding_index": 0,
+        "verdict": "supported",
+        "reason": "Directly supported by the passage text."
+      },
+      {
+        "finding_index": 1,
+        "verdict": "supported",
+        "reason": "Directly supported by the passage text."
+      }
+    ],
+    "checks_supported": true,
+    "cross_source_supported": false,
+    "recommendation_supported": true,
+    "unresolved_issues": [
+      "Unrelated to business intelligence."
+    ]
+  },
+  "quote_checks": [
+    {
+      "passage_sha256": "049892ab2bcd4ad1656bcb98a7f0480476f187f422e6b1e51a500cc4060b45c3",
+      "quote_start": 0,
+      "quote_end": 38
+    },
+    {
+      "passage_sha256": "5f51b347710150d95a79af6f649de4bb693ff9db69873feae6fafb495982e6c9",
+      "quote_start": 0,
+      "quote_end": 22
+    }
+  ],
+  "recommendation": "skip_for_role",
+  "supported_finding_indices": [
+    0,
+    1
+  ],
+  "correction_notices": [],
+  "human_signoff_claimed": false,
+  "independent_empirical_verification_claimed": false,
+  "candidate_path": "findings/ai_review_16b919027b43c28e9ba7f950_132b8b1b1e9d.json"
+}

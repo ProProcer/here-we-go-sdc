@@ -5,12 +5,11 @@ import os
 import re
 from dataclasses import dataclass, field
 from http.client import HTTPException
-from typing import Generic, TypeVar
+from typing import Generic, Self, TypeVar
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, build_opener
 
 from pydantic import BaseModel, SecretStr, ValidationError
-from typing_extensions import Self
 
 from src.intelligence.extractors import ExtractionError, ModelExtraction
 from src.intelligence.feeds import RejectRedirects
@@ -203,7 +202,16 @@ class GeminiClient:
             return StructuredResponse(parsed, returned_model)
         except ExtractionError:
             raise
-        except (KeyError, IndexError, TypeError, ValueError, ValidationError):
+        except ValidationError as error:
+            # Report schema locations/reasons, never model inputs or key values.
+            details = "; ".join(
+                ".".join(str(part) for part in item["loc"]) + ": " + item["msg"]
+                for item in error.errors(include_input=False, include_url=False)[:3]
+            )
+            raise ExtractionError(
+                "Gemini structured output failed validation: " + details
+            ) from None
+        except (KeyError, IndexError, TypeError, ValueError):
             raise ExtractionError(
                 "Gemini returned malformed structured JSON; no output was saved."
             ) from None

@@ -1,0 +1,50 @@
+{
+  "findings": [
+    {
+      "claim": "Autonomous AI agents execute probabilistic control flows that make traditional security testing methodologies ineffective.",
+      "evidence_type": "author_projection",
+      "support": {
+        "passage_id": "p0010",
+        "quote": "Probabilistic control flows",
+        "section": "Open and Emergent Problems in Agentic Privacy and Security: A Contextual Angle > Agentic trade-offs",
+        "passage_sha256": "ae673c9ff73fa75746299097a7e3c7820332d1d1fac7719ee5b6dde41a9e12eb",
+        "quote_start": 0,
+        "quote_end": 27
+      },
+      "study_period": {
+        "start": null,
+        "end": null,
+        "passage_id": null
+      },
+      "limitations": [
+        "AI-reviewed context; external abstracts do not establish independent corroboration or workplace outcomes."
+      ],
+      "candidate_id": "candidate:b79a8b2a1750e147946874d4",
+      "study_period_passage_sha256": null,
+      "review_status": "pending_review"
+    }
+  ],
+  "no_findings_reason": null,
+  "schema_version": "0.1.0",
+  "record_type": "candidate_extraction",
+  "review_status": "pending_review",
+  "source": {
+    "source_id": "source:discovered_7eeb0a9dde53453907ecbc46",
+    "source_url": "https://research.google/blog/open-and-emergent-problems-in-agentic-privacy-and-security-a-contextual-angle/",
+    "publisher": "Google Research",
+    "published_at": "2026-10-05"
+  },
+  "report_title": "Open and Emergent Problems in Agentic Privacy and Security: A Contextual Angle",
+  "fetched_at": "2026-10-22T08:52:42.996290Z",
+  "response_sha256": "08ab04442e289f1a02780ed99d4af473da298fa6c3dbc7364fa1cf68f6a1120b",
+  "parsed_text_sha256": "f916836a76ac9367d5c8325eac4cba5a62940d21f7c70dd5bfa58ea2b4eb0d11",
+  "passage_count": 44,
+  "parsed_characters": 14694,
+  "provider": "gemini",
+  "requested_model": "gemini-3.5-flash-lite",
+  "returned_model": "gemini-3.5-flash-lite",
+  "prompt_version": "source-review-v2",
+  "limitations": [
+    "AI review requires human approval; quote checks do not independently prove semantic correctness."
+  ]
+}

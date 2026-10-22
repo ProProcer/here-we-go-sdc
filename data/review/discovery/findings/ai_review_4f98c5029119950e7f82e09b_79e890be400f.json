@@ -1,0 +1,73 @@
+{
+  "findings": [
+    {
+      "claim": "Integrating ME-POIs with advanced text models yielded an 81.9% relative gain in predicting visit intent.",
+      "evidence_type": "benchmark",
+      "support": {
+        "passage_id": "p0008",
+        "quote": "up to an 81.9% relative gain",
+        "section": "How mobility gives language models a deeper understanding of place > Quick links",
+        "passage_sha256": "95647342f7a584b07e896e133dfc1ed39b9ab3a6a688b14d98242c6f10673462",
+        "quote_start": 947,
+        "quote_end": 975
+      },
+      "study_period": {
+        "start": null,
+        "end": null,
+        "passage_id": null
+      },
+      "limitations": [
+        "AI-reviewed context; external abstracts do not establish independent corroboration or workplace outcomes."
+      ],
+      "candidate_id": "candidate:708d707600c03521c802cbb9",
+      "study_period_passage_sha256": null,
+      "review_status": "pending_review"
+    },
+    {
+      "claim": "ME-POIs integration led to a 75.1% improvement in price level classification across unseen places.",
+      "evidence_type": "benchmark",
+      "support": {
+        "passage_id": "p0008",
+        "quote": "a 75.1% improvement in price level",
+        "section": "How mobility gives language models a deeper understanding of place > Quick links",
+        "passage_sha256": "95647342f7a584b07e896e133dfc1ed39b9ab3a6a688b14d98242c6f10673462",
+        "quote_start": 1004,
+        "quote_end": 1038
+      },
+      "study_period": {
+        "start": null,
+        "end": null,
+        "passage_id": null
+      },
+      "limitations": [
+        "AI-reviewed context; external abstracts do not establish independent corroboration or workplace outcomes."
+      ],
+      "candidate_id": "candidate:c1c4aed8182f27cca23ac512",
+      "study_period_passage_sha256": null,
+      "review_status": "pending_review"
+    }
+  ],
+  "no_findings_reason": null,
+  "schema_version": "0.1.0",
+  "record_type": "candidate_extraction",
+  "review_status": "pending_review",
+  "source": {
+    "source_id": "source:discovered_4f98c5029119950e7f82e09b",
+    "source_url": "https://research.google/blog/how-mobility-gives-language-models-a-deeper-understanding-of-place/",
+    "publisher": "Google Research",
+    "published_at": "2026-08-21"
+  },
+  "report_title": "How mobility gives language models a deeper understanding of place",
+  "fetched_at": "2026-10-22T08:43:23.343634Z",
+  "response_sha256": "835994e3697403199252b7862454940737a1159e7707c2ca86f2b4ce63c924a2",
+  "parsed_text_sha256": "fcd6987740b65f12b0f242d1f5d2d2e74c9208f6f2f13e125c815fa8d0cecf43",
+  "passage_count": 49,
+  "parsed_characters": 15138,
+  "provider": "gemini",
+  "requested_model": "gemini-3.5-flash-lite",
+  "returned_model": "gemini-3.5-flash-lite",
+  "prompt_version": "source-review-v2",
+  "limitations": [
+    "AI review requires human approval; quote checks do not independently prove semantic correctness."
+  ]
+}

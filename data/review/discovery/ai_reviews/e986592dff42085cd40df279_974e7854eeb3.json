@@ -1,0 +1,184 @@
+{
+  "schema_version": "0.1.0",
+  "record_type": "ai_source_review",
+  "status": "pending_human_review",
+  "discovery_id": "e986592dff42085cd40df279",
+  "reviewed_at": "2026-10-22T08:39:38.576971+00:00",
+  "source": {
+    "source_id": "source:discovered_e986592dff42085cd40df279",
+    "source_url": "https://www.microsoft.com/en-us/research/blog/agent-lightning-v1-0-a-3500-line-lightweight-agentic-rl-framework-for-training-agents-with-real-harnesses/",
+    "publisher": "Microsoft Research",
+    "published_at": "2026-10-07"
+  },
+  "article_title": "Agent Lightning v1.0: A 3,500-Line Lightweight Agentic RL Framework for Training Agents with Real Harnesses",
+  "source_item_sha256": "b2e9a664a2da7887da2b15a5b788b48b46bfcb687d6705b5bdb34c7800f53893",
+  "context_sha256": "7b1721bd712fb699b0f0e345608f547446a38e259dfc6f222ea7f2bfd94aab8c",
+  "role_id": "role:onet_15_2051_01",
+  "role_title": "Business Intelligence Analysts",
+  "prompt_version": "source-review-v2",
+  "requested_model": "gemini-3.5-flash-lite",
+  "returned_models": [
+    "gemini-3.5-flash-lite",
+    "gemini-3.5-flash-lite"
+  ],
+  "model_calls": 2,
+  "parsed_text_sha256": "ff24e0132027a11b69d1b3506484dade220167d9fd8a11ac291fcb7149fb865e",
+  "documents": [
+    {
+      "document_id": "primary",
+      "url": "https://www.microsoft.com/en-us/research/blog/agent-lightning-v1-0-a-3500-line-lightweight-agentic-rl-framework-for-training-agents-with-real-harnesses/",
+      "title": "Agent Lightning v1.0: A 3,500-Line Lightweight Agentic RL Framework for Training Agents with Real Harnesses",
+      "kind": "publisher_article",
+      "coverage": "readable_article_text",
+      "response_sha256": "97ddf2523fdc1ea6d536c2eec57c0e09ae6ed2bf16b39e9f7836cb7e3449e6ed",
+      "parsed_text_sha256": "ff24e0132027a11b69d1b3506484dade220167d9fd8a11ac291fcb7149fb865e"
+    },
+    {
+      "document_id": "related_1",
+      "url": "https://doi.org/10.1007/979-8-8688-2433-3_2",
+      "title": "Thain Meets the Agent Framework",
+      "kind": "related_study_metadata_candidate",
+      "coverage": "metadata_only_no_results_checked",
+      "response_sha256": "aa3128c71aaf64b17404f03a0ac45d4965323f9b761b2450fe9ad90543a0ec88",
+      "notices": []
+    },
+    {
+      "document_id": "related_2",
+      "url": "https://doi.org/10.1007/979-8-8688-2433-3",
+      "title": "Architecting Intelligent Agents in Azure",
+      "kind": "related_study_metadata_candidate",
+      "coverage": "metadata_only_no_results_checked",
+      "response_sha256": "aa3128c71aaf64b17404f03a0ac45d4965323f9b761b2450fe9ad90543a0ec88",
+      "notices": []
+    },
+    {
+      "document_id": "related_3",
+      "url": "https://doi.org/10.1201/9781003753728-8",
+      "title": "Simulation and deployment of multi-agent systems in real-world environments",
+      "kind": "related_study_metadata_candidate",
+      "coverage": "metadata_only_no_results_checked",
+      "response_sha256": "aa3128c71aaf64b17404f03a0ac45d4965323f9b761b2450fe9ad90543a0ec88",
+      "notices": []
+    }
+  ],
+  "retrieval_attempts": [
+    {
+      "url": "https://api.crossref.org/works?query.bibliographic=Agent+Lightning+v1.0%3A+A+3%2C500-Line+Lightweight+Agentic+RL+Framework+for+Training+Agents+with+Real+Harnesses&rows=3",
+      "status": "retrieved",
+      "matches": 3,
+      "coverage": "metadata_candidates_not_confirmed_corroboration"
+    }
+  ],
+  "draft": {
+    "summary": "This Microsoft Research blog post introduces Agent Lightning v1.0, a 3,500-line framework for training AI agents using reinforcement learning with existing harnesses.",
+    "findings": [
+      {
+        "claim": "An end-to-end coding agent pipeline raised Qwen3.5-9B Pass@1 on SWE-bench Verified from 41.8% to 56.4%.",
+        "evidence_type": "benchmark",
+        "reference": {
+          "document_id": "primary",
+          "passage_id": "p0012"
+        },
+        "quote": "raised Qwen3.5-9B from 41.8% to 56.4% Pass@1"
+      },
+      {
+        "claim": "Agent Lightning v1.0 implements a complete Harnessed Agentic RL system in roughly 3,500 lines of code.",
+        "evidence_type": "observed_usage",
+        "reference": {
+          "document_id": "primary",
+          "passage_id": "p0016"
+        },
+        "quote": "about 3,500 lines of code"
+      }
+    ],
+    "checks": [
+      {
+        "dimension": "authorship",
+        "status": "supported",
+        "explanation": "Authored by Microsoft Research Asia engineers.",
+        "references": [
+          {
+            "document_id": "primary",
+            "passage_id": "p0002"
+          }
+        ]
+      },
+      {
+        "dimension": "methods",
+        "status": "supported",
+        "explanation": "Uses an LLM proxy to record model calls during agent rollouts.",
+        "references": [
+          {
+            "document_id": "primary",
+            "passage_id": "p0031"
+          }
+        ]
+      },
+      {
+        "dimension": "limitations",
+        "status": "unclear",
+        "explanation": "Detailed failure modes are not extensively discussed.",
+        "references": []
+      },
+      {
+        "dimension": "role_relevance",
+        "status": "supported",
+        "explanation": "Relates to technical reporting tools and systems maintenance.",
+        "references": [
+          {
+            "document_id": "primary",
+            "passage_id": "p0011"
+          }
+        ]
+      }
+    ],
+    "cross_source_status": "not_established",
+    "cross_source_explanation": "No independent corroborating studies were retrieved.",
+    "cross_source_references": [],
+    "recommendation": "skip_for_role",
+    "human_checks": [
+      "Verify whether the framework supports business intelligence tooling workflows."
+    ]
+  },
+  "challenge": {
+    "findings": [
+      {
+        "finding_index": 0,
+        "verdict": "supported",
+        "reason": "Directly matches passage p0012."
+      },
+      {
+        "finding_index": 1,
+        "verdict": "supported",
+        "reason": "Directly matches passage p0016."
+      }
+    ],
+    "checks_supported": true,
+    "cross_source_supported": false,
+    "recommendation_supported": true,
+    "unresolved_issues": [
+      "No external corroboration."
+    ]
+  },
+  "quote_checks": [
+    {
+      "passage_sha256": "dcb3f84a74d6cc814c01f57dcb01dcc6362929cc74d306fde5c38ef75618d274",
+      "quote_start": 68,
+      "quote_end": 112
+    },
+    {
+      "passage_sha256": "30b3c836f247240dfba6c243f980731b4e77a93cb7f645d969263bde8c90e161",
+      "quote_start": 37,
+      "quote_end": 62
+    }
+  ],
+  "recommendation": "skip_for_role",
+  "supported_finding_indices": [
+    0,
+    1
+  ],
+  "correction_notices": [],
+  "human_signoff_claimed": false,
+  "independent_empirical_verification_claimed": false,
+  "candidate_path": "findings/ai_review_e986592dff42085cd40df279_80bb9946cffd.json"
+}

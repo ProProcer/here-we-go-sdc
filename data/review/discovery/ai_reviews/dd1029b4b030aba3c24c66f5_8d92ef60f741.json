@@ -1,0 +1,188 @@
+{
+  "schema_version": "0.1.0",
+  "record_type": "ai_source_review",
+  "status": "pending_human_review",
+  "discovery_id": "dd1029b4b030aba3c24c66f5",
+  "reviewed_at": "2026-10-22T08:32:56.595149+00:00",
+  "source": {
+    "source_id": "source:discovered_dd1029b4b030aba3c24c66f5",
+    "source_url": "https://research.google/blog/grounding-ai-agents-in-biological-reality-building-blocks-for-autonomous-wet-labs/",
+    "publisher": "Google Research",
+    "published_at": "2026-10-16"
+  },
+  "article_title": "Grounding AI agents in biological reality: Building blocks for autonomous wet labs",
+  "source_item_sha256": "836df9a29216fcc620eb64e8a74eab11934f1e1aae697cbc2c8943dc356cb874",
+  "context_sha256": "7b1721bd712fb699b0f0e345608f547446a38e259dfc6f222ea7f2bfd94aab8c",
+  "role_id": "role:onet_15_2051_01",
+  "role_title": "Business Intelligence Analysts",
+  "prompt_version": "source-review-v1",
+  "requested_model": "gemini-3.5-flash-lite",
+  "returned_models": [
+    "gemini-3.5-flash-lite",
+    "gemini-3.5-flash-lite"
+  ],
+  "model_calls": 2,
+  "parsed_text_sha256": "28e28c894c41f795dd381000f272cdf9ed9d01c931148441a462421d946e2061",
+  "documents": [
+    {
+      "document_id": "primary",
+      "url": "https://research.google/blog/grounding-ai-agents-in-biological-reality-building-blocks-for-autonomous-wet-labs/",
+      "title": "Grounding AI agents in biological reality: Building blocks for autonomous wet labs",
+      "kind": "publisher_article",
+      "coverage": "readable_article_text",
+      "response_sha256": "6d8b8c31fc8fd279a76f5c56af1faea0b8febcf91b4328ea9b194f87151cd03e",
+      "parsed_text_sha256": "28e28c894c41f795dd381000f272cdf9ed9d01c931148441a462421d946e2061"
+    },
+    {
+      "document_id": "related_1",
+      "url": "https://doi.org/10.61700/jbn2c5tcpv93w2419",
+      "title": "Building Autonomous AI Agents for Scientific Research",
+      "kind": "related_study_metadata_candidate",
+      "coverage": "publisher_metadata_and_abstract_only",
+      "response_sha256": "f87a3dc1a1b95dc8d5242e80fe2ebf767dd908984efd74c48fda2ee0e58bc73c",
+      "notices": []
+    },
+    {
+      "document_id": "related_2",
+      "url": "https://doi.org/10.1007/979-8-8688-2797-6_16",
+      "title": "Building Blocks of Oracle Autonomous AI Lakehouse",
+      "kind": "related_study_metadata_candidate",
+      "coverage": "metadata_only_no_results_checked",
+      "response_sha256": "f87a3dc1a1b95dc8d5242e80fe2ebf767dd908984efd74c48fda2ee0e58bc73c",
+      "notices": []
+    },
+    {
+      "document_id": "related_3",
+      "url": "https://doi.org/10.4018/979-8-3373-2008-3.ch006",
+      "title": "Building AI Agents for Autonomous Decision-Making",
+      "kind": "related_study_metadata_candidate",
+      "coverage": "publisher_metadata_and_abstract_only",
+      "response_sha256": "f87a3dc1a1b95dc8d5242e80fe2ebf767dd908984efd74c48fda2ee0e58bc73c",
+      "notices": []
+    }
+  ],
+  "retrieval_attempts": [
+    {
+      "url": "https://api.crossref.org/works?query.bibliographic=Grounding+AI+agents+in+biological+reality%3A+Building+blocks+for+autonomous+wet+labs&rows=3",
+      "status": "retrieved",
+      "matches": 3,
+      "coverage": "metadata_candidates_not_confirmed_corroboration"
+    }
+  ],
+  "draft": {
+    "summary": "Google Research introduces autonomous AI agents for wet labs, featuring the VERID infrastructure for simulation and execution safety, closed-loop aptamer learning, and accelerated protein binder design.",
+    "findings": [
+      {
+        "claim": "VERID provides a semantic digital twin for live 3D state tracking of laboratory workcells.",
+        "evidence_type": "other",
+        "reference": {
+          "document_id": "primary",
+          "passage_id": "p0013"
+        },
+        "quote": "semantic digital twin of the laboratory workcell"
+      },
+      {
+        "claim": "Surgical epitope excision accelerates structure prediction 8.6x in de novo protein binder design.",
+        "evidence_type": "benchmark",
+        "reference": {
+          "document_id": "primary",
+          "passage_id": "p0032"
+        },
+        "quote": "accelerates structure prediction 8.6x"
+      }
+    ],
+    "checks": [
+      {
+        "dimension": "authorship",
+        "status": "supported",
+        "explanation": "Authored by researchers from Google Research including Pooja Rao, Petar Sirkovic, and Annalisa Pawlosky.",
+        "references": [
+          {
+            "document_id": "primary",
+            "passage_id": "p0002"
+          }
+        ]
+      },
+      {
+        "dimension": "methods",
+        "status": "supported",
+        "explanation": "Describes specific technical methods such as live 3D state tracking, fast virtual dry runs, and epitope excision.",
+        "references": [
+          {
+            "document_id": "primary",
+            "passage_id": "p0016"
+          },
+          {
+            "document_id": "primary",
+            "passage_id": "p0033"
+          }
+        ]
+      },
+      {
+        "dimension": "limitations",
+        "status": "supported",
+        "explanation": "Notes that frontier models still struggle to reason reliably about 3D geometry and physical state.",
+        "references": [
+          {
+            "document_id": "primary",
+            "passage_id": "p0009"
+          }
+        ]
+      },
+      {
+        "dimension": "role_relevance",
+        "status": "not_found",
+        "explanation": "The article focuses entirely on wet-lab biology automation and AI agent physical execution rather than business intelligence tasks.",
+        "references": []
+      }
+    ],
+    "cross_source_status": "not_established",
+    "cross_source_explanation": "Retrieved search leads do not provide independent corroboration of the primary Google Research article.",
+    "cross_source_references": [],
+    "recommendation": "skip_for_role",
+    "human_checks": [
+      "Verify whether any enterprise business intelligence tooling metrics are discussed in the cited foundational research papers."
+    ]
+  },
+  "challenge": {
+    "findings": [
+      {
+        "finding_index": 0,
+        "verdict": "supported",
+        "reason": "The text explicitly states VERID is a semantic digital twin of the laboratory workcell tracking state."
+      },
+      {
+        "finding_index": 1,
+        "verdict": "supported",
+        "reason": "The caption and text confirm that surgical epitope excision accelerates structure prediction 8.6x."
+      }
+    ],
+    "checks_supported": true,
+    "cross_source_supported": false,
+    "recommendation_supported": true,
+    "unresolved_issues": [
+      "No external independent verification for proprietary Google blog claims"
+    ]
+  },
+  "quote_checks": [
+    {
+      "passage_sha256": "446cddf413fe76f3a43db536cc2008b7b23ed03b6e708d60daf1a46706602cb5",
+      "quote_start": 223,
+      "quote_end": 271
+    },
+    {
+      "passage_sha256": "acf5d7fbf9c6b20a2c2ee9a749c3b812a590142b8d3bf6e355cbffa53d332ccb",
+      "quote_start": 26,
+      "quote_end": 63
+    }
+  ],
+  "recommendation": "investigate",
+  "supported_finding_indices": [
+    0,
+    1
+  ],
+  "correction_notices": [],
+  "human_signoff_claimed": false,
+  "independent_empirical_verification_claimed": false,
+  "candidate_path": "findings/ai_review_dd1029b4b030aba3c24c66f5_8c47d4b1f583.json"
+}

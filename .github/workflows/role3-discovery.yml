@@ -9,6 +9,9 @@ on:
     paths:
       - '.github/workflows/role3-discovery.yml'
       - 'src/intelligence/discovery.py'
+      - 'src/intelligence/source_review.py'
+      - 'src/intelligence/review_retrieval.py'
+      - 'src/schemas/source_review.py'
       - 'data/sources/discovery_*.json'
 
 permissions:
@@ -22,7 +25,7 @@ concurrency:
 jobs:
   discover:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v7
         with:
@@ -55,6 +58,25 @@ jobs:
             python -m src.intelligence.discovery run --extract --max-extractions 3
           else
             python -m src.intelligence.discovery run
+          fi
+      - name: AI source checks and human review brief
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL || 'gemini-3.5-flash-lite' }}
+          ROLE3_REVIEW_ROLE: ${{ vars.ROLE3_REVIEW_ROLE || 'role:onet_15_2051_01' }}
+        shell: bash
+        run: |
+          if [ -n "$GEMINI_API_KEY" ]; then
+            python -m src.intelligence.source_review run --max-reviews 3 --role "$ROLE3_REVIEW_ROLE"
+          else
+            python -m src.intelligence.source_review show
+          fi
+      - name: Publish the human attention brief in the run summary
+        if: always()
+        shell: bash
+        run: |
+          if [ -f data/review/discovery/REVIEW_BRIEF.md ]; then
+            cat data/review/discovery/REVIEW_BRIEF.md >> "$GITHUB_STEP_SUMMARY"
           fi
       - name: Save review queue and run receipts
         if: always()

@@ -1,0 +1,206 @@
+{
+  "schema_version": "0.1.0",
+  "record_type": "ai_source_review",
+  "status": "pending_human_review",
+  "discovery_id": "4c456e668ef45cba83b59adb",
+  "reviewed_at": "2026-10-22T08:36:23.033347+00:00",
+  "source": {
+    "source_id": "source:discovered_4c456e668ef45cba83b59adb",
+    "source_url": "https://research.google/blog/putting-earth-ai-to-work-geospatial-agents-for-our-planets-biggest-challenges/",
+    "publisher": "Google Research",
+    "published_at": "2026-10-14"
+  },
+  "article_title": "Putting Earth AI to work: Geospatial agents for our planet's biggest challenges",
+  "source_item_sha256": "dad09e6840b0eb7cc8b5b3c4f108567b01e1fdf041cbf88d26c3909dfd5d4dac",
+  "context_sha256": "7b1721bd712fb699b0f0e345608f547446a38e259dfc6f222ea7f2bfd94aab8c",
+  "role_id": "role:onet_15_2051_01",
+  "role_title": "Business Intelligence Analysts",
+  "prompt_version": "source-review-v2",
+  "requested_model": "gemini-3.5-flash-lite",
+  "returned_models": [
+    "gemini-3.5-flash-lite",
+    "gemini-3.5-flash-lite"
+  ],
+  "model_calls": 2,
+  "parsed_text_sha256": "375eb401c52ae75aa1fd6ed5be435aa4dc6e68895dc2d4a26ae5e2feea814b2d",
+  "documents": [
+    {
+      "document_id": "primary",
+      "url": "https://research.google/blog/putting-earth-ai-to-work-geospatial-agents-for-our-planets-biggest-challenges/",
+      "title": "Putting Earth AI to work: Geospatial agents for our planet's biggest challenges",
+      "kind": "publisher_article",
+      "coverage": "readable_article_text",
+      "response_sha256": "40d1cc063732dbc23d2e104019a150c4e65b66fb2b9f051ae974a074ec7d20a8",
+      "parsed_text_sha256": "375eb401c52ae75aa1fd6ed5be435aa4dc6e68895dc2d4a26ae5e2feea814b2d"
+    },
+    {
+      "document_id": "linked_study",
+      "url": "https://arxiv.org/abs/2610.15750",
+      "kind": "linked_study_abstract",
+      "title": "Title: Google Earth AI Geospatial Reasoning Agent: Capabilities and a Systematic Evaluation",
+      "coverage": "abstract_only_not_full_paper",
+      "response_sha256": "e0288ae933e9b25d2681f597ccf91f6eb627e4248b0cc1d341f61e0578dd7103",
+      "notices": []
+    },
+    {
+      "document_id": "related_1",
+      "url": "https://doi.org/10.7185/gold2021.4277",
+      "title": "Earth as a Terrestrial exoplanet - putting the mineralogy of our planet in a galactic context",
+      "kind": "related_study_metadata_candidate",
+      "coverage": "metadata_only_no_results_checked",
+      "response_sha256": "22e26b88689c71cf90dcdf9adc659c0e71414f1e69b29bbbf49e3a387cc53b36",
+      "notices": []
+    },
+    {
+      "document_id": "related_2",
+      "url": "https://doi.org/10.1142/9789819815678_0005",
+      "title": "PUTTING AI AGENTS TO THE TEST",
+      "kind": "related_study_metadata_candidate",
+      "coverage": "metadata_only_no_results_checked",
+      "response_sha256": "22e26b88689c71cf90dcdf9adc659c0e71414f1e69b29bbbf49e3a387cc53b36",
+      "notices": []
+    },
+    {
+      "document_id": "related_3",
+      "url": "https://doi.org/10.4016/7465.01",
+      "title": "The BIGGEST web design company on planet earth imagination.tw",
+      "kind": "related_study_metadata_candidate",
+      "coverage": "metadata_only_no_results_checked",
+      "response_sha256": "22e26b88689c71cf90dcdf9adc659c0e71414f1e69b29bbbf49e3a387cc53b36",
+      "notices": []
+    }
+  ],
+  "retrieval_attempts": [
+    {
+      "url": "https://arxiv.org/abs/2610.15750",
+      "status": "retrieved",
+      "coverage": "abstract_only_not_full_paper"
+    },
+    {
+      "url": "https://api.crossref.org/works?query.bibliographic=Putting+Earth+AI+to+work%3A+Geospatial+agents+for+our+planet%27s+biggest+challenges&rows=3",
+      "status": "retrieved",
+      "matches": 3,
+      "coverage": "metadata_candidates_not_confirmed_corroboration"
+    }
+  ],
+  "draft": {
+    "summary": "This evaluation explores the use of a Google Earth AI geospatial reasoning agent for analyzing complex planetary datasets across partner workflows.",
+    "findings": [
+      {
+        "claim": "The geospatial reasoning agent improved health outcome predictions by 12% over demographic baselines.",
+        "evidence_type": "benchmark",
+        "reference": {
+          "document_id": "primary",
+          "passage_id": "p0019"
+        },
+        "quote": "improved predictions of health outcomes by 12%"
+      },
+      {
+        "claim": "Partner organizations tested the agent for real-world workflows such as disaster preparedness.",
+        "evidence_type": "observed_usage",
+        "reference": {
+          "document_id": "primary",
+          "passage_id": "p0013"
+        },
+        "quote": "disaster preparedness, and clean energy screening"
+      }
+    ],
+    "checks": [
+      {
+        "dimension": "authorship",
+        "status": "supported",
+        "explanation": "Authored by Google Research engineers.",
+        "references": [
+          {
+            "document_id": "primary",
+            "passage_id": "p0002"
+          }
+        ]
+      },
+      {
+        "dimension": "methods",
+        "status": "supported",
+        "explanation": "Evaluates four configurations across benchmarks.",
+        "references": [
+          {
+            "document_id": "primary",
+            "passage_id": "p0021"
+          }
+        ]
+      },
+      {
+        "dimension": "limitations",
+        "status": "supported",
+        "explanation": "Scores rely on autoraters comparing workflows.",
+        "references": [
+          {
+            "document_id": "primary",
+            "passage_id": "p0029"
+          }
+        ]
+      },
+      {
+        "dimension": "role_relevance",
+        "status": "supported",
+        "explanation": "Directly supports spatial data analysis.",
+        "references": [
+          {
+            "document_id": "primary",
+            "passage_id": "p0015"
+          }
+        ]
+      }
+    ],
+    "cross_source_status": "consistent_with_linked_study",
+    "cross_source_explanation": "The arXiv preprint abstract confirms the development of the Google Earth AI Geospatial Reasoning agent and its systematic evaluations.",
+    "cross_source_references": [
+      {
+        "document_id": "linked_study",
+        "passage_id": "p0001"
+      }
+    ],
+    "recommendation": "consider_approval",
+    "human_checks": [
+      "Review technical report methodology for benchmark scoring details in primary passage p0023."
+    ]
+  },
+  "challenge": {
+    "findings": [
+      {
+        "finding_index": 0,
+        "verdict": "supported",
+        "reason": "Directly supported by primary source text."
+      },
+      {
+        "finding_index": 1,
+        "verdict": "supported",
+        "reason": "Directly supported by partner testing evidence."
+      }
+    ],
+    "checks_supported": true,
+    "cross_source_supported": true,
+    "recommendation_supported": true,
+    "unresolved_issues": []
+  },
+  "quote_checks": [
+    {
+      "passage_sha256": "a72f9d0155d3949fe1f0d1e058aeca91a64e1fe2b47aa499b7a9444db6533adf",
+      "quote_start": 654,
+      "quote_end": 700
+    },
+    {
+      "passage_sha256": "2349cc3b87f63f3544afad99a0730510dadb2c93c6e0a15db121858d7c57bc01",
+      "quote_start": 389,
+      "quote_end": 438
+    }
+  ],
+  "recommendation": "consider_approval",
+  "supported_finding_indices": [
+    0,
+    1
+  ],
+  "correction_notices": [],
+  "human_signoff_claimed": false,
+  "independent_empirical_verification_claimed": false,
+  "candidate_path": "findings/ai_review_4c456e668ef45cba83b59adb_9b210a72c5d5.json"
+}

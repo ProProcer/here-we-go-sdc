@@ -1,0 +1,173 @@
+{
+  "schema_version": "0.1.0",
+  "record_type": "ai_source_review",
+  "status": "pending_human_review",
+  "discovery_id": "7eeb0a9dde53453907ecbc46",
+  "reviewed_at": "2026-10-22T08:52:42.996290+00:00",
+  "source": {
+    "source_id": "source:discovered_7eeb0a9dde53453907ecbc46",
+    "source_url": "https://research.google/blog/open-and-emergent-problems-in-agentic-privacy-and-security-a-contextual-angle/",
+    "publisher": "Google Research",
+    "published_at": "2026-10-05"
+  },
+  "article_title": "Open and Emergent Problems in Agentic Privacy and Security: A Contextual Angle",
+  "source_item_sha256": "c581974b1a560990a7d5c0564140cf685164e6a104a4f0c3fda726ae712b3740",
+  "context_sha256": "7b1721bd712fb699b0f0e345608f547446a38e259dfc6f222ea7f2bfd94aab8c",
+  "role_id": "role:onet_15_2051_01",
+  "role_title": "Business Intelligence Analysts",
+  "prompt_version": "source-review-v2",
+  "requested_model": "gemini-3.5-flash-lite",
+  "returned_models": [
+    "gemini-3.5-flash-lite",
+    "gemini-3.5-flash-lite"
+  ],
+  "model_calls": 2,
+  "deterministic_checks": {
+    "configured_publisher_scope": true,
+    "publication_date_in_visible_article": true,
+    "grounded_primary_quotes": 1,
+    "grounding_passed": true,
+    "challenge_checked_every_finding": true
+  },
+  "parsed_text_sha256": "f916836a76ac9367d5c8325eac4cba5a62940d21f7c70dd5bfa58ea2b4eb0d11",
+  "documents": [
+    {
+      "document_id": "primary",
+      "url": "https://research.google/blog/open-and-emergent-problems-in-agentic-privacy-and-security-a-contextual-angle/",
+      "title": "Open and Emergent Problems in Agentic Privacy and Security: A Contextual Angle",
+      "kind": "publisher_article",
+      "coverage": "readable_article_text",
+      "response_sha256": "08ab04442e289f1a02780ed99d4af473da298fa6c3dbc7364fa1cf68f6a1120b",
+      "parsed_text_sha256": "f916836a76ac9367d5c8325eac4cba5a62940d21f7c70dd5bfa58ea2b4eb0d11"
+    },
+    {
+      "document_id": "related_1",
+      "url": "https://doi.org/10.1109/access.2026.3675554",
+      "title": "Agentic AI Security: Threats, Defenses, Evaluation, and Open Challenges",
+      "kind": "related_study_metadata_candidate",
+      "coverage": "metadata_only_no_results_checked",
+      "response_sha256": "086e06a4c5bb08d9e982f38f86e617731c3999d23a4870a3b146a9fd13b77ab7",
+      "notices": []
+    },
+    {
+      "document_id": "related_2",
+      "url": "https://doi.org/10.5840/jphil201511238",
+      "title": "Emergent Privacy",
+      "kind": "related_study_metadata_candidate",
+      "coverage": "metadata_only_no_results_checked",
+      "response_sha256": "086e06a4c5bb08d9e982f38f86e617731c3999d23a4870a3b146a9fd13b77ab7",
+      "notices": []
+    },
+    {
+      "document_id": "related_3",
+      "url": "https://doi.org/10.2139/ssrn.2193164",
+      "title": "Emergent Privacy",
+      "kind": "related_study_metadata_candidate",
+      "coverage": "publisher_metadata_and_abstract_only",
+      "response_sha256": "086e06a4c5bb08d9e982f38f86e617731c3999d23a4870a3b146a9fd13b77ab7",
+      "notices": []
+    }
+  ],
+  "retrieval_attempts": [
+    {
+      "url": "https://api.crossref.org/works?query.title=Open+and+Emergent+Problems+in+Agentic+Privacy+and+Security%3A+A+Contextual+Angle&rows=3",
+      "status": "retrieved",
+      "matches": 3,
+      "coverage": "metadata_candidates_not_confirmed_corroboration"
+    }
+  ],
+  "draft": {
+    "summary": "This publisher article outlines foundational security and privacy challenges for autonomous AI agents, proposing contextual integrity frameworks.",
+    "findings": [
+      {
+        "claim": "Autonomous AI agents execute probabilistic control flows that make traditional security testing methodologies ineffective.",
+        "evidence_type": "author_projection",
+        "reference": {
+          "document_id": "primary",
+          "passage_id": "p0010"
+        },
+        "quote": "Probabilistic control flows"
+      }
+    ],
+    "checks": [
+      {
+        "dimension": "authorship",
+        "status": "supported",
+        "explanation": "Authored by Google Research scientists.",
+        "references": [
+          {
+            "document_id": "primary",
+            "passage_id": "p0002"
+          }
+        ]
+      },
+      {
+        "dimension": "methods",
+        "status": "unclear",
+        "explanation": "Workshop report methodology details are omitted.",
+        "references": [
+          {
+            "document_id": "primary",
+            "passage_id": "p0007"
+          }
+        ]
+      },
+      {
+        "dimension": "limitations",
+        "status": "supported",
+        "explanation": "Highlights open problems in agent privacy.",
+        "references": [
+          {
+            "document_id": "primary",
+            "passage_id": "p0008"
+          }
+        ]
+      },
+      {
+        "dimension": "role_relevance",
+        "status": "not_found",
+        "explanation": "Unrelated to business intelligence tasks.",
+        "references": []
+      }
+    ],
+    "cross_source_status": "not_established",
+    "cross_source_explanation": "No independent corroborating studies were provided.",
+    "cross_source_references": [],
+    "recommendation": "skip_for_role",
+    "human_checks": [
+      "Verify workshop report methodology."
+    ]
+  },
+  "automatic_corrections": [],
+  "challenge": {
+    "findings": [
+      {
+        "finding_index": 0,
+        "verdict": "supported",
+        "reason": "The passage confirms that generative planning leads to probabilistic execution paths that traditional testing methodologies cannot easily secure."
+      }
+    ],
+    "checks_supported": true,
+    "cross_source_supported": false,
+    "recommendation_supported": true,
+    "unresolved_issues": [
+      "No independent corroboration."
+    ]
+  },
+  "quote_checks": [
+    {
+      "passage_sha256": "ae673c9ff73fa75746299097a7e3c7820332d1d1fac7719ee5b6dde41a9e12eb",
+      "quote_start": 0,
+      "quote_end": 27
+    }
+  ],
+  "grounding_error": null,
+  "recommendation": "skip_for_role",
+  "supported_finding_indices": [
+    0
+  ],
+  "correction_notices": [],
+  "human_signoff_claimed": false,
+  "independent_empirical_verification_claimed": false,
+  "candidate_path": "findings/ai_review_7eeb0a9dde53453907ecbc46_0efd0b6ccbb1.json"
+}

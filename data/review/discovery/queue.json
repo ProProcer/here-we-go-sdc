@@ -26,7 +26,11 @@
       "first_seen_at": "2026-10-22T07:58:39.091032+00:00",
       "last_seen_at": "2026-10-22T07:58:39.091032+00:00",
       "metadata_changed": false,
-      "source_review_status": "pending_review"
+      "source_review_status": "pending_review",
+      "ai_review_path": "ai_reviews/dd1029b4b030aba3c24c66f5_f65e48939c5b.json",
+      "ai_recommendation": "skip_for_role",
+      "extraction_path": "findings/ai_review_dd1029b4b030aba3c24c66f5_1fa0394c42e2.json",
+      "ai_review_attempted_at": "2026-10-22T08:36:23.033347+00:00"
     },
     {
       "discovery_id": "4c456e668ef45cba83b59adb",
@@ -38,7 +42,11 @@
       "first_seen_at": "2026-10-22T07:58:39.091032+00:00",
       "last_seen_at": "2026-10-22T07:58:39.091032+00:00",
       "metadata_changed": false,
-      "source_review_status": "pending_review"
+      "source_review_status": "pending_review",
+      "ai_review_attempted_at": "2026-10-22T08:36:23.033347+00:00",
+      "ai_review_path": "ai_reviews/4c456e668ef45cba83b59adb_93ada3d6e480.json",
+      "ai_recommendation": "consider_approval",
+      "extraction_path": "findings/ai_review_4c456e668ef45cba83b59adb_9b210a72c5d5.json"
     },
     {
       "discovery_id": "e986592dff42085cd40df279",
@@ -50,7 +58,11 @@
       "first_seen_at": "2026-10-22T07:58:39.091032+00:00",
       "last_seen_at": "2026-10-22T07:58:39.091032+00:00",
       "metadata_changed": false,
-      "source_review_status": "pending_review"
+      "source_review_status": "pending_review",
+      "ai_review_attempted_at": "2026-10-22T08:39:38.576971+00:00",
+      "ai_review_path": "ai_reviews/e986592dff42085cd40df279_974e7854eeb3.json",
+      "ai_recommendation": "investigate",
+      "extraction_path": "findings/ai_review_e986592dff42085cd40df279_80bb9946cffd.json"
     },
     {
       "discovery_id": "7eeb0a9dde53453907ecbc46",
@@ -62,7 +74,11 @@
       "first_seen_at": "2026-10-22T07:58:39.091032+00:00",
       "last_seen_at": "2026-10-22T07:58:39.091032+00:00",
       "metadata_changed": false,
-      "source_review_status": "pending_review"
+      "source_review_status": "pending_review",
+      "ai_review_attempted_at": "2026-10-22T08:52:42.996290+00:00",
+      "ai_review_path": "ai_reviews/7eeb0a9dde53453907ecbc46_344cc39f18b0.json",
+      "ai_recommendation": "skip_for_role",
+      "extraction_path": "findings/ai_review_7eeb0a9dde53453907ecbc46_0efd0b6ccbb1.json"
     },
     {
       "discovery_id": "0f83c2d1d5b8034398fa197c",
@@ -74,7 +90,11 @@
       "first_seen_at": "2026-10-22T07:58:39.091032+00:00",
       "last_seen_at": "2026-10-22T07:58:39.091032+00:00",
       "metadata_changed": false,
-      "source_review_status": "pending_review"
+      "source_review_status": "pending_review",
+      "ai_review_attempted_at": "2026-10-22T08:36:23.033347+00:00",
+      "ai_review_path": "ai_reviews/0f83c2d1d5b8034398fa197c_a820666af8bb.json",
+      "ai_recommendation": "skip_for_role",
+      "extraction_path": "findings/ai_review_0f83c2d1d5b8034398fa197c_7af8d6face99.json"
     },
     {
       "discovery_id": "16b919027b43c28e9ba7f950",
@@ -86,7 +106,11 @@
       "first_seen_at": "2026-10-22T07:58:39.091032+00:00",
       "last_seen_at": "2026-10-22T07:58:39.091032+00:00",
       "metadata_changed": false,
-      "source_review_status": "pending_review"
+      "source_review_status": "pending_review",
+      "ai_review_attempted_at": "2026-10-22T08:43:23.343634+00:00",
+      "ai_review_path": "ai_reviews/16b919027b43c28e9ba7f950_a3bfb500de42.json",
+      "ai_recommendation": "skip_for_role",
+      "extraction_path": "findings/ai_review_16b919027b43c28e9ba7f950_132b8b1b1e9d.json"
     },
     {
       "discovery_id": "4f98c5029119950e7f82e09b",
@@ -98,7 +122,11 @@
       "first_seen_at": "2026-10-22T07:58:39.091032+00:00",
       "last_seen_at": "2026-10-22T07:58:39.091032+00:00",
       "metadata_changed": false,
-      "source_review_status": "pending_review"
+      "source_review_status": "pending_review",
+      "ai_review_attempted_at": "2026-10-22T08:43:23.343634+00:00",
+      "ai_review_path": "ai_reviews/4f98c5029119950e7f82e09b_b4482433849a.json",
+      "ai_recommendation": "consider_approval",
+      "extraction_path": "findings/ai_review_4f98c5029119950e7f82e09b_79e890be400f.json"
     }
   ]
 }

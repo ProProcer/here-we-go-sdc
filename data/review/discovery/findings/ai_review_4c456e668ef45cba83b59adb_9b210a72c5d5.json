@@ -1,0 +1,73 @@
+{
+  "findings": [
+    {
+      "claim": "The geospatial reasoning agent improved health outcome predictions by 12% over demographic baselines.",
+      "evidence_type": "benchmark",
+      "support": {
+        "passage_id": "p0019",
+        "quote": "improved predictions of health outcomes by 12%",
+        "section": "Putting Earth AI to work: Geospatial agents for our planet's biggest challenges > What’s new in Geospatial Reasoning > From multi-step reasoning to autonomous Planetary Prediction",
+        "passage_sha256": "a72f9d0155d3949fe1f0d1e058aeca91a64e1fe2b47aa499b7a9444db6533adf",
+        "quote_start": 654,
+        "quote_end": 700
+      },
+      "study_period": {
+        "start": null,
+        "end": null,
+        "passage_id": null
+      },
+      "limitations": [
+        "AI-reviewed context; external abstracts do not establish independent corroboration or workplace outcomes."
+      ],
+      "candidate_id": "candidate:3410aca9e803f30b09d51ba3",
+      "study_period_passage_sha256": null,
+      "review_status": "pending_review"
+    },
+    {
+      "claim": "Partner organizations tested the agent for real-world workflows such as disaster preparedness.",
+      "evidence_type": "observed_usage",
+      "support": {
+        "passage_id": "p0013",
+        "quote": "disaster preparedness, and clean energy screening",
+        "section": "Putting Earth AI to work: Geospatial agents for our planet's biggest challenges > Quick links",
+        "passage_sha256": "2349cc3b87f63f3544afad99a0730510dadb2c93c6e0a15db121858d7c57bc01",
+        "quote_start": 389,
+        "quote_end": 438
+      },
+      "study_period": {
+        "start": null,
+        "end": null,
+        "passage_id": null
+      },
+      "limitations": [
+        "AI-reviewed context; external abstracts do not establish independent corroboration or workplace outcomes."
+      ],
+      "candidate_id": "candidate:71fca2c26fcbfdffc4d7f4a8",
+      "study_period_passage_sha256": null,
+      "review_status": "pending_review"
+    }
+  ],
+  "no_findings_reason": null,
+  "schema_version": "0.1.0",
+  "record_type": "candidate_extraction",
+  "review_status": "pending_review",
+  "source": {
+    "source_id": "source:discovered_4c456e668ef45cba83b59adb",
+    "source_url": "https://research.google/blog/putting-earth-ai-to-work-geospatial-agents-for-our-planets-biggest-challenges/",
+    "publisher": "Google Research",
+    "published_at": "2026-10-14"
+  },
+  "report_title": "Putting Earth AI to work: Geospatial agents for our planet's biggest challenges",
+  "fetched_at": "2026-10-22T08:36:23.033347Z",
+  "response_sha256": "40d1cc063732dbc23d2e104019a150c4e65b66fb2b9f051ae974a074ec7d20a8",
+  "parsed_text_sha256": "375eb401c52ae75aa1fd6ed5be435aa4dc6e68895dc2d4a26ae5e2feea814b2d",
+  "passage_count": 65,
+  "parsed_characters": 21820,
+  "provider": "gemini",
+  "requested_model": "gemini-3.5-flash-lite",
+  "returned_model": "gemini-3.5-flash-lite",
+  "prompt_version": "source-review-v2",
+  "limitations": [
+    "AI review requires human approval; quote checks do not independently prove semantic correctness."
+  ]
+}

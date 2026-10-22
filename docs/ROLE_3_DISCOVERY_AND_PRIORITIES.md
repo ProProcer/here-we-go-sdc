@@ -1,5 +1,10 @@
 # Scheduled source discovery, finding review and learning-priority policy
 
+**Start with the [AI attention brief](../data/review/discovery/REVIEW_BRIEF.md).**
+The [AI-first review stage](ROLE_3_AI_REVIEW.md) now reads unapproved articles,
+checks retrieved evidence and summarizes the specific points needing your
+attention. The manual commands below remain available for final decisions.
+
 The daily GitHub Actions workflow runs at **01:00 UTC / 09:00 Malaysia time**.
 It can also run manually or after changes to discovery configuration on `main`.
 GitHub may delay scheduled jobs. Repository Actions must remain enabled, and
