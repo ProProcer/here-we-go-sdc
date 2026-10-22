@@ -8,6 +8,7 @@ from datetime import UTC, datetime
 from pathlib import Path
 
 from src.ingestion.selection import real_catalog
+from src.intelligence import role_evidence
 from src.intelligence.discovery import (
     CONFIG,
     STATE,
@@ -58,6 +59,7 @@ class ReviewItem:
     approvable: bool = False
     block_reason: str = ""
     url: str = ""
+    role_id: str | None = None
 
 
 def atomic_bytes(path, data):
@@ -79,6 +81,7 @@ class ReviewMenuService:
         self.manifest_path = self.directory.parent / "menu.json"
         self.sources_path = self.root / SOURCE_DECISIONS.relative_to(ROOT)
         self.mapping_path = self.root / MAPPING_DECISIONS.relative_to(ROOT)
+        self.role_path = self.root / role_evidence.DECISIONS.relative_to(ROOT)
         self.registry_path = self.root / DEFAULT_REGISTRY.relative_to(ROOT)
         self.config_path = self.root / CONFIG.relative_to(ROOT)
         self.catalog = catalog
@@ -116,6 +119,19 @@ class ReviewMenuService:
             p.relative_to(canonical.parent).as_posix()
             for p in (canonical.parent / "skill_assessments").glob("*.json")
         }
+        needed |= {
+            p.relative_to(canonical.parent).as_posix()
+            for p in (canonical.parent / "role_assessments").glob("*.json")
+        }
+        for reference in needed.copy():
+            if reference.startswith(("skill_assessments/", "role_assessments/")):
+                record = read_json(local_file(canonical.parent, reference), {})
+                needed.add(record["source_review_path"])
+        for reference in needed.copy():
+            if reference.startswith("ai_reviews/"):
+                record = read_json(local_file(canonical.parent, reference), {})
+                if record.get("candidate_path"):
+                    needed.add(record["candidate_path"])
         for reference in needed:
             source = local_file(canonical.parent, reference)
             if source.exists():
@@ -390,9 +406,105 @@ class ReviewMenuService:
                     news["source"]["source_url"],
                 )
             )
+        role_items, role_stats = role_evidence.active_assessments(
+            state_path=self.state_path,
+            catalog=self.catalog or real_catalog(),
+            model=self.model,
+            decisions_path=self.role_path,
+            skill_decisions_path=self.mapping_path,
+        )
+        role_decisions = read_json(self.role_path, {"decisions": {}})["decisions"]
+        for entry in role_items:
+            record, news = entry["record"], entry["news"]["packet"]
+            digest = fingerprint(record)
+            decision = role_decisions.get(digest)
+            assessment = record["assessment"]
+            block = entry["block_reason"]
+            status = (
+                "Approved"
+                if entry["approved"]
+                else "Rejected"
+                if decision and decision["decision"] == "reject"
+                else "Check failed"
+                if "latest AI role check failed" in block
+                else "No connection found"
+                if assessment["relevance"] == "not_relevant"
+                else "Insufficient evidence"
+                if assessment["relevance"] == "insufficient_evidence"
+                else "Check flagged"
+                if block
+                else "Needs review"
+            )
+            details = [
+                "STATUS: " + status,
+                block or "Ready for your role impact decision.",
+                "",
+                record["role"]["role_title"],
+                news["title"],
+                assessment["rationale"],
+                "",
+                "ROLE TASKS SUPPORTED BY THESE FINDINGS",
+            ]
+            details += [
+                "• " + t["label"] + " — " + t["task_id"]
+                for t in record["role"]["tasks"]
+                if t["task_id"] in assessment["task_ids"]
+            ]
+            details += [
+                "",
+                "APPLIES WHEN",
+                *["• " + c for c in assessment["applicability_conditions"]],
+                "",
+                "WHAT TO CHECK",
+                *["• " + c for c in assessment["human_checks"]],
+            ]
+            if record["challenge"]:
+                details += ["", "Skeptic: " + record["challenge"]["reason"]]
+            details += ["", "SUPPORTING FINDINGS"]
+            for finding in news["findings"]:
+                if finding["finding_index"] in assessment["finding_indices"]:
+                    details += [
+                        "• " + finding["claim"],
+                        f"  Quote: “{finding['quote']}” — {finding['reference']['passage_id']}",
+                    ]
+            details += [
+                "",
+                "SHORTLISTED THROUGH SKILLS (not proof of role impact)",
+                *[s["skill_id"] for s in record["shortlist"]],
+                "",
+                "Reviewed: " + record["assessed_at"],
+                "Models: " + " / ".join(record["returned_models"]),
+                "",
+                "Approval means conditional role/task relevance. It does not establish employment effects, task-to-skill links or change learning weights.",
+            ]
+            if decision:
+                details += [
+                    "",
+                    f"Decision: {decision['decision']} · {decision['reviewer']}",
+                    decision.get("reason", ""),
+                ]
+            items.append(
+                ReviewItem(
+                    "role:" + digest,
+                    "role",
+                    news["title"],
+                    record["role"]["role_title"],
+                    status,
+                    assessment["relevance"],
+                    fingerprint({"record": digest, "decision": decision}),
+                    "\n".join(details),
+                    record["news_id"],
+                    mapping_sha256=digest,
+                    approvable=not block,
+                    block_reason=block,
+                    url=news["source"]["source_url"],
+                    role_id=record["role"]["role_id"],
+                )
+            )
         return {
             "items": items,
             "stats": stats,
+            "role_stats": role_stats,
             "run": self.manifest().get("run"),
             "pending_paths": self.manifest()["pending_paths"],
         }
@@ -452,6 +564,19 @@ class ReviewMenuService:
             if row.get("ai_review_path"):
                 canonical = self.root / STATE.relative_to(ROOT)
                 self._mark_pending(canonical.parent / row["ai_review_path"])
+        elif item.kind == "role":
+            role_evidence.decide_impact(
+                item.mapping_sha256,
+                decision=decision,
+                reviewer=reviewer,
+                reason=note,
+                state_path=self.state_path,
+                catalog=self.catalog or real_catalog(),
+                model=self.model,
+                decisions_path=self.role_path,
+                skill_decisions_path=self.mapping_path,
+            )
+            self._mark_pending(self.role_path)
         else:
             if decision == "approve":
                 approve_mapping(
@@ -490,7 +615,12 @@ class ReviewMenuService:
         item = self._current(key, expected_version)
         before = {
             p.relative_to(self.directory).as_posix()
-            for folder in ("ai_reviews", "findings", "skill_assessments")
+            for folder in (
+                "ai_reviews",
+                "findings",
+                "skill_assessments",
+                "role_assessments",
+            )
             for p in (self.directory / folder).glob("*.json")
         }
         if item.kind == "source":
@@ -502,6 +632,18 @@ class ReviewMenuService:
                 client=client,
             )
             failed = result["failed_reviews"]
+        elif item.kind == "role":
+            result = role_evidence.run_assessments(
+                state_path=self.state_path,
+                catalog=self.catalog or real_catalog(),
+                client=client,
+                role_ids=[item.role_id],
+                news_ids=[item.news_id],
+                force=True,
+                max_batches=1,
+                skill_decisions_path=self.mapping_path,
+            )
+            failed = result["failed_batches"]
         else:
             result = run_assessments(
                 state_path=self.state_path,
@@ -519,7 +661,12 @@ class ReviewMenuService:
         canonical = self.root / STATE.relative_to(ROOT)
         after = {
             p.relative_to(self.directory).as_posix()
-            for folder in ("ai_reviews", "findings", "skill_assessments")
+            for folder in (
+                "ai_reviews",
+                "findings",
+                "skill_assessments",
+                "role_assessments",
+            )
             for p in (self.directory / folder).glob("*.json")
         }
         self._mark_pending(
@@ -563,6 +710,15 @@ class ReviewMenuService:
             # history stays in the artifact rather than being bulk-committed.
             if path.stem in mapping_decisions:
                 references.add(path.relative_to(self.directory).as_posix())
+        role_decisions = read_json(self.role_path, {"decisions": {}})["decisions"]
+        for path in (self.directory / "role_assessments").glob("*.json"):
+            if path.stem in role_decisions:
+                references.add(path.relative_to(self.directory).as_posix())
+        for reference in references.copy():
+            if reference.startswith("role_assessments/"):
+                record = read_json(local_file(self.directory, reference), {})
+                references.add(record["source_review_path"])
+                references.update(s["assessment_path"] for s in record["shortlist"])
         # Preserve source/candidate provenance for reviewed historical mappings
         # and prior source decisions, even after a later recheck changes the queue.
         for reference in references.copy():
@@ -580,7 +736,12 @@ class ReviewMenuService:
             target = local_file(canonical.parent, reference)
             atomic_bytes(target, source.read_bytes())
             paths.add(target.relative_to(self.root).as_posix())
-        allowed = {self.sources_path, self.registry_path, self.mapping_path}
+        allowed = {
+            self.sources_path,
+            self.registry_path,
+            self.mapping_path,
+            self.role_path,
+        }
         for name in paths:
             path = (self.root / name).resolve()
             if path not in allowed and not path.is_relative_to(

@@ -5,6 +5,12 @@ any occupation or skill catalog. A separate stage assesses each skill against
 stored, supported findings. End-user role queries only join saved results with
 Person 1's current role–skill catalog; they never call Gemini or refetch news.
 
+The separate [role impact stage](ROLE_3_ROLE_IMPACTS.md) can now shortlist roles
+through supported positive skill checks and assess their actual tasks against
+approved-source findings. It has its own cache and human decisions; shared skill
+lookup still needs no role-specific AI call. Adding/changing a role can now queue
+that separate stage without repeating unchanged skill checks.
+
 ## What changes trigger work
 
 | Catalog or evidence change | Work required |

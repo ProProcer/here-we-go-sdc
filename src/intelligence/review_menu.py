@@ -83,12 +83,12 @@ class ReviewMenu:
         self.save_button.pack(side="right")
         self.summary = ttk.Label(shell, text="", foreground=MUTED)
         self.summary.grid(row=1, column=0, sticky="ew", pady=(18, 5))
-        ttk.Label(shell, textvariable=self.context, foreground=MUTED).grid(
-            row=2, column=0, sticky="ew", pady=(0, 12)
-        )
+        ttk.Label(
+            shell, textvariable=self.context, foreground=MUTED, wraplength=860
+        ).grid(row=2, column=0, sticky="ew", pady=(0, 12))
         controls = ttk.Frame(shell)
         controls.grid(row=3, column=0, sticky="ew", pady=(0, 10))
-        for name in ("Sources", "Skill connections"):
+        for name in ("Sources", "Skill connections", "Role impacts"):
             ttk.Radiobutton(
                 controls,
                 text=name,
@@ -111,12 +111,12 @@ class ReviewMenu:
                 "All",
             ),
             state="readonly",
-            width=22,
+            width=20,
         )
         combo.pack(side="left", padx=(10, 14))
         combo.bind("<<ComboboxSelected>>", lambda event: self.render_list())
         ttk.Label(controls, text="Search").pack(side="left", padx=(0, 6))
-        ttk.Entry(controls, textvariable=self.search, width=35).pack(
+        ttk.Entry(controls, textvariable=self.search, width=20).pack(
             side="left", fill="x", expand=True
         )
         self.search.trace_add("write", lambda *args: self.render_list())
@@ -132,7 +132,7 @@ class ReviewMenu:
             height=6,
         )
         for key, label, width in (
-            ("title", "ARTICLE / SKILL", 300),
+            ("title", "ARTICLE / SKILL / ROLE", 300),
             ("status", "STATUS", 160),
         ):
             self.tree.heading(key, text=label)
@@ -232,7 +232,14 @@ class ReviewMenu:
         query = self.search.get().strip().casefold()
         visible = []
         for item in self.items.values():
-            if (item.kind == "source") != (self.view.get() == "Sources"):
+            if (
+                item.kind
+                != {
+                    "Sources": "source",
+                    "Skill connections": "mapping",
+                    "Role impacts": "role",
+                }[self.view.get()]
+            ):
                 continue
             if self.filter.get() != "All" and item.status != self.filter.get():
                 continue
@@ -263,9 +270,23 @@ class ReviewMenu:
             self.tree.selection_set(key)
             self.tree.focus(key)
         else:
-            self._details(
-                "No review item selected. The coverage totals above show any work still pending."
-            )
+            role_stats = self.snapshot.get("role_stats")
+            if self.view.get() == "Role impacts" and role_stats:
+                self._details(
+                    "ROLE IMPACT COVERAGE\n\n"
+                    f"{role_stats['completed_pairs']:,} shortlisted role/article pairs checked; "
+                    f"{role_stats['pending_pairs']:,} waiting for a role check.\n\n"
+                    "Role checks start after you approve a source and AI finds a supported positive skill connection. "
+                    "Skill checks you reject are excluded from the shortlist. "
+                    "Skill approval and role impact approval are separate decisions.\n\n"
+                    f"{role_stats['skill_pairs_pending']:,} skill/article pairs are still pending upstream. "
+                    "An empty shortlist does not mean every role was checked or unaffected.\n\n"
+                    "Load the latest completed GitHub report for new results. Choose All to include decided and negative assessments."
+                )
+            else:
+                self._details(
+                    "No review item selected. The coverage totals above show any work still pending."
+                )
         self.show_selected()
 
     def apply_snapshot(self, snapshot):
@@ -283,6 +304,11 @@ class ReviewMenu:
                 else "Saved repository snapshot — load the latest GitHub report before your daily review."
             )
             + ("  ·  Local changes ready to save" if snapshot["pending_paths"] else "")
+            + (
+                f"  ·  Role shortlist: {snapshot['role_stats']['completed_pairs']:,} checked / {snapshot['role_stats']['candidate_pairs']:,} candidates"
+                if "role_stats" in snapshot
+                else ""
+            )
         )
         self.render_list()
 

@@ -8,6 +8,7 @@ from datetime import UTC, datetime
 from src.ingestion.onet import ROOT, write_json
 from src.ingestion.selection import real_catalog
 from src.intelligence.outlook import get_outlook
+from src.intelligence.role_evidence import evidence_for_role as role_impacts_for_role
 from src.intelligence.skill_evidence import evidence_for_role
 from src.profiles.intake import create_profile, create_profile_from_cv, review_profile
 from src.profiles.onet_matching import OnetMatcher
@@ -32,6 +33,10 @@ class CareerBackend:
 
     def create_profile(self, profile_id, entries, **kwargs):
         return create_profile(profile_id, entries, catalog=self.catalog, **kwargs)
+
+    def role_impacts(self, role_id, **kwargs):
+        """Offline, explicitly reviewed role/task interpretations; no score changes."""
+        return role_impacts_for_role(role_id, catalog=self.catalog, **kwargs)
 
     def extract_profile(self, profile_id, content, filename):
         return create_profile_from_cv(

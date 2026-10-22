@@ -36,6 +36,14 @@ pinned Pydantic dependency through `uv`.
    scheduled workflow can then read your decisions. The app keeps unsaved changes
    locally and asks you to save them before loading another report.
 
+The **Role impacts** tab adds a separate review of actual role tasks against
+article findings. After you approve a source, supported positive skill checks
+shortlist roles for the daily AI checker; rejected skill connections are excluded.
+Load a completed report to review the proposed task impacts, conditions and
+supporting quotes. Approve, reject and recheck work independently of skill decisions.
+The shortlist totals and upstream skill backlog explain incomplete coverage.
+See the [role impact guide](ROLE_3_ROLE_IMPACTS.md) for the workflow and storage.
+
 You can filter by decision and search by article or skill. Enter your reviewer
 name for the audit record. A review note is required for rejection and can also
 explain an approval. You can revise a decision from **Approved**, **Rejected** or
@@ -72,8 +80,8 @@ by discarding work. The app is an owner-operated tool, not a multi-user authenti
 review service; reviewer labels remain self-declared audit labels.
 
 The menu does not change the accepted finding ledger, occupational ratings,
-personal fit or numerical learning priorities. Approved conditional mappings are
-available through the existing shared skill-evidence lookup. Finding admission
+personal fit or numerical learning priorities. Approved conditional skill mappings
+and role/task interpretations have separate offline lookups. Finding admission
 and numerical adjustments remain separate reviewed steps. Full catalog mapping
 continues in bounded batches and its coverage/backlog counts remain visible.
 

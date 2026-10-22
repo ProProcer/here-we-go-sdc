@@ -11,9 +11,11 @@ from urllib.error import HTTPError
 from urllib.request import HTTPHandler, Request, build_opener
 from urllib.response import addinfourl
 
+from test_role_evidence import StubRoleMapper
 from test_skill_evidence import StubMapper, catalog
 from test_source_review import HTML, NOW, ROW, StubReviewer, metadata
 
+from src.intelligence import role_evidence
 from src.intelligence.discovery import CONFIG, DECISIONS, STATE
 from src.intelligence.review_github import (
     ArtifactRedirect,
@@ -22,7 +24,7 @@ from src.intelligence.review_github import (
 )
 from src.intelligence.review_menu_service import ROOT, ReviewMenuService
 from src.intelligence.skill_evidence import active_assessments, run_assessments
-from src.intelligence.source_review import run_reviews
+from src.intelligence.source_review import fingerprint, run_reviews
 from src.intelligence.sources import DEFAULT_REGISTRY
 from src.intelligence.storage import atomic_json
 
@@ -36,6 +38,21 @@ def archive_bytes(files):
 
 
 class TestReviewDownloads(unittest.TestCase):
+    def test_role_artifacts_are_loaded_with_exact_provenance_bytes(self):
+        files = unpack_review_artifact(
+            archive_bytes(
+                {
+                    "queue.json": '{"items":[]}',
+                    "role_assessments/a.json": '{"assessment":"example"}\n',
+                    "role_jobs.json": '{"errors":{}}',
+                    "ROLE_REVIEW_BRIEF.md": "Conditional role checks\n",
+                }
+            )
+        )
+        self.assertEqual(
+            files["role_assessments/a.json"], b'{"assessment":"example"}\n'
+        )
+
     def test_real_redirect_handler_returns_302_without_following_with_auth(self):
         calls = []
 
@@ -224,6 +241,110 @@ class TestReviewMenuActions(unittest.TestCase):
         )
         self.assertEqual(mapping.status, "Approved")
         self.assertTrue(self.service.manifest()["pending_paths"])
+
+    def prepare_role_impact(self):
+        from types import SimpleNamespace
+
+        source = self.approve_source()
+        self.catalog.roles[0].role_title = "Fictional developer"
+        self.catalog.roles[0].task_ids = ["task:code"]
+        self.catalog.taxonomy.tasks = [
+            SimpleNamespace(task_id="task:code", label="Write and evaluate code.")
+        ]
+        role_evidence.run_assessments(
+            state_path=self.service.state_path,
+            catalog=self.catalog,
+            client=StubRoleMapper(),
+            now=NOW,
+            skill_decisions_path=self.service.mapping_path,
+        )
+        return source, self.item("role")
+
+    def test_role_approval_rejection_and_recheck_are_separate_from_skill_decisions(
+        self,
+    ):
+        _, item = self.prepare_role_impact()
+        self.assertTrue(item.approvable)
+        self.assertIn("Write and evaluate code.", item.details)
+        self.service.decide(item.key, item.version, "approve", "Fictional owner")
+        item = self.item("role")
+        self.assertEqual(item.status, "Approved")
+        self.assertTrue(self.service.role_path.exists())
+        self.assertFalse(self.service.mapping_path.exists())
+        self.service.decide(
+            item.key, item.version, "reject", "Fictional owner", "Wrong setting."
+        )
+        item = self.item("role")
+        self.assertEqual(item.status, "Rejected")
+        self.assertEqual(
+            json.loads(self.service.role_path.read_text())["decisions"][
+                item.mapping_sha256
+            ]["history"][0]["decision"],
+            "approve",
+        )
+        client = StubRoleMapper()
+        result = self.service.recheck(item.key, item.version, client)
+        self.assertFalse(result["failed"])
+        self.assertEqual(len(client.calls), 2)
+        self.assertEqual(client.calls[0][1]["role"]["role_id"], item.role_id)
+        self.assertEqual(
+            [n["news_id"] for n in client.calls[0][1]["news"]], [item.news_id]
+        )
+        self.assertTrue(
+            any("role_assessments/" in p for p in result["snapshot"]["pending_paths"])
+        )
+        self.assertFalse(
+            any(
+                i.kind == "role" and i.status == "Approved"
+                for i in result["snapshot"]["items"]
+            )
+        )
+
+    def test_failed_role_recheck_is_visible_and_source_rejection_removes_role_impacts(
+        self,
+    ):
+        source, item = self.prepare_role_impact()
+        result = self.service.recheck(item.key, item.version, StubRoleMapper(fail=True))
+        self.assertTrue(result["failed"])
+        item = self.item("role")
+        self.assertEqual(item.status, "Check failed")
+        self.assertFalse(item.approvable)
+        self.assertIn("previous assessment", item.details)
+        with self.assertRaisesRegex(ValueError, "latest AI role check failed"):
+            self.service.decide(item.key, item.version, "approve", "Fictional owner")
+        source = next(
+            i for i in self.service.snapshot()["items"] if i.key == source.key
+        )
+        snapshot = self.service.decide(
+            source.key, source.version, "reject", "Fictional owner", "Source withdrawn."
+        )
+        self.assertFalse(any(i.kind == "role" for i in snapshot["items"]))
+
+    def test_publish_role_decision_preserves_skill_and_source_provenance(self):
+        _, item = self.prepare_role_impact()
+        self.service.decide(item.key, item.version, "approve", "Fictional owner")
+
+        def git(*args):
+            if args[:3] == ("remote", "get-url", "origin"):
+                return "https://github.com/ProProcer/here-we-go-sdc.git"
+            if args[:2] == ("branch", "--show-current"):
+                return "main"
+            return "review changes" if args[0] == "diff" else ""
+
+        self.service.publish(git)
+        record_path = (
+            self.canonical.parent / "role_assessments" / f"{item.mapping_sha256}.json"
+        )
+        self.assertTrue(record_path.exists())
+        record = json.loads(record_path.read_text())
+        self.assertTrue((self.canonical.parent / record["source_review_path"]).exists())
+        for link in record["shortlist"]:
+            path = self.canonical.parent / link["assessment_path"]
+            self.assertTrue(path.exists())
+            self.assertEqual(
+                fingerprint(json.loads(path.read_text())), link["assessment_sha256"]
+            )
+        self.assertEqual(self.service.manifest()["pending_paths"], [])
 
     def test_mapping_status_explains_why_approval_is_disabled(self):
         entries, stats = active_assessments(

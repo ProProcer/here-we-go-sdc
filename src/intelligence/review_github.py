@@ -19,8 +19,10 @@ ROOT_FILES = {
     "SKILL_REVIEW_BRIEF.md",
     "skill_jobs.json",
     "skill_index.json",
+    "ROLE_REVIEW_BRIEF.md",
+    "role_jobs.json",
 }
-DIRECTORIES = {"ai_reviews", "findings", "skill_assessments"}
+DIRECTORIES = {"ai_reviews", "findings", "skill_assessments", "role_assessments"}
 
 
 class ArtifactRedirect(HTTPRedirectHandler):

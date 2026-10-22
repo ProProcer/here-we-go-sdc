@@ -138,6 +138,11 @@ For a private button-based workflow, double-click **`Review Role 3.cmd`** on you
 laptop. The [review menu guide](docs/ROLE_3_REVIEW_MENU.md) explains loading the
 latest GitHub report, approving/rejecting items, targeted AI rechecks and saving
 your reviewed decisions back to GitHub.
+The [role impact checker](docs/ROLE_3_ROLE_IMPACTS.md) now shortlists roles through
+supported skill connections, checks actual role tasks against stored findings,
+and adds a **Role impacts** tab with separate approval, rejection and AI rechecks.
+Current approved interpretations are available offline through
+`CareerBackend.role_impacts(role_id)`; they do not change numerical weights.
 The [first evidence-chain deliverable](docs/ROLE_3_EVIDENCE_CHAIN.md) connects a
 refreshable cited finding to a proposed task interpretation and explained
 Python/SQL skill implications. It includes an offline example and live-fetch

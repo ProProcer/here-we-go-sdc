@@ -36,4 +36,5 @@ Desktop.ini
 # Runtime discovery checkpoints are retained in the Actions state artifact.
 data/review/discovery/skill_index.json
 data/review/discovery/skill_jobs.json
+data/review/discovery/role_jobs.json
 .role3-review/
