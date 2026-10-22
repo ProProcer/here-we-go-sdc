@@ -1,0 +1,73 @@
+{
+  "findings": [
+    {
+      "claim": "The agent framework combines foundation models, spatial tools, and upfront planning to perform complex spatial analysis.",
+      "evidence_type": "benchmark",
+      "support": {
+        "passage_id": "p0003",
+        "quote": "enables a Geospatial Reasoning agent",
+        "section": "Putting Earth AI to work: Geospatial agents for our planet's biggest challenges",
+        "passage_sha256": "4a36ffc0fd57f618a684db70f884de8d8493a4520e470218894439fc253c2e6e",
+        "quote_start": 127,
+        "quote_end": 163
+      },
+      "study_period": {
+        "start": null,
+        "end": null,
+        "passage_id": null
+      },
+      "limitations": [
+        "AI-reviewed context; external abstracts do not establish independent corroboration or workplace outcomes."
+      ],
+      "candidate_id": "candidate:ad0e47b672ad819d8deb1f4c",
+      "study_period_passage_sha256": null,
+      "review_status": "pending_review"
+    },
+    {
+      "claim": "Testing with partner organizations demonstrated real-world applications in disease outbreak investigations and disaster preparedness workflows.",
+      "evidence_type": "observed_usage",
+      "support": {
+        "passage_id": "p0013",
+        "quote": "disease outbreak investigations, disaster preparedness",
+        "section": "Putting Earth AI to work: Geospatial agents for our planet's biggest challenges > Quick links",
+        "passage_sha256": "2349cc3b87f63f3544afad99a0730510dadb2c93c6e0a15db121858d7c57bc01",
+        "quote_start": 356,
+        "quote_end": 410
+      },
+      "study_period": {
+        "start": null,
+        "end": null,
+        "passage_id": null
+      },
+      "limitations": [
+        "AI-reviewed context; external abstracts do not establish independent corroboration or workplace outcomes."
+      ],
+      "candidate_id": "candidate:e015431e1b78738941748f39",
+      "study_period_passage_sha256": null,
+      "review_status": "pending_review"
+    }
+  ],
+  "no_findings_reason": null,
+  "schema_version": "0.1.0",
+  "record_type": "candidate_extraction",
+  "review_status": "pending_review",
+  "source": {
+    "source_id": "source:discovered_4c456e668ef45cba83b59adb",
+    "source_url": "https://research.google/blog/putting-earth-ai-to-work-geospatial-agents-for-our-planets-biggest-challenges/",
+    "publisher": "Google Research",
+    "published_at": "2026-10-14"
+  },
+  "report_title": "Putting Earth AI to work: Geospatial agents for our planet's biggest challenges",
+  "fetched_at": "2026-10-22T14:45:27.975057Z",
+  "response_sha256": "e11938dd2a723a1044c08052228072f979d107c91f8c4650a008c0dfe0f5d8f0",
+  "parsed_text_sha256": "375eb401c52ae75aa1fd6ed5be435aa4dc6e68895dc2d4a26ae5e2feea814b2d",
+  "passage_count": 65,
+  "parsed_characters": 21820,
+  "provider": "gemini",
+  "requested_model": "gemini-3.1-flash-lite",
+  "returned_model": "gemini-3.5-flash-lite",
+  "prompt_version": "source-review-v3",
+  "limitations": [
+    "AI review requires human approval; quote checks do not independently prove semantic correctness."
+  ]
+}

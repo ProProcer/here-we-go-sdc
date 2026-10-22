@@ -1,6 +1,6 @@
 {
   "schema_version": "0.1.0",
-  "last_run_at": "2026-10-22T07:58:39.091032+00:00",
+  "last_run_at": "2026-10-22T14:45:25.949443+00:00",
   "feeds": [
     {
       "feed_id": "google_research",
@@ -12,7 +12,7 @@
       "feed_id": "microsoft_research",
       "status": "ok",
       "matches": 1,
-      "response_sha256": "49fd487519de325e86d3ed21d3915d8259da7ca53db9e27b1db2e72da566f41d"
+      "response_sha256": "c93310c6d3636c170211d5af5b6d59cfed0a343d178ed6622e626156865fee5a"
     }
   ],
   "items": [
@@ -24,13 +24,13 @@
       "published_at": "2026-10-16",
       "feed_id": "google_research",
       "first_seen_at": "2026-10-22T07:58:39.091032+00:00",
-      "last_seen_at": "2026-10-22T07:58:39.091032+00:00",
+      "last_seen_at": "2026-10-22T14:45:25.949443+00:00",
       "metadata_changed": false,
-      "source_review_status": "pending_review",
-      "ai_review_path": "ai_reviews/dd1029b4b030aba3c24c66f5_1e97e386d57b.json",
+      "source_review_status": "approve",
+      "ai_review_path": "ai_reviews/dd1029b4b030aba3c24c66f5_12a4552cdb1d.json",
       "ai_recommendation": "investigate",
-      "extraction_path": "findings/ai_review_dd1029b4b030aba3c24c66f5_5b2ad09853a8.json",
-      "ai_review_attempted_at": "2026-10-22T14:04:19.978814+00:00"
+      "extraction_path": "findings/ai_review_dd1029b4b030aba3c24c66f5_9d31af37e236.json",
+      "ai_review_attempted_at": "2026-10-22T14:45:27.975057+00:00"
     },
     {
       "discovery_id": "4c456e668ef45cba83b59adb",
@@ -40,13 +40,13 @@
       "published_at": "2026-10-14",
       "feed_id": "google_research",
       "first_seen_at": "2026-10-22T07:58:39.091032+00:00",
-      "last_seen_at": "2026-10-22T07:58:39.091032+00:00",
+      "last_seen_at": "2026-10-22T14:45:25.949443+00:00",
       "metadata_changed": false,
-      "source_review_status": "pending_review",
-      "ai_review_attempted_at": "2026-10-22T13:58:53.492781+00:00",
-      "ai_review_path": "ai_reviews/4c456e668ef45cba83b59adb_4a1fb319b582.json",
+      "source_review_status": "approve",
+      "ai_review_path": "ai_reviews/4c456e668ef45cba83b59adb_647aa5cd9cc2.json",
       "ai_recommendation": "consider_approval",
-      "extraction_path": "findings/ai_review_4c456e668ef45cba83b59adb_4c0785082992.json"
+      "extraction_path": "findings/ai_review_4c456e668ef45cba83b59adb_b891396af793.json",
+      "ai_review_attempted_at": "2026-10-22T14:45:27.975057+00:00"
     },
     {
       "discovery_id": "e986592dff42085cd40df279",
@@ -56,13 +56,13 @@
       "published_at": "2026-10-07",
       "feed_id": "microsoft_research",
       "first_seen_at": "2026-10-22T07:58:39.091032+00:00",
-      "last_seen_at": "2026-10-22T07:58:39.091032+00:00",
+      "last_seen_at": "2026-10-22T14:45:25.949443+00:00",
       "metadata_changed": false,
-      "source_review_status": "pending_review",
-      "ai_review_attempted_at": "2026-10-22T13:58:53.492781+00:00",
-      "ai_review_path": "ai_reviews/e986592dff42085cd40df279_913b3cd001ee.json",
+      "source_review_status": "reject",
+      "ai_review_path": "ai_reviews/e986592dff42085cd40df279_9b8305582dd4.json",
       "ai_recommendation": "investigate",
-      "extraction_path": "findings/ai_review_e986592dff42085cd40df279_1b20944958b5.json"
+      "extraction_path": "findings/ai_review_e986592dff42085cd40df279_e78ef5080def.json",
+      "ai_review_attempted_at": "2026-10-22T16:19:08.965932+00:00"
     },
     {
       "discovery_id": "7eeb0a9dde53453907ecbc46",
@@ -72,10 +72,9 @@
       "published_at": "2026-10-05",
       "feed_id": "google_research",
       "first_seen_at": "2026-10-22T07:58:39.091032+00:00",
-      "last_seen_at": "2026-10-22T07:58:39.091032+00:00",
+      "last_seen_at": "2026-10-22T14:45:25.949443+00:00",
       "metadata_changed": false,
-      "source_review_status": "pending_review",
-      "ai_review_attempted_at": "2026-10-22T13:58:53.492781+00:00",
+      "source_review_status": "reject",
       "ai_review_path": "ai_reviews/7eeb0a9dde53453907ecbc46_2be1d77ae64a.json",
       "ai_recommendation": "investigate",
       "extraction_path": "findings/ai_review_7eeb0a9dde53453907ecbc46_35b2b5ac91a6.json"
@@ -88,10 +87,9 @@
       "published_at": "2026-09-17",
       "feed_id": "google_research",
       "first_seen_at": "2026-10-22T07:58:39.091032+00:00",
-      "last_seen_at": "2026-10-22T07:58:39.091032+00:00",
+      "last_seen_at": "2026-10-22T14:45:25.949443+00:00",
       "metadata_changed": false,
-      "source_review_status": "pending_review",
-      "ai_review_attempted_at": "2026-10-22T13:58:53.492781+00:00",
+      "source_review_status": "approve",
       "ai_review_path": "ai_reviews/0f83c2d1d5b8034398fa197c_aa8f8a6e1795.json",
       "ai_recommendation": "consider_approval",
       "extraction_path": "findings/ai_review_0f83c2d1d5b8034398fa197c_dad1df163e17.json"
@@ -104,10 +102,9 @@
       "published_at": "2026-08-25",
       "feed_id": "google_research",
       "first_seen_at": "2026-10-22T07:58:39.091032+00:00",
-      "last_seen_at": "2026-10-22T07:58:39.091032+00:00",
+      "last_seen_at": "2026-10-22T14:45:25.949443+00:00",
       "metadata_changed": false,
-      "source_review_status": "pending_review",
-      "ai_review_attempted_at": "2026-10-22T13:58:53.492781+00:00",
+      "source_review_status": "reject",
       "ai_review_path": "ai_reviews/16b919027b43c28e9ba7f950_d74f8afbfc62.json",
       "ai_recommendation": "investigate",
       "extraction_path": "findings/ai_review_16b919027b43c28e9ba7f950_24010fd937ee.json"
@@ -120,10 +117,9 @@
       "published_at": "2026-08-21",
       "feed_id": "google_research",
       "first_seen_at": "2026-10-22T07:58:39.091032+00:00",
-      "last_seen_at": "2026-10-22T07:58:39.091032+00:00",
+      "last_seen_at": "2026-10-22T14:45:25.949443+00:00",
       "metadata_changed": false,
-      "source_review_status": "pending_review",
-      "ai_review_attempted_at": "2026-10-22T14:08:37.665320+00:00",
+      "source_review_status": "approve",
       "ai_review_path": "ai_reviews/4f98c5029119950e7f82e09b_c8c2e9b8e835.json",
       "ai_recommendation": "consider_approval",
       "extraction_path": "findings/ai_review_4f98c5029119950e7f82e09b_ab4ce3becb7a.json"

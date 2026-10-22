@@ -1,1 +1,54 @@
-{"schema_version": "0.1.0", "decisions": []}
+{
+  "schema_version": "0.1.0",
+  "decisions": [
+    {
+      "discovery_id": "dd1029b4b030aba3c24c66f5",
+      "decision": "approve",
+      "reviewer": "Ivan",
+      "reason": "Human reviewed AI brief 355e2cf869b36aba6cfd084785ed59e1c9db8ceed3ad53eca3590c5df595e9bf; unresolved checks considered. Source approval only.",
+      "reviewed_at": "2026-10-22T16:16:03.500578+00:00"
+    },
+    {
+      "discovery_id": "7eeb0a9dde53453907ecbc46",
+      "decision": "reject",
+      "reviewer": "Ivan",
+      "reason": "The method is unclear, the workshop report findings without detailed empirical testing methodology",
+      "reviewed_at": "2026-10-22T16:17:24.337107+00:00"
+    },
+    {
+      "discovery_id": "16b919027b43c28e9ba7f950",
+      "decision": "reject",
+      "reviewer": "Ivan",
+      "reason": "The limitations: unclear limited sample size and lacks independent replication",
+      "reviewed_at": "2026-10-22T16:18:11.011843+00:00"
+    },
+    {
+      "discovery_id": "4c456e668ef45cba83b59adb",
+      "decision": "approve",
+      "reviewer": "Ivan",
+      "reason": "Human reviewed AI brief a8fb7665c5b216f598038edd1743b914ab85a48a4543fda2a60d069529a206c4; unresolved checks considered. Source approval only.",
+      "reviewed_at": "2026-10-22T16:18:38.018566+00:00"
+    },
+    {
+      "discovery_id": "0f83c2d1d5b8034398fa197c",
+      "decision": "approve",
+      "reviewer": "Ivan",
+      "reason": "Human reviewed AI brief db3664a2bae60a3f58ec5088b5ab7e3f4bcf099015533eeb3223886e8d62a27c; unresolved checks considered. Source approval only.",
+      "reviewed_at": "2026-10-22T16:18:55.542145+00:00"
+    },
+    {
+      "discovery_id": "4f98c5029119950e7f82e09b",
+      "decision": "approve",
+      "reviewer": "Ivan",
+      "reason": "Human reviewed AI brief 9bda8530fcd49e238a42353d6620adf747e519cad2b84ac972bf5eaf7c513f7e; unresolved checks considered. Source approval only.",
+      "reviewed_at": "2026-10-22T16:19:01.435826+00:00"
+    },
+    {
+      "discovery_id": "e986592dff42085cd40df279",
+      "decision": "reject",
+      "reviewer": "Ivan",
+      "reason": "The article changes since AI Review",
+      "reviewed_at": "2026-10-22T16:21:06.839214+00:00"
+    }
+  ]
+}

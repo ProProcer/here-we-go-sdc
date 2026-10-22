@@ -1,0 +1,196 @@
+{
+  "schema_version": "0.1.0",
+  "record_type": "ai_source_review",
+  "status": "pending_human_review",
+  "discovery_id": "dd1029b4b030aba3c24c66f5",
+  "reviewed_at": "2026-10-22T14:45:27.975057+00:00",
+  "source": {
+    "source_id": "source:discovered_dd1029b4b030aba3c24c66f5",
+    "source_url": "https://research.google/blog/grounding-ai-agents-in-biological-reality-building-blocks-for-autonomous-wet-labs/",
+    "publisher": "Google Research",
+    "published_at": "2026-10-16"
+  },
+  "article_title": "Grounding AI agents in biological reality: Building blocks for autonomous wet labs",
+  "source_item_sha256": "836df9a29216fcc620eb64e8a74eab11934f1e1aae697cbc2c8943dc356cb874",
+  "context_sha256": "6d3678f08fd74d2d2bfcec976e9857cef2a555baa2503b092b1dd4063d910ee6",
+  "role_id": "shared_work_evidence",
+  "role_title": "Shared evidence across skills and occupations",
+  "review_scope": "shared_work_evidence",
+  "prompt_version": "source-review-v3",
+  "requested_model": "gemini-3.1-flash-lite",
+  "returned_models": [
+    "gemini-3.5-flash-lite",
+    "gemini-3.5-flash-lite"
+  ],
+  "request_attempts": [
+    [
+      {
+        "model": "gemini-3.1-flash-lite",
+        "outcome": "HTTP 503"
+      },
+      {
+        "model": "gemini-3.5-flash-lite",
+        "outcome": "success"
+      }
+    ],
+    [
+      {
+        "model": "gemini-3.1-flash-lite",
+        "outcome": "HTTP 503"
+      },
+      {
+        "model": "gemini-3.5-flash-lite",
+        "outcome": "success"
+      }
+    ]
+  ],
+  "logical_model_calls": 2,
+  "model_calls": 4,
+  "deterministic_checks": {
+    "configured_publisher_scope": true,
+    "publication_date_in_visible_article": true,
+    "grounded_primary_quotes": 2,
+    "grounding_passed": true,
+    "challenge_checked_every_finding": true
+  },
+  "parsed_text_sha256": "28e28c894c41f795dd381000f272cdf9ed9d01c931148441a462421d946e2061",
+  "documents": [
+    {
+      "document_id": "primary",
+      "url": "https://research.google/blog/grounding-ai-agents-in-biological-reality-building-blocks-for-autonomous-wet-labs/",
+      "title": "Grounding AI agents in biological reality: Building blocks for autonomous wet labs",
+      "kind": "publisher_article",
+      "coverage": "readable_article_text",
+      "response_sha256": "49eba5f48462d4b65ad4f0120493cb647df68b92eeefbfe1efd75dfc3cb26432",
+      "parsed_text_sha256": "28e28c894c41f795dd381000f272cdf9ed9d01c931148441a462421d946e2061"
+    }
+  ],
+  "retrieval_attempts": [
+    {
+      "url": "https://api.crossref.org/works?query.title=Grounding+AI+agents+in+biological+reality%3A+Building+blocks+for+autonomous+wet+labs&rows=3",
+      "status": "retrieved",
+      "matches": 0,
+      "coverage": "metadata_candidates_not_confirmed_corroboration"
+    }
+  ],
+  "draft": {
+    "summary": "Google Research introduces frameworks and automated workflows that ground AI agents in physical lab robotics for closed-loop molecular discovery and protein binding.",
+    "findings": [
+      {
+        "claim": "AI agents planned, simulated, and executed liquid-handling protocols on a robot using synchronized multi-camera views and live state tracking.",
+        "evidence_type": "observed_usage",
+        "reference": {
+          "document_id": "primary",
+          "passage_id": "p0015"
+        },
+        "quote": "executes liquid-handling protocols on"
+      },
+      {
+        "claim": "A human-agent hybrid pipeline nearly doubled the in-silico hit rate and discovered single-digit nanomolar FAP binders.",
+        "evidence_type": "benchmark",
+        "reference": {
+          "document_id": "primary",
+          "passage_id": "p0032"
+        },
+        "quote": "double the in-silico hit"
+      }
+    ],
+    "checks": [
+      {
+        "dimension": "authorship",
+        "status": "supported",
+        "explanation": "Authored by researchers from Google Research.",
+        "references": [
+          {
+            "document_id": "primary",
+            "passage_id": "p0002"
+          }
+        ]
+      },
+      {
+        "dimension": "methods",
+        "status": "supported",
+        "explanation": "Described live state tracking and robotic loops.",
+        "references": [
+          {
+            "document_id": "primary",
+            "passage_id": "p0013"
+          }
+        ]
+      },
+      {
+        "dimension": "limitations",
+        "status": "supported",
+        "explanation": "Noted challenges with spatial reasoning and failures.",
+        "references": [
+          {
+            "document_id": "primary",
+            "passage_id": "p0009"
+          }
+        ]
+      },
+      {
+        "dimension": "work_relevance",
+        "status": "supported",
+        "explanation": "Relevant to automated laboratory operations.",
+        "references": [
+          {
+            "document_id": "primary",
+            "passage_id": "p0003"
+          }
+        ]
+      }
+    ],
+    "cross_source_status": "not_established",
+    "cross_source_explanation": "No independent cross-source verification was retrieved.",
+    "cross_source_references": [],
+    "recommendation": "consider_approval",
+    "human_checks": [
+      "Verify underlying methodology in primary paper.",
+      "Assess reproducibility of robotic workflows."
+    ]
+  },
+  "automatic_corrections": [],
+  "challenge": {
+    "findings": [
+      {
+        "finding_index": 0,
+        "verdict": "supported",
+        "reason": "Directly supported by the text confirming AI agent planning, simulation, and execution."
+      },
+      {
+        "finding_index": 1,
+        "verdict": "supported",
+        "reason": "Directly supported by the text detailing the human-agent hybrid pipeline results."
+      }
+    ],
+    "checks_supported": true,
+    "cross_source_supported": false,
+    "recommendation_supported": true,
+    "unresolved_issues": [
+      "No external cross-source replication retrieved"
+    ]
+  },
+  "quote_checks": [
+    {
+      "passage_sha256": "3682d75357c0790440a647dbc2c78ba20913b929d953b5186539d604d138a856",
+      "quote_start": 49,
+      "quote_end": 86
+    },
+    {
+      "passage_sha256": "acf5d7fbf9c6b20a2c2ee9a749c3b812a590142b8d3bf6e355cbffa53d332ccb",
+      "quote_start": 121,
+      "quote_end": 145
+    }
+  ],
+  "grounding_error": null,
+  "recommendation": "investigate",
+  "supported_finding_indices": [
+    0,
+    1
+  ],
+  "correction_notices": [],
+  "human_signoff_claimed": false,
+  "independent_empirical_verification_claimed": false,
+  "candidate_path": "findings/ai_review_dd1029b4b030aba3c24c66f5_9d31af37e236.json"
+}

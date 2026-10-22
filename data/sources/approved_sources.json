@@ -12,6 +12,30 @@
       "source_url": "https://research.google/blog/ds-star-a-state-of-the-art-versatile-data-science-agent/",
       "publisher": "Google Research",
       "published_at": "2025-11-06"
+    },
+    {
+      "source_id": "source:discovered_dd1029b4b030aba3c24c66f5",
+      "source_url": "https://research.google/blog/grounding-ai-agents-in-biological-reality-building-blocks-for-autonomous-wet-labs/",
+      "publisher": "Google Research",
+      "published_at": "2026-10-16"
+    },
+    {
+      "source_id": "source:discovered_4c456e668ef45cba83b59adb",
+      "source_url": "https://research.google/blog/putting-earth-ai-to-work-geospatial-agents-for-our-planets-biggest-challenges/",
+      "publisher": "Google Research",
+      "published_at": "2026-10-14"
+    },
+    {
+      "source_id": "source:discovered_0f83c2d1d5b8034398fa197c",
+      "source_url": "https://research.google/blog/the-future-of-practice-enabling-teachers-to-create-learning-interactives-with-generative-ui/",
+      "publisher": "Google Research",
+      "published_at": "2026-09-17"
+    },
+    {
+      "source_id": "source:discovered_4f98c5029119950e7f82e09b",
+      "source_url": "https://research.google/blog/how-mobility-gives-language-models-a-deeper-understanding-of-place/",
+      "publisher": "Google Research",
+      "published_at": "2026-08-21"
     }
   ]
 }

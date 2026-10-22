@@ -1,0 +1,73 @@
+{
+  "findings": [
+    {
+      "claim": "AI agents planned, simulated, and executed liquid-handling protocols on a robot using synchronized multi-camera views and live state tracking.",
+      "evidence_type": "observed_usage",
+      "support": {
+        "passage_id": "p0015",
+        "quote": "executes liquid-handling protocols on",
+        "section": "Grounding AI agents in biological reality: Building blocks for autonomous wet labs > Grounding agents in physical reality",
+        "passage_sha256": "3682d75357c0790440a647dbc2c78ba20913b929d953b5186539d604d138a856",
+        "quote_start": 49,
+        "quote_end": 86
+      },
+      "study_period": {
+        "start": null,
+        "end": null,
+        "passage_id": null
+      },
+      "limitations": [
+        "AI-reviewed context; external abstracts do not establish independent corroboration or workplace outcomes."
+      ],
+      "candidate_id": "candidate:f0758e7d07c0426e6241c17c",
+      "study_period_passage_sha256": null,
+      "review_status": "pending_review"
+    },
+    {
+      "claim": "A human-agent hybrid pipeline nearly doubled the in-silico hit rate and discovered single-digit nanomolar FAP binders.",
+      "evidence_type": "benchmark",
+      "support": {
+        "passage_id": "p0032",
+        "quote": "double the in-silico hit",
+        "section": "Grounding AI agents in biological reality: Building blocks for autonomous wet labs > Accelerating de novo protein binder design",
+        "passage_sha256": "acf5d7fbf9c6b20a2c2ee9a749c3b812a590142b8d3bf6e355cbffa53d332ccb",
+        "quote_start": 121,
+        "quote_end": 145
+      },
+      "study_period": {
+        "start": null,
+        "end": null,
+        "passage_id": null
+      },
+      "limitations": [
+        "AI-reviewed context; external abstracts do not establish independent corroboration or workplace outcomes."
+      ],
+      "candidate_id": "candidate:a6f53cbe46d2bcdce2930331",
+      "study_period_passage_sha256": null,
+      "review_status": "pending_review"
+    }
+  ],
+  "no_findings_reason": null,
+  "schema_version": "0.1.0",
+  "record_type": "candidate_extraction",
+  "review_status": "pending_review",
+  "source": {
+    "source_id": "source:discovered_dd1029b4b030aba3c24c66f5",
+    "source_url": "https://research.google/blog/grounding-ai-agents-in-biological-reality-building-blocks-for-autonomous-wet-labs/",
+    "publisher": "Google Research",
+    "published_at": "2026-10-16"
+  },
+  "report_title": "Grounding AI agents in biological reality: Building blocks for autonomous wet labs",
+  "fetched_at": "2026-10-22T14:45:27.975057Z",
+  "response_sha256": "49eba5f48462d4b65ad4f0120493cb647df68b92eeefbfe1efd75dfc3cb26432",
+  "parsed_text_sha256": "28e28c894c41f795dd381000f272cdf9ed9d01c931148441a462421d946e2061",
+  "passage_count": 61,
+  "parsed_characters": 20066,
+  "provider": "gemini",
+  "requested_model": "gemini-3.1-flash-lite",
+  "returned_model": "gemini-3.5-flash-lite",
+  "prompt_version": "source-review-v3",
+  "limitations": [
+    "AI review requires human approval; quote checks do not independently prove semantic correctness."
+  ]
+}

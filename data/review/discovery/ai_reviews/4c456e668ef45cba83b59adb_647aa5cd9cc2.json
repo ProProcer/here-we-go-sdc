@@ -1,0 +1,238 @@
+{
+  "schema_version": "0.1.0",
+  "record_type": "ai_source_review",
+  "status": "pending_human_review",
+  "discovery_id": "4c456e668ef45cba83b59adb",
+  "reviewed_at": "2026-10-22T14:45:27.975057+00:00",
+  "source": {
+    "source_id": "source:discovered_4c456e668ef45cba83b59adb",
+    "source_url": "https://research.google/blog/putting-earth-ai-to-work-geospatial-agents-for-our-planets-biggest-challenges/",
+    "publisher": "Google Research",
+    "published_at": "2026-10-14"
+  },
+  "article_title": "Putting Earth AI to work: Geospatial agents for our planet's biggest challenges",
+  "source_item_sha256": "dad09e6840b0eb7cc8b5b3c4f108567b01e1fdf041cbf88d26c3909dfd5d4dac",
+  "context_sha256": "6d3678f08fd74d2d2bfcec976e9857cef2a555baa2503b092b1dd4063d910ee6",
+  "role_id": "shared_work_evidence",
+  "role_title": "Shared evidence across skills and occupations",
+  "review_scope": "shared_work_evidence",
+  "prompt_version": "source-review-v3",
+  "requested_model": "gemini-3.1-flash-lite",
+  "returned_models": [
+    "gemini-3.5-flash-lite",
+    "gemini-3.1-flash-lite"
+  ],
+  "request_attempts": [
+    [
+      {
+        "model": "gemini-3.1-flash-lite",
+        "outcome": "HTTP 503"
+      },
+      {
+        "model": "gemini-3.5-flash-lite",
+        "outcome": "success"
+      }
+    ],
+    [
+      {
+        "model": "gemini-3.1-flash-lite",
+        "outcome": "success"
+      }
+    ]
+  ],
+  "logical_model_calls": 2,
+  "model_calls": 3,
+  "deterministic_checks": {
+    "configured_publisher_scope": true,
+    "publication_date_in_visible_article": true,
+    "grounded_primary_quotes": 2,
+    "grounding_passed": true,
+    "challenge_checked_every_finding": true
+  },
+  "parsed_text_sha256": "375eb401c52ae75aa1fd6ed5be435aa4dc6e68895dc2d4a26ae5e2feea814b2d",
+  "documents": [
+    {
+      "document_id": "primary",
+      "url": "https://research.google/blog/putting-earth-ai-to-work-geospatial-agents-for-our-planets-biggest-challenges/",
+      "title": "Putting Earth AI to work: Geospatial agents for our planet's biggest challenges",
+      "kind": "publisher_article",
+      "coverage": "readable_article_text",
+      "response_sha256": "e11938dd2a723a1044c08052228072f979d107c91f8c4650a008c0dfe0f5d8f0",
+      "parsed_text_sha256": "375eb401c52ae75aa1fd6ed5be435aa4dc6e68895dc2d4a26ae5e2feea814b2d"
+    },
+    {
+      "document_id": "linked_study",
+      "url": "https://arxiv.org/abs/2610.15750",
+      "kind": "linked_study_abstract",
+      "title": "Title: Google Earth AI Geospatial Reasoning Agent: Capabilities and a Systematic Evaluation",
+      "coverage": "abstract_only_not_full_paper",
+      "response_sha256": "e0288ae933e9b25d2681f597ccf91f6eb627e4248b0cc1d341f61e0578dd7103",
+      "notices": []
+    },
+    {
+      "document_id": "related_1",
+      "url": "https://doi.org/10.31223/x5hx9s",
+      "title": "Earth Embeddings: Towards AI-centric Representations of our Planet",
+      "kind": "related_study_metadata_candidate",
+      "coverage": "publisher_metadata_and_abstract_only",
+      "response_sha256": "0e53de7d9ecd0907a214faed2f723cbb2a5b4e70d3307795c64bf3cd59c44d6b",
+      "notices": []
+    },
+    {
+      "document_id": "related_2",
+      "url": "https://doi.org/10.1007/978-3-030-67773-2",
+      "title": "Earth, Our Living Planet",
+      "kind": "related_study_metadata_candidate",
+      "coverage": "metadata_only_no_results_checked",
+      "response_sha256": "0e53de7d9ecd0907a214faed2f723cbb2a5b4e70d3307795c64bf3cd59c44d6b",
+      "notices": []
+    },
+    {
+      "document_id": "related_3",
+      "url": "https://doi.org/10.1007/978-3-319-03203-0_2",
+      "title": "Our Haven, Planet Earth",
+      "kind": "related_study_metadata_candidate",
+      "coverage": "metadata_only_no_results_checked",
+      "response_sha256": "0e53de7d9ecd0907a214faed2f723cbb2a5b4e70d3307795c64bf3cd59c44d6b",
+      "notices": []
+    }
+  ],
+  "retrieval_attempts": [
+    {
+      "url": "https://arxiv.org/abs/2610.15750",
+      "status": "retrieved",
+      "coverage": "abstract_only_not_full_paper"
+    },
+    {
+      "url": "https://api.crossref.org/works?query.title=Putting+Earth+AI+to+work%3A+Geospatial+agents+for+our+planet%27s+biggest+challenges&rows=3",
+      "status": "retrieved",
+      "matches": 3,
+      "coverage": "metadata_candidates_not_confirmed_corroboration"
+    }
+  ],
+  "draft": {
+    "summary": "Google Research introduces a Geospatial Reasoning agent that combines foundation models and upfront planning for complex spatial analysis.",
+    "findings": [
+      {
+        "claim": "The agent framework combines foundation models, spatial tools, and upfront planning to perform complex spatial analysis.",
+        "evidence_type": "benchmark",
+        "reference": {
+          "document_id": "primary",
+          "passage_id": "p0003"
+        },
+        "quote": "enables a Geospatial Reasoning agent"
+      },
+      {
+        "claim": "Testing with partner organizations demonstrated real-world applications in disease outbreak investigations and disaster preparedness workflows.",
+        "evidence_type": "observed_usage",
+        "reference": {
+          "document_id": "primary",
+          "passage_id": "p0013"
+        },
+        "quote": "disease outbreak investigations, disaster preparedness"
+      }
+    ],
+    "checks": [
+      {
+        "dimension": "authorship",
+        "status": "supported",
+        "explanation": "Authored by Google Research engineers.",
+        "references": [
+          {
+            "document_id": "primary",
+            "passage_id": "p0002"
+          }
+        ]
+      },
+      {
+        "dimension": "methods",
+        "status": "supported",
+        "explanation": "Evaluated across four benchmarks.",
+        "references": [
+          {
+            "document_id": "primary",
+            "passage_id": "p0012"
+          }
+        ]
+      },
+      {
+        "dimension": "limitations",
+        "status": "supported",
+        "explanation": "Scores rely on autoraters comparing workflows.",
+        "references": [
+          {
+            "document_id": "primary",
+            "passage_id": "p0029"
+          }
+        ]
+      },
+      {
+        "dimension": "work_relevance",
+        "status": "supported",
+        "explanation": "Relevant to spatial analytics work.",
+        "references": [
+          {
+            "document_id": "primary",
+            "passage_id": "p0015"
+          }
+        ]
+      }
+    ],
+    "cross_source_status": "consistent_with_linked_study",
+    "cross_source_explanation": "The arXiv preprint abstract describes the same Geospatial Reasoning agent and evaluation benchmarks.",
+    "cross_source_references": [
+      {
+        "document_id": "linked_study",
+        "passage_id": "p0001"
+      }
+    ],
+    "recommendation": "consider_approval",
+    "human_checks": [
+      "Verify benchmark validation details in the full technical report."
+    ]
+  },
+  "automatic_corrections": [],
+  "challenge": {
+    "findings": [
+      {
+        "finding_index": 0,
+        "verdict": "supported",
+        "reason": "The report confirms the agent integrates foundation models, spatial tools, and planning to conduct complex multi-step spatial analyses."
+      },
+      {
+        "finding_index": 1,
+        "verdict": "supported",
+        "reason": "Partner testing documented successful applications in specific humanitarian workflows like disease investigations and disaster preparedness."
+      }
+    ],
+    "checks_supported": true,
+    "cross_source_supported": true,
+    "recommendation_supported": true,
+    "unresolved_issues": [
+      "Autorater validation methods remain opaque without full report access",
+      "Partner outcomes are self-reported anecdotal evidence"
+    ]
+  },
+  "quote_checks": [
+    {
+      "passage_sha256": "4a36ffc0fd57f618a684db70f884de8d8493a4520e470218894439fc253c2e6e",
+      "quote_start": 127,
+      "quote_end": 163
+    },
+    {
+      "passage_sha256": "2349cc3b87f63f3544afad99a0730510dadb2c93c6e0a15db121858d7c57bc01",
+      "quote_start": 356,
+      "quote_end": 410
+    }
+  ],
+  "grounding_error": null,
+  "recommendation": "consider_approval",
+  "supported_finding_indices": [
+    0,
+    1
+  ],
+  "correction_notices": [],
+  "human_signoff_claimed": false,
+  "independent_empirical_verification_claimed": false,
+  "candidate_path": "findings/ai_review_4c456e668ef45cba83b59adb_b891396af793.json"
+}
