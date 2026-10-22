@@ -1,0 +1,48 @@
+{
+  "schema_version": "0.1.0",
+  "record_type": "skill_news_assessment",
+  "assessment_key": "c805a70d26700399ba835c6761ef64606ba34d1d02093c60679aceb408916ab3",
+  "skill": {
+    "skill_id": "skill:onet_2_b_3_e",
+    "label": "Programming",
+    "description": "Writing computer programs for various purposes.",
+    "kind": "general",
+    "aliases": []
+  },
+  "skill_sha256": "977f65389d4bd1673f490d4474e03698e68ed015d92552f8726106a373ef1ddb",
+  "evidence_sha256": "98849d95c9bb82755048ca26418446e6e251a0120158c5d76ddbaaffcc0a5151",
+  "news_id": "e986592dff42085cd40df279",
+  "source_review_path": "ai_reviews/e986592dff42085cd40df279_913b3cd001ee.json",
+  "prompt_version": "skill-evidence-v2",
+  "requested_model": "gemini-3.5-flash-lite",
+  "returned_models": [
+    "gemini-3.5-flash-lite",
+    "gemini-3.5-flash-lite"
+  ],
+  "assessed_at": "2026-10-22T14:07:13.459862+00:00",
+  "assessment": {
+    "news_id": "e986592dff42085cd40df279",
+    "relevance": "potentially_relevant",
+    "finding_indices": [
+      0,
+      1
+    ],
+    "rationale": "Agent Lightning implements an RL framework in code and an end-to-end coding agent pipeline on SWE-bench, which connects to writing programs.",
+    "applicability_conditions": [
+      "Framework involves active software development tasks",
+      "Coding agent pipeline executes real code harnesses"
+    ],
+    "human_checks": [
+      "Inspect repository source code structure",
+      "Verify benchmark task implementations"
+    ]
+  },
+  "challenge": {
+    "news_id": "e986592dff42085cd40df279",
+    "supported": true,
+    "reason": "Framework and coding agent pipeline on SWE-bench connect to programming."
+  },
+  "status": "pending_human_review",
+  "human_signoff_claimed": false,
+  "changes_weights": false
+}

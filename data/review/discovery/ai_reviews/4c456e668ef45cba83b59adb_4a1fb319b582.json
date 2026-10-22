@@ -1,0 +1,217 @@
+{
+  "schema_version": "0.1.0",
+  "record_type": "ai_source_review",
+  "status": "pending_human_review",
+  "discovery_id": "4c456e668ef45cba83b59adb",
+  "reviewed_at": "2026-10-22T13:58:53.492781+00:00",
+  "source": {
+    "source_id": "source:discovered_4c456e668ef45cba83b59adb",
+    "source_url": "https://research.google/blog/putting-earth-ai-to-work-geospatial-agents-for-our-planets-biggest-challenges/",
+    "publisher": "Google Research",
+    "published_at": "2026-10-14"
+  },
+  "article_title": "Putting Earth AI to work: Geospatial agents for our planet's biggest challenges",
+  "source_item_sha256": "dad09e6840b0eb7cc8b5b3c4f108567b01e1fdf041cbf88d26c3909dfd5d4dac",
+  "context_sha256": "6d3678f08fd74d2d2bfcec976e9857cef2a555baa2503b092b1dd4063d910ee6",
+  "role_id": "shared_work_evidence",
+  "role_title": "Shared evidence across skills and occupations",
+  "review_scope": "shared_work_evidence",
+  "prompt_version": "source-review-v3",
+  "requested_model": "gemini-3.5-flash-lite",
+  "returned_models": [
+    "gemini-3.5-flash-lite",
+    "gemini-3.5-flash-lite"
+  ],
+  "model_calls": 2,
+  "deterministic_checks": {
+    "configured_publisher_scope": true,
+    "publication_date_in_visible_article": true,
+    "grounded_primary_quotes": 2,
+    "grounding_passed": true,
+    "challenge_checked_every_finding": true
+  },
+  "parsed_text_sha256": "375eb401c52ae75aa1fd6ed5be435aa4dc6e68895dc2d4a26ae5e2feea814b2d",
+  "documents": [
+    {
+      "document_id": "primary",
+      "url": "https://research.google/blog/putting-earth-ai-to-work-geospatial-agents-for-our-planets-biggest-challenges/",
+      "title": "Putting Earth AI to work: Geospatial agents for our planet's biggest challenges",
+      "kind": "publisher_article",
+      "coverage": "readable_article_text",
+      "response_sha256": "f7ee4a8d4a70239f19d02d2dec5499600fd26179952005c3c4a158599037462c",
+      "parsed_text_sha256": "375eb401c52ae75aa1fd6ed5be435aa4dc6e68895dc2d4a26ae5e2feea814b2d"
+    },
+    {
+      "document_id": "linked_study",
+      "url": "https://arxiv.org/abs/2610.15750",
+      "kind": "linked_study_abstract",
+      "title": "Title: Google Earth AI Geospatial Reasoning Agent: Capabilities and a Systematic Evaluation",
+      "coverage": "abstract_only_not_full_paper",
+      "response_sha256": "e0288ae933e9b25d2681f597ccf91f6eb627e4248b0cc1d341f61e0578dd7103",
+      "notices": []
+    },
+    {
+      "document_id": "related_1",
+      "url": "https://doi.org/10.31223/x5hx9s",
+      "title": "Earth Embeddings: Towards AI-centric Representations of our Planet",
+      "kind": "related_study_metadata_candidate",
+      "coverage": "publisher_metadata_and_abstract_only",
+      "response_sha256": "f6e07f633119a47c0b02a6acb418288c190a0a7aa72371db65283c2bba296ebc",
+      "notices": []
+    },
+    {
+      "document_id": "related_2",
+      "url": "https://doi.org/10.1007/978-3-030-67773-2",
+      "title": "Earth, Our Living Planet",
+      "kind": "related_study_metadata_candidate",
+      "coverage": "metadata_only_no_results_checked",
+      "response_sha256": "f6e07f633119a47c0b02a6acb418288c190a0a7aa72371db65283c2bba296ebc",
+      "notices": []
+    },
+    {
+      "document_id": "related_3",
+      "url": "https://doi.org/10.1007/978-3-319-03203-0_2",
+      "title": "Our Haven, Planet Earth",
+      "kind": "related_study_metadata_candidate",
+      "coverage": "metadata_only_no_results_checked",
+      "response_sha256": "f6e07f633119a47c0b02a6acb418288c190a0a7aa72371db65283c2bba296ebc",
+      "notices": []
+    }
+  ],
+  "retrieval_attempts": [
+    {
+      "url": "https://arxiv.org/abs/2610.15750",
+      "status": "retrieved",
+      "coverage": "abstract_only_not_full_paper"
+    },
+    {
+      "url": "https://api.crossref.org/works?query.title=Putting+Earth+AI+to+work%3A+Geospatial+agents+for+our+planet%27s+biggest+challenges&rows=3",
+      "status": "retrieved",
+      "matches": 3,
+      "coverage": "metadata_candidates_not_confirmed_corroboration"
+    }
+  ],
+  "draft": {
+    "summary": "Google Research introduces a Geospatial Reasoning agent that combines foundation models and upfront planning for spatial analysis and planetary prediction.",
+    "findings": [
+      {
+        "claim": "The Geospatial Reasoning agent helps map mining corridors and pinpoint exposed settlements during disease outbreaks.",
+        "evidence_type": "observed_usage",
+        "reference": {
+          "document_id": "primary",
+          "passage_id": "p0031"
+        },
+        "quote": "pinpointed 48 exposed settlements"
+      },
+      {
+        "claim": "People in Need used geospatial reasoning to analyze historical cyclone paths to identify high-exposure villages quickly.",
+        "evidence_type": "observed_usage",
+        "reference": {
+          "document_id": "primary",
+          "passage_id": "p0034"
+        },
+        "quote": "analyze 14 historical cyclone paths"
+      }
+    ],
+    "checks": [
+      {
+        "dimension": "authorship",
+        "status": "supported",
+        "explanation": "Authored by Google Research engineers and directors.",
+        "references": [
+          {
+            "document_id": "primary",
+            "passage_id": "p0002"
+          }
+        ]
+      },
+      {
+        "dimension": "methods",
+        "status": "supported",
+        "explanation": "Evaluates four configurations across four benchmarks.",
+        "references": [
+          {
+            "document_id": "primary",
+            "passage_id": "p0021"
+          }
+        ]
+      },
+      {
+        "dimension": "limitations",
+        "status": "supported",
+        "explanation": "Expert query scores rely on autoraters.",
+        "references": [
+          {
+            "document_id": "primary",
+            "passage_id": "p0029"
+          }
+        ]
+      },
+      {
+        "dimension": "work_relevance",
+        "status": "supported",
+        "explanation": "Relevant for geospatial analysis and crisis response workflows.",
+        "references": [
+          {
+            "document_id": "primary",
+            "passage_id": "p0013"
+          }
+        ]
+      }
+    ],
+    "cross_source_status": "consistent_with_linked_study",
+    "cross_source_explanation": "The linked ArXiv abstract confirms the technical report's presentation of the Geospatial Reasoning agent and its benchmark evaluations.",
+    "cross_source_references": [
+      {
+        "document_id": "linked_study",
+        "passage_id": "p0001"
+      }
+    ],
+    "recommendation": "consider_approval",
+    "human_checks": [
+      "Verify benchmark implementation details in the technical report.",
+      "Inspect independent partner validation metrics."
+    ]
+  },
+  "automatic_corrections": [],
+  "challenge": {
+    "findings": [
+      {
+        "finding_index": 0,
+        "verdict": "supported",
+        "reason": "The passage confirms the agent helped pinpoint 48 exposed settlements during the Ebola outbreak."
+      },
+      {
+        "finding_index": 1,
+        "verdict": "supported",
+        "reason": "The passage states that People in Need used the agent to analyze 14 historical cyclone paths."
+      }
+    ],
+    "checks_supported": true,
+    "cross_source_supported": true,
+    "recommendation_supported": true,
+    "unresolved_issues": []
+  },
+  "quote_checks": [
+    {
+      "passage_sha256": "07fd16dfe5e4d6c904900c8f9864d15107b1677e8fd0d918b70152fc3e205323",
+      "quote_start": 456,
+      "quote_end": 489
+    },
+    {
+      "passage_sha256": "ed0bf76c1d77ae5a70292e601c52b5190dddb5827717dfbc866f49b3988bdcde",
+      "quote_start": 55,
+      "quote_end": 90
+    }
+  ],
+  "grounding_error": null,
+  "recommendation": "consider_approval",
+  "supported_finding_indices": [
+    0,
+    1
+  ],
+  "correction_notices": [],
+  "human_signoff_claimed": false,
+  "independent_empirical_verification_claimed": false,
+  "candidate_path": "findings/ai_review_4c456e668ef45cba83b59adb_4c0785082992.json"
+}

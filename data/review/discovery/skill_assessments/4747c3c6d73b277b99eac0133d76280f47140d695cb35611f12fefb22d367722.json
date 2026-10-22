@@ -1,0 +1,43 @@
+{
+  "schema_version": "0.1.0",
+  "record_type": "skill_news_assessment",
+  "assessment_key": "1e10da2da4cfd74fc4eacfbe32416fcb85653246a7b3ee9b600422c8dcfa8a06",
+  "skill": {
+    "skill_id": "skill:onet_2_b_3_e",
+    "label": "Programming",
+    "description": "Writing computer programs for various purposes.",
+    "kind": "general",
+    "aliases": []
+  },
+  "skill_sha256": "977f65389d4bd1673f490d4474e03698e68ed015d92552f8726106a373ef1ddb",
+  "evidence_sha256": "5b28a2726e4f0d2f2fc4cd3466520feaf3c67a9f476a144d47041a70d84ac808",
+  "news_id": "7eeb0a9dde53453907ecbc46",
+  "source_review_path": "ai_reviews/7eeb0a9dde53453907ecbc46_2be1d77ae64a.json",
+  "prompt_version": "skill-evidence-v1",
+  "requested_model": "gemini-3.5-flash-lite",
+  "returned_models": [
+    "gemini-3.5-flash-lite",
+    "gemini-3.5-flash-lite"
+  ],
+  "assessed_at": "2026-10-22T14:02:44.554480+00:00",
+  "assessment": {
+    "news_id": "7eeb0a9dde53453907ecbc46",
+    "relevance": "not_relevant",
+    "finding_indices": [],
+    "rationale": "The workshop report addresses agentic privacy and security challenges rather than the activity of programming.",
+    "applicability_conditions": [
+      "Agentic privacy policy analysis"
+    ],
+    "human_checks": [
+      "Determine if security testing involved writing code"
+    ]
+  },
+  "challenge": {
+    "news_id": "7eeb0a9dde53453907ecbc46",
+    "supported": false,
+    "reason": "Agentic privacy and security discussions do not involve writing computer programs."
+  },
+  "status": "needs_review",
+  "human_signoff_claimed": false,
+  "changes_weights": false
+}

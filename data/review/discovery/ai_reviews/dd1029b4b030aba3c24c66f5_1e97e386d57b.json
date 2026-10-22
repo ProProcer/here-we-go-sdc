@@ -1,0 +1,173 @@
+{
+  "schema_version": "0.1.0",
+  "record_type": "ai_source_review",
+  "status": "pending_human_review",
+  "discovery_id": "dd1029b4b030aba3c24c66f5",
+  "reviewed_at": "2026-10-22T14:04:19.978814+00:00",
+  "source": {
+    "source_id": "source:discovered_dd1029b4b030aba3c24c66f5",
+    "source_url": "https://research.google/blog/grounding-ai-agents-in-biological-reality-building-blocks-for-autonomous-wet-labs/",
+    "publisher": "Google Research",
+    "published_at": "2026-10-16"
+  },
+  "article_title": "Grounding AI agents in biological reality: Building blocks for autonomous wet labs",
+  "source_item_sha256": "836df9a29216fcc620eb64e8a74eab11934f1e1aae697cbc2c8943dc356cb874",
+  "context_sha256": "6d3678f08fd74d2d2bfcec976e9857cef2a555baa2503b092b1dd4063d910ee6",
+  "role_id": "shared_work_evidence",
+  "role_title": "Shared evidence across skills and occupations",
+  "review_scope": "shared_work_evidence",
+  "prompt_version": "source-review-v3",
+  "requested_model": "gemini-3.5-flash-lite",
+  "returned_models": [
+    "gemini-3.5-flash-lite",
+    "gemini-3.5-flash-lite"
+  ],
+  "model_calls": 2,
+  "deterministic_checks": {
+    "configured_publisher_scope": true,
+    "publication_date_in_visible_article": true,
+    "grounded_primary_quotes": 2,
+    "grounding_passed": true,
+    "challenge_checked_every_finding": true
+  },
+  "parsed_text_sha256": "28e28c894c41f795dd381000f272cdf9ed9d01c931148441a462421d946e2061",
+  "documents": [
+    {
+      "document_id": "primary",
+      "url": "https://research.google/blog/grounding-ai-agents-in-biological-reality-building-blocks-for-autonomous-wet-labs/",
+      "title": "Grounding AI agents in biological reality: Building blocks for autonomous wet labs",
+      "kind": "publisher_article",
+      "coverage": "readable_article_text",
+      "response_sha256": "0dd2365301fccd1ba3fce60c87d83eb06e567ba5e0580163885678b427f15f28",
+      "parsed_text_sha256": "28e28c894c41f795dd381000f272cdf9ed9d01c931148441a462421d946e2061"
+    }
+  ],
+  "retrieval_attempts": [
+    {
+      "url": "https://api.crossref.org/works?query.title=Grounding+AI+agents+in+biological+reality%3A+Building+blocks+for+autonomous+wet+labs&rows=3",
+      "status": "retrieved",
+      "matches": 0,
+      "coverage": "metadata_candidates_not_confirmed_corroboration"
+    }
+  ],
+  "draft": {
+    "summary": "Google Research describes AI agents integrated with physical lab robotics and the VERID framework to automate and accelerate closed-loop molecular discovery cycles.",
+    "findings": [
+      {
+        "claim": "AI agents combined with wet-lab cycles improved confirmed aptamer hit rates on target proteins up to 42.1%.",
+        "evidence_type": "benchmark",
+        "reference": {
+          "document_id": "primary",
+          "passage_id": "p0025"
+        },
+        "quote": "confirmed on-target hit rates as"
+      },
+      {
+        "claim": "Surgical epitope excision accelerated structure prediction 8.6x and nearly doubled the in-silico binder design hit rate.",
+        "evidence_type": "benchmark",
+        "reference": {
+          "document_id": "primary",
+          "passage_id": "p0032"
+        },
+        "quote": "accelerates structure prediction 8.6x"
+      }
+    ],
+    "checks": [
+      {
+        "dimension": "authorship",
+        "status": "supported",
+        "explanation": "Authored by Google Research scientists.",
+        "references": [
+          {
+            "document_id": "primary",
+            "passage_id": "p0002"
+          }
+        ]
+      },
+      {
+        "dimension": "methods",
+        "status": "supported",
+        "explanation": "Described closed-loop automated wet-lab workflows.",
+        "references": [
+          {
+            "document_id": "primary",
+            "passage_id": "p0013"
+          }
+        ]
+      },
+      {
+        "dimension": "limitations",
+        "status": "supported",
+        "explanation": "Noted challenges with non-specific binding artifacts.",
+        "references": [
+          {
+            "document_id": "primary",
+            "passage_id": "p0027"
+          }
+        ]
+      },
+      {
+        "dimension": "work_relevance",
+        "status": "supported",
+        "explanation": "Directly relevant to lab automation work.",
+        "references": [
+          {
+            "document_id": "primary",
+            "passage_id": "p0003"
+          }
+        ]
+      }
+    ],
+    "cross_source_status": "not_established",
+    "cross_source_explanation": "No independent external studies were retrieved for cross-source validation.",
+    "cross_source_references": [],
+    "recommendation": "consider_approval",
+    "human_checks": [
+      "Verify the underlying VERID preprint or publication methods.",
+      "Examine replication details across independent biological targets."
+    ]
+  },
+  "automatic_corrections": [],
+  "challenge": {
+    "findings": [
+      {
+        "finding_index": 0,
+        "verdict": "supported",
+        "reason": "Confirmed aptamer hit rates of up to 42.1% are supported by passage p0025."
+      },
+      {
+        "finding_index": 1,
+        "verdict": "supported",
+        "reason": "Epitope excision accelerating structure prediction 8.6x and doubling hit rate is supported by passage p0032."
+      }
+    ],
+    "checks_supported": true,
+    "cross_source_supported": false,
+    "recommendation_supported": true,
+    "unresolved_issues": [
+      "Cross-source validation not established."
+    ]
+  },
+  "quote_checks": [
+    {
+      "passage_sha256": "d8a2c53b56f6c6d266469ef2e77f9e3886c3b4999cc3bb00c0b14411efc43820",
+      "quote_start": 147,
+      "quote_end": 179
+    },
+    {
+      "passage_sha256": "acf5d7fbf9c6b20a2c2ee9a749c3b812a590142b8d3bf6e355cbffa53d332ccb",
+      "quote_start": 26,
+      "quote_end": 63
+    }
+  ],
+  "grounding_error": null,
+  "recommendation": "investigate",
+  "supported_finding_indices": [
+    0,
+    1
+  ],
+  "correction_notices": [],
+  "human_signoff_claimed": false,
+  "independent_empirical_verification_claimed": false,
+  "candidate_path": "findings/ai_review_dd1029b4b030aba3c24c66f5_5b2ad09853a8.json"
+}

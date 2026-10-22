@@ -129,6 +129,9 @@ Actions review queue and explicit approval before evidence affects priorities.
 An [AI-first source reviewer](docs/ROLE_3_AI_REVIEW.md) now checks retrieved
 articles and study leads, challenges its draft and produces a short
 [human attention brief](data/review/discovery/REVIEW_BRIEF.md).
+The [shared skill-evidence layer](docs/ROLE_3_SHARED_SKILL_EVIDENCE.md) reviews
+sources independently of any role, assesses new/changed skills against stored
+findings, and lets new roles reuse existing approved conditional mappings offline.
 The [first evidence-chain deliverable](docs/ROLE_3_EVIDENCE_CHAIN.md) connects a
 refreshable cited finding to a proposed task interpretation and explained
 Python/SQL skill implications. It includes an offline example and live-fetch

@@ -1,0 +1,43 @@
+{
+  "schema_version": "0.1.0",
+  "record_type": "skill_news_assessment",
+  "assessment_key": "4d9c198577f2e24bfcce0a45d69085cf5563bb3dd515afb9f15775ffdf35f336",
+  "skill": {
+    "skill_id": "skill:onet_2_b_3_e",
+    "label": "Programming",
+    "description": "Writing computer programs for various purposes.",
+    "kind": "general",
+    "aliases": []
+  },
+  "skill_sha256": "977f65389d4bd1673f490d4474e03698e68ed015d92552f8726106a373ef1ddb",
+  "evidence_sha256": "f52dfd797c2a67ed217998df7e25b0a08d43fde41a5c125d02c5fc8fef40185a",
+  "news_id": "0f83c2d1d5b8034398fa197c",
+  "source_review_path": "ai_reviews/0f83c2d1d5b8034398fa197c_aa8f8a6e1795.json",
+  "prompt_version": "skill-evidence-v1",
+  "requested_model": "gemini-3.5-flash-lite",
+  "returned_models": [
+    "gemini-3.5-flash-lite",
+    "gemini-3.5-flash-lite"
+  ],
+  "assessed_at": "2026-10-22T14:02:44.554480+00:00",
+  "assessment": {
+    "news_id": "0f83c2d1d5b8034398fa197c",
+    "relevance": "not_relevant",
+    "finding_indices": [],
+    "rationale": "The article discusses educators using generative UI to create learning interactives, which does not involve writing computer programs.",
+    "applicability_conditions": [
+      "Educator creates interactive via generative UI"
+    ],
+    "human_checks": [
+      "Confirm no custom code was authored"
+    ]
+  },
+  "challenge": {
+    "news_id": "0f83c2d1d5b8034398fa197c",
+    "supported": false,
+    "reason": "Generative UI for educators does not constitute professional programming."
+  },
+  "status": "needs_review",
+  "human_signoff_claimed": false,
+  "changes_weights": false
+}

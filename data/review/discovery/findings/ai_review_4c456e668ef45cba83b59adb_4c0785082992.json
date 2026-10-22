@@ -1,0 +1,73 @@
+{
+  "findings": [
+    {
+      "claim": "The Geospatial Reasoning agent helps map mining corridors and pinpoint exposed settlements during disease outbreaks.",
+      "evidence_type": "observed_usage",
+      "support": {
+        "passage_id": "p0031",
+        "quote": "pinpointed 48 exposed settlements",
+        "section": "Putting Earth AI to work: Geospatial agents for our planet's biggest challenges > Earth AI in action: Early testing with partners",
+        "passage_sha256": "07fd16dfe5e4d6c904900c8f9864d15107b1677e8fd0d918b70152fc3e205323",
+        "quote_start": 456,
+        "quote_end": 489
+      },
+      "study_period": {
+        "start": null,
+        "end": null,
+        "passage_id": null
+      },
+      "limitations": [
+        "AI-reviewed context; external abstracts do not establish independent corroboration or workplace outcomes."
+      ],
+      "candidate_id": "candidate:e961ebfd1d5dbee640d2b112",
+      "study_period_passage_sha256": null,
+      "review_status": "pending_review"
+    },
+    {
+      "claim": "People in Need used geospatial reasoning to analyze historical cyclone paths to identify high-exposure villages quickly.",
+      "evidence_type": "observed_usage",
+      "support": {
+        "passage_id": "p0034",
+        "quote": "analyze 14 historical cyclone paths",
+        "section": "Putting Earth AI to work: Geospatial agents for our planet's biggest challenges > Earth AI in action: Early testing with partners",
+        "passage_sha256": "ed0bf76c1d77ae5a70292e601c52b5190dddb5827717dfbc866f49b3988bdcde",
+        "quote_start": 55,
+        "quote_end": 90
+      },
+      "study_period": {
+        "start": null,
+        "end": null,
+        "passage_id": null
+      },
+      "limitations": [
+        "AI-reviewed context; external abstracts do not establish independent corroboration or workplace outcomes."
+      ],
+      "candidate_id": "candidate:76cb95374dd92372ec97685c",
+      "study_period_passage_sha256": null,
+      "review_status": "pending_review"
+    }
+  ],
+  "no_findings_reason": null,
+  "schema_version": "0.1.0",
+  "record_type": "candidate_extraction",
+  "review_status": "pending_review",
+  "source": {
+    "source_id": "source:discovered_4c456e668ef45cba83b59adb",
+    "source_url": "https://research.google/blog/putting-earth-ai-to-work-geospatial-agents-for-our-planets-biggest-challenges/",
+    "publisher": "Google Research",
+    "published_at": "2026-10-14"
+  },
+  "report_title": "Putting Earth AI to work: Geospatial agents for our planet's biggest challenges",
+  "fetched_at": "2026-10-22T13:58:53.492781Z",
+  "response_sha256": "f7ee4a8d4a70239f19d02d2dec5499600fd26179952005c3c4a158599037462c",
+  "parsed_text_sha256": "375eb401c52ae75aa1fd6ed5be435aa4dc6e68895dc2d4a26ae5e2feea814b2d",
+  "passage_count": 65,
+  "parsed_characters": 21820,
+  "provider": "gemini",
+  "requested_model": "gemini-3.5-flash-lite",
+  "returned_model": "gemini-3.5-flash-lite",
+  "prompt_version": "source-review-v3",
+  "limitations": [
+    "AI review requires human approval; quote checks do not independently prove semantic correctness."
+  ]
+}

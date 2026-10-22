@@ -39,8 +39,13 @@ from src.schemas.source_review import ReviewChallenge, ReviewDraft
 from src.schemas.sources import ApprovedSource
 
 ROOT = Path(__file__).resolve().parents[2]
-PROMPT_VERSION = "source-review-v2"
+PROMPT_VERSION = "source-review-v3"
 CACHE_DAYS = 7
+SHARED_CONTEXT = {
+    "scope": "shared_work_evidence",
+    "role_id": "shared_work_evidence",
+    "role_title": "Shared evidence across skills and occupations",
+}
 
 
 class QuoteGroundingError(ValueError):
@@ -88,6 +93,16 @@ recommendation can stand even when independent corroboration is unavailable.
 Do not change accepted evidence, source approvals, priorities or fit scores.
 """
 
+SHARED_INSTRUCTION = """This is a SHARED source review, independent of any occupation
+or current skill catalog. Do not discard research because it is unrelated to BI
+Analysts or another particular job. Assess transferable work activities, learning,
+or occupational evidence. The fourth check must be work_relevance, never
+role_relevance. Use skip_for_scope only for material unrelated to work or learning;
+never use skip_for_role. Extract the two most informative supported findings across
+the article. These are selected findings, NOT an exhaustive account of the source.
+Do not assign skill IDs or weights; a separate incremental stage maps stored findings.
+"""
+
 
 def fingerprint(value):
     return hashlib.sha256(
@@ -102,16 +117,18 @@ def effective_recommendation(record):
     relevance = next(
         c["status"]
         for c in record["draft"]["checks"]
-        if c["dimension"] == "role_relevance"
+        if c["dimension"] in {"role_relevance", "work_relevance"}
     )
     if record.get("grounding_error") or record.get("correction_notices"):
         return "investigate"
-    if action == "skip_for_role" and relevance == "supported":
+    if action in {"skip_for_role", "skip_for_scope"} and relevance == "supported":
         return "investigate"
     return action
 
 
 def role_context(role_id):
+    if role_id is None or role_id == SHARED_CONTEXT["role_id"]:
+        return dict(SHARED_CONTEXT)
     catalog = real_catalog()
     role = next(r for r in catalog.roles if r.role_id == role_id)
     return {
@@ -237,8 +254,23 @@ def review_one(
     }
     if len(json.dumps(packet).encode()) > 220_000:
         raise ValueError("Research packet exceeds review input budget")
-    first = client.generate(DRAFT_INSTRUCTION, packet, ReviewDraft)
+    shared = context.get("scope") == "shared_work_evidence"
+    instruction = DRAFT_INSTRUCTION
+    if shared:
+        instruction = (
+            instruction.replace("role tasks", "work activities")
+            .replace("role-relevant", "work-relevant")
+            .replace("skip_for_role", "skip_for_scope")
+            .replace("unrelated to this role", "unrelated to work or learning")
+            + SHARED_INSTRUCTION
+        )
+    first = client.generate(instruction, packet, ReviewDraft)
     draft = first.value
+    dimensions = {c.dimension for c in draft.checks}
+    if ("work_relevance" if shared else "role_relevance") not in dimensions:
+        raise ValueError("Review relevance check does not match its scope")
+    if shared and draft.recommendation == "skip_for_role":
+        raise ValueError("Shared source review cannot reject a particular role")
     corrections = []
     # A model can copy an exact quote but select the adjacent paragraph ID.
     # Repair only unique exact matches in the same retrieved primary article;
@@ -297,7 +329,7 @@ def review_one(
         grounding_error = str(error)
         grounded = []
     second = client.generate(
-        CHALLENGE_INSTRUCTION,
+        CHALLENGE_INSTRUCTION + (SHARED_INSTRUCTION if shared else ""),
         {
             **packet,
             "untrusted_draft": draft.model_dump(mode="json"),
@@ -321,7 +353,7 @@ def review_one(
     )
     action = draft.recommendation if safe else "investigate"
     if (
-        draft.recommendation == "skip_for_role"
+        draft.recommendation in {"skip_for_role", "skip_for_scope"}
         and challenge.checks_supported
         and challenge.recommendation_supported
     ):
@@ -344,7 +376,7 @@ def review_one(
         or any(
             c.status != "supported"
             for c in draft.checks
-            if c.dimension in {"methods", "role_relevance"}
+            if c.dimension in {"methods", "role_relevance", "work_relevance"}
         )
     ):
         action = "investigate"
@@ -406,6 +438,7 @@ def review_one(
         "context_sha256": fingerprint(context),
         "role_id": context["role_id"],
         "role_title": context["role_title"],
+        "review_scope": "shared_work_evidence" if shared else "occupation",
         "prompt_version": PROMPT_VERSION,
         "requested_model": client.model,
         "returned_models": [first.returned_model, second.returned_model],
@@ -445,7 +478,7 @@ def review_one(
 def run_reviews(
     *,
     state_path=STATE,
-    role_id="role:onet_15_2051_01",
+    role_id=None,
     max_reviews=3,
     client=None,
     article_fetcher=fetch_feed,
@@ -571,11 +604,17 @@ def write_brief(state_path=STATE):
         "AI recommendations await your approval. Models can miss errors; external abstract/metadata checks are not experiment replication.",
         "",
     ]
-    order = {"consider_approval": 0, "investigate": 1, "skip_for_role": 2}
+    order = {
+        "consider_approval": 0,
+        "investigate": 1,
+        "skip_for_role": 2,
+        "skip_for_scope": 2,
+    }
     labels = {
         "consider_approval": "Ready for your decision",
         "investigate": "Check flagged points",
         "skip_for_role": "Skip for this role",
+        "skip_for_scope": "Outside work/learning scope",
     }
     lines += ["| Source | AI suggestion | Reason |", "|---|---|---|"]
     for row in sorted(
@@ -588,7 +627,7 @@ def write_brief(state_path=STATE):
             relevance = next(
                 c["explanation"]
                 for c in record["draft"]["checks"]
-                if c["dimension"] == "role_relevance"
+                if c["dimension"] in {"role_relevance", "work_relevance"}
             )
             if record.get("grounding_error"):
                 relevance = "A proposed citation failed the exact-text check; inspect this claim."
@@ -621,7 +660,7 @@ def write_brief(state_path=STATE):
         lines += [
             f"**Suggested action: {effective_recommendation(record)}** · Checked: {record['reviewed_at']}",
             "",
-            f"Target role: {_md(record['role_title'])}",
+            f"{'Scope' if record.get('review_scope') == 'shared_work_evidence' else 'Target role'}: {_md(record['role_title'])}",
             "",
             _md(draft["summary"]),
             "",
@@ -693,7 +732,9 @@ def write_brief(state_path=STATE):
             "",
         ]
     destination = path.parent / "REVIEW_BRIEF.md"
-    destination.write_text("\n".join(lines).rstrip() + "\n", encoding="utf-8", newline="\n")
+    destination.write_text(
+        "\n".join(lines).rstrip() + "\n", encoding="utf-8", newline="\n"
+    )
     return destination
 
 
@@ -738,7 +779,9 @@ def main():
     commands = parser.add_subparsers(dest="command", required=True)
     run = commands.add_parser("run")
     run.add_argument("--max-reviews", type=int, default=3)
-    run.add_argument("--role", default="role:onet_15_2051_01")
+    run.add_argument(
+        "--role", help="Optional legacy occupation-specific review; default is shared"
+    )
     run.add_argument("--force", action="store_true")
     commands.add_parser("show")
     approve = commands.add_parser("approve")

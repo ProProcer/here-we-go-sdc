@@ -1,0 +1,200 @@
+{
+  "schema_version": "0.1.0",
+  "record_type": "ai_source_review",
+  "status": "pending_human_review",
+  "discovery_id": "e986592dff42085cd40df279",
+  "reviewed_at": "2026-10-22T13:58:53.492781+00:00",
+  "source": {
+    "source_id": "source:discovered_e986592dff42085cd40df279",
+    "source_url": "https://www.microsoft.com/en-us/research/blog/agent-lightning-v1-0-a-3500-line-lightweight-agentic-rl-framework-for-training-agents-with-real-harnesses/",
+    "publisher": "Microsoft Research",
+    "published_at": "2026-10-07"
+  },
+  "article_title": "Agent Lightning v1.0: A 3,500-Line Lightweight Agentic RL Framework for Training Agents with Real Harnesses",
+  "source_item_sha256": "b2e9a664a2da7887da2b15a5b788b48b46bfcb687d6705b5bdb34c7800f53893",
+  "context_sha256": "6d3678f08fd74d2d2bfcec976e9857cef2a555baa2503b092b1dd4063d910ee6",
+  "role_id": "shared_work_evidence",
+  "role_title": "Shared evidence across skills and occupations",
+  "review_scope": "shared_work_evidence",
+  "prompt_version": "source-review-v3",
+  "requested_model": "gemini-3.5-flash-lite",
+  "returned_models": [
+    "gemini-3.5-flash-lite",
+    "gemini-3.5-flash-lite"
+  ],
+  "model_calls": 2,
+  "deterministic_checks": {
+    "configured_publisher_scope": true,
+    "publication_date_in_visible_article": true,
+    "grounded_primary_quotes": 2,
+    "grounding_passed": true,
+    "challenge_checked_every_finding": true
+  },
+  "parsed_text_sha256": "f64fa60ead03d398ed324e96f2bdfb6461f98f2ff16c873f3436be1602e56863",
+  "documents": [
+    {
+      "document_id": "primary",
+      "url": "https://www.microsoft.com/en-us/research/blog/agent-lightning-v1-0-a-3500-line-lightweight-agentic-rl-framework-for-training-agents-with-real-harnesses/",
+      "title": "Agent Lightning v1.0: A 3,500-Line Lightweight Agentic RL Framework for Training Agents with Real Harnesses",
+      "kind": "publisher_article",
+      "coverage": "readable_article_text",
+      "response_sha256": "21db3a81181be42811f585e237bcfa320c0bee74a47cc0b5256e36b051a9de50",
+      "parsed_text_sha256": "f64fa60ead03d398ed324e96f2bdfb6461f98f2ff16c873f3436be1602e56863"
+    },
+    {
+      "document_id": "related_1",
+      "url": "https://doi.org/10.1109/icdh72779.2026.00059",
+      "title": "Agentic AI for Personalized Physiotherapy: A Multi-Agent Framework for Generative Video Training and Real-Time Pose Correction",
+      "kind": "related_study_metadata_candidate",
+      "coverage": "metadata_only_no_results_checked",
+      "response_sha256": "0c12a0d47245d63647b9b63bc92f6af9080ddb6cfab497efc4db4d530670b643",
+      "notices": []
+    },
+    {
+      "document_id": "related_2",
+      "url": "https://doi.org/10.1109/isceic67854.2025.11405521",
+      "title": "PBRS for Sim-to-Real Cyber RL: Training Agents in a High-Fidelity CyberBattleSim",
+      "kind": "related_study_metadata_candidate",
+      "coverage": "metadata_only_no_results_checked",
+      "response_sha256": "0c12a0d47245d63647b9b63bc92f6af9080ddb6cfab497efc4db4d530670b643",
+      "notices": []
+    },
+    {
+      "document_id": "related_3",
+      "url": "https://doi.org/10.1109/ei247390.2019.9061707",
+      "title": "Simulation Study on Lightning Protection of New 500 kV Lightning-proof Line Insulator",
+      "kind": "related_study_metadata_candidate",
+      "coverage": "metadata_only_no_results_checked",
+      "response_sha256": "0c12a0d47245d63647b9b63bc92f6af9080ddb6cfab497efc4db4d530670b643",
+      "notices": []
+    }
+  ],
+  "retrieval_attempts": [
+    {
+      "url": "https://api.crossref.org/works?query.title=Agent+Lightning+v1.0%3A+A+3%2C500-Line+Lightweight+Agentic+RL+Framework+for+Training+Agents+with+Real+Harnesses&rows=3",
+      "status": "retrieved",
+      "matches": 3,
+      "coverage": "metadata_candidates_not_confirmed_corroboration"
+    }
+  ],
+  "draft": {
+    "summary": "Agent Lightning v1.0 is a 3,500-line lightweight agentic reinforcement learning framework from Microsoft Research Asia that trains agents using deployment harnesses.",
+    "findings": [
+      {
+        "claim": "Agent Lightning v1.0 implements a complete agent RL control plane in approximately 3,500 lines of code.",
+        "evidence_type": "other",
+        "reference": {
+          "document_id": "primary",
+          "passage_id": "p0010"
+        },
+        "quote": "roughly 3,500 lines of code"
+      },
+      {
+        "claim": "An end-to-end coding agent pipeline raised Qwen3.5-9B performance on SWE-bench Verified using about 6,000 training samples.",
+        "evidence_type": "benchmark",
+        "reference": {
+          "document_id": "primary",
+          "passage_id": "p0012"
+        },
+        "quote": "only about 6,000 training samples"
+      }
+    ],
+    "checks": [
+      {
+        "dimension": "authorship",
+        "status": "supported",
+        "explanation": "Authored by Microsoft Research Asia engineers.",
+        "references": [
+          {
+            "document_id": "primary",
+            "passage_id": "p0002"
+          }
+        ]
+      },
+      {
+        "dimension": "methods",
+        "status": "supported",
+        "explanation": "Described framework architecture and RL training pipelines.",
+        "references": [
+          {
+            "document_id": "primary",
+            "passage_id": "p0030"
+          }
+        ]
+      },
+      {
+        "dimension": "limitations",
+        "status": "supported",
+        "explanation": "Addressed four key challenges in training with real harnesses.",
+        "references": [
+          {
+            "document_id": "primary",
+            "passage_id": "p0023"
+          }
+        ]
+      },
+      {
+        "dimension": "work_relevance",
+        "status": "supported",
+        "explanation": "Relevant for software engineering and machine learning workflows.",
+        "references": [
+          {
+            "document_id": "primary",
+            "passage_id": "p0012"
+          }
+        ]
+      }
+    ],
+    "cross_source_status": "not_established",
+    "cross_source_explanation": "No independent corroborating studies were retrieved in metadata search results.",
+    "cross_source_references": [],
+    "recommendation": "consider_approval",
+    "human_checks": [
+      "Verify benchmark reproducibility in independent codebases.",
+      "Examine implementation details of the API Gateway and Rollout Controller."
+    ]
+  },
+  "automatic_corrections": [],
+  "challenge": {
+    "findings": [
+      {
+        "finding_index": 0,
+        "verdict": "supported",
+        "reason": "Directly matches passage stating the control plane is roughly 3,500 lines of code."
+      },
+      {
+        "finding_index": 1,
+        "verdict": "supported",
+        "reason": "Matches passage noting approximately 6,000 training samples used for the Qwen3.5-9B pipeline."
+      }
+    ],
+    "checks_supported": true,
+    "cross_source_supported": false,
+    "recommendation_supported": true,
+    "unresolved_issues": [
+      "Independent external corroboration unavailable"
+    ]
+  },
+  "quote_checks": [
+    {
+      "passage_sha256": "cffa63a3d59bb8b4b8f344445e0f4e3184babbc9319ca39e07ad48cc09ab26ff",
+      "quote_start": 90,
+      "quote_end": 117
+    },
+    {
+      "passage_sha256": "dcb3f84a74d6cc814c01f57dcb01dcc6362929cc74d306fde5c38ef75618d274",
+      "quote_start": 172,
+      "quote_end": 205
+    }
+  ],
+  "grounding_error": null,
+  "recommendation": "investigate",
+  "supported_finding_indices": [
+    0,
+    1
+  ],
+  "correction_notices": [],
+  "human_signoff_claimed": false,
+  "independent_empirical_verification_claimed": false,
+  "candidate_path": "findings/ai_review_e986592dff42085cd40df279_1b20944958b5.json"
+}

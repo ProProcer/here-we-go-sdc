@@ -1,0 +1,73 @@
+{
+  "findings": [
+    {
+      "claim": "AI agents combined with wet-lab cycles improved confirmed aptamer hit rates on target proteins up to 42.1%.",
+      "evidence_type": "benchmark",
+      "support": {
+        "passage_id": "p0025",
+        "quote": "confirmed on-target hit rates as",
+        "section": "Grounding AI agents in biological reality: Building blocks for autonomous wet labs > Learning to learn with aptamers",
+        "passage_sha256": "d8a2c53b56f6c6d266469ef2e77f9e3886c3b4999cc3bb00c0b14411efc43820",
+        "quote_start": 147,
+        "quote_end": 179
+      },
+      "study_period": {
+        "start": null,
+        "end": null,
+        "passage_id": null
+      },
+      "limitations": [
+        "AI-reviewed context; external abstracts do not establish independent corroboration or workplace outcomes."
+      ],
+      "candidate_id": "candidate:e97c3238256f7b0eec66b4ee",
+      "study_period_passage_sha256": null,
+      "review_status": "pending_review"
+    },
+    {
+      "claim": "Surgical epitope excision accelerated structure prediction 8.6x and nearly doubled the in-silico binder design hit rate.",
+      "evidence_type": "benchmark",
+      "support": {
+        "passage_id": "p0032",
+        "quote": "accelerates structure prediction 8.6x",
+        "section": "Grounding AI agents in biological reality: Building blocks for autonomous wet labs > Accelerating de novo protein binder design",
+        "passage_sha256": "acf5d7fbf9c6b20a2c2ee9a749c3b812a590142b8d3bf6e355cbffa53d332ccb",
+        "quote_start": 26,
+        "quote_end": 63
+      },
+      "study_period": {
+        "start": null,
+        "end": null,
+        "passage_id": null
+      },
+      "limitations": [
+        "AI-reviewed context; external abstracts do not establish independent corroboration or workplace outcomes."
+      ],
+      "candidate_id": "candidate:8c0f598a0503c8ba0cb27477",
+      "study_period_passage_sha256": null,
+      "review_status": "pending_review"
+    }
+  ],
+  "no_findings_reason": null,
+  "schema_version": "0.1.0",
+  "record_type": "candidate_extraction",
+  "review_status": "pending_review",
+  "source": {
+    "source_id": "source:discovered_dd1029b4b030aba3c24c66f5",
+    "source_url": "https://research.google/blog/grounding-ai-agents-in-biological-reality-building-blocks-for-autonomous-wet-labs/",
+    "publisher": "Google Research",
+    "published_at": "2026-10-16"
+  },
+  "report_title": "Grounding AI agents in biological reality: Building blocks for autonomous wet labs",
+  "fetched_at": "2026-10-22T14:04:19.978814Z",
+  "response_sha256": "0dd2365301fccd1ba3fce60c87d83eb06e567ba5e0580163885678b427f15f28",
+  "parsed_text_sha256": "28e28c894c41f795dd381000f272cdf9ed9d01c931148441a462421d946e2061",
+  "passage_count": 61,
+  "parsed_characters": 20066,
+  "provider": "gemini",
+  "requested_model": "gemini-3.5-flash-lite",
+  "returned_model": "gemini-3.5-flash-lite",
+  "prompt_version": "source-review-v3",
+  "limitations": [
+    "AI review requires human approval; quote checks do not independently prove semantic correctness."
+  ]
+}

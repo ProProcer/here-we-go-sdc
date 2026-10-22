@@ -1,0 +1,39 @@
+{
+  "schema_version": "0.1.0",
+  "record_type": "skill_news_assessment",
+  "assessment_key": "b683de483f30ec0966b40de4fcba4d4232b523c655ff0ed851b750d47c012f3e",
+  "skill": {
+    "skill_id": "skill:onet_2_b_3_e",
+    "label": "Programming",
+    "description": "Writing computer programs for various purposes.",
+    "kind": "general",
+    "aliases": []
+  },
+  "skill_sha256": "977f65389d4bd1673f490d4474e03698e68ed015d92552f8726106a373ef1ddb",
+  "evidence_sha256": "5b28a2726e4f0d2f2fc4cd3466520feaf3c67a9f476a144d47041a70d84ac808",
+  "news_id": "7eeb0a9dde53453907ecbc46",
+  "source_review_path": "ai_reviews/7eeb0a9dde53453907ecbc46_2be1d77ae64a.json",
+  "prompt_version": "skill-evidence-v2",
+  "requested_model": "gemini-3.5-flash-lite",
+  "returned_models": [
+    "gemini-3.5-flash-lite",
+    "gemini-3.5-flash-lite"
+  ],
+  "assessed_at": "2026-10-22T14:07:13.459862+00:00",
+  "assessment": {
+    "news_id": "7eeb0a9dde53453907ecbc46",
+    "relevance": "not_relevant",
+    "finding_indices": [],
+    "rationale": "No link to this skill is established by the supplied findings.",
+    "applicability_conditions": [],
+    "human_checks": []
+  },
+  "challenge": {
+    "news_id": "7eeb0a9dde53453907ecbc46",
+    "supported": true,
+    "reason": "No skill connection established by these selected findings."
+  },
+  "status": "pending_human_review",
+  "human_signoff_claimed": false,
+  "changes_weights": false
+}

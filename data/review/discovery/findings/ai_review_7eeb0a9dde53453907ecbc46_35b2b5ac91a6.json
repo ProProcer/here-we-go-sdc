@@ -1,0 +1,73 @@
+{
+  "findings": [
+    {
+      "claim": "Autonomous agents generate probabilistic execution paths that present difficulties for traditional software testing methodologies.",
+      "evidence_type": "author_projection",
+      "support": {
+        "passage_id": "p0010",
+        "quote": "Probabilistic control flows",
+        "section": "Open and Emergent Problems in Agentic Privacy and Security: A Contextual Angle > Agentic trade-offs",
+        "passage_sha256": "ae673c9ff73fa75746299097a7e3c7820332d1d1fac7719ee5b6dde41a9e12eb",
+        "quote_start": 0,
+        "quote_end": 27
+      },
+      "study_period": {
+        "start": null,
+        "end": null,
+        "passage_id": null
+      },
+      "limitations": [
+        "AI-reviewed context; external abstracts do not establish independent corroboration or workplace outcomes."
+      ],
+      "candidate_id": "candidate:11b14f31e8551843beb9a826",
+      "study_period_passage_sha256": null,
+      "review_status": "pending_review"
+    },
+    {
+      "claim": "Traditional notice and choice frameworks are inadequate for handling autonomous agents due to probabilistic behavior.",
+      "evidence_type": "author_projection",
+      "support": {
+        "passage_id": "p0022",
+        "quote": "User-centric controls",
+        "section": "Open and Emergent Problems in Agentic Privacy and Security: A Contextual Angle > Multi-layered approach to agentic privacy and security",
+        "passage_sha256": "ce24c83074e078a78611485e2c61fb090d4ad22c96fe62867ff76ece8ff0b0ad",
+        "quote_start": 0,
+        "quote_end": 21
+      },
+      "study_period": {
+        "start": null,
+        "end": null,
+        "passage_id": null
+      },
+      "limitations": [
+        "AI-reviewed context; external abstracts do not establish independent corroboration or workplace outcomes."
+      ],
+      "candidate_id": "candidate:e6205e4902c7178da5228c17",
+      "study_period_passage_sha256": null,
+      "review_status": "pending_review"
+    }
+  ],
+  "no_findings_reason": null,
+  "schema_version": "0.1.0",
+  "record_type": "candidate_extraction",
+  "review_status": "pending_review",
+  "source": {
+    "source_id": "source:discovered_7eeb0a9dde53453907ecbc46",
+    "source_url": "https://research.google/blog/open-and-emergent-problems-in-agentic-privacy-and-security-a-contextual-angle/",
+    "publisher": "Google Research",
+    "published_at": "2026-10-05"
+  },
+  "report_title": "Open and Emergent Problems in Agentic Privacy and Security: A Contextual Angle",
+  "fetched_at": "2026-10-22T13:58:53.492781Z",
+  "response_sha256": "96b82c5eea33e672e8881f3daa1edbfb1f76993e67e872d5e350c4eeb2d1ba6e",
+  "parsed_text_sha256": "f916836a76ac9367d5c8325eac4cba5a62940d21f7c70dd5bfa58ea2b4eb0d11",
+  "passage_count": 44,
+  "parsed_characters": 14694,
+  "provider": "gemini",
+  "requested_model": "gemini-3.5-flash-lite",
+  "returned_model": "gemini-3.5-flash-lite",
+  "prompt_version": "source-review-v3",
+  "limitations": [
+    "AI review requires human approval; quote checks do not independently prove semantic correctness."
+  ]
+}

@@ -32,3 +32,7 @@ Desktop.ini
 # Local VibeWise learning notes (including legacy state)
 .vibe-wise/
 .sensible-vibes/
+
+# Runtime discovery checkpoints are retained in the Actions state artifact.
+data/review/discovery/skill_index.json
+data/review/discovery/skill_jobs.json

@@ -1,0 +1,216 @@
+{
+  "schema_version": "0.1.0",
+  "record_type": "ai_source_review",
+  "status": "pending_human_review",
+  "discovery_id": "4f98c5029119950e7f82e09b",
+  "reviewed_at": "2026-10-22T14:08:37.665320+00:00",
+  "source": {
+    "source_id": "source:discovered_4f98c5029119950e7f82e09b",
+    "source_url": "https://research.google/blog/how-mobility-gives-language-models-a-deeper-understanding-of-place/",
+    "publisher": "Google Research",
+    "published_at": "2026-08-21"
+  },
+  "article_title": "How mobility gives language models a deeper understanding of place",
+  "source_item_sha256": "c6d7d1734577742de17a799a7a07f13f3c19c28e67d416322918585183da128a",
+  "context_sha256": "6d3678f08fd74d2d2bfcec976e9857cef2a555baa2503b092b1dd4063d910ee6",
+  "role_id": "shared_work_evidence",
+  "role_title": "Shared evidence across skills and occupations",
+  "review_scope": "shared_work_evidence",
+  "prompt_version": "source-review-v3",
+  "requested_model": "gemini-3.5-flash-lite",
+  "returned_models": [
+    "gemini-3.5-flash-lite",
+    "gemini-3.5-flash-lite"
+  ],
+  "model_calls": 2,
+  "deterministic_checks": {
+    "configured_publisher_scope": true,
+    "publication_date_in_visible_article": true,
+    "grounded_primary_quotes": 2,
+    "grounding_passed": true,
+    "challenge_checked_every_finding": true
+  },
+  "parsed_text_sha256": "fcd6987740b65f12b0f242d1f5d2d2e74c9208f6f2f13e125c815fa8d0cecf43",
+  "documents": [
+    {
+      "document_id": "primary",
+      "url": "https://research.google/blog/how-mobility-gives-language-models-a-deeper-understanding-of-place/",
+      "title": "How mobility gives language models a deeper understanding of place",
+      "kind": "publisher_article",
+      "coverage": "readable_article_text",
+      "response_sha256": "f98bce191659319d07af9be8bce174ec5118bee2e2746c8dbff5b3c001193207",
+      "parsed_text_sha256": "fcd6987740b65f12b0f242d1f5d2d2e74c9208f6f2f13e125c815fa8d0cecf43"
+    },
+    {
+      "document_id": "linked_study",
+      "url": "https://arxiv.org/abs/2601.21149",
+      "kind": "linked_study_abstract",
+      "title": "Title: Mobility-Embedded POIs: Learning What A Place Is and How It Is Used from Human Movement",
+      "coverage": "abstract_only_not_full_paper",
+      "response_sha256": "838c812a54c5f0eebe96bf29d0b3bebc2b04cc93ecf05eec522d18508edb9182",
+      "notices": []
+    },
+    {
+      "document_id": "related_1",
+      "url": "https://doi.org/10.59350/ch3em-a4h27",
+      "title": "Deeper understanding of In-Context Retrieval-Augmented Language Models",
+      "kind": "related_study_metadata_candidate",
+      "coverage": "publisher_metadata_and_abstract_only",
+      "response_sha256": "6dc21f91219e6af1604aa5d0ddea488b8b874f45b67f4fe0afcc58d30d12ebfd",
+      "notices": []
+    },
+    {
+      "document_id": "related_2",
+      "url": "https://doi.org/10.59350/shsq3-s2522",
+      "title": "Deeper understanding of In-Context Retrieval-Augmented Language Models",
+      "kind": "related_study_metadata_candidate",
+      "coverage": "publisher_metadata_and_abstract_only",
+      "response_sha256": "6dc21f91219e6af1604aa5d0ddea488b8b874f45b67f4fe0afcc58d30d12ebfd",
+      "notices": []
+    },
+    {
+      "document_id": "related_3",
+      "url": "https://doi.org/10.1511/2026.114.6.368",
+      "title": "How Explanation Unlocks Deeper Understanding",
+      "kind": "related_study_metadata_candidate",
+      "coverage": "metadata_only_no_results_checked",
+      "response_sha256": "6dc21f91219e6af1604aa5d0ddea488b8b874f45b67f4fe0afcc58d30d12ebfd",
+      "notices": []
+    }
+  ],
+  "retrieval_attempts": [
+    {
+      "url": "https://arxiv.org/abs/2601.21149",
+      "status": "retrieved",
+      "coverage": "abstract_only_not_full_paper"
+    },
+    {
+      "url": "https://api.crossref.org/works?query.title=How+mobility+gives+language+models+a+deeper+understanding+of+place&rows=3",
+      "status": "retrieved",
+      "matches": 3,
+      "coverage": "metadata_candidates_not_confirmed_corroboration"
+    }
+  ],
+  "draft": {
+    "summary": "Google Research introduces ME-POIs, a framework combining text metadata with anonymized human mobility patterns to enrich language model representations of places.",
+    "findings": [
+      {
+        "claim": "Integrating ME-POIs with text models yielded an 81.9% relative gain in predicting visit intent.",
+        "evidence_type": "benchmark",
+        "reference": {
+          "document_id": "primary",
+          "passage_id": "p0008"
+        },
+        "quote": "yielded up to an 81.9%"
+      },
+      {
+        "claim": "The framework achieved a 75.1% improvement in price level classification across unseen places.",
+        "evidence_type": "benchmark",
+        "reference": {
+          "document_id": "primary",
+          "passage_id": "p0008"
+        },
+        "quote": "a 75.1% improvement in price"
+      }
+    ],
+    "checks": [
+      {
+        "dimension": "authorship",
+        "status": "supported",
+        "explanation": "Authored by Google Research scientists.",
+        "references": [
+          {
+            "document_id": "primary",
+            "passage_id": "p0002"
+          }
+        ]
+      },
+      {
+        "dimension": "methods",
+        "status": "supported",
+        "explanation": "Described a three-step pipeline.",
+        "references": [
+          {
+            "document_id": "primary",
+            "passage_id": "p0011"
+          }
+        ]
+      },
+      {
+        "dimension": "limitations",
+        "status": "supported",
+        "explanation": "Aggregate data only.",
+        "references": [
+          {
+            "document_id": "primary",
+            "passage_id": "p0030"
+          }
+        ]
+      },
+      {
+        "dimension": "work_relevance",
+        "status": "supported",
+        "explanation": "Geospatial AI applications.",
+        "references": [
+          {
+            "document_id": "primary",
+            "passage_id": "p0003"
+          }
+        ]
+      }
+    ],
+    "cross_source_status": "consistent_with_linked_study",
+    "cross_source_explanation": "The arXiv abstract matches the publisher article claims.",
+    "cross_source_references": [
+      {
+        "document_id": "linked_study",
+        "passage_id": "p0001"
+      }
+    ],
+    "recommendation": "consider_approval",
+    "human_checks": [
+      "Verify full paper methodology in linked study."
+    ]
+  },
+  "automatic_corrections": [],
+  "challenge": {
+    "findings": [
+      {
+        "finding_index": 0,
+        "verdict": "supported",
+        "reason": "Directly supported by primary passage 8."
+      },
+      {
+        "finding_index": 1,
+        "verdict": "supported",
+        "reason": "Directly supported by primary passage 8."
+      }
+    ],
+    "checks_supported": true,
+    "cross_source_supported": true,
+    "recommendation_supported": true,
+    "unresolved_issues": []
+  },
+  "quote_checks": [
+    {
+      "passage_sha256": "95647342f7a584b07e896e133dfc1ed39b9ab3a6a688b14d98242c6f10673462",
+      "quote_start": 939,
+      "quote_end": 961
+    },
+    {
+      "passage_sha256": "95647342f7a584b07e896e133dfc1ed39b9ab3a6a688b14d98242c6f10673462",
+      "quote_start": 1004,
+      "quote_end": 1032
+    }
+  ],
+  "grounding_error": null,
+  "recommendation": "consider_approval",
+  "supported_finding_indices": [
+    0,
+    1
+  ],
+  "correction_notices": [],
+  "human_signoff_claimed": false,
+  "independent_empirical_verification_claimed": false,
+  "candidate_path": "findings/ai_review_4f98c5029119950e7f82e09b_ab4ce3becb7a.json"
+}

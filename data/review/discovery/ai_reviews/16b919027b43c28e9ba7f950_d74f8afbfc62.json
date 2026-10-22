@@ -1,0 +1,203 @@
+{
+  "schema_version": "0.1.0",
+  "record_type": "ai_source_review",
+  "status": "pending_human_review",
+  "discovery_id": "16b919027b43c28e9ba7f950",
+  "reviewed_at": "2026-10-22T13:58:53.492781+00:00",
+  "source": {
+    "source_id": "source:discovered_16b919027b43c28e9ba7f950",
+    "source_url": "https://research.google/blog/agenthands-generating-interactive-hand-gestures-for-spatially-grounded-agent-conversations-in-xr/",
+    "publisher": "Google Research",
+    "published_at": "2026-08-25"
+  },
+  "article_title": "AgentHands: Generating interactive hand gestures for spatially grounded agent conversations in XR",
+  "source_item_sha256": "378450ec1b4ebb7ca46722616d6219e410f02d7bb6025c42b1f1b0247a6b16be",
+  "context_sha256": "6d3678f08fd74d2d2bfcec976e9857cef2a555baa2503b092b1dd4063d910ee6",
+  "role_id": "shared_work_evidence",
+  "role_title": "Shared evidence across skills and occupations",
+  "review_scope": "shared_work_evidence",
+  "prompt_version": "source-review-v3",
+  "requested_model": "gemini-3.5-flash-lite",
+  "returned_models": [
+    "gemini-3.5-flash-lite",
+    "gemini-3.5-flash-lite"
+  ],
+  "model_calls": 2,
+  "deterministic_checks": {
+    "configured_publisher_scope": true,
+    "publication_date_in_visible_article": true,
+    "grounded_primary_quotes": 2,
+    "grounding_passed": true,
+    "challenge_checked_every_finding": true
+  },
+  "parsed_text_sha256": "5ccfed412c858e307cced17e3a35b3815251b35f41971bcc3d815743317ae504",
+  "documents": [
+    {
+      "document_id": "primary",
+      "url": "https://research.google/blog/agenthands-generating-interactive-hand-gestures-for-spatially-grounded-agent-conversations-in-xr/",
+      "title": "AgentHands: Generating interactive hand gestures for spatially grounded agent conversations in XR",
+      "kind": "publisher_article",
+      "coverage": "readable_article_text",
+      "response_sha256": "5a04b277f09a32d1f506075c27bf09b9b5f888beba4fb63bc3bd744f1e9be33b",
+      "parsed_text_sha256": "5ccfed412c858e307cced17e3a35b3815251b35f41971bcc3d815743317ae504"
+    },
+    {
+      "document_id": "related_1",
+      "url": "https://doi.org/10.1145/3772318.3790938",
+      "title": "AgentHands: Generating Interactive Hand Gestures for Spatially Grounded Agent Conversations in XR",
+      "kind": "related_study_metadata_candidate",
+      "coverage": "metadata_only_no_results_checked",
+      "response_sha256": "440ffb4ff0974e5268f893e177d7db77cf1527b2578d873c2be85a9e294f2584",
+      "notices": []
+    },
+    {
+      "document_id": "related_2",
+      "url": "https://doi.org/10.1109/fit.2013.23",
+      "title": "Interactive Control through Hand Gestures",
+      "kind": "related_study_metadata_candidate",
+      "coverage": "metadata_only_no_results_checked",
+      "response_sha256": "440ffb4ff0974e5268f893e177d7db77cf1527b2578d873c2be85a9e294f2584",
+      "notices": []
+    },
+    {
+      "document_id": "related_3",
+      "url": "https://doi.org/10.22214/ijraset.2023.49456",
+      "title": "Interactive Computer System Using Hand Gestures",
+      "kind": "related_study_metadata_candidate",
+      "coverage": "publisher_metadata_and_abstract_only",
+      "response_sha256": "440ffb4ff0974e5268f893e177d7db77cf1527b2578d873c2be85a9e294f2584",
+      "notices": []
+    }
+  ],
+  "retrieval_attempts": [
+    {
+      "url": "https://api.crossref.org/works?query.title=AgentHands%3A+Generating+interactive+hand+gestures+for+spatially+grounded+agent+conversations+in+XR&rows=3",
+      "status": "retrieved",
+      "matches": 3,
+      "coverage": "metadata_candidates_not_confirmed_corroboration"
+    }
+  ],
+  "draft": {
+    "summary": "AgentHands evaluates an LLM-powered XR prototype that synchronizes expressive virtual hand gestures with speech, significantly improving spatial grounding and task understanding in a user study.",
+    "findings": [
+      {
+        "claim": "Participants reported significantly easier object location and direction identification when using synchronized XR hand gestures compared to speech-only instructions.",
+        "evidence_type": "observed_usage",
+        "reference": {
+          "document_id": "primary",
+          "passage_id": "p0035"
+        },
+        "quote": "Significant gains in spatial grounding"
+      },
+      {
+        "claim": "Complex procedural tasks were rated as easier to follow and understand when accompanied by the agent's embodied hand demonstrations.",
+        "evidence_type": "observed_usage",
+        "reference": {
+          "document_id": "primary",
+          "passage_id": "p0036"
+        },
+        "quote": "Enhanced understanding of complex actions"
+      }
+    ],
+    "checks": [
+      {
+        "dimension": "authorship",
+        "status": "supported",
+        "explanation": "Authored by Google Research scientists.",
+        "references": [
+          {
+            "document_id": "primary",
+            "passage_id": "p0002"
+          }
+        ]
+      },
+      {
+        "dimension": "methods",
+        "status": "supported",
+        "explanation": "Within-subjects user study with N equals twelve participants.",
+        "references": [
+          {
+            "document_id": "primary",
+            "passage_id": "p0030"
+          }
+        ]
+      },
+      {
+        "dimension": "limitations",
+        "status": "unclear",
+        "explanation": "Limited sample size and lacks independent replication.",
+        "references": [
+          {
+            "document_id": "primary",
+            "passage_id": "p0030"
+          }
+        ]
+      },
+      {
+        "dimension": "work_relevance",
+        "status": "supported",
+        "explanation": "Relevant for spatial computing and task instruction.",
+        "references": [
+          {
+            "document_id": "primary",
+            "passage_id": "p0003"
+          }
+        ]
+      }
+    ],
+    "cross_source_status": "not_established",
+    "cross_source_explanation": "Only bibliographic metadata was retrieved; corroboration remains unknown.",
+    "cross_source_references": [],
+    "recommendation": "consider_approval",
+    "human_checks": [
+      "Verify full paper methodology and detailed statistical results.",
+      "Investigate the small sample size limitation in the user study."
+    ]
+  },
+  "automatic_corrections": [
+    "Downgraded metadata-only comparison; research results were not retrieved."
+  ],
+  "challenge": {
+    "findings": [
+      {
+        "finding_index": 0,
+        "verdict": "supported",
+        "reason": "Participants found it significantly easier to locate specific objects and identify directions referred to by the agent."
+      },
+      {
+        "finding_index": 1,
+        "verdict": "supported",
+        "reason": "Required activities were rated as easier to follow with enhanced understanding of complex actions."
+      }
+    ],
+    "checks_supported": true,
+    "cross_source_supported": false,
+    "recommendation_supported": true,
+    "unresolved_issues": [
+      "Small sample size in user study",
+      "Independent corroboration unavailable"
+    ]
+  },
+  "quote_checks": [
+    {
+      "passage_sha256": "049892ab2bcd4ad1656bcb98a7f0480476f187f422e6b1e51a500cc4060b45c3",
+      "quote_start": 0,
+      "quote_end": 38
+    },
+    {
+      "passage_sha256": "29e197bce8f5c55abc46185bbea203f6e8c2fe490a8832e5ad402063ff30b12d",
+      "quote_start": 0,
+      "quote_end": 41
+    }
+  ],
+  "grounding_error": null,
+  "recommendation": "investigate",
+  "supported_finding_indices": [
+    0,
+    1
+  ],
+  "correction_notices": [],
+  "human_signoff_claimed": false,
+  "independent_empirical_verification_claimed": false,
+  "candidate_path": "findings/ai_review_16b919027b43c28e9ba7f950_24010fd937ee.json"
+}

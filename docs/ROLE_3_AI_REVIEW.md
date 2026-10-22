@@ -1,5 +1,11 @@
 # AI-first source review
 
+The scheduled reviewer now uses a shared work/learning scope. See the
+[expandable skill-evidence guide](ROLE_3_SHARED_SKILL_EVIDENCE.md) for incremental
+catalog updates, skill mapping approval, coverage limits and the additional brief.
+The occupation-specific behavior below remains available with `--role ROLE_ID`;
+it describes the earlier BI seed batch rather than the current scheduled default.
+
 Read the [attention brief](../data/review/discovery/REVIEW_BRIEF.md) first.
 The AI reads articles before source approval and narrows the human workload to
 specific uncertainties and decisions. It does not require you to read every
@@ -107,9 +113,10 @@ python -m src.intelligence.source_review run --max-reviews 3
 python -m src.intelligence.source_review show
 ```
 
-`GEMINI_API_KEY` is required for AI review. The default role is BI Analysts;
-`--role` selects another real role. The workflow's `ROLE3_REVIEW_ROLE` repository
-variable selects its scheduled role. `--force` deliberately bypasses the cache.
+`GEMINI_API_KEY` is required for AI review. The default is now a shared work/learning
+review; `--role` explicitly selects a legacy occupation-specific review.
+`ROLE3_REVIEW_ROLE` is no longer used by the workflow. `--force` deliberately
+bypasses the source-review cache.
 
 The daily job attempts at most three reviews, with two model calls per successful
 review, and preserves valid summaries for seven days. Model, prompt, role or

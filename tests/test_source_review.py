@@ -123,7 +123,14 @@ class StubReviewer:
         if self.failure:
             raise ExtractionError("Fictional model failure")
         if model is ReviewDraft:
-            result = ReviewDraft.model_validate(self.draft)
+            payload = copy.deepcopy(self.draft)
+            if packet["role_context"].get("scope") == "shared_work_evidence":
+                for check in payload["checks"]:
+                    if check["dimension"] == "role_relevance":
+                        check["dimension"] = "work_relevance"
+                if payload["recommendation"] == "skip_for_role":
+                    payload["recommendation"] = "skip_for_scope"
+            result = ReviewDraft.model_validate(payload)
         else:
             result = ReviewChallenge.model_validate(
                 {
@@ -172,6 +179,25 @@ class TestSourceReview(unittest.TestCase):
             before, (ROOT / "data/processed/onet/31.0/trend_signals.json").read_bytes()
         )
         self.assertIn("UNTRUSTED DATA", client.calls[0][0])
+
+    def test_shared_review_has_no_catalog_or_occupation_dependency(self):
+        with patch(
+            "src.intelligence.source_review.real_catalog", side_effect=AssertionError
+        ):
+            client = StubReviewer()
+            record, _ = review_one(
+                ROW,
+                role_context(None),
+                client,
+                article_fetcher=lambda url: HTML,
+                research_fetcher=metadata,
+                now=NOW,
+            )
+        self.assertEqual(record["review_scope"], "shared_work_evidence")
+        self.assertIn(
+            "work_relevance", {c["dimension"] for c in record["draft"]["checks"]}
+        )
+        self.assertNotIn("tasks", client.calls[0][1]["role_context"])
 
     def test_semantically_overstated_finding_is_removed_even_with_matching_quote(self):
         record, candidates = self.review(StubReviewer(verdict="overstated"))

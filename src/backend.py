@@ -8,6 +8,7 @@ from datetime import UTC, datetime
 from src.ingestion.onet import ROOT, write_json
 from src.ingestion.selection import real_catalog
 from src.intelligence.outlook import get_outlook
+from src.intelligence.skill_evidence import evidence_for_role
 from src.profiles.intake import create_profile, create_profile_from_cv, review_profile
 from src.profiles.onet_matching import OnetMatcher
 from src.reskilling.planner import build_learning_plan
@@ -45,6 +46,10 @@ class CareerBackend:
 
     def outlook(self, role_id, scenario_id="baseline"):
         return get_outlook(role_id, scenario_id, catalog=self.catalog)
+
+    def skill_evidence(self, role_id, **kwargs):
+        """Reuse approved shared mappings; this lookup never calls AI or changes fit."""
+        return evidence_for_role(role_id, catalog=self.catalog, **kwargs)
 
     def learning_plan(
         self,

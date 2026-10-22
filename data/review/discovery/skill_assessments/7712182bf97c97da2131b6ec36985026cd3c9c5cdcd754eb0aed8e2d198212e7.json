@@ -1,0 +1,43 @@
+{
+  "schema_version": "0.1.0",
+  "record_type": "skill_news_assessment",
+  "assessment_key": "303deef3c3ba7b1bf684a83756377b290987ea012b71125c689499f36da5246e",
+  "skill": {
+    "skill_id": "skill:onet_2_b_3_e",
+    "label": "Programming",
+    "description": "Writing computer programs for various purposes.",
+    "kind": "general",
+    "aliases": []
+  },
+  "skill_sha256": "977f65389d4bd1673f490d4474e03698e68ed015d92552f8726106a373ef1ddb",
+  "evidence_sha256": "8bfafb4cfb385a25710848055cb68c580e5e3a4731c4476addd66bed4b6dcc72",
+  "news_id": "4c456e668ef45cba83b59adb",
+  "source_review_path": "ai_reviews/4c456e668ef45cba83b59adb_4a1fb319b582.json",
+  "prompt_version": "skill-evidence-v1",
+  "requested_model": "gemini-3.5-flash-lite",
+  "returned_models": [
+    "gemini-3.5-flash-lite",
+    "gemini-3.5-flash-lite"
+  ],
+  "assessed_at": "2026-10-22T14:02:44.554480+00:00",
+  "assessment": {
+    "news_id": "4c456e668ef45cba83b59adb",
+    "relevance": "not_relevant",
+    "finding_indices": [],
+    "rationale": "The article highlights geospatial agents used for cyclone and disease mapping, which does not entail writing computer programs.",
+    "applicability_conditions": [
+      "Geospatial reasoning agent deployment"
+    ],
+    "human_checks": [
+      "Inspect if agent tuning involved writing source code"
+    ]
+  },
+  "challenge": {
+    "news_id": "4c456e668ef45cba83b59adb",
+    "supported": false,
+    "reason": "Geospatial agent deployment for crisis response is not programming."
+  },
+  "status": "needs_review",
+  "human_signoff_claimed": false,
+  "changes_weights": false
+}

@@ -1,0 +1,43 @@
+{
+  "schema_version": "0.1.0",
+  "record_type": "skill_news_assessment",
+  "assessment_key": "112811deac127414470e56eee312c0a0af8a3842af0df74e9f129d8f1f3c8514",
+  "skill": {
+    "skill_id": "skill:onet_2_b_3_e",
+    "label": "Programming",
+    "description": "Writing computer programs for various purposes.",
+    "kind": "general",
+    "aliases": []
+  },
+  "skill_sha256": "977f65389d4bd1673f490d4474e03698e68ed015d92552f8726106a373ef1ddb",
+  "evidence_sha256": "bb2a2586bb93f931b0e2deaeaf36a761e6c4b74cefe156894edb508540c16ac9",
+  "news_id": "16b919027b43c28e9ba7f950",
+  "source_review_path": "ai_reviews/16b919027b43c28e9ba7f950_d74f8afbfc62.json",
+  "prompt_version": "skill-evidence-v1",
+  "requested_model": "gemini-3.5-flash-lite",
+  "returned_models": [
+    "gemini-3.5-flash-lite",
+    "gemini-3.5-flash-lite"
+  ],
+  "assessed_at": "2026-10-22T14:02:44.554480+00:00",
+  "assessment": {
+    "news_id": "16b919027b43c28e9ba7f950",
+    "relevance": "not_relevant",
+    "finding_indices": [],
+    "rationale": "The news focuses on XR hand gestures for agent conversations without discussing computer programming.",
+    "applicability_conditions": [
+      "XR agent gesture interaction"
+    ],
+    "human_checks": [
+      "Verify whether gesture generation required manual programming"
+    ]
+  },
+  "challenge": {
+    "news_id": "16b919027b43c28e9ba7f950",
+    "supported": false,
+    "reason": "XR hand gestures focus on spatial communication rather than programming."
+  },
+  "status": "needs_review",
+  "human_signoff_claimed": false,
+  "changes_weights": false
+}

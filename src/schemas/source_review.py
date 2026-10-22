@@ -35,7 +35,9 @@ class ReviewFinding(Contract):
 
 
 class ReviewCheck(Contract):
-    dimension: Literal["authorship", "methods", "limitations", "role_relevance"]
+    dimension: Literal[
+        "authorship", "methods", "limitations", "role_relevance", "work_relevance"
+    ]
     status: Literal["supported", "unclear", "not_found"]
     explanation: NonBlank = Field(max_length=180)
     references: list[ReviewReference] = Field(max_length=2)
@@ -53,17 +55,18 @@ class ReviewDraft(Contract):
     ]
     cross_source_explanation: NonBlank = Field(max_length=240)
     cross_source_references: list[ReviewReference] = Field(max_length=3)
-    recommendation: Literal["consider_approval", "investigate", "skip_for_role"]
+    recommendation: Literal[
+        "consider_approval", "investigate", "skip_for_role", "skip_for_scope"
+    ]
     human_checks: list[NonBlank] = Field(min_length=1, max_length=3)
 
     @model_validator(mode="after")
     def required_dimensions(self):
-        if {r.dimension for r in self.checks} != {
-            "authorship",
-            "methods",
-            "limitations",
-            "role_relevance",
-        }:
+        dimensions = {r.dimension for r in self.checks}
+        if not any(
+            dimensions == {"authorship", "methods", "limitations", relevance}
+            for relevance in ("role_relevance", "work_relevance")
+        ):
             raise ValueError("Review must cover all four dimensions exactly once")
         text = " ".join(
             [
