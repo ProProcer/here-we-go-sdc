@@ -1,0 +1,1234 @@
+{
+  "schema_version": "0.2.0",
+  "role_id": "role:onet_15_2051_01",
+  "live_snapshot": "data/snapshots/trends/onet/20261022T073637257329Z_f74de90b919d.json",
+  "review_record": "data/review/research/onet_bi_evidence_review.json",
+  "refresh_status": {
+    "status": "updated",
+    "attempted_at": "2026-10-22T07:36:37.257329Z",
+    "cache_available": true,
+    "message": "Reviewed source verified. Historical evidence is not a current labor-market forecast.",
+    "source_url": "https://research.google/blog/ds-star-a-state-of-the-art-versatile-data-science-agent/",
+    "snapshot_path": "data/snapshots/trends/onet/20261022T073637257329Z_f74de90b919d.json",
+    "response_sha256": "f74de90b919d07ea9ba1bcf45e03165c1c8f268b9605b8b4af5b25cd8a1c8fcf"
+  },
+  "outlooks": {
+    "baseline": {
+      "schema_version": "0.2.0",
+      "role_id": "role:onet_15_2051_01",
+      "role_title": "Business Intelligence Analysts",
+      "catalog_synthetic": false,
+      "baseline_label": "Contextual AI evidence; employment impact unknown",
+      "tasks": [
+        {
+          "task_id": "task:onet_16134",
+          "label": "Provide technical support for existing reports, dashboards, or other tools.",
+          "evidence_status": "insufficient_evidence",
+          "interpretation": "No reviewed evidence mapping is available.",
+          "mapping_basis": null,
+          "evidence_scope": null,
+          "signal_ids": []
+        },
+        {
+          "task_id": "task:onet_16135",
+          "label": "Maintain library of model documents, templates, or other reusable knowledge assets.",
+          "evidence_status": "insufficient_evidence",
+          "interpretation": "No reviewed evidence mapping is available.",
+          "mapping_basis": null,
+          "evidence_scope": null,
+          "signal_ids": []
+        },
+        {
+          "task_id": "task:onet_16136",
+          "label": "Identify or monitor current and potential customers, using business intelligence tools.",
+          "evidence_status": "insufficient_evidence",
+          "interpretation": "No reviewed evidence mapping is available.",
+          "mapping_basis": null,
+          "evidence_scope": null,
+          "signal_ids": []
+        },
+        {
+          "task_id": "task:onet_16137",
+          "label": "Create or review technical design documentation to ensure the accurate development of reporting solutions.",
+          "evidence_status": "insufficient_evidence",
+          "interpretation": "No reviewed evidence mapping is available.",
+          "mapping_basis": null,
+          "evidence_scope": null,
+          "signal_ids": []
+        },
+        {
+          "task_id": "task:onet_16138",
+          "label": "Communicate with customers, competitors, suppliers, professional organizations, or others to stay abreast of industry or business trends.",
+          "evidence_status": "insufficient_evidence",
+          "interpretation": "No reviewed evidence mapping is available.",
+          "mapping_basis": null,
+          "evidence_scope": null,
+          "signal_ids": []
+        },
+        {
+          "task_id": "task:onet_16139",
+          "label": "Maintain or update business intelligence tools, databases, dashboards, systems, or methods.",
+          "evidence_status": "insufficient_evidence",
+          "interpretation": "No reviewed evidence mapping is available.",
+          "mapping_basis": null,
+          "evidence_scope": null,
+          "signal_ids": []
+        },
+        {
+          "task_id": "task:onet_16140",
+          "label": "Manage timely flow of business intelligence information to users.",
+          "evidence_status": "insufficient_evidence",
+          "interpretation": "No reviewed evidence mapping is available.",
+          "mapping_basis": null,
+          "evidence_scope": null,
+          "signal_ids": []
+        },
+        {
+          "task_id": "task:onet_16141",
+          "label": "Identify and analyze industry or geographic trends with business strategy implications.",
+          "evidence_status": "insufficient_evidence",
+          "interpretation": "No reviewed evidence mapping is available.",
+          "mapping_basis": null,
+          "evidence_scope": null,
+          "signal_ids": []
+        },
+        {
+          "task_id": "task:onet_16142",
+          "label": "Document specifications for business intelligence or information technology reports, dashboards, or other outputs.",
+          "evidence_status": "insufficient_evidence",
+          "interpretation": "No reviewed evidence mapping is available.",
+          "mapping_basis": null,
+          "evidence_scope": null,
+          "signal_ids": []
+        },
+        {
+          "task_id": "task:onet_16143",
+          "label": "Disseminate information regarding tools, reports, or metadata enhancements.",
+          "evidence_status": "insufficient_evidence",
+          "interpretation": "No reviewed evidence mapping is available.",
+          "mapping_basis": null,
+          "evidence_scope": null,
+          "signal_ids": []
+        },
+        {
+          "task_id": "task:onet_16144",
+          "label": "Create business intelligence tools or systems, including design of related databases, spreadsheets, or outputs.",
+          "evidence_status": "insufficient_evidence",
+          "interpretation": "No reviewed evidence mapping is available.",
+          "mapping_basis": null,
+          "evidence_scope": null,
+          "signal_ids": []
+        },
+        {
+          "task_id": "task:onet_16145",
+          "label": "Conduct or coordinate tests to ensure that intelligence is consistent with defined needs.",
+          "evidence_status": "contextual_evidence",
+          "interpretation": "Conditional team interpretation: assisted analysis still needs tests against stakeholder requirements and independent checks of results. An LLM judge's acceptance is not independent validation. This connection to BI testing is inferred; task-specific accuracy and changes in testing effort remain unknown.",
+          "mapping_basis": "team_interpretation",
+          "evidence_scope": "contextual_not_task_measurement",
+          "signal_ids": [
+            "signal:onet_bi_ds_star_benchmark_2025"
+          ]
+        },
+        {
+          "task_id": "task:onet_16146",
+          "label": "Collect business intelligence data from available industry reports, public information, field reports, or purchased sources.",
+          "evidence_status": "insufficient_evidence",
+          "interpretation": "No reviewed evidence mapping is available.",
+          "mapping_basis": null,
+          "evidence_scope": null,
+          "signal_ids": []
+        },
+        {
+          "task_id": "task:onet_16147",
+          "label": "Analyze technology trends to identify markets for future product development or to improve sales of existing products.",
+          "evidence_status": "insufficient_evidence",
+          "interpretation": "No reviewed evidence mapping is available.",
+          "mapping_basis": null,
+          "evidence_scope": null,
+          "signal_ids": []
+        },
+        {
+          "task_id": "task:onet_16148",
+          "label": "Analyze competitive market strategies through analysis of related product, market, or share trends.",
+          "evidence_status": "insufficient_evidence",
+          "interpretation": "No reviewed evidence mapping is available.",
+          "mapping_basis": null,
+          "evidence_scope": null,
+          "signal_ids": []
+        },
+        {
+          "task_id": "task:onet_16149",
+          "label": "Synthesize current business intelligence or trend data to support recommendations for action.",
+          "evidence_status": "insufficient_evidence",
+          "interpretation": "No reviewed evidence mapping is available.",
+          "mapping_basis": null,
+          "evidence_scope": null,
+          "signal_ids": []
+        },
+        {
+          "task_id": "task:onet_16150",
+          "label": "Generate standard or custom reports summarizing business, financial, or economic data for review by executives, managers, clients, and other stakeholders.",
+          "evidence_status": "contextual_evidence",
+          "interpretation": "Conditional team interpretation: if comparable assistance is permitted and useful, analysts could review generated analytical drafts when preparing reports. People must verify source data, calculations and business meaning. The benchmark does not evaluate this occupation's reporting task or establish adoption.",
+          "mapping_basis": "team_interpretation",
+          "evidence_scope": "contextual_not_task_measurement",
+          "signal_ids": [
+            "signal:onet_bi_ds_star_benchmark_2025"
+          ]
+        }
+      ],
+      "signals": [
+        {
+          "signal_id": "signal:onet_bi_ds_star_benchmark_2025",
+          "source_id": "source:google_ds_star_2025_11",
+          "claim": "Google reports DS-STAR benchmark accuracy of 45.2% on DABStep versus 41.0% for its best comparison. The system generates analysis code and iteratively checks plans using an LLM judge; this is research capability evidence, not a workplace outcome.",
+          "synthetic": false
+        }
+      ],
+      "sources": [
+        {
+          "source_id": "source:google_ds_star_2025_11",
+          "title": "DS-STAR: A state-of-the-art versatile data science agent",
+          "publisher": "Google Research",
+          "source_url": "https://research.google/blog/ds-star-a-state-of-the-art-versatile-data-science-agent/",
+          "published_at": "2025-11-06",
+          "retrieved_at": "2026-10-22",
+          "synthetic": false,
+          "usage_note": "Author-reported benchmark and system description; assistant-authored source review, not a human approval record. See data/review/research/onet_bi_evidence_review.json.",
+          "coverage": "Data-analysis research; contextual relevance to two Business Intelligence Analyst tasks.",
+          "limitations": "Historical vendor research, not independent workplace evaluation. No measured BI adoption, task automation rate, employer demand, Malaysian labor-market coverage or employment forecast. An LLM verifier does not establish correctness."
+        }
+      ],
+      "scenario": {
+        "scenario_id": "baseline",
+        "name": "Baseline (O*NET occupational ratings)",
+        "synthetic": false,
+        "assumptions": [],
+        "affected_task_ids": [],
+        "skill_priorities": [
+          {
+            "skill_id": "skill:onet_2_a_1_a",
+            "baseline_priority": 0.8,
+            "adjusted_priority": 0.8,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_a_1_b",
+            "baseline_priority": 0.776,
+            "adjusted_priority": 0.776,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_a_1_c",
+            "baseline_priority": 0.75,
+            "adjusted_priority": 0.75,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_a_1_d",
+            "baseline_priority": 0.776,
+            "adjusted_priority": 0.776,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_a_1_e",
+            "baseline_priority": 0.7,
+            "adjusted_priority": 0.7,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_a_1_f",
+            "baseline_priority": 0.324,
+            "adjusted_priority": 0.324,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_a_2_a",
+            "baseline_priority": 0.776,
+            "adjusted_priority": 0.776,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_a_2_b",
+            "baseline_priority": 0.776,
+            "adjusted_priority": 0.776,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_a_2_c",
+            "baseline_priority": 0.6,
+            "adjusted_priority": 0.6,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_a_2_d",
+            "baseline_priority": 0.624,
+            "adjusted_priority": 0.624,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_b_1_a",
+            "baseline_priority": 0.576,
+            "adjusted_priority": 0.576,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_b_1_b",
+            "baseline_priority": 0.6,
+            "adjusted_priority": 0.6,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_b_1_c",
+            "baseline_priority": 0.576,
+            "adjusted_priority": 0.576,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_b_1_d",
+            "baseline_priority": 0.5,
+            "adjusted_priority": 0.5,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_b_1_e",
+            "baseline_priority": 0.6,
+            "adjusted_priority": 0.6,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_b_1_f",
+            "baseline_priority": 0.576,
+            "adjusted_priority": 0.576,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_b_2_i",
+            "baseline_priority": 0.676,
+            "adjusted_priority": 0.676,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_b_3_a",
+            "baseline_priority": 0.376,
+            "adjusted_priority": 0.376,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_b_3_b",
+            "baseline_priority": 0.324,
+            "adjusted_priority": 0.324,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_b_3_e",
+            "baseline_priority": 0.5,
+            "adjusted_priority": 0.5,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_b_3_g",
+            "baseline_priority": 0.35,
+            "adjusted_priority": 0.35,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_b_3_h",
+            "baseline_priority": 0.276,
+            "adjusted_priority": 0.276,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_b_3_m",
+            "baseline_priority": 0.4,
+            "adjusted_priority": 0.4,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_b_4_e",
+            "baseline_priority": 0.724,
+            "adjusted_priority": 0.724,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_b_4_g",
+            "baseline_priority": 0.624,
+            "adjusted_priority": 0.624,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_b_4_h",
+            "baseline_priority": 0.624,
+            "adjusted_priority": 0.624,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_b_5_a",
+            "baseline_priority": 0.624,
+            "adjusted_priority": 0.624,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_b_5_b",
+            "baseline_priority": 0.376,
+            "adjusted_priority": 0.376,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_b_5_c",
+            "baseline_priority": 0.35,
+            "adjusted_priority": 0.35,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_b_5_d",
+            "baseline_priority": 0.424,
+            "adjusted_priority": 0.424,
+            "applied_adjustment": 0.0
+          }
+        ],
+        "interpretation": "Unadjusted O*NET Importance/5 weights; not measured local demand, proficiency, or an employment forecast."
+      },
+      "limitations": [
+        "Role/task records come from O*NET 31.0. Unmapped tasks and unreviewed evidence are not AI-impact findings.",
+        "Task mappings are team interpretations, not measured task automation rates.",
+        "Scenario adjustments are illustrative learning priorities, not employment forecasts or changes to personal fit.",
+        "Outlook reads validated cached evidence. Run python -m src.intelligence.feeds to refresh the reviewed source; source publication dates may still be historical."
+      ],
+      "catalog_id": "onet_31_0",
+      "available_scenarios": [
+        "baseline",
+        "moderate_ai_change",
+        "rapid_ai_change"
+      ],
+      "learning_priority_evidence": {
+        "policy_version": "reviewed-learning-priorities-v1",
+        "maximum_adjustment": 0.1,
+        "basis": "reviewed_application_policy_not_empirically_calibrated",
+        "decisions": [],
+        "rejected_assessments": []
+      }
+    },
+    "moderate_ai_change": {
+      "schema_version": "0.2.0",
+      "role_id": "role:onet_15_2051_01",
+      "role_title": "Business Intelligence Analysts",
+      "catalog_synthetic": false,
+      "baseline_label": "Contextual AI evidence; employment impact unknown",
+      "tasks": [
+        {
+          "task_id": "task:onet_16134",
+          "label": "Provide technical support for existing reports, dashboards, or other tools.",
+          "evidence_status": "insufficient_evidence",
+          "interpretation": "No reviewed evidence mapping is available.",
+          "mapping_basis": null,
+          "evidence_scope": null,
+          "signal_ids": []
+        },
+        {
+          "task_id": "task:onet_16135",
+          "label": "Maintain library of model documents, templates, or other reusable knowledge assets.",
+          "evidence_status": "insufficient_evidence",
+          "interpretation": "No reviewed evidence mapping is available.",
+          "mapping_basis": null,
+          "evidence_scope": null,
+          "signal_ids": []
+        },
+        {
+          "task_id": "task:onet_16136",
+          "label": "Identify or monitor current and potential customers, using business intelligence tools.",
+          "evidence_status": "insufficient_evidence",
+          "interpretation": "No reviewed evidence mapping is available.",
+          "mapping_basis": null,
+          "evidence_scope": null,
+          "signal_ids": []
+        },
+        {
+          "task_id": "task:onet_16137",
+          "label": "Create or review technical design documentation to ensure the accurate development of reporting solutions.",
+          "evidence_status": "insufficient_evidence",
+          "interpretation": "No reviewed evidence mapping is available.",
+          "mapping_basis": null,
+          "evidence_scope": null,
+          "signal_ids": []
+        },
+        {
+          "task_id": "task:onet_16138",
+          "label": "Communicate with customers, competitors, suppliers, professional organizations, or others to stay abreast of industry or business trends.",
+          "evidence_status": "insufficient_evidence",
+          "interpretation": "No reviewed evidence mapping is available.",
+          "mapping_basis": null,
+          "evidence_scope": null,
+          "signal_ids": []
+        },
+        {
+          "task_id": "task:onet_16139",
+          "label": "Maintain or update business intelligence tools, databases, dashboards, systems, or methods.",
+          "evidence_status": "insufficient_evidence",
+          "interpretation": "No reviewed evidence mapping is available.",
+          "mapping_basis": null,
+          "evidence_scope": null,
+          "signal_ids": []
+        },
+        {
+          "task_id": "task:onet_16140",
+          "label": "Manage timely flow of business intelligence information to users.",
+          "evidence_status": "insufficient_evidence",
+          "interpretation": "No reviewed evidence mapping is available.",
+          "mapping_basis": null,
+          "evidence_scope": null,
+          "signal_ids": []
+        },
+        {
+          "task_id": "task:onet_16141",
+          "label": "Identify and analyze industry or geographic trends with business strategy implications.",
+          "evidence_status": "insufficient_evidence",
+          "interpretation": "No reviewed evidence mapping is available.",
+          "mapping_basis": null,
+          "evidence_scope": null,
+          "signal_ids": []
+        },
+        {
+          "task_id": "task:onet_16142",
+          "label": "Document specifications for business intelligence or information technology reports, dashboards, or other outputs.",
+          "evidence_status": "insufficient_evidence",
+          "interpretation": "No reviewed evidence mapping is available.",
+          "mapping_basis": null,
+          "evidence_scope": null,
+          "signal_ids": []
+        },
+        {
+          "task_id": "task:onet_16143",
+          "label": "Disseminate information regarding tools, reports, or metadata enhancements.",
+          "evidence_status": "insufficient_evidence",
+          "interpretation": "No reviewed evidence mapping is available.",
+          "mapping_basis": null,
+          "evidence_scope": null,
+          "signal_ids": []
+        },
+        {
+          "task_id": "task:onet_16144",
+          "label": "Create business intelligence tools or systems, including design of related databases, spreadsheets, or outputs.",
+          "evidence_status": "insufficient_evidence",
+          "interpretation": "No reviewed evidence mapping is available.",
+          "mapping_basis": null,
+          "evidence_scope": null,
+          "signal_ids": []
+        },
+        {
+          "task_id": "task:onet_16145",
+          "label": "Conduct or coordinate tests to ensure that intelligence is consistent with defined needs.",
+          "evidence_status": "contextual_evidence",
+          "interpretation": "Conditional team interpretation: assisted analysis still needs tests against stakeholder requirements and independent checks of results. An LLM judge's acceptance is not independent validation. This connection to BI testing is inferred; task-specific accuracy and changes in testing effort remain unknown.",
+          "mapping_basis": "team_interpretation",
+          "evidence_scope": "contextual_not_task_measurement",
+          "signal_ids": [
+            "signal:onet_bi_ds_star_benchmark_2025"
+          ]
+        },
+        {
+          "task_id": "task:onet_16146",
+          "label": "Collect business intelligence data from available industry reports, public information, field reports, or purchased sources.",
+          "evidence_status": "insufficient_evidence",
+          "interpretation": "No reviewed evidence mapping is available.",
+          "mapping_basis": null,
+          "evidence_scope": null,
+          "signal_ids": []
+        },
+        {
+          "task_id": "task:onet_16147",
+          "label": "Analyze technology trends to identify markets for future product development or to improve sales of existing products.",
+          "evidence_status": "insufficient_evidence",
+          "interpretation": "No reviewed evidence mapping is available.",
+          "mapping_basis": null,
+          "evidence_scope": null,
+          "signal_ids": []
+        },
+        {
+          "task_id": "task:onet_16148",
+          "label": "Analyze competitive market strategies through analysis of related product, market, or share trends.",
+          "evidence_status": "insufficient_evidence",
+          "interpretation": "No reviewed evidence mapping is available.",
+          "mapping_basis": null,
+          "evidence_scope": null,
+          "signal_ids": []
+        },
+        {
+          "task_id": "task:onet_16149",
+          "label": "Synthesize current business intelligence or trend data to support recommendations for action.",
+          "evidence_status": "insufficient_evidence",
+          "interpretation": "No reviewed evidence mapping is available.",
+          "mapping_basis": null,
+          "evidence_scope": null,
+          "signal_ids": []
+        },
+        {
+          "task_id": "task:onet_16150",
+          "label": "Generate standard or custom reports summarizing business, financial, or economic data for review by executives, managers, clients, and other stakeholders.",
+          "evidence_status": "contextual_evidence",
+          "interpretation": "Conditional team interpretation: if comparable assistance is permitted and useful, analysts could review generated analytical drafts when preparing reports. People must verify source data, calculations and business meaning. The benchmark does not evaluate this occupation's reporting task or establish adoption.",
+          "mapping_basis": "team_interpretation",
+          "evidence_scope": "contextual_not_task_measurement",
+          "signal_ids": [
+            "signal:onet_bi_ds_star_benchmark_2025"
+          ]
+        }
+      ],
+      "signals": [
+        {
+          "signal_id": "signal:onet_bi_ds_star_benchmark_2025",
+          "source_id": "source:google_ds_star_2025_11",
+          "claim": "Google reports DS-STAR benchmark accuracy of 45.2% on DABStep versus 41.0% for its best comparison. The system generates analysis code and iteratively checks plans using an LLM judge; this is research capability evidence, not a workplace outcome.",
+          "synthetic": false
+        }
+      ],
+      "sources": [
+        {
+          "source_id": "source:google_ds_star_2025_11",
+          "title": "DS-STAR: A state-of-the-art versatile data science agent",
+          "publisher": "Google Research",
+          "source_url": "https://research.google/blog/ds-star-a-state-of-the-art-versatile-data-science-agent/",
+          "published_at": "2025-11-06",
+          "retrieved_at": "2026-10-22",
+          "synthetic": false,
+          "usage_note": "Author-reported benchmark and system description; assistant-authored source review, not a human approval record. See data/review/research/onet_bi_evidence_review.json.",
+          "coverage": "Data-analysis research; contextual relevance to two Business Intelligence Analyst tasks.",
+          "limitations": "Historical vendor research, not independent workplace evaluation. No measured BI adoption, task automation rate, employer demand, Malaysian labor-market coverage or employment forecast. An LLM verifier does not establish correctness."
+        }
+      ],
+      "scenario": {
+        "scenario_id": "moderate_ai_change",
+        "name": "Illustrative moderate ai change",
+        "synthetic": true,
+        "assumptions": [
+          "Team-authored stress test: assume AI accelerates initial report preparation.",
+          "Human verification and learning unfamiliar workflows receive greater priority; this is not an observed effect or employment forecast."
+        ],
+        "affected_task_ids": [
+          "task:onet_16150",
+          "task:onet_16139"
+        ],
+        "skill_priorities": [
+          {
+            "skill_id": "skill:onet_2_a_1_a",
+            "baseline_priority": 0.8,
+            "adjusted_priority": 0.8,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_a_1_b",
+            "baseline_priority": 0.776,
+            "adjusted_priority": 0.776,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_a_1_c",
+            "baseline_priority": 0.75,
+            "adjusted_priority": 0.75,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_a_1_d",
+            "baseline_priority": 0.776,
+            "adjusted_priority": 0.776,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_a_1_e",
+            "baseline_priority": 0.7,
+            "adjusted_priority": 0.7,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_a_1_f",
+            "baseline_priority": 0.324,
+            "adjusted_priority": 0.324,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_a_2_a",
+            "baseline_priority": 0.776,
+            "adjusted_priority": 0.856,
+            "applied_adjustment": 0.08
+          },
+          {
+            "skill_id": "skill:onet_2_a_2_b",
+            "baseline_priority": 0.776,
+            "adjusted_priority": 0.836,
+            "applied_adjustment": 0.06
+          },
+          {
+            "skill_id": "skill:onet_2_a_2_c",
+            "baseline_priority": 0.6,
+            "adjusted_priority": 0.6,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_a_2_d",
+            "baseline_priority": 0.624,
+            "adjusted_priority": 0.624,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_b_1_a",
+            "baseline_priority": 0.576,
+            "adjusted_priority": 0.576,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_b_1_b",
+            "baseline_priority": 0.6,
+            "adjusted_priority": 0.6,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_b_1_c",
+            "baseline_priority": 0.576,
+            "adjusted_priority": 0.576,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_b_1_d",
+            "baseline_priority": 0.5,
+            "adjusted_priority": 0.5,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_b_1_e",
+            "baseline_priority": 0.6,
+            "adjusted_priority": 0.6,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_b_1_f",
+            "baseline_priority": 0.576,
+            "adjusted_priority": 0.576,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_b_2_i",
+            "baseline_priority": 0.676,
+            "adjusted_priority": 0.676,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_b_3_a",
+            "baseline_priority": 0.376,
+            "adjusted_priority": 0.376,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_b_3_b",
+            "baseline_priority": 0.324,
+            "adjusted_priority": 0.324,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_b_3_e",
+            "baseline_priority": 0.5,
+            "adjusted_priority": 0.5,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_b_3_g",
+            "baseline_priority": 0.35,
+            "adjusted_priority": 0.35,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_b_3_h",
+            "baseline_priority": 0.276,
+            "adjusted_priority": 0.276,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_b_3_m",
+            "baseline_priority": 0.4,
+            "adjusted_priority": 0.4,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_b_4_e",
+            "baseline_priority": 0.724,
+            "adjusted_priority": 0.724,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_b_4_g",
+            "baseline_priority": 0.624,
+            "adjusted_priority": 0.624,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_b_4_h",
+            "baseline_priority": 0.624,
+            "adjusted_priority": 0.624,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_b_5_a",
+            "baseline_priority": 0.624,
+            "adjusted_priority": 0.624,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_b_5_b",
+            "baseline_priority": 0.376,
+            "adjusted_priority": 0.376,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_b_5_c",
+            "baseline_priority": 0.35,
+            "adjusted_priority": 0.35,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_b_5_d",
+            "baseline_priority": 0.424,
+            "adjusted_priority": 0.424,
+            "applied_adjustment": 0.0
+          }
+        ],
+        "interpretation": "Illustrative changes to learning priorities for Business Intelligence Analysts only. Does not change personal fit or assert task-to-skill evidence."
+      },
+      "limitations": [
+        "Role/task records come from O*NET 31.0. Unmapped tasks and unreviewed evidence are not AI-impact findings.",
+        "Task mappings are team interpretations, not measured task automation rates.",
+        "Scenario adjustments are illustrative learning priorities, not employment forecasts or changes to personal fit.",
+        "Outlook reads validated cached evidence. Run python -m src.intelligence.feeds to refresh the reviewed source; source publication dates may still be historical."
+      ],
+      "catalog_id": "onet_31_0",
+      "available_scenarios": [
+        "baseline",
+        "moderate_ai_change",
+        "rapid_ai_change"
+      ],
+      "learning_priority_evidence": {
+        "policy_version": "reviewed-learning-priorities-v1",
+        "maximum_adjustment": 0.1,
+        "basis": "reviewed_application_policy_not_empirically_calibrated",
+        "decisions": [],
+        "rejected_assessments": []
+      }
+    },
+    "rapid_ai_change": {
+      "schema_version": "0.2.0",
+      "role_id": "role:onet_15_2051_01",
+      "role_title": "Business Intelligence Analysts",
+      "catalog_synthetic": false,
+      "baseline_label": "Contextual AI evidence; employment impact unknown",
+      "tasks": [
+        {
+          "task_id": "task:onet_16134",
+          "label": "Provide technical support for existing reports, dashboards, or other tools.",
+          "evidence_status": "insufficient_evidence",
+          "interpretation": "No reviewed evidence mapping is available.",
+          "mapping_basis": null,
+          "evidence_scope": null,
+          "signal_ids": []
+        },
+        {
+          "task_id": "task:onet_16135",
+          "label": "Maintain library of model documents, templates, or other reusable knowledge assets.",
+          "evidence_status": "insufficient_evidence",
+          "interpretation": "No reviewed evidence mapping is available.",
+          "mapping_basis": null,
+          "evidence_scope": null,
+          "signal_ids": []
+        },
+        {
+          "task_id": "task:onet_16136",
+          "label": "Identify or monitor current and potential customers, using business intelligence tools.",
+          "evidence_status": "insufficient_evidence",
+          "interpretation": "No reviewed evidence mapping is available.",
+          "mapping_basis": null,
+          "evidence_scope": null,
+          "signal_ids": []
+        },
+        {
+          "task_id": "task:onet_16137",
+          "label": "Create or review technical design documentation to ensure the accurate development of reporting solutions.",
+          "evidence_status": "insufficient_evidence",
+          "interpretation": "No reviewed evidence mapping is available.",
+          "mapping_basis": null,
+          "evidence_scope": null,
+          "signal_ids": []
+        },
+        {
+          "task_id": "task:onet_16138",
+          "label": "Communicate with customers, competitors, suppliers, professional organizations, or others to stay abreast of industry or business trends.",
+          "evidence_status": "insufficient_evidence",
+          "interpretation": "No reviewed evidence mapping is available.",
+          "mapping_basis": null,
+          "evidence_scope": null,
+          "signal_ids": []
+        },
+        {
+          "task_id": "task:onet_16139",
+          "label": "Maintain or update business intelligence tools, databases, dashboards, systems, or methods.",
+          "evidence_status": "insufficient_evidence",
+          "interpretation": "No reviewed evidence mapping is available.",
+          "mapping_basis": null,
+          "evidence_scope": null,
+          "signal_ids": []
+        },
+        {
+          "task_id": "task:onet_16140",
+          "label": "Manage timely flow of business intelligence information to users.",
+          "evidence_status": "insufficient_evidence",
+          "interpretation": "No reviewed evidence mapping is available.",
+          "mapping_basis": null,
+          "evidence_scope": null,
+          "signal_ids": []
+        },
+        {
+          "task_id": "task:onet_16141",
+          "label": "Identify and analyze industry or geographic trends with business strategy implications.",
+          "evidence_status": "insufficient_evidence",
+          "interpretation": "No reviewed evidence mapping is available.",
+          "mapping_basis": null,
+          "evidence_scope": null,
+          "signal_ids": []
+        },
+        {
+          "task_id": "task:onet_16142",
+          "label": "Document specifications for business intelligence or information technology reports, dashboards, or other outputs.",
+          "evidence_status": "insufficient_evidence",
+          "interpretation": "No reviewed evidence mapping is available.",
+          "mapping_basis": null,
+          "evidence_scope": null,
+          "signal_ids": []
+        },
+        {
+          "task_id": "task:onet_16143",
+          "label": "Disseminate information regarding tools, reports, or metadata enhancements.",
+          "evidence_status": "insufficient_evidence",
+          "interpretation": "No reviewed evidence mapping is available.",
+          "mapping_basis": null,
+          "evidence_scope": null,
+          "signal_ids": []
+        },
+        {
+          "task_id": "task:onet_16144",
+          "label": "Create business intelligence tools or systems, including design of related databases, spreadsheets, or outputs.",
+          "evidence_status": "insufficient_evidence",
+          "interpretation": "No reviewed evidence mapping is available.",
+          "mapping_basis": null,
+          "evidence_scope": null,
+          "signal_ids": []
+        },
+        {
+          "task_id": "task:onet_16145",
+          "label": "Conduct or coordinate tests to ensure that intelligence is consistent with defined needs.",
+          "evidence_status": "contextual_evidence",
+          "interpretation": "Conditional team interpretation: assisted analysis still needs tests against stakeholder requirements and independent checks of results. An LLM judge's acceptance is not independent validation. This connection to BI testing is inferred; task-specific accuracy and changes in testing effort remain unknown.",
+          "mapping_basis": "team_interpretation",
+          "evidence_scope": "contextual_not_task_measurement",
+          "signal_ids": [
+            "signal:onet_bi_ds_star_benchmark_2025"
+          ]
+        },
+        {
+          "task_id": "task:onet_16146",
+          "label": "Collect business intelligence data from available industry reports, public information, field reports, or purchased sources.",
+          "evidence_status": "insufficient_evidence",
+          "interpretation": "No reviewed evidence mapping is available.",
+          "mapping_basis": null,
+          "evidence_scope": null,
+          "signal_ids": []
+        },
+        {
+          "task_id": "task:onet_16147",
+          "label": "Analyze technology trends to identify markets for future product development or to improve sales of existing products.",
+          "evidence_status": "insufficient_evidence",
+          "interpretation": "No reviewed evidence mapping is available.",
+          "mapping_basis": null,
+          "evidence_scope": null,
+          "signal_ids": []
+        },
+        {
+          "task_id": "task:onet_16148",
+          "label": "Analyze competitive market strategies through analysis of related product, market, or share trends.",
+          "evidence_status": "insufficient_evidence",
+          "interpretation": "No reviewed evidence mapping is available.",
+          "mapping_basis": null,
+          "evidence_scope": null,
+          "signal_ids": []
+        },
+        {
+          "task_id": "task:onet_16149",
+          "label": "Synthesize current business intelligence or trend data to support recommendations for action.",
+          "evidence_status": "insufficient_evidence",
+          "interpretation": "No reviewed evidence mapping is available.",
+          "mapping_basis": null,
+          "evidence_scope": null,
+          "signal_ids": []
+        },
+        {
+          "task_id": "task:onet_16150",
+          "label": "Generate standard or custom reports summarizing business, financial, or economic data for review by executives, managers, clients, and other stakeholders.",
+          "evidence_status": "contextual_evidence",
+          "interpretation": "Conditional team interpretation: if comparable assistance is permitted and useful, analysts could review generated analytical drafts when preparing reports. People must verify source data, calculations and business meaning. The benchmark does not evaluate this occupation's reporting task or establish adoption.",
+          "mapping_basis": "team_interpretation",
+          "evidence_scope": "contextual_not_task_measurement",
+          "signal_ids": [
+            "signal:onet_bi_ds_star_benchmark_2025"
+          ]
+        }
+      ],
+      "signals": [
+        {
+          "signal_id": "signal:onet_bi_ds_star_benchmark_2025",
+          "source_id": "source:google_ds_star_2025_11",
+          "claim": "Google reports DS-STAR benchmark accuracy of 45.2% on DABStep versus 41.0% for its best comparison. The system generates analysis code and iteratively checks plans using an LLM judge; this is research capability evidence, not a workplace outcome.",
+          "synthetic": false
+        }
+      ],
+      "sources": [
+        {
+          "source_id": "source:google_ds_star_2025_11",
+          "title": "DS-STAR: A state-of-the-art versatile data science agent",
+          "publisher": "Google Research",
+          "source_url": "https://research.google/blog/ds-star-a-state-of-the-art-versatile-data-science-agent/",
+          "published_at": "2025-11-06",
+          "retrieved_at": "2026-10-22",
+          "synthetic": false,
+          "usage_note": "Author-reported benchmark and system description; assistant-authored source review, not a human approval record. See data/review/research/onet_bi_evidence_review.json.",
+          "coverage": "Data-analysis research; contextual relevance to two Business Intelligence Analyst tasks.",
+          "limitations": "Historical vendor research, not independent workplace evaluation. No measured BI adoption, task automation rate, employer demand, Malaysian labor-market coverage or employment forecast. An LLM verifier does not establish correctness."
+        }
+      ],
+      "scenario": {
+        "scenario_id": "rapid_ai_change",
+        "name": "Illustrative rapid ai change",
+        "synthetic": true,
+        "assumptions": [
+          "Team-authored stress test: assume AI accelerates initial report preparation.",
+          "Human verification and learning unfamiliar workflows receive greater priority; this is not an observed effect or employment forecast."
+        ],
+        "affected_task_ids": [
+          "task:onet_16150",
+          "task:onet_16139"
+        ],
+        "skill_priorities": [
+          {
+            "skill_id": "skill:onet_2_a_1_a",
+            "baseline_priority": 0.8,
+            "adjusted_priority": 0.8,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_a_1_b",
+            "baseline_priority": 0.776,
+            "adjusted_priority": 0.776,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_a_1_c",
+            "baseline_priority": 0.75,
+            "adjusted_priority": 0.75,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_a_1_d",
+            "baseline_priority": 0.776,
+            "adjusted_priority": 0.776,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_a_1_e",
+            "baseline_priority": 0.7,
+            "adjusted_priority": 0.7,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_a_1_f",
+            "baseline_priority": 0.324,
+            "adjusted_priority": 0.324,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_a_2_a",
+            "baseline_priority": 0.776,
+            "adjusted_priority": 0.936,
+            "applied_adjustment": 0.16
+          },
+          {
+            "skill_id": "skill:onet_2_a_2_b",
+            "baseline_priority": 0.776,
+            "adjusted_priority": 0.896,
+            "applied_adjustment": 0.12
+          },
+          {
+            "skill_id": "skill:onet_2_a_2_c",
+            "baseline_priority": 0.6,
+            "adjusted_priority": 0.6,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_a_2_d",
+            "baseline_priority": 0.624,
+            "adjusted_priority": 0.624,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_b_1_a",
+            "baseline_priority": 0.576,
+            "adjusted_priority": 0.576,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_b_1_b",
+            "baseline_priority": 0.6,
+            "adjusted_priority": 0.6,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_b_1_c",
+            "baseline_priority": 0.576,
+            "adjusted_priority": 0.576,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_b_1_d",
+            "baseline_priority": 0.5,
+            "adjusted_priority": 0.5,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_b_1_e",
+            "baseline_priority": 0.6,
+            "adjusted_priority": 0.6,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_b_1_f",
+            "baseline_priority": 0.576,
+            "adjusted_priority": 0.576,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_b_2_i",
+            "baseline_priority": 0.676,
+            "adjusted_priority": 0.676,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_b_3_a",
+            "baseline_priority": 0.376,
+            "adjusted_priority": 0.376,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_b_3_b",
+            "baseline_priority": 0.324,
+            "adjusted_priority": 0.324,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_b_3_e",
+            "baseline_priority": 0.5,
+            "adjusted_priority": 0.5,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_b_3_g",
+            "baseline_priority": 0.35,
+            "adjusted_priority": 0.35,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_b_3_h",
+            "baseline_priority": 0.276,
+            "adjusted_priority": 0.276,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_b_3_m",
+            "baseline_priority": 0.4,
+            "adjusted_priority": 0.4,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_b_4_e",
+            "baseline_priority": 0.724,
+            "adjusted_priority": 0.724,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_b_4_g",
+            "baseline_priority": 0.624,
+            "adjusted_priority": 0.624,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_b_4_h",
+            "baseline_priority": 0.624,
+            "adjusted_priority": 0.624,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_b_5_a",
+            "baseline_priority": 0.624,
+            "adjusted_priority": 0.624,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_b_5_b",
+            "baseline_priority": 0.376,
+            "adjusted_priority": 0.376,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_b_5_c",
+            "baseline_priority": 0.35,
+            "adjusted_priority": 0.35,
+            "applied_adjustment": 0.0
+          },
+          {
+            "skill_id": "skill:onet_2_b_5_d",
+            "baseline_priority": 0.424,
+            "adjusted_priority": 0.424,
+            "applied_adjustment": 0.0
+          }
+        ],
+        "interpretation": "Illustrative changes to learning priorities for Business Intelligence Analysts only. Does not change personal fit or assert task-to-skill evidence."
+      },
+      "limitations": [
+        "Role/task records come from O*NET 31.0. Unmapped tasks and unreviewed evidence are not AI-impact findings.",
+        "Task mappings are team interpretations, not measured task automation rates.",
+        "Scenario adjustments are illustrative learning priorities, not employment forecasts or changes to personal fit.",
+        "Outlook reads validated cached evidence. Run python -m src.intelligence.feeds to refresh the reviewed source; source publication dates may still be historical."
+      ],
+      "catalog_id": "onet_31_0",
+      "available_scenarios": [
+        "baseline",
+        "moderate_ai_change",
+        "rapid_ai_change"
+      ],
+      "learning_priority_evidence": {
+        "policy_version": "reviewed-learning-priorities-v1",
+        "maximum_adjustment": 0.1,
+        "basis": "reviewed_application_policy_not_empirically_calibrated",
+        "decisions": [],
+        "rejected_assessments": []
+      }
+    }
+  },
+  "skill_implications": {
+    "schema_version": "0.2.0",
+    "role_id": "role:onet_15_2051_01",
+    "role_title": "Business Intelligence Analysts",
+    "catalog_synthetic": false,
+    "status": "insufficient_evidence",
+    "changes_skill_weights": false,
+    "ledger_sha256": "d073cf398b6f3cff86ae16d188bcc6b7d814233828b3cf4a0e02377c9e3e2fad",
+    "chains": []
+  },
+  "skill_implications_reason": "No reviewed task-to-skill links exist in this catalog.",
+  "changes_personal_fit": false,
+  "evidence_changes_skill_priorities": false,
+  "scenario_priorities_are_authored_assumptions": true
+}

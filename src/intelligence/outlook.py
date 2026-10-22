@@ -1,11 +1,14 @@
 """Offline Data Analyst example. Run python -m src.intelligence.outlook."""
 
 import json
+from datetime import date
 from pathlib import Path
 from typing import Literal
 
 from src.ingestion.selection import Catalog, catalog_for_role
 from src.intelligence.evidence import load_evidence
+from src.intelligence.priorities import STORE as PRIORITY_STORE
+from src.intelligence.priorities import evaluate_priorities
 from src.intelligence.scenarios import (
     DEFAULT_SCENARIOS,
     ONET_SCENARIOS,
@@ -47,6 +50,7 @@ class OnetRoleOutlook(RoleOutlook):
     schema_version: Literal["0.2.0"] = "0.2.0"
     catalog_id: Literal["onet_31_0"] = "onet_31_0"
     available_scenarios: list[str]
+    learning_priority_evidence: dict
 
 
 def get_outlook(
@@ -56,6 +60,8 @@ def get_outlook(
     evidence_path: str | Path | None = None,
     scenarios_path: str | Path | None = None,
     catalog: Catalog | None = None,
+    priority_store_path: str | Path = PRIORITY_STORE,
+    priority_as_of: date | None = None,
 ) -> RoleOutlook | OnetRoleOutlook:
     catalog = catalog_for_role(role_id, catalog)
     ledger = load_evidence(evidence_path, catalog=catalog)
@@ -65,6 +71,37 @@ def get_outlook(
         )
     scenarios = load_scenarios(scenarios_path)
     scenario = apply_scenario(catalog, role_id, scenario_id, scenarios)
+    priority_evidence = None
+    if isinstance(catalog, OnetCatalog):
+        priority_evidence = evaluate_priorities(
+            role_id,
+            catalog=catalog,
+            ledger=ledger,
+            store_path=priority_store_path,
+            as_of=priority_as_of,
+        )
+        adjustments = {r["skill_id"]: r for r in priority_evidence["decisions"]}
+        priorities = []
+        for original in scenario.skill_priorities:
+            decision = adjustments.get(original.skill_id)
+            delta = decision["adjustment"] if decision else 0
+            adjusted = round(max(0, min(1, original.adjusted_priority + delta)), 6)
+            if decision is not None:
+                decision["scenario_adjustment"] = original.applied_adjustment
+                decision["effective_evidence_adjustment"] = round(
+                    adjusted - original.adjusted_priority, 6
+                )
+            priorities.append(
+                original.model_copy(
+                    update={
+                        "adjusted_priority": adjusted,
+                        "applied_adjustment": round(
+                            adjusted - original.baseline_priority, 6
+                        ),
+                    }
+                )
+            )
+        scenario = scenario.model_copy(update={"skill_priorities": priorities})
     roles = {role.role_id: role for role in catalog.roles}
     tasks = {task.task_id: task for task in catalog.taxonomy.tasks}
     role = roles[role_id]
@@ -99,10 +136,11 @@ def get_outlook(
     result_type = OnetRoleOutlook if isinstance(catalog, OnetCatalog) else RoleOutlook
     extra = (
         {
+            "learning_priority_evidence": priority_evidence,
             "available_scenarios": [
                 "baseline",
                 *[s.scenario_id for s in scenarios if s.role_id == role_id],
-            ]
+            ],
         }
         if isinstance(catalog, OnetCatalog)
         else {}

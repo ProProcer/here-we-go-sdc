@@ -1,5 +1,9 @@
 # Role 3 handoff to Persons 4 and 5
 
+**Current real-catalog handoff:** use [Role 3 O*NET evidence handoff](ROLE_3_ONET_HANDOFF.md)
+for the live-verified BI example, offline responses, refresh receipt and display
+requirements. The sections below describe the original mock integration.
+
 Real-catalog backend migration is implemented. See [the current migration guide](PERSON_1_MIGRATION.md) for the versioned Person 2–4 interfaces, real IDs, evidence isolation, optional software planning and limitations. The original mock-specific contracts below remain available for compatibility.
 
 Data Analyst integration is ready. It uses Person 1's existing role/task/skill IDs,

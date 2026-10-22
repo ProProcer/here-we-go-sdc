@@ -93,7 +93,9 @@ class TestOnetCatalog(unittest.TestCase):
         )
         self.assertEqual(
             hashlib.sha256(rebuilt.encode()).digest(),
-            hashlib.sha256(CATALOG_FILE.read_bytes()).digest(),
+            # Git may check out JSON with CRLF on Windows. Compare canonical
+            # text while retaining the complete content/formatting check.
+            hashlib.sha256(CATALOG_FILE.read_text(encoding="utf-8").encode()).digest(),
         )
         self.assertEqual(load_onet_catalog().roles[0], self.catalog.roles[0])
 

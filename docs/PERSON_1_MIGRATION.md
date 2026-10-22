@@ -88,10 +88,12 @@ supplied snapshot. Real O*NET role IDs also select the real catalog when no
 catalog is supplied. Ledger validation rejects stale task IDs and mixed-catalog
 references. No mock source-to-task interpretations were automatically copied.
 
-The real ledger is `data/processed/onet/31.0/trend_signals.json`. It starts empty:
-absence of reviewed occupational evidence is reported as insufficient evidence,
-not replaced by an invented trend. Catalog record dates remain separate from
-source publication/retrieval dates.
+The real ledger is `data/processed/onet/31.0/trend_signals.json`. It now contains
+the [Role 3 BI evidence handoff](ROLE_3_ONET_HANDOFF.md): one live-verified finding
+and two contextual task interpretations. Unsupported tasks and occupations still
+report insufficient evidence. Catalog record dates remain separate from source
+publication/retrieval dates. Imported task-to-skill links remain unmapped, so no
+skill evidence chain or evidence-derived numerical adjustment is claimed.
 
 The separate `data/synthetic/onet_scenarios.json` contains two explicit,
 team-authored hypothetical stress tests for Business Intelligence Analysts.

@@ -1,0 +1,10 @@
+{
+  "version": "reviewed-learning-priorities-v1",
+  "maximum_adjustment": 0.1,
+  "minimum_independent_studies": 2,
+  "minimum_publishers": 2,
+  "half_life_days": 180,
+  "maximum_age_days": 730,
+  "conflict_ratio": 0.25,
+  "evidence_factors": {"labour_market_observation": 1.0, "adoption_survey": 0.75, "observed_usage": 0.5, "benchmark": 0.0, "author_projection": 0.0, "other": 0.0}
+}

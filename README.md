@@ -120,6 +120,12 @@ under CC BY 4.0 separately
 from this repository's Apache-2.0 code. See [data sources](docs/DATA_SOURCES.md).
 
 Person 3's **Data Analyst evidence and scenario module** is also implemented.
+The current [real-catalog evidence handoff](docs/ROLE_3_ONET_HANDOFF.md) supplies
+a live-verified source finding, two contextual BI task interpretations and an
+offline integration response. Unsupported tasks and skill effects remain explicit.
+Role 3 also includes [daily source discovery, finding review and a bounded
+learning-priority policy](docs/ROLE_3_DISCOVERY_AND_PRIORITIES.md), with a GitHub
+Actions review queue and explicit approval before evidence affects priorities.
 The [first evidence-chain deliverable](docs/ROLE_3_EVIDENCE_CHAIN.md) connects a
 refreshable cited finding to a proposed task interpretation and explained
 Python/SQL skill implications. It includes an offline example and live-fetch

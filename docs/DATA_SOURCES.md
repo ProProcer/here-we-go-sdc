@@ -69,6 +69,14 @@ proficiency or probability of employment. Record freshness varies.
 
 ## Technical research used for policy interpretation
 
+The real-catalog Role 3 example uses a short attributed finding from
+[Google Research's DS-STAR report](https://research.google/blog/ds-star-a-state-of-the-art-versatile-data-science-agent/).
+Its publication/retrieval dates, assistant review, conditional interpretations,
+limitations and live receipt are linked in the
+[Role 3 evidence handoff](ROLE_3_ONET_HANDOFF.md). No full report is redistributed;
+publisher material retains its own rights. This is contextual research rather
+than occupational demand data.
+
 Official Power BI, Tableau, Python, Java, Docker and Kubernetes documentation
 was read to compare task-specific software capabilities. Links and qualitative
 findings are in [Person 1 evaluation](PERSON_1_EVALUATION.md). No product manual

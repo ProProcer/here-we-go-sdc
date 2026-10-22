@@ -1,0 +1,29 @@
+{
+  "record_type": "assistant_research_review",
+  "schema_version": "0.1.0",
+  "author": "Codex interactive assistant",
+  "reviewed_at": "2026-10-22",
+  "status": "assistant_authored_source_review_admitted_after_live_verification",
+  "human_signoff_claimed": false,
+  "model_api_called": false,
+  "review_definition": "data/sources/onet_bi_ds_star_2025.json",
+  "source_id": "source:google_ds_star_2025_11",
+  "evidence_type": "benchmark",
+  "system_description_is_separate_from_benchmark_outcomes": true,
+  "locators": ["DS-STAR", "Evaluation"],
+  "review_decisions": [
+    "Use the publisher's historical comparison, not a current leaderboard claim.",
+    "Map only reporting and output-testing context; do not infer production BI system maintenance.",
+    "Keep conditional assumptions and human verification duties in each interpretation.",
+    "Do not migrate mock task interpretations or skill implications.",
+    "Do not claim occupational adoption, employer demand, job losses or Malaysian outcomes.",
+    "No study-period dates are supplied; publication and live retrieval dates remain separate.",
+    "Do not record Ivan as reviewer or manufacture candidate-approval provenance."
+  ],
+  "role_id": "role:onet_15_2051_01",
+  "task_ids": ["task:onet_16150", "task:onet_16145"],
+  "skill_implications_status": "insufficient_evidence",
+  "skill_implications_reason": "O*NET task-to-skill edges are unmapped. This handoff adds contextual task interpretations only; no skill directions or numerical priorities are derived from the finding.",
+  "changes_skill_weights": false,
+  "live_receipt": "data/snapshots/trends/onet/20261022T073637257329Z_f74de90b919d.json"
+}

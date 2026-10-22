@@ -3,7 +3,9 @@ import unittest
 from datetime import UTC, datetime
 from pathlib import Path
 from tempfile import TemporaryDirectory
+from unittest.mock import patch
 
+from scripts.build_onet_role3_demo import build_response
 from src.backend import CareerBackend
 from src.ingestion.selection import real_catalog
 from src.intelligence.evidence import load_evidence, validate_catalog_references
@@ -119,9 +121,30 @@ class TestOnetMigration(unittest.TestCase):
         rapid = get_outlook(BI, "rapid_ai_change", catalog=self.catalog)
         self.assertEqual(baseline.schema_version, "0.2.0")
         self.assertFalse(baseline.catalog_synthetic)
-        self.assertEqual(baseline.signals, [])
+        self.assertEqual(
+            [signal.signal_id for signal in baseline.signals],
+            ["signal:onet_bi_ds_star_benchmark_2025"],
+        )
+        contextual = {
+            t.task_id
+            for t in baseline.tasks
+            if t.evidence_status == "contextual_evidence"
+        }
+        self.assertEqual(contextual, {"task:onet_16150", "task:onet_16145"})
         self.assertTrue(
-            all(t.evidence_status == "insufficient_evidence" for t in baseline.tasks)
+            all(
+                t.evidence_status == "insufficient_evidence" and not t.signal_ids
+                for t in baseline.tasks
+                if t.task_id not in contextual
+            )
+        )
+        self.assertEqual(len(baseline.sources), 1)
+        self.assertEqual(baseline.sources[0].publisher, "Google Research")
+        nurse = get_outlook(NURSE, catalog=self.catalog)
+        self.assertEqual(nurse.signals, [])
+        self.assertEqual(nurse.sources, [])
+        self.assertTrue(
+            all(t.evidence_status == "insufficient_evidence" for t in nurse.tasks)
         )
         a = {
             p.skill_id: p.adjusted_priority for p in baseline.scenario.skill_priorities
@@ -166,6 +189,59 @@ class TestOnetMigration(unittest.TestCase):
             validate_catalog_references(
                 EvidenceLedger.model_validate(payload), self.catalog
             )
+
+    def test_real_evidence_changes_context_without_changing_priorities_or_fit(self):
+        with TemporaryDirectory() as tmp:
+            empty = Path(tmp) / "empty.json"
+            empty.write_text(
+                json.dumps(
+                    {
+                        "schema_version": "0.2.0",
+                        "sources": [],
+                        "signals": [],
+                        "task_interpretations": [],
+                        "evidence_chains": [],
+                    }
+                ),
+                encoding="utf-8",
+            )
+            for scenario in ("baseline", "moderate_ai_change", "rapid_ai_change"):
+                before = get_outlook(
+                    BI, scenario, catalog=self.catalog, evidence_path=empty
+                )
+                after = get_outlook(BI, scenario, catalog=self.catalog)
+                self.assertNotEqual(before.baseline_label, after.baseline_label)
+                self.assertEqual(before.scenario, after.scenario)
+            profile = self.profile()
+            match = self.matcher.match_role(profile, BI)
+            when = datetime(2026, 10, 22, tzinfo=UTC)
+            without_evidence = self.plan(
+                profile,
+                match,
+                outlook_loader=lambda role_id, scenario_id: get_outlook(
+                    role_id, scenario_id, catalog=self.catalog, evidence_path=empty
+                ),
+                generated_at=when,
+            ).plan
+            with_evidence = self.plan(profile, match, generated_at=when).plan
+            self.assertEqual(without_evidence.fit_score, match.fit_score)
+            self.assertEqual(with_evidence, without_evidence)
+
+    def test_real_handoff_matches_receipt_and_rejects_unverified_review_edits(self):
+        handoff = json.loads(
+            (ROOT / "data/demo/onet_role3_handoff.json").read_text(encoding="utf-8")
+        )
+        snapshot = ROOT / handoff["live_snapshot"]
+        self.assertEqual(build_response(snapshot), handoff)
+        self.assertEqual(handoff["skill_implications"]["chains"], [])
+        with TemporaryDirectory() as tmp:
+            edited = Path(tmp) / "review.json"
+            edited.write_text("{}", encoding="utf-8")
+            with (
+                patch("scripts.build_onet_role3_demo.REVIEW", edited),
+                self.assertRaisesRegex(ValueError, "Review changed"),
+            ):
+                build_response(snapshot)
 
     def test_review_refresh_accepts_real_task_ids_and_isolates_ledger(self):
         data = json.loads(

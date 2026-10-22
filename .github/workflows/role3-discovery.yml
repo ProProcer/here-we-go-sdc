@@ -1,0 +1,66 @@
+name: Role 3 source discovery
+
+on:
+  schedule:
+    - cron: '0 1 * * *' # 09:00 Asia/Kuala_Lumpur (UTC+8)
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/role3-discovery.yml'
+      - 'src/intelligence/discovery.py'
+      - 'data/sources/discovery_*.json'
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: role3-discovery
+  cancel-in-progress: false
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - run: python -m pip install pydantic==2.12.3
+      - name: Restore previous queue and candidate history
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        shell: bash
+        run: |
+          # Fall back to the committed initial queue if no retained artifact exists.
+          gh run list --workflow role3-discovery.yml --branch main --status completed --limit 5 --json databaseId --jq '.[].databaseId' > /tmp/role3-runs.txt
+          while read -r run_id; do
+            if gh run download "$run_id" --name role3-discovery-state --dir /tmp/role3-state; then
+              cp -R /tmp/role3-state/. data/review/discovery/
+              break
+            fi
+          done < /tmp/role3-runs.txt
+      - name: Discover reports and optionally extract approved sources
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: ${{ vars.GEMINI_MODEL || 'gemini-3.5-flash-lite' }}
+        shell: bash
+        run: |
+          if [ -n "$GEMINI_API_KEY" ]; then
+            python -m src.intelligence.discovery run --extract --max-extractions 3
+          else
+            python -m src.intelligence.discovery run
+          fi
+      - name: Save review queue and run receipts
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: role3-discovery-state
+          path: data/review/discovery/
+          if-no-files-found: error
+          retention-days: 90

@@ -1,0 +1,56 @@
+{
+  "fetched_at": "2026-10-22T07:36:37.257329+00:00",
+  "source_url": "https://research.google/blog/ds-star-a-state-of-the-art-versatile-data-science-agent/",
+  "response_sha256": "f74de90b919d07ea9ba1bcf45e03165c1c8f268b9605b8b4af5b25cd8a1c8fcf",
+  "response_bytes": 182723,
+  "review_sha256": "17e4c4d44083d2083ef33fb8325922a831c119aa273d1bb239ba6a10acb79232",
+  "validation": "Reviewed heading, publication date and claim markers present",
+  "ledger": {
+    "schema_version": "0.2.0",
+    "sources": [
+      {
+        "source_id": "source:google_ds_star_2025_11",
+        "title": "DS-STAR: A state-of-the-art versatile data science agent",
+        "publisher": "Google Research",
+        "source_url": "https://research.google/blog/ds-star-a-state-of-the-art-versatile-data-science-agent/",
+        "published_at": "2025-11-06",
+        "retrieved_at": "2026-10-22",
+        "synthetic": false,
+        "usage_note": "Author-reported benchmark and system description; assistant-authored source review, not a human approval record. See data/review/research/onet_bi_evidence_review.json.",
+        "coverage": "Data-analysis research; contextual relevance to two Business Intelligence Analyst tasks.",
+        "limitations": "Historical vendor research, not independent workplace evaluation. No measured BI adoption, task automation rate, employer demand, Malaysian labor-market coverage or employment forecast. An LLM verifier does not establish correctness."
+      }
+    ],
+    "signals": [
+      {
+        "signal_id": "signal:onet_bi_ds_star_benchmark_2025",
+        "source_id": "source:google_ds_star_2025_11",
+        "claim": "Google reports DS-STAR benchmark accuracy of 45.2% on DABStep versus 41.0% for its best comparison. The system generates analysis code and iteratively checks plans using an LLM judge; this is research capability evidence, not a workplace outcome.",
+        "synthetic": false
+      }
+    ],
+    "task_interpretations": [
+      {
+        "role_id": "role:onet_15_2051_01",
+        "task_id": "task:onet_16150",
+        "signal_ids": [
+          "signal:onet_bi_ds_star_benchmark_2025"
+        ],
+        "interpretation": "Conditional team interpretation: if comparable assistance is permitted and useful, analysts could review generated analytical drafts when preparing reports. People must verify source data, calculations and business meaning. The benchmark does not evaluate this occupation's reporting task or establish adoption.",
+        "mapping_basis": "team_interpretation",
+        "evidence_scope": "contextual_not_task_measurement"
+      },
+      {
+        "role_id": "role:onet_15_2051_01",
+        "task_id": "task:onet_16145",
+        "signal_ids": [
+          "signal:onet_bi_ds_star_benchmark_2025"
+        ],
+        "interpretation": "Conditional team interpretation: assisted analysis still needs tests against stakeholder requirements and independent checks of results. An LLM judge's acceptance is not independent validation. This connection to BI testing is inferred; task-specific accuracy and changes in testing effort remain unknown.",
+        "mapping_basis": "team_interpretation",
+        "evidence_scope": "contextual_not_task_measurement"
+      }
+    ],
+    "evidence_chains": []
+  }
+}

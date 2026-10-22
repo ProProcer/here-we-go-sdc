@@ -1,0 +1,9 @@
+{
+  "status": "updated",
+  "attempted_at": "2026-10-22T07:36:37.257329Z",
+  "cache_available": true,
+  "message": "Reviewed source verified. Historical evidence is not a current labor-market forecast.",
+  "source_url": "https://research.google/blog/ds-star-a-state-of-the-art-versatile-data-science-agent/",
+  "snapshot_path": "data/snapshots/trends/onet/20261022T073637257329Z_f74de90b919d.json",
+  "response_sha256": "f74de90b919d07ea9ba1bcf45e03165c1c8f268b9605b8b4af5b25cd8a1c8fcf"
+}

@@ -1,1 +1,5 @@
 *.pdf binary
+# Preserve the exact source-definition bytes bound by the live refresh receipt.
+data/sources/onet_bi_ds_star_2025.json text eol=lf
+data/review/discovery/** text eol=lf
+data/review/priority_assessments/** text eol=lf

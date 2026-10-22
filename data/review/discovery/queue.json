@@ -1,0 +1,104 @@
+{
+  "schema_version": "0.1.0",
+  "last_run_at": "2026-10-22T07:58:39.091032+00:00",
+  "feeds": [
+    {
+      "feed_id": "google_research",
+      "status": "ok",
+      "matches": 6,
+      "response_sha256": "7d115d654d7d8b2362789492635d92e0537ad7c4ca3711501c3a520ea70c44f8"
+    },
+    {
+      "feed_id": "microsoft_research",
+      "status": "ok",
+      "matches": 1,
+      "response_sha256": "49fd487519de325e86d3ed21d3915d8259da7ca53db9e27b1db2e72da566f41d"
+    }
+  ],
+  "items": [
+    {
+      "discovery_id": "dd1029b4b030aba3c24c66f5",
+      "url": "https://research.google/blog/grounding-ai-agents-in-biological-reality-building-blocks-for-autonomous-wet-labs/",
+      "title": "Grounding AI agents in biological reality: Building blocks for autonomous wet labs",
+      "publisher": "Google Research",
+      "published_at": "2026-10-16",
+      "feed_id": "google_research",
+      "first_seen_at": "2026-10-22T07:58:39.091032+00:00",
+      "last_seen_at": "2026-10-22T07:58:39.091032+00:00",
+      "metadata_changed": false,
+      "source_review_status": "pending_review"
+    },
+    {
+      "discovery_id": "4c456e668ef45cba83b59adb",
+      "url": "https://research.google/blog/putting-earth-ai-to-work-geospatial-agents-for-our-planets-biggest-challenges/",
+      "title": "Putting Earth AI to work: Geospatial agents for our planet's biggest challenges",
+      "publisher": "Google Research",
+      "published_at": "2026-10-14",
+      "feed_id": "google_research",
+      "first_seen_at": "2026-10-22T07:58:39.091032+00:00",
+      "last_seen_at": "2026-10-22T07:58:39.091032+00:00",
+      "metadata_changed": false,
+      "source_review_status": "pending_review"
+    },
+    {
+      "discovery_id": "e986592dff42085cd40df279",
+      "url": "https://www.microsoft.com/en-us/research/blog/agent-lightning-v1-0-a-3500-line-lightweight-agentic-rl-framework-for-training-agents-with-real-harnesses/",
+      "title": "Agent Lightning v1.0: A 3,500-Line Lightweight Agentic RL Framework for Training Agents with Real Harnesses",
+      "publisher": "Microsoft Research",
+      "published_at": "2026-10-07",
+      "feed_id": "microsoft_research",
+      "first_seen_at": "2026-10-22T07:58:39.091032+00:00",
+      "last_seen_at": "2026-10-22T07:58:39.091032+00:00",
+      "metadata_changed": false,
+      "source_review_status": "pending_review"
+    },
+    {
+      "discovery_id": "7eeb0a9dde53453907ecbc46",
+      "url": "https://research.google/blog/open-and-emergent-problems-in-agentic-privacy-and-security-a-contextual-angle/",
+      "title": "Open and Emergent Problems in Agentic Privacy and Security: A Contextual Angle",
+      "publisher": "Google Research",
+      "published_at": "2026-10-05",
+      "feed_id": "google_research",
+      "first_seen_at": "2026-10-22T07:58:39.091032+00:00",
+      "last_seen_at": "2026-10-22T07:58:39.091032+00:00",
+      "metadata_changed": false,
+      "source_review_status": "pending_review"
+    },
+    {
+      "discovery_id": "0f83c2d1d5b8034398fa197c",
+      "url": "https://research.google/blog/the-future-of-practice-enabling-teachers-to-create-learning-interactives-with-generative-ui/",
+      "title": "The future of practice: Enabling teachers to create learning interactives with generative UI",
+      "publisher": "Google Research",
+      "published_at": "2026-09-17",
+      "feed_id": "google_research",
+      "first_seen_at": "2026-10-22T07:58:39.091032+00:00",
+      "last_seen_at": "2026-10-22T07:58:39.091032+00:00",
+      "metadata_changed": false,
+      "source_review_status": "pending_review"
+    },
+    {
+      "discovery_id": "16b919027b43c28e9ba7f950",
+      "url": "https://research.google/blog/agenthands-generating-interactive-hand-gestures-for-spatially-grounded-agent-conversations-in-xr/",
+      "title": "AgentHands: Generating interactive hand gestures for spatially grounded agent conversations in XR",
+      "publisher": "Google Research",
+      "published_at": "2026-08-25",
+      "feed_id": "google_research",
+      "first_seen_at": "2026-10-22T07:58:39.091032+00:00",
+      "last_seen_at": "2026-10-22T07:58:39.091032+00:00",
+      "metadata_changed": false,
+      "source_review_status": "pending_review"
+    },
+    {
+      "discovery_id": "4f98c5029119950e7f82e09b",
+      "url": "https://research.google/blog/how-mobility-gives-language-models-a-deeper-understanding-of-place/",
+      "title": "How mobility gives language models a deeper understanding of place",
+      "publisher": "Google Research",
+      "published_at": "2026-08-21",
+      "feed_id": "google_research",
+      "first_seen_at": "2026-10-22T07:58:39.091032+00:00",
+      "last_seen_at": "2026-10-22T07:58:39.091032+00:00",
+      "metadata_changed": false,
+      "source_review_status": "pending_review"
+    }
+  ]
+}

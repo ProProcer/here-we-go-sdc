@@ -1,0 +1,10 @@
+{
+  "schema_version": "0.1.0",
+  "lookback_days": 90,
+  "max_items_per_feed": 100,
+  "feeds": [
+    {"feed_id": "google_research", "publisher": "Google Research", "url": "https://research.google/blog/rss/", "article_prefix": "https://research.google/blog/"},
+    {"feed_id": "microsoft_research", "publisher": "Microsoft Research", "url": "https://www.microsoft.com/en-us/research/feed/", "article_prefix": "https://www.microsoft.com/en-us/research/blog/"}
+  ],
+  "keywords": ["artificial intelligence", "generative", "language model", "agent", "automation", "workforce", "data analysis", "data science", "skills", "productivity"]
+}
