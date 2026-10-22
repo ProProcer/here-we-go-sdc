@@ -294,6 +294,7 @@ def review_source(
     config_path=CONFIG,
     fetcher=None,
     now=None,
+    expected_previous_decision=None,
 ):
     if (
         decision not in {"approve", "reject"}
@@ -303,14 +304,22 @@ def review_source(
         raise ValueError("Decision, actual reviewer label and review reason required")
     state = _load(Path(state_path), {"items": []})
     row = next(r for r in state["items"] if r["discovery_id"] == discovery_id)
-    if row["metadata_changed"]:
+    if row["metadata_changed"] and decision == "approve":
         raise ValueError(
             "Feed metadata changed; investigate before creating a fresh review"
         )
     decisions = _load(
         Path(decisions_path), {"schema_version": "0.1.0", "decisions": []}
     )
-    if any(d["discovery_id"] == discovery_id for d in decisions["decisions"]):
+    prior = next(
+        (
+            d
+            for d in reversed(decisions["decisions"])
+            if d["discovery_id"] == discovery_id
+        ),
+        None,
+    )
+    if prior is not None and prior != expected_previous_decision:
         raise ValueError(
             "Source already has a review decision; revise explicitly in a reviewed change"
         )
@@ -355,6 +364,10 @@ def review_source(
             "reviewed_at": (now or datetime.now(UTC)).isoformat(),
         }
     )
+    if prior is not None:
+        decisions["decisions"][-1]["supersedes_sha256"] = hashlib.sha256(
+            json.dumps(prior, sort_keys=True).encode()
+        ).hexdigest()
     atomic_json(Path(decisions_path), decisions)
     return decisions["decisions"][-1]
 

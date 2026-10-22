@@ -1,5 +1,9 @@
 # AI-first source review
 
+For the private local interface with **Approve**, **Reject** and **Ask AI to check
+again** buttons, double-click `Review Role 3.cmd`. See the
+[review menu guide](ROLE_3_REVIEW_MENU.md); the commands below remain available.
+
 The scheduled reviewer now uses a shared work/learning scope. See the
 [expandable skill-evidence guide](ROLE_3_SHARED_SKILL_EVIDENCE.md) for incremental
 catalog updates, skill mapping approval, coverage limits and the additional brief.

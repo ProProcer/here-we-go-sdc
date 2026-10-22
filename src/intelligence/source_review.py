@@ -21,12 +21,13 @@ from src.intelligence.discovery import (
     fetch_feed,
     review_source,
 )
+from src.intelligence.discovery import DECISIONS as SOURCE_DECISIONS
 from src.intelligence.extraction import ground_findings
 from src.intelligence.extractors import ExtractionError
 from src.intelligence.gemini import GeminiClient
 from src.intelligence.reports import normalize_text, parse_report
 from src.intelligence.review_retrieval import collect_documents, fetch_research
-from src.intelligence.sources import load_registry
+from src.intelligence.sources import DEFAULT_REGISTRY, load_registry
 from src.intelligence.storage import atomic_json
 from src.schemas.extraction import (
     CandidateFinding,
@@ -493,6 +494,7 @@ def run_reviews(
     research_fetcher=fetch_research,
     now=None,
     force=False,
+    discovery_ids=None,
 ):
     now = now or datetime.now(UTC)
     if now.utcoffset() is None or not 1 <= max_reviews <= 10:
@@ -501,12 +503,19 @@ def run_reviews(
     context = role_context(role_id)
     path = Path(state_path)
     queue = json.loads(path.read_text(encoding="utf-8"))
+    selected = set(discovery_ids) if discovery_ids is not None else None
+    if selected is not None and (
+        not selected or not selected <= {r["discovery_id"] for r in queue["items"]}
+    ):
+        raise ValueError("Select existing discovery IDs")
     attempts = 0
     failures = 0
     for row in sorted(
         queue["items"], key=lambda item: item.get("ai_review_attempted_at", "")
     ):
-        if row.get("source_review_status") == "reject":
+        if selected is not None and row["discovery_id"] not in selected:
+            continue
+        if row.get("source_review_status") == "reject" and not (force and selected):
             continue
         item_hash = fingerprint(
             {
@@ -751,7 +760,16 @@ def write_brief(state_path=STATE):
 
 
 def approve_review(
-    discovery_id, *, reviewer, expected_sha256, approve=False, state_path=STATE
+    discovery_id,
+    *,
+    reviewer,
+    expected_sha256,
+    approve=False,
+    state_path=STATE,
+    decisions_path=SOURCE_DECISIONS,
+    registry_path=DEFAULT_REGISTRY,
+    expected_previous_decision=None,
+    reason=None,
 ):
     if not approve:
         raise ValueError("Explicit human approval is required")
@@ -778,10 +796,14 @@ def approve_review(
         discovery_id,
         decision="approve",
         reviewer=reviewer,
-        reason="Human reviewed AI brief "
+        reason=(reason.strip() + ". " if reason and reason.strip() else "")
+        + "Human reviewed AI brief "
         + expected_sha256
         + "; unresolved checks considered. Source approval only.",
         state_path=path,
+        decisions_path=decisions_path,
+        registry_path=registry_path,
+        expected_previous_decision=expected_previous_decision,
         fetcher=lambda url: page,
     )
 
@@ -795,6 +817,9 @@ def main():
         "--role", help="Optional legacy occupation-specific review; default is shared"
     )
     run.add_argument("--force", action="store_true")
+    run.add_argument(
+        "--id", action="append", help="Recheck only selected discovery IDs"
+    )
     commands.add_parser("show")
     approve = commands.add_parser("approve")
     for flag in ("id", "reviewer", "expected-sha256"):
@@ -803,7 +828,10 @@ def main():
     args = parser.parse_args()
     if args.command == "run":
         result = run_reviews(
-            role_id=args.role, max_reviews=args.max_reviews, force=args.force
+            role_id=args.role,
+            max_reviews=args.max_reviews,
+            force=args.force,
+            discovery_ids=args.id,
         )
         print(json.dumps(result, indent=2))
         return 1 if result["failed_reviews"] else 0

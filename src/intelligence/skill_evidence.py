@@ -237,6 +237,7 @@ def run_assessments(
     skill_ids=None,
     now=None,
     force=False,
+    news_ids=None,
 ):
     if not 1 <= max_batches <= 20:
         raise ValueError("Batch limit must be 1..20")
@@ -255,6 +256,12 @@ def run_assessments(
             raise ValueError("Forced reassessment requires explicit skill IDs")
         for skill_id in chosen:
             missing[skill_id] = sorted(news)
+    if news_ids is not None:
+        selected_news = set(news_ids)
+        if not selected_news or not selected_news <= set(news):
+            raise ValueError("Select existing shared-reviewed article IDs")
+        for skill_id in chosen:
+            missing[skill_id] = [n for n in missing[skill_id] if n in selected_news]
     directory = Path(state_path).parent
     history_path = directory / "skill_jobs.json"
     history = read_json(history_path, {"attempts": {}})
@@ -539,6 +546,7 @@ def approve_mapping(
     catalog=None,
     model=None,
     decisions_path=DECISIONS,
+    reason=None,
 ):
     if not approve or not reviewer.strip():
         raise ValueError("Explicit human approval and reviewer required")
@@ -567,12 +575,20 @@ def approve_mapping(
         )
     path = Path(decisions_path)
     store = read_json(path, {"schema_version": "0.1.0", "decisions": {}})
+    previous = store["decisions"].get(expected_sha256)
     store["decisions"][expected_sha256] = {
         "decision": "approve",
         "reviewer": reviewer.strip(),
         "reviewed_at": datetime.now(UTC).isoformat(),
         "scope": "conditional_skill_relevance_only_no_weights",
     }
+    if reason and reason.strip():
+        store["decisions"][expected_sha256]["reason"] = reason.strip()
+    if previous:
+        store["decisions"][expected_sha256]["history"] = [
+            *previous.get("history", []),
+            {k: v for k, v in previous.items() if k != "history"},
+        ]
     atomic_json(path, store)
     return store["decisions"][expected_sha256]
 

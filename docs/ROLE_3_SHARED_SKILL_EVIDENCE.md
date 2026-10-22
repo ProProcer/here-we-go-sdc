@@ -61,6 +61,9 @@ as complete until those counts reach zero. Batch limits control cost; an explici
 
 ## Review and approval
 
+Use the [private review menu](ROLE_3_REVIEW_MENU.md) for clickable decisions and
+targeted rechecks, or use the CLI below. The menu preserves the same approval gates.
+
 The latest Actions run Summary contains both the source attention brief and
 `SKILL_REVIEW_BRIEF.md`; the `role3-discovery-state` artifact includes the records.
 The committed briefs are snapshots, not the latest daily run.
