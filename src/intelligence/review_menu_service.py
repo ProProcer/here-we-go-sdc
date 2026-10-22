@@ -334,14 +334,16 @@ class ReviewMenuService:
                 "Approval means conditional skill relevance. Role/task effects and numeric weights require separate review.",
             ]
             block = ""
-            if not entry["news"]["source_approved"]:
+            if assessment["relevance"] == "not_relevant":
+                block = "AI found no supported connection to this skill. There is no positive connection to approve. Read the rationale or ask AI to check again if you disagree."
+            elif assessment["relevance"] == "insufficient_evidence":
+                block = "The stored findings do not provide enough evidence to approve this skill connection."
+            elif news["correction_notices"]:
+                block = "Review the source correction notices before approving this connection."
+            elif record["status"] != "pending_human_review":
+                block = "The evidence check flagged this connection. Read the skeptic's concerns and ask AI to check again before approval."
+            elif not entry["news"]["source_approved"]:
                 block = "Approve the source first in the Sources view"
-            elif (
-                record["status"] != "pending_human_review"
-                or assessment["relevance"] != "potentially_relevant"
-                or news["correction_notices"]
-            ):
-                block = "This mapping needs a successful evidence check before approval"
             if record["assessment_key"] in mapping_errors:
                 block = (
                     "The latest AI check failed; retry before approving this mapping"
@@ -350,6 +352,26 @@ class ReviewMenuService:
                     "",
                     "Latest AI check failed. This is the previous assessment.",
                 ]
+            if status == "Needs review":
+                if record["assessment_key"] in mapping_errors:
+                    status = "Check failed"
+                elif assessment["relevance"] == "not_relevant":
+                    status = "No connection found"
+                elif assessment["relevance"] == "insufficient_evidence":
+                    status = "Insufficient evidence"
+                elif (
+                    record["status"] != "pending_human_review"
+                    or news["correction_notices"]
+                ):
+                    status = "Check flagged"
+                elif not entry["news"]["source_approved"]:
+                    status = "Source approval needed"
+            details = [
+                "STATUS: " + status,
+                block or "Ready for your decision.",
+                "",
+                *details,
+            ]
             items.append(
                 ReviewItem(
                     "mapping:" + digest,

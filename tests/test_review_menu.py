@@ -21,7 +21,7 @@ from src.intelligence.review_github import (
     unpack_review_artifact,
 )
 from src.intelligence.review_menu_service import ROOT, ReviewMenuService
-from src.intelligence.skill_evidence import run_assessments
+from src.intelligence.skill_evidence import active_assessments, run_assessments
 from src.intelligence.source_review import run_reviews
 from src.intelligence.sources import DEFAULT_REGISTRY
 from src.intelligence.storage import atomic_json
@@ -224,6 +224,59 @@ class TestReviewMenuActions(unittest.TestCase):
         )
         self.assertEqual(mapping.status, "Approved")
         self.assertTrue(self.service.manifest()["pending_paths"])
+
+    def test_mapping_status_explains_why_approval_is_disabled(self):
+        entries, stats = active_assessments(
+            state_path=self.service.state_path,
+            catalog=self.catalog,
+            model=StubMapper.model,
+            decisions_path=self.service.mapping_path,
+        )
+        cases = (
+            (
+                "not_relevant",
+                "pending_human_review",
+                False,
+                "No connection found",
+                "no supported connection",
+            ),
+            (
+                "insufficient_evidence",
+                "needs_review",
+                False,
+                "Insufficient evidence",
+                "enough evidence",
+            ),
+            ("potentially_relevant", "needs_review", True, "Check flagged", "flagged"),
+            (
+                "potentially_relevant",
+                "pending_human_review",
+                False,
+                "Source approval needed",
+                "Approve the source first",
+            ),
+            ("potentially_relevant", "pending_human_review", True, "Needs review", ""),
+        )
+        for relevance, record_status, source_approved, status, reason in cases:
+            with self.subTest(relevance=relevance, status=status):
+                entry = copy.deepcopy(entries[0])
+                entry["record"]["assessment"]["relevance"] = relevance
+                entry["record"]["status"] = record_status
+                entry["news"]["source_approved"] = source_approved
+                with patch(
+                    "src.intelligence.review_menu_service.active_assessments",
+                    return_value=([entry], stats),
+                ):
+                    item = self.item("mapping")
+                    self.assertEqual(item.status, status)
+                    self.assertEqual(item.approvable, status == "Needs review")
+                    self.assertIn(reason, item.block_reason)
+                    self.assertIn("STATUS: " + status, item.details)
+                    if not item.approvable:
+                        with self.assertRaises(ValueError):
+                            self.service.decide(
+                                item.key, item.version, "approve", "Fictional owner"
+                            )
 
     def test_reject_and_reapprove_source_keep_audit_history(self):
         source = self.approve_source()

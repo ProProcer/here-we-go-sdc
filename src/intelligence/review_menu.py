@@ -99,9 +99,19 @@ class ReviewMenu:
         combo = ttk.Combobox(
             controls,
             textvariable=self.filter,
-            values=("Needs review", "Approved", "Rejected", "All"),
+            values=(
+                "Needs review",
+                "Approved",
+                "Rejected",
+                "No connection found",
+                "Insufficient evidence",
+                "Source approval needed",
+                "Check flagged",
+                "Check failed",
+                "All",
+            ),
             state="readonly",
-            width=15,
+            width=22,
         )
         combo.pack(side="left", padx=(10, 14))
         combo.bind("<<ComboboxSelected>>", lambda event: self.render_list())
@@ -123,7 +133,7 @@ class ReviewMenu:
         )
         for key, label, width in (
             ("title", "ARTICLE / SKILL", 300),
-            ("status", "YOUR DECISION", 110),
+            ("status", "STATUS", 160),
         ):
             self.tree.heading(key, text=label)
             self.tree.column(key, width=width, minwidth=90)
@@ -225,12 +235,6 @@ class ReviewMenu:
             if (item.kind == "source") != (self.view.get() == "Sources"):
                 continue
             if self.filter.get() != "All" and item.status != self.filter.get():
-                continue
-            if (
-                self.filter.get() == "Needs review"
-                and item.kind == "mapping"
-                and item.suggestion == "not_relevant"
-            ):
                 continue
             if query and query not in (item.title + " " + item.skill).casefold():
                 continue

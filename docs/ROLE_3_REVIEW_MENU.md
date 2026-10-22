@@ -20,6 +20,12 @@ pinned Pydantic dependency through `uv`.
    Approve or reject it separately. Approval stays disabled until the source is
    approved and the mapping passed its evidence checks. **All** also shows cached
    negative assessments; **Needs review** focuses on actionable items.
+   **No connection found** means the AI found no supported link to that skill;
+   **Insufficient evidence** means the stored findings cannot establish a link.
+   Neither is a positive connection you can approve. **Source approval needed**,
+   **Check flagged**, and **Check failed** explain other approval blockers. Select
+   an item to see the specific reason above its evidence summary. Saving source
+   approvals to GitHub does not automatically approve skill connections.
 5. Use **Ask AI to check again** when a review is questionable or failed. It targets
    only the selected source, or the selected skill/article pair. It uses the
    [bounded model fallback policy](ROLE_3_MODEL_FALLBACK.md), preserves history,
