@@ -2,6 +2,7 @@
 
 import os
 import re
+import time
 from dataclasses import dataclass, replace
 
 from pydantic import SecretStr
@@ -41,6 +42,7 @@ class ModelClient:
     interactive: bool = False
     runpod_backup: ChatModelClient | None = None
     primary_provider: str = "runpod"
+    request_budget_seconds: float | None = None
 
     @classmethod
     def from_environment(cls, model=None, *, interactive=False):
@@ -80,14 +82,21 @@ class ModelClient:
 
     def generate(self, instruction, data, response_model, *, json_schema=None):
         attempts = []
+        deadline = time.monotonic() + self.request_budget_seconds if self.request_budget_seconds is not None else None
         candidates = [(self.primary_provider, self.primary, self.model)]
         if self.runpod_backup is not None:
             candidates.append(("runpod", self.runpod_backup, self.runpod_backup.model))
-        for provider, client, model in candidates:
+        for index, (provider, client, model) in enumerate(candidates):
             if client is None:
                 attempts.append({"provider": provider, "model": model,
                     "outcome": self.primary_failure or "not_configured"})
                 continue
+            if deadline is not None:
+                remaining = deadline - time.monotonic()
+                if remaining <= 0:
+                    raise ExtractionError("AI request time budget exhausted.")
+                following = sum(item[1] is not None for item in candidates[index + 1:]) + int(self.backup is not None)
+                client = replace(client, timeout_seconds=min(client.timeout_seconds, remaining / (following + 1)))
             try:
                 result = client.generate(instruction, data, response_model, json_schema=json_schema)
             except ProviderUnavailable as error:
@@ -98,9 +107,15 @@ class ModelClient:
         # Evidence/schema failures remain fatal; only service failures use backups.
         if self.backup is None:
             raise ExtractionError("Primary AI providers unavailable; Gemini backup is not configured.")
+        backup_timeout = 30 if self.interactive else 45
+        if deadline is not None:
+            remaining = deadline - time.monotonic()
+            if remaining <= 0:
+                raise ExtractionError("AI request time budget exhausted.")
+            backup_timeout = min(backup_timeout, remaining)
         try:
             result = self.backup.generate(instruction, data, response_model,
-                json_schema=json_schema, timeout_seconds=30 if self.interactive else 45)
+                json_schema=json_schema, timeout_seconds=backup_timeout)
         except ExtractionError as error:
             raise ExtractionError("Primary AI providers unavailable; Gemini backup also failed: " + str(error)) from None
         attempts.extend({**attempt, "provider": "gemini"} for attempt in result.request_attempts)

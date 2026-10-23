@@ -1,0 +1,20 @@
+{
+  "role_id": "role:onet_13_1161_01",
+  "assessed_count": 6,
+  "assessment_preserved_during_refresh": true,
+  "statuses_during_refresh": [
+    "ready",
+    "ready",
+    "ready",
+    "ready",
+    "ready",
+    "ready",
+    "ready",
+    "ready",
+    "ready"
+  ],
+  "before_fetch": "2026-10-23T17:07:49.608811+00:00",
+  "after_fetch": "2026-10-23T17:24:17.833779+00:00",
+  "analyzed_at": "2026-10-23T17:22:49.920974+00:00",
+  "analysis_stale": false
+}

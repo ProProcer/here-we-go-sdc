@@ -13,6 +13,8 @@ from src.api.routes import router
 from src.api.sessions import SessionStore
 from src.backend import CareerBackend
 from src.config import load_local_environment
+from src.intelligence.live_trends import LiveTrendService
+from src.intelligence.futures import FutureService
 from src.reskilling.course_catalog import CourseCatalogStore
 
 ROOT = Path(__file__).resolve().parent
@@ -25,8 +27,16 @@ async def lifespan(app):
     app.state.backend = CareerBackend(course_store=CourseCatalogStore(
         ROOT.parent / "data/processed/onet/31.0/courses.json"))
     app.state.sessions = SessionStore()
-    yield
-    app.state.sessions.clear()
+    app.state.trends = LiveTrendService(app.state.backend.catalog)
+    app.state.futures = FutureService(app.state.backend.catalog, app.state.trends)
+    if os.getenv("TREND_AUTO_REFRESH", "1") == "1":
+        app.state.trends.start()
+    try:
+        yield
+    finally:
+        app.state.futures.close()
+        app.state.trends.close()
+        app.state.sessions.clear()
 
 
 app = FastAPI(title="FutureReady AI", version="0.2.0", lifespan=lifespan)

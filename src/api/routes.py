@@ -150,7 +150,9 @@ def roles(request: Request, q: str = Query(default="", max_length=100),
 def role_detail(request: Request, role_id: str):
     backend = request.app.state.backend
     require_role(backend, role_id)
-    return get_onet_role(backend.catalog, role_id)
+    from src.reskilling.sdg_mapper import map_role_sdg_connections
+    return {**get_onet_role(backend.catalog, role_id), "sdg_connections": [
+        c.model_dump(mode="json") for c in map_role_sdg_connections(role_id, catalog=backend.catalog)]}
 
 
 @router.patch("/profiles/current")
@@ -185,6 +187,61 @@ def matches(request: Request, revision: int = Query(ge=0),
         rows = request.app.state.backend.match(session.profile, top_n=top_n)
         return {"revision": session.revision,
                 "matches": [row.model_dump(mode="json") for row in rows]}
+
+
+@router.get("/trends/status")
+def trend_status(request: Request):
+    return request.app.state.trends.status()
+
+
+@router.get("/roles/{role_id}/trends")
+def role_trends(request: Request, role_id: str, x_session_id: str | None = Header(default=None)):
+    require_role(request.app.state.backend, role_id)
+    if x_session_id:
+        session_for(request, x_session_id)
+    return request.app.state.trends.for_role(role_id, analyze=bool(x_session_id))
+
+
+@router.post("/roles/{role_id}/trends/refresh", status_code=202)
+def refresh_role_trends(request: Request, role_id: str, x_session_id: str = Header()):
+    session_for(request, x_session_id)
+    require_role(request.app.state.backend, role_id)
+    service = request.app.state.trends
+    service.retry_at.pop(role_id, None)
+    service.analysis_errors.pop(role_id, None)
+    started = service.start_refresh(role_id)
+    return {**service.for_role(role_id), "refresh_requested": started}
+
+
+@router.post("/roles/{role_id}/trends/retry", status_code=202)
+def retry_role_trends(request: Request, role_id: str, x_session_id: str = Header()):
+    session_for(request, x_session_id)
+    require_role(request.app.state.backend, role_id)
+    service = request.app.state.trends
+    with service.lock:
+        service.retry_at.pop(role_id, None)
+        service.analysis_errors.pop(role_id, None)
+        service.ensure_analysis(role_id)
+    return service.for_role(role_id)
+
+
+@router.get("/roles/{role_id}/futures")
+def role_futures(request: Request, role_id: str, x_session_id: str | None = Header(default=None)):
+    require_role(request.app.state.backend, role_id)
+    if x_session_id:
+        session_for(request, x_session_id)
+    return request.app.state.futures.for_role(role_id, enhance=bool(x_session_id))
+
+
+@router.post("/roles/{role_id}/futures/refresh", status_code=202)
+def refresh_role_futures(request: Request, role_id: str, x_session_id: str = Header()):
+    session_for(request, x_session_id)
+    require_role(request.app.state.backend, role_id)
+    service = request.app.state.futures
+    with service.lock:
+        service.retry_at.pop(role_id, None)
+        service.ensure(role_id)
+    return service.for_role(role_id)
 
 
 @router.get("/roles/{role_id}/outlook")

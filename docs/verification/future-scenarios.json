@@ -1,0 +1,230 @@
+{
+  "role_id": "role:onet_13_1161_01",
+  "role_title": "Search Marketing Strategists",
+  "label": "Hypothetical scenarios \u00b7 Not forecasts",
+  "horizon": "The next three years are an illustrative planning horizon, not a prediction of timing.",
+  "origin": "ai_generated",
+  "generated_at": "2026-10-23T17:54:10.177442+00:00",
+  "updating": false,
+  "update_unavailable": false,
+  "baseline": {
+    "summary": "Employ search marketing tactics to increase visibility and engagement with content, products, or services in Internet-enabled devices or interfaces. Examine search query behaviors on general or specialty search engines or other Internet-based content. Analyze research, data, or technology to understand user intent and measure outcomes for ongoing optimization.",
+    "tasks": [
+      "Keep abreast of government regulations and emerging Web technology to ensure regulatory compliance by reviewing current literature, talking with colleagues, participating in educational programs, attending meetings or workshops, or participating in professional organizations or conferences.",
+      "Resolve product availability problems in collaboration with customer service staff."
+    ],
+    "source_title": "O*NET occupational requirements",
+    "source_url": "https://www.onetonline.org/link/summary/13-1161.01",
+    "release": "31.0 \u00b7 August 2026"
+  },
+  "stories": [
+    {
+      "scenario_id": "moderate_ai_change",
+      "headline": "Integrating AI Assistants into Search Strategy Workflows",
+      "narrative": "Over the next three years, Search Marketing Strategists could adopt AI as a supportive layer for data synthesis and content planning. By utilizing automated tools to track emerging regulatory shifts in digital advertising, strategists might spend less time on manual literature reviews and more time interpreting the impacts of those changes. If they implement AI-assisted forecasting for search trends, they could gain quicker insights into shifting user intent, though the responsibility remains with the professional to verify the accuracy of these outputs before presenting them to stakeholders. The role would evolve to focus heavily on the ethical implementation of new marketing technologies while maintaining a critical eye on algorithmic outputs.",
+      "task_changes": [
+        {
+          "task_id": "task:onet_16172",
+          "possible_change": "AI tools could summarize recent legal developments and industry articles, presenting a curated briefing of new compliance risks.",
+          "human_responsibility": "The strategist must verify the summaries against official regulatory sources to ensure no nuances in the policy language were missed.",
+          "task_label": "Keep abreast of government regulations and emerging Web technology to ensure regulatory compliance by reviewing current literature, talking with colleagues, participating in educational programs, attending meetings or workshops, or participating in professional organizations or conferences."
+        },
+        {
+          "task_id": "task:onet_16177",
+          "possible_change": "AI might generate initial product requirement drafts based on historical market research data and search query trends.",
+          "human_responsibility": "The strategist is accountable for aligning those requirements with human-centric user interface goals and engineering limitations.",
+          "task_label": "Define product requirements, based on market research analysis, in collaboration with user interface design and engineering staff."
+        }
+      ],
+      "practice_skill_id": "skill:onet_2_a_2_a",
+      "practice_activity": "Practice 'logic auditing' by taking an AI-generated marketing recommendation, identifying the data sources it relied upon, and writing a short critique of whether the logical flow from data to conclusion holds up under real-world scrutiny.",
+      "uncertainties": [
+        "Variability in internal organizational data quality",
+        "Speed of evolving legal definitions in digital spaces"
+      ],
+      "source_ids": [
+        "db007afeffa315bee0761498"
+      ],
+      "assumptions": [
+        "Assume reliable AI assistance is adopted gradually for selected tasks; people review each output.",
+        "Assume tools are accessible and validated for the occupation; physical work, regulation and professional accountability still apply.",
+        "Assume moderate adoption of AI assistance in Search Marketing Strategists workflows.",
+        "Application policy adds 0.08 (capped at 1.0) to required checking, learning and communication skill priorities.",
+        "All other occupational priorities stay unchanged. This is a generic stress test, not reviewed role-specific evidence.",
+        "The listed task provides occupational context only; no measured task-to-skill or automation effect is asserted."
+      ],
+      "practice_skill_label": "Critical Thinking"
+    },
+    {
+      "scenario_id": "rapid_ai_change",
+      "headline": "Autonomous Analytical Frameworks in Search Marketing",
+      "narrative": "Imagine a three-year horizon where search strategists transition into high-level orchestrators of agentic AI systems. Rather than manually researching trends, they might deploy specialized AI agents that analyze real-time search behaviors and cross-reference them with complex enterprise resource planning data automatically. If these agents become deeply integrated, the strategist might spend their day evaluating strategic architecture rather than executing discrete tasks. The human role would become highly focused on setting the parameters for these systems, auditing the agent outputs for strategic misalignment, and ensuring that automated customer service processes remain empathetic and human-aligned during high-stakes product availability issues.",
+      "task_changes": [
+        {
+          "task_id": "task:onet_16176",
+          "possible_change": "Agents could autonomously suggest and test methods for linking Web application performance data directly into broader enterprise planning software.",
+          "human_responsibility": "The human strategist must conduct deep-dive audits of these connections to ensure data security and system interoperability.",
+          "task_label": "Identify methods for interfacing Web application technologies with enterprise resource planning or other system software."
+        },
+        {
+          "task_id": "task:onet_16173",
+          "possible_change": "An intelligent system could predict product availability bottlenecks before they occur, coordinating real-time communication between customer service and supply chain teams.",
+          "human_responsibility": "Strategists must oversee the exception handling, ensuring the automated responses remain consistent with brand values and customer relationships.",
+          "task_label": "Resolve product availability problems in collaboration with customer service staff."
+        },
+        {
+          "task_id": "task:onet_16175",
+          "possible_change": "AI could evaluate various hardware or software vendors by simulating how different tools impact specific campaign ROI objectives.",
+          "human_responsibility": "The strategist remains solely responsible for the final procurement decision, considering long-term vendor stability and alignment.",
+          "task_label": "Identify, evaluate, or procure hardware or software for implementing online marketing campaigns."
+        }
+      ],
+      "practice_skill_id": "skill:onet_2_a_2_c",
+      "practice_activity": "Simulate an 'agent oversight' exercise: define a set of constraints for an automated task, let an AI handle the execution, then intentionally introduce an edge-case error in the environment to test your ability to diagnose and repair the system's failure.",
+      "uncertainties": [
+        "Dependency on the reliability of interconnected third-party APIs",
+        "Pace of integration between legacy systems and modern agentic frameworks",
+        "Industry-wide standardization of AI communication protocols"
+      ],
+      "source_ids": [
+        "4c456e668ef45cba83b59adb",
+        "e986592dff42085cd40df279"
+      ],
+      "assumptions": [
+        "Assume reliable AI assistance becomes widely integrated across connected workflows; people supervise exceptions and decisions.",
+        "Assume tools are accessible and validated for the occupation; physical work, regulation and professional accountability still apply.",
+        "Assume rapid adoption of AI assistance in Search Marketing Strategists workflows.",
+        "Application policy adds 0.16 (capped at 1.0) to required checking, learning and communication skill priorities.",
+        "All other occupational priorities stay unchanged. This is a generic stress test, not reviewed role-specific evidence.",
+        "The listed task provides occupational context only; no measured task-to-skill or automation effect is asserted."
+      ],
+      "practice_skill_label": "Learning Strategies"
+    }
+  ],
+  "skill_comparison": [
+    {
+      "skill_id": "skill:onet_2_a_1_a",
+      "label": "Reading Comprehension",
+      "baseline": 0.776,
+      "moderate": 0.856,
+      "rapid": 0.936
+    },
+    {
+      "skill_id": "skill:onet_2_b_2_i",
+      "label": "Complex Problem Solving",
+      "baseline": 0.776,
+      "moderate": 0.856,
+      "rapid": 0.936
+    },
+    {
+      "skill_id": "skill:onet_2_a_1_b",
+      "label": "Active Listening",
+      "baseline": 0.75,
+      "moderate": 0.83,
+      "rapid": 0.91
+    },
+    {
+      "skill_id": "skill:onet_2_a_2_a",
+      "label": "Critical Thinking",
+      "baseline": 0.75,
+      "moderate": 0.83,
+      "rapid": 0.91
+    },
+    {
+      "skill_id": "skill:onet_2_a_2_b",
+      "label": "Active Learning",
+      "baseline": 0.75,
+      "moderate": 0.83,
+      "rapid": 0.91
+    },
+    {
+      "skill_id": "skill:onet_2_b_4_e",
+      "label": "Judgment and Decision Making",
+      "baseline": 0.75,
+      "moderate": 0.83,
+      "rapid": 0.91
+    },
+    {
+      "skill_id": "skill:onet_2_a_1_d",
+      "label": "Speaking",
+      "baseline": 0.724,
+      "moderate": 0.804,
+      "rapid": 0.884
+    },
+    {
+      "skill_id": "skill:onet_2_a_1_c",
+      "label": "Writing",
+      "baseline": 0.7,
+      "moderate": 0.78,
+      "rapid": 0.86
+    },
+    {
+      "skill_id": "skill:onet_2_a_2_d",
+      "label": "Monitoring",
+      "baseline": 0.676,
+      "moderate": 0.756,
+      "rapid": 0.836
+    },
+    {
+      "skill_id": "skill:onet_2_a_2_c",
+      "label": "Learning Strategies",
+      "baseline": 0.576,
+      "moderate": 0.656,
+      "rapid": 0.736
+    }
+  ],
+  "shared_preparation": [
+    {
+      "skill_id": "skill:onet_2_a_1_a",
+      "label": "Reading Comprehension",
+      "practice": "For a real Search Marketing Strategists task, practise reading comprehension by recording your reasoning, checking the result and explaining your decision."
+    },
+    {
+      "skill_id": "skill:onet_2_b_2_i",
+      "label": "Complex Problem Solving",
+      "practice": "For a real Search Marketing Strategists task, practise complex problem solving by recording your reasoning, checking the result and explaining your decision."
+    },
+    {
+      "skill_id": "skill:onet_2_a_1_b",
+      "label": "Active Listening",
+      "practice": "For a real Search Marketing Strategists task, practise active listening by recording your reasoning, checking the result and explaining your decision."
+    }
+  ],
+  "sources": [
+    {
+      "article_id": "db007afeffa315bee0761498",
+      "feed_id": "microsoft_research",
+      "publisher": "Microsoft Research",
+      "title": "Flint-interactive: A language for creating interactive data visualizations",
+      "source_url": "https://www.microsoft.com/en-us/research/blog/flint-interactive-a-language-for-creating-interactive-data-visualizations/",
+      "published_at": "2026-10-22",
+      "fetched_at": "2026-10-23T17:24:17.833779+00:00",
+      "content_scope": "feed_excerpt",
+      "content_sha256": "8a6adc9763cda55de837a7ae6ab00ec09ba6cdff7e81980a83e95d7556260e96"
+    },
+    {
+      "article_id": "4c456e668ef45cba83b59adb",
+      "feed_id": "google_research",
+      "publisher": "Google Research",
+      "title": "Putting Earth AI to work: Geospatial agents for our planet's biggest challenges",
+      "source_url": "https://research.google/blog/putting-earth-ai-to-work-geospatial-agents-for-our-planets-biggest-challenges/",
+      "published_at": "2026-10-14",
+      "fetched_at": "2026-10-23T17:24:17.833779+00:00",
+      "content_scope": "article_excerpt",
+      "content_sha256": "2f1fb7d5fb3e8dbeecaf3e6b3aeb353c9cf852682cd41a7d6dba6a31605f1cc2"
+    },
+    {
+      "article_id": "e986592dff42085cd40df279",
+      "feed_id": "microsoft_research",
+      "publisher": "Microsoft Research",
+      "title": "Agent Lightning v1.0: A 3,500-Line Lightweight Agentic RL Framework for Training Agents with Real Harnesses",
+      "source_url": "https://www.microsoft.com/en-us/research/blog/agent-lightning-v1-0-a-3500-line-lightweight-agentic-rl-framework-for-training-agents-with-real-harnesses/",
+      "published_at": "2026-10-07",
+      "fetched_at": "2026-10-23T17:24:17.833779+00:00",
+      "content_scope": "feed_excerpt",
+      "content_sha256": "35c7b985ec1995d6f83fc5efc4c9ee9c4a89cf39676b41a08b0c1638eed1876b"
+    }
+  ],
+  "priority_basis": "Learning-priority values are illustrative policy weights on a zero-to-one scale. They are not probabilities, measured AI effects, or estimates of job losses. This scenario-only comparison uses the roadmap's scenario policy before any approved research adjustments.",
+  "changes_personal_fit": false
+}

@@ -3,13 +3,14 @@
 import unittest
 from unittest.mock import Mock, patch
 import os
+from dataclasses import replace
 
-from pydantic import BaseModel
+from pydantic import BaseModel, SecretStr
 
 from src.intelligence.extractors import ExtractionError
 from src.intelligence.gemini import StructuredResponse
 from src.intelligence.models import ModelClient
-from src.intelligence.runpod_client import ProviderUnavailable
+from src.intelligence.runpod_client import ChatModelClient, ProviderUnavailable
 
 
 class Answer(BaseModel):
@@ -64,6 +65,27 @@ class TestModelRouting(unittest.TestCase):
 
 
 class TestGroqRouting(unittest.TestCase):
+    def test_bounded_request_reserves_time_for_backups(self):
+        primary = ChatModelClient("groq", "https://example.org/groq", SecretStr("test"), "test-groq", timeout_seconds=20)
+        runpod = replace(primary, provider="runpod", model="test-glm", timeout_seconds=90)
+        backup = Mock()
+        backup.generate.return_value = StructuredResponse(Answer(ok=True), "gemini-backup")
+        client = ModelClient(primary.model, primary, backup, interactive=True,
+            runpod_backup=runpod, primary_provider="groq", request_budget_seconds=45)
+        now = [0.0]
+        allocated = []
+
+        def unavailable(provider, *args, **kwargs):
+            allocated.append(provider.timeout_seconds)
+            now[0] += provider.timeout_seconds
+            raise ProviderUnavailable("timeout")
+
+        with patch("src.intelligence.models.time.monotonic", side_effect=lambda: now[0]), patch.object(ChatModelClient, "generate", autospec=True, side_effect=unavailable):
+            result = client.generate("Test", {}, Answer)
+        self.assertEqual(allocated, [15, 15])
+        self.assertEqual(backup.generate.call_args.kwargs["timeout_seconds"], 15)
+        self.assertEqual(result.provider, "gemini")
+
     def client(self, groq_error=None, runpod_error=None):
         groq = Mock(model="openai/gpt-oss-120b")
         groq.generate.return_value = StructuredResponse(Answer(ok=True), "openai/gpt-oss-120b")

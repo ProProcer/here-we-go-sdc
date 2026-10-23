@@ -409,17 +409,7 @@
         "decisions": [],
         "rejected_assessments": []
       },
-      "general_research": [
-        {
-          "title": "Generative AI and Jobs: A Refined Global Index of Occupational Exposure",
-          "publisher": "International Labour Organization",
-          "source_url": "https://www.ilo.org/publications/generative-ai-and-jobs-refined-global-index-occupational-exposure",
-          "published_at": "2025-05-20",
-          "checked_at": "2026-10-23",
-          "summary": "The ILO studies potential exposure at task and occupational level. Exposure is not a job-loss forecast. This app has not mapped that index to this O*NET occupation; this source provides general context only.",
-          "scope": "general_context_not_role_evidence"
-        }
-      ]
+      "general_research": []
     },
     "moderate_ai_change": {
       "schema_version": "0.2.0",
@@ -823,17 +813,7 @@
         "decisions": [],
         "rejected_assessments": []
       },
-      "general_research": [
-        {
-          "title": "Generative AI and Jobs: A Refined Global Index of Occupational Exposure",
-          "publisher": "International Labour Organization",
-          "source_url": "https://www.ilo.org/publications/generative-ai-and-jobs-refined-global-index-occupational-exposure",
-          "published_at": "2025-05-20",
-          "checked_at": "2026-10-23",
-          "summary": "The ILO studies potential exposure at task and occupational level. Exposure is not a job-loss forecast. This app has not mapped that index to this O*NET occupation; this source provides general context only.",
-          "scope": "general_context_not_role_evidence"
-        }
-      ]
+      "general_research": []
     },
     "rapid_ai_change": {
       "schema_version": "0.2.0",
@@ -1237,17 +1217,7 @@
         "decisions": [],
         "rejected_assessments": []
       },
-      "general_research": [
-        {
-          "title": "Generative AI and Jobs: A Refined Global Index of Occupational Exposure",
-          "publisher": "International Labour Organization",
-          "source_url": "https://www.ilo.org/publications/generative-ai-and-jobs-refined-global-index-occupational-exposure",
-          "published_at": "2025-05-20",
-          "checked_at": "2026-10-23",
-          "summary": "The ILO studies potential exposure at task and occupational level. Exposure is not a job-loss forecast. This app has not mapped that index to this O*NET occupation; this source provides general context only.",
-          "scope": "general_context_not_role_evidence"
-        }
-      ]
+      "general_research": []
     }
   },
   "skill_implications": {

@@ -20,7 +20,7 @@ from src.reskilling.course_catalog import (
     courses_for_skills,
     trusted_providers_for_family,
 )
-from src.reskilling.sdg_mapper import SDGRuleSet, map_role_sdg_connections, map_sdg_connections
+from src.reskilling.sdg_mapper import SDGRuleSet, build_sdg_summary, map_role_sdg_connections, map_sdg_connections
 from src.reskilling.validator import (
     CourseCandidate,
     PageFetcher,
@@ -475,9 +475,10 @@ def _build_milestones(
     uncovered: set[str],
     prerequisite_course_ids: set[str],
     role_title: str,
+    skill_labels: dict[str, str] | None = None,
 ) -> list[Milestone]:
-    labels = {gap.skill_id: gap.label for gap in gaps}
-    gap_ids = set(labels)
+    gap_ids = {gap.skill_id for gap in gaps}
+    labels = {**(skill_labels or {}), **{gap.skill_id: gap.label for gap in gaps}}
     first_core = next(
         (
             index
@@ -820,6 +821,7 @@ def build_learning_plan(
         uncovered=uncovered,
         prerequisite_course_ids=prerequisite_course_ids,
         role_title=role_match.role_title,
+        skill_labels=labels,
     )
     planned_skill_ids = [gap.skill_id for gap in gaps]
     sdg_connections = map_sdg_connections(
@@ -830,9 +832,9 @@ def build_learning_plan(
     )
     if is_onet:
         role_connections = map_role_sdg_connections(role_match.role_id, catalog=catalog, rules=sdg_rules)
-        role_targets = {connection.target_id for connection in role_connections}
-        sdg_connections = [*role_connections,
-            *[connection for connection in sdg_connections if connection.target_id not in role_targets]]
+        # Role application and skill development remain separate even when
+        # both refer to the same UN target.
+        sdg_connections = [*role_connections, *sdg_connections]
     if planned_skill_ids and not sdg_connections:
         warnings.append("No curated SDG mapping was available for the planned skills.")
     if selected and all(course.cost.amount == 0 for course in selected):
@@ -853,6 +855,12 @@ def build_learning_plan(
         if is_onet
         else {}
     )
+    if is_onet and sdg_rules is None:
+        role_skill_ids = {r.skill_id for r in catalog.role_skills if r.role_id == role_match.role_id}
+        context_ids = role_skill_ids | {s.skill_id for s in profile.skills} | set(planned_skill_ids) | set(selected_software)
+        context_ids.update(sid for milestone in milestones for step in milestone.steps for sid in step.skill_ids)
+        extra_plan["sdg_summary"] = build_sdg_summary(role_match.role_id, context_ids, catalog=catalog,
+            profile_skills=profile.skills, planned_skill_ids=planned_skill_ids)
     plan = plan_type(
         **extra_plan,
         generated_at=generated_at,

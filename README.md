@@ -43,6 +43,23 @@ Upload a **synthetic** CV or enter a fictional sample profile; review extracted 
 5. Role **and skill** → justified SDG mapping.
 6. Explicit multi-scenario uncertainty analysis (baseline plus hypothetical scenarios).
 
+The career drawer's **AI outlook & evidence** section now includes updatable
+Google Research and Microsoft Research feeds, visible publication/fetch dates,
+manual and daily refresh, and source-grounded task/learning interpretations.
+See [AI trend layer](docs/AI_TREND_LAYER.md) for behaviour, verification and scope.
+
+The roadmap also includes [alternative career futures](docs/UNCERTAINTY_SCENARIOS.md):
+moderate and rapid what-if stories, explicit assumptions and uncertainty, a
+three-case skill-priority comparison, and preparation useful across both futures.
+Complete authored illustrations remain available while optional AI explanations
+are generated and cached. Personal fit is unchanged by scenario selection.
+
+The roadmap starts on Baseline; a dropdown opens Moderate or Rapid when needed.
+[Explained SDG connections](docs/SDG_CONNECTIONS.md) cover the selected career and
+individual skills, including confirmed skills, with practical examples and UN
+target links. Search and status filters support personal planning and HR/L&D
+development conversations.
+
 **Core differentiator:** new sourced evidence or a labeled counterfactual alters role outlooks and roadmap priorities in a traceable way. Personal *fit* remains separate from labor-market *outlook*.
 
 ## Implemented application stack

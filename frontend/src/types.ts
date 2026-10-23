@@ -79,7 +79,7 @@ export interface Evidence {
 export interface Refresh { refresh: { status: string; message: string; attempted_at: string } | null }
 export interface CourseStatus { status: 'available' | 'empty'; verified_course_count: number; updated_at: string | null; mode: 'verified_cache' }
 export interface RoleData {
-  match: Match; detail: { role: { description: string } }; outlook: Outlook; evidence: Evidence; refresh: Refresh;
+  match: Match; detail: { role: { description: string }; sdg_connections?: SdgConnection[] }; outlook: Outlook; evidence: Evidence; refresh: Refresh;
   skillEvidence: SkillEvidence | null; roleImpacts: RoleImpacts | null;
 }
 export interface ReviewedInterpretation {
@@ -113,7 +113,7 @@ export interface Course {
   prerequisite_skill_ids: string[];
 }
 export interface SdgConnection {
-  scope?: 'learning' | 'role_application';
+  scope?: 'learning' | 'role_application' | 'career_preparation';
   sdg_id: string; target_id: string; rationale: string; contribution: string;
   evidence_kind: string; evidence_url: string; skill_ids: string[];
 }
@@ -125,4 +125,13 @@ export interface Plan {
   prioritized_gaps: Gap[]; selected_courses: Course[]; uncovered_skill_ids: string[];
   milestones: { title: string; steps: LearningStep[] }[]; sdg_connections: SdgConnection[];
   warnings: string[]; cost_totals: { currency: string; amount: number }[]; total_estimated_hours: number | null;
+  sdg_summary?: SdgSummary | null;
+}
+export interface ExplainedSdg extends SdgConnection {
+  goal_title: string; target_label: string; application_example: string; condition: string;
+}
+export interface SdgSummary {
+  role_id: string; role_title: string; role_connections: ExplainedSdg[];
+  skills: { skill_id: string; label: string; kind: string; status: 'confirmed' | 'learning_goal' | 'role_requirement' | 'needs_review'; role_relevant: boolean; connections: ExplainedSdg[] }[];
+  mapped_skill_count: number; skill_count: number; interpretation_note: string;
 }

@@ -18,7 +18,7 @@ ROLE = "role:onet_15_2051_01"
 class TestWebApp(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        environment = patch.dict(os.environ, {"GROQ_API": "", "GROQ_API_KEY": "", "GEMINI_API_KEY": "", "RUNPOD_API_KEY": "", "RUNPOD_ENDPOINT_ID": ""})
+        environment = patch.dict(os.environ, {"TREND_AUTO_REFRESH": "0", "GROQ_API": "", "GROQ_API_KEY": "", "GEMINI_API_KEY": "", "RUNPOD_API_KEY": "", "RUNPOD_ENDPOINT_ID": ""})
         environment.start()
         cls.addClassCleanup(environment.stop)
         cls.client = TestClient(app)
@@ -83,6 +83,71 @@ class TestWebApp(unittest.TestCase):
         match = next(row for row in rows if row["role_id"] == MARKETING)
         self.assertGreater(match["fit_score"], 90)
         self.assertEqual(match["rank"], 1)
+
+    def test_live_trend_api_serves_fetched_sources_and_protects_refresh(self):
+        import json
+        from tempfile import TemporaryDirectory
+        from pathlib import Path
+        from src.intelligence.live_trends import LiveTrendService
+        with TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            config = root / "feeds.json"
+            config.write_text(json.dumps({"schema_version": "0.1.0", "lookback_days": 90,
+                "max_items_per_feed": 10, "keywords": ["AI"], "feeds": [{"feed_id": "test",
+                "publisher": "TEST source", "url": "https://research.example.org/feed",
+                "article_prefix": "https://research.example.org/articles/"}]}))
+            from datetime import datetime, UTC
+            body = b"<rss><channel><item><title>AI research fixture</title><link>https://research.example.org/articles/one</link><pubDate>Thu, 22 Oct 2026 16:00:00 +0000</pubDate><description>AI agents can assist report preparation while people check the outputs and original data sources.</description></item></channel></rss>"
+            service = LiveTrendService(app.state.backend.catalog, path=root / "cache.json", seed=root / "none.json",
+                config_path=config, fetcher=lambda url: body, article_fetcher=lambda url, prefix: "AI research fixture supports report preparation and checking original source records. " * 2, now=lambda: datetime(2026, 10, 23, 12, tzinfo=UTC))
+            original = app.state.trends
+            app.state.trends = service
+            try:
+                service.refresh()
+                response = self.client.get(f"/api/v2/roles/{ROLE}/trends")
+                self.assertEqual(response.status_code, 200)
+                data = response.json()
+                self.assertEqual(data["articles"][0]["published_at"], "2026-10-22")
+                self.assertEqual(data["refresh"]["status"], "fresh")
+                self.assertEqual(data["source_review"]["stored_count"], 1)
+                self.assertEqual(data["source_review"]["assessed_count"], 0)
+                self.assertFalse(data["source_review"]["articles"][0]["assessed_by_ai"])
+                self.assertFalse(data["changes_personal_fit"])
+                self.assertNotIn("source_text", data["articles"][0])
+                self.assertEqual(self.client.post(f"/api/v2/roles/{ROLE}/trends/refresh").status_code, 422)
+                session = self.client.post("/api/v2/profiles/manual").json()["session_id"]
+                with patch.object(service, "start_refresh", return_value=False):
+                    response = self.client.post(f"/api/v2/roles/{ROLE}/trends/refresh", headers={"X-Session-ID": session})
+                self.assertEqual(response.status_code, 202)
+                self.assertEqual(response.json()["articles"][0]["title"], "AI research fixture")
+                self.assertEqual(self.client.post(f"/api/v2/roles/{ROLE}/trends/retry").status_code, 422)
+                with patch.object(service, "ensure_analysis") as analyze, patch.object(service, "start_refresh") as fetch:
+                    response = self.client.post(f"/api/v2/roles/{ROLE}/trends/retry", headers={"X-Session-ID": session})
+                self.assertEqual(response.status_code, 202)
+                analyze.assert_called_once_with(ROLE)
+                fetch.assert_not_called()
+                self.assertEqual(self.client.get("/api/v2/roles/role:unknown/trends").status_code, 404)
+            finally:
+                app.state.trends = original
+                service.close()
+
+    def test_future_scenarios_are_complete_offline_and_updates_require_a_session(self):
+        response = self.client.get(f"/api/v2/roles/{ROLE}/futures")
+        self.assertEqual(response.status_code, 200)
+        data = response.json()
+        self.assertIn(data["origin"], {"application_authored", "ai_generated"})
+        self.assertEqual({r["scenario_id"] for r in data["stories"]}, {"moderate_ai_change", "rapid_ai_change"})
+        self.assertTrue(data["skill_comparison"])
+        self.assertFalse(data["changes_personal_fit"])
+        self.assertTrue(data["stories"][0]["task_changes"][0]["human_responsibility"])
+        self.assertEqual(self.client.get("/api/v2/roles/unknown/futures").status_code, 404)
+        self.assertEqual(self.client.post(f"/api/v2/roles/{ROLE}/futures/refresh").status_code, 422)
+        session = self.client.post("/api/v2/profiles/manual").json()["session_id"]
+        with patch.object(app.state.futures, "ensure") as ensure:
+            response = self.client.post(f"/api/v2/roles/{ROLE}/futures/refresh", headers={"X-Session-ID": session})
+        self.assertEqual(response.status_code, 202)
+        ensure.assert_called_once_with(ROLE)
+        self.assertEqual(len(response.json()["stories"]), 2)
 
     def test_shell_assets_and_downloadable_cv(self):
         page = self.client.get("/")
@@ -166,6 +231,12 @@ class TestWebApp(unittest.TestCase):
         baseline = self.client.post("/api/v2/pathways", headers=headers, json=request)
         self.assertEqual(baseline.status_code, 200, baseline.text)
         plan = baseline.json()["plan"]
+        sdg = plan["sdg_summary"]
+        self.assertTrue(sdg["role_connections"])
+        self.assertEqual(sdg["mapped_skill_count"], sdg["skill_count"])
+        self.assertTrue(all(s["connections"] for s in sdg["skills"]))
+        self.assertTrue(any(s["status"] == "confirmed" for s in sdg["skills"]))
+        self.assertTrue(all("skill:" not in step["learning_goal"] for m in plan["milestones"] for step in m["steps"]))
         rapid = self.client.post("/api/v2/pathways", headers=headers,
                                  json={**request, "scenario_id": "rapid_ai_change"}).json()["plan"]
         self.assertEqual(plan["fit_score"], selected["fit_score"])
@@ -192,7 +263,9 @@ class TestWebApp(unittest.TestCase):
         rapid = response.json()
         self.assertNotEqual(baseline["scenario"]["skill_priorities"], rapid["scenario"]["skill_priorities"])
         self.assertEqual(baseline["sources"], rapid["sources"])
-        self.assertEqual(baseline["general_research"][0]["scope"], "general_context_not_role_evidence")
+        # Current research comes from /trends, rather than a static fallback
+        # attached to every occupation's reviewed outlook.
+        self.assertEqual(baseline["general_research"], [])
         self.assertEqual(self.client.get("/api/v2/roles/unknown").status_code, 404)
         self.assertEqual(self.client.get(f"/api/v2/roles/{role_id}/evidence").json()["chains"], [])
 

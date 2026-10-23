@@ -157,7 +157,7 @@ class SDGConnection(Contract):
     rationale: str = Field(min_length=1)
     evidence_url: HttpUrl
     evidence_kind: Literal["observed", "inferred"]
-    scope: Literal["learning", "role_application"] = Field(
+    scope: Literal["learning", "role_application", "career_preparation"] = Field(
         default="learning", exclude_if=lambda value: value == "learning"
     )
 

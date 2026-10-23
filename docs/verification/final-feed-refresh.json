@@ -1,0 +1,35 @@
+{
+  "previous_snapshot_articles": 22,
+  "updated_snapshot_articles": 23,
+  "last_successful_fetch": "2026-10-23T18:59:31.249750+00:00",
+  "feeds": [
+    {
+      "feed_id": "google_research",
+      "publisher": "Google Research",
+      "url": "https://research.google/blog/rss/",
+      "status": "ok",
+      "article_count": 15,
+      "fetched_at": "2026-10-23T18:59:31.249750+00:00",
+      "response_sha256": "828844a06f6307252acc7699e4d06729da99d0c05d5a553a719123548ee96fe1"
+    },
+    {
+      "feed_id": "microsoft_research",
+      "publisher": "Microsoft Research",
+      "url": "https://www.microsoft.com/en-us/research/feed/",
+      "status": "ok",
+      "article_count": 8,
+      "fetched_at": "2026-10-23T18:59:31.249750+00:00",
+      "response_sha256": "2c4e19cf827e0c9cea596d2acf43e7e726a7f69c231314fc0e06d152cefe5533"
+    }
+  ],
+  "new_source_records": [
+    {
+      "title": "Bringing foundational models to the front lines of TB screening",
+      "publisher": "Google Research",
+      "source_url": "https://research.google/blog/bringing-foundational-models-to-the-front-lines-of-tb-screening/",
+      "published_at": "2026-10-23",
+      "fetched_at": "2026-10-23T18:59:31.249750+00:00"
+    }
+  ],
+  "full_article_bodies_in_snapshot": false
+}

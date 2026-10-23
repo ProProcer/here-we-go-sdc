@@ -46,3 +46,5 @@ data/review/discovery/skill_jobs.json
 data/review/discovery/role_jobs.json
 .role3-review/
 inspo/
+# Live research source cache; a bounded provenance snapshot is committed separately.
+.trend-cache/

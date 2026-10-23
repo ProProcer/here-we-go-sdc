@@ -1,0 +1,67 @@
+{
+  "role_id": "role:onet_15_2051_01",
+  "source_count": 23,
+  "before_successful_fetch": "2026-10-23T17:24:17.833779+00:00",
+  "after_successful_fetch": "2026-10-23T18:59:31.249750+00:00",
+  "feeds": [
+    {
+      "feed_id": "google_research",
+      "publisher": "Google Research",
+      "url": "https://research.google/blog/rss/",
+      "status": "ok",
+      "article_count": 15,
+      "fetched_at": "2026-10-23T18:59:31.249750+00:00",
+      "response_sha256": "828844a06f6307252acc7699e4d06729da99d0c05d5a553a719123548ee96fe1"
+    },
+    {
+      "feed_id": "microsoft_research",
+      "publisher": "Microsoft Research",
+      "url": "https://www.microsoft.com/en-us/research/feed/",
+      "status": "ok",
+      "article_count": 8,
+      "fetched_at": "2026-10-23T18:59:31.249750+00:00",
+      "response_sha256": "2c4e19cf827e0c9cea596d2acf43e7e726a7f69c231314fc0e06d152cefe5533"
+    }
+  ],
+  "interpretation_count": 1,
+  "analysis_provider": "gemini",
+  "fit_unchanged": true,
+  "source_dates": [
+    {
+      "title": "Flint-interactive: A language for creating interactive data visualizations",
+      "source_url": "https://www.microsoft.com/en-us/research/blog/flint-interactive-a-language-for-creating-interactive-data-visualizations/",
+      "published_at": "2026-10-22",
+      "fetched_at": "2026-10-23T18:59:31.249750+00:00"
+    },
+    {
+      "title": "Simulating student learning for better AI tutoring",
+      "source_url": "https://www.microsoft.com/en-us/research/blog/simulating-student-learning-for-better-ai-tutoring/",
+      "published_at": "2026-10-12",
+      "fetched_at": "2026-10-23T18:59:31.249750+00:00"
+    },
+    {
+      "title": "Introducing Quine: An AI research system designed for the complexity of biology",
+      "source_url": "https://www.microsoft.com/en-us/research/blog/introducing-quine-an-ai-research-system-designed-for-the-complexity-of-biology/",
+      "published_at": "2026-09-29",
+      "fetched_at": "2026-10-23T18:59:31.249750+00:00"
+    },
+    {
+      "title": "Agent Lightning v1.0: A 3,500-Line Lightweight Agentic RL Framework for Training Agents with Real Harnesses",
+      "source_url": "https://www.microsoft.com/en-us/research/blog/agent-lightning-v1-0-a-3500-line-lightweight-agentic-rl-framework-for-training-agents-with-real-harnesses/",
+      "published_at": "2026-10-07",
+      "fetched_at": "2026-10-23T18:59:31.249750+00:00"
+    },
+    {
+      "title": "Unlocking Earth AI\u2019s planetary geospatial foundation models for global public health",
+      "source_url": "https://research.google/blog/earth-ais-planetary-geospatial-foundation-models-for-global-public-health/",
+      "published_at": "2026-10-06",
+      "fetched_at": "2026-10-23T17:24:17.833779+00:00"
+    },
+    {
+      "title": "Empowering frontline maternal care with AI-assisted ultrasound",
+      "source_url": "https://research.google/blog/empowering-frontline-maternal-care-with-ai-assisted-ultrasound/",
+      "published_at": "2026-10-21",
+      "fetched_at": "2026-10-23T18:59:31.249750+00:00"
+    }
+  ]
+}

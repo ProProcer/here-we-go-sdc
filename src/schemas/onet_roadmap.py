@@ -5,6 +5,7 @@ from typing import Literal
 from src.schemas.onet_profile import SoftwareLearningOption
 from src.schemas.roadmap import LearningPlan
 from src.schemas.role import SkillId
+from src.schemas.sdg import SDGSummary
 
 
 class OnetLearningPlan(LearningPlan):
@@ -16,3 +17,4 @@ class OnetLearningPlan(LearningPlan):
     software_learning_options: list[SoftwareLearningOption]
     selected_software_skill_ids: list[SkillId]
     budget_myr: float
+    sdg_summary: SDGSummary | None = None

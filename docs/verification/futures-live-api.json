@@ -1,0 +1,15 @@
+{
+  "role_id": "role:onet_13_1161_01",
+  "origin": "ai_generated",
+  "story_count": 2,
+  "scenarios": [
+    "moderate_ai_change",
+    "rapid_ai_change"
+  ],
+  "comparison_rows": 10,
+  "research_sources": 3,
+  "response_seconds": 0.103,
+  "label": "Hypothetical scenarios \u00b7 Not forecasts",
+  "generated_at": "2026-10-23T17:54:10.177442+00:00",
+  "changes_personal_fit": false
+}

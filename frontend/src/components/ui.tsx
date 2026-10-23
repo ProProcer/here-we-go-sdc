@@ -18,8 +18,8 @@ const paths = {
 export type IconName = keyof typeof paths;
 export function Icon({ name }: { name: IconName }) { return <svg className="icon" viewBox="0 0 24 24" aria-hidden="true">{paths[name]}</svg>; }
 export function Chip({ children, kind = '' }: { children: ReactNode; kind?: string }) { return <span className={`chip ${kind}`}>{children}</span>; }
-export function Disclosure({ title, children, id, className = '', help = false }: { title: string; children: ReactNode; id?: string; className?: string; help?: boolean }) {
-  return <details id={id} className={`disclosure ${className}`}><summary>{title} {help ? <span className="help-mark" aria-hidden="true">?</span> : <Icon name="chevron" />}</summary><div className="disclosure-content">{children}</div></details>;
+export function Disclosure({ title, children, id, className = '', help = false, onToggle }: { title: string; children: ReactNode; id?: string; className?: string; help?: boolean; onToggle?: (open: boolean) => void }) {
+  return <details id={id} className={`disclosure ${className}`} onToggle={event => onToggle?.(event.currentTarget.open)}><summary>{title} {help ? <span className="help-mark" aria-hidden="true">?</span> : <Icon name="chevron" />}</summary><div className="disclosure-content">{children}</div></details>;
 }
 export function EmptyState({ title, children, symbol = 'spark', compact = false, action }: { title: string; children: ReactNode; symbol?: IconName; compact?: boolean; action?: ReactNode }) {
   return <div className={`empty-state ${compact ? 'compact' : ''}`}><span className="empty-symbol"><Icon name={symbol} /></span><h3>{title}</h3><p>{children}</p>{action}</div>;

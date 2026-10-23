@@ -1,0 +1,369 @@
+{
+  "role_id": "role:onet_15_2051_01",
+  "analyzed_at": "2026-10-23T16:39:42.333413+00:00",
+  "provider": "gemini",
+  "source_review": {
+    "stored_count": 22,
+    "selected_count": 6,
+    "assessed_count": 6,
+    "connection_count": 3,
+    "assessment_limit": 6,
+    "connection_limit": 3,
+    "legacy_analysis": false,
+    "articles": [
+      {
+        "source": {
+          "article_id": "db007afeffa315bee0761498",
+          "feed_id": "microsoft_research",
+          "publisher": "Microsoft Research",
+          "title": "Flint-interactive: A language for creating interactive data visualizations",
+          "source_url": "https://www.microsoft.com/en-us/research/blog/flint-interactive-a-language-for-creating-interactive-data-visualizations/",
+          "published_at": "2026-10-22",
+          "fetched_at": "2026-10-23T16:35:44.605944+00:00",
+          "content_scope": "feed_excerpt",
+          "content_sha256": "b53b58b8de4b9d167509ef07234f65a3f48b486509d612764e40882e854e9376"
+        },
+        "outcome": "connected",
+        "reason": "The text describes new methods for creating interactive data visualizations relevant to building BI tools.",
+        "assessed_by_ai": true
+      },
+      {
+        "source": {
+          "article_id": "f5a67a23b0dd5c70b4db35e5",
+          "feed_id": "microsoft_research",
+          "publisher": "Microsoft Research",
+          "title": "Solving a 31-year-old grand challenge in mathematics \u2013 the KLS conjecture",
+          "source_url": "https://www.microsoft.com/en-us/research/blog/solving-a-31-year-old-grand-challenge-in-mathematics-the-kls-conjecture/",
+          "published_at": "2026-10-21",
+          "fetched_at": "2026-10-23T16:35:44.605944+00:00",
+          "content_scope": "feed_excerpt",
+          "content_sha256": "b4013424dec4b4bbf7bc43a36e3522ece53784607a773edeb6173335ca5c4712"
+        },
+        "outcome": "not_selected",
+        "reason": "Not sent to the AI: outside the top six articles ranked against this occupation's description and tasks. This does not mean it is unrelated.",
+        "assessed_by_ai": false
+      },
+      {
+        "source": {
+          "article_id": "3bfcd79e09f177c0e0d91fdc",
+          "feed_id": "google_research",
+          "publisher": "Google Research",
+          "title": "Empowering frontline maternal care with AI-assisted ultrasound",
+          "source_url": "https://research.google/blog/empowering-frontline-maternal-care-with-ai-assisted-ultrasound/",
+          "published_at": "2026-10-21",
+          "fetched_at": "2026-10-23T16:35:44.605944+00:00",
+          "content_scope": "article_excerpt",
+          "content_sha256": "1f1c202c78a6bebeb1ea3e6a132267714bbf499da7c13c5ea49afc090f9b9b7b"
+        },
+        "outcome": "not_selected",
+        "reason": "Not sent to the AI: outside the top six articles ranked against this occupation's description and tasks. This does not mean it is unrelated.",
+        "assessed_by_ai": false
+      },
+      {
+        "source": {
+          "article_id": "dd1029b4b030aba3c24c66f5",
+          "feed_id": "google_research",
+          "publisher": "Google Research",
+          "title": "Grounding AI agents in biological reality: Building blocks for autonomous wet labs",
+          "source_url": "https://research.google/blog/grounding-ai-agents-in-biological-reality-building-blocks-for-autonomous-wet-labs/",
+          "published_at": "2026-10-16",
+          "fetched_at": "2026-10-23T16:35:44.605944+00:00",
+          "content_scope": "article_excerpt",
+          "content_sha256": "387186226c004da2eec9cfbd974340c314ae04235a0e7dc650b6cbf85d953b81"
+        },
+        "outcome": "not_selected",
+        "reason": "Not sent to the AI: outside the top six articles ranked against this occupation's description and tasks. This does not mean it is unrelated.",
+        "assessed_by_ai": false
+      },
+      {
+        "source": {
+          "article_id": "2b0a4f23c4eeb155767a8388",
+          "feed_id": "microsoft_research",
+          "publisher": "Microsoft Research",
+          "title": "Proof-based general-purpose computing with Magnetar",
+          "source_url": "https://www.microsoft.com/en-us/research/blog/proof-based-general-purpose-computing-with-magnetar/",
+          "published_at": "2026-10-15",
+          "fetched_at": "2026-10-23T16:35:44.605944+00:00",
+          "content_scope": "feed_excerpt",
+          "content_sha256": "4d80b0557ca951c914d6064ddbb71ef9d3652b5fd39e97854a265ae03bb167c7"
+        },
+        "outcome": "connected",
+        "reason": "Explains a technique for verifying data results, which is essential for ensuring report accuracy.",
+        "assessed_by_ai": true
+      },
+      {
+        "source": {
+          "article_id": "4c456e668ef45cba83b59adb",
+          "feed_id": "google_research",
+          "publisher": "Google Research",
+          "title": "Putting Earth AI to work: Geospatial agents for our planet's biggest challenges",
+          "source_url": "https://research.google/blog/putting-earth-ai-to-work-geospatial-agents-for-our-planets-biggest-challenges/",
+          "published_at": "2026-10-14",
+          "fetched_at": "2026-10-23T16:35:44.605944+00:00",
+          "content_scope": "article_excerpt",
+          "content_sha256": "2f1fb7d5fb3e8dbeecaf3e6b3aeb353c9cf852682cd41a7d6dba6a31605f1cc2"
+        },
+        "outcome": "connected",
+        "reason": "The article discusses geospatial agents useful for analyzing geographic trends with business implications.",
+        "assessed_by_ai": true
+      },
+      {
+        "source": {
+          "article_id": "e3ff286dbca97504a4835ad2",
+          "feed_id": "microsoft_research",
+          "publisher": "Microsoft Research",
+          "title": "Simulating student learning for better AI tutoring",
+          "source_url": "https://www.microsoft.com/en-us/research/blog/simulating-student-learning-for-better-ai-tutoring/",
+          "published_at": "2026-10-12",
+          "fetched_at": "2026-10-23T16:35:44.605944+00:00",
+          "content_scope": "feed_excerpt",
+          "content_sha256": "bcd45e701772c4a9f9b040834d9dae24983d164ae649b5be37df241c43b19970"
+        },
+        "outcome": "no_clear_connection",
+        "reason": "Focuses on AI tutoring systems for education which lacks a direct link to BI analysis tasks.",
+        "assessed_by_ai": true
+      },
+      {
+        "source": {
+          "article_id": "e986592dff42085cd40df279",
+          "feed_id": "microsoft_research",
+          "publisher": "Microsoft Research",
+          "title": "Agent Lightning v1.0: A 3,500-Line Lightweight Agentic RL Framework for Training Agents with Real Harnesses",
+          "source_url": "https://www.microsoft.com/en-us/research/blog/agent-lightning-v1-0-a-3500-line-lightweight-agentic-rl-framework-for-training-agents-with-real-harnesses/",
+          "published_at": "2026-10-07",
+          "fetched_at": "2026-10-23T16:35:44.605944+00:00",
+          "content_scope": "feed_excerpt",
+          "content_sha256": "91e8f33677c9cf5d000999a6a28602cc6d348b87c02d698567583deffc2d3705"
+        },
+        "outcome": "not_selected",
+        "reason": "Not sent to the AI: outside the top six articles ranked against this occupation's description and tasks. This does not mean it is unrelated.",
+        "assessed_by_ai": false
+      },
+      {
+        "source": {
+          "article_id": "c02127d349672db4a213f696",
+          "feed_id": "google_research",
+          "publisher": "Google Research",
+          "title": "Unlocking Earth AI\u2019s planetary geospatial foundation models for global public health",
+          "source_url": "https://research.google/blog/earth-ais-planetary-geospatial-foundation-models-for-global-public-health/",
+          "published_at": "2026-10-06",
+          "fetched_at": "2026-10-23T16:35:44.605944+00:00",
+          "content_scope": "article_excerpt",
+          "content_sha256": "19bc90611fc022e52b39fda4aaf98e2f38c65cac98e9de374a1b7d0a268ad422"
+        },
+        "outcome": "not_selected",
+        "reason": "Not sent to the AI: outside the top six articles ranked against this occupation's description and tasks. This does not mean it is unrelated.",
+        "assessed_by_ai": false
+      },
+      {
+        "source": {
+          "article_id": "7eeb0a9dde53453907ecbc46",
+          "feed_id": "google_research",
+          "publisher": "Google Research",
+          "title": "Open and Emergent Problems in Agentic Privacy and Security: A Contextual Angle",
+          "source_url": "https://research.google/blog/open-and-emergent-problems-in-agentic-privacy-and-security-a-contextual-angle/",
+          "published_at": "2026-10-05",
+          "fetched_at": "2026-10-23T16:35:44.605944+00:00",
+          "content_scope": "feed_excerpt",
+          "content_sha256": "c95abd40e0f3ef3a5b859f4be7a7b112dab4d8f53fbf08f6636359b63ecfc677"
+        },
+        "outcome": "not_selected",
+        "reason": "Not sent to the AI: outside the top six articles ranked against this occupation's description and tasks. This does not mean it is unrelated.",
+        "assessed_by_ai": false
+      },
+      {
+        "source": {
+          "article_id": "63e9a822faf54946f1afdc92",
+          "feed_id": "microsoft_research",
+          "publisher": "Microsoft Research",
+          "title": "Forecasting space weather risks on power grids",
+          "source_url": "https://www.microsoft.com/en-us/research/blog/forecasting-space-weather-risks-on-power-grids/",
+          "published_at": "2026-09-30",
+          "fetched_at": "2026-10-23T16:35:44.605944+00:00",
+          "content_scope": "feed_excerpt",
+          "content_sha256": "a9857f655d1eb6f7d706b3ff426d7bff55fb2277e3148314c8a38b30ab3d6e69"
+        },
+        "outcome": "not_selected",
+        "reason": "Not sent to the AI: outside the top six articles ranked against this occupation's description and tasks. This does not mean it is unrelated.",
+        "assessed_by_ai": false
+      },
+      {
+        "source": {
+          "article_id": "6432f88e541d563511336134",
+          "feed_id": "microsoft_research",
+          "publisher": "Microsoft Research",
+          "title": "Introducing Quine: An AI research system designed for the complexity of biology",
+          "source_url": "https://www.microsoft.com/en-us/research/blog/introducing-quine-an-ai-research-system-designed-for-the-complexity-of-biology/",
+          "published_at": "2026-09-29",
+          "fetched_at": "2026-10-23T16:35:44.605944+00:00",
+          "content_scope": "feed_excerpt",
+          "content_sha256": "9b4406a878a12ca024dd8aeaa0811198df0128623ea096b23f92dc25de8519cf"
+        },
+        "outcome": "no_clear_connection",
+        "reason": "Discusses biological research and experimental technology, which does not relate to BI analyst workflows.",
+        "assessed_by_ai": true
+      },
+      {
+        "source": {
+          "article_id": "5cc8f180d7d24936a05928ca",
+          "feed_id": "google_research",
+          "publisher": "Google Research",
+          "title": "How Diffusion Controller unifies and simplifies AI image generation",
+          "source_url": "https://research.google/blog/how-diffusion-controller-unifies-and-simplifies-ai-image-generation/",
+          "published_at": "2026-09-29",
+          "fetched_at": "2026-10-23T16:35:44.605944+00:00",
+          "content_scope": "feed_excerpt",
+          "content_sha256": "7985e283027f1a200061c9693df54c8b48ac188c9aa7f8b0bbd086925eeaca4d"
+        },
+        "outcome": "not_selected",
+        "reason": "Not sent to the AI: outside the top six articles ranked against this occupation's description and tasks. This does not mean it is unrelated.",
+        "assessed_by_ai": false
+      },
+      {
+        "source": {
+          "article_id": "fbb52d3a0c1eaabbb2b5d6ed",
+          "feed_id": "microsoft_research",
+          "publisher": "Microsoft Research",
+          "title": "One year in: How Microsoft Research Asia \u2013 Singapore is advancing research, partnership and talent for real-world impact",
+          "source_url": "https://www.microsoft.com/en-us/research/blog/one-year-in-how-microsoft-research-asia-singapore-is-advancing-research-partnership-and-talent-for-real-world-impact/",
+          "published_at": "2026-09-28",
+          "fetched_at": "2026-10-23T16:35:44.605944+00:00",
+          "content_scope": "feed_excerpt",
+          "content_sha256": "1c88421126f76a8069fe8cabb0ef37ca1266f6c129d4df08b683969d60304c6a"
+        },
+        "outcome": "insufficient_detail",
+        "reason": "Describes organizational growth in a research lab without mentioning specific analytical tasks.",
+        "assessed_by_ai": true
+      },
+      {
+        "source": {
+          "article_id": "8451e6726f36736772159469",
+          "feed_id": "google_research",
+          "publisher": "Google Research",
+          "title": "Automating coherent long-form video generation",
+          "source_url": "https://research.google/blog/coherent-long-form-video-generation/",
+          "published_at": "2026-09-24",
+          "fetched_at": "2026-10-23T16:35:44.605944+00:00",
+          "content_scope": "feed_excerpt",
+          "content_sha256": "c95abd40e0f3ef3a5b859f4be7a7b112dab4d8f53fbf08f6636359b63ecfc677"
+        },
+        "outcome": "not_selected",
+        "reason": "Not sent to the AI: outside the top six articles ranked against this occupation's description and tasks. This does not mean it is unrelated.",
+        "assessed_by_ai": false
+      },
+      {
+        "source": {
+          "article_id": "0f83c2d1d5b8034398fa197c",
+          "feed_id": "google_research",
+          "publisher": "Google Research",
+          "title": "The future of practice: Enabling teachers to create learning interactives with generative UI",
+          "source_url": "https://research.google/blog/the-future-of-practice-enabling-teachers-to-create-learning-interactives-with-generative-ui/",
+          "published_at": "2026-09-17",
+          "fetched_at": "2026-10-23T16:35:44.605944+00:00",
+          "content_scope": "feed_excerpt",
+          "content_sha256": "a9d24ada1cc839d6c40f857f0e963df612039b888706519edb9870398db8eab1"
+        },
+        "outcome": "not_selected",
+        "reason": "Not sent to the AI: outside the top six articles ranked against this occupation's description and tasks. This does not mean it is unrelated.",
+        "assessed_by_ai": false
+      },
+      {
+        "source": {
+          "article_id": "f174ca4a3cbc866f5f127805",
+          "feed_id": "google_research",
+          "publisher": "Google Research",
+          "title": "Bypassing inference bottlenecks: Accelerating complex AI search with Retrieve-for-Train",
+          "source_url": "https://research.google/blog/bypassing-inference-bottlenecks-accelerating-complex-ai-search-with-retrieve-for-train/",
+          "published_at": "2026-09-15",
+          "fetched_at": "2026-10-23T16:35:44.605944+00:00",
+          "content_scope": "feed_excerpt",
+          "content_sha256": "7985e283027f1a200061c9693df54c8b48ac188c9aa7f8b0bbd086925eeaca4d"
+        },
+        "outcome": "not_selected",
+        "reason": "Not sent to the AI: outside the top six articles ranked against this occupation's description and tasks. This does not mean it is unrelated.",
+        "assessed_by_ai": false
+      },
+      {
+        "source": {
+          "article_id": "d4c4006fefc6f64193fc4bf3",
+          "feed_id": "google_research",
+          "publisher": "Google Research",
+          "title": "Planetary prediction engine: Automating global models via Earth AI",
+          "source_url": "https://research.google/blog/planetary-prediction-engine-automating-global-models-via-earth-ai/",
+          "published_at": "2026-08-27",
+          "fetched_at": "2026-10-23T16:35:44.605944+00:00",
+          "content_scope": "feed_excerpt",
+          "content_sha256": "28258362acab7ed531bc2e9809dfdae888805d778890777abccf0e8cadde069e"
+        },
+        "outcome": "not_selected",
+        "reason": "Not sent to the AI: outside the top six articles ranked against this occupation's description and tasks. This does not mean it is unrelated.",
+        "assessed_by_ai": false
+      },
+      {
+        "source": {
+          "article_id": "16b919027b43c28e9ba7f950",
+          "feed_id": "google_research",
+          "publisher": "Google Research",
+          "title": "AgentHands: Generating interactive hand gestures for spatially grounded agent conversations in XR",
+          "source_url": "https://research.google/blog/agenthands-generating-interactive-hand-gestures-for-spatially-grounded-agent-conversations-in-xr/",
+          "published_at": "2026-08-25",
+          "fetched_at": "2026-10-23T16:35:44.605944+00:00",
+          "content_scope": "feed_excerpt",
+          "content_sha256": "9e82a3971ab7cf5c770070ffc4c7c4e8565a825b2e13bd8c73573c6a11558f20"
+        },
+        "outcome": "not_selected",
+        "reason": "Not sent to the AI: outside the top six articles ranked against this occupation's description and tasks. This does not mean it is unrelated.",
+        "assessed_by_ai": false
+      },
+      {
+        "source": {
+          "article_id": "a21cee4b91bda9f5c68b571d",
+          "feed_id": "google_research",
+          "publisher": "Google Research",
+          "title": "An AI tool for prioritizing candidate biomarkers from wearable sensor data",
+          "source_url": "https://research.google/blog/an-ai-tool-for-prioritizing-candidate-biomarkers-from-wearable-sensor-data/",
+          "published_at": "2026-08-21",
+          "fetched_at": "2026-10-23T16:35:44.605944+00:00",
+          "content_scope": "feed_excerpt",
+          "content_sha256": "c95abd40e0f3ef3a5b859f4be7a7b112dab4d8f53fbf08f6636359b63ecfc677"
+        },
+        "outcome": "not_selected",
+        "reason": "Not sent to the AI: outside the top six articles ranked against this occupation's description and tasks. This does not mean it is unrelated.",
+        "assessed_by_ai": false
+      },
+      {
+        "source": {
+          "article_id": "4f98c5029119950e7f82e09b",
+          "feed_id": "google_research",
+          "publisher": "Google Research",
+          "title": "How mobility gives language models a deeper understanding of place",
+          "source_url": "https://research.google/blog/how-mobility-gives-language-models-a-deeper-understanding-of-place/",
+          "published_at": "2026-08-21",
+          "fetched_at": "2026-10-23T16:35:44.605944+00:00",
+          "content_scope": "feed_excerpt",
+          "content_sha256": "7985e283027f1a200061c9693df54c8b48ac188c9aa7f8b0bbd086925eeaca4d"
+        },
+        "outcome": "not_selected",
+        "reason": "Not sent to the AI: outside the top six articles ranked against this occupation's description and tasks. This does not mean it is unrelated.",
+        "assessed_by_ai": false
+      },
+      {
+        "source": {
+          "article_id": "f8e28bf01720e2679e598c57",
+          "feed_id": "google_research",
+          "publisher": "Google Research",
+          "title": "Empty shelves or lost keys? Recall is the bottleneck for parametric factuality",
+          "source_url": "https://research.google/blog/empty-shelves-or-lost-keys-recall-is-the-bottleneck-for-parametric-factuality/",
+          "published_at": "2026-08-12",
+          "fetched_at": "2026-10-23T16:35:44.605944+00:00",
+          "content_scope": "feed_excerpt",
+          "content_sha256": "c95abd40e0f3ef3a5b859f4be7a7b112dab4d8f53fbf08f6636359b63ecfc677"
+        },
+        "outcome": "not_selected",
+        "reason": "Not sent to the AI: outside the top six articles ranked against this occupation's description and tasks. This does not mean it is unrelated.",
+        "assessed_by_ai": false
+      }
+    ],
+    "updating": false
+  }
+}

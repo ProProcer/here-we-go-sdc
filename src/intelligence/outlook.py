@@ -152,13 +152,7 @@ def get_outlook(
         {
             "learning_priority_evidence": priority_evidence,
             "available_scenarios": available_scenarios(catalog, role_id, scenarios),
-            "general_research": [GeneralResearch(
-                title="Generative AI and Jobs: A Refined Global Index of Occupational Exposure",
-                publisher="International Labour Organization",
-                source_url="https://www.ilo.org/publications/generative-ai-and-jobs-refined-global-index-occupational-exposure",
-                published_at=date(2025, 5, 20), checked_at=date(2026, 10, 23),
-                summary="The ILO studies potential exposure at task and occupational level. Exposure is not a job-loss forecast. This app has not mapped that index to this O*NET occupation; this source provides general context only.",
-            )],
+            "general_research": [],
         }
         if isinstance(catalog, OnetCatalog)
         else {}

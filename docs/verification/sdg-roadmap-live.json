@@ -1,0 +1,32 @@
+{
+  "role_id": "role:onet_13_1161_01",
+  "role_targets": [
+    "8.2"
+  ],
+  "skill_goals": [
+    "SDG 4",
+    "SDG 8"
+  ],
+  "scenarios": {
+    "baseline": {
+      "fit": 90.37,
+      "mapped_skills": 39,
+      "confirmed_skills": 39,
+      "objectives": 0
+    },
+    "moderate_ai_change": {
+      "fit": 90.37,
+      "mapped_skills": 39,
+      "confirmed_skills": 39,
+      "objectives": 0
+    },
+    "rapid_ai_change": {
+      "fit": 90.37,
+      "mapped_skills": 39,
+      "confirmed_skills": 39,
+      "objectives": 0
+    }
+  },
+  "fit_unchanged": true,
+  "all_context_skills_mapped": true
+}
