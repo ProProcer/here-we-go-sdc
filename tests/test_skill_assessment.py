@@ -71,14 +71,10 @@ class TestSkillAssessment(unittest.TestCase):
         packet = assessment_input(profile.skills)
         self.assertEqual(packet["skills"][0]["evidence"][0]["index"], 0)
         schema = assessment_schema(profile.skills)
-        branch = schema["properties"]["skills"]["items"]["anyOf"][0]
-        self.assertEqual(branch["properties"]["skill_id"]["enum"], ["skill:python"])
-        self.assertEqual(branch["properties"]["evidence_indices"]["items"]["enum"], [0])
+        row = schema["$defs"]["AssessedSkill"]
+        self.assertEqual(row["properties"]["skill_id"]["enum"], ["skill:python"])
+        self.assertEqual(row["properties"]["evidence_indices"]["items"]["enum"], [0])
         self.assertEqual(schema["properties"]["skills"]["minItems"], 1)
-        # Groq accepts one enum discriminator for object unions.
-        for field in ("level", "confidence"):
-            self.assertNotIn("enum", branch["properties"][field])
-            self.assertIn("pattern", branch["properties"][field])
 
     def test_prompt_contains_database_kind_definition_and_supported_levels(self):
         packet = assessment_input(self.profile().skills)
@@ -108,6 +104,58 @@ class TestSkillAssessment(unittest.TestCase):
         self.assertEqual(result.skills[0].level, "intermediate")
         self.assertEqual(len(result.skills), 1)
         self.assertTrue(any("outside the database-backed" in warning for warning in result.warnings))
+
+
+    def test_large_profile_is_assessed_in_full_and_never_reports_prefix_success(self):
+        from scripts.create_high_match_cv import OUTPUT
+        from src.profiles.intake import create_profile_from_cv
+        from src.ingestion.selection import real_catalog
+        from src.profiles.assessment import selected_evidence
+        import json
+        catalog = real_catalog()
+        path = OUTPUT / "rina_search_marketing.pdf"
+        profile = create_profile_from_cv("synthetic:complete_cv", path.read_bytes(), path.name, catalog=catalog)
+        wanted = SkillsProfile.model_validate_json((OUTPUT / "reviewed_profile.json").read_text())
+        levels = {s.skill_id: s.level for s in wanted.skills}
+        rows = [dict(skill_id=s.skill_id, level=levels[s.skill_id], confidence="medium",
+            rationale="Independent task evidence in supplied passage.",
+            evidence_indices=[selected_evidence(s)["index"]]) for s in profile.skills]
+        client = Mock()
+        client.generate.return_value = SimpleNamespace(value=AssessmentBatch(skills=rows), returned_model="test-complete", provider="groq")
+        complete = assess_levels(profile, client=client, catalog=catalog)
+        self.assertEqual(complete.assessment_status.assessed_skill_count, 39)
+        self.assertEqual(len(client.generate.call_args.args[1]["skills"]), 39)
+        self.assertTrue(all(s.level_assessment is not None for s in complete.skills))
+        self.assertTrue(all(s.confirmation == "unverified" for s in complete.skills))
+        self.assertLess(len(json.dumps(assessment_input(profile.skills, catalog))) + len(json.dumps(assessment_schema(profile.skills))), 20000)
+        # A provider returning only the old prefix cannot be called completed.
+        client.generate.return_value.value = AssessmentBatch(skills=rows[:12])
+        partial = assess_levels(profile, client=client, catalog=catalog)
+        self.assertEqual(partial.assessment_status.status, "failed")
+        self.assertEqual(partial.assessment_status.assessed_skill_count, 0)
+        self.assertTrue(all(s.level_assessment is None for s in partial.skills))
+
+    def test_evidence_reference_must_have_been_supplied_not_merely_exist(self):
+        profile = self.profile()
+        skill = profile.skills[0].model_copy(update={"evidence": ["Skills: Python", "Independently used Python to validate campaign records."]})
+        profile = profile.model_copy(update={"skills": [skill]})
+        packet = assessment_input(profile.skills)
+        self.assertEqual(packet["skills"][0]["evidence"][0]["index"], 1)
+        invalid = assess_levels(profile, client=self.client(evidence_indices=[0]))
+        self.assertEqual(invalid.assessment_status.status, "failed")
+        valid = assess_levels(profile, client=self.client(evidence_indices=[1]))
+        self.assertEqual(valid.assessment_status.status, "completed")
+
+    def test_oversize_profile_is_rejected_without_partial_prediction(self):
+        from src.ingestion.selection import real_catalog
+        skills = [ProfileSkill(skill_id=s.skill_id, label=s.label, evidence=["Explicit test skill claim."])
+            for s in real_catalog().taxonomy.skills[:101]]
+        profile = SkillsProfile(profile_id="synthetic:oversize", skills=skills)
+        client = Mock()
+        result = assess_levels(profile, client=client)
+        self.assertEqual(result.assessment_status.error_code, "profile_too_large")
+        self.assertEqual(result.assessment_status.assessed_skill_count, 0)
+        client.generate.assert_not_called()
 
 
 if __name__ == "__main__":

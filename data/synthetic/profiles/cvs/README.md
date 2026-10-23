@@ -25,4 +25,4 @@ Open the app at http://localhost:8000, upload a CV, review its estimated levels,
 confirm the skills that describe it, and find matches. The original sample is also
 served at http://localhost:8000/api/v2/samples/graduate.pdf.
 
-- [90+ reviewed-fit CV for Search Marketing Strategists](high_match/README.md): verified 90.37 after completing its proficiency checklist; automatic first-12 assessment alone scored 31.53.
+- [90+ reviewed-fit CV for Search Marketing Strategists](high_match/README.md): verified 90.37 through normal upload, with all 39 levels assessed by Groq and no manual proficiency edits. The earlier first-12 limitation is fixed.

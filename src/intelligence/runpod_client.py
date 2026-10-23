@@ -89,7 +89,7 @@ class ChatModelClient:
             ],
             "response_format": {"type": "json_object"},
             "temperature": 0,
-            "max_tokens": 4096,
+            "max_tokens": 8192 if isinstance(data, dict) and data.get("assessment_contract") == "cv_skill_levels_v2" else 4096,
             "stream": False,
             "chat_template_kwargs": {"enable_thinking": False},
         }

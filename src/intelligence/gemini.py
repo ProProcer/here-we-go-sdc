@@ -150,7 +150,7 @@ class GeminiClient:
                 }
             ],
             "generationConfig": {
-                "maxOutputTokens": 4096,
+                "maxOutputTokens": 8192 if isinstance(data, dict) and data.get("assessment_contract") == "cv_skill_levels_v2" else 4096,
                 "responseMimeType": "application/json",
                 "responseJsonSchema": json_schema
                 if json_schema is not None

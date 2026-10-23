@@ -28,7 +28,7 @@ An earlier single-skill fictional Python probe succeeded on 2026-10-23; that
 probe did not verify the full uploaded/sample CV flow. The current live follow-up
 is described under RunPod account checks below.
 
-One assessment batch covers up to 12 extracted skills. RunPod is attempted first;
+One compact request covers every extracted skill, up to 100. Oversized profiles are rejected clearly rather than silently truncated. Groq is attempted first;
 a service failure can use one Gemini backup request. Further skills remain available for
 manual review. Missing keys, invalid responses or service failures leave levels
 unknown with a visible explanation. A skill name alone is insufficient for a

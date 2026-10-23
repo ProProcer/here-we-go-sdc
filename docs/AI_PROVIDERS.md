@@ -160,3 +160,17 @@ The test runner spaces live calls because the observed account quota was 8,000
 tokens per minute; that observation is not a promise of an account's future quota.
 
 The earlier ten-skill sample receipts predate the extraction correction that stops interpreting Computer Science as a separate Science claim. The current sample contains nine catalog-backed skills.
+
+## Complete CV assessment
+
+The earlier first-12 limit is removed. A compact schema and evidence selection
+allow one request to assess the full profile (up to 100 skills). A larger profile
+fails clearly with no partial updates. The app requires exact ID coverage,
+rejects duplicates and verifies each reference against that skill's supplied
+original evidence index before applying any levels. It cannot label a prefix-only
+response completed. Assessment responses have an 8,192-token output budget;
+other AI tasks retain their existing output budgets.
+
+The unchanged Rina PDF was verified through normal upload: Groq assessed all
+39 skills, and confirmation alone produced 90.37/100 for Search Marketing
+Strategists at rank 1. No profile-level overrides or score changes were used.

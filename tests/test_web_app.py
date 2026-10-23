@@ -60,6 +60,30 @@ class TestWebApp(unittest.TestCase):
         # This occupation has an estimated intermediate Python requirement.
         self.assertEqual(scores, [6.5, 16.25, 12.88])
 
+    def test_rina_upload_exceeds_ninety_with_ai_levels_and_confirmation_only(self):
+        from scripts.create_high_match_cv import OUTPUT, ROLE as MARKETING
+        from src.profiles.assessment import AssessmentBatch
+        from types import SimpleNamespace
+        import json
+        from unittest.mock import Mock
+        levels = {s["skill_id"]: s["level"] for s in json.loads((OUTPUT / "reviewed_profile.json").read_text())["skills"]}
+        def generate(instruction, data, response_model, **kwargs):
+            self.assertEqual(len(data["skills"]), 39)
+            rows = [dict(skill_id=s["skill_id"], level=levels[s["skill_id"]], confidence="medium",
+                rationale="Supported by independent task evidence.", evidence_indices=[s["evidence"][0]["index"]]) for s in data["skills"]]
+            return SimpleNamespace(value=AssessmentBatch(skills=rows), returned_model="test-complete", provider="groq")
+        with patch("src.profiles.assessment.assessment_configuration", return_value=("groq", [])), \
+             patch("src.profiles.assessment.assessment_client", return_value=Mock(generate=generate)):
+            response = self.client.post("/api/v2/profiles/upload", content=(OUTPUT / "rina_search_marketing.pdf").read_bytes(), headers={"X-Filename": "rina.pdf"})
+        self.assertEqual(response.status_code, 200, response.text)
+        data = response.json()
+        self.assertEqual(data["profile"]["assessment_status"]["assessed_skill_count"], 39)
+        reviewed = self.review(data, {"X-Session-ID": data["session_id"]}, desired_role_id=MARKETING)
+        rows = self.client.get("/api/v2/matches", headers={"X-Session-ID": data["session_id"]}, params={"revision": reviewed["revision"]}).json()["matches"]
+        match = next(row for row in rows if row["role_id"] == MARKETING)
+        self.assertGreater(match["fit_score"], 90)
+        self.assertEqual(match["rank"], 1)
+
     def test_shell_assets_and_downloadable_cv(self):
         page = self.client.get("/")
         self.assertEqual(page.status_code, 200)

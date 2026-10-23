@@ -1,7 +1,7 @@
 """Optional evidence-grounded proficiency estimates; never certify a CV claim."""
 
 from typing import Literal
-from copy import deepcopy
+import re
 
 from pydantic import Field
 
@@ -13,16 +13,19 @@ from src.schemas.profile import AssessmentStatus, LevelAssessment, SkillsProfile
 from src.schemas.role import Contract
 
 
+MAX_ASSESSED_SKILLS = 100
+
+
 class AssessedSkill(Contract):
     skill_id: str
     level: Literal["unknown", "beginner", "intermediate", "advanced"]
     confidence: Literal["low", "medium", "high"]
-    rationale: str = Field(min_length=1, max_length=1000)
+    rationale: str = Field(min_length=1, max_length=200)
     evidence_indices: list[int] = Field(min_length=1, max_length=5)
 
 
 class AssessmentBatch(Contract):
-    skills: list[AssessedSkill] = Field(max_length=12)
+    skills: list[AssessedSkill] = Field(max_length=MAX_ASSESSED_SKILLS)
 
 
 INSTRUCTION = """Estimate skill levels using ONLY the supplied CV evidence snippets.
@@ -34,7 +37,10 @@ Unknown: a name/skill list alone or insufficient evidence. Beginner: basic study
 or guided exercise. Intermediate: concrete independent application in a project
 or work task. Advanced: repeated complex delivery, technical leadership or teaching
 with explicit outcomes. Do not infer level from a job title, age, degree or years
-alone. Explain the evidence and uncertainty in one sentence. These are estimates,
+alone. Routine independent professional application is intermediate; it does not
+require leadership or exceptional outcomes. An explicit level claim alone is not
+proof, but use it consistently with the concrete task evidence. Explain the evidence
+and uncertainty in one brief sentence of at most 140 characters. These are estimates,
 not certifications. You may assess ONLY the supplied database skill IDs.
 The database defines general occupational skills and specific software tools.
 Use each supplied kind and definition to interpret the evidence; similar names
@@ -42,36 +48,39 @@ are not interchangeable tools. Never invent or rename skills, qualifications,
 certifications or personal traits. Never add skills or confirm claims."""
 
 
+def selected_evidence(skill):
+    """Keep one substantive passage per skill and preserve its original index."""
+    def quality(item):
+        _, text = item
+        core = re.sub(r"^Page \d+, line \d+:\s*", "", text)
+        action = bool(re.search(r"\b(used|built|delivered|applied|calculated|compared|coordinated|presented|wrote|tracked|performed|maintained|interpreted|selected|investigated|resolved|showed|scheduled|allocated|organized)\b", core, re.I))
+        direct = bool(re.match(re.escape(skill.label) + r"\s*[-:–]", core, re.I))
+        return action, direct, min(len(core), 240)
+    index, text = max(enumerate(skill.evidence), key=quality)
+    return {"index": index, "text": text[:240]}
+
+
 def assessment_input(skills, catalog=None):
     catalog = catalog or real_catalog()
     database = {s.skill_id: s for s in catalog.taxonomy.skills}
-    return {"catalog_scope": "Only the supplied database IDs may be assessed: general occupational skills or specific software tools.",
+    return {"assessment_contract": "cv_skill_levels_v2",
+        "catalog_scope": "Assess every supplied database ID. General occupational skills or specific software tools only.",
         "allowed_levels": ["unknown", "beginner", "intermediate", "advanced"],
         "skills": [{"skill_id": skill.skill_id, "label": database[skill.skill_id].label,
         "kind": getattr(database[skill.skill_id], "kind", "general"),
-        "definition": (getattr(database[skill.skill_id], "description", None) or database[skill.skill_id].label)[:400],
-        "evidence": [{"index": index, "text": text} for index, text in enumerate(skill.evidence)]}
+        "definition": (getattr(database[skill.skill_id], "description", None) or database[skill.skill_id].label)[:160],
+        "evidence": [selected_evidence(skill)]}
         for skill in skills if skill.skill_id in database]}
 
 
 def assessment_schema(skills):
-    """Constrain canonical IDs and evidence references before generation."""
+    """Compact database-ID allowlist; per-skill references are validated locally."""
     schema = AssessmentBatch.model_json_schema()
-    row_schema = schema["$defs"]["AssessedSkill"]
-    branches = []
-    for skill in skills:
-        branch = deepcopy(row_schema)
-        # Groq's union decoder needs one enum discriminator. Keep skill_id as
-        # that discriminator; constrain shared string choices with patterns.
-        for field in ("level", "confidence"):
-            choices = branch["properties"][field].pop("enum")
-            branch["properties"][field]["pattern"] = "^(?:" + "|".join(choices) + ")$"
-        branch["properties"]["skill_id"] = {"type": "string", "enum": [skill.skill_id]}
-        branch["properties"]["evidence_indices"]["items"] = {
-            "type": "integer", "enum": list(range(len(skill.evidence)))}
-        branches.append(branch)
-    schema["properties"]["skills"].update(
-        items={"anyOf": branches}, minItems=len(skills), maxItems=len(skills))
+    row = schema["$defs"]["AssessedSkill"]
+    row["properties"]["skill_id"] = {"type": "string", "enum": [s.skill_id for s in skills]}
+    row["properties"]["evidence_indices"]["items"] = {
+        "type": "integer", "enum": sorted({selected_evidence(s)["index"] for s in skills})}
+    schema["properties"]["skills"].update(minItems=len(skills), maxItems=len(skills))
     return schema
 
 
@@ -86,6 +95,11 @@ def assess_levels(profile: SkillsProfile, *, client=None, catalog=None) -> Skill
     if not profile.skills:
         return profile
     provider, missing = assessment_configuration()
+    if len(profile.skills) > MAX_ASSESSED_SKILLS:
+        message = f"AI assessment supports up to {MAX_ASSESSED_SKILLS} skills per CV. Reduce the profile and retry; no partial assessment was applied."
+        return profile.model_copy(update={"warnings": [*profile.warnings, message],
+            "assessment_status": AssessmentStatus(status="failed", provider=provider, primary_provider=provider,
+                message=message, error_code="profile_too_large")})
     warnings = [w for w in profile.warnings if not w.startswith("AI ")]
     if client is None and missing:
         message = "AI level assessment is unavailable because the selected provider is not configured. No level has been assigned."
@@ -95,8 +109,8 @@ def assess_levels(profile: SkillsProfile, *, client=None, catalog=None) -> Skill
     try:
         if client is None:
             client = assessment_client()
-        # Bound document size, output and API spend; one batch per upload.
-        selected = profile.skills[:12]
+        # One compact bounded request covers the whole profile, never a prefix.
+        selected = profile.skills
         result = client.generate(INSTRUCTION, assessment_input(selected, catalog), AssessmentBatch,
             json_schema=assessment_schema(selected))
         original = {s.skill_id: s for s in selected}
@@ -108,7 +122,7 @@ def assess_levels(profile: SkillsProfile, *, client=None, catalog=None) -> Skill
         if len(rows) != len(valid_rows) or rows.keys() != original.keys():
             raise ValueError("Assessment must cover only the requested skills")
         for sid, row in rows.items():
-            if any(i < 0 or i >= len(original[sid].evidence) for i in row.evidence_indices):
+            if any(i != selected_evidence(original[sid])["index"] for i in row.evidence_indices):
                 raise ValueError("Assessment cites missing evidence")
         assessed = [s.model_copy(update={
             "level": rows[s.skill_id].level,
@@ -121,8 +135,6 @@ def assess_levels(profile: SkillsProfile, *, client=None, catalog=None) -> Skill
         }) if s.skill_id in rows else s for s in profile.skills]
         warnings = [*warnings,
             "AI levels are estimates from CV claims. Review them; confirmation is still your choice."]
-        if len(profile.skills) > 12:
-            warnings.append("AI assessed the first 12 extracted skills; review the remaining levels manually.")
         used_provider = getattr(result, "provider", None) or provider
         used_backup = used_provider != provider
         provider_label = {"groq": "Groq GPT-OSS-120B", "runpod": "RunPod GLM", "gemini": "Gemini"}.get(used_provider, used_provider)

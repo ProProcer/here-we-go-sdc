@@ -1,0 +1,12 @@
+{
+  "file": "rina_search_marketing.pdf",
+  "sha256": "15f0bdd3825feb82eefb1529c7f7bbe10f0a52608cfac57b7963a5fe8582271b",
+  "provider": "groq",
+  "assessed_skills": 39,
+  "extracted_skills": 39,
+  "displayed_score": 90.4,
+  "rank": 1,
+  "manual_level_overrides": 0,
+  "target_role_boost": false,
+  "flow": "Upload unchanged PDF; confirm all skills; explore without a goal"
+}

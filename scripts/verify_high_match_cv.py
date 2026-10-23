@@ -39,16 +39,17 @@ def main():
         headers = {"X-Session-ID": data["session_id"], "Content-Type": "application/json"}
         report["automatic_assessment"] = data["profile"].get("assessment_status")
         skills = [{**s, "confirmation": "confirmed"} for s in data["profile"]["skills"]]
-        for label, explicit_levels in (("automatic_levels", False), ("checklist_levels", True)):
-            if explicit_levels:
-                skills = [{**s, "level": levels[s["skill_id"]], "level_assessment": None} for s in skills]
-            reviewed = request(base, "/profiles/current", method="PATCH", headers=headers,
-                body=json.dumps({"revision": data["revision"], "skills": skills, "desired_role_id": ROLE}).encode())
-            data["revision"] = reviewed["revision"]
-            rows = request(base, "/matches?revision=" + str(data["revision"]), headers=headers)["matches"]
-            match = next(row for row in rows if row["role_id"] == ROLE)
-            report[label] = {"score": match["fit_score"], "rank": match["rank"], "skill_count": len(skills)}
-        assert report["checklist_levels"]["score"] > 90
+        assert report["automatic_assessment"]["assessed_skill_count"] == len(skills) == 39
+        assert all(s.get("level_assessment") for s in skills)
+        reviewed = request(base, "/profiles/current", method="PATCH", headers=headers,
+            body=json.dumps({"revision": data["revision"], "skills": skills}).encode())
+        rows = request(base, "/matches?revision=" + str(reviewed["revision"]), headers=headers)["matches"]
+        match = next(row for row in rows if row["role_id"] == ROLE)
+        report["automatic_levels"] = {"score": match["fit_score"], "rank": match["rank"], "skill_count": len(skills)}
+        report["manual_level_overrides"] = 0
+        assert match["fit_score"] > 90
+        assert match["rank"] == 1
+
     (OUTPUT / "test_results.json").write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(report), flush=True)
 

@@ -144,6 +144,7 @@ class TestGroqTransport(TestCase):
         self.assertNotIn("max_tokens", payload)
         self.assertEqual(payload["reasoning_effort"], "low")
         self.assertFalse(payload["include_reasoning"])
+        self.assertEqual(payload["max_completion_tokens"], 4096)
         self.assertNotIn('"$defs"', payload["messages"][0]["content"])
         self.assertEqual(request.get_header("User-agent"), "ikiguy/1.0")
         self.assertEqual(result.returned_model, client.model)
