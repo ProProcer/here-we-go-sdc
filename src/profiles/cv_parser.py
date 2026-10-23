@@ -11,7 +11,7 @@ MAX_BYTES = 2 * 1024 * 1024
 MAX_PAGES = 5
 MAX_TEXT = 50_000
 MAX_PAGE_STREAM = 2 * 1024 * 1024
-PDF_TIMEOUT = 10
+PDF_TIMEOUT = 60
 
 
 class CVParseError(ValueError):
@@ -31,7 +31,7 @@ def _check_text(pages: list[str]) -> None:
     if not any(page.strip() for page in pages):
         raise CVParseError(
             "no_text",
-            "No readable text found; scanned PDFs need OCR, which is unsupported.",
+            "No readable text could be extracted from this document.",
         )
     if any("\x00" in page for page in pages):
         raise CVParseError("invalid_text", "Input contains unsupported binary text.")
@@ -53,26 +53,26 @@ def parse_cv(content: bytes, filename: str) -> ParsedCV:
             raise CVParseError(
                 "encoding", "Plain text must use UTF-8 encoding."
             ) from error
-    elif suffix == ".pdf":
-        if not content.startswith(b"%PDF-"):
+    elif suffix in {".pdf", ".docx", ".jpg", ".jpeg", ".png"}:
+        if suffix == ".pdf" and not content.startswith(b"%PDF-"):
             raise CVParseError("invalid_pdf", "The file does not have a PDF header.")
         try:
             result = subprocess.run(
-                [sys.executable, "-m", "src.profiles.pdf_worker"],
+                [sys.executable, "-m", "src.profiles.document_worker", suffix[1:]],
                 input=content,
                 stdout=subprocess.PIPE,
                 stderr=subprocess.DEVNULL,
-                timeout=PDF_TIMEOUT,
+                timeout=60 if suffix != ".pdf" else PDF_TIMEOUT,
                 cwd=Path(__file__).resolve().parents[2],
                 check=False,
             )
         except subprocess.TimeoutExpired as error:
             raise CVParseError(
-                "timeout", "PDF processing exceeded its time limit."
+                "timeout", "Document processing exceeded its time limit."
             ) from error
         except OSError as error:
             raise CVParseError(
-                "worker_unavailable", "PDF processing could not start."
+                "worker_unavailable", "Document processing could not start."
             ) from error
         if result.returncode != 0:
             raise CVParseError("invalid_pdf", "PDF processing failed.")
@@ -93,7 +93,7 @@ def parse_cv(content: bytes, filename: str) -> ParsedCV:
             ) from error
     else:
         raise CVParseError(
-            "unsupported_format", "Only .txt and text-based .pdf files are supported."
+            "unsupported_format", "Supported files are PDF, DOCX, TXT, JPG and PNG."
         )
     _check_text(pages)
     return ParsedCV(format=suffix[1:], pages=pages)

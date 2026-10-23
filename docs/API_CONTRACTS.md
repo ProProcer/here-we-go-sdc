@@ -1,4 +1,12 @@
-# Person 1 mock handoff — version 0.1.0
+# API and service contracts
+
+Person 5's real-catalog HTTP integration is now implemented. See
+[Person 5 handoff](PERSON_5_HANDOFF.md) for `/api/v2` routes, session/review
+semantics, supported CV formats and current evidence/resource limitations.
+The service handoffs below retain the original mock interfaces for compatibility;
+their sample routes are not the real-catalog HTTP contract.
+
+## Historical Person 1 mock handoff — version 0.1.0
 
 ## Real Person 1 catalog — separate version 0.2.0
 

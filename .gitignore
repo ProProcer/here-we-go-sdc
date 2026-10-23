@@ -3,6 +3,8 @@ __pycache__/
 *.py[cod]
 venv/
 .venv/
+.pythonlibs/
+.upm/
 env/
 
 # Python tooling and build output
@@ -17,9 +19,14 @@ dist/
 *.egg-info/
 
 # Environment
+node_modules/
+*.tsbuildinfo
 .env
 .env.*
 !.env.example
+
+# Private resume references are for local inspection only.
+docs/*[Rr]esume*.pdf
 
 # OS / Editor
 .DS_Store

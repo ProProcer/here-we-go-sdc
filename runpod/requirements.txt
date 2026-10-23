@@ -1,0 +1,2 @@
+# Optional, separate serverless worker; not needed by the Replit web app.
+runpod==1.10.0

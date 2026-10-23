@@ -1,0 +1,121 @@
+%PDF-1.3
+%‚„œ”
+1 0 obj
+<<
+/Producer (pypdf)
+/Title (Aisha Tan \055 Fictional demonstration CV)
+>>
+endobj
+2 0 obj
+<<
+/Type /Pages
+/Count 1
+/Kids [ 4 0 R ]
+>>
+endobj
+3 0 obj
+<<
+/Type /Catalog
+/Pages 2 0 R
+>>
+endobj
+4 0 obj
+<<
+/Type /Page
+/Resources <<
+/Font <<
+/F1 <<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica
+>>
+/F2 <<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica-Bold
+>>
+>>
+>>
+/MediaBox [ 0.0 0.0 595 842 ]
+/Parent 2 0 R
+/Contents 5 0 R
+>>
+endobj
+5 0 obj
+<<
+/Length 4214
+>>
+stream
+0 g BT /F2 20 Tf 1 0 0 1 44.00 795.00 Tm (AISHA TAN) Tj ET
+0 g BT /F1 11 Tf 1 0 0 1 44.00 770.00 Tm (Graduate Analyst) Tj ET
+0.35 g BT /F1 9 Tf 1 0 0 1 44.00 752.00 Tm (aisha.tan@example.com | Kuala Lumpur, Malaysia) Tj ET
+0.35 g BT /F1 8 Tf 1 0 0 1 44.00 735.00 Tm (Fictional demonstration CV. All names, organizations and experiences are invented.) Tj ET
+0 g BT /F2 10 Tf 1 0 0 1 44.00 711.00 Tm (SUMMARY) Tj ET
+0.7 G 0.5 w 44 706.00 m 551 706.00 l S
+0 g BT /F1 10 Tf 1 0 0 1 44.00 690.00 Tm (Computing graduate with practical projects in data preparation and reporting.) Tj ET
+0 g BT /F2 10 Tf 1 0 0 1 44.00 669.50 Tm (EDUCATION) Tj ET
+0.7 G 0.5 w 44 664.50 m 551 664.50 l S
+0 g BT /F2 10 Tf 1 0 0 1 44.00 648.50 Tm (Bachelor of Computer Science | Harbourview University \(fictional\)) Tj ET
+0.3 g BT /F1 9 Tf 1 0 0 1 530.98 648.50 Tm (2026) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 44.00 633.50 Tm (Relevant coursework: Programming, Statistics and Critical Thinking.) Tj ET
+0 g BT /F2 10 Tf 1 0 0 1 44.00 613.00 Tm (EXPERIENCE) Tj ET
+0.7 G 0.5 w 44 608.00 m 551 608.00 l S
+0 g BT /F2 10 Tf 1 0 0 1 44.00 592.00 Tm (Student Data Assistant | Harbourview University \(fictional\)) Tj ET
+0.3 g BT /F1 9 Tf 1 0 0 1 530.98 592.00 Tm (2025) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 45.00 577.00 Tm (-) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 55.00 577.00 Tm (Used Python and SQL to prepare synthetic records for student research projects.) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 45.00 563.50 Tm (-) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 55.00 563.50 Tm (Checked duplicate rows and documented data-quality issues in weekly reports.) Tj ET
+0 g BT /F2 10 Tf 1 0 0 1 44.00 543.00 Tm (PROJECTS) Tj ET
+0.7 G 0.5 w 44 538.00 m 551 538.00 l S
+0 g BT /F2 10 Tf 1 0 0 1 44.00 522.00 Tm (Campus Energy Dashboard | University capstone) Tj ET
+0.3 g BT /F1 9 Tf 1 0 0 1 530.98 522.00 Tm (2026) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 45.00 507.00 Tm (-) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 55.00 507.00 Tm (Built Tableau reports from a synthetic campus energy dataset.) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 45.00 493.50 Tm (-) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 55.00 493.50 Tm (Used SQL to compare monthly records and Python to test data transformations.) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 45.00 480.00 Tm (-) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 55.00 480.00 Tm (Presented the results and limitations in a written project report.) Tj ET
+0 g BT /F2 10 Tf 1 0 0 1 44.00 459.50 Tm (Student Society Budget | Volunteer project) Tj ET
+0.3 g BT /F1 9 Tf 1 0 0 1 530.98 459.50 Tm (2025) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 45.00 444.50 Tm (-) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 55.00 444.50 Tm (Used Microsoft Excel to organize an invented event budget and track expenses.) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 45.00 431.00 Tm (-) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 55.00 431.00 Tm (Reviewed spreadsheet formulas and explained the results to the project team.) Tj ET
+0 g BT /F2 10 Tf 1 0 0 1 44.00 410.50 Tm (LEADERSHIP) Tj ET
+0.7 G 0.5 w 44 405.50 m 551 405.50 l S
+0 g BT /F2 10 Tf 1 0 0 1 44.00 389.50 Tm (Project Coordinator | Campus Data Club \(fictional\)) Tj ET
+0.3 g BT /F1 9 Tf 1 0 0 1 530.98 389.50 Tm (2026) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 45.00 374.50 Tm (-) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 55.00 374.50 Tm (Coordinated a student dashboard project and recorded decisions after reviews.) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 45.00 361.00 Tm (-) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 55.00 361.00 Tm (Practised Active Listening and Critical Thinking during team discussions.) Tj ET
+0 g BT /F2 10 Tf 1 0 0 1 44.00 340.50 Tm (ACTIVITIES) Tj ET
+0.7 G 0.5 w 44 335.50 m 551 335.50 l S
+0 g BT /F2 10 Tf 1 0 0 1 44.00 319.50 Tm (Peer Study Group | Harbourview University \(fictional\)) Tj ET
+0.3 g BT /F1 9 Tf 1 0 0 1 530.98 319.50 Tm (2025) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 45.00 304.50 Tm (-) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 55.00 304.50 Tm (Helped classmates practise SQL queries using synthetic teaching datasets.) Tj ET
+0 g BT /F2 10 Tf 1 0 0 1 44.00 284.00 Tm (SKILLS) Tj ET
+0.7 G 0.5 w 44 279.00 m 551 279.00 l S
+0 g BT /F1 10 Tf 1 0 0 1 44.00 263.00 Tm (Tools: Python, SQL, Microsoft Excel, Tableau.) Tj ET
+0 g BT /F1 10 Tf 1 0 0 1 44.00 249.50 Tm (General skills: Reading Comprehension, Writing, Active Listening, Critical Thinking.) Tj ET
+endstream
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000015 00000 n 
+0000000105 00000 n 
+0000000164 00000 n 
+0000000213 00000 n 
+0000000458 00000 n 
+trailer
+<<
+/Size 6
+/Root 3 0 R
+/Info 1 0 R
+>>
+startxref
+4724
+%%EOF

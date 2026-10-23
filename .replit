@@ -1,5 +1,22 @@
-run = "python src/main.py"
+run = ["sh", "-c", "npm --prefix frontend ci --include=dev && npm --prefix frontend run build && python -m venv .venv && .venv/bin/python -m pip install --disable-pip-version-check -r requirements.txt && exec .venv/bin/python -m src.main"]
 entrypoint = "src/main.py"
+modules = ["python-3.12", "nodejs-22"]
+
+[env]
+PORT = "8000"
+PYTHONUNBUFFERED = "1"
 
 [nix]
 channel = "stable-24_05"
+
+[packager.features]
+guessImports = false
+enabledForHosting = false
+
+[deployment]
+build = ["sh", "-c", "npm --prefix frontend ci --include=dev && npm --prefix frontend run build && python -m venv .venv && .venv/bin/python -m pip install --no-cache-dir --disable-pip-version-check -r requirements.txt"]
+run = [".venv/bin/python", "-m", "src.main"]
+
+[[ports]]
+localPort = 8000
+externalPort = 80

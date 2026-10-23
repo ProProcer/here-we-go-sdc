@@ -1,6 +1,6 @@
 # FutureReady AI — Aiversecity Future-Ready Workforce
 
-> **Planning-stage project** for SDC Hackathon 2026, Domain 1. No functional build or real deployment is represented by this repository planning pack.  
+> **Working local prototype** for SDC Hackathon 2026, Domain 1. CV upload, skill review, real-catalog matching, scenarios and learning objectives are connected. Public deployment and real-role evidence/course coverage remain outstanding.
 > An evidence-aware career navigator that connects current skills to explainable role matches, AI-change scenarios, low-cost learning pathways and UN SDG targets.
 
 ## Team Information
@@ -45,15 +45,15 @@ Upload a **synthetic** CV or enter a fictional sample profile; review extracted 
 
 **Core differentiator:** new sourced evidence or a labeled counterfactual alters role outlooks and roadmap priorities in a traceable way. Personal *fit* remains separate from labor-market *outlook*.
 
-## Tech stack (proposed, not yet deployed)
+## Implemented application stack
 
-| Layer | Proposed technology |
+| Layer | Technology |
 |---|---|
-| UI | Jinja2/HTMX + CSS (optional Plotly) |
+| UI | React, Vite, Tailwind CSS and TypeScript in `frontend/` |
 | Application | Python / FastAPI / Pydantic |
-| Data | Pandas + SQLite + JSON snapshots |
-| Matching | Taxonomy normalization, deterministic scoring, optional CPU-friendly semantic embeddings |
-| AI | To-be-declared structured-output LLM, with source validation |
+| Data | Versioned JSON catalogs; expiring in-memory demo profiles |
+| Matching | Exact taxonomy normalization and deterministic O*NET coverage scoring |
+| CV extraction | Local PDF/DOCX/text parsing and CPU OCR for images/scanned pages |
 | Hosting | **Replit is mandatory** |
 | GPU | **RunPod only if GPU work is actually required**; real use proof then mandatory |
 
@@ -76,10 +76,10 @@ Read **[`docs/PROJECT_SPECIFICATION.md`](docs/PROJECT_SPECIFICATION.md)** for fu
 README.md                     # This README adapted from supplied template
 LICENSE                       # Apache 2.0
 .replit / .env.example         # Real Replit config; secret names only
-src/main.py                   # Future FastAPI entry point
+src/main.py                   # FastAPI entry point
 src/{ingestion,profiles,intelligence,reskilling,api,schemas}/
 runpod/handler.py             # Optional actual GPU inference code
-src/templates/ + src/static/  # Web UI
+frontend/                    # React screens, reusable components, styles and Vite build
 data/{raw,processed,synthetic,demo}/
 tests/                       # Regression and integration tests
 docs/PROJECT_SPECIFICATION.md
@@ -87,7 +87,7 @@ docs/PRELIMINARY_PROPOSAL_DRAFT.md
 submission/Submission Template SDC Hackathon.pdf  # ORIGINAL blank official PDF
 ```
 
-This is a design tree. Only some planning files exist yet. **No provided sample code counts as a working prototype.**
+The web application uses `src/api/` for HTTP adapters and `frontend/src/` for the React interface. FastAPI serves the production Vite build from `frontend/dist/`. Document readers remain in `src/profiles/`. See [Person 5 handoff](docs/PERSON_5_HANDOFF.md) for implemented interfaces and limitations.
 
 ## Team roles
 
@@ -103,8 +103,8 @@ One of these members must also serve as the **registered team leader** to monito
 
 Person 1's **synthetic role catalog mock** is ready for integration. See
 [`docs/API_CONTRACTS.md`](docs/API_CONTRACTS.md) for fixtures, shared IDs, loader
-usage and the proposed `GET /api/roles` adapter. This is a module handoff; the
-complete app is still to be implemented.
+usage and the original `GET /api/roles` adapter proposal. The application uses the
+real catalog through the `/api/v2` routes documented in the Person 5 handoff.
 
 Person 1 also supplies a **real O*NET® 31.0 catalog** with 910 occupations,
 source provenance, an exclusion audit, versioned read adapters and exploratory
@@ -115,7 +115,7 @@ group/individual software coverage. Start with the
 The real catalog uses schema 0.2.0; current teammate defaults retain the mock
 for compatibility. Persons 2–4 now use the real catalog through
 `src.backend.CareerBackend`; run `python -m src.backend` for the offline
-end-to-end example. Person 5 UI/HTTP work is excluded. O*NET data are licensed
+end-to-end example. Person 5 now wraps this shared backend with HTTP routes and a CV-first interface. O*NET data are licensed
 under CC BY 4.0 separately
 from this repository's Apache-2.0 code. See [data sources](docs/DATA_SOURCES.md).
 
@@ -158,16 +158,56 @@ The [task/skill proposal stage](docs/ROLE_3_TASK_SKILL_PROPOSALS.md) uses an acc
 finding and the catalog to generate conditional implications or explain
 insufficient evidence. Its outputs remain separate proposals for review.
 
-## How to run (once implementation exists)
+## How to run
 
-This planning pack has **no runnable app yet**. After actual implementation, replace these instructions with tested commands for the committed `requirements.txt` and `.replit` config; expected target:
+Use Python 3.11+ (verified locally with Python 3.13) and Node.js 22.12+. Create and activate a Python virtual environment. From the repository root, install dependencies and build the frontend once:
 
 ```bash
-pip install -r requirements.txt
-uvicorn src.main:app --host 0.0.0.0 --port 8000
+python -m pip install -r requirements.txt
+npm --prefix frontend ci
+npm --prefix frontend run build
+python -m src.main
 ```
 
-On Replit, configure the actual app launch command, ports and required Secrets. Add the real working deployment link and verified setup details here. **Never place secrets in the repository.**
+Open **http://localhost:8000**. Upload a fictional CV or choose **Try sample** to parse the downloadable fictional PDF. Confirm the extracted skills before exploring roles. To compare scenarios, select **Business Intelligence Analysts** as your target: moderate/rapid assumptions currently cover this occupation only.
+
+For frontend development, keep Python running in one terminal and run `npm --prefix frontend run dev` in another. Open **http://localhost:5173** for Vite's live updates. Vite forwards `/api` to Python on port 8000; profiles stay in backend memory. `npm --prefix frontend run build` checks TypeScript and generates the production build. Rebuild to see frontend changes on port 8000. `node_modules/`, `dist/` and build metadata are ignored; commit `frontend/package-lock.json`.
+
+Supported uploads: PDF, DOCX, UTF-8 TXT, JPG and PNG, up to 2 MiB; PDFs up to five pages. Scanned pages and images use local CPU OCR with packaged RapidOCR models. Extraction is limited to the catalog vocabulary; always review the evidence and correct missed or mistaken skills. There is no ATS-template requirement.
+
+The pulled real-role evidence ledger contains one source and two contextual task interpretations for Business Intelligence Analysts. Other roles retain insufficient-evidence states. Role 3's existing shared skill evidence and role-impact lookups are connected to read-only HTTP routes and expandable evidence panels. Only approved records are displayed; the committed approval stores remain empty. Reviewed learning-priority metadata and course-cache status are also shown through disclosures. The verified course cache remains empty, so the app supplies learning objectives without invented course links. These website lookups make no Gemini calls. A Gemini key is needed only for existing background review jobs, through GitHub Actions Secrets or Replit Secrets when running those jobs there.
+
+`python -m src.main` is the deployment entry point. It binds to `0.0.0.0`, reads `PORT` (default `8000`), and uses one worker. No API key is needed for CV intake, matching or the cached learning planner.
+
+## Deploy on Replit
+
+1. Put the latest application files in GitHub, then open [Replit Import](https://replit.com/import) and import that repository. Import only includes committed/pushed changes. Alternatively, import a clean project ZIP containing `.replit`, `replit.nix`, `requirements.txt`, `src/`, `frontend/` (including its package lock) and `data/`; exclude your local `.venv`, `node_modules`, `dist`, `.git` and `.env`.
+2. Click **Run**. The committed `.replit` selects Python 3.12 and Node.js 22, installs the locked npm packages and builds React, then installs the Python dependencies and starts FastAPI. The first install takes longer because it includes OCR models. Check the preview and `/health`.
+3. Open **Publishing → Adjust settings** and select **Reserved VM**, running as a web server. Use a single server. Profiles currently live in process memory; multiple servers can lose track of the active session. They also expire after an hour and are cleared on restart/redeploy.
+4. Confirm the settings below and publish. Then test the public URL with **Try sample**, skill confirmation, and role exploration. Deployment and genuine Replit usage proof must be completed in the team's account.
+
+| Setting | Value |
+|---|---|
+| Runtime | Python 3.12 + Node.js 22.12 or newer |
+| Build command | Use the committed `.replit` build command: npm install/build, then Python dependency installation |
+| Run command | `.venv/bin/python -m src.main` |
+| Internal / external port | `8000` / `80` |
+| Environment | `PORT=8000` (already in `.replit`); no required API secrets |
+
+`.replit` already includes the build/run commands and port mapping. `replit.nix` supplies the native C++ and zlib runtime libraries used by the OCR/PDF dependencies. Keep `PORT` and the internal port mapping consistent if you change them. The build installs into `.venv` so it does not write into the system Python installation. Development tools and the optional RunPod SDK are excluded from the web deployment; the latter has its own `runpod/requirements.txt`.
+
+This remains one server deployment: Python serves both the built React frontend and `/api/v2`, using one public URL and port. Node is needed at build time; a second production server, CORS settings and a separate frontend host are unnecessary. The single-server choice follows the app's current session design. See Replit's [configuration reference](https://docs.replit.com/features/project-setup/configuration) and [deployment types](https://docs.replit.com/features/publishing/deployment-types). Source-backed evidence and verified course coverage remain separate team tasks described above.
+
+## Tests
+
+```bash
+python -m pip install -r requirements-dev.txt
+npm --prefix frontend ci
+npm --prefix frontend run build
+python -m unittest discover -s tests -v
+```
+
+The ordinary suite includes real local OCR checks. Browser tests are opt-in. Install Chromium with `python -m playwright install chromium`, set `RUN_BROWSER_TESTS=1`, then run `python -m unittest discover -s tests -p test_browser.py -v`. Alternatively, set `BROWSER_CHANNEL=msedge` to use installed Microsoft Edge. Browser tests launch and stop their own server; `BROWSER_ARTIFACT_DIR` optionally saves screenshots outside the source tree.
 
 ## Replit and RunPod compliance
 
@@ -196,7 +236,7 @@ The repository will include the **Apache License 2.0** as required by the Partic
 - [x] Proposal-form answer draft prepared, with unresolved details explicitly marked
 - [ ] Registered team data and URLs filled
 - [ ] Public/legal data source selection validated
-- [ ] Synthetic profile fixtures and working implementation built
+- [x] Fictional CV fixtures and working local application built
 - [ ] Real source evidence, courses and measured evaluation completed
 - [ ] Replit used and actual proof captured
 - [ ] RunPod used **if** a GPU task is performed, with actual proof

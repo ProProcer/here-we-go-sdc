@@ -143,7 +143,7 @@ class TestCVPipeline(unittest.TestCase):
             ("encoding", b"\xff", "cv.txt"),
             ("no_text", b" \n ", "cv.txt"),
             ("invalid_text", b"abc\x00", "cv.txt"),
-            ("unsupported_format", b"skills", "cv.docx"),
+            ("invalid_docx", b"skills", "cv.docx"),
             ("invalid_pdf", b"abc", "cv.pdf"),
         ]:
             with self.subTest(code=code):

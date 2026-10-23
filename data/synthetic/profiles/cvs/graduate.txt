@@ -1,0 +1,39 @@
+AISHA TAN
+Graduate Analyst
+aisha.tan@example.com | Kuala Lumpur, Malaysia
+Fictional demonstration CV. All names, organizations and experiences are invented.
+
+SUMMARY
+Computing graduate with practical projects in data preparation and reporting.
+
+EDUCATION
+Bachelor of Computer Science | Harbourview University (fictional) | 2026
+Relevant coursework: Programming, Statistics and Critical Thinking.
+
+EXPERIENCE
+Student Data Assistant | Harbourview University (fictional) | 2025
+- Used Python and SQL to prepare synthetic records for student research projects.
+- Checked duplicate rows and documented data-quality issues in weekly reports.
+
+PROJECTS
+Campus Energy Dashboard | University capstone | 2026
+- Built Tableau reports from a synthetic campus energy dataset.
+- Used SQL to compare monthly records and Python to test data transformations.
+- Presented the results and limitations in a written project report.
+
+Student Society Budget | Volunteer project | 2025
+- Used Microsoft Excel to organize an invented event budget and track expenses.
+- Reviewed spreadsheet formulas and explained the results to the project team.
+
+LEADERSHIP
+Project Coordinator | Campus Data Club (fictional) | 2026
+- Coordinated a student dashboard project and recorded decisions after reviews.
+- Practised Active Listening and Critical Thinking during team discussions.
+
+ACTIVITIES
+Peer Study Group | Harbourview University (fictional) | 2025
+- Helped classmates practise SQL queries using synthetic teaching datasets.
+
+SKILLS
+Tools: Python, SQL, Microsoft Excel, Tableau.
+General skills: Reading Comprehension, Writing, Active Listening, Critical Thinking.
