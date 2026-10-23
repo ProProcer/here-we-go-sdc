@@ -1,0 +1,369 @@
+{
+  "schema_version": "0.1.0",
+  "profile_id": "synthetic:rina_search_marketing",
+  "synthetic": true,
+  "desired_role_id": null,
+  "skills": [
+    {
+      "skill_id": "skill:microsoft_excel",
+      "label": "Microsoft Excel",
+      "level": "intermediate",
+      "evidence": [
+        "Page 1, line 17: Microsoft Excel - Intermediate: independently used in routine campaign work"
+      ],
+      "confirmation": "confirmed"
+    },
+    {
+      "skill_id": "skill:onet_2_a_1_a",
+      "label": "Reading Comprehension",
+      "level": "intermediate",
+      "evidence": [
+        "Page 2, line 3: Reading Comprehension - Intermediate: Independently interpreted search documentation"
+      ],
+      "confirmation": "confirmed"
+    },
+    {
+      "skill_id": "skill:onet_2_a_1_b",
+      "label": "Active Listening",
+      "level": "intermediate",
+      "evidence": [
+        "Page 2, line 5: Active Listening - Intermediate: Summarized client requirements and checked"
+      ],
+      "confirmation": "confirmed"
+    },
+    {
+      "skill_id": "skill:onet_2_a_1_c",
+      "label": "Writing",
+      "level": "intermediate",
+      "evidence": [
+        "Page 2, line 7: Writing - Intermediate: Independently wrote landing-page briefs and monthly performance"
+      ],
+      "confirmation": "confirmed"
+    },
+    {
+      "skill_id": "skill:onet_2_a_1_d",
+      "label": "Speaking",
+      "level": "intermediate",
+      "evidence": [
+        "Page 2, line 9: Speaking - Intermediate: Presented campaign results and explained attribution"
+      ],
+      "confirmation": "confirmed"
+    },
+    {
+      "skill_id": "skill:onet_2_a_1_e",
+      "label": "Mathematics",
+      "level": "intermediate",
+      "evidence": [
+        "Page 2, line 11: Mathematics - Intermediate: Calculated conversion rates, percentage changes and"
+      ],
+      "confirmation": "confirmed"
+    },
+    {
+      "skill_id": "skill:onet_2_a_2_a",
+      "label": "Critical Thinking",
+      "level": "intermediate",
+      "evidence": [
+        "Page 2, line 13: Critical Thinking - Intermediate: Compared competing explanations for organic traffic"
+      ],
+      "confirmation": "confirmed"
+    },
+    {
+      "skill_id": "skill:onet_2_a_2_b",
+      "label": "Active Learning",
+      "level": "intermediate",
+      "evidence": [
+        "Page 2, line 15: Active Learning - Intermediate: Applied a newly documented reporting method to an"
+      ],
+      "confirmation": "confirmed"
+    },
+    {
+      "skill_id": "skill:onet_2_a_2_c",
+      "label": "Learning Strategies",
+      "level": "intermediate",
+      "evidence": [
+        "Page 2, line 17: Learning Strategies - Intermediate: Selected exercises and practice datasets to improve"
+      ],
+      "confirmation": "confirmed"
+    },
+    {
+      "skill_id": "skill:onet_2_a_2_d",
+      "label": "Monitoring",
+      "level": "intermediate",
+      "evidence": [
+        "Page 2, line 19: Monitoring - Intermediate: Independently tracked ranking and conversion trends against",
+        "Page 3, line 13: Operations Monitoring - Beginner: Performed basic guided checks of scheduled campaign"
+      ],
+      "confirmation": "confirmed"
+    },
+    {
+      "skill_id": "skill:onet_2_b_1_a",
+      "label": "Social Perceptiveness",
+      "level": "intermediate",
+      "evidence": [
+        "Page 2, line 21: Social Perceptiveness - Intermediate: Adapted explanations after observing stakeholder"
+      ],
+      "confirmation": "confirmed"
+    },
+    {
+      "skill_id": "skill:onet_2_b_1_b",
+      "label": "Coordination",
+      "level": "intermediate",
+      "evidence": [
+        "Page 2, line 23: Coordination - Intermediate: Coordinated content, development and account teams for"
+      ],
+      "confirmation": "confirmed"
+    },
+    {
+      "skill_id": "skill:onet_2_b_1_c",
+      "label": "Persuasion",
+      "level": "intermediate",
+      "evidence": [
+        "Page 2, line 25: Persuasion - Intermediate: Used campaign evidence to obtain agreement on revised"
+      ],
+      "confirmation": "confirmed"
+    },
+    {
+      "skill_id": "skill:onet_2_b_1_d",
+      "label": "Negotiation",
+      "level": "intermediate",
+      "evidence": [
+        "Page 2, line 27: Negotiation - Intermediate: Independently agreed delivery scope and deadlines with"
+      ],
+      "confirmation": "confirmed"
+    },
+    {
+      "skill_id": "skill:onet_2_b_1_e",
+      "label": "Instructing",
+      "level": "intermediate",
+      "evidence": [
+        "Page 2, line 29: Instructing - Intermediate: Showed colleagues routine reporting steps using a prepared"
+      ],
+      "confirmation": "confirmed"
+    },
+    {
+      "skill_id": "skill:onet_2_b_1_f",
+      "label": "Service Orientation",
+      "level": "intermediate",
+      "evidence": [
+        "Page 3, line 3: Service Orientation - Intermediate: Resolved client reporting requests and checked that"
+      ],
+      "confirmation": "confirmed"
+    },
+    {
+      "skill_id": "skill:onet_2_b_2_i",
+      "label": "Complex Problem Solving",
+      "level": "intermediate",
+      "evidence": [
+        "Page 3, line 5: Complex Problem Solving - Intermediate: Investigated a multistep indexing issue and"
+      ],
+      "confirmation": "confirmed"
+    },
+    {
+      "skill_id": "skill:onet_2_b_3_a",
+      "label": "Operations Analysis",
+      "level": "intermediate",
+      "evidence": [
+        "Page 3, line 7: Operations Analysis - Intermediate: Independently translated campaign needs into"
+      ],
+      "confirmation": "confirmed"
+    },
+    {
+      "skill_id": "skill:onet_2_b_3_b",
+      "label": "Technology Design",
+      "level": "intermediate",
+      "evidence": [
+        "Page 3, line 9: Technology Design - Intermediate: Independently configured a simple dashboard workflow"
+      ],
+      "confirmation": "confirmed"
+    },
+    {
+      "skill_id": "skill:onet_2_b_3_e",
+      "label": "Programming",
+      "level": "intermediate",
+      "evidence": [
+        "Page 3, line 11: Programming - Intermediate: Independently maintained small scripts and web snippets for"
+      ],
+      "confirmation": "confirmed"
+    },
+    {
+      "skill_id": "skill:onet_2_b_3_g",
+      "label": "Operations Monitoring",
+      "level": "beginner",
+      "evidence": [
+        "Page 3, line 13: Operations Monitoring - Beginner: Performed basic guided checks of scheduled campaign"
+      ],
+      "confirmation": "confirmed"
+    },
+    {
+      "skill_id": "skill:onet_2_b_3_m",
+      "label": "Quality Control Analysis",
+      "level": "beginner",
+      "evidence": [
+        "Page 3, line 15: Quality Control Analysis - Beginner: Performed basic guided checks of tracking tags"
+      ],
+      "confirmation": "confirmed"
+    },
+    {
+      "skill_id": "skill:onet_2_b_4_e",
+      "label": "Judgment and Decision Making",
+      "level": "intermediate",
+      "evidence": [
+        "Page 3, line 17: Judgment and Decision Making - Intermediate: Compared expected campaign benefit, cost"
+      ],
+      "confirmation": "confirmed"
+    },
+    {
+      "skill_id": "skill:onet_2_b_4_g",
+      "label": "Systems Analysis",
+      "level": "intermediate",
+      "evidence": [
+        "Page 3, line 19: Systems Analysis - Intermediate: Independently traced how tagging changes affected"
+      ],
+      "confirmation": "confirmed"
+    },
+    {
+      "skill_id": "skill:onet_2_b_4_h",
+      "label": "Systems Evaluation",
+      "level": "intermediate",
+      "evidence": [
+        "Page 3, line 21: Systems Evaluation - Intermediate: Independently compared reporting outputs with agreed"
+      ],
+      "confirmation": "confirmed"
+    },
+    {
+      "skill_id": "skill:onet_2_b_5_a",
+      "label": "Time Management",
+      "level": "intermediate",
+      "evidence": [
+        "Page 3, line 23: Time Management - Intermediate: Independently scheduled several concurrent campaign"
+      ],
+      "confirmation": "confirmed"
+    },
+    {
+      "skill_id": "skill:onet_2_b_5_b",
+      "label": "Management of Financial Resources",
+      "level": "beginner",
+      "evidence": [
+        "Page 3, line 25: Management of Financial Resources - Beginner: Tracked a small campaign allowance with"
+      ],
+      "confirmation": "confirmed"
+    },
+    {
+      "skill_id": "skill:onet_2_b_5_c",
+      "label": "Management of Material Resources",
+      "level": "beginner",
+      "evidence": [
+        "Page 3, line 27: Management of Material Resources - Beginner: Organized shared campaign assets using a"
+      ],
+      "confirmation": "confirmed"
+    },
+    {
+      "skill_id": "skill:onet_2_b_5_d",
+      "label": "Management of Personnel Resources",
+      "level": "intermediate",
+      "evidence": [
+        "Page 3, line 29: Management of Personnel Resources - Intermediate: Independently allocated routine"
+      ],
+      "confirmation": "confirmed"
+    },
+    {
+      "skill_id": "skill:python",
+      "label": "Python",
+      "level": "intermediate",
+      "evidence": [
+        "Page 1, line 18: Python - Intermediate: independently used in routine campaign work"
+      ],
+      "confirmation": "confirmed"
+    },
+    {
+      "skill_id": "skill:software_0826f18d16ed75cc",
+      "label": "Hypertext markup language HTML",
+      "level": "intermediate",
+      "evidence": [
+        "Page 1, line 19: Hypertext markup language HTML - Intermediate: independently used in routine campaign"
+      ],
+      "confirmation": "confirmed"
+    },
+    {
+      "skill_id": "skill:software_12439991ccf9ee3e",
+      "label": "Screaming Frog SEO Spider",
+      "level": "intermediate",
+      "evidence": [
+        "Page 1, line 21: Screaming Frog SEO Spider - Intermediate: independently used in routine campaign work"
+      ],
+      "confirmation": "confirmed"
+    },
+    {
+      "skill_id": "skill:software_20fe945b1d4a1481",
+      "label": "Semrush",
+      "level": "intermediate",
+      "evidence": [
+        "Page 1, line 22: Semrush - Intermediate: independently used in routine campaign work"
+      ],
+      "confirmation": "confirmed"
+    },
+    {
+      "skill_id": "skill:software_4e7b12ad8436a413",
+      "label": "Moz search engine optimization SEO software",
+      "level": "intermediate",
+      "evidence": [
+        "Page 1, line 23: Moz search engine optimization SEO software - Intermediate: independently used in"
+      ],
+      "confirmation": "confirmed"
+    },
+    {
+      "skill_id": "skill:software_529a58315c2037d4",
+      "label": "Ahrefs Site Explorer",
+      "level": "intermediate",
+      "evidence": [
+        "Page 1, line 25: Ahrefs Site Explorer - Intermediate: independently used in routine campaign work"
+      ],
+      "confirmation": "confirmed"
+    },
+    {
+      "skill_id": "skill:software_a6b6c3f7a6719b8e",
+      "label": "Adobe Analytics",
+      "level": "intermediate",
+      "evidence": [
+        "Page 1, line 26: Adobe Analytics - Intermediate: independently used in routine campaign work"
+      ],
+      "confirmation": "confirmed"
+    },
+    {
+      "skill_id": "skill:software_b4746fb1d09e00ad",
+      "label": "Cascading style sheets CSS",
+      "level": "intermediate",
+      "evidence": [
+        "Page 1, line 27: Cascading style sheets CSS - Intermediate: independently used in routine campaign work"
+      ],
+      "confirmation": "confirmed"
+    },
+    {
+      "skill_id": "skill:software_bbdefa2950f49882",
+      "label": "Google",
+      "level": "intermediate",
+      "evidence": [
+        "Page 1, line 28: Google - Intermediate: independently used in routine campaign work"
+      ],
+      "confirmation": "confirmed"
+    },
+    {
+      "skill_id": "skill:software_eda71746c01c3f46",
+      "label": "JavaScript",
+      "level": "intermediate",
+      "evidence": [
+        "Page 1, line 29: JavaScript - Intermediate: independently used in routine campaign work"
+      ],
+      "confirmation": "confirmed"
+    }
+  ],
+  "interests": [],
+  "constraints": {
+    "budget_myr": null,
+    "hours_per_week": null
+  },
+  "warnings": [
+    "CV claims are unverified. Review skills and any estimated levels before matching.",
+    "Dictionary extraction may miss context, negation or unsupported skills; typed input is available."
+  ]
+}

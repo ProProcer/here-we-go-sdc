@@ -94,3 +94,12 @@ class TestProficiencyMatching(unittest.TestCase):
                     scores.append(row.fit_score)
                     self.assertAlmostEqual(sum(c.contribution for c in row.score_breakdown.alignment_contributions), row.score_breakdown.profile_alignment)
                 self.assertGreater(len(set(scores)), 1, scores)
+
+    def test_full_fulfilment_remains_within_numeric_bounds(self):
+        role = "role:onet_15_1254_00"
+        entries = [self.matcher.skills[r.skill_id].label for r in self.matcher.index.general[role]]
+        profile = create_profile("synthetic:full_fulfilment", entries, catalog=self.catalog)
+        profile = profile.model_copy(update={"skills": [s.model_copy(update={"level": "advanced"}) for s in profile.skills]})
+        match = self.matcher.match_role(profile, role)
+        self.assertEqual(match.score_breakdown.general_fulfilment, 1.0)
+        self.assertLessEqual(match.fit_score, 100)

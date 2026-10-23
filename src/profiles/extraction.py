@@ -43,18 +43,33 @@ def extract_profile(
             if PERSONAL_LINE.match(line):
                 continue
             for clause in re.split(r"[!?;]+|(?<!\w)\.|\.(?!\w)", line):
-                if NON_CLAIM.search(clause):
+                # These catalog skill names are positive claims, not an
+                # aspiration to learn another skill.
+                claim_context = re.sub(r"\b(?:Active Learning|Learning Strategies)\b", "", clause, flags=re.IGNORECASE)
+                if NON_CLAIM.search(claim_context):
                     continue
+                hits = []
                 for pattern, skill in patterns:
                     # A computing discipline name alone does not establish the
-                    # catalog's scientific-methods skill.
-                    candidate = re.sub(r"\b(?:computer|data)\s+science\b", "", clause,
+                    # catalog's scientific-methods skill. Preserve offsets.
+                    candidate = re.sub(r"\b(?:computer|data)\s+science\b",
+                        lambda match: " " * len(match.group()), clause,
                         flags=re.IGNORECASE) if skill.label == "Science" else clause
-                    if pattern.search(candidate):
-                        spans = evidence.setdefault(skill.skill_id, [])
-                        span = f"Page {page_number}, line {line_number}: {clause.strip()[:500]}"
-                        if span not in spans and len(spans) < 5:
-                            spans.append(span)
+                    for match in pattern.finditer(candidate):
+                        hits.append((match.end() - match.start(), match.start(), match.end(), skill))
+                software_spans = []
+                for _, start, end, skill in sorted(hits, key=lambda hit: (-hit[0], hit[1], hit[3].skill_id)):
+                    # Do not invent an additional generic tool from text inside
+                    # a longer, exact software name (e.g. SAP ERP Financials).
+                    if getattr(skill, "kind", None) == "software":
+                        if any(left <= start and end <= right for left, right in software_spans):
+                            continue
+                        software_spans.append((start, end))
+                    spans = evidence.setdefault(skill.skill_id, [])
+                    span = f"Page {page_number}, line {line_number}: {clause.strip()[:500]}"
+                    if span not in spans and len(spans) < 5:
+                        spans.append(span)
+
     skills = {s.skill_id: s for s in catalog.taxonomy.skills}
     return validate_profile(
         SkillsProfile(

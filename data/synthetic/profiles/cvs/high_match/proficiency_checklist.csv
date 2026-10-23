@@ -1,0 +1,40 @@
+skill_id,skill,level
+skill:microsoft_excel,Microsoft Excel,intermediate
+skill:onet_2_a_1_a,Reading Comprehension,intermediate
+skill:onet_2_a_1_b,Active Listening,intermediate
+skill:onet_2_a_1_c,Writing,intermediate
+skill:onet_2_a_1_d,Speaking,intermediate
+skill:onet_2_a_1_e,Mathematics,intermediate
+skill:onet_2_a_2_a,Critical Thinking,intermediate
+skill:onet_2_a_2_b,Active Learning,intermediate
+skill:onet_2_a_2_c,Learning Strategies,intermediate
+skill:onet_2_a_2_d,Monitoring,intermediate
+skill:onet_2_b_1_a,Social Perceptiveness,intermediate
+skill:onet_2_b_1_b,Coordination,intermediate
+skill:onet_2_b_1_c,Persuasion,intermediate
+skill:onet_2_b_1_d,Negotiation,intermediate
+skill:onet_2_b_1_e,Instructing,intermediate
+skill:onet_2_b_1_f,Service Orientation,intermediate
+skill:onet_2_b_2_i,Complex Problem Solving,intermediate
+skill:onet_2_b_3_a,Operations Analysis,intermediate
+skill:onet_2_b_3_b,Technology Design,intermediate
+skill:onet_2_b_3_e,Programming,intermediate
+skill:onet_2_b_3_g,Operations Monitoring,beginner
+skill:onet_2_b_3_m,Quality Control Analysis,beginner
+skill:onet_2_b_4_e,Judgment and Decision Making,intermediate
+skill:onet_2_b_4_g,Systems Analysis,intermediate
+skill:onet_2_b_4_h,Systems Evaluation,intermediate
+skill:onet_2_b_5_a,Time Management,intermediate
+skill:onet_2_b_5_b,Management of Financial Resources,beginner
+skill:onet_2_b_5_c,Management of Material Resources,beginner
+skill:onet_2_b_5_d,Management of Personnel Resources,intermediate
+skill:python,Python,intermediate
+skill:software_0826f18d16ed75cc,Hypertext markup language HTML,intermediate
+skill:software_12439991ccf9ee3e,Screaming Frog SEO Spider,intermediate
+skill:software_20fe945b1d4a1481,Semrush,intermediate
+skill:software_4e7b12ad8436a413,Moz search engine optimization SEO software,intermediate
+skill:software_529a58315c2037d4,Ahrefs Site Explorer,intermediate
+skill:software_a6b6c3f7a6719b8e,Adobe Analytics,intermediate
+skill:software_b4746fb1d09e00ad,Cascading style sheets CSS,intermediate
+skill:software_bbdefa2950f49882,Google,intermediate
+skill:software_eda71746c01c3f46,JavaScript,intermediate

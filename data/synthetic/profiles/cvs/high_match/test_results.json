@@ -1,0 +1,44 @@
+{
+  "fictional": true,
+  "role_id": "role:onet_13_1161_01",
+  "role_title": "Search Marketing Strategists",
+  "score_method": "reviewed_onet_fit_v5",
+  "format_checks": [
+    {
+      "file": "rina_search_marketing.pdf",
+      "skills": 39,
+      "reviewed_fit": 90.37
+    },
+    {
+      "file": "rina_search_marketing.docx",
+      "skills": 39,
+      "reviewed_fit": 90.37
+    },
+    {
+      "file": "rina_search_marketing.txt",
+      "skills": 39,
+      "reviewed_fit": 90.37
+    }
+  ],
+  "reviewed_score": 90.37,
+  "reviewed_rank": 1,
+  "automatic_assessment": {
+    "status": "completed",
+    "provider": "groq",
+    "message": "AI assessed 12 skills automatically using Groq GPT-OSS-120B. Levels are estimates from CV evidence.",
+    "assessed_skill_count": 12,
+    "error_code": null,
+    "primary_provider": "groq",
+    "used_backup": false
+  },
+  "automatic_levels": {
+    "score": 31.53,
+    "rank": 1,
+    "skill_count": 39
+  },
+  "checklist_levels": {
+    "score": 90.37,
+    "rank": 1,
+    "skill_count": 39
+  }
+}

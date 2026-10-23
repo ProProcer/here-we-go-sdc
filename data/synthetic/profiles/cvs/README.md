@@ -24,3 +24,5 @@ assessment. HTML/CSS abbreviations and Node.js are now recognized correctly.
 Open the app at http://localhost:8000, upload a CV, review its estimated levels,
 confirm the skills that describe it, and find matches. The original sample is also
 served at http://localhost:8000/api/v2/samples/graduate.pdf.
+
+- [90+ reviewed-fit CV for Search Marketing Strategists](high_match/README.md): verified 90.37 after completing its proficiency checklist; automatic first-12 assessment alone scored 31.53.

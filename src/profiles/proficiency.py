@@ -96,4 +96,4 @@ def compare_proficiency(requirements, supported, skills):
             "importance": requirement.importance, "required_source_level": required,
             "profile_level": level, "profile_level_proxy": points,
             "fulfilment": credit, "status": status})
-    return comparisons, earned / total if total else 0.0
+    return comparisons, min(1.0, max(0.0, earned / total)) if total else 0.0
