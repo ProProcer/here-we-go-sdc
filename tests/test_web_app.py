@@ -57,7 +57,8 @@ class TestWebApp(unittest.TestCase):
             row = next(row for row in response.json()["matches"] if row["role_id"] == ROLE)
             self.assertEqual(row["score_breakdown"]["alignment_contributions"][0]["profile_level"], level)
             scores.append(row["fit_score"])
-        self.assertEqual(scores, [9.75, 13.0, 16.25])
+        # This occupation has an estimated intermediate Python requirement.
+        self.assertEqual(scores, [6.5, 16.25, 12.88])
 
     def test_shell_assets_and_downloadable_cv(self):
         page = self.client.get("/")

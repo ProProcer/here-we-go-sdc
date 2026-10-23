@@ -37,7 +37,7 @@ export interface Match extends RoleSummary {
     general_coverage_weight: number;
     evidence_breadth: number;
     supported_skill_count: number;
-    alignment_contributions: { skill_id: string; label: string; distinctiveness: number; role_affinity: number; profile_level: string; level_factor: number; presence_contribution: number; normalized_weight: number; contribution: number }[];
+    alignment_contributions: { skill_id: string; label: string; distinctiveness: number; role_affinity: number; profile_level: string; level_factor: number; required_level_points: number | null; required_level_label: string | null; requirement_basis: 'published_general' | 'estimated_from_general' | 'unavailable'; proxy_skill_id: string | null; proxy_skill_label: string | null; proxy_source_level: number | null; presence_contribution: number; normalized_weight: number; contribution: number }[];
     readiness_weight: number;
     preference_weight: number;
     coverage: {

@@ -66,9 +66,9 @@
       "family": "Computer and Mathematical",
       "catalog_synthetic": false,
       "rank": 1,
-      "fit_score": 25.69,
+      "fit_score": 12.84,
       "score_breakdown": {
-        "method": "reviewed_onet_fit_v4",
+        "method": "reviewed_onet_fit_v5",
         "general_fulfilment": 0.0,
         "proficiency_comparisons": [
           {
@@ -403,7 +403,7 @@
           }
         ],
         "profile_presence_alignment": 0.9879622573490906,
-        "profile_alignment": 0.39518490293963626,
+        "profile_alignment": 0.19759245146981813,
         "profile_alignment_weight": 0.65,
         "general_coverage_weight": 0.35,
         "evidence_breadth": 1.0,
@@ -415,10 +415,16 @@
             "distinctiveness": 1.0,
             "role_affinity": 0.876,
             "profile_level": "unknown",
-            "level_factor": 0.4,
+            "level_factor": 0.2,
+            "required_level_points": 4.88,
+            "required_level_label": "advanced",
+            "requirement_basis": "published_general",
+            "proxy_skill_id": null,
+            "proxy_skill_label": null,
+            "proxy_source_level": null,
             "presence_contribution": 0.0850408271144895,
             "normalized_weight": 0.09707856976539897,
-            "contribution": 0.034016330845795806
+            "contribution": 0.017008165422897903
           },
           {
             "skill_id": "skill:python",
@@ -426,10 +432,16 @@
             "distinctiveness": 2.9317409746735876,
             "role_affinity": 1.0,
             "profile_level": "unknown",
-            "level_factor": 0.4,
+            "level_factor": 0.2,
+            "required_level_points": 4.0,
+            "required_level_label": "intermediate",
+            "requirement_basis": "estimated_from_general",
+            "proxy_skill_id": "skill:onet_2_b_3_e",
+            "proxy_skill_label": "Programming",
+            "proxy_source_level": 3.12,
             "presence_contribution": 0.28460922074392864,
             "normalized_weight": 0.28460922074392864,
-            "contribution": 0.11384368829757148
+            "contribution": 0.05692184414878574
           },
           {
             "skill_id": "skill:software_5f0974ee455c4cd5",
@@ -437,10 +449,16 @@
             "distinctiveness": 3.5518630202186428,
             "role_affinity": 1.0,
             "profile_level": "unknown",
-            "level_factor": 0.4,
+            "level_factor": 0.2,
+            "required_level_points": null,
+            "required_level_label": null,
+            "requirement_basis": "unavailable",
+            "proxy_skill_id": null,
+            "proxy_skill_label": null,
+            "proxy_source_level": null,
             "presence_contribution": 0.3448097820054362,
             "normalized_weight": 0.3448097820054362,
-            "contribution": 0.1379239128021745
+            "contribution": 0.06896195640108725
           },
           {
             "skill_id": "skill:sql",
@@ -448,10 +466,16 @@
             "distinctiveness": 2.8173306234958435,
             "role_affinity": 1.0,
             "profile_level": "unknown",
-            "level_factor": 0.4,
+            "level_factor": 0.2,
+            "required_level_points": 4.0,
+            "required_level_label": "intermediate",
+            "requirement_basis": "estimated_from_general",
+            "proxy_skill_id": "skill:onet_2_b_3_e",
+            "proxy_skill_label": "Programming",
+            "proxy_source_level": 3.12,
             "presence_contribution": 0.27350242748523623,
             "normalized_weight": 0.27350242748523623,
-            "contribution": 0.10940097099409449
+            "contribution": 0.054700485497047244
           }
         ],
         "coverage": {
@@ -541,12 +565,12 @@
             "Education, licenses and experience are not assessed; high coverage does not establish job eligibility."
           ]
         },
-        "readiness": 0.2568701869107636,
+        "readiness": 0.1284350934553818,
         "preferences": null,
         "readiness_weight": 1.0,
         "preference_weight": 0.0,
         "transferability": 0,
-        "unrounded_score": 25.687018691076357
+        "unrounded_score": 12.843509345538179
       },
       "matched_skills": [
         {
@@ -937,7 +961,8 @@
         "Education, licenses and experience are not assessed; high coverage does not establish job eligibility.",
         "Ranking combines 65% distinctive CV-skill alignment and 35% importance-weighted general requirement fulfilment; weights are application assumptions, not empirically calibrated.",
         "General requirement fulfilment compares level estimates with unsuppressed O*NET source levels using an application proxy: beginner=2, intermediate=4, advanced=6 on 0–7. This is not an official scale crosswalk.",
-        "All matched skills receive level-sensitive alignment credit: unknown=40%, beginner=60%, intermediate=80%, advanced=100%. These are application weights, not published job requirements.",
+        "Alignment rewards agreement with the job's required level. Underqualification is penalized more than surplus skill; these suitability weights are application assumptions.",
+        "Software level bands are estimated from published related general-skill ratings where a documented category rule exists. The proxy and source rating are shown; these are not published software requirements.",
         "Unknown profile levels earn partial alignment but no proficiency fulfilment where a required level exists. Missing or suppressed required levels use presence for general fulfilment; software has no imported required proficiency rating.",
         "Profiles with fewer than four supported skills receive a proportional evidence-breadth reduction; adding skills requires your review.",
         "Exact software examples contribute to CV alignment; software category familiarity and alternative-tool list coverage are shown separately and do not increase fit.",
@@ -957,9 +982,9 @@
       "family": "Business and Financial Operations",
       "catalog_synthetic": false,
       "rank": 2,
-      "fit_score": 25.56,
+      "fit_score": 12.78,
       "score_breakdown": {
-        "method": "reviewed_onet_fit_v4",
+        "method": "reviewed_onet_fit_v5",
         "general_fulfilment": 0.0,
         "proficiency_comparisons": [
           {
@@ -1264,7 +1289,7 @@
           }
         ],
         "profile_presence_alignment": 0.9829141717212899,
-        "profile_alignment": 0.393165668688516,
+        "profile_alignment": 0.196582834344258,
         "profile_alignment_weight": 0.65,
         "general_coverage_weight": 0.35,
         "evidence_breadth": 1.0,
@@ -1276,10 +1301,16 @@
             "distinctiveness": 1.0,
             "role_affinity": 0.824,
             "profile_level": "unknown",
-            "level_factor": 0.4,
+            "level_factor": 0.2,
+            "required_level_points": 4.12,
+            "required_level_label": "advanced",
+            "requirement_basis": "published_general",
+            "proxy_skill_id": null,
+            "proxy_skill_label": null,
+            "proxy_source_level": null,
             "presence_contribution": 0.07999274148668875,
             "normalized_weight": 0.09707856976539897,
-            "contribution": 0.0319970965946755
+            "contribution": 0.01599854829733775
           },
           {
             "skill_id": "skill:python",
@@ -1287,10 +1318,16 @@
             "distinctiveness": 2.9317409746735876,
             "role_affinity": 1.0,
             "profile_level": "unknown",
-            "level_factor": 0.4,
+            "level_factor": 0.2,
+            "required_level_points": 2.0,
+            "required_level_label": "beginner",
+            "requirement_basis": "estimated_from_general",
+            "proxy_skill_id": "skill:onet_2_b_3_e",
+            "proxy_skill_label": "Programming",
+            "proxy_source_level": 1.25,
             "presence_contribution": 0.28460922074392864,
             "normalized_weight": 0.28460922074392864,
-            "contribution": 0.11384368829757148
+            "contribution": 0.05692184414878574
           },
           {
             "skill_id": "skill:software_5f0974ee455c4cd5",
@@ -1298,10 +1335,16 @@
             "distinctiveness": 3.5518630202186428,
             "role_affinity": 1.0,
             "profile_level": "unknown",
-            "level_factor": 0.4,
+            "level_factor": 0.2,
+            "required_level_points": null,
+            "required_level_label": null,
+            "requirement_basis": "unavailable",
+            "proxy_skill_id": null,
+            "proxy_skill_label": null,
+            "proxy_source_level": null,
             "presence_contribution": 0.3448097820054362,
             "normalized_weight": 0.3448097820054362,
-            "contribution": 0.1379239128021745
+            "contribution": 0.06896195640108725
           },
           {
             "skill_id": "skill:sql",
@@ -1309,10 +1352,16 @@
             "distinctiveness": 2.8173306234958435,
             "role_affinity": 1.0,
             "profile_level": "unknown",
-            "level_factor": 0.4,
+            "level_factor": 0.2,
+            "required_level_points": 2.0,
+            "required_level_label": "beginner",
+            "requirement_basis": "estimated_from_general",
+            "proxy_skill_id": "skill:onet_2_b_3_e",
+            "proxy_skill_label": "Programming",
+            "proxy_source_level": 1.25,
             "presence_contribution": 0.27350242748523623,
             "normalized_weight": 0.27350242748523623,
-            "contribution": 0.10940097099409449
+            "contribution": 0.054700485497047244
           }
         ],
         "coverage": {
@@ -1399,12 +1448,12 @@
             "Education, licenses and experience are not assessed; high coverage does not establish job eligibility."
           ]
         },
-        "readiness": 0.2555576846475354,
+        "readiness": 0.1277788423237677,
         "preferences": null,
         "readiness_weight": 1.0,
         "preference_weight": 0.0,
         "transferability": 0,
-        "unrounded_score": 25.55576846475354
+        "unrounded_score": 12.77788423237677
       },
       "matched_skills": [
         {
@@ -1768,7 +1817,8 @@
         "Education, licenses and experience are not assessed; high coverage does not establish job eligibility.",
         "Ranking combines 65% distinctive CV-skill alignment and 35% importance-weighted general requirement fulfilment; weights are application assumptions, not empirically calibrated.",
         "General requirement fulfilment compares level estimates with unsuppressed O*NET source levels using an application proxy: beginner=2, intermediate=4, advanced=6 on 0–7. This is not an official scale crosswalk.",
-        "All matched skills receive level-sensitive alignment credit: unknown=40%, beginner=60%, intermediate=80%, advanced=100%. These are application weights, not published job requirements.",
+        "Alignment rewards agreement with the job's required level. Underqualification is penalized more than surplus skill; these suitability weights are application assumptions.",
+        "Software level bands are estimated from published related general-skill ratings where a documented category rule exists. The proxy and source rating are shown; these are not published software requirements.",
         "Unknown profile levels earn partial alignment but no proficiency fulfilment where a required level exists. Missing or suppressed required levels use presence for general fulfilment; software has no imported required proficiency rating.",
         "Profiles with fewer than four supported skills receive a proportional evidence-breadth reduction; adding skills requires your review.",
         "Exact software examples contribute to CV alignment; software category familiarity and alternative-tool list coverage are shown separately and do not increase fit.",
@@ -1788,9 +1838,9 @@
       "family": "Computer and Mathematical",
       "catalog_synthetic": false,
       "rank": 3,
-      "fit_score": 25.56,
+      "fit_score": 12.78,
       "score_breakdown": {
-        "method": "reviewed_onet_fit_v4",
+        "method": "reviewed_onet_fit_v5",
         "general_fulfilment": 0.0,
         "proficiency_comparisons": [
           {
@@ -2085,7 +2135,7 @@
           }
         ],
         "profile_presence_alignment": 0.9829141717212899,
-        "profile_alignment": 0.393165668688516,
+        "profile_alignment": 0.196582834344258,
         "profile_alignment_weight": 0.65,
         "general_coverage_weight": 0.35,
         "evidence_breadth": 1.0,
@@ -2097,10 +2147,16 @@
             "distinctiveness": 1.0,
             "role_affinity": 0.824,
             "profile_level": "unknown",
-            "level_factor": 0.4,
+            "level_factor": 0.2,
+            "required_level_points": 4.88,
+            "required_level_label": "advanced",
+            "requirement_basis": "published_general",
+            "proxy_skill_id": null,
+            "proxy_skill_label": null,
+            "proxy_source_level": null,
             "presence_contribution": 0.07999274148668875,
             "normalized_weight": 0.09707856976539897,
-            "contribution": 0.0319970965946755
+            "contribution": 0.01599854829733775
           },
           {
             "skill_id": "skill:python",
@@ -2108,10 +2164,16 @@
             "distinctiveness": 2.9317409746735876,
             "role_affinity": 1.0,
             "profile_level": "unknown",
-            "level_factor": 0.4,
+            "level_factor": 0.2,
+            "required_level_points": 2.0,
+            "required_level_label": "beginner",
+            "requirement_basis": "estimated_from_general",
+            "proxy_skill_id": "skill:onet_2_b_3_e",
+            "proxy_skill_label": "Programming",
+            "proxy_source_level": 2.0,
             "presence_contribution": 0.28460922074392864,
             "normalized_weight": 0.28460922074392864,
-            "contribution": 0.11384368829757148
+            "contribution": 0.05692184414878574
           },
           {
             "skill_id": "skill:software_5f0974ee455c4cd5",
@@ -2119,10 +2181,16 @@
             "distinctiveness": 3.5518630202186428,
             "role_affinity": 1.0,
             "profile_level": "unknown",
-            "level_factor": 0.4,
+            "level_factor": 0.2,
+            "required_level_points": null,
+            "required_level_label": null,
+            "requirement_basis": "unavailable",
+            "proxy_skill_id": null,
+            "proxy_skill_label": null,
+            "proxy_source_level": null,
             "presence_contribution": 0.3448097820054362,
             "normalized_weight": 0.3448097820054362,
-            "contribution": 0.1379239128021745
+            "contribution": 0.06896195640108725
           },
           {
             "skill_id": "skill:sql",
@@ -2130,10 +2198,16 @@
             "distinctiveness": 2.8173306234958435,
             "role_affinity": 1.0,
             "profile_level": "unknown",
-            "level_factor": 0.4,
+            "level_factor": 0.2,
+            "required_level_points": 2.0,
+            "required_level_label": "beginner",
+            "requirement_basis": "estimated_from_general",
+            "proxy_skill_id": "skill:onet_2_b_3_e",
+            "proxy_skill_label": "Programming",
+            "proxy_source_level": 2.0,
             "presence_contribution": 0.27350242748523623,
             "normalized_weight": 0.27350242748523623,
-            "contribution": 0.10940097099409449
+            "contribution": 0.054700485497047244
           }
         ],
         "coverage": {
@@ -2218,12 +2292,12 @@
             "Education, licenses and experience are not assessed; high coverage does not establish job eligibility."
           ]
         },
-        "readiness": 0.2555576846475354,
+        "readiness": 0.1277788423237677,
         "preferences": null,
         "readiness_weight": 1.0,
         "preference_weight": 0.0,
         "transferability": 0,
-        "unrounded_score": 25.55576846475354
+        "unrounded_score": 12.77788423237677
       },
       "matched_skills": [
         {
@@ -2569,7 +2643,8 @@
         "Education, licenses and experience are not assessed; high coverage does not establish job eligibility.",
         "Ranking combines 65% distinctive CV-skill alignment and 35% importance-weighted general requirement fulfilment; weights are application assumptions, not empirically calibrated.",
         "General requirement fulfilment compares level estimates with unsuppressed O*NET source levels using an application proxy: beginner=2, intermediate=4, advanced=6 on 0–7. This is not an official scale crosswalk.",
-        "All matched skills receive level-sensitive alignment credit: unknown=40%, beginner=60%, intermediate=80%, advanced=100%. These are application weights, not published job requirements.",
+        "Alignment rewards agreement with the job's required level. Underqualification is penalized more than surplus skill; these suitability weights are application assumptions.",
+        "Software level bands are estimated from published related general-skill ratings where a documented category rule exists. The proxy and source rating are shown; these are not published software requirements.",
         "Unknown profile levels earn partial alignment but no proficiency fulfilment where a required level exists. Missing or suppressed required levels use presence for general fulfilment; software has no imported required proficiency rating.",
         "Profiles with fewer than four supported skills receive a proportional evidence-breadth reduction; adding skills requires your review.",
         "Exact software examples contribute to CV alignment; software category familiarity and alternative-tool list coverage are shown separately and do not increase fit.",
@@ -2589,9 +2664,9 @@
       "family": "Computer and Mathematical",
       "catalog_synthetic": false,
       "rank": 8,
-      "fit_score": 25.5,
+      "fit_score": 12.75,
       "score_breakdown": {
-        "method": "reviewed_onet_fit_v4",
+        "method": "reviewed_onet_fit_v5",
         "general_fulfilment": 0.0,
         "proficiency_comparisons": [
           {
@@ -2896,7 +2971,7 @@
           }
         ],
         "profile_presence_alignment": 0.9805842860469203,
-        "profile_alignment": 0.3922337144187682,
+        "profile_alignment": 0.1961168572093841,
         "profile_alignment_weight": 0.65,
         "general_coverage_weight": 0.35,
         "evidence_breadth": 1.0,
@@ -2908,10 +2983,16 @@
             "distinctiveness": 1.0,
             "role_affinity": 0.8,
             "profile_level": "unknown",
-            "level_factor": 0.4,
+            "level_factor": 0.2,
+            "required_level_points": 4.25,
+            "required_level_label": "advanced",
+            "requirement_basis": "published_general",
+            "proxy_skill_id": null,
+            "proxy_skill_label": null,
+            "proxy_source_level": null,
             "presence_contribution": 0.07766285581231919,
             "normalized_weight": 0.09707856976539897,
-            "contribution": 0.03106514232492768
+            "contribution": 0.01553257116246384
           },
           {
             "skill_id": "skill:python",
@@ -2919,10 +3000,16 @@
             "distinctiveness": 2.9317409746735876,
             "role_affinity": 1.0,
             "profile_level": "unknown",
-            "level_factor": 0.4,
+            "level_factor": 0.2,
+            "required_level_points": 4.0,
+            "required_level_label": "intermediate",
+            "requirement_basis": "estimated_from_general",
+            "proxy_skill_id": "skill:onet_2_b_3_e",
+            "proxy_skill_label": "Programming",
+            "proxy_source_level": 2.5,
             "presence_contribution": 0.28460922074392864,
             "normalized_weight": 0.28460922074392864,
-            "contribution": 0.11384368829757148
+            "contribution": 0.05692184414878574
           },
           {
             "skill_id": "skill:software_5f0974ee455c4cd5",
@@ -2930,10 +3017,16 @@
             "distinctiveness": 3.5518630202186428,
             "role_affinity": 1.0,
             "profile_level": "unknown",
-            "level_factor": 0.4,
+            "level_factor": 0.2,
+            "required_level_points": null,
+            "required_level_label": null,
+            "requirement_basis": "unavailable",
+            "proxy_skill_id": null,
+            "proxy_skill_label": null,
+            "proxy_source_level": null,
             "presence_contribution": 0.3448097820054362,
             "normalized_weight": 0.3448097820054362,
-            "contribution": 0.1379239128021745
+            "contribution": 0.06896195640108725
           },
           {
             "skill_id": "skill:sql",
@@ -2941,10 +3034,16 @@
             "distinctiveness": 2.8173306234958435,
             "role_affinity": 1.0,
             "profile_level": "unknown",
-            "level_factor": 0.4,
+            "level_factor": 0.2,
+            "required_level_points": 4.0,
+            "required_level_label": "intermediate",
+            "requirement_basis": "estimated_from_general",
+            "proxy_skill_id": "skill:onet_2_b_3_e",
+            "proxy_skill_label": "Programming",
+            "proxy_source_level": 2.5,
             "presence_contribution": 0.27350242748523623,
             "normalized_weight": 0.27350242748523623,
-            "contribution": 0.10940097099409449
+            "contribution": 0.054700485497047244
           }
         ],
         "coverage": {
@@ -3034,12 +3133,12 @@
             "Education, licenses and experience are not assessed; high coverage does not establish job eligibility."
           ]
         },
-        "readiness": 0.25495191437219933,
+        "readiness": 0.12747595718609966,
         "preferences": null,
         "readiness_weight": 1.0,
         "preference_weight": 0.0,
         "transferability": 0,
-        "unrounded_score": 25.495191437219933
+        "unrounded_score": 12.747595718609967
       },
       "matched_skills": [
         {
@@ -3430,7 +3529,8 @@
         "Education, licenses and experience are not assessed; high coverage does not establish job eligibility.",
         "Ranking combines 65% distinctive CV-skill alignment and 35% importance-weighted general requirement fulfilment; weights are application assumptions, not empirically calibrated.",
         "General requirement fulfilment compares level estimates with unsuppressed O*NET source levels using an application proxy: beginner=2, intermediate=4, advanced=6 on 0–7. This is not an official scale crosswalk.",
-        "All matched skills receive level-sensitive alignment credit: unknown=40%, beginner=60%, intermediate=80%, advanced=100%. These are application weights, not published job requirements.",
+        "Alignment rewards agreement with the job's required level. Underqualification is penalized more than surplus skill; these suitability weights are application assumptions.",
+        "Software level bands are estimated from published related general-skill ratings where a documented category rule exists. The proxy and source rating are shown; these are not published software requirements.",
         "Unknown profile levels earn partial alignment but no proficiency fulfilment where a required level exists. Missing or suppressed required levels use presence for general fulfilment; software has no imported required proficiency rating.",
         "Profiles with fewer than four supported skills receive a proportional evidence-breadth reduction; adding skills requires your review.",
         "Exact software examples contribute to CV alignment; software category familiarity and alternative-tool list coverage are shown separately and do not increase fit.",
@@ -3451,9 +3551,9 @@
     "family": "Computer and Mathematical",
     "catalog_synthetic": false,
     "rank": 1,
-    "fit_score": 25.5,
+    "fit_score": 12.75,
     "score_breakdown": {
-      "method": "reviewed_onet_fit_v4",
+      "method": "reviewed_onet_fit_v5",
       "general_fulfilment": 0.0,
       "proficiency_comparisons": [
         {
@@ -3758,7 +3858,7 @@
         }
       ],
       "profile_presence_alignment": 0.9805842860469203,
-      "profile_alignment": 0.3922337144187682,
+      "profile_alignment": 0.1961168572093841,
       "profile_alignment_weight": 0.65,
       "general_coverage_weight": 0.35,
       "evidence_breadth": 1.0,
@@ -3770,10 +3870,16 @@
           "distinctiveness": 1.0,
           "role_affinity": 0.8,
           "profile_level": "unknown",
-          "level_factor": 0.4,
+          "level_factor": 0.2,
+          "required_level_points": 4.25,
+          "required_level_label": "advanced",
+          "requirement_basis": "published_general",
+          "proxy_skill_id": null,
+          "proxy_skill_label": null,
+          "proxy_source_level": null,
           "presence_contribution": 0.07766285581231919,
           "normalized_weight": 0.09707856976539897,
-          "contribution": 0.03106514232492768
+          "contribution": 0.01553257116246384
         },
         {
           "skill_id": "skill:python",
@@ -3781,10 +3887,16 @@
           "distinctiveness": 2.9317409746735876,
           "role_affinity": 1.0,
           "profile_level": "unknown",
-          "level_factor": 0.4,
+          "level_factor": 0.2,
+          "required_level_points": 4.0,
+          "required_level_label": "intermediate",
+          "requirement_basis": "estimated_from_general",
+          "proxy_skill_id": "skill:onet_2_b_3_e",
+          "proxy_skill_label": "Programming",
+          "proxy_source_level": 2.5,
           "presence_contribution": 0.28460922074392864,
           "normalized_weight": 0.28460922074392864,
-          "contribution": 0.11384368829757148
+          "contribution": 0.05692184414878574
         },
         {
           "skill_id": "skill:software_5f0974ee455c4cd5",
@@ -3792,10 +3904,16 @@
           "distinctiveness": 3.5518630202186428,
           "role_affinity": 1.0,
           "profile_level": "unknown",
-          "level_factor": 0.4,
+          "level_factor": 0.2,
+          "required_level_points": null,
+          "required_level_label": null,
+          "requirement_basis": "unavailable",
+          "proxy_skill_id": null,
+          "proxy_skill_label": null,
+          "proxy_source_level": null,
           "presence_contribution": 0.3448097820054362,
           "normalized_weight": 0.3448097820054362,
-          "contribution": 0.1379239128021745
+          "contribution": 0.06896195640108725
         },
         {
           "skill_id": "skill:sql",
@@ -3803,10 +3921,16 @@
           "distinctiveness": 2.8173306234958435,
           "role_affinity": 1.0,
           "profile_level": "unknown",
-          "level_factor": 0.4,
+          "level_factor": 0.2,
+          "required_level_points": 4.0,
+          "required_level_label": "intermediate",
+          "requirement_basis": "estimated_from_general",
+          "proxy_skill_id": "skill:onet_2_b_3_e",
+          "proxy_skill_label": "Programming",
+          "proxy_source_level": 2.5,
           "presence_contribution": 0.27350242748523623,
           "normalized_weight": 0.27350242748523623,
-          "contribution": 0.10940097099409449
+          "contribution": 0.054700485497047244
         }
       ],
       "coverage": {
@@ -3896,12 +4020,12 @@
           "Education, licenses and experience are not assessed; high coverage does not establish job eligibility."
         ]
       },
-      "readiness": 0.25495191437219933,
+      "readiness": 0.12747595718609966,
       "preferences": null,
       "readiness_weight": 1.0,
       "preference_weight": 0.0,
       "transferability": 0,
-      "unrounded_score": 25.495191437219933
+      "unrounded_score": 12.747595718609967
     },
     "matched_skills": [
       {
@@ -4292,7 +4416,8 @@
       "Education, licenses and experience are not assessed; high coverage does not establish job eligibility.",
       "Ranking combines 65% distinctive CV-skill alignment and 35% importance-weighted general requirement fulfilment; weights are application assumptions, not empirically calibrated.",
       "General requirement fulfilment compares level estimates with unsuppressed O*NET source levels using an application proxy: beginner=2, intermediate=4, advanced=6 on 0–7. This is not an official scale crosswalk.",
-      "All matched skills receive level-sensitive alignment credit: unknown=40%, beginner=60%, intermediate=80%, advanced=100%. These are application weights, not published job requirements.",
+      "Alignment rewards agreement with the job's required level. Underqualification is penalized more than surplus skill; these suitability weights are application assumptions.",
+      "Software level bands are estimated from published related general-skill ratings where a documented category rule exists. The proxy and source rating are shown; these are not published software requirements.",
       "Unknown profile levels earn partial alignment but no proficiency fulfilment where a required level exists. Missing or suppressed required levels use presence for general fulfilment; software has no imported required proficiency rating.",
       "Profiles with fewer than four supported skills receive a proportional evidence-breadth reduction; adding skills requires your review.",
       "Exact software examples contribute to CV alignment; software category familiarity and alternative-tool list coverage are shown separately and do not increase fit.",
@@ -5129,7 +5254,7 @@
       "profile_id": "synthetic:backend_demo",
       "role_id": "role:onet_15_2051_01",
       "scenario_id": "baseline",
-      "fit_score": 25.5,
+      "fit_score": 12.75,
       "reviewed_skills": [
         {
           "skill_id": "skill:onet_2_a_1_a",
@@ -6058,7 +6183,8 @@
         "Education, licenses and experience are not assessed; high coverage does not establish job eligibility.",
         "Ranking combines 65% distinctive CV-skill alignment and 35% importance-weighted general requirement fulfilment; weights are application assumptions, not empirically calibrated.",
         "General requirement fulfilment compares level estimates with unsuppressed O*NET source levels using an application proxy: beginner=2, intermediate=4, advanced=6 on 0–7. This is not an official scale crosswalk.",
-        "All matched skills receive level-sensitive alignment credit: unknown=40%, beginner=60%, intermediate=80%, advanced=100%. These are application weights, not published job requirements.",
+        "Alignment rewards agreement with the job's required level. Underqualification is penalized more than surplus skill; these suitability weights are application assumptions.",
+        "Software level bands are estimated from published related general-skill ratings where a documented category rule exists. The proxy and source rating are shown; these are not published software requirements.",
         "Unknown profile levels earn partial alignment but no proficiency fulfilment where a required level exists. Missing or suppressed required levels use presence for general fulfilment; software has no imported required proficiency rating.",
         "Profiles with fewer than four supported skills receive a proportional evidence-breadth reduction; adding skills requires your review.",
         "Exact software examples contribute to CV alignment; software category familiarity and alternative-tool list coverage are shown separately and do not increase fit.",
@@ -6104,7 +6230,7 @@
       "catalog_id": "onet_31_0",
       "family_id": "family:soc_15",
       "family": "Computer and Mathematical",
-      "score_method": "reviewed_onet_fit_v4",
+      "score_method": "reviewed_onet_fit_v5",
       "software_learning_options": [
         {
           "skill_id": "skill:microsoft_excel",
@@ -6220,7 +6346,7 @@
       "profile_id": "synthetic:backend_demo",
       "role_id": "role:onet_15_2051_01",
       "scenario_id": "rapid_ai_change",
-      "fit_score": 25.5,
+      "fit_score": 12.75,
       "reviewed_skills": [
         {
           "skill_id": "skill:onet_2_a_1_a",
@@ -7149,7 +7275,8 @@
         "Education, licenses and experience are not assessed; high coverage does not establish job eligibility.",
         "Ranking combines 65% distinctive CV-skill alignment and 35% importance-weighted general requirement fulfilment; weights are application assumptions, not empirically calibrated.",
         "General requirement fulfilment compares level estimates with unsuppressed O*NET source levels using an application proxy: beginner=2, intermediate=4, advanced=6 on 0–7. This is not an official scale crosswalk.",
-        "All matched skills receive level-sensitive alignment credit: unknown=40%, beginner=60%, intermediate=80%, advanced=100%. These are application weights, not published job requirements.",
+        "Alignment rewards agreement with the job's required level. Underqualification is penalized more than surplus skill; these suitability weights are application assumptions.",
+        "Software level bands are estimated from published related general-skill ratings where a documented category rule exists. The proxy and source rating are shown; these are not published software requirements.",
         "Unknown profile levels earn partial alignment but no proficiency fulfilment where a required level exists. Missing or suppressed required levels use presence for general fulfilment; software has no imported required proficiency rating.",
         "Profiles with fewer than four supported skills receive a proportional evidence-breadth reduction; adding skills requires your review.",
         "Exact software examples contribute to CV alignment; software category familiarity and alternative-tool list coverage are shown separately and do not increase fit.",
@@ -7195,7 +7322,7 @@
       "catalog_id": "onet_31_0",
       "family_id": "family:soc_15",
       "family": "Computer and Mathematical",
-      "score_method": "reviewed_onet_fit_v4",
+      "score_method": "reviewed_onet_fit_v5",
       "software_learning_options": [
         {
           "skill_id": "skill:microsoft_excel",

@@ -19,10 +19,10 @@ class TestProficiencyMatching(unittest.TestCase):
             "Writing", "Python"], catalog=self.catalog)
         return profile.model_copy(update={"skills": [s.model_copy(update={"level": level}) for s in profile.skills]})
 
-    def test_proficiency_increases_fit_without_changing_skill_presence(self):
+    def test_proficiency_increases_capability_while_suitability_tracks_job_level(self):
         rows = [self.matcher.match_role(self.profile(level), BI)
             for level in ("unknown", "beginner", "intermediate", "advanced")]
-        self.assertEqual([row.fit_score for row in rows], sorted({row.fit_score for row in rows}))
+        self.assertEqual([row.score_breakdown.general_fulfilment for row in rows], sorted({row.score_breakdown.general_fulfilment for row in rows}))
         self.assertEqual(len({row.score_breakdown.coverage.general_coverage for row in rows}), 1)
         self.assertEqual(len({row.score_breakdown.profile_presence_alignment for row in rows}), 1)
 
@@ -36,7 +36,7 @@ class TestProficiencyMatching(unittest.TestCase):
             catalog = self.catalog.model_copy(update={"role_skills": requirements})
             scores.append(OnetMatcher(catalog).match_role(profile, BI))
         self.assertGreater(scores[0].fit_score, scores[1].fit_score)
-        self.assertEqual(scores[0].score_breakdown.profile_alignment, scores[1].score_breakdown.profile_alignment)
+        self.assertEqual(scores[0].score_breakdown.profile_presence_alignment, scores[1].score_breakdown.profile_presence_alignment)
 
     def test_suppressed_levels_stay_unavailable(self):
         profile = self.profile("beginner")
@@ -59,20 +59,29 @@ class TestProficiencyMatching(unittest.TestCase):
         self.assertLess(*scores)
 
 
-    def test_python_alone_increases_at_every_relevant_occupation(self):
+    def test_python_level_prefers_the_corresponding_occupational_requirement(self):
+        roles = ("role:onet_47_4011_01", BI, "role:onet_15_1251_00")
         profile = create_profile("synthetic:only_python", ["Python"], catalog=self.catalog)
-        levels = ("unknown", "beginner", "intermediate", "advanced")
-        results = []
-        for level in levels:
+        matrix = []
+        for index, level in enumerate(("beginner", "intermediate", "advanced")):
             updated = profile.model_copy(update={"skills": [s.model_copy(update={"level": level}) for s in profile.skills]})
-            results.append({r.role_id: r for r in self.matcher.match(updated)})
-        for role_id, affinity in self.matcher.role_affinities.items():
-            scores = [rows[role_id].fit_score for rows in results]
-            if affinity.get("skill:python", 0):
-                self.assertTrue(all(a < b for a, b in zip(scores, scores[1:])), (role_id, scores))
-            else:
-                self.assertEqual(scores, [0, 0, 0, 0])
-        self.assertEqual([rows[BI].fit_score for rows in results[1:]], [9.75, 13.0, 16.25])
+            matches = [self.matcher.match_role(updated, role) for role in roles]
+            scores = [row.fit_score for row in matches]
+            matrix.append(scores)
+            self.assertEqual(scores.index(max(scores)), index)
+            for row in matches:
+                target = row.score_breakdown.alignment_contributions[0]
+                self.assertEqual(target.requirement_basis, "estimated_from_general")
+                self.assertEqual(target.proxy_skill_label, "Programming")
+        self.assertEqual(matrix, [[16.25, 6.5, 4.69], [12.88, 16.25, 9.03], [10.9, 12.88, 16.25]])
+
+    def test_suppressed_programming_rating_does_not_create_a_python_requirement(self):
+        profile = create_profile("synthetic:suppressed_python", ["Python"], catalog=self.catalog)
+        row = self.matcher.match_role(profile, "role:onet_15_2051_00")
+        target = row.score_breakdown.alignment_contributions[0]
+        self.assertEqual(target.requirement_basis, "unavailable")
+        self.assertIsNone(target.required_level_points)
+        self.assertIsNone(target.proxy_source_level)
 
     def test_representative_general_and_software_skills_respond_to_levels(self):
         for label in ("Python", "SQL", "Microsoft Excel", "Reading Comprehension", "Critical Thinking"):
@@ -84,4 +93,4 @@ class TestProficiencyMatching(unittest.TestCase):
                     row = self.matcher.match_role(updated, BI)
                     scores.append(row.fit_score)
                     self.assertAlmostEqual(sum(c.contribution for c in row.score_breakdown.alignment_contributions), row.score_breakdown.profile_alignment)
-                self.assertTrue(scores[0] < scores[1] < scores[2], scores)
+                self.assertGreater(len(set(scores)), 1, scores)

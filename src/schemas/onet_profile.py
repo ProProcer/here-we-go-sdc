@@ -16,6 +16,12 @@ class AlignmentContribution(Contract):
     role_affinity: float = Field(ge=0, le=1)
     profile_level: Literal["unknown", "beginner", "intermediate", "advanced"]
     level_factor: float = Field(ge=0, le=1)
+    required_level_points: float | None = Field(ge=0, le=7)
+    required_level_label: Literal["beginner", "intermediate", "advanced"] | None
+    requirement_basis: Literal["published_general", "estimated_from_general", "unavailable"]
+    proxy_skill_id: SkillId | None
+    proxy_skill_label: str | None
+    proxy_source_level: float | None = Field(ge=0, le=7)
     presence_contribution: float = Field(ge=0, le=1)
     normalized_weight: float = Field(ge=0, le=1)
     contribution: float = Field(ge=0, le=1)
@@ -33,7 +39,7 @@ class ProficiencyComparison(Contract):
 
 
 class OnetScoreBreakdown(Contract):
-    method: Literal["reviewed_onet_fit_v4"] = "reviewed_onet_fit_v4"
+    method: Literal["reviewed_onet_fit_v5"] = "reviewed_onet_fit_v5"
     general_fulfilment: float = Field(ge=0, le=1)
     proficiency_comparisons: list[ProficiencyComparison]
     profile_presence_alignment: float = Field(ge=0, le=1)

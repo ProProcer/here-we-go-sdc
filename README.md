@@ -245,10 +245,10 @@ The repository will include the **Apache License 2.0** as required by the Partic
 CV recommendations use a blend of distinctive skill alignment and general requirement coverage. See [the matching formula and sample-CV acceptance results](docs/CV_MATCHING.md).
 
 CV assessment validates canonical IDs against the database before and after AI,
-and supplies skill kinds and definitions to the model. Matching v4 includes a
+and supplies skill kinds and definitions to the model. Matching v5 includes a
 transparent comparison of estimated general-skill proficiency with available
 O*NET required levels. See [the formula](docs/CV_MATCHING.md),
 [CV formats](data/synthetic/profiles/cvs/domain_examples/README.md) and
 [composition/styling checks](data/synthetic/profiles/cvs/layout_examples/README.md).
 
-Every matched skill now has level-sensitive alignment, including Python and other software tools. Published general-skill required levels are compared separately; software job thresholds are not fabricated.
+Every matched skill uses job-relative level suitability. Software level estimates are derived from documented occupational skill proxies and labelled separately from published general-skill requirements. Missing proxy ratings remain unknown.

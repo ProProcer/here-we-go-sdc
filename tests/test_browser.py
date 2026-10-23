@@ -59,7 +59,7 @@ class TestBrowserJourney(unittest.TestCase):
             destination.mkdir(parents=True, exist_ok=True)
             page.screenshot(path=str(destination / (name + ".png")), full_page=True)
 
-    def test_python_only_level_changes_update_visible_fit(self):
+    def test_python_only_levels_change_best_matching_job(self):
         from playwright.sync_api import expect
         context = self.browser.new_context(viewport={"width": 1440, "height": 1080})
         self.addCleanup(context.close)
@@ -69,7 +69,7 @@ class TestBrowserJourney(unittest.TestCase):
         page.locator("#manual-fallback").click()
         page.locator("#skill-search").fill("Python")
         page.get_by_role("option", name="Python", exact=True).click()
-        scores = []
+        titles = []
         for index, level in enumerate(("Beginner", "Intermediate", "Advanced")):
             if index:
                 page.locator('[data-screen="review"]').click()
@@ -79,11 +79,15 @@ class TestBrowserJourney(unittest.TestCase):
             page.locator(".cv-evidence summary").first.click()
             page.locator("#confirm-all").check()
             page.locator("#review-next").click()
-            page.locator("#find-matches").click()
+            with page.expect_response("**/api/v2/matches?*", timeout=30000) as response:
+                page.locator("#find-matches").click()
             expect(page.locator("#explore")).to_be_visible(timeout=30000)
             expect(page.locator("#busy")).to_be_hidden(timeout=30000)
-            scores.append(float(page.locator("#featured-match .fit-orbit strong").inner_text()))
-        self.assertTrue(scores[0] < scores[1] < scores[2], scores)
+            target = response.value.json()["matches"][0]["score_breakdown"]["alignment_contributions"][0]
+            self.assertEqual(target["required_level_label"], level.lower())
+            self.assertEqual(target["requirement_basis"], "estimated_from_general")
+            titles.append(page.locator("#featured-match h2").inner_text())
+        self.assertEqual(len(set(titles)), 3, titles)
 
     def test_sample_cv_recommends_data_roles_with_score_explanation(self):
         from playwright.sync_api import expect

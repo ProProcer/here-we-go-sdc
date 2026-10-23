@@ -1,110 +1,100 @@
 # CV matching formula
 
-The real-catalog matcher now reports `reviewed_onet_fit_v4` in matches and roadmaps.
-This replaces the original grouped-coverage ranking. The synthetic demo matcher
-has its own existing contract.
+Matches and roadmaps now use `reviewed_onet_fit_v5`. This version rewards agreement
+between the profile's proficiency and the occupation's required level, rather
+than adding the same proficiency multiplier to every relevant occupation.
 
-## Formula
+## Level evidence
 
-Only confirmed or explicitly self-reported skills enter the score. Extracted,
-unverified claims never enter the score. Let P be that set and N the occupation
-count in the loaded catalog.
+Only confirmed or explicitly self-reported database skills enter scoring.
+For general skills, unsuppressed O*NET source levels are used directly. The
+profile's beginner/intermediate/advanced estimate is mapped to 2/4/6 on the 0–7
+scale as an explicit application proxy, not an official equivalence.
+[O*NET scale definitions](https://www.onetonline.org/help/online/scales).
 
-For skill s, count the distinct occupations listing it as a general requirement
-or software example, df(s). Repeated associations in software categories count once.
+O*NET software examples do not contain direct required proficiency levels. The
+following category rules produce clearly labelled estimates from the same
+occupation's related general-skill rating:
 
-    distinctiveness(s) = 1 + ln((N + 1) / (df(s) + 1))
+| Software category | Related occupational skill |
+| --- | --- |
+| Database/query, development environments, GUI, object/component and web development | Programming |
+| Spreadsheets and analytical/scientific software | Mathematics |
+| CAD and CAD/CAM | Operations Analysis |
+| Medical software | Monitoring |
 
-The role affinity is its source general-skill importance, 1 for an exact in-demand
-software example, 0.5 for another exact software example, and 0 for no connection.
-When a tool occurs in multiple categories, use its highest affinity once.
+A usable related source level up to 2 produces an estimated beginner band (2),
+over 2 through 4 an intermediate band (4), and over 4 an advanced band (6).
+For a tool in several mapped categories, the highest available estimated band
+is used. These are product inference rules, not measured tool requirements.
+The breakdown preserves `requirement_basis`, the proxy skill and its original
+source rating. Missing, zero or suppressed proxy ratings are not filled in.
+Unmapped categories show requirement unknown. In particular, a suppressed
+Programming rating cannot create a Python requirement estimate.
 
-    L(s) = 0.4 if unknown, 0.6 if beginner, 0.8 if intermediate, 1.0 if advanced
-    A = sum(distinctiveness(s) * affinity(role, s) * L(s) for s in P)
-        / sum(distinctiveness(s) for s in P)
-    G = sum(importance of matched general requirements)
-        / sum(importance of all general requirements)
-    B = min(1, number of supported skills / 4)
-    level_credit = min(1, profile_level_proxy / required_source_level)
-    F = sum(importance * level_credit for confirmed general requirements)
-        / sum(importance of all general requirements)
+## Suitability
+
+Let p be the profile's 2/4/6 proficiency proxy and r the available required level.
+
+    underqualified: Q = (p / r)^2
+    meets/exceeds:  Q = 1 / (1 + 0.35 * (p - r) / 2)
+    level_factor = 0.2 + 0.8 * Q
+
+Matching the required level gives full suitability. A shortfall is penalized
+more than surplus skill. An advanced person can still perform beginner work,
+but a role matching their level receives higher alignment, all else equal.
+The 20% floor retains limited presence credit rather than interpreting a level
+mismatch as an absent skill. Unknown profile proficiency receives that floor.
+Where the job requirement is unavailable, the factor is 0.2 + 0.3 times the prior
+profile-level strength (0.6/0.8/1 for beginner/intermediate/advanced). It remains
+below a known exact match and does not imply an invented required level.
+
+## Combined score
+
+For skill s, df(s) counts distinct occupations listing it. Its role affinity is
+source general-skill importance, 1 for an exact in-demand software example, 0.5
+for another exact software example, or 0 without a catalog connection.
+
+    w(s) = 1 + ln((occupation_count + 1) / (df(s) + 1))
+    A = sum(w(s) * role_affinity(s) * level_factor(s)) / sum(w(s))
+    F = sum(importance * general_requirement_fulfilment) / sum(all general importance)
     skills_score = 0.65 * A + 0.35 * F
-    fit = 100 * B * ((1 - p) * skills_score + p * I)
+    breadth = min(1, supported_skill_count / 4)
+    fit = 100 * breadth * ((1 - interest_share) * skills_score + interest_share * interests)
 
-All skills, including software, receive level-sensitive alignment through L(s).
-The denominator stays independent of level; normalizing by L(s) too would cancel
-out the difference when the profile contains only one skill. L(s) is a transparent
-application weight, not a claim about a job's required software proficiency.
-The breakdown retains presence-only alignment separately for explanation.
+F measures capability separately from suitability: min(1, p / source_required)
+for assessed general skills. Surplus skill still fulfils a requirement even if
+it is a less close level match. Missing required general levels use presence
+only, with unavailable status. Unknown profile levels receive no F proficiency
+credit when a required level is available. An empty profile scores zero.
 
-A is zero for an empty profile. p is 0.10 when a recognized occupational title,
-alias or family interest was supplied, otherwise zero. I is the fraction of those
-recognized interests associated with this role. Without supported skills B is
-zero, so interests alone cannot generate a match. Scores are rounded only for
-display; sorting uses full precision, then role ID for deterministic ties.
+Recognized occupation-title, alias or family interests receive a 10% share;
+otherwise the share is zero. A selected target is pinned without a score boost.
+Sorting uses unrounded scores, then role ID. The alignment denominator is
+independent of proficiency so level differences cannot cancel out for one skill.
+`CoveragePolicy.profile_alignment_share` configures the 65/35 blend. Separate
+software coverage diagnostics do not treat every alternative tool as mandatory.
 
-`CoveragePolicy.profile_alignment_share` changes the 0.65 alignment weight; its
-complement weights F. The existing `general_share` and `group_share` settings
-still govern the separate grouped-coverage diagnostics, not the v4 fit formula.
-This separates ranking from the number of software alternatives listed for a job.
+All formula constants, proxy rules and skill-level crosswalks are transparent
+application assumptions. Scores are exploratory, not empirically calibrated
+hiring probabilities or education/licensing checks. The UI shows original
+source ratings separately from estimates and labels the estimates explicitly.
 
-## Why this changes the recommendations
+## Python acceptance matrix
 
-The old formula rewarded a role listing Excel as its sole in-demand software
-example with complete software coverage. Roles listing many alternative tools
-received much less software coverage even when the CV included SQL, Python and
-Tableau. The new alignment denominator is the person's supported skills, and
-specialist skills receive higher weight than widely shared skills. General
-requirements retain an importance-weighted fulfilment term using required levels. Category
-familiarity remains visible, with no assumed equivalence between tools.
+For a confirmed Python-only profile, no interests and the same one-skill breadth
+reduction, the actual catalog yields:
 
-Profiles with one to three supported skills receive the explicit B reduction.
-Four skills is an application assumption, as are the 65/35 blend and 0.5 contextual
-software affinity. These are transparent exploratory weights, not an empirically
-calibrated probability of employment. Education, licensing and seniority are not
-eligibility checks. AI levels remain estimates. To make the comparison explicit, the application uses
-beginner=2, intermediate=4, advanced=6 as approximate points on the 0–7 source
-scale. This is a product assumption, not an official O*NET crosswalk. Unknown
-profile levels receive presence alignment but no proficiency credit when the
-job has a usable required level. A required level of zero needs no extra credit
-threshold. Missing or suppressed required levels use presence only and are marked
-unavailable. No required proficiency is fabricated for software examples.
-The drawer shows the actual source level, the person's estimate, the proxy and
-credit for each general skill. Increasing a person's level cannot reduce that
-skill's credit; a higher job requirement cannot increase it.
-See [O*NET's scale definitions](https://www.onetonline.org/help/online/scales).
+| Profile level | Energy Auditors (beginner estimate) | Business Intelligence Analysts (intermediate estimate) | Computer Programmers (advanced estimate) |
+| --- | --- | --- | --- |
+| Beginner | 16.25 | 6.50 | 4.69 |
+| Intermediate | 12.88 | 16.25 | 9.03 |
+| Advanced | 10.90 | 12.88 | 16.25 |
 
-The extractor also avoids claiming the catalog's scientific-methods skill from
-the phrase "Computer Science" or "Data Science" alone. An explicit Science claim
-still extracts normally. The authored sample CV itself is unchanged.
-
-## Acceptance check
-
-The actual downloadable sample PDF is parsed through normal intake and confirmed
-without adding interests or a target role. The acceptance suite requires Data
-Scientists first and relevant data occupations within the top ten; its numerical
-fit changes with assessed proficiency. Earlier v2 scores were presence-only, and v3 adjusted only general requirement
-fulfilment. V4 also adjusts every skill's alignment. Historical scores should not
-be compared directly across these formula versions.
-
-Previously Business Intelligence Analysts ranked 88th, while Ophthalmic Medical
-Technicians ranked third. Those unrelated medical roles now fall outside the
-top ten. `tests/test_cv_recommendations.py` covers the sample, a separate web
-programming profile, sparse evidence, unverified claims, target pinning,
-explanation arithmetic, and duplicate evidence. No sample-specific role boosts
-or provider calls are used by matching.
-
-The role drawer shows A, general presence, F, the required-level comparisons and the weights, the breadth reduction when applicable,
-and each CV skill's contribution. Grouped software coverage remains visible as
-separate context. The same match score flows into the learning roadmap.
-
-## Python-only regression
-
-For a confirmed profile containing only Python, Business Intelligence Analysts
-now scores 9.75 at beginner, 13.00 at intermediate and 16.25 at advanced. Unknown
-scores 6.50. The one-skill evidence-breadth reduction still applies. All catalog
-occupations with a Python association respond monotonically to these level
-changes; occupations without a Python association remain at zero. Tests cover
-single-skill SQL, Excel and general skills too, plus live HTTP revision updates
-and the actual browser level-editing flow. Software required-level fields remain
-unavailable rather than inventing a measured job requirement.
+The software estimates come from the occupations' Programming ratings of 0.75,
+2.50 and 4.88 respectively, mapped to the bands above. A Python-only profile is
+insufficient evidence of overall job eligibility. Tests check the crossover,
+unknown/suppressed ratings, API revision updates, and changing recommended roles
+through the real browser flow. CV extraction/layout invariance is unchanged.
+The fictional sample still surfaces data occupations without target-role boosts.
+Historical v2/v3/v4 test scores should not be compared directly with v5.

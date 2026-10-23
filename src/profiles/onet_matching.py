@@ -9,7 +9,7 @@ from decimal import ROUND_HALF_UP, Decimal
 from src.ingestion.coverage import CoverageIndex
 from src.ingestion.onet import normalized
 from src.profiles.intake import validate_profile
-from src.profiles.proficiency import ALIGNMENT_LEVEL_FACTORS, compare_proficiency
+from src.profiles.proficiency import UNKNOWN_TARGET, alignment_targets, compare_proficiency, level_suitability
 from src.schemas.onet import CoveragePolicy, OnetCatalog
 from src.schemas.onet_profile import (
     OnetRoleMatch,
@@ -41,6 +41,7 @@ class OnetMatcher:
         # Occupation frequency makes specialist skills more informative than
         # ubiquitous tools. Each occupation contributes at most once per skill.
         self.role_affinities = {}
+        self.level_targets = {}
         frequency = Counter()
         for role in catalog.roles:
             affinity = {r.skill_id: r.importance for r in self.index.general[role.role_id]}
@@ -49,6 +50,8 @@ class OnetMatcher:
                     affinity.get(association.skill_id, 0),
                     1.0 if association.in_demand else 0.5)
             self.role_affinities[role.role_id] = affinity
+            self.level_targets[role.role_id] = alignment_targets(
+                self.index.general[role.role_id], self.index.software[role.role_id], self.skills)
             frequency.update(affinity.keys())
         self.distinctiveness = {
             sid: 1 + log((1 + len(catalog.roles)) / (1 + frequency[sid]))
@@ -81,8 +84,11 @@ class OnetMatcher:
         profile_weight = sum(self.distinctiveness[sid] for sid in sorted(available))
         presence_alignment = (sum(self.distinctiveness[sid] * affinity.get(sid, 0)
                          for sid in sorted(available)) / profile_weight) if profile_weight else 0.0
+        targets = self.level_targets[role_id]
+        factors = {sid: level_suitability(supported[sid].level, targets.get(sid, UNKNOWN_TARGET))
+            for sid in available}
         alignment = (sum(self.distinctiveness[sid] * affinity.get(sid, 0)
-                         * ALIGNMENT_LEVEL_FACTORS[supported[sid].level]
+                         * factors[sid]
                          for sid in sorted(available)) / profile_weight) if profile_weight else 0.0
         alignment_weight = policy.profile_alignment_share
         general_weight = 1 - alignment_weight
@@ -130,7 +136,8 @@ class OnetMatcher:
             *coverage.warnings,
             f"Ranking combines {alignment_weight:.0%} distinctive CV-skill alignment and {general_weight:.0%} importance-weighted general requirement fulfilment; weights are application assumptions, not empirically calibrated.",
             "General requirement fulfilment compares level estimates with unsuppressed O*NET source levels using an application proxy: beginner=2, intermediate=4, advanced=6 on 0–7. This is not an official scale crosswalk.",
-            "All matched skills receive level-sensitive alignment credit: unknown=40%, beginner=60%, intermediate=80%, advanced=100%. These are application weights, not published job requirements.",
+            "Alignment rewards agreement with the job's required level. Underqualification is penalized more than surplus skill; these suitability weights are application assumptions.",
+            "Software level bands are estimated from published related general-skill ratings where a documented category rule exists. The proxy and source rating are shown; these are not published software requirements.",
             "Unknown profile levels earn partial alignment but no proficiency fulfilment where a required level exists. Missing or suppressed required levels use presence for general fulfilment; software has no imported required proficiency rating.",
             "Profiles with fewer than four supported skills receive a proportional evidence-breadth reduction; adding skills requires your review.",
             "Exact software examples contribute to CV alignment; software category familiarity and alternative-tool list coverage are shown separately and do not increase fit.",
@@ -168,10 +175,11 @@ class OnetMatcher:
                     "distinctiveness": self.distinctiveness[sid],
                     "role_affinity": affinity.get(sid, 0),
                     "profile_level": supported[sid].level,
-                    "level_factor": ALIGNMENT_LEVEL_FACTORS[supported[sid].level],
+                    "level_factor": factors[sid],
+                    **targets.get(sid, UNKNOWN_TARGET),
                     "presence_contribution": self.distinctiveness[sid] * affinity.get(sid, 0) / profile_weight,
                     "normalized_weight": self.distinctiveness[sid] / profile_weight,
-                    "contribution": self.distinctiveness[sid] * affinity.get(sid, 0) * ALIGNMENT_LEVEL_FACTORS[supported[sid].level] / profile_weight,
+                    "contribution": self.distinctiveness[sid] * affinity.get(sid, 0) * factors[sid] / profile_weight,
                 } for sid in sorted(available)],
                 readiness=readiness,
                 preferences=preference,
