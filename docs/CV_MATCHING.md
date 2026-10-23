@@ -1,6 +1,6 @@
 # CV matching formula
 
-The real-catalog matcher now reports `reviewed_onet_fit_v3` in matches and roadmaps.
+The real-catalog matcher now reports `reviewed_onet_fit_v4` in matches and roadmaps.
 This replaces the original grouped-coverage ranking. The synthetic demo matcher
 has its own existing contract.
 
@@ -19,7 +19,8 @@ The role affinity is its source general-skill importance, 1 for an exact in-dema
 software example, 0.5 for another exact software example, and 0 for no connection.
 When a tool occurs in multiple categories, use its highest affinity once.
 
-    A = sum(distinctiveness(s) * affinity(role, s) for s in P)
+    L(s) = 0.4 if unknown, 0.6 if beginner, 0.8 if intermediate, 1.0 if advanced
+    A = sum(distinctiveness(s) * affinity(role, s) * L(s) for s in P)
         / sum(distinctiveness(s) for s in P)
     G = sum(importance of matched general requirements)
         / sum(importance of all general requirements)
@@ -30,6 +31,12 @@ When a tool occurs in multiple categories, use its highest affinity once.
     skills_score = 0.65 * A + 0.35 * F
     fit = 100 * B * ((1 - p) * skills_score + p * I)
 
+All skills, including software, receive level-sensitive alignment through L(s).
+The denominator stays independent of level; normalizing by L(s) too would cancel
+out the difference when the profile contains only one skill. L(s) is a transparent
+application weight, not a claim about a job's required software proficiency.
+The breakdown retains presence-only alignment separately for explanation.
+
 A is zero for an empty profile. p is 0.10 when a recognized occupational title,
 alias or family interest was supplied, otherwise zero. I is the fraction of those
 recognized interests associated with this role. Without supported skills B is
@@ -38,7 +45,7 @@ display; sorting uses full precision, then role ID for deterministic ties.
 
 `CoveragePolicy.profile_alignment_share` changes the 0.65 alignment weight; its
 complement weights F. The existing `general_share` and `group_share` settings
-still govern the separate grouped-coverage diagnostics, not the v3 fit formula.
+still govern the separate grouped-coverage diagnostics, not the v4 fit formula.
 This separates ranking from the number of software alternatives listed for a job.
 
 ## Why this changes the recommendations
@@ -76,8 +83,9 @@ still extracts normally. The authored sample CV itself is unchanged.
 The actual downloadable sample PDF is parsed through normal intake and confirmed
 without adding interests or a target role. The acceptance suite requires Data
 Scientists first and relevant data occupations within the top ten; its numerical
-fit changes with assessed proficiency. The earlier v2 scores were presence-only
-and should not be compared directly with v3 fit.
+fit changes with assessed proficiency. Earlier v2 scores were presence-only, and v3 adjusted only general requirement
+fulfilment. V4 also adjusts every skill's alignment. Historical scores should not
+be compared directly across these formula versions.
 
 Previously Business Intelligence Analysts ranked 88th, while Ophthalmic Medical
 Technicians ranked third. Those unrelated medical roles now fall outside the
@@ -89,3 +97,14 @@ or provider calls are used by matching.
 The role drawer shows A, general presence, F, the required-level comparisons and the weights, the breadth reduction when applicable,
 and each CV skill's contribution. Grouped software coverage remains visible as
 separate context. The same match score flows into the learning roadmap.
+
+## Python-only regression
+
+For a confirmed profile containing only Python, Business Intelligence Analysts
+now scores 9.75 at beginner, 13.00 at intermediate and 16.25 at advanced. Unknown
+scores 6.50. The one-skill evidence-breadth reduction still applies. All catalog
+occupations with a Python association respond monotonically to these level
+changes; occupations without a Python association remain at zero. Tests cover
+single-skill SQL, Excel and general skills too, plus live HTTP revision updates
+and the actual browser level-editing flow. Software required-level fields remain
+unavailable rather than inventing a measured job requirement.

@@ -43,6 +43,22 @@ class TestWebApp(unittest.TestCase):
         self.assertEqual(response.status_code, 200, response.text)
         return response.json()
 
+    def test_python_level_edits_refresh_matching_score(self):
+        data, headers = self.upload(b"Skills: Python")
+        scores = []
+        for level in ("beginner", "intermediate", "advanced"):
+            skills = [{**skill, "level": level, "confirmation": "confirmed"} for skill in data["profile"]["skills"]]
+            response = self.client.patch("/api/v2/profiles/current", headers=headers,
+                json={"revision": data["revision"], "skills": skills, "desired_role_id": ROLE})
+            self.assertEqual(response.status_code, 200, response.text)
+            data = response.json()
+            response = self.client.get("/api/v2/matches", headers=headers, params={"revision": data["revision"]})
+            self.assertEqual(response.status_code, 200, response.text)
+            row = next(row for row in response.json()["matches"] if row["role_id"] == ROLE)
+            self.assertEqual(row["score_breakdown"]["alignment_contributions"][0]["profile_level"], level)
+            scores.append(row["fit_score"])
+        self.assertEqual(scores, [9.75, 13.0, 16.25])
+
     def test_shell_assets_and_downloadable_cv(self):
         page = self.client.get("/")
         self.assertEqual(page.status_code, 200)

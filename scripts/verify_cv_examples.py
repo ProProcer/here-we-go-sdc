@@ -53,7 +53,7 @@ def live_check(example, base, matcher):
             extracted_skills=len(skills), assessment=assessment,
             top_five=[{"title": r["role_title"], "score": r["fit_score"]} for r in matches[:5]],
             domain_occupation=target.role_title, domain_occupation_rank=target.rank,
-            domain_occupation_score=target.fit_score)
+            domain_occupation_score=target.fit_score, score_method=target.score_breakdown.method)
     except (HTTPError, URLError, ValueError, OSError) as error:
         row.update(status="failed", error=str(error))
     row["seconds"] = round(time.monotonic() - start, 2)

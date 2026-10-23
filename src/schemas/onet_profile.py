@@ -14,6 +14,9 @@ class AlignmentContribution(Contract):
     label: str
     distinctiveness: float = Field(ge=1)
     role_affinity: float = Field(ge=0, le=1)
+    profile_level: Literal["unknown", "beginner", "intermediate", "advanced"]
+    level_factor: float = Field(ge=0, le=1)
+    presence_contribution: float = Field(ge=0, le=1)
     normalized_weight: float = Field(ge=0, le=1)
     contribution: float = Field(ge=0, le=1)
 
@@ -30,9 +33,10 @@ class ProficiencyComparison(Contract):
 
 
 class OnetScoreBreakdown(Contract):
-    method: Literal["reviewed_onet_fit_v3"] = "reviewed_onet_fit_v3"
+    method: Literal["reviewed_onet_fit_v4"] = "reviewed_onet_fit_v4"
     general_fulfilment: float = Field(ge=0, le=1)
     proficiency_comparisons: list[ProficiencyComparison]
+    profile_presence_alignment: float = Field(ge=0, le=1)
     profile_alignment: float = Field(ge=0, le=1)
     profile_alignment_weight: float = Field(ge=0, le=1)
     general_coverage_weight: float = Field(ge=0, le=1)

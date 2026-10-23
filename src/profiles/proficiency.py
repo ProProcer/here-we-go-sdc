@@ -1,6 +1,11 @@
 """Transparent application comparison with published O*NET general-skill levels."""
 
 # Application proxy, not an official crosswalk or measured individual rating.
+# Level-sensitive alignment applies to every skill, including software whose
+# occupation examples have no published required proficiency. Keep the
+# denominator independent of level so improving a skill cannot cancel out.
+ALIGNMENT_LEVEL_FACTORS = {"unknown": 0.4, "beginner": 0.6, "intermediate": 0.8, "advanced": 1.0}
+
 LEVEL_POINTS = {"beginner": 2.0, "intermediate": 4.0, "advanced": 6.0}
 
 

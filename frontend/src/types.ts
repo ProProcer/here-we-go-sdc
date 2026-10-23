@@ -31,12 +31,13 @@ export interface Match extends RoleSummary {
   score_breakdown: {
     general_fulfilment: number;
     proficiency_comparisons: { skill_id: string; label: string; importance: number; required_source_level: number | null; profile_level: string; profile_level_proxy: number | null; fulfilment: number; status: string }[];
+    profile_presence_alignment: number;
     profile_alignment: number;
     profile_alignment_weight: number;
     general_coverage_weight: number;
     evidence_breadth: number;
     supported_skill_count: number;
-    alignment_contributions: { skill_id: string; label: string; distinctiveness: number; role_affinity: number; normalized_weight: number; contribution: number }[];
+    alignment_contributions: { skill_id: string; label: string; distinctiveness: number; role_affinity: number; profile_level: string; level_factor: number; presence_contribution: number; normalized_weight: number; contribution: number }[];
     readiness_weight: number;
     preference_weight: number;
     coverage: {

@@ -9,7 +9,7 @@ from decimal import ROUND_HALF_UP, Decimal
 from src.ingestion.coverage import CoverageIndex
 from src.ingestion.onet import normalized
 from src.profiles.intake import validate_profile
-from src.profiles.proficiency import compare_proficiency
+from src.profiles.proficiency import ALIGNMENT_LEVEL_FACTORS, compare_proficiency
 from src.schemas.onet import CoveragePolicy, OnetCatalog
 from src.schemas.onet_profile import (
     OnetRoleMatch,
@@ -79,7 +79,10 @@ class OnetMatcher:
         # alternative tools. General requirements retain their own coverage term.
         affinity = self.role_affinities[role_id]
         profile_weight = sum(self.distinctiveness[sid] for sid in sorted(available))
+        presence_alignment = (sum(self.distinctiveness[sid] * affinity.get(sid, 0)
+                         for sid in sorted(available)) / profile_weight) if profile_weight else 0.0
         alignment = (sum(self.distinctiveness[sid] * affinity.get(sid, 0)
+                         * ALIGNMENT_LEVEL_FACTORS[supported[sid].level]
                          for sid in sorted(available)) / profile_weight) if profile_weight else 0.0
         alignment_weight = policy.profile_alignment_share
         general_weight = 1 - alignment_weight
@@ -127,7 +130,8 @@ class OnetMatcher:
             *coverage.warnings,
             f"Ranking combines {alignment_weight:.0%} distinctive CV-skill alignment and {general_weight:.0%} importance-weighted general requirement fulfilment; weights are application assumptions, not empirically calibrated.",
             "General requirement fulfilment compares level estimates with unsuppressed O*NET source levels using an application proxy: beginner=2, intermediate=4, advanced=6 on 0–7. This is not an official scale crosswalk.",
-            "Unknown profile levels earn presence alignment but no proficiency credit where a required level exists. Missing or suppressed required levels use presence only; software has no imported required proficiency rating.",
+            "All matched skills receive level-sensitive alignment credit: unknown=40%, beginner=60%, intermediate=80%, advanced=100%. These are application weights, not published job requirements.",
+            "Unknown profile levels earn partial alignment but no proficiency fulfilment where a required level exists. Missing or suppressed required levels use presence for general fulfilment; software has no imported required proficiency rating.",
             "Profiles with fewer than four supported skills receive a proportional evidence-breadth reduction; adding skills requires your review.",
             "Exact software examples contribute to CV alignment; software category familiarity and alternative-tool list coverage are shown separately and do not increase fit.",
             "Task-based transfer credit is disabled: imported task-to-skill mappings are unavailable.",
@@ -154,6 +158,7 @@ class OnetMatcher:
                 general_fulfilment=general_fulfilment,
                 proficiency_comparisons=proficiency,
                 profile_alignment=alignment,
+                profile_presence_alignment=presence_alignment,
                 profile_alignment_weight=alignment_weight,
                 general_coverage_weight=general_weight,
                 evidence_breadth=evidence_breadth,
@@ -162,8 +167,11 @@ class OnetMatcher:
                     "skill_id": sid, "label": self.skills[sid].label,
                     "distinctiveness": self.distinctiveness[sid],
                     "role_affinity": affinity.get(sid, 0),
+                    "profile_level": supported[sid].level,
+                    "level_factor": ALIGNMENT_LEVEL_FACTORS[supported[sid].level],
+                    "presence_contribution": self.distinctiveness[sid] * affinity.get(sid, 0) / profile_weight,
                     "normalized_weight": self.distinctiveness[sid] / profile_weight,
-                    "contribution": self.distinctiveness[sid] * affinity.get(sid, 0) / profile_weight,
+                    "contribution": self.distinctiveness[sid] * affinity.get(sid, 0) * ALIGNMENT_LEVEL_FACTORS[supported[sid].level] / profile_weight,
                 } for sid in sorted(available)],
                 readiness=readiness,
                 preferences=preference,

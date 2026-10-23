@@ -12,7 +12,7 @@ class OnetLearningPlan(LearningPlan):
     catalog_id: Literal["onet_31_0"] = "onet_31_0"
     family_id: str
     family: str
-    score_method: Literal["reviewed_onet_fit_v3"] = "reviewed_onet_fit_v3"
+    score_method: Literal["reviewed_onet_fit_v4"] = "reviewed_onet_fit_v4"
     software_learning_options: list[SoftwareLearningOption]
     selected_software_skill_ids: list[SkillId]
     budget_myr: float

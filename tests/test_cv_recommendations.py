@@ -19,8 +19,9 @@ class TestCVRecommendations(unittest.TestCase):
         cls.reviewed = cls.extracted.model_copy(update={"skills": [
             skill.model_copy(update={"confirmation": "confirmed"}) for skill in cls.extracted.skills]})
 
-    def profile(self, entries):
-        return create_profile("synthetic:recommendation_test", entries, catalog=self.catalog)
+    def profile(self, entries, level="unknown"):
+        profile = create_profile("synthetic:recommendation_test", entries, catalog=self.catalog)
+        return profile.model_copy(update={"skills": [skill.model_copy(update={"level": level}) for skill in profile.skills]})
 
     def test_sample_cv_recommends_data_careers_without_target_or_interest_boosts(self):
         rows = self.matcher.match(self.reviewed, top_n=10)
@@ -35,8 +36,8 @@ class TestCVRecommendations(unittest.TestCase):
         self.assertTrue(all(0 <= row.fit_score <= 100 for row in rows))
 
     def test_distinctive_tools_improve_data_fit_over_excel_alone(self):
-        excel = self.matcher.match_role(self.profile(["Microsoft Excel"]), BI)
-        data = self.matcher.match_role(self.profile(["Python", "SQL", "Tableau", "Microsoft Excel"]), BI)
+        excel = self.matcher.match_role(self.profile(["Microsoft Excel"], "intermediate"), BI)
+        data = self.matcher.match_role(self.profile(["Python", "SQL", "Tableau", "Microsoft Excel"], "intermediate"), BI)
         self.assertGreater(data.fit_score, excel.fit_score + 30)
         # One common tool is insufficient evidence for a confident career match.
         self.assertLess(excel.fit_score, 25)

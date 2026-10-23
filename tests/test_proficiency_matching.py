@@ -24,7 +24,7 @@ class TestProficiencyMatching(unittest.TestCase):
             for level in ("unknown", "beginner", "intermediate", "advanced")]
         self.assertEqual([row.fit_score for row in rows], sorted({row.fit_score for row in rows}))
         self.assertEqual(len({row.score_breakdown.coverage.general_coverage for row in rows}), 1)
-        self.assertEqual(len({row.score_breakdown.profile_alignment for row in rows}), 1)
+        self.assertEqual(len({row.score_breakdown.profile_presence_alignment for row in rows}), 1)
 
     def test_higher_required_level_reduces_credit_for_same_person(self):
         profile = self.profile("beginner")
@@ -48,7 +48,7 @@ class TestProficiencyMatching(unittest.TestCase):
         self.assertTrue(all(c.required_source_level is None and c.status == "required_level_unavailable" for c in compared))
         self.assertEqual(row.score_breakdown.general_fulfilment, row.score_breakdown.coverage.general_coverage)
 
-    def test_no_fabricated_software_requirement(self):
+    def test_software_level_changes_alignment_without_fabricated_requirement(self):
         profile = create_profile("synthetic:software_level", ["Python", "SQL", "Tableau"], catalog=self.catalog)
         scores = []
         for level in ("beginner", "advanced"):
@@ -56,4 +56,32 @@ class TestProficiencyMatching(unittest.TestCase):
             row = self.matcher.match_role(updated, BI)
             scores.append(row.fit_score)
             self.assertFalse({s.skill_id for s in profile.skills} & {c.skill_id for c in row.score_breakdown.proficiency_comparisons})
-        self.assertEqual(*scores)
+        self.assertLess(*scores)
+
+
+    def test_python_alone_increases_at_every_relevant_occupation(self):
+        profile = create_profile("synthetic:only_python", ["Python"], catalog=self.catalog)
+        levels = ("unknown", "beginner", "intermediate", "advanced")
+        results = []
+        for level in levels:
+            updated = profile.model_copy(update={"skills": [s.model_copy(update={"level": level}) for s in profile.skills]})
+            results.append({r.role_id: r for r in self.matcher.match(updated)})
+        for role_id, affinity in self.matcher.role_affinities.items():
+            scores = [rows[role_id].fit_score for rows in results]
+            if affinity.get("skill:python", 0):
+                self.assertTrue(all(a < b for a, b in zip(scores, scores[1:])), (role_id, scores))
+            else:
+                self.assertEqual(scores, [0, 0, 0, 0])
+        self.assertEqual([rows[BI].fit_score for rows in results[1:]], [9.75, 13.0, 16.25])
+
+    def test_representative_general_and_software_skills_respond_to_levels(self):
+        for label in ("Python", "SQL", "Microsoft Excel", "Reading Comprehension", "Critical Thinking"):
+            with self.subTest(skill=label):
+                profile = create_profile("synthetic:one_skill", [label], catalog=self.catalog)
+                scores = []
+                for level in ("beginner", "intermediate", "advanced"):
+                    updated = profile.model_copy(update={"skills": [s.model_copy(update={"level": level}) for s in profile.skills]})
+                    row = self.matcher.match_role(updated, BI)
+                    scores.append(row.fit_score)
+                    self.assertAlmostEqual(sum(c.contribution for c in row.score_breakdown.alignment_contributions), row.score_breakdown.profile_alignment)
+                self.assertTrue(scores[0] < scores[1] < scores[2], scores)
