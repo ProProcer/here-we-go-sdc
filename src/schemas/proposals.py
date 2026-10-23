@@ -104,7 +104,7 @@ class TaskSkillProposalRecord(TaskSkillProposal):
     finding_approval: FindingApproval
     catalog_synthetic: bool
     unmapped_role_skills: list[UnmappedRoleSkill]
-    provider: Literal["gemini"] = "gemini"
+    provider: Literal["gemini", "runpod", "groq"] = "gemini"
     requested_model: NonBlank
     returned_model: NonBlank
     prompt_version: NonBlank

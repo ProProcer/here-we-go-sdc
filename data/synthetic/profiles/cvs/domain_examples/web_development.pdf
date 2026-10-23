@@ -1,0 +1,88 @@
+%PDF-1.3
+%‚„œ”
+1 0 obj
+<<
+/Producer (pypdf)
+/Title (DANIEL ARIF \055 Fictional CV)
+>>
+endobj
+2 0 obj
+<<
+/Type /Pages
+/Count 1
+/Kids [ 4 0 R ]
+>>
+endobj
+3 0 obj
+<<
+/Type /Catalog
+/Pages 2 0 R
+>>
+endobj
+4 0 obj
+<<
+/Type /Page
+/Resources <<
+/Font <<
+/F1 <<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica
+>>
+/F2 <<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica-Bold
+>>
+>>
+>>
+/MediaBox [ 0.0 0.0 595 842 ]
+/Parent 2 0 R
+/Contents 5 0 R
+>>
+endobj
+5 0 obj
+<<
+/Length 2117
+>>
+stream
+0.08 0.23 0.31 rg BT /F2 21 Tf 1 0 0 1 43 793 Tm (DANIEL ARIF) Tj ET
+0.08 0.23 0.31 rg BT /F2 11 Tf 1 0 0 1 43 764 Tm (Frontend Web Developer) Tj ET
+0.16 0.18 0.2 rg BT /F1 9.5 Tf 1 0 0 1 43 749 Tm (web_development@example.com | Kuala Lumpur, Malaysia) Tj ET
+0.16 0.18 0.2 rg BT /F1 9.5 Tf 1 0 0 1 43 734 Tm (FICTIONAL TEST CV - all people, employers and qualifications are invented.) Tj ET
+0.08 0.23 0.31 rg BT /F2 11 Tf 1 0 0 1 43 710 Tm (PROFILE) Tj ET
+0.16 0.18 0.2 rg BT /F1 9.5 Tf 1 0 0 1 43 695 Tm (Practical experience in web development.) Tj ET
+0.08 0.23 0.31 rg BT /F2 11 Tf 1 0 0 1 43 671 Tm (EDUCATION) Tj ET
+0.16 0.18 0.2 rg BT /F1 9.5 Tf 1 0 0 1 43 656 Tm (Diploma in Software Development | Fictional Bay Academy | 2023) Tj ET
+0.08 0.23 0.31 rg BT /F2 11 Tf 1 0 0 1 43 632 Tm (EXPERIENCE) Tj ET
+0.16 0.18 0.2 rg BT /F1 9.5 Tf 1 0 0 1 43 617 Tm (Web Developer | Fictional Lantern Studio | 2023 - 2026) Tj ET
+0.16 0.18 0.2 rg BT /F1 9.5 Tf 1 0 0 1 43 602 Tm (- Built accessible interfaces with React, JavaScript, HTML and CSS for a fictional) Tj ET
+0.16 0.18 0.2 rg BT /F1 9.5 Tf 1 0 0 1 43 587 Tm (portal.) Tj ET
+0.16 0.18 0.2 rg BT /F1 9.5 Tf 1 0 0 1 43 572 Tm (- Used Node.js to implement API endpoints and Git to review versioned changes.) Tj ET
+0.16 0.18 0.2 rg BT /F1 9.5 Tf 1 0 0 1 43 557 Tm (- Applied Programming and Complex Problem Solving to fix form validation defects.) Tj ET
+0.16 0.18 0.2 rg BT /F1 9.5 Tf 1 0 0 1 43 542 Tm (- Used Critical Thinking to investigate errors and Writing to explain release changes.) Tj ET
+0.08 0.23 0.31 rg BT /F2 11 Tf 1 0 0 1 43 518 Tm (PROJECT) Tj ET
+0.16 0.18 0.2 rg BT /F1 9.5 Tf 1 0 0 1 43 503 Tm (Community Booking Portal) Tj ET
+0.16 0.18 0.2 rg BT /F1 9.5 Tf 1 0 0 1 43 488 Tm (Implemented responsive forms, keyboard navigation and automated interface checks.) Tj ET
+0.08 0.23 0.31 rg BT /F2 11 Tf 1 0 0 1 43 464 Tm (SKILLS) Tj ET
+0.16 0.18 0.2 rg BT /F1 9.5 Tf 1 0 0 1 43 449 Tm (React, JavaScript, HTML, CSS, Node.js, Git, Programming, Complex Problem Solving,) Tj ET
+0.16 0.18 0.2 rg BT /F1 9.5 Tf 1 0 0 1 43 434 Tm (Critical Thinking, Writing) Tj ET
+endstream
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000015 00000 n 
+0000000093 00000 n 
+0000000152 00000 n 
+0000000201 00000 n 
+0000000446 00000 n 
+trailer
+<<
+/Size 6
+/Root 3 0 R
+/Info 1 0 R
+>>
+startxref
+2615
+%%EOF

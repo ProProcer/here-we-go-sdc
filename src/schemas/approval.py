@@ -84,7 +84,7 @@ class FindingApproval(Contract):
     evidence_type: EvidenceType
     extracted_evidence_type: EvidenceType
     reviewed_limitations: list[NonBlank] = Field(min_length=1, max_length=4)
-    extraction_provider: Literal["gemini"]
+    extraction_provider: Literal["gemini", "runpod", "groq"]
     extraction_model: NonBlank
 
     @model_validator(mode="after")

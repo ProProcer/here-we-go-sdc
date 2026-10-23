@@ -444,26 +444,30 @@ class ReviewMenu:
         dialog.grab_set()
         frame = ttk.Frame(dialog, padding=20)
         frame.pack(fill="both", expand=True)
-        ttk.Label(frame, text="Gemini API key", font=("Segoe UI Semibold", 12)).pack(
-            anchor="w"
-        )
-        ttk.Label(
-            frame,
-            text="Used only on this laptop for this session. Never saved to a file or GitHub.",
-            wraplength=420,
-        ).pack(anchor="w", pady=(5, 12))
-        value = tk.StringVar()
-        entry = ttk.Entry(frame, textvariable=value, show="•", width=48)
-        entry.pack(fill="x")
-        entry.focus_set()
+        ttk.Label(frame, text="Groq GPT-OSS-120B / RunPod GLM / Gemini backup", font=("Segoe UI Semibold", 12)).pack(anchor="w")
+        ttk.Label(frame, text="Keys stay in this process. Endpoint settings can also be supplied in local .env.", wraplength=420).pack(anchor="w", pady=(5, 12))
+        fields = {}
+        for name, label, masked in [
+            ("GROQ_API", "Groq API key (primary)", True),
+            ("RUNPOD_API_KEY", "RunPod API key (backup)", True),
+            ("RUNPOD_ENDPOINT_ID", "RunPod model endpoint ID", False),
+            ("RUNPOD_MODEL", "Served GLM model name", False),
+            ("GEMINI_API_KEY", "Gemini API key (backup only)", True),
+        ]:
+            ttk.Label(frame, text=label).pack(anchor="w")
+            value = tk.StringVar(value="" if masked else os.environ.get(name, ""))
+            fields[name] = value
+            ttk.Entry(frame, textvariable=value, show="•" if masked else "", width=48).pack(fill="x", pady=(0, 8))
 
         def save():
-            if not value.get().strip():
-                return
-            os.environ["GEMINI_API_KEY"] = value.get().strip()
-            value.set("")
+            for name, value in fields.items():
+                if value.get().strip():
+                    os.environ[name] = value.get().strip()
+                value.set("")
+            from src.intelligence.models import default_model
+            self.service.model = default_model()
             dialog.destroy()
-            self.status.set("AI key is available for this session.")
+            self.status.set("Groq primary / RunPod GLM / Gemini backup settings updated for this session.")
 
         ttk.Button(
             frame, text="Use for this session", style="Accent.TButton", command=save

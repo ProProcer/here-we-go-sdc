@@ -225,6 +225,7 @@ class OnetCatalog(Contract):
 
 
 class CoveragePolicy(Contract):
+    profile_alignment_share: float = Field(default=0.65, gt=0, lt=1, allow_inf_nan=False)
     general_share: float = Field(default=0.5, gt=0, lt=1, allow_inf_nan=False)
     group_share: float = Field(default=0.5, gt=0, lt=1, allow_inf_nan=False)
     basis: Literal["exploratory_not_empirically_calibrated"] = (

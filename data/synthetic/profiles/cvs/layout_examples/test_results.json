@@ -1,0 +1,82 @@
+[
+  {
+    "file": "analytics_ats_single_column.pdf",
+    "source": "data_analytics.txt",
+    "composition": "ATS-friendly single column with standard headings; text-based PDF",
+    "status": "passed",
+    "missing": [],
+    "extra": [],
+    "skills": 9,
+    "seconds": 4.92
+  },
+  {
+    "file": "analytics_sidebar.pdf",
+    "source": "data_analytics.txt",
+    "composition": "Two columns, dark skills sidebar and separate experience column",
+    "status": "passed",
+    "missing": [],
+    "extra": [],
+    "skills": 9,
+    "seconds": 6.36
+  },
+  {
+    "file": "analytics_functional.pdf",
+    "source": "data_analytics.txt",
+    "composition": "Functional composition: competencies and project precede work history",
+    "status": "passed",
+    "missing": [],
+    "extra": [],
+    "skills": 9,
+    "seconds": 6.67
+  },
+  {
+    "file": "analytics_chronological.docx",
+    "source": "data_analytics.txt",
+    "composition": "Chronological, single-column Word document",
+    "status": "passed",
+    "missing": [],
+    "extra": [],
+    "skills": 9,
+    "seconds": 6.02
+  },
+  {
+    "file": "nursing_table_layout.docx",
+    "source": "healthcare_nursing.txt",
+    "composition": "Two-column Word table with skills and education in a sidebar",
+    "status": "passed",
+    "missing": [],
+    "extra": [],
+    "skills": 11,
+    "seconds": 5.78
+  },
+  {
+    "file": "web_two_page.pdf",
+    "source": "web_development.txt",
+    "composition": "Two-page CV with experience and skills continuing on page two",
+    "status": "passed",
+    "missing": [],
+    "extra": [],
+    "skills": 10,
+    "seconds": 7.25
+  },
+  {
+    "file": "accounting_scanned.pdf",
+    "source": "finance_accounting.txt",
+    "composition": "Scanned image-only PDF; no embedded text, requires OCR",
+    "status": "passed",
+    "missing": [],
+    "extra": [],
+    "skills": 10,
+    "seconds": 45.44
+  },
+  {
+    "file": "engineering_styled.docx",
+    "source": "mechanical_engineering.txt",
+    "composition": "Styled Word CV with colored header and shaded two-column table",
+    "status": "passed",
+    "missing": [],
+    "extra": [],
+    "skills": 11,
+    "seconds": 11.53
+  }
+]

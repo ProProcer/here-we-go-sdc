@@ -2,7 +2,7 @@
 
 uv run --no-project --with pynacl python -m scripts.configure_role3_actions --configure-secret
 python -m scripts.configure_role3_actions --status --sha COMMIT
-Tokens and the Gemini key stay in memory and are never printed or written to disk.
+Tokens and model keys stay in memory and are never printed or written to disk.
 """
 
 import argparse
@@ -67,33 +67,37 @@ def main():
     parser.add_argument("--status", action="store_true")
     parser.add_argument("--sha")
     args = parser.parse_args()
+    from src.config import load_local_environment
+    load_local_environment()
     token = credential()
     if args.configure_secret:
         secrets = api(token, "/actions/secrets")
-        if any(s["name"] == "GEMINI_API_KEY" for s in secrets["secrets"]):
-            print(
-                "Repository GEMINI_API_KEY already configured; preserved existing secret."
-            )
-        else:
-            from nacl.public import PublicKey, SealedBox
-
-            key = os.environ.get("GEMINI_API_KEY")
+        existing = {entry["name"] for entry in secrets["secrets"]}
+        from nacl.public import PublicKey, SealedBox
+        public = None
+        for name in ("GROQ_API", "RUNPOD_API_KEY", "GEMINI_API_KEY"):
+            if name in existing:
+                print(f"Repository {name} already configured; preserved existing secret.")
+                continue
+            key = os.environ.get(name, "").strip()
             if not key:
-                raise ValueError("Local Gemini key is not configured")
-            public = api(token, "/actions/secrets/public-key")
-            encrypted = SealedBox(PublicKey(base64.b64decode(public["key"]))).encrypt(
-                key.encode()
-            )
-            api(
-                token,
-                "/actions/secrets/GEMINI_API_KEY",
-                method="PUT",
-                payload={
-                    "encrypted_value": base64.b64encode(encrypted).decode(),
-                    "key_id": public["key_id"],
-                },
-            )
-            print("Configured encrypted repository GEMINI_API_KEY.")
+                print(f"Local {name} is absent; secret not uploaded.")
+                continue
+            public = public or api(token, "/actions/secrets/public-key")
+            encrypted = SealedBox(PublicKey(base64.b64decode(public["key"]))).encrypt(key.encode())
+            api(token, "/actions/secrets/" + name, method="PUT", payload={
+                "encrypted_value": base64.b64encode(encrypted).decode(), "key_id": public["key_id"]})
+            print(f"Configured encrypted repository {name}.")
+        configured_variables = {entry["name"] for entry in api(token, "/actions/variables")["variables"]}
+        for name in ("GROQ_MODEL", "RUNPOD_ENDPOINT_ID", "RUNPOD_MODEL"):
+            value = os.environ.get(name, "").strip()
+            if not value:
+                continue
+            if name in configured_variables:
+                print(f"Repository {name} already configured; preserved existing variable.")
+            else:
+                api(token, "/actions/variables", method="POST", payload={"name": name, "value": value})
+                print(f"Configured repository {name}.")
     if args.status:
         workflow = api(token, "/actions/workflows/role3-discovery.yml")
         print(json.dumps({k: workflow[k] for k in ("id", "name", "state", "html_url")}))

@@ -1,13 +1,15 @@
-"""Real-catalog matching, with bounded group credit and exact-tool evidence."""
+"""Real-catalog skill alignment and proficiency-aware general requirements."""
 
 import hashlib
 import json
-from collections import defaultdict
+from collections import Counter, defaultdict
+from math import log
 from decimal import ROUND_HALF_UP, Decimal
 
 from src.ingestion.coverage import CoverageIndex
 from src.ingestion.onet import normalized
 from src.profiles.intake import validate_profile
+from src.profiles.proficiency import compare_proficiency
 from src.schemas.onet import CoveragePolicy, OnetCatalog
 from src.schemas.onet_profile import (
     OnetRoleMatch,
@@ -36,6 +38,22 @@ class OnetMatcher:
         self.families = {
             f.family_id: f.label for f in catalog.taxonomy.occupational_families
         }
+        # Occupation frequency makes specialist skills more informative than
+        # ubiquitous tools. Each occupation contributes at most once per skill.
+        self.role_affinities = {}
+        frequency = Counter()
+        for role in catalog.roles:
+            affinity = {r.skill_id: r.importance for r in self.index.general[role.role_id]}
+            for association in self.index.software[role.role_id]:
+                affinity[association.skill_id] = max(
+                    affinity.get(association.skill_id, 0),
+                    1.0 if association.in_demand else 0.5)
+            self.role_affinities[role.role_id] = affinity
+            frequency.update(affinity.keys())
+        self.distinctiveness = {
+            sid: 1 + log((1 + len(catalog.roles)) / (1 + frequency[sid]))
+            for sid in self.skills
+        }
         self.interest_roles = defaultdict(set)
         for role in catalog.roles:
             for name in [role.role_title, *role.aliases, self.families[role.family_id]]:
@@ -57,10 +75,22 @@ class OnetMatcher:
         }
         matching = sorted(i for i in recognized if role_id in self.interest_roles[i])
         preference = len(matching) / len(recognized) if recognized else None
-        readiness = coverage.score / 100
+        # Profile-side alignment does not divide by a role's long list of
+        # alternative tools. General requirements retain their own coverage term.
+        affinity = self.role_affinities[role_id]
+        profile_weight = sum(self.distinctiveness[sid] for sid in sorted(available))
+        alignment = (sum(self.distinctiveness[sid] * affinity.get(sid, 0)
+                         for sid in sorted(available)) / profile_weight) if profile_weight else 0.0
+        alignment_weight = policy.profile_alignment_share
+        general_weight = 1 - alignment_weight
+        proficiency, general_fulfilment = compare_proficiency(
+            self.index.general[role_id], supported, self.skills)
+        by_skill = {row["skill_id"]: row for row in proficiency}
+        readiness = alignment_weight * alignment + general_weight * general_fulfilment
+        evidence_breadth = min(1.0, len(available) / 4)
         readiness_weight = 0.9 if preference is not None else 1.0
         preference_weight = 0.1 if preference is not None else 0.0
-        raw = 100 * (
+        raw = 100 * evidence_breadth * (
             readiness_weight * readiness + preference_weight * (preference or 0)
         )
         matched, missing = [], []
@@ -71,11 +101,11 @@ class OnetMatcher:
                 label=self.skills[requirement.skill_id].label,
                 importance=requirement.importance,
                 coverage=int(skill is not None),
-                weighted_contribution=requirement.importance if skill else 0,
+                weighted_contribution=requirement.importance * by_skill[requirement.skill_id]["fulfilment"],
                 evidence=skill.evidence if skill else [],
-                reason="Self-reported or reviewed claim; proficiency is unassessed."
+                reason="Confirmed or self-reported skill evidence. Any AI level is an estimate, not a certification."
                 if skill
-                else "Not confirmed in the reviewed profile; not proof of inability.",
+                else "You have not included this skill in your confirmed skills.",
             )
             (matched if skill else missing).append(contribution)
         associations = self.index.software[role_id]
@@ -95,6 +125,11 @@ class OnetMatcher:
         warnings = [
             *profile.warnings,
             *coverage.warnings,
+            f"Ranking combines {alignment_weight:.0%} distinctive CV-skill alignment and {general_weight:.0%} importance-weighted general requirement fulfilment; weights are application assumptions, not empirically calibrated.",
+            "General requirement fulfilment compares level estimates with unsuppressed O*NET source levels using an application proxy: beginner=2, intermediate=4, advanced=6 on 0–7. This is not an official scale crosswalk.",
+            "Unknown profile levels earn presence alignment but no proficiency credit where a required level exists. Missing or suppressed required levels use presence only; software has no imported required proficiency rating.",
+            "Profiles with fewer than four supported skills receive a proportional evidence-breadth reduction; adding skills requires your review.",
+            "Exact software examples contribute to CV alignment; software category familiarity and alternative-tool list coverage are shown separately and do not increase fit.",
             "Task-based transfer credit is disabled: imported task-to-skill mappings are unavailable.",
             "Preferences use exact occupation titles, aliases or occupational-family labels; target-role pinning never increases scores.",
         ]
@@ -116,6 +151,20 @@ class OnetMatcher:
             ),
             score_breakdown=OnetScoreBreakdown(
                 coverage=coverage,
+                general_fulfilment=general_fulfilment,
+                proficiency_comparisons=proficiency,
+                profile_alignment=alignment,
+                profile_alignment_weight=alignment_weight,
+                general_coverage_weight=general_weight,
+                evidence_breadth=evidence_breadth,
+                supported_skill_count=len(available),
+                alignment_contributions=[{
+                    "skill_id": sid, "label": self.skills[sid].label,
+                    "distinctiveness": self.distinctiveness[sid],
+                    "role_affinity": affinity.get(sid, 0),
+                    "normalized_weight": self.distinctiveness[sid] / profile_weight,
+                    "contribution": self.distinctiveness[sid] * affinity.get(sid, 0) / profile_weight,
+                } for sid in sorted(available)],
                 readiness=readiness,
                 preferences=preference,
                 readiness_weight=readiness_weight,

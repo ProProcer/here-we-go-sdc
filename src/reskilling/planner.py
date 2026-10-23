@@ -20,7 +20,7 @@ from src.reskilling.course_catalog import (
     courses_for_skills,
     trusted_providers_for_family,
 )
-from src.reskilling.sdg_mapper import SDGRuleSet, map_sdg_connections
+from src.reskilling.sdg_mapper import SDGRuleSet, map_role_sdg_connections, map_sdg_connections
 from src.reskilling.validator import (
     CourseCandidate,
     PageFetcher,
@@ -828,6 +828,11 @@ def build_learning_plan(
         rules=sdg_rules,
         catalog=catalog,
     )
+    if is_onet:
+        role_connections = map_role_sdg_connections(role_match.role_id, catalog=catalog, rules=sdg_rules)
+        role_targets = {connection.target_id for connection in role_connections}
+        sdg_connections = [*role_connections,
+            *[connection for connection in sdg_connections if connection.target_id not in role_targets]]
     if planned_skill_ids and not sdg_connections:
         warnings.append("No curated SDG mapping was available for the planned skills.")
     if selected and all(course.cost.amount == 0 for course in selected):

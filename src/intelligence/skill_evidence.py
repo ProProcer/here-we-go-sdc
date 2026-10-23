@@ -7,14 +7,13 @@ python -m src.intelligence.skill_evidence role --id role:onet_15_2051_01
 
 import argparse
 import json
-import os
 from datetime import UTC, datetime
 from pathlib import Path
 
 from src.ingestion.selection import real_catalog
 from src.intelligence.discovery import STATE
 from src.intelligence.extractors import ExtractionError
-from src.intelligence.gemini import DEFAULT_MODEL, GeminiClient
+from src.intelligence.models import ModelClient, default_model
 from src.intelligence.source_review import (
     PROMPT_VERSION as SOURCE_PROMPT_VERSION,
 )
@@ -191,7 +190,7 @@ def saved_records(directory):
 
 def build_plan(*, state_path=STATE, catalog=None, model=None):
     catalog = catalog or real_catalog()
-    model = model or os.environ.get("GEMINI_MODEL", DEFAULT_MODEL)
+    model = model or default_model()
     skills = skills_from_catalog(catalog)
     news, waiting = stored_news(state_path)
     directory = Path(state_path).parent
@@ -244,7 +243,7 @@ def run_assessments(
     now = now or datetime.now(UTC)
     if now.utcoffset() is None:
         raise ValueError("Timezone-aware time required")
-    client = client or GeminiClient.from_environment()
+    client = client or ModelClient.from_environment()
     skills, news, missing, _, stats = build_plan(
         state_path=state_path, catalog=catalog, model=client.model
     )

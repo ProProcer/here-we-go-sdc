@@ -2,6 +2,7 @@
 
 import unittest
 import re
+import os
 from unittest.mock import patch
 from io import BytesIO
 
@@ -17,6 +18,9 @@ ROLE = "role:onet_15_2051_01"
 class TestWebApp(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
+        environment = patch.dict(os.environ, {"GROQ_API": "", "GROQ_API_KEY": "", "GEMINI_API_KEY": "", "RUNPOD_API_KEY": "", "RUNPOD_ENDPOINT_ID": ""})
+        environment.start()
+        cls.addClassCleanup(environment.stop)
         cls.client = TestClient(app)
         cls.client.__enter__()
 
@@ -89,6 +93,28 @@ class TestWebApp(unittest.TestCase):
         self.assertTrue(all(row["fit_score"] == 0 for row in empty))
         self.assertNotEqual(first, empty)
 
+    def test_ai_retry_applies_levels_and_rejects_stale_requests(self):
+        from types import SimpleNamespace
+        from src.profiles.assessment import AssessmentBatch
+
+        data, headers = self.upload(b"Used Python independently to build a fictional dashboard.")
+        skill_id = data["profile"]["skills"][0]["skill_id"]
+        result = SimpleNamespace(returned_model="test-model", value=AssessmentBatch(skills=[{
+            "skill_id": skill_id, "level": "intermediate", "confidence": "medium",
+            "rationale": "Independent project application.", "evidence_indices": [0]}]))
+        with patch("src.profiles.assessment.assessment_configuration", return_value=("runpod", [])), \
+             patch("src.profiles.assessment.assessment_client") as factory:
+            factory.return_value.generate.return_value = result
+            response = self.client.post("/api/v2/profiles/assess", headers=headers,
+                json={"revision": 0, "skills": data["profile"]["skills"]})
+        self.assertEqual(response.status_code, 200, response.text)
+        assessed = response.json()
+        self.assertEqual(assessed["profile"]["skills"][0]["level"], "intermediate")
+        self.assertEqual(assessed["profile"]["assessment_status"]["provider"], "runpod")
+        self.assertEqual(assessed["profile"]["skills"][0]["confirmation"], "unverified")
+        self.assertEqual(self.client.post("/api/v2/profiles/assess", headers=headers,
+            json={"revision": 0, "skills": data["profile"]["skills"]}).status_code, 409)
+
     def test_actual_gaps_scenarios_and_fit_preservation(self):
         data, headers = self.upload()
         reviewed = self.review(data, headers, desired_role_id=ROLE,
@@ -106,9 +132,10 @@ class TestWebApp(unittest.TestCase):
         self.assertNotEqual(plan["prioritized_gaps"], rapid["prioritized_gaps"])
         restored = self.client.post("/api/v2/pathways", headers=headers, json=request).json()["plan"]
         self.assertEqual(plan["prioritized_gaps"], restored["prioritized_gaps"])
-        self.assertEqual(plan["selected_courses"], [])
+        self.assertTrue(plan["selected_courses"])
+        self.assertTrue(all(course["cost"]["amount"] == 0 for course in plan["selected_courses"]))
         self.assertTrue(plan["sdg_connections"])
-        self.assertTrue(all(step["resource_status"] == "verified_resource_not_found"
+        self.assertTrue(any(step["resource_status"] == "verified"
                             for milestone in plan["milestones"] for step in milestone["steps"]))
 
     def test_unsupported_scenarios_and_unknown_roles(self):
@@ -117,10 +144,14 @@ class TestWebApp(unittest.TestCase):
         role_id = roles["roles"][0]["role_id"]
         self.assertNotEqual(role_id, ROLE)
         baseline = self.client.get(f"/api/v2/roles/{role_id}/outlook").json()
-        self.assertEqual(baseline["available_scenarios"], ["baseline"])
+        self.assertEqual(baseline["available_scenarios"], ["baseline", "moderate_ai_change", "rapid_ai_change"])
         self.assertEqual(baseline["baseline_label"], "Insufficient evidence")
         response = self.client.get(f"/api/v2/roles/{role_id}/outlook?scenario_id=rapid_ai_change")
-        self.assertEqual(response.status_code, 422)
+        self.assertEqual(response.status_code, 200)
+        rapid = response.json()
+        self.assertNotEqual(baseline["scenario"]["skill_priorities"], rapid["scenario"]["skill_priorities"])
+        self.assertEqual(baseline["sources"], rapid["sources"])
+        self.assertEqual(baseline["general_research"][0]["scope"], "general_context_not_role_evidence")
         self.assertEqual(self.client.get("/api/v2/roles/unknown").status_code, 404)
         self.assertEqual(self.client.get(f"/api/v2/roles/{role_id}/evidence").json()["chains"], [])
 

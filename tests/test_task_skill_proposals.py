@@ -428,7 +428,7 @@ class TestTaskSkillProposals(unittest.TestCase):
                 0,
             )
         error = io.StringIO()
-        with patch.dict("os.environ", {}, clear=True), redirect_stderr(error):
+        with patch.dict("os.environ", {}, clear=True), patch("src.intelligence.models.load_local_environment"), redirect_stderr(error):
             self.assertEqual(
                 main(
                     [

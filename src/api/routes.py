@@ -37,6 +37,34 @@ class PlanRequest(Contract):
     selected_software_skill_ids: list[str] = Field(default_factory=list, max_length=50)
 
 
+class AssessmentRequest(Contract):
+    revision: int = Field(ge=0)
+    skills: list[ProfileSkill] = Field(max_length=500)
+
+
+@router.post("/profiles/assess")
+def assess_profile(request: Request, body: AssessmentRequest, x_session_id: str = Header()):
+    from src.profiles.assessment import assess_levels
+
+    session = session_for(request, x_session_id)
+    with session.lock:
+        if session.revision != body.revision:
+            raise HTTPException(409, "Your profile changed. Review it and try again.")
+        try:
+            profile = request.app.state.backend.review_profile(session.profile, body.skills)
+        except ValueError as error:
+            raise HTTPException(422, "Choose only recognized skills with supporting evidence.") from error
+        if not extraction_slots.acquire(blocking=False):
+            raise HTTPException(429, "AI assessment is busy. Please try again shortly.")
+        try:
+            session.profile = assess_levels(profile, catalog=request.app.state.backend.catalog)
+        finally:
+            extraction_slots.release()
+        session.revision += 1
+        session.reviewed = False
+        return {"revision": session.revision, "profile": session.profile.model_dump(mode="json")}
+
+
 def session_for(request, token):
     return request.app.state.sessions.get(token)
 

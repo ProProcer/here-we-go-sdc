@@ -88,6 +88,7 @@ class StructuredResponse(Generic[ResponseT]):
     value: ResponseT
     returned_model: str
     request_attempts: tuple[dict, ...] = ()
+    provider: str | None = None
 
 
 class TemporaryModelError(RuntimeError):
@@ -138,6 +139,7 @@ class GeminiClient:
         response_model: type[ResponseT],
         *,
         json_schema: dict | None = None,
+        timeout_seconds: float | None = None,
     ) -> StructuredResponse[ResponseT]:
         payload = {
             "systemInstruction": {"parts": [{"text": instruction}]},
@@ -157,7 +159,7 @@ class GeminiClient:
         }
         # Only availability failures can move to another model. An invalid,
         # blocked or semantically rejected result must not get another opinion.
-        deadline = time.monotonic() + MAX_GENERATION_SECONDS
+        deadline = time.monotonic() + (timeout_seconds or MAX_GENERATION_SECONDS)
         attempts = []
         models = tuple(dict.fromkeys((self.model, *self.fallback_models)))
         for index, model in enumerate(models):

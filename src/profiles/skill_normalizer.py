@@ -19,6 +19,12 @@ def skill_index(taxonomy: Taxonomy | CatalogTaxonomy) -> dict[str, Skill]:
             if key in index and index[key].skill_id != skill.skill_id:
                 raise ValueError(f"Ambiguous taxonomy alias: {name}")
             index[key] = skill
+    # Explicit abbreviations resolve to existing canonical records only.
+    for alias, canonical in {"HTML": "Hypertext markup language HTML",
+            "CSS": "Cascading style sheets CSS"}.items():
+        target = index.get(normalize_key(canonical))
+        if target is not None and normalize_key(alias) not in index:
+            index[normalize_key(alias)] = target
     return index
 
 

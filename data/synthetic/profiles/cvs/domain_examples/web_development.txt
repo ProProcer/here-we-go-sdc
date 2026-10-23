@@ -1,0 +1,24 @@
+DANIEL ARIF
+Frontend Web Developer
+web_development@example.com | Kuala Lumpur, Malaysia
+FICTIONAL TEST CV - all people, employers and qualifications are invented.
+
+PROFILE
+Practical experience in web development.
+
+EDUCATION
+Diploma in Software Development | Fictional Bay Academy | 2023
+
+EXPERIENCE
+Web Developer | Fictional Lantern Studio | 2023 - 2026
+- Built accessible interfaces with React, JavaScript, HTML and CSS for a fictional portal.
+- Used Node.js to implement API endpoints and Git to review versioned changes.
+- Applied Programming and Complex Problem Solving to fix form validation defects.
+- Used Critical Thinking to investigate errors and Writing to explain release changes.
+
+PROJECT
+Community Booking Portal
+Implemented responsive forms, keyboard navigation and automated interface checks.
+
+SKILLS
+React, JavaScript, HTML, CSS, Node.js, Git, Programming, Complex Problem Solving, Critical Thinking, Writing

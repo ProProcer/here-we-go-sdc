@@ -16,6 +16,8 @@ class ExtractionError(RuntimeError):
 class ModelExtraction:
     batch: ExtractionBatch
     returned_model: str
+    provider: str = "gemini"
+    request_attempts: tuple[dict, ...] = ()
 
 
 class FindingExtractor(Protocol):

@@ -1,0 +1,54 @@
+[
+  {
+    "id": "data_analytics",
+    "domain": "Data analytics",
+    "primary_file": "data_analytics.pdf",
+    "files": [
+      "data_analytics.pdf",
+      "data_analytics.docx",
+      "data_analytics.txt"
+    ]
+  },
+  {
+    "id": "web_development",
+    "domain": "Web development",
+    "primary_file": "web_development.docx",
+    "files": [
+      "web_development.pdf",
+      "web_development.docx",
+      "web_development.txt"
+    ]
+  },
+  {
+    "id": "healthcare_nursing",
+    "domain": "Healthcare / nursing",
+    "primary_file": "healthcare_nursing.txt",
+    "files": [
+      "healthcare_nursing.pdf",
+      "healthcare_nursing.docx",
+      "healthcare_nursing.txt"
+    ]
+  },
+  {
+    "id": "finance_accounting",
+    "domain": "Finance / accounting",
+    "primary_file": "finance_accounting.png",
+    "files": [
+      "finance_accounting.pdf",
+      "finance_accounting.docx",
+      "finance_accounting.txt",
+      "finance_accounting.png"
+    ]
+  },
+  {
+    "id": "mechanical_engineering",
+    "domain": "Mechanical engineering",
+    "primary_file": "mechanical_engineering.jpg",
+    "files": [
+      "mechanical_engineering.pdf",
+      "mechanical_engineering.docx",
+      "mechanical_engineering.txt",
+      "mechanical_engineering.jpg"
+    ]
+  }
+]

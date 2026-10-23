@@ -3,7 +3,7 @@ export const apiUrl = (path: string) => `/api/v2${path}`;
 // Tokens stay in memory in App, never in localStorage or cookies.
 export async function request<T>(path: string, token: string | null, options: RequestInit = {}): Promise<T> {
   const controller = new AbortController();
-  const timer = window.setTimeout(() => controller.abort(), 75000);
+  const timer = window.setTimeout(() => controller.abort(), 210000);
   try {
     const headers = new Headers(options.headers);
     if (token) headers.set('X-Session-ID', token);

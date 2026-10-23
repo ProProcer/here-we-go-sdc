@@ -6,8 +6,10 @@ export interface ProfileSkill extends Skill {
   confirmation: 'confirmed' | 'unverified';
   level: 'unknown' | 'beginner' | 'intermediate' | 'advanced';
   evidence: string[];
+  level_assessment?: { method: 'ai_estimate'; model: string; provider?: 'groq' | 'runpod' | 'gemini' | null; confidence: string; rationale: string; evidence_indices: number[] } | null;
 }
 export interface Profile {
+  assessment_status?: { status: 'completed' | 'failed' | 'not_configured'; provider: string; message: string; assessed_skill_count: number; error_code: string | null; primary_provider?: string; used_backup?: boolean } | null;
   skills: ProfileSkill[];
   constraints: { budget_myr: number | null; hours_per_week: number | null };
   interests: string[];
@@ -27,6 +29,14 @@ export interface Match extends RoleSummary {
   software_learning_options: SoftwareOption[];
   warnings: string[];
   score_breakdown: {
+    general_fulfilment: number;
+    proficiency_comparisons: { skill_id: string; label: string; importance: number; required_source_level: number | null; profile_level: string; profile_level_proxy: number | null; fulfilment: number; status: string }[];
+    profile_alignment: number;
+    profile_alignment_weight: number;
+    general_coverage_weight: number;
+    evidence_breadth: number;
+    supported_skill_count: number;
+    alignment_contributions: { skill_id: string; label: string; distinctiveness: number; role_affinity: number; normalized_weight: number; contribution: number }[];
     readiness_weight: number;
     preference_weight: number;
     coverage: {
@@ -42,6 +52,7 @@ export interface EvidenceSource {
   published_at: string; retrieved_at: string; coverage: string; limitations: string;
 }
 export interface Outlook {
+  general_research?: { title: string; publisher: string; source_url: string; published_at: string; checked_at: string; summary: string }[];
   learning_priority_evidence?: PriorityEvidence;
   baseline_label: string;
   available_scenarios: ScenarioId[];
@@ -101,6 +112,7 @@ export interface Course {
   prerequisite_skill_ids: string[];
 }
 export interface SdgConnection {
+  scope?: 'learning' | 'role_application';
   sdg_id: string; target_id: string; rationale: string; contribution: string;
   evidence_kind: string; evidence_url: string; skill_ids: string[];
 }

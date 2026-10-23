@@ -149,7 +149,7 @@ Python/SQL skill implications. It includes an offline example and live-fetch
 receipt; it does not constitute a deployed application or employment forecast.
 
 Role 3 also supports [automatic candidate finding extraction](docs/ROLE_3_EXTRACTION.md)
-from an approved report URL using Gemini. Generated findings remain in a separate
+from an approved report URL using Groq GPT-OSS-120B, with RunPod GLM and Gemini as backups. Generated findings remain in a separate
 review queue until an owner checks them; accepted evidence is not changed by extraction.
 The [approval CLI](docs/ROLE_3_APPROVAL.md) prepares a review plan and admits an
 explicitly approved finding through the refresh pipeline, with reviewer/source
@@ -169,13 +169,13 @@ npm --prefix frontend run build
 python -m src.main
 ```
 
-Open **http://localhost:8000**. Upload a fictional CV or choose **Try sample** to parse the downloadable fictional PDF. Confirm the extracted skills before exploring roles. To compare scenarios, select **Business Intelligence Analysts** as your target: moderate/rapid assumptions currently cover this occupation only.
+Open **http://localhost:8000**. Upload a fictional CV or choose **Try sample** to parse the downloadable fictional PDF. Confirm the extracted skills before exploring roles. Moderate/rapid hypothetical scenarios now work across the real occupational catalog; Business Intelligence Analysts retains its specific configured stress tests. See [user-flow integration and next steps](docs/USER_FLOW_INTEGRATION.md) for AI estimates, evidence review, course coverage and SDGs.
 
 For frontend development, keep Python running in one terminal and run `npm --prefix frontend run dev` in another. Open **http://localhost:5173** for Vite's live updates. Vite forwards `/api` to Python on port 8000; profiles stay in backend memory. `npm --prefix frontend run build` checks TypeScript and generates the production build. Rebuild to see frontend changes on port 8000. `node_modules/`, `dist/` and build metadata are ignored; commit `frontend/package-lock.json`.
 
 Supported uploads: PDF, DOCX, UTF-8 TXT, JPG and PNG, up to 2 MiB; PDFs up to five pages. Scanned pages and images use local CPU OCR with packaged RapidOCR models. Extraction is limited to the catalog vocabulary; always review the evidence and correct missed or mistaken skills. There is no ATS-template requirement.
 
-The pulled real-role evidence ledger contains one source and two contextual task interpretations for Business Intelligence Analysts. Other roles retain insufficient-evidence states. Role 3's existing shared skill evidence and role-impact lookups are connected to read-only HTTP routes and expandable evidence panels. Only approved records are displayed; the committed approval stores remain empty. Reviewed learning-priority metadata and course-cache status are also shown through disclosures. The verified course cache remains empty, so the app supplies learning objectives without invented course links. These website lookups make no Gemini calls. A Gemini key is needed only for existing background review jobs, through GitHub Actions Secrets or Replit Secrets when running those jobs there.
+The pulled real-role evidence ledger contains one source and two contextual task interpretations for Business Intelligence Analysts. Other roles retain insufficient-evidence states. Role 3's existing shared skill evidence and role-impact lookups are connected to read-only HTTP routes and expandable evidence panels. Only approved records are displayed; the committed approval stores remain empty. Reviewed learning-priority metadata and course-cache status are also shown through disclosures. The verified course catalog now includes six free OpenLearn courses; uncovered skills retain practice objectives and an explicit resource-not-found state. Evidence lookups make no Gemini calls. CV intake uses the shared Groq GPT-OSS-120B primary / RunPod GLM / Gemini backup router to estimate levels for up to 12 extracted skills, with explanations for review. RunPod requires a deployed vLLM-compatible GLM model endpoint. Research review, extraction, skill mapping and role-impact jobs use the same routing policy. See [model provider setup and deployment status](docs/AI_PROVIDERS.md). Known local `.env` settings are loaded at startup. Failed assessments now show the specific failure and a retry button; manual corrections are optional. Without AI, intake still works and levels remain unknown. Background review jobs use GROQ_API; RunPod and Gemini credentials are reserved for backup.
 
 `python -m src.main` is the deployment entry point. It binds to `0.0.0.0`, reads `PORT` (default `8000`), and uses one worker. No API key is needed for CV intake, matching or the cached learning planner.
 
@@ -241,3 +241,12 @@ The repository will include the **Apache License 2.0** as required by the Partic
 - [ ] Replit used and actual proof captured
 - [ ] RunPod used **if** a GPU task is performed, with actual proof
 - [ ] Six official preliminary items submitted through portal
+
+CV recommendations use a blend of distinctive skill alignment and general requirement coverage. See [the matching formula and sample-CV acceptance results](docs/CV_MATCHING.md).
+
+CV assessment validates canonical IDs against the database before and after AI,
+and supplies skill kinds and definitions to the model. Matching v3 includes a
+transparent comparison of estimated general-skill proficiency with available
+O*NET required levels. See [the formula](docs/CV_MATCHING.md),
+[CV formats](data/synthetic/profiles/cvs/domain_examples/README.md) and
+[composition/styling checks](data/synthetic/profiles/cvs/layout_examples/README.md).

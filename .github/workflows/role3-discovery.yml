@@ -10,6 +10,9 @@ on:
       - '.github/workflows/role3-discovery.yml'
       - 'src/intelligence/discovery.py'
       - 'src/intelligence/gemini.py'
+      - 'src/intelligence/models.py'
+      - 'src/intelligence/runpod_client.py'
+      - 'src/config.py'
       - 'src/intelligence/source_review.py'
       - 'src/intelligence/skill_evidence.py'
       - 'src/intelligence/role_evidence.py'
@@ -34,6 +37,14 @@ jobs:
   discover:
     runs-on: ubuntu-latest
     timeout-minutes: 40
+    env:
+      GROQ_API: ${{ secrets.GROQ_API }}
+      GROQ_MODEL: openai/gpt-oss-120b
+      RUNPOD_API_KEY: ${{ secrets.RUNPOD_API_KEY }}
+      RUNPOD_ENDPOINT_ID: ${{ vars.RUNPOD_ENDPOINT_ID }}
+      RUNPOD_MODEL: ${{ vars.RUNPOD_MODEL || 'zai-org/GLM-4.7-Flash' }}
+      LLM_PROVIDER: groq
+      LLM_FALLBACK_PROVIDER: runpod,gemini
     steps:
       - uses: actions/checkout@v7
         with:
@@ -63,7 +74,7 @@ jobs:
           GEMINI_FALLBACK_MODELS: ${{ vars.GEMINI_FALLBACK_MODELS || 'gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.8-flash' }}
         shell: bash
         run: |
-          if [ -n "$GEMINI_API_KEY" ]; then
+          if [ -n "$GROQ_API" ] || [ -n "$RUNPOD_API_KEY" ] || [ -n "$GEMINI_API_KEY" ]; then
             python -m src.intelligence.discovery run --extract --max-extractions 3
           else
             python -m src.intelligence.discovery run
@@ -75,7 +86,7 @@ jobs:
           GEMINI_FALLBACK_MODELS: ${{ vars.GEMINI_FALLBACK_MODELS || 'gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.8-flash' }}
         shell: bash
         run: |
-          if [ -n "$GEMINI_API_KEY" ]; then
+          if [ -n "$GROQ_API" ] || [ -n "$RUNPOD_API_KEY" ] || [ -n "$GEMINI_API_KEY" ]; then
             python -m src.intelligence.source_review run --max-reviews 3
           else
             python -m src.intelligence.source_review show
@@ -88,7 +99,7 @@ jobs:
           GEMINI_FALLBACK_MODELS: ${{ vars.GEMINI_FALLBACK_MODELS || 'gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.8-flash' }}
         shell: bash
         run: |
-          if [ -n "$GEMINI_API_KEY" ]; then
+          if [ -n "$GROQ_API" ] || [ -n "$RUNPOD_API_KEY" ] || [ -n "$GEMINI_API_KEY" ]; then
             python -m src.intelligence.skill_evidence run --max-batches 3
           else
             python -m src.intelligence.skill_evidence show
@@ -101,7 +112,7 @@ jobs:
           GEMINI_FALLBACK_MODELS: ${{ vars.GEMINI_FALLBACK_MODELS || 'gemini-3.5-flash-lite,gemini-3.6-flash,gemini-3.8-flash' }}
         shell: bash
         run: |
-          if [ -n "$GEMINI_API_KEY" ]; then
+          if [ -n "$GROQ_API" ] || [ -n "$RUNPOD_API_KEY" ] || [ -n "$GEMINI_API_KEY" ]; then
             python -m src.intelligence.role_evidence run --max-batches 3
           else
             python -m src.intelligence.role_evidence show

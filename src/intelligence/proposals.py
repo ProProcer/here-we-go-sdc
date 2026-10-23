@@ -17,7 +17,7 @@ from src.intelligence.extractors import ExtractionError
 from src.intelligence.feeds import ReviewedSource
 from src.intelligence.proposers import (
     PROMPT_VERSION,
-    GeminiTaskSkillProposer,
+    ModelTaskSkillProposer,
     TaskSkillProposer,
 )
 from src.intelligence.storage import atomic_json
@@ -272,6 +272,7 @@ def generate_task_skill_proposal(
         unmapped_role_skills=list(context.unmapped_skills),
         requested_model=proposer.model,
         returned_model=result.returned_model,
+        provider=result.provider,
         prompt_version=PROMPT_VERSION,
         status=status,
         limitations=[
@@ -363,7 +364,7 @@ def main(argv: list[str] | None = None) -> int:
             record, path = generate_task_skill_proposal(
                 args.review,
                 args.role,
-                GeminiTaskSkillProposer.from_environment(args.model),
+                ModelTaskSkillProposer.from_environment(args.model),
                 evidence_path=args.ledger,
                 output_directory=args.output_dir,
             )

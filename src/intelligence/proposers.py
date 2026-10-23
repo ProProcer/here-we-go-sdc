@@ -3,7 +3,8 @@
 from dataclasses import dataclass
 from typing import Protocol
 
-from src.intelligence.gemini import GeminiClient, gemini_json_schema
+from src.intelligence.gemini import gemini_json_schema
+from src.intelligence.models import ModelClient
 from src.schemas.proposals import TaskSkillProposal
 
 PROMPT_VERSION = "task-skill-proposals-v2"
@@ -43,6 +44,7 @@ Keep explanations concise, original and conditional. Return only the JSON schema
 class ModelProposal:
     proposal: TaskSkillProposal
     returned_model: str
+    provider: str = "gemini"
 
 
 class TaskSkillProposer(Protocol):
@@ -53,16 +55,16 @@ class TaskSkillProposer(Protocol):
 
 
 @dataclass(frozen=True)
-class GeminiTaskSkillProposer:
-    client: GeminiClient
+class ModelTaskSkillProposer:
+    client: ModelClient
 
     @property
     def model(self) -> str:
         return self.client.model
 
     @classmethod
-    def from_environment(cls, model: str | None = None) -> "GeminiTaskSkillProposer":
-        return cls(GeminiClient.from_environment(model))
+    def from_environment(cls, model: str | None = None) -> "ModelTaskSkillProposer":
+        return cls(ModelClient.from_environment(model))
 
     def propose(self, data: dict) -> ModelProposal:
         schema = gemini_json_schema(TaskSkillProposal)
@@ -90,4 +92,7 @@ class GeminiTaskSkillProposer:
         result = self.client.generate(
             INSTRUCTION, data, TaskSkillProposal, json_schema=schema
         )
-        return ModelProposal(result.value, result.returned_model)
+        return ModelProposal(result.value, result.returned_model, result.provider or "gemini")
+
+# Retain the historical import name for callers supplying their own test client.
+GeminiTaskSkillProposer = ModelTaskSkillProposer

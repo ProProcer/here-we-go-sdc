@@ -1,0 +1,103 @@
+%PDF-1.3
+%‚„œ”
+1 0 obj
+<<
+/Producer (pypdf)
+>>
+endobj
+2 0 obj
+<<
+/Type /Pages
+/Count 1
+/Kids [ 4 0 R ]
+>>
+endobj
+3 0 obj
+<<
+/Type /Catalog
+/Pages 2 0 R
+>>
+endobj
+4 0 obj
+<<
+/Type /Page
+/Resources <<
+/Font <<
+/F1 <<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica
+>>
+/F2 <<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica-Bold
+>>
+>>
+>>
+/MediaBox [ 0.0 0.0 595 842 ]
+/Parent 2 0 R
+/Contents 5 0 R
+>>
+endobj
+5 0 obj
+<<
+/Length 2866
+>>
+stream
+0.08 0.23 0.31 rg 0 0 205 842 re f
+1 1 1 rg BT /F2 20 Tf 1 0 0 1 22 790 Tm (NADIA LIM) Tj ET
+1 1 1 rg BT /F2 11 Tf 1 0 0 1 22 752 Tm (Data Analyst) Tj ET
+1 1 1 rg BT /F2 10 Tf 1 0 0 1 22 715 Tm (SKILLS) Tj ET
+1 1 1 rg BT /F1 9 Tf 1 0 0 1 22 694 Tm (Python) Tj ET
+1 1 1 rg BT /F1 9 Tf 1 0 0 1 22 676 Tm (SQL) Tj ET
+1 1 1 rg BT /F1 9 Tf 1 0 0 1 22 658 Tm (Tableau) Tj ET
+1 1 1 rg BT /F1 9 Tf 1 0 0 1 22 640 Tm (Microsoft Power BI) Tj ET
+1 1 1 rg BT /F1 9 Tf 1 0 0 1 22 622 Tm (Microsoft Excel) Tj ET
+1 1 1 rg BT /F1 9 Tf 1 0 0 1 22 604 Tm (Critical Thinking) Tj ET
+1 1 1 rg BT /F1 9 Tf 1 0 0 1 22 586 Tm (Mathematics) Tj ET
+1 1 1 rg BT /F1 9 Tf 1 0 0 1 22 568 Tm (Writing) Tj ET
+1 1 1 rg BT /F1 9 Tf 1 0 0 1 22 550 Tm (Reading Comprehension) Tj ET
+1 1 1 rg BT /F2 10 Tf 1 0 0 1 22 517 Tm (EDUCATION) Tj ET
+1 1 1 rg BT /F1 9 Tf 1 0 0 1 22 494 Tm (Bachelor of Computing |) Tj ET
+1 1 1 rg BT /F1 9 Tf 1 0 0 1 22 479 Tm (Fictional Harbour Institute |) Tj ET
+1 1 1 rg BT /F1 9 Tf 1 0 0 1 22 464 Tm (2023) Tj ET
+0.08 0.23 0.31 rg BT /F2 12 Tf 1 0 0 1 230 790 Tm (FICTIONAL TEST CV) Tj ET
+0.08 0.23 0.31 rg BT /F1 9 Tf 1 0 0 1 230 766 Tm (All names, employers and qualifications are invented.) Tj ET
+0.08 0.23 0.31 rg BT /F2 12 Tf 1 0 0 1 230 729 Tm (PROFILE) Tj ET
+0.08 0.23 0.31 rg BT /F1 9 Tf 1 0 0 1 230 705 Tm (Practical experience in data analytics.) Tj ET
+0.08 0.23 0.31 rg BT /F2 12 Tf 1 0 0 1 230 668 Tm (EXPERIENCE) Tj ET
+0.08 0.23 0.31 rg BT /F1 9 Tf 1 0 0 1 230 644 Tm (Data Analyst | Fictional Northstar Retail | 2023 - 2026) Tj ET
+0.08 0.23 0.31 rg BT /F1 9 Tf 1 0 0 1 230 607 Tm (- Used Python and SQL to clean synthetic sales records and) Tj ET
+0.08 0.23 0.31 rg BT /F1 9 Tf 1 0 0 1 230 592 Tm (validate monthly totals.) Tj ET
+0.08 0.23 0.31 rg BT /F1 9 Tf 1 0 0 1 230 565 Tm (- Built Tableau and Microsoft Power BI dashboards to) Tj ET
+0.08 0.23 0.31 rg BT /F1 9 Tf 1 0 0 1 230 550 Tm (compare regional performance.) Tj ET
+0.08 0.23 0.31 rg BT /F1 9 Tf 1 0 0 1 230 523 Tm (- Used Microsoft Excel to reconcile report totals and) Tj ET
+0.08 0.23 0.31 rg BT /F1 9 Tf 1 0 0 1 230 508 Tm (document data-quality checks.) Tj ET
+0.08 0.23 0.31 rg BT /F1 9 Tf 1 0 0 1 230 481 Tm (- Applied Critical Thinking and Mathematics to investigate) Tj ET
+0.08 0.23 0.31 rg BT /F1 9 Tf 1 0 0 1 230 466 Tm (inconsistent measurements.) Tj ET
+0.08 0.23 0.31 rg BT /F1 9 Tf 1 0 0 1 230 439 Tm (- Demonstrated Writing and Reading Comprehension through) Tj ET
+0.08 0.23 0.31 rg BT /F1 9 Tf 1 0 0 1 230 424 Tm (clear reporting notes.) Tj ET
+0.08 0.23 0.31 rg BT /F2 12 Tf 1 0 0 1 230 387 Tm (PROJECT) Tj ET
+0.08 0.23 0.31 rg BT /F2 10 Tf 1 0 0 1 230 362 Tm (Retail Reporting Pipeline) Tj ET
+0.08 0.23 0.31 rg BT /F1 9 Tf 1 0 0 1 230 339 Tm (Delivered a documented dashboard with repeatable SQL) Tj ET
+0.08 0.23 0.31 rg BT /F1 9 Tf 1 0 0 1 230 324 Tm (queries and Python checks.) Tj ET
+endstream
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000015 00000 n 
+0000000054 00000 n 
+0000000113 00000 n 
+0000000162 00000 n 
+0000000407 00000 n 
+trailer
+<<
+/Size 6
+/Root 3 0 R
+/Info 1 0 R
+>>
+startxref
+3325
+%%EOF

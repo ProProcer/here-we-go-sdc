@@ -379,7 +379,7 @@ def main():
     run.add_argument(
         "--extract",
         action="store_true",
-        help="Use Gemini only for source-approved items",
+        help="Use RunPod GLM (Gemini backup) only for source-approved items",
     )
     run.add_argument("--max-extractions", type=int, default=3)
     commands.add_parser("list")
@@ -391,9 +391,9 @@ def main():
     if args.command == "run":
         extractor = None
         if args.extract:
-            from src.intelligence.gemini import GeminiExtractor
+            from src.intelligence.models import ModelExtractor
 
-            extractor = GeminiExtractor.from_environment()
+            extractor = ModelExtractor.from_environment()
         result = run_discovery(
             extractor=extractor, max_extractions=args.max_extractions
         )

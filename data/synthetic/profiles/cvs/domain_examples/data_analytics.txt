@@ -1,0 +1,25 @@
+NADIA LIM
+Data Analyst
+data_analytics@example.com | Kuala Lumpur, Malaysia
+FICTIONAL TEST CV - all people, employers and qualifications are invented.
+
+PROFILE
+Practical experience in data analytics.
+
+EDUCATION
+Bachelor of Computing | Fictional Harbour Institute | 2023
+
+EXPERIENCE
+Data Analyst | Fictional Northstar Retail | 2023 - 2026
+- Used Python and SQL to clean synthetic sales records and validate monthly totals.
+- Built Tableau and Microsoft Power BI dashboards to compare regional performance.
+- Used Microsoft Excel to reconcile report totals and document data-quality checks.
+- Applied Critical Thinking and Mathematics to investigate inconsistent measurements.
+- Demonstrated Writing and Reading Comprehension through clear reporting notes.
+
+PROJECT
+Retail Reporting Pipeline
+Delivered a documented dashboard with repeatable SQL queries and Python checks.
+
+SKILLS
+Python, SQL, Tableau, Microsoft Power BI, Microsoft Excel, Critical Thinking, Mathematics, Writing, Reading Comprehension

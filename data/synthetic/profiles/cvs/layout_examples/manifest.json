@@ -1,0 +1,42 @@
+[
+  {
+    "file": "analytics_ats_single_column.pdf",
+    "source": "data_analytics.txt",
+    "composition": "ATS-friendly single column with standard headings; text-based PDF"
+  },
+  {
+    "file": "analytics_sidebar.pdf",
+    "source": "data_analytics.txt",
+    "composition": "Two columns, dark skills sidebar and separate experience column"
+  },
+  {
+    "file": "analytics_functional.pdf",
+    "source": "data_analytics.txt",
+    "composition": "Functional composition: competencies and project precede work history"
+  },
+  {
+    "file": "analytics_chronological.docx",
+    "source": "data_analytics.txt",
+    "composition": "Chronological, single-column Word document"
+  },
+  {
+    "file": "nursing_table_layout.docx",
+    "source": "healthcare_nursing.txt",
+    "composition": "Two-column Word table with skills and education in a sidebar"
+  },
+  {
+    "file": "web_two_page.pdf",
+    "source": "web_development.txt",
+    "composition": "Two-page CV with experience and skills continuing on page two"
+  },
+  {
+    "file": "accounting_scanned.pdf",
+    "source": "finance_accounting.txt",
+    "composition": "Scanned image-only PDF; no embedded text, requires OCR"
+  },
+  {
+    "file": "engineering_styled.docx",
+    "source": "mechanical_engineering.txt",
+    "composition": "Styled Word CV with colored header and shaded two-column table"
+  }
+]

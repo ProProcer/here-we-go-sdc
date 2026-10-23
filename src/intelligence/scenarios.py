@@ -4,6 +4,7 @@ import json
 from pathlib import Path
 
 from src.ingestion.selection import Catalog
+from src.schemas.onet import OnetCatalog
 from src.schemas.scenario import Scenario, ScenarioResult, SkillPriority
 
 DEFAULT_SCENARIOS = (
@@ -17,9 +18,41 @@ def load_scenarios(path: str | Path = DEFAULT_SCENARIOS) -> list[Scenario]:
         Scenario.model_validate(row)
         for row in json.loads(Path(path).read_text(encoding="utf-8"))
     ]
-    if len({row.scenario_id for row in rows}) != len(rows):
+    if len({(row.role_id, row.scenario_id) for row in rows}) != len(rows):
         raise ValueError("Duplicate scenario IDs")
     return rows
+
+
+def available_scenarios(catalog: Catalog, role_id: str, scenarios: list[Scenario]) -> list[str]:
+    if isinstance(catalog, OnetCatalog) and any(r.role_id == role_id for r in catalog.role_skills):
+        return ["baseline", "moderate_ai_change", "rapid_ai_change"]
+    return ["baseline", *[s.scenario_id for s in scenarios if s.role_id == role_id]]
+
+
+def _general_scenario(catalog, role, scenario_id, requirements):
+    """Transparent application policy, never an inferred occupational AI effect."""
+    if scenario_id not in {"moderate_ai_change", "rapid_ai_change"}:
+        raise ValueError(f"Unknown scenario: {scenario_id}")
+    delta = 0.08 if scenario_id == "moderate_ai_change" else 0.16
+    # Prioritize human checking, adaptation and communication under the assumption
+    # that AI assistance becomes more common. No imported task-to-skill mapping.
+    emphasis = {"Critical Thinking", "Active Learning", "Learning Strategies",
+                "Monitoring", "Judgment and Decision Making", "Complex Problem Solving",
+                "Reading Comprehension", "Writing", "Speaking", "Active Listening"}
+    labels = {s.skill_id: s.label for s in catalog.taxonomy.skills}
+    adjustments = {sid: delta for sid in requirements if labels.get(sid) in emphasis}
+    return Scenario(
+        scenario_id=scenario_id,
+        name=f"Illustrative {'moderate' if delta == 0.08 else 'rapid'} AI adoption",
+        synthetic=True, role_id=role.role_id, affected_task_ids=role.task_ids[:1],
+        assumptions=[
+            f"Assume {'moderate' if delta == 0.08 else 'rapid'} adoption of AI assistance in {role.role_title} workflows.",
+            f"Application policy adds {delta:.2f} (capped at 1.0) to required checking, learning and communication skill priorities.",
+            "All other occupational priorities stay unchanged. This is a generic stress test, not reviewed role-specific evidence.",
+            "The listed task provides occupational context only; no measured task-to-skill or automation effect is asserted.",
+        ], skill_priority_adjustments=adjustments,
+        interpretation="Compare learning emphasis under assumed AI adoption. No prediction of job losses, local demand or personal proficiency; personal fit is unchanged.",
+    )
 
 
 def apply_scenario(
@@ -37,8 +70,10 @@ def apply_scenario(
     scenario = None
     if scenario_id != "baseline":
         scenario = next(
-            (row for row in scenarios if row.scenario_id == scenario_id), None
+            (row for row in scenarios if row.scenario_id == scenario_id and row.role_id == role_id), None
         )
+        if scenario is None and isinstance(catalog, OnetCatalog) and requirements:
+            scenario = _general_scenario(catalog, role, scenario_id, requirements)
         if scenario is None:
             raise ValueError(f"Unknown scenario: {scenario_id}")
         if scenario.role_id != role_id:

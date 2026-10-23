@@ -24,7 +24,7 @@ from src.intelligence.discovery import (
 from src.intelligence.discovery import DECISIONS as SOURCE_DECISIONS
 from src.intelligence.extraction import ground_findings
 from src.intelligence.extractors import ExtractionError
-from src.intelligence.gemini import GeminiClient
+from src.intelligence.models import ModelClient
 from src.intelligence.reports import normalize_text, parse_report
 from src.intelligence.review_retrieval import collect_documents, fetch_research
 from src.intelligence.sources import DEFAULT_REGISTRY, load_registry
@@ -415,6 +415,8 @@ def review_one(
         parsed_characters=report.character_count,
         requested_model=client.model,
         returned_model=first.returned_model,
+        provider=getattr(first, "provider", None) or "gemini",
+        request_attempts=list(getattr(first, "request_attempts", ())),
         prompt_version=PROMPT_VERSION,
         findings=ground_findings(batch, report, source),
         no_findings_reason=batch.no_findings_reason,
@@ -499,7 +501,7 @@ def run_reviews(
     now = now or datetime.now(UTC)
     if now.utcoffset() is None or not 1 <= max_reviews <= 10:
         raise ValueError("Timezone-aware time and review limit 1..10 required")
-    client = client or GeminiClient.from_environment()
+    client = client or ModelClient.from_environment()
     context = role_context(role_id)
     path = Path(state_path)
     queue = json.loads(path.read_text(encoding="utf-8"))

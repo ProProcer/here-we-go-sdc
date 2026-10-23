@@ -1,0 +1,25 @@
+AMIR ROSLAN
+Mechanical Design Engineer
+mechanical_engineering@example.com | Kuala Lumpur, Malaysia
+FICTIONAL TEST CV - all people, employers and qualifications are invented.
+
+PROFILE
+Practical experience in mechanical engineering.
+
+EDUCATION
+Bachelor of Mechanical Engineering | Fictional Crest University | 2021
+
+EXPERIENCE
+Design Engineer | Fictional Crest Manufacturing | 2021 - 2026
+- Used Dassault Systemes SolidWorks and Autodesk AutoCAD Mechanical to model a fixture.
+- Used PTC Creo Parametric to revise prototype drawings and document dimensional checks.
+- Used The MathWorks MATLAB to compare simulated loads and review calculation outputs.
+- Applied Mathematics, Science and Complex Problem Solving during prototype evaluation.
+- Demonstrated Operations Analysis, Critical Thinking and Writing in design reviews.
+
+PROJECT
+Lightweight Test Fixture
+Produced drawings, a calculation sheet and a supervised prototype test report.
+
+SKILLS
+Dassault Systemes SolidWorks, Autodesk AutoCAD Mechanical, PTC Creo Parametric, The MathWorks MATLAB, Mathematics, Science, Complex Problem Solving, Operations Analysis, Critical Thinking, Writing

@@ -5,6 +5,8 @@ from datetime import date
 from pathlib import Path
 from typing import Literal
 
+from pydantic import Field, HttpUrl
+
 from src.ingestion.selection import Catalog, catalog_for_role
 from src.intelligence.evidence import load_evidence
 from src.intelligence.priorities import STORE as PRIORITY_STORE
@@ -13,6 +15,7 @@ from src.intelligence.scenarios import (
     DEFAULT_SCENARIOS,
     ONET_SCENARIOS,
     apply_scenario,
+    available_scenarios,
     load_scenarios,
 )
 from src.schemas.onet import OnetCatalog
@@ -46,11 +49,22 @@ class RoleOutlook(Contract):
     limitations: list[str]
 
 
+class GeneralResearch(Contract):
+    title: str
+    publisher: str
+    source_url: HttpUrl
+    published_at: date
+    checked_at: date
+    summary: str
+    scope: Literal["general_context_not_role_evidence"] = "general_context_not_role_evidence"
+
+
 class OnetRoleOutlook(RoleOutlook):
     schema_version: Literal["0.2.0"] = "0.2.0"
     catalog_id: Literal["onet_31_0"] = "onet_31_0"
     available_scenarios: list[str]
     learning_priority_evidence: dict
+    general_research: list[GeneralResearch] = Field(default_factory=list)
 
 
 def get_outlook(
@@ -137,10 +151,14 @@ def get_outlook(
     extra = (
         {
             "learning_priority_evidence": priority_evidence,
-            "available_scenarios": [
-                "baseline",
-                *[s.scenario_id for s in scenarios if s.role_id == role_id],
-            ],
+            "available_scenarios": available_scenarios(catalog, role_id, scenarios),
+            "general_research": [GeneralResearch(
+                title="Generative AI and Jobs: A Refined Global Index of Occupational Exposure",
+                publisher="International Labour Organization",
+                source_url="https://www.ilo.org/publications/generative-ai-and-jobs-refined-global-index-occupational-exposure",
+                published_at=date(2025, 5, 20), checked_at=date(2026, 10, 23),
+                summary="The ILO studies potential exposure at task and occupational level. Exposure is not a job-loss forecast. This app has not mapped that index to this O*NET occupation; this source provides general context only.",
+            )],
         }
         if isinstance(catalog, OnetCatalog)
         else {}

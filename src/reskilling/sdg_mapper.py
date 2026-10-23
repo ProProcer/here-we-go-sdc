@@ -179,3 +179,18 @@ def map_sdg_connections(
         )
         claimed.update((rule.target_id, skill_id) for skill_id in unmatched)
     return connections
+
+
+def map_role_sdg_connections(role_id, *, catalog, rules=None):
+    """Role purpose depends on occupational requirements, including known skills."""
+    if not isinstance(catalog, OnetCatalog):
+        return []
+    loaded = rules if rules is not None else load_sdg_rules(
+        ROOT / "data/processed/onet/31.0/sdg_mappings.json")
+    # Exclude broad learning rules: completing learning objectives and applying
+    # a role to an SDG are distinct connections.
+    role_rules = loaded.model_copy(update={"rules": [r for r in loaded.rules if r.role_ids]})
+    role_skills = {row.skill_id for row in catalog.role_skills if row.role_id == role_id}
+    return [connection.model_copy(update={"scope": "role_application"})
+            for connection in map_sdg_connections(role_id, role_skills,
+                rules=role_rules, catalog=catalog)]

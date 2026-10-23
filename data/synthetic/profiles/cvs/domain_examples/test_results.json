@@ -1,0 +1,362 @@
+{
+  "fictional_documents_only": true,
+  "format_checks": [
+    {
+      "file": "data_analytics.pdf",
+      "status": "passed",
+      "skill_count": 9,
+      "missing_vs_txt": [],
+      "extra_vs_txt": [],
+      "seconds": 2.97
+    },
+    {
+      "file": "data_analytics.docx",
+      "status": "passed",
+      "skill_count": 9,
+      "missing_vs_txt": [],
+      "extra_vs_txt": [],
+      "seconds": 3.19
+    },
+    {
+      "file": "data_analytics.txt",
+      "status": "passed",
+      "skill_count": 9,
+      "missing_vs_txt": [],
+      "extra_vs_txt": [],
+      "seconds": 3.03
+    },
+    {
+      "file": "web_development.pdf",
+      "status": "passed",
+      "skill_count": 10,
+      "missing_vs_txt": [],
+      "extra_vs_txt": [],
+      "seconds": 4.8
+    },
+    {
+      "file": "web_development.docx",
+      "status": "passed",
+      "skill_count": 10,
+      "missing_vs_txt": [],
+      "extra_vs_txt": [],
+      "seconds": 6.5
+    },
+    {
+      "file": "web_development.txt",
+      "status": "passed",
+      "skill_count": 10,
+      "missing_vs_txt": [],
+      "extra_vs_txt": [],
+      "seconds": 11.66
+    },
+    {
+      "file": "healthcare_nursing.pdf",
+      "status": "passed",
+      "skill_count": 11,
+      "missing_vs_txt": [],
+      "extra_vs_txt": [],
+      "seconds": 3.33
+    },
+    {
+      "file": "healthcare_nursing.docx",
+      "status": "passed",
+      "skill_count": 11,
+      "missing_vs_txt": [],
+      "extra_vs_txt": [],
+      "seconds": 3.7
+    },
+    {
+      "file": "healthcare_nursing.txt",
+      "status": "passed",
+      "skill_count": 11,
+      "missing_vs_txt": [],
+      "extra_vs_txt": [],
+      "seconds": 2.53
+    },
+    {
+      "file": "finance_accounting.pdf",
+      "status": "passed",
+      "skill_count": 10,
+      "missing_vs_txt": [],
+      "extra_vs_txt": [],
+      "seconds": 6.64
+    },
+    {
+      "file": "finance_accounting.docx",
+      "status": "passed",
+      "skill_count": 10,
+      "missing_vs_txt": [],
+      "extra_vs_txt": [],
+      "seconds": 3.52
+    },
+    {
+      "file": "finance_accounting.txt",
+      "status": "passed",
+      "skill_count": 10,
+      "missing_vs_txt": [],
+      "extra_vs_txt": [],
+      "seconds": 3.05
+    },
+    {
+      "file": "finance_accounting.png",
+      "status": "passed",
+      "skill_count": 10,
+      "missing_vs_txt": [],
+      "extra_vs_txt": [],
+      "seconds": 28.97
+    },
+    {
+      "file": "mechanical_engineering.pdf",
+      "status": "passed",
+      "skill_count": 11,
+      "missing_vs_txt": [],
+      "extra_vs_txt": [],
+      "seconds": 6.09
+    },
+    {
+      "file": "mechanical_engineering.docx",
+      "status": "passed",
+      "skill_count": 11,
+      "missing_vs_txt": [],
+      "extra_vs_txt": [],
+      "seconds": 12.48
+    },
+    {
+      "file": "mechanical_engineering.txt",
+      "status": "passed",
+      "skill_count": 11,
+      "missing_vs_txt": [],
+      "extra_vs_txt": [],
+      "seconds": 2.45
+    },
+    {
+      "file": "mechanical_engineering.jpg",
+      "status": "passed",
+      "skill_count": 11,
+      "missing_vs_txt": [],
+      "extra_vs_txt": [],
+      "seconds": 38.89
+    }
+  ],
+  "live_checks": [
+    {
+      "domain": "Data analytics",
+      "file": "data_analytics.pdf",
+      "status": "passed",
+      "extracted_skills": 9,
+      "assessment": {
+        "status": "completed",
+        "provider": "groq",
+        "message": "AI assessed 9 skills automatically using Groq GPT-OSS-120B. Levels are estimates from CV evidence.",
+        "assessed_skill_count": 9,
+        "error_code": null,
+        "primary_provider": "groq",
+        "used_backup": false
+      },
+      "top_five": [
+        {
+          "title": "Economists",
+          "score": 68.52
+        },
+        {
+          "title": "Operations Research Analysts",
+          "score": 68.48
+        },
+        {
+          "title": "Data Scientists",
+          "score": 68.27
+        },
+        {
+          "title": "Actuaries",
+          "score": 68.02
+        },
+        {
+          "title": "Business Intelligence Analysts",
+          "score": 67.71
+        }
+      ],
+      "domain_occupation": "Business Intelligence Analysts",
+      "domain_occupation_rank": 5,
+      "domain_occupation_score": 67.71,
+      "seconds": 8.08
+    },
+    {
+      "domain": "Web development",
+      "file": "web_development.docx",
+      "status": "passed",
+      "extracted_skills": 10,
+      "assessment": {
+        "status": "completed",
+        "provider": "groq",
+        "message": "AI assessed 10 skills automatically using Groq GPT-OSS-120B. Levels are estimates from CV evidence.",
+        "assessed_skill_count": 10,
+        "error_code": null,
+        "primary_provider": "groq",
+        "used_backup": false
+      },
+      "top_five": [
+        {
+          "title": "Web Developers",
+          "score": 67.93
+        },
+        {
+          "title": "Software Developers",
+          "score": 67.65
+        },
+        {
+          "title": "Computer Programmers",
+          "score": 57.93
+        },
+        {
+          "title": "Web and Digital Interface Designers",
+          "score": 57.55
+        },
+        {
+          "title": "Blockchain Engineers",
+          "score": 50.17
+        }
+      ],
+      "domain_occupation": "Web Developers",
+      "domain_occupation_rank": 1,
+      "domain_occupation_score": 67.93,
+      "seconds": 9.81
+    },
+    {
+      "domain": "Healthcare / nursing",
+      "file": "healthcare_nursing.txt",
+      "status": "passed",
+      "extracted_skills": 11,
+      "assessment": {
+        "status": "completed",
+        "provider": "groq",
+        "message": "AI assessed 11 skills automatically using Groq GPT-OSS-120B. Levels are estimates from CV evidence.",
+        "assessed_skill_count": 11,
+        "error_code": null,
+        "primary_provider": "groq",
+        "used_backup": false
+      },
+      "top_five": [
+        {
+          "title": "Licensed Practical and Licensed Vocational Nurses",
+          "score": 45.43
+        },
+        {
+          "title": "Registered Nurses",
+          "score": 45.29
+        },
+        {
+          "title": "Nursing Assistants",
+          "score": 45.01
+        },
+        {
+          "title": "Emergency Medicine Physicians",
+          "score": 42.65
+        },
+        {
+          "title": "Patient Representatives",
+          "score": 42.31
+        }
+      ],
+      "domain_occupation": "Registered Nurses",
+      "domain_occupation_rank": 2,
+      "domain_occupation_score": 45.29,
+      "seconds": 31.81
+    },
+    {
+      "domain": "Finance / accounting",
+      "file": "finance_accounting.png",
+      "status": "passed",
+      "extracted_skills": 10,
+      "assessment": {
+        "status": "completed",
+        "provider": "groq",
+        "message": "AI assessed 10 skills automatically using Groq GPT-OSS-120B. Levels are estimates from CV evidence.",
+        "assessed_skill_count": 10,
+        "error_code": null,
+        "primary_provider": "groq",
+        "used_backup": false
+      },
+      "top_five": [
+        {
+          "title": "Bookkeeping, Accounting, and Auditing Clerks",
+          "score": 28.9
+        },
+        {
+          "title": "Treasurers and Controllers",
+          "score": 28.75
+        },
+        {
+          "title": "Accountants and Auditors",
+          "score": 28.68
+        },
+        {
+          "title": "Office Clerks, General",
+          "score": 28.15
+        },
+        {
+          "title": "Payroll and Timekeeping Clerks",
+          "score": 25.18
+        }
+      ],
+      "domain_occupation": "Accountants and Auditors",
+      "domain_occupation_rank": 3,
+      "domain_occupation_score": 28.68,
+      "seconds": 44.11
+    },
+    {
+      "domain": "Mechanical engineering",
+      "file": "mechanical_engineering.jpg",
+      "status": "passed",
+      "extracted_skills": 11,
+      "assessment": {
+        "status": "completed",
+        "provider": "groq",
+        "message": "AI assessed 11 skills automatically using Groq GPT-OSS-120B. Levels are estimates from CV evidence.",
+        "assessed_skill_count": 11,
+        "error_code": null,
+        "primary_provider": "groq",
+        "used_backup": false
+      },
+      "top_five": [
+        {
+          "title": "Automotive Engineers",
+          "score": 58.98
+        },
+        {
+          "title": "Mechatronics Engineers",
+          "score": 52.89
+        },
+        {
+          "title": "Wind Energy Engineers",
+          "score": 47.16
+        },
+        {
+          "title": "Aerospace Engineers",
+          "score": 46.64
+        },
+        {
+          "title": "Mechanical Engineers",
+          "score": 46.57
+        }
+      ],
+      "domain_occupation": "Mechanical Engineers",
+      "domain_occupation_rank": 5,
+      "domain_occupation_score": 46.57,
+      "seconds": 58.5
+    }
+  ],
+  "original_sample_pdf": {
+    "status": "passed",
+    "skill_count": 9,
+    "path": "../graduate.pdf",
+    "download_url": "/api/v2/samples/graduate.pdf"
+  },
+  "known_limits": [
+    "HTML and CSS abbreviations now resolve to existing canonical database records, and dotted tool names such as Node.js are preserved during sentence parsing.",
+    "Format consistency compares extracted skills with TXT; it does not establish that every claim was recognized.",
+    "The verifier spaces live calls for the observed Groq token quota. Failed live cases can be retried after cooldown, preserving the original attempt.",
+    "An intended domain occupation in the top five does not guarantee it is the top recommendation; full top-five lists are retained."
+  ],
+  "verified_at_utc": "2026-10-23T09:52:09.573545+00:00",
+  "score_method": "reviewed_onet_fit_v3"
+}

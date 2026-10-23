@@ -1,0 +1,33 @@
+{
+  "template": {
+    "name": "ikiguy-glm-4-7-flash",
+    "imageName": "runpod/worker-v1-vllm:v2.30.1",
+    "isServerless": true,
+    "isPublic": false,
+    "containerDiskInGb": 100,
+    "volumeInGb": 0,
+    "env": {
+      "MODEL_NAME": "zai-org/GLM-4.7-Flash",
+      "MAX_MODEL_LEN": "65536",
+      "MAX_NUM_SEQS": "1",
+      "MAX_CONCURRENCY": "1",
+      "GPU_MEMORY_UTILIZATION": "0.95",
+      "ENFORCE_EAGER": "true",
+      "REASONING_PARSER": "glm45",
+      "DISABLE_LOG_REQUESTS": "true",
+      "DISABLE_LOG_STATS": "true"
+    }
+  },
+  "endpoint": {
+    "name": "ikiguy-glm-4-7-flash",
+    "computeType": "GPU",
+    "gpuCount": 1,
+    "gpuTypeIds": ["NVIDIA A100-SXM4-80GB", "NVIDIA A100 80GB PCIe"],
+    "workersMin": 0,
+    "workersMax": 1,
+    "idleTimeout": 5,
+    "executionTimeoutMs": 180000,
+    "scalerType": "QUEUE_DELAY",
+    "scalerValue": 4
+  }
+}

@@ -7,12 +7,24 @@ from pydantic import Field, model_validator
 from src.schemas.role import Contract, RoleId, SkillId
 
 
+class LevelAssessment(Contract):
+    method: Literal["ai_estimate"] = "ai_estimate"
+    model: str
+    provider: str | None = Field(default=None, exclude_if=lambda value: value is None)
+    confidence: Literal["low", "medium", "high"]
+    rationale: str = Field(min_length=1, max_length=1000)
+    evidence_indices: list[int] = Field(min_length=1)
+
+
 class ProfileSkill(Contract):
     skill_id: SkillId
     label: str = Field(min_length=1)
     level: Literal["unknown", "beginner", "intermediate", "advanced"] = "unknown"
     evidence: list[str] = Field(min_length=1)
     confirmation: Literal["unverified", "self_reported", "confirmed"] = "unverified"
+    level_assessment: LevelAssessment | None = Field(
+        default=None, exclude_if=lambda value: value is None
+    )
 
     @model_validator(mode="after")
     def nonblank_evidence(self):
@@ -28,6 +40,16 @@ class ProfileConstraints(Contract):
     )
 
 
+class AssessmentStatus(Contract):
+    status: Literal["completed", "failed", "not_configured"]
+    provider: str
+    message: str
+    assessed_skill_count: int = Field(default=0, ge=0)
+    error_code: str | None = None
+    primary_provider: str = "groq"
+    used_backup: bool = False
+
+
 class SkillsProfile(Contract):
     schema_version: Literal["0.1.0"] = "0.1.0"
     profile_id: str = Field(pattern=r"^synthetic:[a-z0-9_]+$")
@@ -37,6 +59,9 @@ class SkillsProfile(Contract):
     interests: list[str] = Field(default_factory=list)
     constraints: ProfileConstraints = Field(default_factory=ProfileConstraints)
     warnings: list[str] = Field(default_factory=list)
+    assessment_status: AssessmentStatus | None = Field(
+        default=None, exclude_if=lambda value: value is None
+    )
 
     @model_validator(mode="after")
     def unique_skills(self):

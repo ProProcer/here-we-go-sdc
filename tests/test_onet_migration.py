@@ -152,8 +152,10 @@ class TestOnetMigration(unittest.TestCase):
         b = {p.skill_id: p.adjusted_priority for p in rapid.scenario.skill_priorities}
         self.assertGreater(b[CRITICAL], a[CRITICAL])
         self.assertTrue(rapid.scenario.synthetic)
-        with self.assertRaises(ValueError):
-            get_outlook(NURSE, "rapid_ai_change", catalog=self.catalog)
+        nurse_rapid = get_outlook(NURSE, "rapid_ai_change", catalog=self.catalog)
+        self.assertTrue(nurse_rapid.scenario.synthetic)
+        self.assertNotEqual(nurse.scenario.skill_priorities, nurse_rapid.scenario.skill_priorities)
+        self.assertEqual(nurse_rapid.sources, [])
         self.assertEqual(
             get_evidence_chain_response(BI, catalog=self.catalog)["status"],
             "insufficient_evidence",
@@ -302,10 +304,11 @@ class TestOnetMigration(unittest.TestCase):
         result = self.plan(p, match, selected_software_skill_ids=[chosen]).plan
         self.assertIn(chosen, {g.skill_id for g in result.prioritized_gaps})
         self.assertEqual(result.selected_software_skill_ids, [chosen])
-        self.assertEqual(result.sdg_connections[0].target_id, "4.4")
+        self.assertIn("4.4", {connection.target_id for connection in result.sdg_connections})
+        self.assertIn("9.5", {connection.target_id for connection in result.sdg_connections})
         self.assertTrue(
-            all(
-                s.resource_status == "verified_resource_not_found"
+            any(
+                s.resource_status == "verified"
                 for m in result.milestones
                 for s in m.steps
             )
@@ -372,7 +375,7 @@ class TestOnetMigration(unittest.TestCase):
     def test_backend_preserves_custom_matching_policy_in_plan(self):
         backend = CareerBackend(self.catalog)
         p = self.profile()
-        policy = CoveragePolicy(general_share=0.75, group_share=0.25)
+        policy = CoveragePolicy(general_share=0.75, group_share=0.25, profile_alignment_share=0.75)
         expected = backend.matcher.match_role(p, BI, policy=policy)
         result = backend.learning_plan(p, BI, policy=policy)
         self.assertEqual(result.plan.fit_score, expected.fit_score)

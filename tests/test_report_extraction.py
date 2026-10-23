@@ -340,6 +340,7 @@ class TestExtractionWorkflow(unittest.TestCase):
         stream = io.StringIO()
         with (
             patch.dict("os.environ", {}, clear=True),
+            patch("src.intelligence.models.load_local_environment"),
             redirect_stderr(stream),
             patch("src.intelligence.extraction.fetch_html") as fetcher,
         ):
@@ -351,7 +352,7 @@ class TestExtractionWorkflow(unittest.TestCase):
         record, path = self.run_extraction()
         output = io.StringIO()
         with (
-            patch("src.intelligence.extraction.GeminiExtractor.from_environment"),
+            patch("src.intelligence.extraction.ModelExtractor.from_environment"),
             patch(
                 "src.intelligence.extraction.extract_candidates",
                 return_value=(record, path),

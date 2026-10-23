@@ -39,9 +39,12 @@ class CareerBackend:
         return role_impacts_for_role(role_id, catalog=self.catalog, **kwargs)
 
     def extract_profile(self, profile_id, content, filename):
-        return create_profile_from_cv(
+        from src.profiles.assessment import assess_levels
+
+        profile = create_profile_from_cv(
             profile_id, content, filename, catalog=self.catalog
         )
+        return assess_levels(profile, catalog=self.catalog)
 
     def review_profile(self, profile, skills):
         return review_profile(profile, skills, catalog=self.catalog)

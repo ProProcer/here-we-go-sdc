@@ -6,14 +6,13 @@ python -m src.intelligence.role_evidence plan
 
 import argparse
 import json
-import os
 from datetime import UTC, datetime
 from pathlib import Path
 
 from src.ingestion.selection import real_catalog
 from src.intelligence.discovery import STATE
 from src.intelligence.extractors import ExtractionError
-from src.intelligence.gemini import DEFAULT_MODEL, GeminiClient
+from src.intelligence.models import ModelClient, default_model
 from src.intelligence.skill_evidence import (
     BATCH_SIZE,
     read_json,
@@ -123,7 +122,7 @@ def build_plan(
     *, state_path=STATE, catalog=None, model=None, skill_decisions_path=SKILL_DECISIONS
 ):
     catalog = catalog or real_catalog()
-    model = model or os.environ.get("GEMINI_MODEL", DEFAULT_MODEL)
+    model = model or default_model()
     roles = roles_from_catalog(catalog)
     active, skill_stats = skill_assessments(
         state_path=state_path,
@@ -202,7 +201,7 @@ def run_assessments(
     now = now or datetime.now(UTC)
     if now.utcoffset() is None:
         raise ValueError("Timezone-aware time required")
-    client = client or GeminiClient.from_environment()
+    client = client or ModelClient.from_environment()
     roles, candidates, missing, _, _ = build_plan(
         state_path=state_path,
         catalog=catalog,

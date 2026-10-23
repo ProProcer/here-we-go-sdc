@@ -42,11 +42,15 @@ def extract_profile(
             line = unicodedata.normalize("NFKC", line).strip()
             if PERSONAL_LINE.match(line):
                 continue
-            for clause in re.split(r"[.!?;]+", line):
+            for clause in re.split(r"[!?;]+|(?<!\w)\.|\.(?!\w)", line):
                 if NON_CLAIM.search(clause):
                     continue
                 for pattern, skill in patterns:
-                    if pattern.search(clause):
+                    # A computing discipline name alone does not establish the
+                    # catalog's scientific-methods skill.
+                    candidate = re.sub(r"\b(?:computer|data)\s+science\b", "", clause,
+                        flags=re.IGNORECASE) if skill.label == "Science" else clause
+                    if pattern.search(candidate):
                         spans = evidence.setdefault(skill.skill_id, [])
                         span = f"Page {page_number}, line {line_number}: {clause.strip()[:500]}"
                         if span not in spans and len(spans) < 5:
@@ -62,7 +66,7 @@ def extract_profile(
                 for skill_id, spans in sorted(evidence.items())
             ],
             warnings=[
-                "CV claims are unverified. Review skills before matching; levels remain unknown.",
+                "CV claims are unverified. Review skills and any estimated levels before matching.",
                 "Dictionary extraction may miss context, negation or unsupported skills; typed input is available.",
             ],
         ),

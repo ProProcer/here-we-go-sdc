@@ -41,7 +41,7 @@ No paid model or external API is invoked by that command.
 | `sector_id` / `sector` | `family_id` / `family` — SOC occupational group, not industry |
 | Flat tool/general requirements | General `role_skills`, separate `software_associations` |
 | Populated mock task-skill links | Imported tasks explicitly unmapped; no automatic task-transfer credit |
-| `RoleMatch` / `reviewed_fit_v2` | `OnetRoleMatch` / `reviewed_onet_fit_v1` |
+| `RoleMatch` / `reviewed_fit_v2` | `OnetRoleMatch` / `reviewed_onet_fit_v3` |
 | Legacy learning plan 0.1 | `OnetLearningPlan` 0.2 with software selection and family metadata |
 
 O*NET element identities become `skill:onet_2_a_2_a`, etc. Source task 16150

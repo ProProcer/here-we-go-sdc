@@ -18,7 +18,8 @@ from pydantic import ValidationError
 
 from src.intelligence.extractors import ExtractionError, FindingExtractor
 from src.intelligence.feeds import fetch_html
-from src.intelligence.gemini import PROMPT_VERSION, GeminiExtractor
+from src.intelligence.gemini import PROMPT_VERSION
+from src.intelligence.models import ModelExtractor
 from src.intelligence.reports import (
     ParsedReport,
     date_is_present,
@@ -146,6 +147,8 @@ def extract_candidates(
         parsed_characters=report.character_count,
         requested_model=extractor.model,
         returned_model=result.returned_model,
+        provider=result.provider,
+        request_attempts=list(result.request_attempts),
         prompt_version=PROMPT_VERSION,
         findings=findings,
         no_findings_reason=result.batch.no_findings_reason,
@@ -182,7 +185,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--url", required=True)
     parser.add_argument(
         "--model",
-        help="Gemini model ID; defaults to GEMINI_MODEL or the configured default",
+        help="Primary model ID; defaults to GROQ_MODEL (GPT-OSS-120B)",
     )
     parser.add_argument("--output-dir", type=Path, default=DEFAULT_CANDIDATES)
     parser.add_argument(
@@ -195,7 +198,7 @@ def main(argv: list[str] | None = None) -> int:
         if args.inspect_source:
             print(json.dumps(inspect_source(args.url), indent=2))
             return 0
-        extractor = GeminiExtractor.from_environment(args.model)
+        extractor = ModelExtractor.from_environment(args.model)
         record, path = extract_candidates(
             args.url, extractor, output_directory=args.output_dir
         )

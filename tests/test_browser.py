@@ -24,7 +24,7 @@ class TestBrowserJourney(unittest.TestCase):
         cls.url = f"http://127.0.0.1:{port}"
         cls.server = subprocess.Popen([
             sys.executable, "-m", "src.main"],
-            env={**os.environ, "PORT": str(port), "WEB_CONCURRENCY": "4"},
+            env={**os.environ, "PORT": str(port), "WEB_CONCURRENCY": "4", "GROQ_API": "", "GROQ_API_KEY": "", "GEMINI_API_KEY": "", "RUNPOD_API_KEY": "", "RUNPOD_ENDPOINT_ID": ""},
             stdout=subprocess.DEVNULL,
             stderr=subprocess.DEVNULL)
         cls.addClassCleanup(cls.stop_server)
@@ -58,6 +58,65 @@ class TestBrowserJourney(unittest.TestCase):
             destination = Path(directory)
             destination.mkdir(parents=True, exist_ok=True)
             page.screenshot(path=str(destination / (name + ".png")), full_page=True)
+
+    def test_sample_cv_recommends_data_roles_with_score_explanation(self):
+        from playwright.sync_api import expect
+        context = self.browser.new_context(viewport={"width": 1440, "height": 1080})
+        self.addCleanup(context.close)
+        page = context.new_page()
+        page.goto(self.url)
+        page.locator("#sample").click()
+        expect(page.locator("#review")).to_be_visible(timeout=30000)
+        page.locator("#confirm-all").check()
+        page.locator("#review-next").click()
+        page.locator("#find-matches").click()
+        expect(page.locator("#featured-match h2")).to_have_text("Data Scientists", timeout=30000)
+        expect(page.locator("#match-rows")).to_contain_text("Business Intelligence Analysts")
+        page.get_by_role("button", name="Explore Data Scientists", exact=True).first.click()
+        expect(page.locator("#score-breakdown")).to_contain_text("CV skill alignment", timeout=30000)
+        expect(page.locator("#role-drawer")).to_contain_text("65.0% CV skill alignment and 35.0% general requirement fulfilment")
+        page.get_by_text("Your proficiency vs job requirements", exact=True).click()
+        expect(page.locator("#proficiency-comparison")).to_contain_text("Job requirement:")
+        expect(page.locator("#proficiency-comparison")).to_contain_text("Your estimate: unknown")
+        page.get_by_text("How your CV skills affect this score", exact=True).click()
+        expect(page.locator("#role-drawer")).to_contain_text("Tableau")
+
+    def test_ai_estimates_display_without_manual_level_input(self):
+        from playwright.sync_api import expect
+
+        context = self.browser.new_context(viewport={"width": 1440, "height": 1080})
+        self.addCleanup(context.close)
+        page = context.new_page()
+
+        def assessed_sample(route):
+            response = route.fetch()
+            payload = response.json()
+            for skill in payload["profile"]["skills"]:
+                skill.update(level="intermediate", level_assessment={
+                    "method": "ai_estimate", "model": "test-model", "confidence": "medium",
+                    "rationale": "Fictional independent project evidence.", "evidence_indices": [0]})
+            payload["profile"]["assessment_status"] = {
+                "status": "completed", "provider": "runpod", "error_code": None,
+                "assessed_skill_count": len(payload["profile"]["skills"]),
+                "message": "AI assessed your skills automatically."}
+            route.fulfill(response=response, json=payload)
+
+        page.route("**/api/v2/profiles/sample", assessed_sample)
+        page.goto(self.url)
+        page.locator("#sample").click()
+        expect(page.locator("#review")).to_be_visible(timeout=30000)
+        expect(page.locator("#ai-assessment-status")).to_contain_text("automatically")
+        expect(page.locator(".skill-name").first).to_contain_text("AI estimate: intermediate")
+        page.locator(".cv-evidence summary").first.click()
+        expect(page.locator("#level-0")).to_have_text("Intermediate")
+        expect(page.locator("#level-0")).not_to_have_attribute("role", "combobox")
+        page.locator("#correct-level-0").click()
+        expect(page.locator("#level-0")).to_have_attribute("role", "combobox")
+        page.locator("#level-0").click()
+        page.get_by_role("option", name="Advanced", exact=True).click()
+        expect(page.locator(".skill-name").first).not_to_contain_text("AI estimate")
+        expect(page.locator("#level-0")).to_have_text("Advanced")
+        self.screenshot(page, "ai-estimates-applied")
 
     def test_sidebar_animates_between_sizes(self):
         from playwright.sync_api import expect
@@ -138,6 +197,7 @@ class TestBrowserJourney(unittest.TestCase):
         expect(page.locator(".cv-evidence-content").first).to_be_visible()
         expect(page.locator(".cv-evidence summary").first).to_have_text("View CV evidence")
         expect(page.locator(".cv-evidence summary .icon").first).to_be_visible()
+        page.locator("#correct-level-0").click()
         level = page.locator("#level-0")
         level.click()
         expect(page.locator("#level-0-options")).to_be_visible()
@@ -207,7 +267,7 @@ class TestBrowserJourney(unittest.TestCase):
         page.locator("#detail summary").filter(has_text="Why these learning priorities?").click()
         expect(page.locator("#priority-evidence")).to_contain_text("No approved research adjustments")
         page.locator("#detail summary").filter(has_text="Plan details & limitations").click()
-        expect(page.locator("#course-catalog-status")).to_contain_text("currently empty")
+        expect(page.locator("#course-catalog-status")).to_contain_text("verified courses in the catalog")
         expect(page.locator('.plan-notes')).to_contain_text('Matches show skill coverage, not hiring chances')
         expect(page.locator('#plan-warnings')).to_be_hidden()
         expect(page.locator('.plan-notes')).not_to_contain_text('skill:onet_')
@@ -216,7 +276,7 @@ class TestBrowserJourney(unittest.TestCase):
         expect(page.locator('#plan-warnings')).to_contain_text('No search provider configured')
         page.locator('.plan-technical summary').click()
         page.locator(".learning-step summary").first.click()
-        expect(page.locator(".unavailable-resource").first).to_be_visible()
+        expect(page.locator(".step-content").first).to_contain_text("OpenLearn")
         page.locator(".learning-step summary").first.click()
         page.locator('[data-scenario="rapid_ai_change"]').click()
         expect(page.locator("#busy")).to_be_hidden(timeout=30000)
@@ -226,7 +286,7 @@ class TestBrowserJourney(unittest.TestCase):
         self.screenshot(page, "roadmap")
         with page.expect_download() as download:
             page.locator("#export-plan").click()
-        self.assertEqual(download.value.suggested_filename, "futureready-learning-plan.json")
+        self.assertEqual(download.value.suggested_filename, "ikiguy-learning-plan.json")
         page.locator('[data-scenario="baseline"]').click()
         expect(page.locator("#busy")).to_be_hidden(timeout=30000)
         self.assertEqual(page.locator(".step-preview h3:visible").all_text_contents(), baseline)
@@ -425,7 +485,13 @@ class TestBrowserJourney(unittest.TestCase):
         page.locator("#build-roadmap").click()
         expect(page.locator("#detail")).to_be_visible(timeout=30000)
         expect(page.locator("#busy")).to_be_hidden(timeout=30000)
-        expect(page.locator('[data-scenario="rapid_ai_change"]')).to_be_disabled()
+        expect(page.locator('[data-scenario="rapid_ai_change"]')).to_be_enabled()
+        page.locator('[data-scenario="rapid_ai_change"]').click()
+        expect(page.locator('#busy')).to_be_hidden(timeout=30000)
+        expect(page.locator('[data-scenario="rapid_ai_change"]')).to_have_attribute('aria-pressed', 'true')
+        page.locator('[data-scenario="moderate_ai_change"]').click()
+        expect(page.locator('#busy')).to_be_hidden(timeout=30000)
+        expect(page.locator('[data-scenario="moderate_ai_change"]')).to_have_attribute('aria-pressed', 'true')
         expect(page.locator("#scenario-support")).to_be_visible()
         expect(page.locator("#detail-fit")).to_be_visible()
         self.screenshot(page, "mobile-roadmap")

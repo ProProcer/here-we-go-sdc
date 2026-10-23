@@ -1,6 +1,6 @@
 {
   "schema_version": "0.1.0",
-  "updated_at": "2026-10-21T00:00:00Z",
+  "updated_at": "2026-10-23T06:29:00.004343Z",
   "trusted_providers": [
     {
       "provider_id": "provider:coursera",
@@ -113,14 +113,14 @@
       "group_id": "provider_group:general",
       "label": "General and university learning",
       "sector_ids": [],
+      "family_ids": [],
       "provider_ids": [
         "provider:coursera",
         "provider:edx",
         "provider:futurelearn",
         "provider:openlearn",
         "provider:khan_academy"
-      ],
-      "family_ids": []
+      ]
     },
     {
       "group_id": "provider_group:technology",
@@ -128,15 +128,15 @@
       "sector_ids": [
         "sector:information_services"
       ],
+      "family_ids": [
+        "family:soc_15"
+      ],
       "provider_ids": [
         "provider:microsoft_learn",
         "provider:cisco_skills_for_all",
         "provider:mit_open_courseware",
         "provider:freecodecamp",
         "provider:udacity"
-      ],
-      "family_ids": [
-        "family:soc_15"
       ]
     },
     {
@@ -146,16 +146,16 @@
         "sector:business_services",
         "sector:finance"
       ],
-      "provider_ids": [
-        "provider:coursera",
-        "provider:edx",
-        "provider:openlearn"
-      ],
       "family_ids": [
         "family:soc_11",
         "family:soc_13",
         "family:soc_41",
         "family:soc_43"
+      ],
+      "provider_ids": [
+        "provider:coursera",
+        "provider:edx",
+        "provider:openlearn"
       ]
     },
     {
@@ -165,14 +165,14 @@
         "sector:healthcare",
         "sector:public_health"
       ],
+      "family_ids": [
+        "family:soc_29",
+        "family:soc_31"
+      ],
       "provider_ids": [
         "provider:openwho",
         "provider:coursera",
         "provider:edx"
-      ],
-      "family_ids": [
-        "family:soc_29",
-        "family:soc_31"
       ]
     },
     {
@@ -181,13 +181,13 @@
       "sector_ids": [
         "sector:education"
       ],
+      "family_ids": [
+        "family:soc_25"
+      ],
       "provider_ids": [
         "provider:khan_academy",
         "provider:openlearn",
         "provider:futurelearn"
-      ],
-      "family_ids": [
-        "family:soc_25"
       ]
     },
     {
@@ -196,15 +196,15 @@
       "sector_ids": [
         "sector:engineering"
       ],
+      "family_ids": [
+        "family:soc_17",
+        "family:soc_19"
+      ],
       "provider_ids": [
         "provider:mit_open_courseware",
         "provider:nptel",
         "provider:swayam",
         "provider:edx"
-      ],
-      "family_ids": [
-        "family:soc_17",
-        "family:soc_19"
       ]
     },
     {
@@ -214,17 +214,17 @@
         "sector:skilled_trades",
         "sector:manufacturing"
       ],
-      "provider_ids": [
-        "provider:nptel",
-        "provider:swayam",
-        "provider:edx",
-        "provider:futurelearn"
-      ],
       "family_ids": [
         "family:soc_47",
         "family:soc_49",
         "family:soc_51",
         "family:soc_53"
+      ],
+      "provider_ids": [
+        "provider:nptel",
+        "provider:swayam",
+        "provider:edx",
+        "provider:futurelearn"
       ]
     },
     {
@@ -234,13 +234,13 @@
         "sector:agriculture",
         "sector:food_systems"
       ],
+      "family_ids": [
+        "family:soc_45"
+      ],
       "provider_ids": [
         "provider:fao_elearning",
         "provider:swayam",
         "provider:futurelearn"
-      ],
-      "family_ids": [
-        "family:soc_45"
       ]
     },
     {
@@ -250,15 +250,15 @@
         "sector:public_service",
         "sector:international_development"
       ],
-      "provider_ids": [
-        "provider:unssc",
-        "provider:openwho",
-        "provider:edx"
-      ],
       "family_ids": [
         "family:soc_21",
         "family:soc_23",
         "family:soc_33"
+      ],
+      "provider_ids": [
+        "provider:unssc",
+        "provider:openwho",
+        "provider:edx"
       ]
     },
     {
@@ -268,18 +268,253 @@
         "sector:creative_industries",
         "sector:hospitality"
       ],
-      "provider_ids": [
-        "provider:futurelearn",
-        "provider:coursera",
-        "provider:openlearn"
-      ],
       "family_ids": [
         "family:soc_27",
         "family:soc_35",
         "family:soc_37",
         "family:soc_39"
+      ],
+      "provider_ids": [
+        "provider:futurelearn",
+        "provider:coursera",
+        "provider:openlearn"
       ]
     }
   ],
-  "courses": []
+  "courses": [
+    {
+      "schema_version": "0.1.0",
+      "course_id": "course:openlearn_reading_notes",
+      "title": "Reading and note taking – preparation for study",
+      "provider": "The Open University / OpenLearn",
+      "course_url": "https://www.open.edu/openlearn/mod/oucontent/view.php?id=4323&section=1",
+      "evidence_url": "https://www.open.edu/openlearn/mod/oucontent/view.php?id=4323&section=1",
+      "source_tier": "trusted",
+      "skill_ids": [
+        "skill:onet_2_a_1_a"
+      ],
+      "coverage_strength": {
+        "skill:onet_2_a_1_a": 0.6
+      },
+      "cost": {
+        "access": "free",
+        "amount": 0.0,
+        "currency": null,
+        "includes_certificate": true
+      },
+      "duration": {
+        "hours": 12.0,
+        "display_text": "12 hours (provider stated)",
+        "basis": "provider_stated"
+      },
+      "prerequisite_skill_ids": [],
+      "delivery_mode": "online",
+      "language": "English",
+      "country_codes": [],
+      "enrollment_status": "open",
+      "last_verified_at": "2026-10-23T06:29:00.004343Z",
+      "verification_status": "verified",
+      "validation_notes": [
+        "Provider page checked 2026-10-23: free online course, available content, stated duration and statement of participation.",
+        "Introductory curriculum mapping by the app; does not establish occupational mastery. No paid professional certification is included."
+      ]
+    },
+    {
+      "schema_version": "0.1.0",
+      "course_id": "course:openlearn_thinking_skills",
+      "title": "Extending and developing your thinking skills",
+      "provider": "The Open University / OpenLearn",
+      "course_url": "https://www.open.edu/openlearn/education-development/extending-and-developing-your-thinking-skills",
+      "evidence_url": "https://www.open.edu/openlearn/education-development/extending-and-developing-your-thinking-skills",
+      "source_tier": "trusted",
+      "skill_ids": [
+        "skill:onet_2_a_2_a",
+        "skill:onet_2_b_2_i"
+      ],
+      "coverage_strength": {
+        "skill:onet_2_a_2_a": 0.6,
+        "skill:onet_2_b_2_i": 0.6
+      },
+      "cost": {
+        "access": "free",
+        "amount": 0.0,
+        "currency": null,
+        "includes_certificate": true
+      },
+      "duration": {
+        "hours": 6.0,
+        "display_text": "6 hours (provider stated)",
+        "basis": "provider_stated"
+      },
+      "prerequisite_skill_ids": [],
+      "delivery_mode": "online",
+      "language": "English",
+      "country_codes": [],
+      "enrollment_status": "open",
+      "last_verified_at": "2026-10-23T06:29:00.004343Z",
+      "verification_status": "verified",
+      "validation_notes": [
+        "Provider page checked 2026-10-23: free online course, available content, stated duration and statement of participation.",
+        "Introductory curriculum mapping by the app; does not establish occupational mastery. No paid professional certification is included."
+      ]
+    },
+    {
+      "schema_version": "0.1.0",
+      "course_id": "course:openlearn_communication",
+      "title": "Effective communication in the workplace",
+      "provider": "The Open University / OpenLearn",
+      "course_url": "https://www.open.edu/openlearn/money-business/effective-communication-the-workplace",
+      "evidence_url": "https://www.open.edu/openlearn/money-business/effective-communication-the-workplace",
+      "source_tier": "trusted",
+      "skill_ids": [
+        "skill:onet_2_a_1_b",
+        "skill:onet_2_a_1_c",
+        "skill:onet_2_a_1_d"
+      ],
+      "coverage_strength": {
+        "skill:onet_2_a_1_b": 0.6,
+        "skill:onet_2_a_1_c": 0.6,
+        "skill:onet_2_a_1_d": 0.6
+      },
+      "cost": {
+        "access": "free",
+        "amount": 0.0,
+        "currency": null,
+        "includes_certificate": true
+      },
+      "duration": {
+        "hours": 24.0,
+        "display_text": "24 hours (provider stated)",
+        "basis": "provider_stated"
+      },
+      "prerequisite_skill_ids": [],
+      "delivery_mode": "online",
+      "language": "English",
+      "country_codes": [],
+      "enrollment_status": "open",
+      "last_verified_at": "2026-10-23T06:29:00.004343Z",
+      "verification_status": "verified",
+      "validation_notes": [
+        "Provider page checked 2026-10-23: free online course, available content, stated duration and statement of participation.",
+        "Introductory curriculum mapping by the app; does not establish occupational mastery. No paid professional certification is included."
+      ]
+    },
+    {
+      "schema_version": "0.1.0",
+      "course_id": "course:openlearn_learning",
+      "title": "Learning how to learn",
+      "provider": "The Open University / OpenLearn",
+      "course_url": "https://www.open.edu/openlearn/education-development/learning-how-learn",
+      "evidence_url": "https://www.open.edu/openlearn/education-development/learning-how-learn",
+      "source_tier": "trusted",
+      "skill_ids": [
+        "skill:onet_2_a_2_b",
+        "skill:onet_2_a_2_c",
+        "skill:onet_2_a_2_d"
+      ],
+      "coverage_strength": {
+        "skill:onet_2_a_2_b": 0.6,
+        "skill:onet_2_a_2_c": 0.6,
+        "skill:onet_2_a_2_d": 0.6
+      },
+      "cost": {
+        "access": "free",
+        "amount": 0.0,
+        "currency": null,
+        "includes_certificate": true
+      },
+      "duration": {
+        "hours": 6.0,
+        "display_text": "6 hours (provider stated)",
+        "basis": "provider_stated"
+      },
+      "prerequisite_skill_ids": [],
+      "delivery_mode": "online",
+      "language": "English",
+      "country_codes": [],
+      "enrollment_status": "open",
+      "last_verified_at": "2026-10-23T06:29:00.004343Z",
+      "verification_status": "verified",
+      "validation_notes": [
+        "Provider page checked 2026-10-23: free online course, available content, stated duration and statement of participation.",
+        "Introductory curriculum mapping by the app; does not establish occupational mastery. No paid professional certification is included."
+      ]
+    },
+    {
+      "schema_version": "0.1.0",
+      "course_id": "course:openlearn_maths",
+      "title": "Succeed with maths: part 1",
+      "provider": "The Open University / OpenLearn",
+      "course_url": "https://www.open.edu/openlearn/science-maths-technology/succeed-maths-part-1/content-section-overview",
+      "evidence_url": "https://www.open.edu/openlearn/science-maths-technology/succeed-maths-part-1/content-section-overview",
+      "source_tier": "trusted",
+      "skill_ids": [
+        "skill:onet_2_a_1_e"
+      ],
+      "coverage_strength": {
+        "skill:onet_2_a_1_e": 0.6
+      },
+      "cost": {
+        "access": "free",
+        "amount": 0.0,
+        "currency": null,
+        "includes_certificate": true
+      },
+      "duration": {
+        "hours": 24.0,
+        "display_text": "24 hours (provider stated)",
+        "basis": "provider_stated"
+      },
+      "prerequisite_skill_ids": [],
+      "delivery_mode": "online",
+      "language": "English",
+      "country_codes": [],
+      "enrollment_status": "open",
+      "last_verified_at": "2026-10-23T06:29:00.004343Z",
+      "verification_status": "verified",
+      "validation_notes": [
+        "Provider page checked 2026-10-23: free online course, available content, stated duration and statement of participation.",
+        "Introductory curriculum mapping by the app; does not establish occupational mastery. No paid professional certification is included."
+      ]
+    },
+    {
+      "schema_version": "0.1.0",
+      "course_id": "course:openlearn_leadership",
+      "title": "Leadership and followership",
+      "provider": "The Open University / OpenLearn",
+      "course_url": "https://www.open.edu/openlearn/education-development/learning/leadership-and-followership/content-section-overview",
+      "evidence_url": "https://www.open.edu/openlearn/education-development/learning/leadership-and-followership/content-section-overview",
+      "source_tier": "trusted",
+      "skill_ids": [
+        "skill:onet_2_b_5_d",
+        "skill:onet_2_b_1_b"
+      ],
+      "coverage_strength": {
+        "skill:onet_2_b_5_d": 0.6,
+        "skill:onet_2_b_1_b": 0.6
+      },
+      "cost": {
+        "access": "free",
+        "amount": 0.0,
+        "currency": null,
+        "includes_certificate": true
+      },
+      "duration": {
+        "hours": 24.0,
+        "display_text": "24 hours (provider stated)",
+        "basis": "provider_stated"
+      },
+      "prerequisite_skill_ids": [],
+      "delivery_mode": "online",
+      "language": "English",
+      "country_codes": [],
+      "enrollment_status": "open",
+      "last_verified_at": "2026-10-23T06:29:00.004343Z",
+      "verification_status": "verified",
+      "validation_notes": [
+        "Provider page checked 2026-10-23: free online course, available content, stated duration and statement of participation.",
+        "Introductory curriculum mapping by the app; does not establish occupational mastery. No paid professional certification is included."
+      ]
+    }
+  ]
 }

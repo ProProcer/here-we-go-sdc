@@ -109,7 +109,8 @@ class ExtractionRecord(ExtractionBatch):
     parsed_text_sha256: Digest
     passage_count: int = Field(gt=0)
     parsed_characters: int = Field(gt=0)
-    provider: Literal["gemini"] = "gemini"
+    provider: Literal["gemini", "runpod", "groq"] = "gemini"
+    request_attempts: list[dict] = Field(default_factory=list, exclude_if=lambda value: not value)
     requested_model: NonBlank
     returned_model: NonBlank
     prompt_version: NonBlank

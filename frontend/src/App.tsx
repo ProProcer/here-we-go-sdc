@@ -17,7 +17,18 @@ const stages: { id: Screen; label: string; short: string; icon: IconName; headin
 ];
 const emptyPreferences: Preferences = { budget: '', hours: '', interests: '' };
 function Brand({ mobile = false }: { mobile?: boolean }) {
-  return <div className={`brand ${mobile ? 'mobile-brand' : ''}`} aria-label="FutureReady"><span className="brand-mark">f<span>↗</span></span><span className="brand-name">FutureReady</span>{!mobile && <span className="brand-ai">AI</span>}</div>;
+  return <div className={`brand ${mobile ? 'mobile-brand' : ''}`} aria-label="ikiguy">
+    <span className="brand-mark" aria-hidden="true">
+      <svg viewBox="0 0 32 32" fill="none">
+        <path d="M16 16C5 16 5 4 11 4c5 0 5 7 5 12Z" fill="currentColor" opacity=".95" />
+        <path d="M16 16C16 5 28 5 28 11c0 5-7 5-12 5Z" fill="currentColor" opacity=".75" />
+        <path d="M16 16c11 0 11 12 5 12-5 0-5-7-5-12Z" fill="currentColor" opacity=".55" />
+        <path d="M16 16C16 27 4 27 4 21c0-5 7-5 12-5Z" fill="currentColor" opacity=".75" />
+        <circle cx="16" cy="16" r="2" fill="currentColor" />
+      </svg>
+    </span>
+    <span className="brand-name">ikiguy<span className="brand-dot" aria-hidden="true">.</span></span>
+  </div>;
 }
 
 export default function App() {
@@ -89,7 +100,7 @@ export default function App() {
   }
   function updateSkill(id: string, patch: Partial<ProfileSkill>) {
     if (pendingRef.current) return;
-    setProfile(previous => previous && ({ ...previous, skills: previous.skills.map(skill => skill.skill_id === id ? { ...skill, ...patch } : skill) }));
+    setProfile(previous => previous && ({ ...previous, skills: previous.skills.map(skill => skill.skill_id === id ? { ...skill, ...patch, ...(patch.level !== undefined ? { level_assessment: null } : {}) } : skill) }));
     invalidate();
   }
   function removeSkill(id: string) {
@@ -111,6 +122,15 @@ export default function App() {
       setAdded(previous => new Set(previous).add(skill.skill_id));
     }
     invalidate();
+  }
+  function reassessSkills() {
+    void action('AI is assessing your skill levels', async () => {
+      if (!profile) return;
+      const response = await request<{ revision: number; profile: Profile }>('/profiles/assess', token, json('POST', {
+        revision, skills: profile.skills,
+      }));
+      setRevision(response.revision); setProfile(response.profile); invalidate();
+    });
   }
   function findMatches() {
     void action('Finding your career matches', async () => {
@@ -178,7 +198,7 @@ export default function App() {
     if (!plan || !roleData || pendingRef.current) return;
     const blob = new Blob([JSON.stringify({ role_title: roleData.match.role_title, profile_is_fictional: true, plan }, null, 2)], { type: 'application/json' });
     const url = URL.createObjectURL(blob), anchor = document.createElement('a');
-    anchor.href = url; anchor.download = 'futureready-learning-plan.json'; anchor.click(); window.setTimeout(() => URL.revokeObjectURL(url), 1000);
+    anchor.href = url; anchor.download = 'ikiguy-learning-plan.json'; anchor.click(); window.setTimeout(() => URL.revokeObjectURL(url), 1000);
   }
   const enabled = { intake: true, review: !!profile, explore: explored, detail: !!plan };
   // Completion describes preparing each stage's output, not completing the learning itself.
@@ -197,11 +217,11 @@ export default function App() {
         <div id="feedback" ref={errorRef} className="feedback" role="alert" tabIndex={-1} hidden={!error || drawerOpen}>{error}</div>
         {pending && <Loading label={loading.label} upload={loading.upload} />}
         {screen === 'intake' && <Upload pending={pending} uploadedFileName={uploadedFileName} onReview={() => setScreen('review')} onUpload={upload} onSample={() => void action('Reading the sample CV', async () => acceptUpload(await request<ProfileResponse>('/profiles/sample', token, { method: 'POST' }), 'graduate.pdf'), true)} onManual={() => void action('Opening your skills', async () => acceptUpload(await request<ProfileResponse>('/profiles/manual', token, { method: 'POST' })))} />}
-        {screen === 'review' && profile && <Review profile={profile} removed={removed} added={added} pending={pending} target={target} preferences={preferences} onSkill={updateSkill} onRemove={removeSkill} onConfirmAll={checked => { setProfile({ ...profile, skills: profile.skills.map(skill => removed.has(skill.skill_id) ? skill : { ...skill, confirmation: checked ? 'confirmed' : 'unverified' }) }); invalidate(); }} onAdd={addSkill} onTarget={role => { setTarget(role); invalidate(); }} onPreferences={next => { setPreferences(next); invalidate(); }} onContinue={findMatches} onError={showError} />}
+        {screen === 'review' && profile && <Review profile={profile} removed={removed} added={added} pending={pending} target={target} preferences={preferences} onSkill={updateSkill} onRemove={removeSkill} onConfirmAll={checked => { setProfile({ ...profile, skills: profile.skills.map(skill => removed.has(skill.skill_id) ? skill : { ...skill, confirmation: checked ? 'confirmed' : 'unverified' }) }); invalidate(); }} onAdd={addSkill} onTarget={role => { setTarget(role); invalidate(); }} onPreferences={next => { setPreferences(next); invalidate(); }} onContinue={findMatches} onError={showError} onAssess={reassessSkills} />}
         {screen === 'explore' && profile && <Careers matches={matches} profile={profile} confirmedCount={confirmed.length} target={target} pending={pending} onEdit={() => setScreen('review')} onOpen={openRole} />}
         {screen === 'detail' && profile && roleData && plan && <Roadmap data={roleData} plan={plan} courseStatus={courseStatus} profile={profile} pending={pending} onBack={() => setScreen('explore')} onDetails={() => setDrawerOpen(true)} onScenario={changeScenario} onExport={exportPlan} />}
       </main><footer>Adapted from O*NET® 31.0 · USDOL/ETA · <a href="https://www.onetcenter.org/license_db.html" target="_blank" rel="noopener noreferrer">CC BY 4.0</a> · No endorsement.</footer>
     </div>
-    {roleData && profile && <RoleDrawer data={roleData} profile={profile} open={drawerOpen} pending={pending} loadingLabel={loading?.label || ''} error={error} selectedSoftware={selectedSoftware} hasPlan={!!plan} onClose={() => setDrawerOpen(false)} onSoftware={changeSoftware} onBuild={buildRoadmap} />}
+    {roleData && profile && <RoleDrawer data={roleData} profile={profile} open={drawerOpen} pending={pending} loadingLabel={loading?.label || ''} error={error} selectedSoftware={selectedSoftware} hasPlan={!!plan} onClose={() => setDrawerOpen(false)} onSoftware={changeSoftware} onBuild={buildRoadmap} onReview={() => { setDrawerOpen(false); setScreen("review"); }} />}
   </>;
 }

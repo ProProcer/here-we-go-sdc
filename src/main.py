@@ -12,6 +12,7 @@ from fastapi.staticfiles import StaticFiles
 from src.api.routes import router
 from src.api.sessions import SessionStore
 from src.backend import CareerBackend
+from src.config import load_local_environment
 from src.reskilling.course_catalog import CourseCatalogStore
 
 ROOT = Path(__file__).resolve().parent
@@ -20,6 +21,7 @@ FRONTEND = ROOT.parent / "frontend" / "dist"
 
 @asynccontextmanager
 async def lifespan(app):
+    load_local_environment()
     app.state.backend = CareerBackend(course_store=CourseCatalogStore(
         ROOT.parent / "data/processed/onet/31.0/courses.json"))
     app.state.sessions = SessionStore()
@@ -72,6 +74,8 @@ def health():
 def run():
     """Start the web app locally or on Replit, keeping demo sessions in one worker."""
     import uvicorn
+
+    load_local_environment()
 
     try:
         port = int(os.environ.get("PORT", "8000"))

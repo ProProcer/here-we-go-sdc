@@ -19,7 +19,7 @@ from src.intelligence.discovery import (
 from src.intelligence.discovery import (
     DECISIONS as SOURCE_DECISIONS,
 )
-from src.intelligence.gemini import DEFAULT_MODEL
+from src.intelligence.models import default_model
 from src.intelligence.review_github import latest_review_artifact
 from src.intelligence.skill_evidence import (
     DECISIONS as MAPPING_DECISIONS,
@@ -85,7 +85,7 @@ class ReviewMenuService:
         self.registry_path = self.root / DEFAULT_REGISTRY.relative_to(ROOT)
         self.config_path = self.root / CONFIG.relative_to(ROOT)
         self.catalog = catalog
-        self.model = model or os.environ.get("GEMINI_MODEL", DEFAULT_MODEL)
+        self.model = model or default_model()
 
     def manifest(self):
         return read_json(self.manifest_path, {"pending_paths": []})
