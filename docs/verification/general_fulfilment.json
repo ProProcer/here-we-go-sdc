@@ -1,0 +1,120 @@
+{
+  "checked_on": "2026-10-24",
+  "sample_role": "Business Intelligence Analysts",
+  "sample_confirmed_skills": 9,
+  "sample_confirmed_core_skills": 5,
+  "sample_matrix": [
+    {
+      "core_level": "unknown",
+      "general_fulfilment_percent": 0.0,
+      "general_presence_percent": 21.216
+    },
+    {
+      "core_level": "beginner",
+      "general_fulfilment_percent": 11.218,
+      "general_presence_percent": 21.216
+    },
+    {
+      "core_level": "intermediate",
+      "general_fulfilment_percent": 20.67,
+      "general_presence_percent": 21.216
+    },
+    {
+      "core_level": "advanced",
+      "general_fulfilment_percent": 21.216,
+      "general_presence_percent": 21.216
+    }
+  ],
+  "stress": {
+    "catalog_roles": 910,
+    "role_profile_comparisons": 7280,
+    "passed": true,
+    "elapsed_seconds": 22.848,
+    "checks": [
+      "scores bounded",
+      "core fulfilment increases monotonically with levels",
+      "known core levels earn positive credit for every role",
+      "unconfirmed, empty and tool-only profiles earn no general credit",
+      "role-specific requirement profiles earn positive credit"
+    ],
+    "results": [
+      {
+        "profile": "all_35_core_skills_unknown",
+        "roles": 910,
+        "zero_count": 842,
+        "minimum_percent": 0.0,
+        "maximum_percent": 19.123
+      },
+      {
+        "profile": "all_35_core_skills_beginner",
+        "roles": 910,
+        "zero_count": 0,
+        "minimum_percent": 50.1,
+        "maximum_percent": 100.0
+      },
+      {
+        "profile": "all_35_core_skills_intermediate",
+        "roles": 910,
+        "zero_count": 0,
+        "minimum_percent": 87.336,
+        "maximum_percent": 100.0
+      },
+      {
+        "profile": "all_35_core_skills_advanced",
+        "roles": 910,
+        "zero_count": 0,
+        "minimum_percent": 100.0,
+        "maximum_percent": 100.0
+      },
+      {
+        "profile": "unconfirmed_core",
+        "roles": 910,
+        "zero_count": 910
+      },
+      {
+        "profile": "tools_only",
+        "roles": 910,
+        "zero_count": 910
+      },
+      {
+        "profile": "empty",
+        "roles": 910,
+        "zero_count": 910
+      }
+    ]
+  },
+  "fix": "Prefer practiced work and coursework over bare skill lists when selecting evidence; expose unknown-level editing and explain zero scores. Scoring formula unchanged.",
+  "live_sample_retest": {
+    "assessment_status": "completed",
+    "provider": "runpod",
+    "core_levels": [
+      {
+        "label": "Reading Comprehension",
+        "level": "beginner"
+      },
+      {
+        "label": "Active Listening",
+        "level": "beginner"
+      },
+      {
+        "label": "Writing",
+        "level": "beginner"
+      },
+      {
+        "label": "Critical Thinking",
+        "level": "beginner"
+      },
+      {
+        "label": "Programming",
+        "level": "beginner"
+      }
+    ],
+    "role": "Business Intelligence Analysts",
+    "general_percent": 11.218
+  },
+  "validation": {
+    "regression_tests_passed": 24,
+    "browser_tests_passed": 3,
+    "frontend_build": "passed"
+  }
+}

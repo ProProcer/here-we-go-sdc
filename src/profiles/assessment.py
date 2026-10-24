@@ -53,9 +53,11 @@ def selected_evidence(skill):
     def quality(item):
         _, text = item
         core = re.sub(r"^Page \d+, line \d+:\s*", "", text)
-        action = bool(re.search(r"\b(used|built|delivered|applied|calculated|compared|coordinated|presented|wrote|tracked|performed|maintained|interpreted|selected|investigated|resolved|showed|scheduled|allocated|organized)\b", core, re.I))
+        action = bool(re.search(r"\b(used|built|delivered|applied|calculated|compared|coordinated|presented|wrote|tracked|performed|maintained|interpreted|selected|investigated|resolved|showed|scheduled|allocated|organized|practised|practiced|reviewed|checked|explained|tested|documented|evaluated|analysed|analyzed|prepared)\b", core, re.I))
         direct = bool(re.match(re.escape(skill.label) + r"\s*[-:–]", core, re.I))
-        return action, direct, min(len(core), 240)
+        study = bool(re.search(r"\b(coursework|course|training|tutorial|exercise|exercises)\b", core, re.I))
+        listed = bool(re.match(r"(?:general\s+skills|skills|tools)\s*:", core, re.I))
+        return action, study, direct, not listed, min(len(core), 240)
     index, text = max(enumerate(skill.evidence), key=quality)
     return {"index": index, "text": text[:240]}
 

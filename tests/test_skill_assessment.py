@@ -6,11 +6,35 @@ from types import SimpleNamespace
 from unittest.mock import Mock, patch
 
 from src.intelligence.extractors import ExtractionError
-from src.profiles.assessment import AssessmentBatch, assess_levels, assessment_input, assessment_schema
+from src.profiles.assessment import AssessmentBatch, assess_levels, assessment_input, assessment_schema, selected_evidence
 from src.schemas.profile import ProfileSkill, SkillsProfile
 
 
 class TestSkillAssessment(unittest.TestCase):
+    def test_sample_core_practice_is_selected_ahead_of_a_longer_skill_list(self):
+        from src.ingestion.selection import real_catalog
+        from src.profiles.samples import SAMPLE_PATH
+        from src.profiles.cv_parser import ParsedCV
+        from src.profiles.extraction import extract_profile
+        catalog = real_catalog()
+        profile = extract_profile(ParsedCV(format='txt', pages=[SAMPLE_PATH.read_text(encoding='utf-8')]),
+                                  'synthetic:sample_evidence', catalog=catalog)
+        for label in ('Active Listening', 'Critical Thinking'):
+            skill = next(skill for skill in profile.skills if skill.label == label)
+            selected = selected_evidence(skill)
+            self.assertIn('Practised Active Listening and Critical Thinking', selected['text'])
+            self.assertNotIn('General skills:', selected['text'])
+            self.assertEqual(selected['text'], skill.evidence[selected['index']][:240])
+
+    def test_coursework_and_checked_work_outrank_a_longer_bare_list(self):
+        for evidence in ('Relevant coursework: Critical Thinking.', 'Checked a result using Critical Thinking.'):
+            skill = ProfileSkill(skill_id='skill:onet_2_a_2_a', label='Critical Thinking', evidence=[
+                evidence, 'General skills: Reading Comprehension, Writing, Active Listening, Critical Thinking.'])
+            self.assertEqual(selected_evidence(skill)['index'], 0)
+        skill = ProfileSkill(skill_id='skill:onet_2_a_2_a', label='Critical Thinking', evidence=[
+            'Critical Thinking: advanced proficiency.', 'Relevant coursework: Critical Thinking.'])
+        self.assertEqual(selected_evidence(skill)['index'], 1)
+
     def profile(self):
         return SkillsProfile(profile_id="synthetic:assessment_test", skills=[ProfileSkill(
             skill_id="skill:python", label="Python",

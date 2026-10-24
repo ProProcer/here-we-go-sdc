@@ -13,6 +13,8 @@ export default function RoleDetails({ data, profile, pending, selectedSoftware, 
   const skills = matchingSkills(role, profile);
   const breakdown = role.score_breakdown;
   const description = data.detail.role.description;
+  const confirmedCore = breakdown.proficiency_comparisons.filter(item => item.status !== 'skill_unconfirmed');
+  const unassessedCore = confirmedCore.filter(item => item.status === 'profile_level_unassessed');
   const renderGap = (skill: typeof role.missing_skills[number]) => <li key={skill.skill_id}>
     <span>{t(skill.label)}</span><small>{t("Role importance ")}{skill.importance.toFixed(2)}</small>
   </li>;
@@ -55,6 +57,7 @@ export default function RoleDetails({ data, profile, pending, selectedSoftware, 
         ['General requirement fulfilment', breakdown.general_fulfilment],
       ] as const).map(([label, value]) => <div className="role-score" key={label}><div><span>{t(label)}</span><strong>{t(percent(value))}</strong></div><meter min={0} max={1} value={value} aria-label={t(label)} /></div>)}</div>
       <p className="caption">{t("An exploratory fit score, not a hiring probability.")}</p>
+      {breakdown.general_fulfilment === 0 && <div id="general-fulfilment-help" className="missing-levels-notice"><p>{t(unassessedCore.length ? `${unassessedCore.length} confirmed core skills still need a level.` : 'This bar uses confirmed core skills, not software tools.')}</p><button className="button secondary compact-button" disabled={pending} onClick={onReview}>{t(unassessedCore.length ? 'Set core skill levels' : 'Review core skills')}</button></div>}
       <Disclosure title={t("See score breakdown & proficiency")}><RoleScoreDetails role={role} /></Disclosure>
     </section>
 

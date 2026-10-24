@@ -3030,6 +3030,8 @@ footer a {
   .skill-sdg-row .chip { font-size: 11px; }
 }
 .language-picker { display: flex; align-items: center; gap: 8px; margin-left: auto; flex-shrink: 0; }
+.missing-levels-notice { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; padding: 12px 14px; margin: 12px 0 18px; background: var(--blue-soft); border-radius: 12px; }
+.missing-levels-notice p { margin: 0; color: var(--text); font-size: .82rem; line-height: 1.5; flex: 1 1 210px; }
 .language-symbol { color: var(--muted); font-size: .75rem; white-space: nowrap; }
 .language-picker .custom-select { min-width: 152px; }
 .language-picker .select-trigger { min-height: 36px; padding: 6px 10px; font-size: .8rem; }
