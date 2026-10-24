@@ -601,6 +601,42 @@ class TestBrowserJourney(unittest.TestCase):
         self.assertEqual(page.evaluate('Object.keys(localStorage)'), ['ikiguy-language'])
         self.assertEqual(errors, [])
 
+    def test_sample_core_level_editor_increases_general_requirement_bar(self):
+        from playwright.sync_api import expect
+        context = self.browser.new_context(viewport={'width': 1440, 'height': 1080})
+        self.addCleanup(context.close)
+        page = context.new_page()
+        errors = []
+        page.on('pageerror', lambda error: errors.append(str(error)))
+        page.goto(self.url)
+        page.locator('#sample').click()
+        page.locator('#confirm-all').check()
+        expect(page.locator('#missing-levels-notice')).to_contain_text('9 confirmed skills still need a level.')
+        page.locator('#review-next').click()
+        page.locator('#target-search').fill('business intelligence')
+        page.get_by_role('option', name='Business Intelligence Analysts', exact=True).click()
+        page.locator('#find-matches').click()
+        page.locator('[data-role-id="role:onet_15_2051_01"]').click()
+        meter = page.get_by_role('meter', name='General requirement fulfilment', exact=True)
+        expect(meter).to_have_attribute('value', '0')
+        expect(page.locator('#general-fulfilment-help')).to_contain_text('confirmed core skills still need a level')
+        page.get_by_role('button', name='Set core skill levels', exact=True).click()
+        page.locator('#set-next-level').click()
+        # The helper opens the first core skill, ahead of the Excel tool row.
+        control = page.get_by_role('combobox', name='Your skill level', exact=True)
+        expect(control).to_be_focused()
+        control.click()
+        page.get_by_role('option', name='Beginner', exact=True).click()
+        expect(page.locator('#missing-levels-notice')).to_contain_text('8 confirmed skills still need a level.')
+        expect(page.locator('#confirm-all')).to_be_checked()
+        page.locator('#review-next').click()
+        page.locator('#find-matches').click()
+        page.locator('[data-role-id="role:onet_15_2051_01"]').click()
+        self.assertGreater(float(meter.get_attribute('value')), 0)
+        expect(page.locator('#general-fulfilment-help')).to_have_count(0)
+        self.screenshot(page, 'sample-general-fulfilment-positive')
+        self.assertEqual(errors, [])
+
     def test_ai_estimates_display_without_manual_level_input(self):
         from playwright.sync_api import expect
 

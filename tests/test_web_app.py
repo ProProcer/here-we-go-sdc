@@ -114,6 +114,30 @@ class TestWebApp(unittest.TestCase):
         # This occupation has an estimated intermediate Python requirement.
         self.assertEqual(scores, [6.5, 16.25, 12.88])
 
+    def test_sample_general_fulfilment_changes_after_reviewing_core_levels(self):
+        response = self.client.post('/api/v2/profiles/sample')
+        self.assertEqual(response.status_code, 200, response.text)
+        data = response.json()
+        headers = {'X-Session-ID': data['session_id']}
+        self.assertTrue(all(skill['level'] == 'unknown' for skill in data['profile']['skills']))
+        scores = []
+        for level in ('unknown', 'beginner', 'intermediate', 'advanced'):
+            skills = [{**skill, 'confirmation': 'confirmed', 'level': level if skill['skill_id'].startswith('skill:onet_') else 'intermediate'}
+                      for skill in data['profile']['skills']]
+            reviewed = self.client.patch('/api/v2/profiles/current', headers=headers, json={
+                'revision': data['revision'], 'skills': skills, 'desired_role_id': ROLE})
+            self.assertEqual(reviewed.status_code, 200, reviewed.text)
+            data = reviewed.json()
+            response = self.client.get('/api/v2/matches', headers=headers, params={'revision': data['revision']})
+            self.assertEqual(response.status_code, 200, response.text)
+            role = next(row for row in response.json()['matches'] if row['role_id'] == ROLE)
+            scores.append(role['score_breakdown']['general_fulfilment'])
+            self.assertGreater(role['score_breakdown']['coverage']['general_coverage'], 0)
+        self.assertEqual(scores[0], 0)
+        self.assertTrue(all(value > 0 for value in scores[1:]))
+        self.assertEqual(scores, sorted(set(scores)))
+        self.client.delete('/api/v2/profiles/current', headers=headers)
+
     def test_rina_upload_exceeds_ninety_with_ai_levels_and_confirmation_only(self):
         from scripts.create_high_match_cv import OUTPUT, ROLE as MARKETING
         from src.profiles.assessment import AssessmentBatch

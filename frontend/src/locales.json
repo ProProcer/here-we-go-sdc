@@ -2398,5 +2398,33 @@
   "free with optional certificate": {
     "ms": "percuma dengan sijil pilihan",
     "zh": "免费学习，可选证书"
+  },
+  "{0} confirmed skills still need a level.": {
+    "ms": "{0} kemahiran yang disahkan masih memerlukan tahap.",
+    "zh": "已确认的 {0} 项技能仍需设置等级。"
+  },
+  "{0} confirmed core skills still need a level.": {
+    "ms": "{0} kemahiran teras yang disahkan masih memerlukan tahap.",
+    "zh": "已确认的 {0} 项核心技能仍需设置等级。"
+  },
+  "Set next skill level": {
+    "ms": "Tetapkan tahap kemahiran seterusnya",
+    "zh": "设置下一项技能等级"
+  },
+  "Set level": {
+    "ms": "Tetapkan tahap",
+    "zh": "设置等级"
+  },
+  "Set core skill levels": {
+    "ms": "Tetapkan tahap kemahiran teras",
+    "zh": "设置核心技能等级"
+  },
+  "Review core skills": {
+    "ms": "Semak kemahiran teras",
+    "zh": "查看核心技能"
+  },
+  "This bar uses confirmed core skills, not software tools.": {
+    "ms": "Bar ini berdasarkan kemahiran teras yang disahkan, bukan alat perisian.",
+    "zh": "此进度条根据已确认的核心技能计算，而非软件工具。"
   }
 }
