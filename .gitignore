@@ -24,6 +24,9 @@ node_modules/
 .env
 .env.*
 !.env.example
+# Local runtime credentials and configuration
+/.aws/
+/.codex/
 
 # Private resume references are for local inspection only.
 docs/*[Rr]esume*.pdf

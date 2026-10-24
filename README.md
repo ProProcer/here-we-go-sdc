@@ -1,221 +1,121 @@
-# FutureReady AI — Aiversecity Future-Ready Workforce
+# FutureReady AI
 
-> **Working local prototype** for SDC Hackathon 2026, Domain 1. CV upload, skill review, real-catalog matching, scenarios and learning objectives are connected. Public deployment and real-role evidence/course coverage remain outstanding.
-> An evidence-aware career navigator that connects current skills to explainable role matches, AI-change scenarios, low-cost learning pathways and UN SDG targets.
+An evidence-aware career navigator for SDC Hackathon 2026, Domain 1: **The Aiversecity Future-Ready Workforce**.
 
-## Team Information
+FutureReady AI helps students, graduates and early-career professionals connect their skills to suitable occupations and practical learning goals. Upload a fictional CV, review its extracted skills, explore explainable career matches, and compare learning priorities across hypothetical AI-change scenarios.
 
-| Field | Details |
-|---|---|
-| Team name | `[ADD REGISTERED TEAM NAME]` |
-| Domain | **Domain 1 — The Aiversecity Future-Ready Workforce Domain** |
-| Primary SDG | **SDG 4: Quality Education (Target 4.4)** |
-| Supporting SDGs | **SDG 8.2 / 8.5**, others where defensible for specific roles |
-| Team leader | `[ADD REGISTERED LEADER]` |
-| University | `[ADD]` |
-| Number of team members | `5 planned; replace with actual registered number` |
+[Source code](https://github.com/ProProcer/here-we-go-sdc) · [Documentation](docs/README.md) · [Replit instructions](replit.md)
 
-## Official and project links
+## Features and status
 
-| Resource | URL / status |
-|---|---|
-| GitHub | `[ADD NEW REPOSITORY CREATED AFTER HACKATHON START]` |
-| Replit project | `[ADD ACTUAL TEAM PROJECT]` |
-| Live prototype | `[ADD FUNCTIONAL PUBLIC DEPLOYMENT]` |
-| RunPod endpoint | `[ONLY IF ACTUAL GPU WORK USED]` |
-| Pitch slide deck | `[ADD]` |
-| 5–7 minute YouTube demo | `[ADD]` |
+- Parse PDF, DOCX, TXT, JPG and PNG CVs, including scanned documents through local CPU OCR.
+- Normalize skills against O*NET and optionally estimate proficiency using AI. Users review evidence and confirm or correct their profile.
+- Rank occupations using explainable skill alignment, job-relative proficiency suitability and visible skill gaps.
+- Display dated research evidence and conditional interpretations of how AI could affect occupational tasks.
+- Compare Baseline, Moderate and Rapid scenarios without changing personal fit scores.
+- Build learning roadmaps with verified resources where available, practice objectives, prerequisite guidance and explained SDG connections.
 
-## Problem
+The application is implemented and has recorded local verification. Replit development configuration is included; a public production URL is not recorded here. See the [dated verification report](docs/FINAL_VERIFICATION.md) and [provider verification notes](docs/AI_PROVIDERS.md). Research and verified course coverage remain limited.
 
-AI alters tasks and occupational skill needs, but existing career advice often combines generic predictions, opaque match scores and outdated training lists. Graduates and early-career professionals need a transparent way to connect their transferable skills to suitable roles, assess evidence and uncertainty, and identify practical low-cost courses.
+## Architecture
 
-## Solution
-
-Upload a **synthetic** CV or enter a fictional sample profile; review extracted skills; explore standardized roles ranked by transparent fit; inspect dated AI-job evidence and role-specific task impacts; compare a factual baseline with **explicitly synthetic** moderate/rapid disruption scenarios; generate verified and inexpensive courses in prerequisite order; understand the SDG contribution of the role and skill-building.
-
-### Six required features
-
-1. Skills profile intake from fictional CV/form.
-2. Updatable dated AI/job-market signal layer with source provenance.
-3. Explainable future-role matching plus skills gaps.
-4. Ordered, affordable, resource-verified reskilling plan and time estimates.
-5. Role **and skill** → justified SDG mapping.
-6. Explicit multi-scenario uncertainty analysis (baseline plus hypothetical scenarios).
-
-The career drawer's **AI outlook & evidence** section now includes updatable
-Google Research and Microsoft Research feeds, visible publication/fetch dates,
-manual and daily refresh, and source-grounded task/learning interpretations.
-See [AI trend layer](docs/AI_TREND_LAYER.md) for behaviour, verification and scope.
-
-The roadmap also includes [alternative career futures](docs/UNCERTAINTY_SCENARIOS.md):
-moderate and rapid what-if stories, explicit assumptions and uncertainty, a
-three-case skill-priority comparison, and preparation useful across both futures.
-Complete authored illustrations remain available while optional AI explanations
-are generated and cached. Personal fit is unchanged by scenario selection.
-
-The roadmap starts on Baseline; a dropdown opens Moderate or Rapid when needed.
-[Explained SDG connections](docs/SDG_CONNECTIONS.md) cover the selected career and
-individual skills, including confirmed skills, with practical examples and UN
-target links. Search and status filters support personal planning and HR/L&D
-development conversations.
-
-**Core differentiator:** new sourced evidence or a labeled counterfactual alters role outlooks and roadmap priorities in a traceable way. Personal *fit* remains separate from labor-market *outlook*.
-
-## Implemented application stack
-
-| Layer | Technology |
-|---|---|
-| UI | React, Vite, Tailwind CSS and TypeScript in `frontend/` |
-| Application | Python / FastAPI / Pydantic |
-| Data | Versioned JSON catalogs; expiring in-memory demo profiles |
-| Matching | Exact taxonomy normalization and deterministic O*NET coverage scoring |
-| CV extraction | Local PDF/DOCX/text parsing and CPU OCR for images/scanned pages |
-| Hosting | **Replit is mandatory** |
-| GPU | **RunPod only if GPU work is actually required**; real use proof then mandatory |
-
-## Architecture at a glance
-
-```text
-Synthetic CV / form ──> SkillsProfile ──> Explainable role matching ──> dashboard
-                                       ^                              |
-Public jobs + role taxonomy ----------+                              | selected role
-AI research/news + dated snapshots --> trend/outlook + scenarios -----+
-                                                                      v
-                                   verified course catalog --> learning roadmap + SDGs
+```mermaid
+flowchart TD
+    User[User: fictional CV or profile] --> UI[React / TypeScript interface]
+    UI <-->|REST /api/v2| API[Python / FastAPI backend]
+    API --> Intake[Local parsing and OCR / skill review]
+    Intake --> Match[Deterministic role matching and skill gaps]
+    Catalog[(Versioned O*NET JSON catalog)] --> Intake
+    Catalog --> Match
+    Match --> Plan[Learning roadmap / scenarios / SDG connections]
+    Resources[(Course and SDG catalogs)] --> Plan
+    Feeds[Google Research / Microsoft Research feeds] --> Evidence[Dated research evidence]
+    Evidence --> Plan
+    Plan --> UI
+    API --> AI[AI router: Groq, then RunPod, then Gemini]
+    API <--> Sessions[Expiring in-memory profiles]
 ```
 
-Read **[`docs/PROJECT_SPECIFICATION.md`](docs/PROJECT_SPECIFICATION.md)** for full context, architecture diagrams, JSON contracts, evaluation, compliance, project structure, five roles and timetable.
+Replit runs one FastAPI server serving the built frontend and API. RunPod hosts the separate GPU inference endpoint. GitHub Actions supports scheduled research discovery and review artifacts. No separate database server is required.
 
-## Intended repository structure
+| Layer | Technologies |
+|---|---|
+| Frontend | React, TypeScript, Vite, Tailwind CSS |
+| Backend | Python, FastAPI, Pydantic, Uvicorn |
+| Documents and OCR | pypdf, python-docx, pypdfium2, Pillow, RapidOCR, ONNX Runtime |
+| AI | Groq GPT-OSS-120B; RunPod GLM-4.7-Flash; Google Gemini fallback |
+| Storage | Versioned JSON catalogs; temporary in-memory profiles; local runtime caches |
+| Deployment and automation | Replit; RunPod Serverless; GitHub Actions |
 
-```text
-README.md                     # This README adapted from supplied template
-LICENSE                       # Apache 2.0
-.replit / .env.example         # Real Replit config; secret names only
-src/main.py                   # FastAPI entry point
-src/{ingestion,profiles,intelligence,reskilling,api,schemas}/
-runpod/handler.py             # Optional actual GPU inference code
-frontend/                    # React screens, reusable components, styles and Vite build
-data/{raw,processed,synthetic,demo}/
-tests/                       # Regression and integration tests
-docs/PROJECT_SPECIFICATION.md
-docs/PRELIMINARY_PROPOSAL_DRAFT.md
-submission/Submission Template SDC Hackathon.pdf  # ORIGINAL blank official PDF
-```
+Python dependencies are pinned in [requirements.txt](requirements.txt) and [requirements-dev.txt](requirements-dev.txt). Frontend dependencies are locked in [frontend/package-lock.json](frontend/package-lock.json).
 
-The web application uses `src/api/` for HTTP adapters and `frontend/src/` for the React interface. FastAPI serves the production Vite build from `frontend/dist/`. Document readers remain in `src/profiles/`. See [Person 5 handoff](docs/PERSON_5_HANDOFF.md) for implemented interfaces and limitations.
+## Run locally
 
-## Team roles
+Requirements: **Python 3.12** and **Node.js 22.12 or newer**, with npm.
 
-| Person | Module | Main deliverable |
-|---|---|---|
-| 1 | Job Data / Occupation Taxonomy | Curated, dated role catalog and skill requirements |
-| 2 | Synthetic CV / Skills Matching | Validated profile extraction, explainable scores and gaps |
-| 3 | AI Trend / Uncertainty | Source-backed role outlook and labeled synthetic scenarios |
-| 4 | Reskilling / SDGs | Verified low-cost pathway, time/cost and justified SDG mappings |
-| 5 | Frontend / Integration / Replit | Complete interactive UI, integration tests and live deployment |
-
-One of these members must also serve as the **registered team leader** to monitor official instructions and submit required materials. See the specification for interfaces and acceptance tests.
-
-Person 1's **synthetic role catalog mock** is ready for integration. See
-[`docs/API_CONTRACTS.md`](docs/API_CONTRACTS.md) for fixtures, shared IDs, loader
-usage and the original `GET /api/roles` adapter proposal. The application uses the
-real catalog through the `/api/v2` routes documented in the Person 5 handoff.
-
-Person 1 also supplies a **real O*NET® 31.0 catalog** with 910 occupations,
-source provenance, an exclusion audit, versioned read adapters and exploratory
-group/individual software coverage. Start with the
-[Person 1 handoff](docs/PERSON_1_HANDOFF.md),
-[consumer migration guide](docs/PERSON_1_MIGRATION.md) and
-[actual evaluation](docs/PERSON_1_EVALUATION.md).
-The real catalog uses schema 0.2.0; current teammate defaults retain the mock
-for compatibility. Persons 2–4 now use the real catalog through
-`src.backend.CareerBackend`; run `python -m src.backend` for the offline
-end-to-end example. Person 5 now wraps this shared backend with HTTP routes and a CV-first interface. O*NET data are licensed
-under CC BY 4.0 separately
-from this repository's Apache-2.0 code. See [data sources](docs/DATA_SOURCES.md).
-
-Person 3's **Data Analyst evidence and scenario module** is also implemented.
-The current [real-catalog evidence handoff](docs/ROLE_3_ONET_HANDOFF.md) supplies
-a live-verified source finding, two contextual BI task interpretations and an
-offline integration response. Unsupported tasks and skill effects remain explicit.
-Role 3 also includes [daily source discovery, finding review and a bounded
-learning-priority policy](docs/ROLE_3_DISCOVERY_AND_PRIORITIES.md), with a GitHub
-Actions review queue and explicit approval before evidence affects priorities.
-An [AI-first source reviewer](docs/ROLE_3_AI_REVIEW.md) now checks retrieved
-articles and study leads, challenges its draft and produces a short
-[human attention brief](data/review/discovery/REVIEW_BRIEF.md).
-The [shared skill-evidence layer](docs/ROLE_3_SHARED_SKILL_EVIDENCE.md) reviews
-sources independently of any role, assesses new/changed skills against stored
-findings, and lets new roles reuse existing approved conditional mappings offline.
-Its [low-cost model fallback policy](docs/ROLE_3_MODEL_FALLBACK.md) handles temporary
-model failures with bounded attempts and preserves the actual model provenance.
-For a private button-based workflow, double-click **`Review Role 3.cmd`** on your
-laptop. The [review menu guide](docs/ROLE_3_REVIEW_MENU.md) explains loading the
-latest GitHub report, approving/rejecting items, targeted AI rechecks and saving
-your reviewed decisions back to GitHub.
-The [role impact checker](docs/ROLE_3_ROLE_IMPACTS.md) now shortlists roles through
-supported skill connections, checks actual role tasks against stored findings,
-and adds a **Role impacts** tab with separate approval, rejection and AI rechecks.
-Current approved interpretations are available offline through
-`CareerBackend.role_impacts(role_id)`; they do not change numerical weights.
-The [first evidence-chain deliverable](docs/ROLE_3_EVIDENCE_CHAIN.md) connects a
-refreshable cited finding to a proposed task interpretation and explained
-Python/SQL skill implications. It includes an offline example and live-fetch
-receipt; it does not constitute a deployed application or employment forecast.
-
-Role 3 also supports [automatic candidate finding extraction](docs/ROLE_3_EXTRACTION.md)
-from an approved report URL using Groq GPT-OSS-120B, with RunPod GLM and Gemini as backups. Generated findings remain in a separate
-review queue until an owner checks them; accepted evidence is not changed by extraction.
-The [approval CLI](docs/ROLE_3_APPROVAL.md) prepares a review plan and admits an
-explicitly approved finding through the refresh pipeline, with reviewer/source
-provenance and an optional separately reviewed role/task interpretation.
-The [task/skill proposal stage](docs/ROLE_3_TASK_SKILL_PROPOSALS.md) uses an accepted
-finding and the catalog to generate conditional implications or explain
-insufficient evidence. Its outputs remain separate proposals for review.
-
-## How to run
-
-Use Python 3.11+ (verified locally with Python 3.13) and Node.js 22.12+. Create and activate a Python virtual environment. From the repository root, install dependencies and build the frontend once:
+From the repository root on Linux or macOS:
 
 ```bash
+python -m venv .venv
+source .venv/bin/activate
 python -m pip install -r requirements.txt
 npm --prefix frontend ci
 npm --prefix frontend run build
 python -m src.main
 ```
 
-Open **http://localhost:8000**. Upload a fictional CV or choose **Try sample** to parse the downloadable fictional PDF. Confirm the extracted skills before exploring roles. Moderate/rapid hypothetical scenarios now work across the real occupational catalog; Business Intelligence Analysts retains its specific configured stress tests. See [user-flow integration and next steps](docs/USER_FLOW_INTEGRATION.md) for AI estimates, evidence review, course coverage and SDGs.
+On Windows, activate the environment with `.venv\Scripts\Activate.ps1` in PowerShell before running the remaining commands.
 
-For frontend development, keep Python running in one terminal and run `npm --prefix frontend run dev` in another. Open **http://localhost:5173** for Vite's live updates. Vite forwards `/api` to Python on port 8000; profiles stay in backend memory. `npm --prefix frontend run build` checks TypeScript and generates the production build. Rebuild to see frontend changes on port 8000. `node_modules/`, `dist/` and build metadata are ignored; commit `frontend/package-lock.json`.
+Open **http://localhost:8000**, select **Try sample**, review and confirm the fictional profile, and explore careers. The server reads `PORT`; the local default is `8000`. `GET /health` returns `{"status":"ok"}`.
 
-Supported uploads: PDF, DOCX, UTF-8 TXT, JPG and PNG, up to 2 MiB; PDFs up to five pages. Scanned pages and images use local CPU OCR with packaged RapidOCR models. Extraction is limited to the catalog vocabulary; always review the evidence and correct missed or mistaken skills. There is no ATS-template requirement.
+For frontend development, keep Python running and start Vite in a second terminal:
 
-The pulled real-role evidence ledger contains one source and two contextual task interpretations for Business Intelligence Analysts. Other roles retain insufficient-evidence states. Role 3's existing shared skill evidence and role-impact lookups are connected to read-only HTTP routes and expandable evidence panels. Only approved records are displayed; the committed approval stores remain empty. Reviewed learning-priority metadata and course-cache status are also shown through disclosures. The verified course catalog now includes six free OpenLearn courses; uncovered skills retain practice objectives and an explicit resource-not-found state. Evidence lookups make no Gemini calls. CV intake uses the shared Groq GPT-OSS-120B primary / RunPod GLM / Gemini backup router to estimate levels for all extracted skills (up to 100 per bounded request), with explanations for review. RunPod requires a deployed vLLM-compatible GLM model endpoint. Research review, extraction, skill mapping and role-impact jobs use the same routing policy. See [model provider setup and deployment status](docs/AI_PROVIDERS.md). Known local `.env` settings are loaded at startup. Failed assessments now show the specific failure and a retry button; manual corrections are optional. Without AI, intake still works and levels remain unknown. Background review jobs use GROQ_API; RunPod and Gemini credentials are reserved for backup.
+```bash
+npm --prefix frontend run dev
+```
 
-`python -m src.main` is the deployment entry point. It binds to `0.0.0.0`, reads `PORT` (default `8000`), and uses one worker. No API key is needed for CV intake, matching or the cached learning planner.
+Open **http://localhost:5173**. Vite forwards `/api` to the backend on port 8000. Rebuild the frontend to see changes through the Python-served application.
+
+## Configure AI services
+
+Local parsing, profile review, deterministic matching and cached learning resources work without API credentials. AI assessments, generated interpretations, dependency maps and translations require an available configured provider.
+
+Copy [.env.example](.env.example) to `.env` locally, or add settings to **Replit Secrets**:
+
+| Setting | Purpose |
+|---|---|
+| `LLM_PROVIDER=groq` | Primary provider |
+| `LLM_FALLBACK_PROVIDER=runpod,gemini` | Fallback order |
+| `GROQ_API` | Groq credential; `GROQ_API_KEY` is also accepted |
+| `GROQ_MODEL=openai/gpt-oss-120b` | Primary model |
+| `RUNPOD_API_KEY`, `RUNPOD_ENDPOINT_ID` | Existing RunPod endpoint credentials and identifier |
+| `RUNPOD_MODEL=zai-org/GLM-4.7-Flash` | RunPod model |
+| `GEMINI_API_KEY`, `GEMINI_MODEL` | Final backup; configured default is `gemini-3.1-flash-lite` |
+| `TREND_AUTO_REFRESH=1` | Refresh public research feeds every 24 hours while running |
+
+Only availability failures trigger fallback. Invalid schemas or unsupported evidence fail validation. Responses record the actual provider and model. Keep credentials out of Git, frontend code and documentation. See [AI provider setup](docs/AI_PROVIDERS.md) for timeouts, RunPod configuration and inference provenance.
 
 ## Deploy on Replit
 
-1. Put the latest application files in GitHub, then open [Replit Import](https://replit.com/import) and import that repository. Import only includes committed/pushed changes. Alternatively, import a clean project ZIP containing `.replit`, `replit.nix`, `requirements.txt`, `src/`, `frontend/` (including its package lock) and `data/`; exclude your local `.venv`, `node_modules`, `dist`, `.git` and `.env`.
-2. Python dependencies are installed in Replit's managed Python environment from `requirements.txt`. Click **Run** to install the locked npm packages, build React, and start FastAPI. The first dependency installation takes longer because it includes document-processing libraries. Check the preview and `/health`. See [Replit run instructions](replit.md).
-3. Open **Publishing → Adjust settings** and select **Reserved VM**, running as a web server. Use a single server. Profiles currently live in process memory; multiple servers can lose track of the active session. They also expire after an hour and are cleared on restart/redeploy.
-4. Confirm the settings below and publish. Then test the public URL with **Try sample**, skill confirmation, and role exploration. Deployment and genuine Replit usage proof must be completed in the team's account.
+1. Import this repository through [Replit Import](https://replit.com/import), including `.replit`, `replit.nix`, `requirements.txt`, `src/`, `frontend/` and `data/`. Exclude `.env`, dependency folders and local caches.
+2. Install Python dependencies from `requirements.txt` in Replit's managed Python environment. Click **Run** to install frontend dependencies, build the UI and start FastAPI. Check the preview and `/health`.
+3. Add provider settings through Secrets and verify they are available to the published application.
+4. Open **Publishing**, choose **Reserved VM**, and retain the build/run commands from [.replit](.replit). Use one server because profiles are stored in process memory.
+5. Publish, open the public URL and repeat the sample CV journey. Save the verified URL and genuine platform-use evidence for submission.
 
-| Setting | Value |
+| Setting | Repository configuration |
 |---|---|
-| Runtime | Python 3.12 + Node.js 22.12 or newer |
-| Build command | Use the committed `.replit` build command: npm install/build, then Python dependency installation |
-| Run command | `env -u LD_LIBRARY_PATH python -m src.main` |
+| Runtime | Python 3.12 and Node.js 22 |
+| Start command | `env -u LD_LIBRARY_PATH python -m src.main` |
+| Bind address | `0.0.0.0` |
 | Internal / external port | `5000` / `80` |
-| Environment | `PORT=5000` (already in `.replit`); no required API secrets |
+| Port environment variable | `PORT=5000` |
 
-`.replit` includes the build/run commands and port mapping. Keep `PORT` and the internal port mapping consistent if you change them. Python packages use Replit's managed environment, without a virtual environment. The commands clear the imported library-path override for Node and Python. Development tools and the optional RunPod SDK are excluded from the web deployment; the latter has its own `runpod/requirements.txt`.
+Preserve the `env -u LD_LIBRARY_PATH` wrappers: inherited native-library settings previously broke the managed Node runtime. Replit uses managed Python dependencies; the virtual-environment instructions above are for local development. If the publishing dialog reports a deployment-target change, close it, let `.replit` save, and reopen it. See [replit.md](replit.md) for environment-specific guidance.
 
-This remains one server deployment: Python serves both the built React frontend and `/api/v2`, using one public URL and port. Node is needed at build time; a second production server, CORS settings and a separate frontend host are unnecessary. The single-server choice follows the app's current session design. See Replit's [configuration reference](https://docs.replit.com/features/project-setup/configuration) and [deployment types](https://docs.replit.com/features/publishing/deployment-types). Source-backed evidence and verified course coverage remain separate team tasks described above.
+## Verification
 
-## Tests
+Install development dependencies, build the frontend, then run the backend suite:
 
 ```bash
 python -m pip install -r requirements-dev.txt
@@ -224,48 +124,45 @@ npm --prefix frontend run build
 python -m unittest discover -s tests -v
 ```
 
-The ordinary suite includes real local OCR checks. Browser tests are opt-in. Install Chromium with `python -m playwright install chromium`, set `RUN_BROWSER_TESTS=1`, then run `python -m unittest discover -s tests -p test_browser.py -v`. Alternatively, set `BROWSER_CHANNEL=msedge` to use installed Microsoft Edge. Browser tests launch and stop their own server; `BROWSER_ARTIFACT_DIR` optionally saves screenshots outside the source tree.
+Browser checks are opt-in:
 
-## Replit and RunPod compliance
+```bash
+python -m playwright install chromium
+RUN_BROWSER_TESTS=1 python -m unittest discover -s tests -p test_browser.py -v
+```
 
-**Replit — required:** the team must actually use Replit and include verifiable proof in its technical/tools declaration, from its own account/project. Add the corresponding evidence to `submission/` after use.
+Browser tests start their own server. Set `BROWSER_CHANNEL=msedge` for installed Microsoft Edge or `BROWSER_ARTIFACT_DIR` to save screenshots outside the source tree. Recorded evaluations and fictional fixtures are linked from the [documentation index](docs/README.md). Historical results do not establish that every fresh environment has passed those checks.
 
-**RunPod — conditional:** if model training, fine-tuning or inference **needs a GPU**, run those workloads on RunPod and include genuine account/Pod GPU/runtime evidence or actual serverless endpoint proof. The starter ZIP's RunPod demo handler and “proof” PDF are **not proof of real use**. If architecture is CPU/managed API only, document that and confirm interpretation with organizers if necessary.
+## Data, privacy and limitations
 
-## Submission plan
+- Use fictional CVs for demonstrations. Uploads and profiles are processed in memory rather than intentionally written to disk. Profiles expire after one hour and disappear on restart; expiry is enforced on access and stale entries are removed during session creation.
+- AI assessment sends selected skill evidence snippets to configured providers. Snippets may contain personal information from a real CV; automatic anonymization is not guaranteed. Provider retention follows applicable service terms.
+- O*NET describes U.S. occupations. It does not establish Malaysian hiring demand, professional eligibility or employment probability.
+- AI estimates and OCR can be wrong. Users review skills before matching; hypothetical scenarios are illustrations rather than forecasts.
+- Research and verified course coverage are limited. Missing evidence and resources are shown explicitly. Generated interpretations do not constitute human approval.
+- The prototype has no user-account system or persistent profile database. One server process is required for the current session design.
 
-- Preliminary submission via **sdchack.my by 25 Oct 2026 07:59:59 MYT**.
-- Official six items: completed official-form PRD PDF, pitch slides, functional prototype link, technical/tools declaration, public compliant GitHub repo, 5–7 minute YouTube demo.
-- Repo must be newly created **after competition start**, have authentic commit history, contain Apache 2.0 `LICENSE`, be public for judging, and be frozen at deadline unless authorized.
-- Actual proposal form: `submission/Submission Template SDC Hackathon.pdf`; working response draft: [`docs/PRELIMINARY_PROPOSAL_DRAFT.md`](docs/PRELIMINARY_PROPOSAL_DRAFT.md).
+## Repository guide
 
-## Compliance and provenance
+```text
+frontend/          React application and build configuration
+src/               Backend, ingestion, matching, AI and learning modules
+data/              Source catalogs, processed data, review records and synthetic fixtures
+tests/             Backend and opt-in browser tests
+scripts/           Maintenance, evaluation and provider setup tools
+runpod/            GPU configuration and optional worker tools
+docs/              Technical documentation and dated verification evidence
+docs/archive/      Original planning materials retained for provenance
+submission/        Official form and platform-use documents
+.github/workflows/ Scheduled evidence discovery
+```
 
-The **Terms & Conditions control conflicts**. The Participant Handbook provides operational requirements; the Official Handbook and sponsor brief are supplementary. Only synthetic demo CVs; dated citations for observed claims; clear hypothetical labels; no fictional course providers/jobs/statistics shown as real; declare tools, datasets, models, licenses and any pre-existing work.
+## License and attribution
 
-## License
+Original project code is licensed under [Apache 2.0](LICENSE). Third-party software, datasets, model weights and research excerpts retain their own licenses and terms.
 
-The repository will include the **Apache License 2.0** as required by the Participant Handbook. Third-party materials retain their own terms; verify the team has the right to release each file publicly.
+O*NET® data are adapted from the U.S. Department of Labor/Employment and Training Administration database under **CC BY 4.0**. O*NET® is a USDOL/ETA trademark; USDOL/ETA has not approved, endorsed or tested these adaptations. See [data sources and modifications](docs/DATA_SOURCES.md).
 
-## Current status
+Linked course materials and research excerpts remain subject to publisher terms. Public availability does not relicense source content under this project's license. Pre-trained model licenses and API terms also apply; see [provider documentation](docs/AI_PROVIDERS.md).
 
-- [x] Technical specification drafted
-- [x] Proposal-form answer draft prepared, with unresolved details explicitly marked
-- [ ] Registered team data and URLs filled
-- [ ] Public/legal data source selection validated
-- [x] Fictional CV fixtures and working local application built
-- [ ] Real source evidence, courses and measured evaluation completed
-- [ ] Replit used and actual proof captured
-- [ ] RunPod used **if** a GPU task is performed, with actual proof
-- [ ] Six official preliminary items submitted through portal
-
-CV recommendations use a blend of distinctive skill alignment and general requirement coverage. See [the matching formula and sample-CV acceptance results](docs/CV_MATCHING.md).
-
-CV assessment validates canonical IDs against the database before and after AI,
-and supplies skill kinds and definitions to the model. Matching v5 includes a
-transparent comparison of estimated general-skill proficiency with available
-O*NET required levels. See [the formula](docs/CV_MATCHING.md),
-[CV formats](data/synthetic/profiles/cvs/domain_examples/README.md) and
-[composition/styling checks](data/synthetic/profiles/cvs/layout_examples/README.md).
-
-Every matched skill uses job-relative level suitability. Software level estimates are derived from documented occupational skill proxies and labelled separately from published general-skill requirements. Missing proxy ratings remain unknown.
+Generative AI assisted with implementation, debugging, test development and documentation. Application output is constrained and validated, and the team remains responsible for reviewing code, claims and submission materials. Historical planning documents and template PDFs preserve provenance; they do not establish that deployment or submission is complete.
