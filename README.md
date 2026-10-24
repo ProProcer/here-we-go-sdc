@@ -199,7 +199,7 @@ The pulled real-role evidence ledger contains one source and two contextual task
 ## Deploy on Replit
 
 1. Put the latest application files in GitHub, then open [Replit Import](https://replit.com/import) and import that repository. Import only includes committed/pushed changes. Alternatively, import a clean project ZIP containing `.replit`, `replit.nix`, `requirements.txt`, `src/`, `frontend/` (including its package lock) and `data/`; exclude your local `.venv`, `node_modules`, `dist`, `.git` and `.env`.
-2. Click **Run**. The committed `.replit` selects Python 3.12 and Node.js 22, installs the locked npm packages and builds React, then installs the Python dependencies and starts FastAPI. The first install takes longer because it includes OCR models. Check the preview and `/health`.
+2. Python dependencies are installed in Replit's managed Python environment from `requirements.txt`. Click **Run** to install the locked npm packages, build React, and start FastAPI. The first dependency installation takes longer because it includes document-processing libraries. Check the preview and `/health`. See [Replit run instructions](replit.md).
 3. Open **Publishing → Adjust settings** and select **Reserved VM**, running as a web server. Use a single server. Profiles currently live in process memory; multiple servers can lose track of the active session. They also expire after an hour and are cleared on restart/redeploy.
 4. Confirm the settings below and publish. Then test the public URL with **Try sample**, skill confirmation, and role exploration. Deployment and genuine Replit usage proof must be completed in the team's account.
 
@@ -207,11 +207,11 @@ The pulled real-role evidence ledger contains one source and two contextual task
 |---|---|
 | Runtime | Python 3.12 + Node.js 22.12 or newer |
 | Build command | Use the committed `.replit` build command: npm install/build, then Python dependency installation |
-| Run command | `.venv/bin/python -m src.main` |
-| Internal / external port | `8000` / `80` |
-| Environment | `PORT=8000` (already in `.replit`); no required API secrets |
+| Run command | `env -u LD_LIBRARY_PATH python -m src.main` |
+| Internal / external port | `5000` / `80` |
+| Environment | `PORT=5000` (already in `.replit`); no required API secrets |
 
-`.replit` already includes the build/run commands and port mapping. `replit.nix` supplies the native C++ and zlib runtime libraries used by the OCR/PDF dependencies. Keep `PORT` and the internal port mapping consistent if you change them. The build installs into `.venv` so it does not write into the system Python installation. Development tools and the optional RunPod SDK are excluded from the web deployment; the latter has its own `runpod/requirements.txt`.
+`.replit` includes the build/run commands and port mapping. Keep `PORT` and the internal port mapping consistent if you change them. Python packages use Replit's managed environment, without a virtual environment. The commands clear the imported library-path override for Node and Python. Development tools and the optional RunPod SDK are excluded from the web deployment; the latter has its own `runpod/requirements.txt`.
 
 This remains one server deployment: Python serves both the built React frontend and `/api/v2`, using one public URL and port. Node is needed at build time; a second production server, CORS settings and a separate frontend host are unnecessary. The single-server choice follows the app's current session design. See Replit's [configuration reference](https://docs.replit.com/features/project-setup/configuration) and [deployment types](https://docs.replit.com/features/publishing/deployment-types). Source-backed evidence and verified course coverage remain separate team tasks described above.
 

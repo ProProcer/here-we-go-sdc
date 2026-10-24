@@ -1,22 +1,47 @@
-run = ["sh", "-c", "npm --prefix frontend ci --include=dev && npm --prefix frontend run build && python -m venv .venv && .venv/bin/python -m pip install --disable-pip-version-check -r requirements.txt && exec .venv/bin/python -m src.main"]
+run = ["sh", "-c", "env -u LD_LIBRARY_PATH sh -c 'npm --prefix frontend ci --include=dev && npm --prefix frontend run build && exec python -m src.main'"]
 entrypoint = "src/main.py"
 modules = ["python-3.12", "nodejs-22"]
 
 [env]
-PORT = "8000"
+PORT = "5000"
 PYTHONUNBUFFERED = "1"
 
 [nix]
 channel = "stable-24_05"
+packages = ["freetype", "lcms2", "libimagequant", "libjpeg", "libtiff", "libwebp", "libxcrypt", "oneDNN", "openjpeg", "re2", "tcl", "tk", "zlib"]
 
 [packager.features]
 guessImports = false
 enabledForHosting = false
 
 [deployment]
-build = ["sh", "-c", "npm --prefix frontend ci --include=dev && npm --prefix frontend run build && python -m venv .venv && .venv/bin/python -m pip install --no-cache-dir --disable-pip-version-check -r requirements.txt"]
-run = [".venv/bin/python", "-m", "src.main"]
+build = ["sh", "-c", "env -u LD_LIBRARY_PATH sh -c 'npm --prefix frontend ci --include=dev && npm --prefix frontend run build && python -m pip install --no-cache-dir --disable-pip-version-check -r requirements.txt'"]
+run = ["sh", "-c", "env -u LD_LIBRARY_PATH python -m src.main"]
 
 [[ports]]
-localPort = 8000
+localPort = 5000
 externalPort = 80
+
+[workflows]
+runButton = "Project"
+
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Start application"
+
+[[workflows.workflow]]
+name = "Start application"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "env -u LD_LIBRARY_PATH sh -c 'npm --prefix frontend ci --include=dev && npm --prefix frontend run build && PORT=5000 exec python -m src.main'"
+waitForPort = 5000
+
+[workflows.workflow.metadata]
+outputType = "webview"

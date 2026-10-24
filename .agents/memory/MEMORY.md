@@ -1,0 +1,1 @@
+- [Imported native library settings](native-library-settings.md) — inherited LD_LIBRARY_PATH can break the managed Node runtime; clear it for app commands.

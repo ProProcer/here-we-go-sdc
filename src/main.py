@@ -62,9 +62,13 @@ async def private_responses(request, call_next):
     response = await call_next(request)
     response.headers["X-Content-Type-Options"] = "nosniff"
     response.headers["Referrer-Policy"] = "no-referrer"
+    frame_ancestors = "'none'"
+    if os.getenv("REPLIT_DEV_DOMAIN") and os.getenv("REPLIT_DEPLOYMENT") != "1":
+        frame_ancestors = "https://replit.com https://*.replit.com"
     response.headers["Content-Security-Policy"] = (
         "default-src 'self'; script-src 'self'; style-src 'self'; "
-        "img-src 'self' data:; object-src 'none'; base-uri 'self'; frame-ancestors 'none'"
+        "img-src 'self' data:; object-src 'none'; base-uri 'self'; "
+        f"frame-ancestors {frame_ancestors}"
     )
     if request.url.path.startswith("/api/"):
         response.headers["Cache-Control"] = "no-store"
