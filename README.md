@@ -16,7 +16,7 @@ Ikiguy helps students, graduates and early-career professionals connect their sk
 | Domain | Domain 1: The Aiversecity Future-Ready Workforce |
 | How to run the project | Follow [Run locally](#run-locally) for installation and startup commands, then open http://localhost:8000. |
 | Live demo | [Try Ikiguy](https://here-we-go-sdc.replit.app) |
-| Pitching video | To be added |
+| Pitching video | [Pitching Video](https://youtu.be/XASOrQQj72U) |
 
 ## Project links
 
@@ -27,7 +27,7 @@ Ikiguy helps students, graduates and early-career professionals connect their sk
 | Live demo | [Ikiguy](https://here-we-go-sdc.replit.app) |
 | RunPod endpoint | https://api.runpod.ai/v2/mw04eleb91hr3t |
 | Slide deck | To be added |
-| Pitching video | To be added |
+| Pitching video | [Pitching Video](https://youtu.be/XASOrQQj72U) |
 
 ## Features and status
 
