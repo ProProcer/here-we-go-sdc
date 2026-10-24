@@ -215,6 +215,29 @@ class TestOnetCatalog(unittest.TestCase):
         with self.assertRaises(KeyError):
             get_onet_role(self.catalog, "role:unknown")
 
+    def test_search_prioritizes_visible_titles_before_aliases(self):
+        page = list_onet_roles(self.catalog, query="data", limit=100)
+        titles = [row["role_title"].casefold() for row in page["roles"]]
+        self.assertIn("data scientists", titles[:5])
+        alias_match = next(i for i, title in enumerate(titles) if "data" not in title)
+        self.assertTrue(all("data" not in title for title in titles[alias_match:]))
+        self.assertTrue(all(title.startswith("data") for title in titles[:5]))
+
+    def test_search_ranks_exact_and_partial_titles_and_normalizes_query(self):
+        for query in ("data sc", " DATA   SC ", "Data Scientists"):
+            with self.subTest(query=query):
+                page = list_onet_roles(self.catalog, query=query, limit=1)
+                self.assertEqual(page["roles"][0]["role_title"], "Data Scientists")
+
+    def test_search_paginates_after_ranking_and_keeps_alias_matches(self):
+        full = list_onet_roles(self.catalog, query="data", limit=100)
+        page = list_onet_roles(self.catalog, query="data", offset=2, limit=3)
+        self.assertEqual(page["roles"], full["roles"][2:5])
+        self.assertEqual(page["total"], full["total"])
+        for row in full["roles"]:
+            role = next(role for role in self.catalog.roles if role.role_id == row["role_id"])
+            self.assertIn("data", " ".join([role.role_title, *role.aliases]).casefold())
+
 
 if __name__ == "__main__":
     unittest.main()

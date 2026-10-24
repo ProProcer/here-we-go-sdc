@@ -22,6 +22,23 @@ def list_onet_roles(
             for term in terms
         )
     ]
+    if terms:
+        phrase = " ".join(terms)
+
+        def relevance(role):
+            title = " ".join(role.role_title.casefold().split())
+            # Rank the title people see ahead of matches in alternate titles.
+            if title == phrase:
+                tier = 0
+            elif title.startswith(phrase):
+                tier = 1
+            elif all(term in title for term in terms):
+                tier = 2
+            else:
+                tier = 3
+            return tier, title, role.role_id
+
+        rows.sort(key=relevance)
     return {
         "schema_version": "0.2.0",
         "catalog_id": catalog.catalog_id,
