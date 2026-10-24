@@ -11,7 +11,7 @@ Ikiguy helps students, graduates and early-career professionals connect their sk
 | Item | Details |
 |---|---|
 | App name | Ikiguy |
-| Team name | To be added |
+| Team name | Here We Go |
 | Hackathon | SDC Hackathon 2026 |
 | Domain | Domain 1: The Aiversecity Future-Ready Workforce |
 | How to run the project | Follow [Run locally](#run-locally) for installation and startup commands, then open http://localhost:8000. |
