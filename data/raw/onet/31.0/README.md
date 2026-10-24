@@ -14,7 +14,7 @@ See the [official database license](https://www.onetcenter.org/license_db.html).
 The repository's Apache-2.0 code license does not replace this data license.
 O*NET® is a trademark of USDOL/ETA.
 
-FutureReady AI transforms these data through coverage filtering, identifier
+Ikiguy transforms these data through coverage filtering, identifier
 mapping, importance rescaling, and explicit withholding of irrelevant or
 suppressed records. USDOL/ETA has not approved, endorsed or tested these
 modifications. Generated output retains source attribution and limitations.

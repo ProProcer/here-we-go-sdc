@@ -365,7 +365,7 @@ def build_onet_catalog(
     provenance = {
         "verified_at": manifest["verified_at"],
         "downloaded_at": manifest["downloaded_at"],
-        "attribution": "Contains adapted information from the O*NET 31.0 Database by USDOL/ETA, used under CC BY 4.0. O*NET is a trademark of USDOL/ETA. FutureReady AI modified the information; USDOL/ETA has not approved, endorsed, or tested these modifications.",
+        "attribution": "Contains adapted information from the O*NET 31.0 Database by USDOL/ETA, used under CC BY 4.0. O*NET is a trademark of USDOL/ETA. Ikiguy modified the information; USDOL/ETA has not approved, endorsed, or tested these modifications.",
         "modifications": [
             "Coverage filtering and explicit exclusions",
             "Normalized identifiers and exact aliases",

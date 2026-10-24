@@ -170,7 +170,7 @@ def fetch_html(url: str) -> bytes:
     request = Request(
         url,
         headers={
-            "User-Agent": "FutureReadyAI/0.1 (public research source verification)",
+            "User-Agent": "Ikiguy/0.1 (public research source verification)",
             "Accept": "text/html",
             "Accept-Encoding": "identity",
         },

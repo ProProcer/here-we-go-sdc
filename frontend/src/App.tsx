@@ -22,7 +22,7 @@ const stages: { id: Exclude<Screen, 'role' | 'outlook' | 'sdg'>; label: string; 
 ];
 const emptyPreferences: Preferences = { budget: '', hours: '', interests: '' };
 function Brand({ mobile = false }: { mobile?: boolean }) {
-  return <div className={`brand ${mobile ? 'mobile-brand' : ''}`} aria-label={t("ikiguy")}>
+  return <div className={`brand ${mobile ? 'mobile-brand' : ''}`} aria-label={t("Ikiguy")}>
     <span className="brand-mark" aria-hidden="true">
       <svg viewBox="0 0 32 32" fill="none">
         <path d="M16 16C5 16 5 4 11 4c5 0 5 7 5 12Z" fill="currentColor" opacity=".95" />
@@ -32,7 +32,7 @@ function Brand({ mobile = false }: { mobile?: boolean }) {
         <circle cx="16" cy="16" r="2" fill="currentColor" />
       </svg>
     </span>
-    <span className="brand-name">{t("ikiguy")}<span className="brand-dot" aria-hidden="true">.</span></span>
+    <span className="brand-name">{t("Ikiguy")}<span className="brand-dot" aria-hidden="true">.</span></span>
   </div>;
 }
 

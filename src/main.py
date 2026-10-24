@@ -1,4 +1,4 @@
-"""FutureReady AI web application. Run with uvicorn src.main:app."""
+"""Ikiguy web application. Run with uvicorn src.main:app."""
 
 from contextlib import asynccontextmanager
 import os
@@ -43,7 +43,7 @@ async def lifespan(app):
         app.state.sessions.clear()
 
 
-app = FastAPI(title="FutureReady AI", version="0.2.0", lifespan=lifespan)
+app = FastAPI(title="Ikiguy", version="0.2.0", lifespan=lifespan)
 app.mount("/assets", StaticFiles(directory=FRONTEND / "assets", check_dir=False), name="assets")
 app.mount("/fonts", StaticFiles(directory=ROOT.parent / "frontend" / "public" / "fonts"), name="fonts")
 app.include_router(router, prefix="/api/v2")

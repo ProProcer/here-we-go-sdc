@@ -1,10 +1,34 @@
-# FutureReady AI
+# Ikiguy
 
 An evidence-aware career navigator for SDC Hackathon 2026, Domain 1: **The Aiversecity Future-Ready Workforce**.
 
-FutureReady AI helps students, graduates and early-career professionals connect their skills to suitable occupations and practical learning goals. Upload a fictional CV, review its extracted skills, explore explainable career matches, and compare learning priorities across hypothetical AI-change scenarios.
+Ikiguy helps students, graduates and early-career professionals connect their skills to suitable occupations and practical learning goals. Upload a fictional CV, review its extracted skills, explore explainable career matches, and compare learning priorities across hypothetical AI-change scenarios.
 
 [Source code](https://github.com/ProProcer/here-we-go-sdc) · [Documentation](docs/README.md) · [Replit instructions](replit.md)
+
+## Project overview
+
+| Item | Details |
+|---|---|
+| App name | Ikiguy |
+| Team name | To be added |
+| Hackathon | SDC Hackathon 2026 |
+| Domain | Domain 1: The Aiversecity Future-Ready Workforce |
+| How to run the project | Follow [Run locally](#run-locally) for installation and startup commands, then open http://localhost:8000. |
+| Live demo | [Try Ikiguy](https://here-we-go-sdc.replit.app) |
+| Pitching video | To be added |
+
+## Project links
+
+| Resource | Link |
+|---|---|
+| GitHub repository | [ProProcer/here-we-go-sdc](https://github.com/ProProcer/here-we-go-sdc) |
+| Replit project | To be added |
+| Live demo | [Ikiguy](https://here-we-go-sdc.replit.app) |
+| RunPod endpoint | To be added |
+| Slide deck | To be added |
+| Demo video | To be added |
+| Pitching video | To be added |
 
 ## Features and status
 
@@ -15,7 +39,7 @@ FutureReady AI helps students, graduates and early-career professionals connect 
 - Compare Baseline, Moderate and Rapid scenarios without changing personal fit scores.
 - Build learning roadmaps with verified resources where available, practice objectives, prerequisite guidance and explained SDG connections.
 
-The application is implemented and has recorded local verification. Replit development configuration is included; a public production URL is not recorded here. See the [dated verification report](docs/FINAL_VERIFICATION.md) and [provider verification notes](docs/AI_PROVIDERS.md). Research and verified course coverage remain limited.
+Try the hosted application at [here-we-go-sdc.replit.app](https://here-we-go-sdc.replit.app). See the [dated verification report](docs/FINAL_VERIFICATION.md) and [provider verification notes](docs/AI_PROVIDERS.md) for recorded local checks. Research and verified course coverage remain limited.
 
 ## Architecture
 

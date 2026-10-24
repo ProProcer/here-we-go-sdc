@@ -1,4 +1,4 @@
-# Running FutureReady AI on Replit
+# Running Ikiguy on Replit
 
 ## Run
 - Click **Run** to start the `Start application` workflow.

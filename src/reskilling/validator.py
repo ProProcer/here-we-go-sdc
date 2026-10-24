@@ -137,7 +137,7 @@ def fetch_course_page(url: str) -> FetchedPage:
     request = Request(
         url,
         headers={
-            "User-Agent": "FutureReadyAI/0.1 (course verification)",
+            "User-Agent": "Ikiguy/0.1 (course verification)",
             "Accept": "text/html,application/xhtml+xml",
             "Accept-Encoding": "identity",
         },

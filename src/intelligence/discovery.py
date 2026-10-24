@@ -72,7 +72,7 @@ def canonical_url(url: str) -> str:
 
 def fetch_feed(url: str) -> bytes:
     # The caller selects exact URLs from repository-owned feed configuration.
-    request = Request(url, headers={"User-Agent": "FutureReadyAI/0.2 source discovery"})
+    request = Request(url, headers={"User-Agent": "Ikiguy/0.2 source discovery"})
     with build_opener(RejectRedirects()).open(request, timeout=15) as response:
         if response.status != 200:
             raise ValueError("Feed must return HTTP 200")

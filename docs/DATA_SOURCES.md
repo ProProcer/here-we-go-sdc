@@ -46,7 +46,7 @@ exact aliases; divide relevant Importance by 5; withhold suppressed Level;
 retain category/demand metadata separately; leave unprovided task-skill edges
 unmapped. The original CSVs are unchanged.
 
-O*NET® is a trademark of USDOL/ETA. FutureReady AI adapts the information;
+O*NET® is a trademark of USDOL/ETA. Ikiguy adapts the information;
 USDOL/ETA has not approved, endorsed or tested these modifications. The code's
 Apache-2.0 license does not relicense third-party data. Downstream pages must
 retain attribution and a license link.

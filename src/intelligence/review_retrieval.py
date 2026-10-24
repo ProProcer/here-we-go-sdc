@@ -63,7 +63,7 @@ def fetch_research(url):
     ):
         raise ValueError("Only arXiv abstract pages are supported")
     request = Request(
-        url, headers={"User-Agent": "FutureReadyAI/0.3 public-research-review"}
+        url, headers={"User-Agent": "Ikiguy/0.3 public-research-review"}
     )
     with build_opener(RejectRedirects()).open(request, timeout=15) as response:
         if response.status != 200:
