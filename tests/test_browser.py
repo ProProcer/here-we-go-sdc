@@ -59,6 +59,16 @@ class TestBrowserJourney(unittest.TestCase):
             destination.mkdir(parents=True, exist_ok=True)
             page.screenshot(path=str(destination / (name + ".png")), full_page=True)
 
+    def choose_roadmap_option(self, page, control_id, value):
+        labels = {
+            "baseline": "Baseline · current requirements",
+            "moderate_ai_change": "Moderate AI adoption",
+            "rapid_ai_change": "Rapid AI adoption",
+        }
+        label = labels[value] if control_id == "scenario-select" else f"{value} hours / week"
+        page.locator(f"#{control_id}").click()
+        page.locator(f"#{control_id}-options").get_by_role("option", name=label, exact=True).click()
+
     def test_live_trends_show_source_dates_labels_and_refresh_without_changing_fit(self):
         from playwright.sync_api import expect
         context = self.browser.new_context(viewport={"width": 1440, "height": 1080})
@@ -76,6 +86,9 @@ class TestBrowserJourney(unittest.TestCase):
         indirect = {**article, "article_id": "indirect", "title": "TEST broad research", "source_url": "https://example.org/research/broad"}
         unselected = {**article, "article_id": "unselected", "title": "TEST unselected research", "source_url": "https://example.org/research/unselected"}
         thin = {**article, "article_id": "thin", "title": "TEST short excerpt", "source_url": "https://example.org/research/short"}
+        payload["interpretations"].append({**payload["interpretations"][0],
+            "article_id": "indirect", "source": indirect,
+            "task_label": "HIDDEN indirect task", "what_changed": "HIDDEN indirect finding"})
         payload["refresh"]["article_count"] = 4
         payload["source_review"] = {"stored_count": 4, "selected_count": 3, "assessed_count": 2,
             "connection_count": 1, "assessment_limit": 6, "connection_limit": 3,
@@ -84,7 +97,11 @@ class TestBrowserJourney(unittest.TestCase):
                 {"source": indirect, "outcome": "indirect_relevance", "reason": "This excerpt describes general AI research without a specific reporting application.", "assessed_by_ai": True},
                 {"source": unselected, "outcome": "not_selected", "reason": "Not sent to the AI: outside the selected articles. This does not mean it is unrelated.", "assessed_by_ai": False},
                 {"source": thin, "outcome": "insufficient_text", "reason": "Not sent to the AI: too little source text was available.", "assessed_by_ai": False}]}
+        first_fetch = []
         def trends(route):
+            if not first_fetch:
+                first_fetch.append(route)
+                return
             if route.request.method == "POST":
                 payload["refresh"]["last_successful_at"] = "2026-10-23T13:00:00+00:00"
             route.fulfill(json=payload)
@@ -100,29 +117,45 @@ class TestBrowserJourney(unittest.TestCase):
         page.get_by_role("option", name="Business Intelligence Analysts", exact=True).click()
         page.locator("#find-matches").click()
         page.get_by_role("button", name="Explore Business Intelligence Analysts", exact=True).click()
-        expect(page.locator("#role-drawer")).to_be_visible(timeout=30000)
-        fit = page.locator("#drawer-fit strong").inner_text()
-        page.get_by_text("AI outlook & evidence", exact=True).click()
+        expect(page.locator("#role")).to_be_visible(timeout=30000)
+        fit = page.locator("#role-fit strong").inner_text()
+        page.locator("#open-ai-outlook").click()
+        expect(page.locator("#news-loading .news-spinner")).to_be_visible()
+        transform = page.locator("#news-loading .news-spinner").evaluate("el => getComputedStyle(el).transform")
+        page.wait_for_timeout(150)
+        self.assertNotEqual(transform, page.locator("#news-loading .news-spinner").evaluate("el => getComputedStyle(el).transform"))
+        self.assertEqual(len(first_fetch), 1)
+        first_fetch[0].fulfill(json=payload)
+        expect(page.locator("#trend-interpretations .trend-card")).to_have_count(1)
+        expect(page.locator(".news-spinner")).to_have_count(0)
+        expect(page.locator("#outlook")).not_to_contain_text("HIDDEN indirect")
         expect(page.locator("#live-trend-status")).to_contain_text("12:00:00 UTC")
         expect(page.locator("#trend-interpretations")).to_contain_text("not human reviewed")
+        page.get_by_text("Explore finding & evidence", exact=True).click()
         expect(page.locator(".trend-citation")).to_be_visible()
         expect(page.locator(".trend-citation")).to_contain_text("Published 2026-10-22")
         expect(page.locator(".trend-implications")).to_contain_text("What it could mean for this career")
         expect(page.locator(".trend-implications")).to_contain_text("Practice validating chart outputs.")
         page.get_by_text("Supporting source", exact=True).click()
         expect(page.locator("#trend-interpretations")).to_contain_text("Published 2026-10-22")
-        expect(page.get_by_role("link", name="TEST research on generated charts")).to_have_attribute("href", article["source_url"])
+        expect(page.get_by_role("link", name="Read original research")).to_have_attribute("href", article["source_url"])
         page.get_by_role("button", name="Refresh trends", exact=True).click()
         expect(page.locator("#live-trend-status")).to_contain_text("13:00:00 UTC")
         expect(page.locator("#trend-interpretations")).to_contain_text("Published 2026-10-22")
-        expect(page.locator("#drawer-fit strong")).to_have_text(fit)
+        page.locator("#back-to-role").click()
+        expect(page.locator("#role-fit strong")).to_have_text(fit)
+        page.locator("#open-ai-outlook").click()
         expect(page.locator("#trend-review-summary")).to_contain_text("4 stored · 3 selected for this career · 2 assessed by AI · 1 career connection shown")
-        page.get_by_text("How sources were assessed", exact=True).click()
-        expect(page.locator("#live-source-list .source-card")).to_have_count(4)
-        expect(page.locator("#live-source-list")).to_contain_text("Indirect relevance")
-        expect(page.locator("#live-source-list")).to_contain_text("without a specific reporting application")
-        expect(page.locator("#live-source-list")).to_contain_text("Not selected for AI assessment")
-        expect(page.locator("#live-source-list")).to_contain_text("too little source text")
+        page.locator("#trend-source-review > summary").click()
+        expect(page.locator("#trend-source-review .help-mark")).to_have_text("?")
+        self.assertEqual(page.locator("#trend-source-review > summary").evaluate("el => getComputedStyle(el).borderWidth"), "0px")
+        self.assertTrue(page.evaluate("Boolean(document.querySelector('#build-roadmap').compareDocumentPosition(document.querySelector('#trend-source-review')) & Node.DOCUMENT_POSITION_FOLLOWING)"))
+        expect(page.locator("#live-source-list .source-card")).to_have_count(1)
+        expect(page.locator("#live-source-list")).to_contain_text("Career connection shown")
+        for hidden_title in ("TEST broad research", "TEST unselected research", "TEST short excerpt"):
+            expect(page.locator("#outlook")).not_to_contain_text(hidden_title)
+        expect(page.locator("#outlook")).not_to_contain_text("Indirect relevance")
+        expect(page.locator("#outlook")).not_to_contain_text("Not selected for AI assessment")
         page.locator("#trend-review-summary").scroll_into_view_if_needed()
         self.screenshot(page, "trend-source-context")
         complete = json.loads(json.dumps(payload))
@@ -133,6 +166,7 @@ class TestBrowserJourney(unittest.TestCase):
         for item in payload["source_review"]["articles"]:
             item.update(outcome="not_assessed", assessed_by_ai=False)
         expect(page.locator("#trend-analysis-notice")).to_contain_text("Finding research relevant", timeout=10000)
+        expect(page.locator("#trend-analysis-notice .news-spinner")).to_be_visible()
         expect(page.locator("#trend-review-summary")).to_have_count(0)
         expect(page.locator("#live-source-list")).to_have_count(0)
         expect(page.locator("#live-trends")).not_to_contain_text("AI assessment pending")
@@ -140,6 +174,7 @@ class TestBrowserJourney(unittest.TestCase):
         payload["analysis_error"] = "Provider unavailable"
         payload["source_review"]["updating"] = False
         expect(page.locator("#retry-trend-analysis")).to_be_visible(timeout=10000)
+        expect(page.locator(".news-spinner")).to_have_count(0)
         expect(page.locator("#trend-analysis-notice")).to_contain_text("does not mean that no articles are relevant")
         payload.clear()
         payload.update(json.loads(json.dumps(complete)))
@@ -149,6 +184,7 @@ class TestBrowserJourney(unittest.TestCase):
         payload["analysis_stale"] = True
         payload["source_review"]["updating"] = True
         expect(page.locator("#trend-analysis-notice")).to_contain_text("Updating career research", timeout=10000)
+        expect(page.locator("#trend-analysis-notice .news-spinner")).to_be_visible()
         expect(page.locator("#trend-review-summary")).to_contain_text("2 assessed by AI")
         expect(page.locator("#trend-interpretations")).to_contain_text("TEST AI-assisted chart finding")
         payload["analysis_status"] = "failed"
@@ -157,7 +193,15 @@ class TestBrowserJourney(unittest.TestCase):
         expect(page.locator("#trend-analysis-notice")).to_contain_text("Showing your last completed assessment", timeout=10000)
         expect(page.locator("#trend-review-summary")).to_contain_text("2 assessed by AI")
         payload.clear()
-        payload.update(complete)
+        payload.update(json.loads(json.dumps(complete)))
+        payload["interpretations"] = []
+        payload["source_review"]["connection_count"] = 0
+        payload["source_review"]["articles"][0]["outcome"] = "no_clear_connection"
+        page.get_by_role("button", name="Refresh trends", exact=True).click()
+        expect(page.get_by_text("No career connections to show yet", exact=True)).to_be_visible()
+        expect(page.locator(".news-spinner")).to_have_count(0)
+        payload.clear()
+        payload.update(json.loads(json.dumps(complete)))
         # A new frontend talking to an older server must explain how to recover.
         payload.pop("source_review")
         page.get_by_role("button", name="Refresh trends", exact=True).click()
@@ -191,13 +235,14 @@ class TestBrowserJourney(unittest.TestCase):
         page.get_by_role("option", name="Business Intelligence Analysts", exact=True).click()
         page.locator("#find-matches").click()
         page.get_by_role("button", name="Explore Business Intelligence Analysts", exact=True).click()
-        page.get_by_text("AI outlook & evidence", exact=True).click()
+        page.locator("#open-ai-outlook").click()
         expect(page.locator("#live-trend-status")).to_contain_text("111 stored")
         page.get_by_role("button", name="Refresh trends", exact=True).click()
-        page.locator("#close-drawer").click()
+        page.locator("#back-to-role").click()
+        page.locator("#back-to-careers").click()
         page.locator('[data-role-id]:not([data-role-id="role:onet_15_2051_01"])').first.click()
-        expect(page.locator("#role-drawer")).to_be_visible(timeout=30000)
-        page.get_by_text("AI outlook & evidence", exact=True).click()
+        expect(page.locator("#role")).to_be_visible(timeout=30000)
+        page.locator("#open-ai-outlook").click()
         expect(page.locator("#live-trend-status")).to_contain_text("222 stored")
         self.assertEqual(len(held), 1)
         held[0].fulfill(json=payload(999))
@@ -222,14 +267,16 @@ class TestBrowserJourney(unittest.TestCase):
         page.get_by_role("option", name="Search Marketing Strategists", exact=True).click()
         page.locator("#find-matches").click()
         page.get_by_role("button", name="Explore Search Marketing Strategists", exact=True).click()
-        expect(page.locator("#role-drawer")).to_be_visible(timeout=30000)
-        expect(page.locator("#drawer-sdg-connections")).to_contain_text("Target 8.2")
+        expect(page.locator("#role")).to_be_visible(timeout=30000)
+        expect(page.locator("#role-sdg-connections")).to_contain_text("Target 8.2")
         page.locator("#build-roadmap").click()
         expect(page.locator("#detail")).to_be_visible(timeout=30000)
         expect(page.locator("#busy")).to_be_hidden(timeout=30000)
         fit = page.locator("#detail-fit").inner_text()
-        expect(page.locator("#scenario-select")).to_have_value("baseline")
+        expect(page.locator("#scenario-select")).to_have_text("Baseline · current requirements")
         expect(page.locator(".future-story")).to_have_count(0)
+        page.locator("#open-sdg").click()
+        expect(page.locator("#sdg")).to_be_visible()
         expect(page.locator("#role-sdg-connections")).to_contain_text("Decent Work and Economic Growth")
         page.locator("#sdg-skill-filter").select_option("confirmed")
         expect(page.locator("#skill-sdg-connections")).to_contain_text("Python")
@@ -239,7 +286,8 @@ class TestBrowserJourney(unittest.TestCase):
         expect(page.locator("#skill-sdg-connections")).to_contain_text("SDG 4")
         expect(page.locator("#skill-sdg-connections")).to_contain_text("SDG 8")
         page.locator("#sdg-skill-search").fill("")
-        page.locator("#scenario-select").select_option("rapid_ai_change")
+        page.locator("#back-to-roadmap").click()
+        self.choose_roadmap_option(page, "scenario-select", "rapid_ai_change")
         expect(page.locator("#busy")).to_be_hidden(timeout=30000)
         expect(page.locator(".future-story")).to_have_count(1)
         page.get_by_text("Compare all three scenarios", exact=True).click()
@@ -251,6 +299,7 @@ class TestBrowserJourney(unittest.TestCase):
         buttons.first.click()
         expect(page.locator("#future-skill-comparison tbody tr")).to_have_count(10)
         self.assertEqual(page.locator("#detail-fit").inner_text(), fit)
+        page.locator("#open-sdg").click()
         page.locator("#sdg-impact").scroll_into_view_if_needed()
         self.screenshot(page, "sdg-career-and-skills")
 
@@ -299,12 +348,258 @@ class TestBrowserJourney(unittest.TestCase):
         expect(page.locator("#match-rows")).to_contain_text("Business Intelligence Analysts")
         page.get_by_role("button", name="Explore Data Scientists", exact=True).first.click()
         expect(page.locator("#score-breakdown")).to_contain_text("CV skill alignment", timeout=30000)
-        expect(page.locator("#role-drawer")).to_contain_text("65.0% CV skill alignment and 35.0% general requirement fulfilment")
+        expect(page.locator("#role")).to_contain_text("65.0% CV skill alignment and 35.0% general requirement fulfilment")
+        page.get_by_text("See score breakdown & proficiency", exact=True).click()
         page.get_by_text("Your proficiency vs job requirements", exact=True).click()
         expect(page.locator("#proficiency-comparison")).to_contain_text("Job requirement:")
         expect(page.locator("#proficiency-comparison")).to_contain_text("Your estimate: unknown")
         page.get_by_text("How your CV skills affect this score", exact=True).click()
-        expect(page.locator("#role-drawer")).to_contain_text("Tableau")
+        expect(page.locator("#role")).to_contain_text("Tableau")
+
+    def test_career_pages_navigation_and_mobile_readability(self):
+        from playwright.sync_api import expect
+
+        for width, height in ((1440, 1080), (390, 844)):
+            with self.subTest(width=width):
+                context = self.browser.new_context(viewport={"width": width, "height": height})
+                self.addCleanup(context.close)
+                page = context.new_page()
+                errors = []
+                page.on("pageerror", lambda error: errors.append(str(error)))
+                trend_requests = []
+
+                def trends(route):
+                    trend_requests.append(route.request.url)
+                    route.fulfill(json={
+                        "articles": [], "interpretations": [], "analysis_status": "no_sources",
+                        "analyzed_at": None, "analysis_provider": None, "analysis_error": None,
+                        "refresh": {"status": "cached", "last_successful_at": None, "article_count": 0, "feeds": []},
+                        "scope": "Test fixture only.",
+                    })
+
+                page.route("**/api/v2/roles/*/trends**", trends)
+                page.goto(self.url)
+                page.locator("#sample").click()
+                page.locator("#confirm-all").check()
+                page.locator("#review-next").click()
+                page.locator("#find-matches").click()
+                page.locator("[data-role-id]").first.click()
+                expect(page.locator("#role")).to_be_visible(timeout=30000)
+                expect(page.locator("#explore")).to_have_count(0)
+                expect(page.locator("dialog")).to_have_count(0)
+                expect(page).to_have_url(self.url + "/#role")
+                expect(page.locator("#role h1")).to_be_focused()
+                page.locator(".skip-link").focus()
+                page.locator(".skip-link").click()
+                expect(page.locator("#main")).to_be_focused()
+                expect(page).to_have_url(self.url + "/#role")
+                expect(page.locator('[data-screen="explore"]')).to_have_attribute("aria-current", "step")
+                expect(page.locator("#score-breakdown")).to_be_hidden()
+                expect(page.get_by_role("heading", name="Full occupation description", exact=True)).to_be_visible()
+                expect(page.locator("#role-description")).to_be_visible()
+                expect(page.locator(".role-overview details")).to_have_count(0)
+                expect(page.locator(".career-page-steps")).to_have_count(0)
+                matching_panel = page.locator("#matched-skills")
+                gap_panel = page.locator("#skills-to-explore")
+                card = page.locator(".role-skill-card").first
+                card_height = card.bounding_box()["height"]
+                panel_height = matching_panel.bounding_box()["height"]
+                matching_panel.locator("summary").first.click()
+                self.assertAlmostEqual(card.bounding_box()["height"], card_height, delta=1)
+                self.assertAlmostEqual(matching_panel.bounding_box()["height"], panel_height, delta=1)
+                self.assertEqual(gap_panel.evaluate("el => getComputedStyle(el).overflowY"), "auto")
+                self.assertTrue(gap_panel.evaluate("el => el.scrollHeight > el.clientHeight"))
+                gap_panel.focus()
+                gap_panel.press("End")
+                page.wait_for_function("() => document.querySelector('#skills-to-explore').scrollTop > 0")
+                self.assertGreater(gap_panel.evaluate("el => el.scrollTop"), 0)
+                help_control = gap_panel.locator(".help-disclosure > summary")
+                self.assertEqual(help_control.evaluate("el => getComputedStyle(el).borderWidth"), "0px")
+                help_control.click()
+                self.assertAlmostEqual(page.locator(".role-skill-card").nth(1).bounding_box()["height"], card_height, delta=1)
+                self.assertEqual(trend_requests, [])
+                fit = page.locator("#role-fit strong").inner_text()
+                self.screenshot(page, f"role-page-{width}")
+                page.get_by_text("Choose software", exact=True).click()
+                software = page.locator("#software-options input").first
+                if software.count():
+                    software.check()
+                page.locator("#open-ai-outlook").click()
+                expect(page.locator("#outlook")).to_be_visible()
+                expect(page.locator("#role")).to_have_count(0)
+                expect(page).to_have_url(self.url + "/#outlook")
+                expect(page.locator("#outlook h1")).to_be_focused()
+                expect(page.locator("#source-list")).to_have_count(0)
+                expect(page.locator(".career-page-steps")).to_have_count(0)
+                expect(page.get_by_role("button", name="Back to role", exact=False)).to_be_visible()
+                expect(page.locator("#outlook .text-button")).to_have_count(0)
+                expect(page.locator("#live-trend-status")).to_be_visible()
+                health = page.locator("#trend-source-health")
+                expect(health.locator(".help-mark")).to_have_text("?")
+                self.assertEqual(health.locator("summary").evaluate("el => getComputedStyle(el).borderWidth"), "0px")
+                self.assertTrue(page.evaluate("Boolean(document.querySelector('#build-roadmap').compareDocumentPosition(document.querySelector('#trend-source-health')) & Node.DOCUMENT_POSITION_FOLLOWING)"))
+                self.screenshot(page, f"outlook-page-{width}")
+                self.assertTrue(page.evaluate("document.documentElement.scrollWidth <= innerWidth"))
+                page.go_back()
+                expect(page.locator("#role")).to_be_visible()
+                expect(page.locator("#role-fit strong")).to_have_text(fit)
+                if software.count():
+                    page.get_by_text("Choose software · 1 selected", exact=True).click()
+                    expect(software).to_be_checked()
+                self.assertTrue(page.evaluate("document.documentElement.scrollWidth <= innerWidth"))
+                page.go_forward()
+                expect(page.locator("#outlook")).to_be_visible()
+                expect(page.locator("#live-trend-status")).to_be_visible()
+                self.assertEqual(len(trend_requests), 1, 'Returning to AI outlook should reuse the cached result')
+                page.locator("#build-roadmap").click()
+                expect(page.locator("#detail")).to_be_visible(timeout=30000)
+                expect(page.locator("#detail-fit")).to_have_text(fit)
+                page.locator("#open-role-details").click()
+                expect(page.locator("#role")).to_be_visible()
+                page.locator("#back-to-careers").click()
+                expect(page.locator("#explore")).to_be_visible()
+                page.locator('[data-screen="review"]').click()
+                page.locator("#confirm-all").uncheck()
+                page.go_back()
+                expect(page.locator("#review")).to_be_visible()
+                self.assertEqual(errors, [])
+                context.close()
+
+    def test_visual_roadmap_timing_and_pace(self):
+        from playwright.sync_api import expect
+        context = self.browser.new_context(viewport={"width": 1440, "height": 1080})
+        self.addCleanup(context.close)
+        page = context.new_page()
+        errors, held, map_requests = [], [], []
+        page.on("pageerror", lambda error: errors.append(str(error)))
+        source_plan = {}
+
+        def original_plan(route):
+            response = route.fetch()
+            source_plan.update(response.json()["plan"])
+            route.fulfill(response=response)
+
+        def dependency_plan(route):
+            body = route.request.post_data_json
+            map_requests.append(body)
+            horizon, weekly = body["horizon"], body["weekly_hours"]
+            count = {"short": 3, "standard": 5, "long": 7}[horizon]
+            weeks = {"short": 12, "standard": 26, "long": 52}[horizon]
+            labels = {item["skill_id"]: item["label"] for item in source_plan["prioritized_gaps"]}
+            course = next(item for item in source_plan["selected_courses"] if "thinking" in item["course_id"])
+            nodes = []
+            titles = ["Inspect and validate a dataset", "Query business results", "Build a reporting dashboard", "Validate the pipeline", "Deliver an analysis brief", "Compare modelling approaches", "Complete a portfolio project"]
+            for index in range(count):
+                covered = course["skill_ids"] if index == 0 else [next(iter(labels))]
+                skills = [{"skill_id": sid, "label": labels.get(sid, "Critical Thinking"), "course_covered": index == 0, "already_confirmed": False, "suggested_tool": False} for sid in covered]
+                nodes.append({"node_id": f"node_{index}", "title": titles[index], "objective": "Prepare a checked work sample using a realistic business dataset.",
+                    "deliverable": "A reproducible analysis, quality checks and a concise decision brief.", "task_id": "task:test",
+                    "skill_ids": covered, "embedded_skill_ids": [], "skills": skills, "embedded_skills": [],
+                    "course_ids": [course["course_id"]] if index == 0 else [], "course_hours": course["duration"]["hours"] if index == 0 else 0,
+                    "practice_hours": 6, "hours": 12, "level": max(0, index - 1), "week_start": index + 1, "week_end": index + 2})
+            graph = {"summary": "Start with two independent branches, then combine them into a practical project.", "origin": "ai_generated", "status": "ready", "model": "TEST model", "provider": "test",
+                "horizon": horizon, "target_weeks": weeks, "weekly_hours": weekly, "budget_hours": weeks * weekly,
+                "planned_hours": count * 12, "estimated_weeks": __import__('math').ceil(count * 12 / weekly),
+                "nodes": nodes, "edges": [{"source": "node_0", "target": "node_2", "basis": "ai_suggested", "reason": "Use the checked dataset as input to the reporting project."},
+                    {"source": "node_1", "target": "node_2", "basis": "course_prerequisite", "reason": "Use the tested queries to produce the reporting project."}],
+                "deferred_skills": [], "changes_personal_fit": False}
+            if horizon == "standard" and not held:
+                held.append((route, graph))
+                return
+            route.fulfill(json={"revision": body["revision"], "roadmap": graph})
+
+        page.route("**/api/v2/pathways", original_plan)
+        page.route("**/api/v2/pathways/dependencies", dependency_plan)
+        page.goto(self.url)
+        page.locator("#sample").click()
+        page.locator("#confirm-all").check()
+        page.locator("#review-next").click()
+        page.locator("#find-matches").click()
+        page.locator("[data-role-id]").first.click()
+        page.locator("#build-roadmap").click()
+        expect(page.locator(".module-card")).to_have_count(3)
+        expect(page.get_by_text("AI-curated", exact=True)).to_be_visible()
+        expect(page.locator("#roadmap-total-time")).to_have_text("About 8 weeks of learning")
+        expect(page.locator("#module-detail-title")).to_have_text("Inspect and validate a dataset")
+        expect(page.locator(".module-course")).to_have_count(1)
+        expect(page.locator(".module-course .chip")).to_have_count(len(next(item for item in source_plan["selected_courses"] if "thinking" in item["course_id"])["skill_ids"]))
+        expect(page.locator(".dependency-edges > path")).to_have_count(2)
+        self.assertNotEqual(page.locator(".dependency-edges > path").first.get_attribute("d"), "")
+        fit = page.locator("#detail-fit").inner_text()
+        with page.expect_request("**/api/v2/pathways/dependencies"):
+            page.get_by_role("button", name="Standard 6 months", exact=True).click()
+        expect(page.locator(".dependency-loading")).to_be_visible()
+        page.get_by_role("button", name="Long term 12 months", exact=True).click()
+        expect(page.locator(".module-card")).to_have_count(7)
+        self.assertEqual(len(held), 1)
+        held[0][0].fulfill(json={"roadmap": held[0][1]})
+        expect(page.locator(".curated-summary")).to_contain_text("12 MONTHS TARGET")
+        expect(page.locator(".module-card")).to_have_count(7)
+        self.choose_roadmap_option(page, "roadmap-pace", "10")
+        expect(page.locator("#roadmap-total-time")).to_have_text("About 9 weeks of learning")
+        expect(page.locator("#detail-fit")).to_have_text(fit)
+        page.locator("#open-sdg").click()
+        expect(page.locator("#sdg")).to_be_visible()
+        calls_before_return = len(map_requests)
+        page.locator("#back-to-roadmap").click()
+        expect(page.locator("#roadmap-pace")).to_have_text("10 hours / week")
+        expect(page.get_by_role("button", name="Long term 12 months", exact=True)).to_have_attribute("aria-pressed", "true")
+        expect(page.locator(".module-card")).to_have_count(7)
+        self.assertEqual(len(map_requests), calls_before_return, 'Returning to the map must not generate it again')
+        page.get_by_role("button", name="Short term 1–3 months", exact=True).click()
+        expect(page.locator(".module-card")).to_have_count(3)
+        for width, height in ((1440, 1080), (390, 844)):
+            page.set_viewport_size({"width": width, "height": height})
+            page.locator("#milestones").scroll_into_view_if_needed()
+            expect(page.locator(".dependency-edges > path")).to_have_count(2)
+            self.assertTrue(page.evaluate("document.documentElement.scrollWidth <= innerWidth"))
+            self.screenshot(page, f"dependency-map-{width}")
+            page.locator('[data-module="node_1"]').click()
+            expect(page.locator("#module-detail-title")).to_have_text("Query business results")
+            expect(page.locator(".course-source-option")).to_have_count(3)
+            self.screenshot(page, f"dependency-module-{width}")
+        self.assertTrue(page.evaluate("Boolean(document.querySelector('#milestones').compareDocumentPosition(document.querySelector('#future-scenarios')) & Node.DOCUMENT_POSITION_FOLLOWING)"))
+        with page.expect_download() as download:
+            page.locator("#export-plan").click()
+        exported = json.loads(Path(download.value.path()).read_text())
+        self.assertEqual(exported["curated_roadmap"]["horizon"], "short")
+        self.assertEqual(len(exported["curated_roadmap"]["nodes"]), 3)
+        self.assertEqual(errors, [])
+
+    def test_language_selector_persists_and_keeps_current_profile(self):
+        from playwright.sync_api import expect
+        context = self.browser.new_context(viewport={'width': 390, 'height': 844})
+        self.addCleanup(context.close)
+        page = context.new_page()
+        errors = []
+        page.on('pageerror', lambda error: errors.append(str(error)))
+        page.goto(self.url)
+        def choose(value):
+            page.locator('#language-select').click()
+            page.locator(f'#language-select-option-{value}').click()
+        choose(1)
+        expect(page.locator('html')).to_have_attribute('lang', 'ms')
+        expect(page.locator('#intake h1')).to_contain_text('kerjaya')
+        self.assertTrue(page.evaluate('document.documentElement.scrollWidth <= innerWidth'))
+        page.reload()
+        expect(page.locator('html')).to_have_attribute('lang', 'ms')
+        expect(page.locator('#intake h1')).to_contain_text('kerjaya')
+        page.locator('#cv-file').set_input_files({'name': 'skills.txt', 'mimeType': 'text/plain', 'buffer': b'Skills: Python, SQL'})
+        expect(page.locator('#review')).to_be_visible(timeout=30000)
+        count = page.locator('#skill-list input[type=checkbox]').count()
+        page.locator('#confirm-all').check()
+        choose(2)
+        expect(page.locator('html')).to_have_attribute('lang', 'zh-Hans')
+        expect(page.locator('#review h1')).not_to_contain_text("Let's review")
+        expect(page.locator('#confirm-all')).to_be_checked()
+        self.assertEqual(page.locator('#skill-list input[type=checkbox]').count(), count)
+        self.assertTrue(page.evaluate('document.documentElement.scrollWidth <= innerWidth'))
+        self.screenshot(page, 'mandarin-review-390')
+        choose(0)
+        expect(page.locator('#review h1')).to_have_text("Let's review your skills.")
+        expect(page.locator('#confirm-all')).to_be_checked()
+        self.assertEqual(page.evaluate('Object.keys(localStorage)'), ['ikiguy-language'])
+        self.assertEqual(errors, [])
 
     def test_ai_estimates_display_without_manual_level_input(self):
         from playwright.sync_api import expect
@@ -478,7 +773,7 @@ class TestBrowserJourney(unittest.TestCase):
         expect(target).to_be_visible()
         page.locator("#role-filter").fill("")
         page.locator('[data-role-id="role:onet_15_2051_01"]').click()
-        expect(page.locator("#role-drawer")).to_be_visible(timeout=30000)
+        expect(page.locator("#role")).to_be_visible(timeout=30000)
         expect(page.locator("#busy")).to_be_hidden(timeout=30000)
         self.screenshot(page, "role-details")
         page.locator("#build-roadmap").click()
@@ -487,8 +782,9 @@ class TestBrowserJourney(unittest.TestCase):
         expect(page.locator('.nav-item.completed')).to_have_count(4)
         expect(page.locator('[data-screen="detail"]')).to_have_attribute('aria-description', 'Roadmap ready')
         fit = page.locator("#detail-fit").inner_text()
-        baseline = page.locator(".step-preview h3:visible").all_text_contents()
-        expect(page.locator("#scenario-select")).to_have_value("baseline")
+        expect(page.locator(".module-card").first).to_be_visible()
+        baseline = page.locator(".module-card > strong").all_text_contents()
+        expect(page.locator("#scenario-select")).to_have_text("Baseline · current requirements")
         expect(page.locator("#future-disclaimer")).to_contain_text("hypothetical scenarios, not forecasts")
         expect(page.locator(".future-story")).to_have_count(0)
         page.get_by_text("Compare all three scenarios", exact=True).click()
@@ -496,15 +792,17 @@ class TestBrowserJourney(unittest.TestCase):
         expect(page.locator("#future-skill-comparison")).to_contain_text("Moderate")
         expect(page.locator("#future-skill-comparison")).to_contain_text("Rapid")
         expect(page.locator("#shared-future-preparation")).to_contain_text("capabilities you already have")
-        page.locator("#scenario-select").select_option("moderate_ai_change")
+        self.choose_roadmap_option(page, "scenario-select", "moderate_ai_change")
         expect(page.locator("#busy")).to_be_hidden(timeout=30000)
         expect(page.locator('[data-future-scenario="moderate_ai_change"]')).to_be_visible()
         expect(page.locator(".future-story")).to_have_count(1)
         self.assertEqual(page.locator("#detail-fit").inner_text(), fit)
         page.locator("#future-baseline").click()
         expect(page.locator("#busy")).to_be_hidden(timeout=30000)
-        self.assertEqual(page.locator(".step-preview h3:visible").all_text_contents(), baseline)
+        expect(page.locator(".module-card").first).to_be_visible()
+        self.assertEqual(page.locator(".module-card > strong").all_text_contents(), baseline)
         page.get_by_text("Compare all three scenarios", exact=True).click()
+        page.locator("#open-sdg").click()
         expect(page.locator("#sdg-impact")).to_be_visible()
         expect(page.locator("#sdg-coverage")).to_contain_text("Career linked")
         page.locator("#sdg-skill-search").fill("Python")
@@ -512,6 +810,7 @@ class TestBrowserJourney(unittest.TestCase):
         page.locator("#skill-sdg-connections summary").first.click()
         expect(page.locator("#skill-sdg-connections")).to_contain_text("Quality Education")
         page.locator("#sdg-skill-search").fill("")
+        page.locator("#back-to-roadmap").click()
         expect(page.locator("#milestones")).not_to_contain_text("skill:onet_")
         page.locator("#future-scenarios").scroll_into_view_if_needed()
         self.screenshot(page, "future-scenarios")
@@ -521,7 +820,7 @@ class TestBrowserJourney(unittest.TestCase):
         self.screenshot(page, "future-scenarios-mobile")
         self.assertTrue(page.evaluate("document.documentElement.scrollWidth <= window.innerWidth"), page.evaluate("JSON.stringify({width:innerWidth,scroll:document.documentElement.scrollWidth,overflow:[...document.querySelectorAll('body *')].filter(e=>e.getBoundingClientRect().right>innerWidth+2).slice(0,12).map(e=>({tag:e.tagName,cls:e.className,right:e.getBoundingClientRect().right}))})"))
         page.set_viewport_size({"width": 1440, "height": 1080})
-        expect(page.locator("#course-availability")).to_contain_text("Verified courses unavailable")
+        expect(page.locator("#course-availability")).to_contain_text("verified courses")
         page.locator("#detail summary").filter(has_text="Why these learning priorities?").click()
         expect(page.locator("#priority-evidence")).to_contain_text("No approved research adjustments")
         page.locator("#detail summary").filter(has_text="Plan details & limitations").click()
@@ -533,10 +832,8 @@ class TestBrowserJourney(unittest.TestCase):
         expect(page.locator('#plan-warnings')).to_be_visible()
         expect(page.locator('#plan-warnings')).to_contain_text('No search provider configured')
         page.locator('.plan-technical summary').click()
-        page.locator(".learning-step summary").first.click()
-        expect(page.locator(".step-content").first).to_contain_text("OpenLearn")
-        page.locator(".learning-step summary").first.click()
-        page.locator("#scenario-select").select_option("rapid_ai_change")
+        expect(page.locator("#module-detail .course-source-options")).to_be_visible()
+        self.choose_roadmap_option(page, "scenario-select", "rapid_ai_change")
         expect(page.locator("#busy")).to_be_hidden(timeout=30000)
         expect(page.locator("#scenario-note")).to_contain_text("HYPOTHETICAL")
         self.assertEqual(page.locator("#detail-fit").inner_text(), fit)
@@ -545,19 +842,13 @@ class TestBrowserJourney(unittest.TestCase):
         with page.expect_download() as download:
             page.locator("#export-plan").click()
         self.assertEqual(download.value.suggested_filename, "ikiguy-learning-plan.json")
-        page.locator("#scenario-select").select_option("baseline")
+        self.choose_roadmap_option(page, "scenario-select", "baseline")
         expect(page.locator("#busy")).to_be_hidden(timeout=30000)
-        self.assertEqual(page.locator(".step-preview h3:visible").all_text_contents(), baseline)
+        expect(page.locator(".module-card").first).to_be_visible()
+        self.assertEqual(page.locator(".module-card > strong").all_text_contents(), baseline)
         page.locator("#open-role-details").click()
-        page.locator("#role-drawer summary").filter(has_text="AI outlook & evidence").click()
-        page.get_by_text("Human-reviewed research", exact=True).click()
-        expect(page.locator("#outlook-label")).to_have_text("Contextual AI evidence; employment impact unknown")
-        expect(page.locator("#source-list")).to_contain_text("DS-STAR")
-        page.locator("#role-drawer summary").filter(has_text="Reviewed skill connections").click()
-        expect(page.locator("#shared-skill-evidence")).to_contain_text("No approved skill connections yet")
-        page.locator("#role-drawer summary").filter(has_text="Reviewed role impacts").click()
-        expect(page.locator("#reviewed-role-impacts")).to_contain_text("No approved role impacts yet")
-        page.keyboard.press("Escape")
+        page.locator("#open-ai-outlook").click()
+        expect(page.locator("#source-list, #shared-skill-evidence, #reviewed-role-impacts")).to_have_count(0)
         page.locator('[data-screen="review"]').click()
         page.locator('#confirm-all').uncheck()
         expect(page.locator('.nav-item.completed')).to_have_count(1)
@@ -656,7 +947,7 @@ class TestBrowserJourney(unittest.TestCase):
         page.wait_for_timeout(2400)
         self.assertEqual(page.locator("#upload-reel-track").count(), 0)
 
-    def test_reviewed_evidence_display_and_optional_service_failure(self):
+    def test_unfiltered_reviewed_evidence_is_hidden_and_optional_failure_allows_roadmap(self):
         from playwright.sync_api import expect
 
         context = self.browser.new_context(viewport={"width": 1440, "height": 1080})
@@ -686,17 +977,11 @@ class TestBrowserJourney(unittest.TestCase):
         page.locator("#find-matches").click()
         expect(page.locator("#explore")).to_be_visible(timeout=30000)
         page.locator('[data-role-id="role:onet_15_2051_01"]').click()
-        expect(page.locator("#role-drawer")).to_be_visible(timeout=30000)
-        fit = page.locator("#drawer-fit strong").inner_text()
-        page.locator("#role-drawer summary").filter(has_text="AI outlook & evidence").click()
-        page.get_by_text("Human-reviewed research", exact=True).click()
-        page.locator("#role-drawer summary").filter(has_text="Reviewed skill connections").click()
-        expect(page.locator("#shared-skill-evidence")).to_contain_text("Fictional test-only reviewed interpretation.")
-        page.locator("#shared-skill-evidence summary").filter(has_text="Evidence & conditions").click()
-        expect(page.locator("#shared-skill-evidence blockquote")).to_have_text("test-only supporting words")
-        expect(page.get_by_role("link", name="Fictional research publisher")).to_have_attribute("href", "https://example.org/test-research")
-        page.locator("#role-drawer summary").filter(has_text="Reviewed role impacts").click()
-        expect(page.locator("#reviewed-role-impacts")).to_contain_text("temporarily unavailable")
+        expect(page.locator("#role")).to_be_visible(timeout=30000)
+        fit = page.locator("#role-fit strong").inner_text()
+        page.locator("#open-ai-outlook").click()
+        expect(page.locator("#source-list, #shared-skill-evidence, #reviewed-role-impacts")).to_have_count(0)
+        expect(page.locator("#outlook")).not_to_contain_text("Fictional test-only reviewed interpretation.")
         expect(page.locator("#feedback")).to_be_hidden()
         page.locator("#build-roadmap").click()
         expect(page.locator("#detail")).to_be_visible(timeout=30000)
@@ -740,18 +1025,18 @@ class TestBrowserJourney(unittest.TestCase):
         expect(page.locator("#busy")).to_be_hidden(timeout=30000)
         self.screenshot(page, "mobile-matches")
         page.locator("[data-role-id]").first.click()
-        expect(page.locator("#role-drawer")).to_be_visible(timeout=30000)
+        expect(page.locator("#role")).to_be_visible(timeout=30000)
         expect(page.locator("#busy")).to_be_hidden(timeout=30000)
         page.locator("#build-roadmap").click()
         expect(page.locator("#detail")).to_be_visible(timeout=30000)
         expect(page.locator("#busy")).to_be_hidden(timeout=30000)
         expect(page.locator("#scenario-select")).to_be_enabled()
-        page.locator("#scenario-select").select_option("rapid_ai_change")
+        self.choose_roadmap_option(page, "scenario-select", "rapid_ai_change")
         expect(page.locator('#busy')).to_be_hidden(timeout=30000)
-        expect(page.locator("#scenario-select")).to_have_value("rapid_ai_change")
-        page.locator("#scenario-select").select_option("moderate_ai_change")
+        expect(page.locator("#scenario-select")).to_have_text("Rapid AI adoption")
+        self.choose_roadmap_option(page, "scenario-select", "moderate_ai_change")
         expect(page.locator('#busy')).to_be_hidden(timeout=30000)
-        expect(page.locator("#scenario-select")).to_have_value("moderate_ai_change")
+        expect(page.locator("#scenario-select")).to_have_text("Moderate AI adoption")
         expect(page.locator("#future-disclaimer")).to_be_visible()
         expect(page.locator("#detail-fit")).to_be_visible()
         self.screenshot(page, "mobile-roadmap")

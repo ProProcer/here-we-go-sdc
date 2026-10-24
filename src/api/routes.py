@@ -2,6 +2,7 @@
 
 from uuid import uuid4
 from threading import BoundedSemaphore
+from typing import Literal
 
 from fastapi import APIRouter, Header, HTTPException, Query, Request
 from fastapi.responses import Response
@@ -11,6 +12,7 @@ from starlette.concurrency import run_in_threadpool
 from src.ingestion.onet_api import get_onet_role, list_onet_roles
 from src.intelligence.feeds import DEFAULT_SNAPSHOTS, get_refresh_status
 from src.intelligence.impacts import get_evidence_chain_response
+from src.intelligence.localization import Language
 from src.profiles.cv_parser import MAX_BYTES, CVParseError
 from src.profiles.intake import validate_profile
 from src.profiles.samples import sample_cv_pdf
@@ -35,6 +37,12 @@ class PlanRequest(Contract):
     role_id: str = Field(max_length=100)
     scenario_id: ScenarioId = "baseline"
     selected_software_skill_ids: list[str] = Field(default_factory=list, max_length=50)
+
+
+class DependencyRequest(PlanRequest):
+    horizon: Literal["short", "standard", "long"] = "short"
+    weekly_hours: float = Field(default=5, ge=0.5, le=168, allow_inf_nan=False)
+    language: Language = 'en'
 
 
 class AssessmentRequest(Contract):
@@ -195,26 +203,31 @@ def trend_status(request: Request):
 
 
 @router.get("/roles/{role_id}/trends")
-def role_trends(request: Request, role_id: str, x_session_id: str | None = Header(default=None)):
+def role_trends(request: Request, role_id: str, x_session_id: str | None = Header(default=None), language: Language = 'en'):
     require_role(request.app.state.backend, role_id)
     if x_session_id:
         session_for(request, x_session_id)
-    return request.app.state.trends.for_role(role_id, analyze=bool(x_session_id))
+    result = request.app.state.trends.for_role(role_id, analyze=bool(x_session_id))
+    # Translation uses only the public research result, never CV/profile passages.
+    if language != 'en' and x_session_id:
+        return request.app.state.localization.localize(result, language, 'trends')
+    return result
 
 
 @router.post("/roles/{role_id}/trends/refresh", status_code=202)
-def refresh_role_trends(request: Request, role_id: str, x_session_id: str = Header()):
+def refresh_role_trends(request: Request, role_id: str, x_session_id: str = Header(), language: Language = 'en'):
     session_for(request, x_session_id)
     require_role(request.app.state.backend, role_id)
     service = request.app.state.trends
     service.retry_at.pop(role_id, None)
     service.analysis_errors.pop(role_id, None)
     started = service.start_refresh(role_id)
-    return {**service.for_role(role_id), "refresh_requested": started}
+    result = {**service.for_role(role_id), "refresh_requested": started}
+    return request.app.state.localization.localize(result, language, 'trends') if language != 'en' else result
 
 
 @router.post("/roles/{role_id}/trends/retry", status_code=202)
-def retry_role_trends(request: Request, role_id: str, x_session_id: str = Header()):
+def retry_role_trends(request: Request, role_id: str, x_session_id: str = Header(), language: Language = 'en'):
     session_for(request, x_session_id)
     require_role(request.app.state.backend, role_id)
     service = request.app.state.trends
@@ -222,7 +235,8 @@ def retry_role_trends(request: Request, role_id: str, x_session_id: str = Header
         service.retry_at.pop(role_id, None)
         service.analysis_errors.pop(role_id, None)
         service.ensure_analysis(role_id)
-    return service.for_role(role_id)
+    result = service.for_role(role_id)
+    return request.app.state.localization.localize(result, language, 'trends') if language != 'en' else result
 
 
 @router.get("/roles/{role_id}/futures")
@@ -324,3 +338,30 @@ def course_status(request: Request):
         "updated_at": catalog.updated_at.isoformat() if catalog.updated_at else None,
         "mode": "verified_cache",
     }
+
+
+@router.post("/pathways/dependencies")
+def pathway_dependencies(request: Request, body: DependencyRequest, x_session_id: str = Header()):
+    from src.reskilling.dependencies import context_for
+
+    session = session_for(request, x_session_id)
+    backend = request.app.state.backend
+    require_role(backend, body.role_id)
+    with session.lock:
+        require_review(session, body.revision)
+        profile = session.profile.model_copy(deep=True)
+    if body.scenario_id not in backend.outlook(body.role_id).available_scenarios:
+        raise HTTPException(422, "This scenario is unavailable for the selected occupation.")
+    match = backend.matcher.match_role(profile, body.role_id)
+    if not set(body.selected_software_skill_ids) <= {item.skill_id for item in match.software_learning_options}:
+        raise HTTPException(422, "Choose only the available optional software skills.")
+    plan = backend.learning_plan(profile, body.role_id, body.scenario_id,
+                                 selected_software_skill_ids=body.selected_software_skill_ids).plan
+    context = context_for(backend.catalog, profile, match, plan, body.horizon, body.weekly_hours)
+    result = request.app.state.dependency_maps.curate(context)
+    if body.language != 'en':
+        result = request.app.state.localization.localize(result, body.language, 'roadmap')
+    session = session_for(request, x_session_id)
+    with session.lock:
+        require_review(session, body.revision)
+    return {"revision": body.revision, "roadmap": result}

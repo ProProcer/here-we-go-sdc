@@ -43,6 +43,60 @@ class TestWebApp(unittest.TestCase):
         self.assertEqual(response.status_code, 200, response.text)
         return response.json()
 
+    def test_dependency_map_requires_review_and_respects_session_revision(self):
+        data, headers = self.upload()
+        payload = {"revision": data["revision"], "role_id": ROLE, "horizon": "short", "weekly_hours": 5}
+        self.assertEqual(self.client.post("/api/v2/pathways/dependencies", json=payload, headers=headers).status_code, 409)
+        reviewed = self.review(data, headers)
+        payload["revision"] = reviewed["revision"]
+        response = self.client.post("/api/v2/pathways/dependencies", json=payload, headers=headers)
+        self.assertEqual(response.status_code, 200, response.text)
+        graph = response.json()["roadmap"]
+        self.assertEqual(graph["origin"], "application_outline")
+        self.assertEqual(graph["status"], "not_configured")
+        self.assertLessEqual(graph["planned_hours"], 60)
+        self.assertLessEqual(len(graph["nodes"]), 5)
+        self.assertFalse(graph["changes_personal_fit"])
+        for invalid in ({"horizon": "forever"}, {"weekly_hours": 0}, {"weekly_hours": 169},
+                        {"selected_software_skill_ids": ["skill:invented"]}):
+            self.assertEqual(self.client.post("/api/v2/pathways/dependencies", json={**payload, **invalid}, headers=headers).status_code, 422)
+        payload["revision"] -= 1
+        self.assertEqual(self.client.post("/api/v2/pathways/dependencies", json=payload, headers=headers).status_code, 409)
+
+    def test_dependency_ai_context_omits_cv_evidence_and_identifiers(self):
+        from src.reskilling.dependencies import application_outline, validate_proposal
+        data, headers = self.upload()
+        reviewed = self.review(data, headers)
+        captured = []
+        def inspect(context):
+            captured.append(context)
+            return validate_proposal(application_outline(context), context, origin="application_outline")
+        with patch.object(app.state.dependency_maps, "curate", side_effect=inspect):
+            response = self.client.post("/api/v2/pathways/dependencies", headers=headers, json={
+                "revision": reviewed["revision"], "role_id": ROLE, "horizon": "standard", "weekly_hours": 5})
+        self.assertEqual(response.status_code, 200, response.text)
+        self.assertNotIn("profile_id", captured[0])
+        self.assertNotIn("session_id", captured[0])
+        for skill in captured[0]["known_skills"]:
+            self.assertEqual(set(skill), {"skill_id", "label", "level"})
+
+    def test_language_options_validate_and_fallback_without_changing_learning_facts(self):
+        data, headers = self.upload()
+        reviewed = self.review(data, headers)
+        payload = {"revision": reviewed["revision"], "role_id": ROLE, "weekly_hours": 5}
+        english = self.client.post('/api/v2/pathways/dependencies', headers=headers, json=payload).json()['roadmap']
+        for language in ('ms', 'zh'):
+            response = self.client.post('/api/v2/pathways/dependencies', headers=headers, json={**payload, 'language': language})
+            self.assertEqual(response.status_code, 200, response.text)
+            result = response.json()['roadmap']
+            self.assertEqual(result['nodes'], english['nodes'])
+            self.assertEqual(result['edges'], english['edges'])
+            self.assertEqual(result['content_language'], 'en')
+            self.assertEqual(result['translation_status'], 'unavailable')
+        self.assertEqual(self.client.post('/api/v2/pathways/dependencies', headers=headers, json={**payload, 'language': 'fr'}).status_code, 422)
+        self.assertEqual(self.client.get(f'/api/v2/roles/{ROLE}/trends?language=fr', headers=headers).status_code, 422)
+        self.assertEqual(self.client.get(f'/api/v2/roles/{ROLE}/trends?language=ms', headers=headers).status_code, 200)
+
     def test_python_level_edits_refresh_matching_score(self):
         data, headers = self.upload(b"Skills: Python")
         scores = []

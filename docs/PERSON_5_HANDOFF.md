@@ -11,8 +11,8 @@ src/main.py                     FastAPI startup, app shell and response headers
 src/api/routes.py               Versioned HTTP adapters and request contracts
 src/api/sessions.py             Bounded one-hour in-memory profile sessions
 frontend/src/App.tsx            React journey, session and API integration state
-frontend/src/screens/           Upload, Review, Careers and Roadmap screens
-frontend/src/components/        Shared controls, search, loading reel and role drawer
+frontend/src/screens/           Upload, Review, Careers, RoleDetails, AIOutlook and Roadmap
+frontend/src/components/        Shared controls, search, loading reel and evidence disclosures
 frontend/src/types.ts           Typed frontend API contracts
 frontend/src/api.ts             Same-origin API client and request timeout
 frontend/src/styles.css         Shared design tokens, component styles and Tailwind
@@ -35,7 +35,48 @@ imperative browser script have been replaced.
 
 ## Frontend design system
 
-The four journey screens share white surfaces, a soft `#F5F8FC` canvas, primary
+Explore Role opens a full role overview page. Its AI outlook button opens the
+next page, with compact research cards and evidence available in disclosures.
+AI outlook lists only articles assessed as `connected` ("Career connection shown")
+and their associated interpretations. Other assessment outcomes and the general
+research catalog are omitted. Role pages show the full occupation description
+directly and keep matching skills and skills to explore in fixed-height scrollable
+panels. Navigation uses a back button and the AI outlook action below the role
+details. Assessment and source-health help sit below the roadmap action with
+plain question-mark controls; other disclosures and source actions use buttons.
+
+The learning roadmap is a dependency graph inspired by the category-and-arrow
+layout of NeetCode. Short (1–3 month), standard (6 month), and long (12 month)
+choices curate a focused set of practical modules within the chosen weekly study
+budget. Basic skills are embedded in role-specific work instead of separate stops.
+The AI uses the shared model client and supplied tasks, gaps, known skill levels
+and selected verified course records. A structural draft is locally normalized
+and validated: only supplied IDs are accepted, dependencies must be acyclic,
+listed course prerequisites are retained, course durations count once, and the
+combined course/practice time must fit the budget. One repair attempt shares the
+45-second request budget. Course coverage remains distinct from skills practised
+implicitly in a project. Per-course chips use that course's actual skill IDs.
+No raw CV text, evidence passages, session IDs or profile identifiers reach this
+AI task. Validated results are cached in memory; failed responses are not cached.
+If AI is unavailable or unconfigured, an explicitly labelled application outline
+is shown. Module details expose deliverables, grouped skills, verified courses,
+optional external sources and dependency reasons. JSON export includes the curated
+graph alongside the full underlying resource plan.
+Weekly pace and learning scenario use the shared styled, keyboard-accessible
+selection control. Scenario planning follows the roadmap in the page flow.
+The roadmap's SDG action opens a separate page with a return button; its study
+pace remains selected when navigating between those pages.
+AI news shows an animated circle during the initial fetch, source refresh and
+queued/running career assessment. Completed empty results and failures stop it.
+Roadmap steps also offer compact links to real courses and provider catalogs
+matched by topic, including HP LIFE, Saylor University, Coursera, edX, Khan
+Academy, Microsoft Learn and IBM SkillsBuild. These optional choices are separate
+from the planner's verified course records and do not inherit their cost or time.
+Both pages keep Explore careers active in the sidebar. Back buttons and browser
+history navigate between pages; editing skills clears dependent role and plan
+data. Refresh starts a new in-memory session at Upload CV.
+
+The journey screens share white surfaces, a soft `#F5F8FC` canvas, primary
 blue `#1689F9`, rounded cards and pill buttons. Darker blue is used on small
 white-text controls for contrast. Core palette, radius, content-width and shadow
 tokens live at the beginning of `frontend/src/styles.css`, with Tailwind theme
@@ -57,8 +98,8 @@ motion. The collapsed rail keeps the noninteractive logo at the bottom; the demo
 label is removed. The header has
 no step counter. Roadmap limitations use short notes and cost/time facts; full
 backend warnings remain in a nested Technical details disclosure and JSON export.
-A native modal dialog
-provides the role drawer, keyboard focus containment and Escape dismissal.
+The role overview and AI outlook use full pages, with heading focus on navigation
+and expandable details for longer explanations.
 
 - Upload: one drop area, a continuously rotating spinner, randomized playful
   messages in a transform-only reel, and expandable privacy/help. Changing
@@ -101,7 +142,7 @@ in expanded step details and the JSON export even when its preview is shorter.
 
 After pulling `34f20ed`, the real ledger contains one Google Research source and
 two contextual BI task interpretations. These flow through the existing outlook
-route into the drawer. `CareerBackend.skill_evidence()` and `role_impacts()` now
+route into the AI outlook page. `CareerBackend.skill_evidence()` and `role_impacts()` now
 have read-only HTTP routes and expandable UI panels with citations, conditions,
 review coverage and limitations. Their committed approval stores remain empty;
 pending proposals are never presented as approved evidence. Optional evidence
@@ -252,12 +293,12 @@ published evidence or numeric priorities automatically.
 stale/session boundaries, scenario reversal, fit preservation, honest empty
 resource states, DOCX tables and actual local OCR for PNG, JPG and scanned PDF.
 
-`tests/test_browser.py` verifies desktop upload through the role drawer and
+`tests/test_browser.py` verifies desktop upload through the role overview and AI outlook pages and
 roadmap/export, mobile sample/manual flows, baseline restoration, pinned targets,
 empty profiles, errors, skill removal/restoration, no script errors, mobile width,
 the upload spinner/reel and reduced-motion preferences.
 Set `RUN_BROWSER_TESTS=1` and optionally `BROWSER_CHANNEL=msedge`; otherwise these
-five browser tests are skipped by the standard suite. Screenshot output is opt-in
+browser tests are skipped by the standard suite. Screenshot output is opt-in
 through `BROWSER_ARTIFACT_DIR` and should stay outside tracked source files.
 
 See README for commands. Deployment, authenticated multi-user storage, independent
@@ -291,3 +332,22 @@ RapidOCR and ONNX Runtime perform local CPU OCR. Version pins are in
 `requirements-dev.txt`. Third-party distributions and OCR models retain their
 own licenses; retain their notices in deployed distributions and include these
 tools/models in the team's declaration.
+
+## Cached maps and language selection
+
+`resultCache.ts` keeps learning maps and AI outlook responses in browser memory,
+with session/settings/language keys and shared in-flight requests. Returning from
+SDG or role details reuses the completed result. Profile edits clear the browser
+cache. Server learning proposals persist for seven days in
+`.trend-cache/learning-maps.json` and are revalidated before reuse; this file stores
+generated modules and hashed keys, never raw CV passages or the input profile.
+The existing live-trend cache continues to retain dated research assessments.
+
+The top-bar language picker supports English, Bahasa Melayu and Simplified Chinese
+for Mandarin readers. `i18n.ts` reads the bilingual interface catalogue in
+`locales.json`; only the language preference is written to browser storage.
+Switching language updates labels and accessibility text without resetting the
+journey. Public roadmap prose and outlook interpretations use the shared AI
+translation service with a separate seven-day cache. Source titles, quotations,
+provider facts, IDs and graph relationships remain canonical. A failed translation
+shows original English content with an explicit notice rather than hiding results.

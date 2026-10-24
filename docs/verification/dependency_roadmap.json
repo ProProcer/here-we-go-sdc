@@ -1,0 +1,66 @@
+{
+  "checked_on": "2026-10-24",
+  "profile": "synthetic typed Python, SQL, reading and writing skills; no personal CV",
+  "weekly_hours": 5,
+  "role": "Data Scientists",
+  "note": "All live AI outputs were revalidated using the final normalization and graph-validation code. A null model means only the generated draft was retained, without a transport receipt.",
+  "results": [
+    {
+      "horizon": "short",
+      "origin": "live_ai_output",
+      "model": "openai/gpt-oss-120b",
+      "module_count": 5,
+      "planned_hours": 60.0,
+      "estimated_weeks": 12,
+      "target_weeks": 12,
+      "budget_hours": 60,
+      "acyclic": true,
+      "within_budget": true,
+      "titles": [
+        "Mathematics Foundations for Data Modeling",
+        "Identify business problems or management objectives that can be addressed through data analysis",
+        "Python Programming for Data Science",
+        "Data Visualization & Interactive Dashboards",
+        "Presenting Data Insights to Stakeholders"
+      ]
+    },
+    {
+      "horizon": "standard",
+      "origin": "live_ai_output",
+      "model": null,
+      "module_count": 5,
+      "planned_hours": 120.0,
+      "estimated_weeks": 24,
+      "target_weeks": 26,
+      "budget_hours": 130,
+      "acyclic": true,
+      "within_budget": true,
+      "titles": [
+        "Clean and manipulate raw data using statistical software",
+        "Identify business problems or management objectives that can be addressed through data analysis",
+        "Data Cleaning & Preparation",
+        "Feature Selection & Modeling",
+        "Visualization & Presentation"
+      ]
+    },
+    {
+      "horizon": "long",
+      "origin": "live_ai_output",
+      "model": "gemini-3.1-flash-lite",
+      "module_count": 5,
+      "planned_hours": 236.0,
+      "estimated_weeks": 48,
+      "target_weeks": 52,
+      "budget_hours": 260,
+      "acyclic": true,
+      "within_budget": true,
+      "titles": [
+        "Mathematics for Data Analysis",
+        "Analytical Problem Solving",
+        "Data Manipulation and Cleaning",
+        "Model Building and Comparison",
+        "Insight Communication and Visualization"
+      ]
+    }
+  ]
+}

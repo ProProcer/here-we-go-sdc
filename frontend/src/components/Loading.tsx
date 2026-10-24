@@ -1,3 +1,4 @@
+import { t } from '../i18n';
 import { useEffect, useState } from 'react';
 
 const messages = [
@@ -16,12 +17,12 @@ function UploadReel() {
     const timer = window.setInterval(() => setReel(old => ({ current: old.next, next: pick(old.next), turn: old.turn + 1 })), 1600);
     return () => window.clearInterval(timer);
   }, []);
-  return <div id="upload-reel" className="upload-reel min-w-0 flex-1 overflow-hidden" aria-hidden="true"><div id="upload-reel-track" key={reel.turn} className="reel-track"><span>{messages[reel.current]}</span><span>{messages[reel.next]}</span></div></div>;
+  return <div id="upload-reel" className="upload-reel min-w-0 flex-1 overflow-hidden" aria-hidden="true"><div id="upload-reel-track" key={reel.turn} className="reel-track"><span>{t(messages[reel.current])}</span><span>{t(messages[reel.next])}</span></div></div>;
 }
 export default function Loading({ label, upload }: { label: string; upload: boolean }) {
   return <div id="busy" className="processing" role="status" aria-live="polite">
     <svg className="spinner" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" /></svg>
-    <strong id="busy-label" className={upload ? 'sr-only' : ''}>{label}</strong>
+    <strong id="busy-label" className={upload ? 'sr-only' : ''}>{t(label)}</strong>
     {upload && <UploadReel />}
   </div>;
 }

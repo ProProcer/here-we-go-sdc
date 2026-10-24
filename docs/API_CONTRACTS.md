@@ -238,3 +238,70 @@ The return value is a `PlanningResult` containing:
 - Budget and time are returned as course metadata and selection tie-breakers;
   user filtering remains a frontend concern.
 - The module does not start an HTTP server.
+
+## Curated dependency roadmap
+
+`POST /api/v2/pathways/dependencies` requires `X-Session-ID` and a reviewed,
+current profile revision. The server rebuilds its authoritative resource plan;
+clients cannot submit course records or arbitrary skill IDs.
+
+```json
+{
+  "revision": 1,
+  "role_id": "role:onet_15_2051_00",
+  "scenario_id": "baseline",
+  "selected_software_skill_ids": [],
+  "horizon": "short",
+  "weekly_hours": 5
+}
+```
+
+`horizon` is `short` (12-week upper target), `standard` (26 weeks), or `long`
+(52 weeks). `weekly_hours` must be finite and between 0.5 and 168. Targets limit
+the practice budget; they do not guarantee mastery or hiring readiness.
+
+The response contains `revision` and `roadmap`, including:
+
+- `nodes`: concrete task modules, grouped focus/supporting skills, course IDs,
+  practice hours, course hours, suggested week windows and graph levels.
+- `edges`: source/target IDs, a reason, and `ai_suggested`,
+  `course_prerequisite` or `practice_sequence` provenance.
+- `origin`, `status`, `provider`, `model`, planned hours, estimated weeks,
+  available hour budget and skills deferred until later.
+- `changes_personal_fit: false`.
+
+Only supplied role tasks, candidate gaps, optional tools and course IDs can be
+used. Confirmed skills become support, not new deficits. A course is counted
+once; inferred project practice never becomes verified course coverage. Unknown
+references, circular dependencies, missing listed prerequisites and plans above
+the time budget are rejected before display. Generation uses the shared AI client
+with a bounded repair attempt. An explicitly application-authored outline is
+returned when no configured AI service can supply a valid plan.
+
+The revision is checked again after generation. Stale edits return 409; invalid
+roles, scenarios, horizons or software choices fail normal input validation.
+The AI context excludes raw CV text, evidence passages and personal identifiers.
+
+Learning maps now reuse validated results for seven days in a bounded local cache
+(`.trend-cache/learning-maps.json`, at most 64 maps). Keys hash the complete
+curation context and prompt; saved values contain the proposed modules, not the
+input profile. Cache hits are revalidated against current course coverage, gaps,
+time budget and prerequisites. Identical concurrent requests share one generation.
+Unavailable/invalid AI results are not persisted as successful maps.
+
+`POST /api/v2/pathways/dependencies` also accepts `language: "en" | "ms" | "zh"`
+(default `en`). `GET /api/v2/roles/{role_id}/trends` and its `refresh` / `retry`
+POST routes accept the same optional `language` query parameter. Authenticated
+requests can translate the public result into Malay or Simplified Chinese. Text
+translations have a separate bounded seven-day cache. Translation preserves all
+IDs, graph edges, course facts, source titles, quotations and dates. The response
+reports `content_language` and `translation_status`; if translation fails, original
+English content remains available with an explicit UI notice. Anonymous trend
+requests never start translation work.
+
+The browser retains completed maps and outlook results in memory, scoped by session,
+role and relevant settings/language; requests already in progress are shared. Map
+results live for an hour (temporary practice outlines for one minute). Outlook is
+revalidated every minute, or every five seconds while research is updating. Profile
+changes clear this browser cache. Tokens and personalized results are not stored in
+browser storage; only the language preference is saved in `localStorage`.

@@ -33,9 +33,9 @@ def main():
             page.get_by_role("option", name="Business Intelligence Analysts", exact=True).click()
             page.locator("#find-matches").click()
             page.get_by_role("button", name="Explore Business Intelligence Analysts", exact=True).click()
-            expect(page.locator("#role-drawer")).to_be_visible(timeout=30000)
-            fit = page.locator("#drawer-fit strong").inner_text()
-            page.get_by_text("AI outlook & evidence", exact=True).click()
+            expect(page.locator("#role")).to_be_visible(timeout=30000)
+            fit = page.locator("#role-fit strong").inner_text()
+            page.locator("#open-ai-outlook").click()
             expect(page.locator("#live-trend-status")).to_be_visible(timeout=30000)
             # A successful source refresh does not require the model to find
             # a career connection. Zero supported cards is a valid assessment.
@@ -45,21 +45,23 @@ def main():
             page.get_by_role("button", name="Refresh trends", exact=True).click()
             expect(page.locator("#live-trend-status time")).not_to_have_text(old_time, timeout=180000)
             expect(page.locator("#live-trend-status")).to_contain_text("Feeds up to date", timeout=180000)
-            expect(page.locator("#drawer-fit strong")).to_have_text(fit)
+            page.locator("#back-to-role").click()
+            expect(page.locator("#role-fit strong")).to_have_text(fit)
+            page.locator("#open-ai-outlook").click()
             page.locator("#live-trend-status").scroll_into_view_if_needed()
             page.screenshot(path=str(OUTPUT / "live-trends-refresh.png"))
             if page.locator("#trend-interpretations .trend-card").count():
+                page.get_by_text("Explore finding & evidence", exact=True).first.click()
                 page.get_by_text("Supporting source", exact=True).first.click()
                 expect(page.locator("#trend-interpretations")).to_contain_text("Published")
                 expect(page.locator("#trend-interpretations")).to_contain_text("Fetched")
                 page.locator("#trend-interpretations .disclosure-content").first.scroll_into_view_if_needed()
-            elif page.locator("#trend-source-review").count():
+            elif page.locator("#live-source-list .source-card").count():
                 page.locator("#trend-source-review > summary").click()
                 expect(page.locator("#live-source-list")).to_contain_text("Published")
                 expect(page.locator("#live-source-list")).to_contain_text("Fetched")
             else:
-                page.get_by_text("Browse dated research sources", exact=True).click()
-                expect(page.locator("#live-trends")).to_contain_text("Published")
+                expect(page.locator("#trend-interpretations .trend-card")).to_have_count(0)
             page.screenshot(path=str(OUTPUT / "live-trends-citation.png"))
             after = outlook()
             assert after["refresh"]["last_successful_at"] != before["refresh"]["last_successful_at"]

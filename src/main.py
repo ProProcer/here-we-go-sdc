@@ -15,7 +15,9 @@ from src.backend import CareerBackend
 from src.config import load_local_environment
 from src.intelligence.live_trends import LiveTrendService
 from src.intelligence.futures import FutureService
+from src.intelligence.localization import LocalizationService
 from src.reskilling.course_catalog import CourseCatalogStore
+from src.reskilling.dependencies import DependencyService
 
 ROOT = Path(__file__).resolve().parent
 FRONTEND = ROOT.parent / "frontend" / "dist"
@@ -27,6 +29,8 @@ async def lifespan(app):
     app.state.backend = CareerBackend(course_store=CourseCatalogStore(
         ROOT.parent / "data/processed/onet/31.0/courses.json"))
     app.state.sessions = SessionStore()
+    app.state.dependency_maps = DependencyService(cache_path=ROOT.parent / '.trend-cache/learning-maps.json')
+    app.state.localization = LocalizationService(ROOT.parent / '.trend-cache/translations.json')
     app.state.trends = LiveTrendService(app.state.backend.catalog)
     app.state.futures = FutureService(app.state.backend.catalog, app.state.trends)
     if os.getenv("TREND_AUTO_REFRESH", "1") == "1":

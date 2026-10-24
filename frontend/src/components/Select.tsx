@@ -1,3 +1,4 @@
+import { t } from '../i18n';
 import { useEffect, useRef, useState } from 'react';
 import { Icon } from './ui';
 
@@ -33,7 +34,7 @@ export default function Select({ id, label, value, options, disabled = false, on
     if (expanded) document.getElementById(`${id}-option-${active}`)?.scrollIntoView({ block: 'nearest' });
   }, [expanded, active, id]);
   return <div ref={container} className={`custom-select ${upward ? 'opens-up' : ''}`} onBlur={event => { if (!event.currentTarget.contains(event.relatedTarget)) setOpen(false); }}>
-    <button ref={trigger} id={id} type="button" role="combobox" className="select-trigger" aria-label={label} aria-haspopup="listbox" aria-expanded={expanded} aria-controls={`${id}-options`} aria-activedescendant={expanded ? `${id}-option-${active}` : undefined} disabled={disabled} onClick={() => expanded ? setOpen(false) : show()} onKeyDown={event => {
+    <button ref={trigger} id={id} type="button" role="combobox" className="select-trigger" aria-label={t(label)} aria-haspopup="listbox" aria-expanded={expanded} aria-controls={`${id}-options`} aria-activedescendant={expanded ? `${id}-option-${active}` : undefined} disabled={disabled} onClick={() => expanded ? setOpen(false) : show()} onKeyDown={event => {
       if (event.key === 'Escape' && expanded) { event.preventDefault(); event.stopPropagation(); setOpen(false); }
       if (event.key === 'Tab') setOpen(false);
       if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
@@ -47,11 +48,11 @@ export default function Select({ id, label, value, options, disabled = false, on
         event.preventDefault();
         const now = Date.now();
         typed.current = { text: (now - typed.current.time < 700 ? typed.current.text : '') + event.key.toLowerCase(), time: now };
-        const index = options.findIndex(option => option.label.toLowerCase().startsWith(typed.current.text));
+        const index = options.findIndex(option => t(option.label).toLowerCase().startsWith(typed.current.text));
         if (!expanded) show();
         if (index >= 0) setActive(index);
       }
-    }}><span>{options[selected]?.label || 'Choose an option'}</span><Icon name="chevron" /></button>
-    <div id={`${id}-options`} className="select-options" role="listbox" aria-label={label} hidden={!expanded}>{options.map((option, index) => <button type="button" role="option" id={`${id}-option-${index}`} key={option.value} tabIndex={-1} aria-selected={option.value === value} className={active === index ? 'active' : ''} onMouseDown={event => event.preventDefault()} onMouseMove={() => setActive(index)} onClick={() => choose(index)}><span>{option.label}</span>{option.value === value && <Icon name="check" />}</button>)}</div>
+    }}><span>{t(options[selected]?.label || 'Choose an option')}</span><Icon name="chevron" /></button>
+    <div id={`${id}-options`} className="select-options" role="listbox" aria-label={t(label)} hidden={!expanded}>{options.map((option, index) => <button type="button" role="option" id={`${id}-option-${index}`} key={option.value} tabIndex={-1} aria-selected={option.value === value} className={active === index ? 'active' : ''} onMouseDown={event => event.preventDefault()} onMouseMove={() => setActive(index)} onClick={() => choose(index)}><span>{t(option.label)}</span>{option.value === value && <Icon name="check" />}</button>)}</div>
   </div>;
 }

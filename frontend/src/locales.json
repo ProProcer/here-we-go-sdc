@@ -1,0 +1,2402 @@
+{
+  "— Completed": {
+    "ms": "— Selesai",
+    "zh": "— 已完成"
+  },
+  "— Roadmap ready": {
+    "ms": "— Peta hala tuju sedia",
+    "zh": "— 路线图已就绪"
+  },
+  ", with a separate interest adjustment": {
+    "ms": ", dengan pelarasan faedah berasingan",
+    "zh": "，附加单独的利息调整"
+  },
+  ". Dependencies have not been human-reviewed.": {
+    "ms": ". Kebergantungan belum disemak oleh manusia.",
+    "zh": "。依赖项尚未经过人工审查。"
+  },
+  ". Effective research adjustment after bounds:": {
+    "ms": ". Pelarasan penyelidikan berkesan selepas had:",
+    "zh": "。在界限之后的有效研究调整："
+  },
+  ". Maximum research adjustment: ±": {
+    "ms": ". Pelarasan penyelidikan maksimum: ±",
+    "zh": "。最大研究调整：±"
+  },
+  ". Occupational requirements do not measure local hiring demand.": {
+    "ms": ". Keperluan pekerjaan tidak mengukur permintaan pengambilan tempatan.",
+    "zh": "。职业要求不衡量当地招聘需求。"
+  },
+  ". Preference weight:": {
+    "ms": ". Berat keutamaan:",
+    "zh": "。偏好权重："
+  },
+  ". This is an application policy, not an empirically calibrated forecast.": {
+    "ms": ". Ini adalah dasar aplikasi, bukan ramalan yang dikalibrasi secara empirikal.",
+    "zh": "。这是一项应用政策，而非经验校准的预测。"
+  },
+  "· build on this": {
+    "ms": "· bina atas ini",
+    "zh": "· 基于此构建"
+  },
+  "· Fetched": {
+    "ms": "· Diambil",
+    "zh": "· 已获取"
+  },
+  "· Newer source material is available.": {
+    "ms": "· Bahan sumber yang lebih baharu tersedia.",
+    "zh": "· 有更新的源材料可用。"
+  },
+  "· no catalog connection": {
+    "ms": "· tiada sambungan katalog",
+    "zh": "· 无目录连接"
+  },
+  "· No endorsement.": {
+    "ms": "· Tiada pengesahan.",
+    "zh": "· 无背书。"
+  },
+  "· Published": {
+    "ms": "· Diterbitkan",
+    "zh": "· 已发布"
+  },
+  "· Release": {
+    "ms": "· Keluaran",
+    "zh": "· 版本"
+  },
+  "· Research adjustment": {
+    "ms": "· Pelarasan penyelidikan",
+    "zh": "· 研究调整"
+  },
+  "· Role relevance not established": {
+    "ms": "· Perkaitan peranan tidak ditetapkan",
+    "zh": "· 角色相关性未确定"
+  },
+  "· suggested tool": {
+    "ms": "· alat disyorkan",
+    "zh": "· 推荐工具"
+  },
+  "· Target": {
+    "ms": "· Sasaran",
+    "zh": "· 目标"
+  },
+  "· your level:": {
+    "ms": "· tahap anda:",
+    "zh": "· 您的等级："
+  },
+  "(estimated)": {
+    "ms": "(dianggarkan)",
+    "zh": "（估计）"
+  },
+  "{0} h estimate": {
+    "ms": "anggaran {0} j",
+    "zh": "预计 {0} 小时"
+  },
+  "{0} hours / week": {
+    "ms": "{0} jam / minggu",
+    "zh": "每周 {0} 小时"
+  },
+  "{0} of {1} skills confirmed": {
+    "ms": "{0} daripada {1} kemahiran disahkan",
+    "zh": "已确认 {0}/{1} 项技能"
+  },
+  "{0} possibilities, based on {1} confirmed skills.": {
+    "ms": "{0} kemungkinan, berdasarkan {1} kemahiran yang disahkan.",
+    "zh": "基于 {1} 项已确认技能，共有 {0} 种可能性。"
+  },
+  "{0} skills together": {
+    "ms": "{0} kemahiran bersama",
+    "zh": "{0} 项技能汇总"
+  },
+  "← Back to career matches": {
+    "ms": "← Kembali ke padanan kerjaya",
+    "zh": "← 返回职业匹配"
+  },
+  "← Back to my roadmap": {
+    "ms": "← Kembali ke peta hala tuju saya",
+    "zh": "← 返回我的路线图"
+  },
+  "← Back to role": {
+    "ms": "← Kembali ke peranan",
+    "zh": "← 返回职位"
+  },
+  "← Back to skills": {
+    "ms": "← Kembali ke kemahiran",
+    "zh": "← 返回技能"
+  },
+  "1–3 months": {
+    "ms": "1–3 bulan",
+    "zh": "1–3个月"
+  },
+  "12 months": {
+    "ms": "12 bulan",
+    "zh": "12个月"
+  },
+  "6 months": {
+    "ms": "6 bulan",
+    "zh": "6个月"
+  },
+  "A closer look at your match and what to learn next.": {
+    "ms": "Lihat lebih dekat padanan anda dan apa yang perlu dipelajari seterusnya.",
+    "zh": "更仔细地了解您的匹配以及接下来要学习的内容。"
+  },
+  "A closer proficiency match scores higher. A shortfall reduces fit more than surplus skill.": {
+    "ms": "Padanan kecekapan yang lebih dekat mendapat skor lebih tinggi. Kekurangan mengurangkan kesesuaian lebih daripada kemahiran berlebihan.",
+    "zh": "更接近的熟练度匹配得分更高。短缺比技能过剩更会降低匹配度。"
+  },
+  "A different direction?": {
+    "ms": "Arah lain?",
+    "zh": "换个方向？"
+  },
+  "A fresh starting point": {
+    "ms": "Titik permulaan baru",
+    "zh": "全新的起点"
+  },
+  "A WORLD OF POSSIBILITIES, STARTING WITH YOU": {
+    "ms": "DUNIA PELUANG, DIMULAKAN DENGAN ANDA",
+    "zh": "无限可能的世界，从你开始"
+  },
+  "About": {
+    "ms": "Mengenai",
+    "zh": "关于"
+  },
+  "About {0} weeks of learning": {
+    "ms": "Kira-kira {0} minggu pembelajaran",
+    "zh": "约 {0} 周的学习"
+  },
+  "About extracted skills": {
+    "ms": "Mengenai kemahiran yang diekstrak",
+    "zh": "关于提取的技能"
+  },
+  "About this match": {
+    "ms": "Mengenai padanan ini",
+    "zh": "关于此匹配"
+  },
+  "Active Learning": {
+    "ms": "Pembelajaran Aktif",
+    "zh": "主动学习"
+  },
+  "Active Listening": {
+    "ms": "Mendengar Aktif",
+    "zh": "积极倾听"
+  },
+  "Adapted from O*NET® 31.0 · USDOL/ETA ·": {
+    "ms": "Diadaptasi daripada O*NET® 31.0 · USDOL/ETA ·",
+    "zh": "改编自 O*NET® 31.0 · USDOL/ETA ·"
+  },
+  "Add a skill": {
+    "ms": "Tambah kemahiran",
+    "zh": "添加技能"
+  },
+  "Added by you": {
+    "ms": "Ditambah oleh anda",
+    "zh": "由您添加"
+  },
+  "Additional assumptions": {
+    "ms": "Andaian tambahan",
+    "zh": "额外假设"
+  },
+  "advanced": {
+    "ms": "lanjutan",
+    "zh": "高级"
+  },
+  "Advanced": {
+    "ms": "Maju",
+    "zh": "高级"
+  },
+  "agree development goals, support career transitions and evaluate work samples with the people involved.": {
+    "ms": "bersetuju dengan matlamat pembangunan, menyokong peralihan kerjaya dan menilai sampel kerja bersama pihak yang terlibat.",
+    "zh": "商定发展目标，支持职业转型，并与相关人员评估工作样本。"
+  },
+  "AI": {
+    "ms": "AI",
+    "zh": "AI"
+  },
+  "AI & THE FUTURE OF THIS WORK": {
+    "ms": "AI & MASA DEPAN KERJA INI",
+    "zh": "AI 与此工作的未来"
+  },
+  "AI assessment count not recorded": {
+    "ms": "Kiraan penilaian AI tidak direkodkan",
+    "zh": "AI 评估计数未记录"
+  },
+  "AI assessment:": {
+    "ms": "Penilaian AI:",
+    "zh": "AI 评估："
+  },
+  "AI curation is not configured. Showing an application-authored practice outline.": {
+    "ms": "Kurasi AI tidak dikonfigurasi. Memaparkan rangka kerja latihan yang ditulis oleh aplikasi.",
+    "zh": "AI 策展未配置。显示应用程序编写的练习大纲。"
+  },
+  "AI curation is unavailable right now. Showing a practice outline.": {
+    "ms": "Kurasi AI tidak tersedia sekarang. Memaparkan rangka kerja latihan.",
+    "zh": "AI 策展目前不可用。显示练习大纲。"
+  },
+  "AI estimate ·": {
+    "ms": "Anggaran AI ·",
+    "zh": "AI 估计·"
+  },
+  "AI estimate:": {
+    "ms": "Anggaran AI:",
+    "zh": "AI 估计："
+  },
+  "AI explanations reflect only the supplied excerpts and have not been human reviewed.": {
+    "ms": "Penjelasan AI hanya mencerminkan petikan yang diberikan dan belum disemak oleh manusia.",
+    "zh": "AI 解释仅反映提供的摘录，尚未经过人工审查。"
+  },
+  "AI interpretation · not human reviewed": {
+    "ms": "Interpretasi AI · belum disemak manusia",
+    "zh": "AI 解释·未人工审查"
+  },
+  "AI is assessing your skill levels": {
+    "ms": "AI sedang menilai tahap kemahiran anda",
+    "zh": "AI 正在评估您的技能水平"
+  },
+  "AI level: not assessed. See the assessment status above.": {
+    "ms": "Tahap AI: tidak dinilai. Lihat status penilaian di atas.",
+    "zh": "AI 等级：未评估。请参阅上方的评估状态。"
+  },
+  "AI model:": {
+    "ms": "Model AI:",
+    "zh": "AI 模型："
+  },
+  "AI outlook": {
+    "ms": "Pandangan AI",
+    "zh": "AI 前景"
+  },
+  "AI SKILL ASSESSMENT": {
+    "ms": "PENILAIAN KEMAHIRAN AI",
+    "zh": "AI 技能评估"
+  },
+  "AI skill assessment is not configured. Review the extracted skills and set levels yourself.": {
+    "ms": "Penilaian kemahiran AI tidak dikonfigurasikan. Semak kemahiran yang diekstrak dan tetapkan tahap sendiri.",
+    "zh": "AI 技能评估尚未配置。请检查提取的技能并自行设置等级。"
+  },
+  "AI trends for this career": {
+    "ms": "Trend AI untuk kerjaya ini",
+    "zh": "此职业的 AI 趋势"
+  },
+  "AI-assessed level": {
+    "ms": "Tahap dinilai AI",
+    "zh": "AI 评估等级"
+  },
+  "AI-curated": {
+    "ms": "Kurasi AI",
+    "zh": "AI 精选"
+  },
+  "All general skill requirements are covered.": {
+    "ms": "Semua keperluan kemahiran umum telah dipenuhi.",
+    "zh": "已覆盖所有通用技能要求。"
+  },
+  "All occupational families": {
+    "ms": "Semua keluarga pekerjaan",
+    "zh": "所有职业族群"
+  },
+  "All skills": {
+    "ms": "Semua kemahiran",
+    "zh": "所有技能"
+  },
+  "An exploratory fit score, not a hiring probability.": {
+    "ms": "Skor kesesuaian eksploratori, bukan kebarangkalian pengambilan.",
+    "zh": "探索性匹配分数，而非招聘概率。"
+  },
+  "An exploratory match, not a hiring probability.": {
+    "ms": "Padanan eksploratori, bukan kebarangkalian pengambilan.",
+    "zh": "探索性匹配，而非招聘概率。"
+  },
+  "and your individual skills could support the Sustainable Development Goals through learning and practical work.": {
+    "ms": "dan kemahiran individu anda boleh menyokong Matlamat Pembangunan Mampan melalui pembelajaran dan kerja praktikal.",
+    "zh": "并且您的个人技能可以通过学习和实践工作来支持可持续发展目标。"
+  },
+  "Application-authored illustration.": {
+    "ms": "Ilustrasi yang ditulis oleh aplikasi.",
+    "zh": "应用程序编写的插图。"
+  },
+  "Applies when": {
+    "ms": "Diterapkan apabila",
+    "zh": "适用于"
+  },
+  "articles awaiting shared review.": {
+    "ms": "artikel menunggu semakan bersama.",
+    "zh": "等待共享审核的文章。"
+  },
+  "Asking your CV for its origin story...": {
+    "ms": "Menanyakan cerita asal CV anda...",
+    "zh": "正在询问您的简历来源故事..."
+  },
+  "Assessing research…": {
+    "ms": "Menilai penyelidikan…",
+    "zh": "评估研究中…"
+  },
+  "Assessment context:": {
+    "ms": "Konteks penilaian:",
+    "zh": "评估背景："
+  },
+  "assessment records excluded from this decision.": {
+    "ms": "rekod penilaian dikecualikan daripada keputusan ini.",
+    "zh": "评估记录已从该决策中排除。"
+  },
+  "assessment-status surface": {
+    "ms": "permukaan-status-penilaian",
+    "zh": "assessment-status surface"
+  },
+  "assessments could not be used:": {
+    "ms": "penilaian tidak dapat digunakan:",
+    "zh": "无法使用评估："
+  },
+  "Assumption:": {
+    "ms": "Andaian:",
+    "zh": "假设："
+  },
+  "Based on": {
+    "ms": "Berdasarkan",
+    "zh": "基于"
+  },
+  "Based on your skills": {
+    "ms": "Berdasarkan kemahiran anda",
+    "zh": "基于您的技能"
+  },
+  "Baseline": {
+    "ms": "Garis asas",
+    "zh": "基线"
+  },
+  "Baseline · current requirements": {
+    "ms": "Garis asas · keperluan semasa",
+    "zh": "基线 · 当前需求"
+  },
+  "because fewer than four skills are confirmed or self-reported.": {
+    "ms": "kerana kurang daripada empat kemahiran disahkan atau dilaporkan sendiri.",
+    "zh": "因为确认或自报的技能少于四项。"
+  },
+  "beginner": {
+    "ms": "pemula",
+    "zh": "初学者"
+  },
+  "Beginner": {
+    "ms": "Pemula",
+    "zh": "初学者"
+  },
+  "Browse": {
+    "ms": "Layari",
+    "zh": "浏览"
+  },
+  "Budget (MYR)": {
+    "ms": "Bajet (MYR)",
+    "zh": "预算（马币）"
+  },
+  "Build a learning plan around this career.": {
+    "ms": "Bina pelan pembelajaran berdasarkan kerjaya ini.",
+    "zh": "围绕此职业制定学习计划。"
+  },
+  "Build from where you are today.": {
+    "ms": "Bina bermula dari tahap anda hari ini.",
+    "zh": "从你现在的起点出发。"
+  },
+  "Build my roadmap": {
+    "ms": "Bina peta jalan saya",
+    "zh": "构建我的路线图"
+  },
+  "BUILD ON STAGE {0}": {
+    "ms": "BINA PADA TAHAP {0}",
+    "zh": "在阶段 {0} 上构建"
+  },
+  "Build practical capabilities. Focus on the gaps that matter most.": {
+    "ms": "Bina keupayaan praktikal. Fokus pada jurang yang paling penting.",
+    "zh": "构建实践能力。专注于最重要的短板。"
+  },
+  "button primary": {
+    "ms": "butang utama",
+    "zh": "主要按钮"
+  },
+  "button primary upload-browse": {
+    "ms": "butang utama muat naik-semak imbas",
+    "zh": "主要按钮上传-浏览"
+  },
+  "button secondary": {
+    "ms": "butang sekunder",
+    "zh": "次要按钮"
+  },
+  "button secondary compact-button": {
+    "ms": "butang sekunder butang-padat",
+    "zh": "次要按钮紧凑型按钮"
+  },
+  "button secondary skill-review-button": {
+    "ms": "butang sekunder butang-semakan-kemahiran",
+    "zh": "次要按钮技能审查按钮"
+  },
+  "button secondary upload-browse": {
+    "ms": "butang sekunder muat naik-semak imbas",
+    "zh": "次要按钮上传-浏览"
+  },
+  "Cached sources": {
+    "ms": "Sumber yang dicache",
+    "zh": "缓存来源"
+  },
+  "caption dependency-fallback": {
+    "ms": "kapsyen sandaran-kebergantungan",
+    "zh": "标题依赖回退"
+  },
+  "career": {
+    "ms": "kerjaya",
+    "zh": "职业"
+  },
+  "Career assessment is unavailable right now": {
+    "ms": "Penilaian kerjaya tidak tersedia buat masa ini",
+    "zh": "职业评估目前不可用"
+  },
+  "Career connection shown": {
+    "ms": "Kaitan kerjaya ditunjukkan",
+    "zh": "已显示职业关联"
+  },
+  "Career goal": {
+    "ms": "Matlamat kerjaya",
+    "zh": "职业目标"
+  },
+  "Career goal and learning preferences": {
+    "ms": "Matlamat kerjaya dan pilihan pembelajaran",
+    "zh": "职业目标与学习偏好"
+  },
+  "Career interests": {
+    "ms": "Minat kerjaya",
+    "zh": "职业兴趣"
+  },
+  "Career journey": {
+    "ms": "Perjalanan kerjaya",
+    "zh": "职业旅程"
+  },
+  "Career linked ·": {
+    "ms": "Kerjaya dipautkan ·",
+    "zh": "已关联职业 ·"
+  },
+  "Career preparation": {
+    "ms": "Persediaan kerjaya",
+    "zh": "职业准备"
+  },
+  "Careers": {
+    "ms": "Kerjaya",
+    "zh": "职业"
+  },
+  "Category familiarity does not establish proficiency in another tool.": {
+    "ms": "Kefasihan kategori tidak menetapkan kecekapan dalam alat lain.",
+    "zh": "熟悉某一类别并不代表精通其他工具。"
+  },
+  "CC BY 4.0": {
+    "ms": "CC BY 4.0",
+    "zh": "CC BY 4.0"
+  },
+  "Changing careers:": {
+    "ms": "Menukar kerjaya:",
+    "zh": "职业转型："
+  },
+  "Choose a career goal, or explore with an open mind.": {
+    "ms": "Pilih matlamat kerjaya, atau teroka dengan minda terbuka.",
+    "zh": "选择一个职业目标，或以开放的心态进行探索。"
+  },
+  "Choose an option": {
+    "ms": "Pilih satu pilihan",
+    "zh": "选择一个选项"
+  },
+  "Choose software · {0} selected": {
+    "ms": "Pilih perisian · {0} dipilih",
+    "zh": "选择软件 · 已选 {0}"
+  },
+  "Choose your planning scenario": {
+    "ms": "Pilih senario perancangan anda",
+    "zh": "选择您的规划场景"
+  },
+  "Clear": {
+    "ms": "Kosongkan",
+    "zh": "清除"
+  },
+  "Clear career goal:": {
+    "ms": "Matlamat kerjaya yang jelas:",
+    "zh": "明确的职业目标："
+  },
+  "Clear filters": {
+    "ms": "Kosongkan penapis",
+    "zh": "清除筛选"
+  },
+  "Clear search": {
+    "ms": "Kosongkan carian",
+    "zh": "清除搜索"
+  },
+  "Collapse sidebar": {
+    "ms": "Tutup bar sisi",
+    "zh": "折叠侧边栏"
+  },
+  "Compare all three scenarios": {
+    "ms": "Bandingkan kesemua tiga senario",
+    "zh": "比较所有三种场景"
+  },
+  "completed": {
+    "ms": "selesai",
+    "zh": "已完成"
+  },
+  "Completed": {
+    "ms": "Selesai",
+    "zh": "已完成"
+  },
+  "Complex Problem Solving": {
+    "ms": "Penyelesaian Masalah Kompleks",
+    "zh": "复杂问题解决"
+  },
+  "Conditional application interpretation ·": {
+    "ms": "Tafsiran permohonan bersyarat ·",
+    "zh": "有条件申请解读 ·"
+  },
+  "Conditional task relevance only. No measured employment, vacancy, or wage effect is claimed. Your skills and fit score stay unchanged.": {
+    "ms": "Hanya kaitan tugas bersyarat. Tiada kesan pekerjaan, kekosongan atau gaji yang diukur dituntut. Skor kemahiran dan kesesuaian anda kekal tidak berubah.",
+    "zh": "仅限有条件任务相关性。不声明任何就业、空缺或工资影响。您的技能和匹配分数保持不变。"
+  },
+  "Conditional work application": {
+    "ms": "Permohonan kerja bersyarat",
+    "zh": "有条件工作申请"
+  },
+  "confidence": {
+    "ms": "keyakinan",
+    "zh": "置信度"
+  },
+  "Confirm all skills": {
+    "ms": "Sahkan semua kemahiran",
+    "zh": "确认所有技能"
+  },
+  "Confirm or add a skill to discover relevant careers. We won't rank roles from an empty profile.": {
+    "ms": "Sahkan atau tambah kemahiran untuk menemui kerjaya yang berkaitan. Kami tidak akan menyenaraikan peranan daripada profil kosong.",
+    "zh": "确认或添加技能以发现相关职业。我们不会对空白资料进行职位排名。"
+  },
+  "Confirm skills to see your match. No score has been calculated.": {
+    "ms": "Sahkan kemahiran untuk melihat padanan anda. Tiada skor telah dikira.",
+    "zh": "确认技能以查看匹配结果。尚未计算分数。"
+  },
+  "Confirm what fits. Add anything we missed.": {
+    "ms": "Sahkan apa yang sesuai. Tambah apa-apa yang kami terlepas.",
+    "zh": "确认匹配项。添加我们遗漏的内容。"
+  },
+  "confirmed": {
+    "ms": "disahkan",
+    "zh": "已确认"
+  },
+  "Confirmed": {
+    "ms": "Disahkan",
+    "zh": "已确认"
+  },
+  "confirmed or self-reported skills. The points below add up to CV skill alignment, before its": {
+    "ms": "kemahiran disahkan atau dilaporkan sendiri. Mata di bawah dijumlahkan kepada penjajaran kemahiran CV, sebelum ia",
+    "zh": "确认或自报技能。以下分数累加至简历技能匹配度，在其"
+  },
+  "Confirmed skills connected to this career.": {
+    "ms": "Kemahiran disahkan disambungkan kepada kerjaya ini.",
+    "zh": "已确认与此职业相关的技能。"
+  },
+  "confirmed.": {
+    "ms": "disahkan.",
+    "zh": "已确认。"
+  },
+  "CONNECT YOUR CAPABILITIES TO PURPOSE": {
+    "ms": "HUBUNGKAN KEUPAYAAN ANDA DENGAN TUJUAN",
+    "zh": "将您的能力与目标联系起来"
+  },
+  "Connect your skills to purpose.": {
+    "ms": "Hubungkan kemahiran anda dengan tujuan.",
+    "zh": "将您的技能与目标联系起来。"
+  },
+  "Connecting your career dots...": {
+    "ms": "Menyambungkan titik kerjaya anda...",
+    "zh": "正在梳理您的职业点..."
+  },
+  "connection": {
+    "ms": "sambungan",
+    "zh": "连接"
+  },
+  "connections": {
+    "ms": "sambungan",
+    "zh": "连接"
+  },
+  "connections awaiting review.": {
+    "ms": "sambungan menunggu semakan.",
+    "zh": "等待审核的连接。"
+  },
+  "Continuing in work:": {
+    "ms": "Meneruskan kerja:",
+    "zh": "继续工作："
+  },
+  "contribution": {
+    "ms": "sumbangan",
+    "zh": "贡献"
+  },
+  "Coordination": {
+    "ms": "Penyelarasan",
+    "zh": "协调"
+  },
+  "Core skills": {
+    "ms": "Kemahiran teras",
+    "zh": "核心技能"
+  },
+  "Correct this estimate": {
+    "ms": "Betulkan anggaran ini",
+    "zh": "更正此估算"
+  },
+  "Course": {
+    "ms": "Kursus",
+    "zh": "课程"
+  },
+  "Course catalog": {
+    "ms": "Katalog kursus",
+    "zh": "课程目录"
+  },
+  "Course catalog status is temporarily unavailable. Any verified resources in this plan remain listed above.": {
+    "ms": "Status katalog kursus tidak tersedia buat sementara waktu. Mana-mana sumber yang disahkan dalam pelan ini kekal disenaraikan di atas.",
+    "zh": "课程目录状态暂时不可用。此计划中任何已验证的资源仍列于上方。"
+  },
+  "Course discovery currently uses the verified catalog only; live search is not connected.": {
+    "ms": "Penemuan kursus pada masa ini hanya menggunakan katalog yang disahkan; carian langsung tidak disambungkan.",
+    "zh": "课程发现目前仅使用已验证目录；未连接实时搜索。"
+  },
+  "COURSE FOR THIS MODULE": {
+    "ms": "KURSUS UNTUK MODUL INI",
+    "zh": "本模块课程"
+  },
+  "credit": {
+    "ms": "kredit",
+    "zh": "学分"
+  },
+  "Critical Thinking": {
+    "ms": "Pemikiran Kritis",
+    "zh": "批判性思维"
+  },
+  "Curated modules use a selection of these courses and practical exercises. Additional provider links are optional choices.": {
+    "ms": "Modul terpilih menggunakan pilihan kursus dan latihan praktikal ini. Pautan pembekal tambahan adalah pilihan.",
+    "zh": "精选模块使用这些课程和练习的选择。额外的提供商链接为可选项目。"
+  },
+  "Current role context": {
+    "ms": "Konteks peranan semasa",
+    "zh": "当前角色背景"
+  },
+  "CV extraction can miss context. Review your skills; missing evidence does not mean you lack a skill.": {
+    "ms": "Pengekstrakan CV mungkin terlepas konteks. Semak kemahiran anda; bukti yang tiada tidak bermakna anda tiada kemahiran.",
+    "zh": "简历提取可能会忽略背景信息。请检查您的技能；缺少证明并不意味着您不具备该技能。"
+  },
+  "CV skill alignment": {
+    "ms": "Penjajaran kemahiran CV",
+    "zh": "简历技能匹配"
+  },
+  "CV skill alignment and": {
+    "ms": "Penjajaran kemahiran CV dan",
+    "zh": "简历技能匹配以及"
+  },
+  "Data Analysts": {
+    "ms": "Penganalisis Data",
+    "zh": "数据分析师"
+  },
+  "Data Scientists": {
+    "ms": "Saintis Data",
+    "zh": "数据科学家"
+  },
+  "Decision references": {
+    "ms": "Rujukan keputusan",
+    "zh": "决策参考"
+  },
+  "demonstrate a skill through a study project, volunteering or a portfolio example.": {
+    "ms": "tunjukkan kemahiran melalui projek kajian, kerja sukarela atau contoh portfolio.",
+    "zh": "通过研究项目、志愿服务或作品集示例来展示技能。"
+  },
+  "Discover your career matches.": {
+    "ms": "Temui padanan kerjaya anda.",
+    "zh": "发现您的职业匹配。"
+  },
+  "document a practical improvement and discuss development or internal mobility with your manager.": {
+    "ms": "dokumenkan penambahbaikan praktikal dan bincangkan pembangunan atau mobiliti dalaman dengan pengurus anda.",
+    "zh": "记录一项实际改进，并与您的经理讨论个人发展或内部流动事宜。"
+  },
+  "Download sample": {
+    "ms": "Muat turun sampel",
+    "zh": "下载样本"
+  },
+  "Drop your CV here": {
+    "ms": "Lepaskan CV anda di sini",
+    "zh": "在此放入您的简历"
+  },
+  "e.g. 5": {
+    "ms": "contohnya 5",
+    "zh": "例如 5"
+  },
+  "e.g. analytics, business": {
+    "ms": "contohnya analitis, perniagaan",
+    "zh": "例如分析、业务"
+  },
+  "Edit my skills": {
+    "ms": "Edit kemahiran saya",
+    "zh": "编辑我的技能"
+  },
+  "Enter skills manually instead ↗": {
+    "ms": "Masukkan kemahiran secara manual sebaliknya ↗",
+    "zh": "改为手动输入技能 ↗"
+  },
+  "Estimated course hours": {
+    "ms": "Anggaran jam kursus",
+    "zh": "预计课程时长"
+  },
+  "Estimated from": {
+    "ms": "Dianggarkan daripada",
+    "zh": "估算来源"
+  },
+  "Estimated pace": {
+    "ms": "Anggaran tempo",
+    "zh": "预计进度"
+  },
+  "Evidence & conditions": {
+    "ms": "Bukti & syarat",
+    "zh": "证据与条件"
+  },
+  "Evidence check:": {
+    "ms": "Semakan bukti:",
+    "zh": "证据检查："
+  },
+  "Evidence-adjustment details are unavailable. No additional evidence-based adjustment is claimed here.": {
+    "ms": "Butiran pelarasan bukti tidak tersedia. Tiada pelarasan berasaskan bukti tambahan yang dituntut di sini.",
+    "zh": "证据调整详情不可用。此处不声明任何额外的循证调整。"
+  },
+  "Exact software coverage": {
+    "ms": "Liputan perisian tepat",
+    "zh": "准确的软件覆盖范围"
+  },
+  "Expand sidebar": {
+    "ms": "Kembangkan bar sisi",
+    "zh": "展开侧边栏"
+  },
+  "explain how an existing capability transfers to a task in your target role.": {
+    "ms": "jelaskan bagaimana keupayaan sedia ada dipindahkan kepada tugas dalam peranan sasaran anda.",
+    "zh": "解释现有能力如何应用于目标角色中的任务。"
+  },
+  "Explore": {
+    "ms": "Teroka",
+    "zh": "探索"
+  },
+  "Explore another role or optional software to create a learning focus.": {
+    "ms": "Teroka peranan lain atau perisian pilihan untuk mencipta fokus pembelajaran.",
+    "zh": "探索其他角色或可选软件以建立学习重点。"
+  },
+  "Explore careers": {
+    "ms": "Teroka kerjaya",
+    "zh": "探索职业"
+  },
+  "Explore careers / AI outlook": {
+    "ms": "Teroka kerjaya / Prospek AI",
+    "zh": "探索职业 / AI 前景"
+  },
+  "Explore careers / Role overview": {
+    "ms": "Teroka kerjaya / Gambaran keseluruhan peranan",
+    "zh": "探索职业 / 角色概览"
+  },
+  "Explore finding & evidence": {
+    "ms": "Teroka penemuan & bukti",
+    "zh": "探索发现与证据"
+  },
+  "Explore how": {
+    "ms": "Teroka cara",
+    "zh": "探索方式"
+  },
+  "Explore my careers": {
+    "ms": "Teroka kerjaya saya",
+    "zh": "探索我的职业"
+  },
+  "Explore other providers": {
+    "ms": "Teroka pembekal lain",
+    "zh": "探索其他提供商"
+  },
+  "Explore research findings and practical skills to build.": {
+    "ms": "Teroka penemuan penyelidikan dan kemahiran praktikal untuk dibina.",
+    "zh": "探索研究发现和需要构建的实用技能。"
+  },
+  "Explore Role": {
+    "ms": "Teroka Peranan",
+    "zh": "探索角色"
+  },
+  "Explore without a goal": {
+    "ms": "Teroka tanpa matlamat",
+    "zh": "无目标探索"
+  },
+  "Explore your connections to the Sustainable Development Goals.": {
+    "ms": "Teroka hubungan anda dengan Matlamat Pembangunan Mampan.",
+    "zh": "探索您与可持续发展目标的联系。"
+  },
+  "Explore your future": {
+    "ms": "Teroka masa depan anda",
+    "zh": "探索您的未来"
+  },
+  "Export JSON": {
+    "ms": "Eksport JSON",
+    "zh": "导出 JSON"
+  },
+  "Feeds up to date": {
+    "ms": "Suapan dikemas kini",
+    "zh": "订阅源已更新"
+  },
+  "Fetching external sources": {
+    "ms": "Mengambil sumber luaran",
+    "zh": "正在获取外部来源"
+  },
+  "Fewer cards do not mean other articles are unrelated.": {
+    "ms": "Kurang kad tidak bermakna artikel lain tidak berkaitan.",
+    "zh": "卡片较少并不意味着其他文章不相关。"
+  },
+  "FEWER GAPS. MORE FOCUS.": {
+    "ms": "KURANG JURANG. LEBIH FOKUS.",
+    "zh": "减少差距。更多专注。"
+  },
+  "FIND A DIRECTION THAT FEELS LIKE YOU": {
+    "ms": "CARI ARAH YANG SESUAI DENGAN ANDA",
+    "zh": "找到属于你的方向"
+  },
+  "Find a learning resource": {
+    "ms": "Cari sumber pembelajaran",
+    "zh": "寻找学习资源"
+  },
+  "Find a skill": {
+    "ms": "Cari kemahiran",
+    "zh": "寻找技能"
+  },
+  "Finding research relevant to this career…": {
+    "ms": "Mencari penyelidikan yang berkaitan dengan kerjaya ini…",
+    "zh": "正在寻找与此职业相关的研究..."
+  },
+  "Finding your career matches": {
+    "ms": "Mencari padanan kerjaya anda",
+    "zh": "正在查找您的职业匹配项"
+  },
+  "fit / 100": {
+    "ms": "padanan / 100",
+    "zh": "匹配度 / 100"
+  },
+  "Fit combines": {
+    "ms": "Padanan menggabungkan",
+    "zh": "匹配结合了"
+  },
+  "Focus skills": {
+    "ms": "Kemahiran fokus",
+    "zh": "重点技能"
+  },
+  "focused modules ·": {
+    "ms": "modul tumpuan ·",
+    "zh": "重点模块 ·"
+  },
+  "Follow the arrows. Skills in one module are learnt or practised together.": {
+    "ms": "Ikut anak panah. Kemahiran dalam satu modul dipelajari atau diamalkan bersama-sama.",
+    "zh": "跟随箭头。一个模块中的技能是一起学习或练习的。"
+  },
+  "Free resources only": {
+    "ms": "Sumber percuma sahaja",
+    "zh": "仅限免费资源"
+  },
+  "Full backend notes for this plan. Also included in the JSON export.": {
+    "ms": "Nota bahagian belakang penuh untuk pelan ini. Juga disertakan dalam eksport JSON.",
+    "zh": "此计划的完整后端备注。也包含在 JSON 导出中。"
+  },
+  "Full occupation description": {
+    "ms": "Penerangan pekerjaan penuh",
+    "zh": "完整职业描述"
+  },
+  "future-story single": {
+    "ms": "cerita masa hadapan tunggal",
+    "zh": "未来故事单项"
+  },
+  "general requirement fulfilment": {
+    "ms": "pemenuhan keperluan umum",
+    "zh": "通用要求满足度"
+  },
+  "General requirement fulfilment": {
+    "ms": "Pemenuhan keperluan am",
+    "zh": "通用要求满足情况"
+  },
+  "General scenarios add an illustrative 0.08 under moderate adoption or 0.16 under rapid adoption to selected checking, learning and communication priorities, capped at 1.00. Role-specific policy assumptions are shown with the scenario. AI explains the scenarios; numeric adjustments follow the application policy.": {
+    "ms": "Senario am menambah 0.08 ilustratif di bawah penggunaan sederhana atau 0.16 di bawah penggunaan pesat kepada keutamaan semakan, pembelajaran dan komunikasi terpilih, dihadkan pada 1.00. Andaian dasar khusus peranan ditunjukkan dengan senario tersebut. AI menerangkan senario; pelarasan angka mengikut dasar aplikasi.",
+    "zh": "在适度采用下，通用场景会为选定的检查、学习和沟通优先级增加 0.08 的说明性权重，在快速采用下则增加 0.16，上限为 1.00。特定角色的政策假设随场景显示。AI 对场景进行了解释；数字调整遵循应用政策。"
+  },
+  "General skill presence": {
+    "ms": "Kehadiran kemahiran am",
+    "zh": "通用技能表现"
+  },
+  "General skills covered": {
+    "ms": "Kemahiran am yang diliputi",
+    "zh": "已涵盖的通用技能"
+  },
+  "Giving your CV a little detective work...": {
+    "ms": "Melakukan sedikit kerja detektif pada CV anda...",
+    "zh": "正在为您的简历进行侦探工作..."
+  },
+  "Grouping important gaps into practical modules.": {
+    "ms": "Mengumpulkan jurang penting ke dalam modul praktikal.",
+    "zh": "将重要差距归类为实用模块。"
+  },
+  "h estimate": {
+    "ms": "anggaran j",
+    "zh": "小时估算"
+  },
+  "h of listed courses +": {
+    "ms": "j kursus tersenarai +",
+    "zh": "列出课程的小时数 +"
+  },
+  "h planned ·": {
+    "ms": "j dirancang ·",
+    "zh": "计划小时数 ·"
+  },
+  "h suggested project practice. Practice time is an estimate.": {
+    "ms": "j amalan projek disyorkan. Masa amalan adalah anggaran.",
+    "zh": "建议项目实践小时数。实践时间为估算值。"
+  },
+  "h/week": {
+    "ms": "j/minggu",
+    "zh": "小时/周"
+  },
+  "Hours per week": {
+    "ms": "Jam seminggu",
+    "zh": "每周小时数"
+  },
+  "hours/week": {
+    "ms": "jam/minggu",
+    "zh": "小时/周"
+  },
+  "How could AI change this career?": {
+    "ms": "Bagaimanakah AI boleh mengubah kerjaya ini?",
+    "zh": "AI 将如何改变这一职业？"
+  },
+  "How priorities change": {
+    "ms": "Bagaimanakah keutamaan berubah",
+    "zh": "优先级如何变化"
+  },
+  "How sources were assessed": {
+    "ms": "Bagaimanakah sumber dinilai",
+    "zh": "来源评估方式"
+  },
+  "How these estimates are set": {
+    "ms": "Bagaimanakah anggaran ini ditetapkan",
+    "zh": "这些估计值的设定方式"
+  },
+  "How this plan was curated · {0} skills left for later": {
+    "ms": "Bagaimana pelan ini disusun · {0} kemahiran ditinggalkan untuk kemudian",
+    "zh": "此计划的制定方式 · 还有 {0} 项技能留待以后处理"
+  },
+  "How you could prepare": {
+    "ms": "Bagaimanakah anda boleh bersedia",
+    "zh": "您可以如何准备"
+  },
+  "How your CV skills affect this score": {
+    "ms": "Bagaimanakah kemahiran CV anda mempengaruhi skor ini",
+    "zh": "您的简历技能如何影响此分数"
+  },
+  "How your pathway can contribute": {
+    "ms": "Bagaimanakah laluan anda boleh menyumbang",
+    "zh": "您的路径如何做出贡献"
+  },
+  "HR and L&D:": {
+    "ms": "HR dan L&D:",
+    "zh": "人力资源与学习发展："
+  },
+  "Human responsibility:": {
+    "ms": "Tanggungjawab manusia:",
+    "zh": "人为责任："
+  },
+  "HYPOTHETICAL SCENARIO · Not a forecast": {
+    "ms": "SENARIO HIPOTETIKAL · Bukan ramalan",
+    "zh": "假设场景 · 非预测"
+  },
+  "ikiguy": {
+    "ms": "ikiguy",
+    "zh": "ikiguy"
+  },
+  "Illustrative weights, not probabilities or skill deficits. The roadmap applies these priorities to the skills in your plan.": {
+    "ms": "Pemberat ilustratif, bukan kebarangkalian atau kekurangan kemahiran. Pelan hala tuju menggunakan keutamaan ini pada kemahiran dalam pelan anda.",
+    "zh": "说明性权重，而非概率或技能缺陷。路线图将这些优先级应用于您计划中的技能。"
+  },
+  "Importance is the occupation’s O*NET rating divided by 5. A value of 0.80 means 4 out of 5 for this role. It does not measure your proficiency or a skill deficit.": {
+    "ms": "Kepentingan ialah penarafan O*NET pekerjaan dibahagikan dengan 5. Nilai 0.80 bermakna 4 daripada 5 untuk peranan ini. Ia tidak mengukur kecekapan atau kekurangan kemahiran anda.",
+    "zh": "重要性为职业的 O*NET 评级除以 5。0.80 的值意味着该角色的评分为 5 分中的 4 分。它并不衡量您的熟练程度或技能缺陷。"
+  },
+  "Important gaps are grouped around occupational tasks. Course coverage uses stored provider records; embedded project skills and learning-order suggestions are interpretations. The plan fits your selected time budget and does not change your fit score.": {
+    "ms": "Jurang penting dikumpulkan di sekitar tugas pekerjaan. Liputan kursus menggunakan rekod pembekal yang disimpan; kemahiran projek terbenam dan cadangan tertib pembelajaran adalah interpretasi. Pelan ini menepati bajet masa anda yang dipilih dan tidak mengubah skor kesesuaian anda.",
+    "zh": "重要差距围绕职业任务进行分组。课程覆盖范围使用存储的提供商记录；嵌入式项目技能和学习顺序建议均为解读。该计划符合您选择的时间预算，且不会改变您的匹配分数。"
+  },
+  "In your learning plan": {
+    "ms": "Dalam pelan pembelajaran anda",
+    "zh": "在您的学习计划中"
+  },
+  "In your profile": {
+    "ms": "Dalam profil anda",
+    "zh": "在您的个人资料中"
+  },
+  "Includes skills in your profile, occupational requirements and planned learning. Confirmed skills keep their links; they are not treated as new gaps. A skill outside this role’s requirements is labelled separately.": {
+    "ms": "Termasuk kemahiran dalam profil anda, keperluan pekerjaan dan pembelajaran yang dirancang. Kemahiran yang disahkan mengekalkan pautannya; ia tidak dianggap sebagai jurang baharu. Kemahiran di luar keperluan peranan ini dilabelkan secara berasingan.",
+    "zh": "包括您资料中的技能、职业要求和计划学习内容。已确认的技能会保留其关联；它们不会被视为新的差距。此角色要求之外的技能会单独标注。"
+  },
+  "Independent branches can be studied alongside one another.": {
+    "ms": "Cawangan bebas boleh dipelajari bersama antara satu sama lain.",
+    "zh": "独立的学习分支可以同时进行。"
+  },
+  "independent studies ·": {
+    "ms": "kajian bebas ·",
+    "zh": "自主学习 ·"
+  },
+  "insufficient evidence": {
+    "ms": "bukti tidak mencukupi",
+    "zh": "证据不足"
+  },
+  "intermediate": {
+    "ms": "pertengahan",
+    "zh": "中级"
+  },
+  "Intermediate": {
+    "ms": "Pertengahan",
+    "zh": "中级"
+  },
+  "Job level: unknown": {
+    "ms": "Tahap pekerjaan: tidak diketahui",
+    "zh": "职位等级：未知"
+  },
+  "Journey sidebar": {
+    "ms": "Bar sisi perjalanan",
+    "zh": "旅程侧边栏"
+  },
+  "Just taking a look?": {
+    "ms": "Sekadar melihat-lihat?",
+    "zh": "只是随便看看？"
+  },
+  "Language": {
+    "ms": "Bahasa",
+    "zh": "语言"
+  },
+  "Last completed assessment:": {
+    "ms": "Penilaian terakhir diselesaikan:",
+    "zh": "最近完成的评估："
+  },
+  "Last fetch:": {
+    "ms": "Dapatkan terakhir:",
+    "zh": "上次获取时间："
+  },
+  "Last interpretation:": {
+    "ms": "Tafsiran terakhir:",
+    "zh": "上次解读："
+  },
+  "Learning dependency graph": {
+    "ms": "Graf pergantungan pembelajaran",
+    "zh": "学习依赖关系图"
+  },
+  "Learning preferences": {
+    "ms": "Keutamaan pembelajaran",
+    "zh": "学习偏好"
+  },
+  "Learning priorities are guidance. Scenarios change priorities, not your skills or match score.": {
+    "ms": "Keutamaan pembelajaran adalah panduan. Senario mengubah keutamaan, bukan kemahiran atau skor padanan anda.",
+    "zh": "学习优先级仅供参考。场景会改变优先级，但不会改变您的技能或匹配得分。"
+  },
+  "Learning roadmap": {
+    "ms": "Peta jalan pembelajaran",
+    "zh": "学习路线图"
+  },
+  "Learning roadmap / SDG connections": {
+    "ms": "Peta jalan pembelajaran / hubungan SDG",
+    "zh": "学习路线图 / SDG 关联"
+  },
+  "Learning scenario": {
+    "ms": "Senario pembelajaran",
+    "zh": "学习场景"
+  },
+  "Learning stage {0}": {
+    "ms": "Tahap pembelajaran {0}",
+    "zh": "学习阶段 {0}"
+  },
+  "Learning Strategies": {
+    "ms": "Strategi Pembelajaran",
+    "zh": "学习策略"
+  },
+  "Let's find your starting point": {
+    "ms": "Mari cari titik permulaan anda",
+    "zh": "让我们找到您的起点"
+  },
+  "Let's review your skills.": {
+    "ms": "Mari semak kemahiran anda.",
+    "zh": "让我们回顾一下您的技能。"
+  },
+  "Limited evidence: scaled to": {
+    "ms": "Bukti terhad: diskalakan kepada",
+    "zh": "证据有限：已缩放至"
+  },
+  "Limits to keep in mind": {
+    "ms": "Had untuk diingati",
+    "zh": "需要注意的局限性"
+  },
+  "Listed course prerequisite": {
+    "ms": "Prasyarat kursus yang disenaraikan",
+    "zh": "列出的课程先修要求"
+  },
+  "Listed prerequisite": {
+    "ms": "Prasyarat yang disenaraikan",
+    "zh": "列出的先修要求"
+  },
+  "Loading career news…": {
+    "ms": "Memuatkan berita kerjaya…",
+    "zh": "正在加载职业新闻…"
+  },
+  "Loading planning context…": {
+    "ms": "Memuatkan konteks perancangan…",
+    "zh": "正在加载规划上下文…"
+  },
+  "Long term": {
+    "ms": "Jangka panjang",
+    "zh": "长期"
+  },
+  "Looking for your hidden superpowers...": {
+    "ms": "Mencari kuasa luar biasa tersembunyi anda...",
+    "zh": "正在寻找您隐藏的超能力..."
+  },
+  "Made for your next move.": {
+    "ms": "Dibuat untuk langkah seterusnya anda.",
+    "zh": "为您下一步行动而打造。"
+  },
+  "MAKE IT PERSONAL": {
+    "ms": "JADIKAN PERIBADI",
+    "zh": "打造个性化体验"
+  },
+  "Make it yours": {
+    "ms": "Jadikannya milik anda",
+    "zh": "打造您的专属内容"
+  },
+  "Management of Personnel Resources": {
+    "ms": "Pengurusan Sumber Kakitangan",
+    "zh": "人事资源管理"
+  },
+  "Mapping your learning dependencies…": {
+    "ms": "Memetakan kebergantungan pembelajaran anda…",
+    "zh": "正在映射您的学习依赖项..."
+  },
+  "Match #": {
+    "ms": "Padanan #",
+    "zh": "匹配 #"
+  },
+  "Matches show skill coverage, not hiring chances. Education, licences and experience are not assessed.": {
+    "ms": "Padanan menunjukkan liputan kemahiran, bukan peluang pengambilan pekerja. Pendidikan, lesen dan pengalaman tidak dinilai.",
+    "zh": "匹配项显示技能覆盖范围，而非招聘几率。教育、执照和经验未被评估。"
+  },
+  "Matching skills": {
+    "ms": "Memadankan kemahiran",
+    "zh": "匹配技能"
+  },
+  "Mathematics": {
+    "ms": "Matematik",
+    "zh": "数学"
+  },
+  "mini-label trend-step": {
+    "ms": "langkah-trend label-mini",
+    "zh": "微型标签趋势步骤"
+  },
+  "Missing evidence doesn't mean you lack a skill. Confirmation is your own review, not an independent certification.": {
+    "ms": "Bukti yang tiada tidak bermakna anda kurang kemahiran. Pengesahan adalah semakan anda sendiri, bukan pensijilan bebas.",
+    "zh": "缺乏证据并不意味着您缺乏某项技能。确认是您自己的评估，而非独立认证。"
+  },
+  "Moderate": {
+    "ms": "Sederhana",
+    "zh": "中等"
+  },
+  "Moderate AI adoption": {
+    "ms": "Penerimaan AI sederhana",
+    "zh": "中等人工智能采用率"
+  },
+  "Moderate and rapid are hypothetical scenarios, not forecasts. They change learning emphasis, not your personal fit.": {
+    "ms": "Sederhana dan pantas adalah senario hipotesis, bukan ramalan. Ia mengubah penekanan pembelajaran, bukan kesesuaian peribadi anda.",
+    "zh": "“中等”和“快速”均为假设情境，而非预测。它们改变的是学习重点，而非您的个人契合度。"
+  },
+  "module-detail surface": {
+    "ms": "permukaan perincian-modul",
+    "zh": "模块详情界面"
+  },
+  "Monitoring": {
+    "ms": "Pemantauan",
+    "zh": "监控"
+  },
+  "More possibilities": {
+    "ms": "Lebih banyak kemungkinan",
+    "zh": "更多可能性"
+  },
+  "Needs your review": {
+    "ms": "Perlukan semakan anda",
+    "zh": "需要您的审核"
+  },
+  "New explanations will appear after a successful AI assessment.": {
+    "ms": "Penjelasan baharu akan muncul selepas penilaian AI yang berjaya.",
+    "zh": "人工智能评估成功后，将出现新的解释。"
+  },
+  "New possibilities.": {
+    "ms": "Kemungkinan baharu.",
+    "zh": "新的可能性。"
+  },
+  "Next: your direction": {
+    "ms": "Seterusnya: hala tuju anda",
+    "zh": "下一步：您的方向"
+  },
+  "No approved research adjustments are available for this role. Its learning priorities use occupational requirements and the selected scenario.": {
+    "ms": "Tiada pelarasan penyelidikan yang diluluskan tersedia untuk peranan ini. Keutamaan pembelajarannya menggunakan keperluan pekerjaan dan senario yang dipilih.",
+    "zh": "此职位暂无已批准的研究调整。其学习优先级基于职业需求和所选情境。"
+  },
+  "No approved role impacts yet": {
+    "ms": "Tiada kesan peranan yang diluluskan lagi",
+    "zh": "暂无已批准的职位影响"
+  },
+  "No approved skill connections yet": {
+    "ms": "Tiada sambungan kemahiran yang diluluskan lagi",
+    "zh": "暂无已批准的技能连接"
+  },
+  "No budget set: only verified free-access courses are eligible.": {
+    "ms": "Tiada bajet ditetapkan: hanya kursus akses percuma yang disahkan layak.",
+    "zh": "未设置预算：仅符合条件的已验证免费课程适用。"
+  },
+  "No career connections to show yet": {
+    "ms": "Tiada sambungan kerjaya untuk ditunjukkan lagi",
+    "zh": "暂无职业连接可显示"
+  },
+  "No career goal selected. You can still explore careers.": {
+    "ms": "Tiada matlamat kerjaya dipilih. Anda masih boleh meneroka kerjaya.",
+    "zh": "未选择职业目标。您仍然可以探索职业。"
+  },
+  "No confirmed requirements yet.": {
+    "ms": "Tiada keperluan yang disahkan lagi.",
+    "zh": "暂无已确认的需求。"
+  },
+  "No CV passage is available. You can still confirm this skill.": {
+    "ms": "Tiada petikan CV tersedia. Anda masih boleh mengesahkan kemahiran ini.",
+    "zh": "没有可用的简历片段。您仍然可以确认此技能。"
+  },
+  "No CV skill passages are available for assessment. Add skills manually or upload a clearer CV.": {
+    "ms": "Tiada petikan kemahiran CV tersedia untuk penilaian. Tambah kemahiran secara manual atau muat naik CV yang lebih jelas.",
+    "zh": "没有可用于评估的简历技能段落。请手动添加技能或上传更清晰的简历。"
+  },
+  "No fetched articles available": {
+    "ms": "Tiada artikel yang diambil tersedia",
+    "zh": "没有可获取的文章"
+  },
+  "No matches. Try another name.": {
+    "ms": "Tiada padanan. Cuba nama lain.",
+    "zh": "无匹配项。请尝试其他名称。"
+  },
+  "No more matches in this selection. Try another search or adjust your skills.": {
+    "ms": "Tiada lagi padanan dalam pemilihan ini. Cuba carian lain atau laraskan kemahiran anda.",
+    "zh": "此选项中没有更多匹配项。请尝试其他搜索或调整您的技能。"
+  },
+  "No recognized skills were found. Search below to add the skills you want to share.": {
+    "ms": "Tiada kemahiran yang dikenali ditemui. Cari di bawah untuk menambah kemahiran yang anda ingin kongsi.",
+    "zh": "未找到已识别的技能。请在下方搜索以添加您想分享的技能。"
+  },
+  "No remaining gaps": {
+    "ms": "Tiada jurang yang tinggal",
+    "zh": "无剩余差距"
+  },
+  "No SDG connections available yet": {
+    "ms": "Tiada sambungan SDG tersedia lagi",
+    "zh": "暂无可用 SDG 连接"
+  },
+  "No skills match this search. Try another term or choose “All skills”.": {
+    "ms": "Tiada kemahiran sepadan dengan carian ini. Cuba istilah lain atau pilih “Semua kemahiran”.",
+    "zh": "无匹配此搜索的技能。请尝试其他术语或选择“所有技能”。"
+  },
+  "No supported connection was found in the assessed excerpts. Try refreshing the research later.": {
+    "ms": "Tiada sambungan disokong ditemui dalam petikan yang dinilai. Cuba segarkan penyelidikan kemudian.",
+    "zh": "在评估的摘录中未找到支持的连接。请稍后刷新研究。"
+  },
+  "No supported relationships are stored for these learning objectives.": {
+    "ms": "Tiada hubungan disokong disimpan untuk objektif pembelajaran ini.",
+    "zh": "这些学习目标没有存储支持的关系。"
+  },
+  "No supported skill connections have been stored for this occupation.": {
+    "ms": "Tiada sambungan kemahiran yang disokong telah disimpan untuk pekerjaan ini.",
+    "zh": "此职业暂无已存储的支持技能连接。"
+  },
+  "No unmatched in-demand software options for this role.": {
+    "ms": "Tiada pilihan perisian dalam permintaan yang tidak sepadan untuk peranan ini.",
+    "zh": "此职位无未匹配的热门软件选项。"
+  },
+  "none": {
+    "ms": "tiada",
+    "zh": "无"
+  },
+  "Not assessed — AI unavailable": {
+    "ms": "Belum dinilai — AI tidak tersedia",
+    "zh": "未评估 — AI 不可用"
+  },
+  "Not enough evidence to estimate": {
+    "ms": "Tidak cukup bukti untuk membuat anggaran",
+    "zh": "证据不足，无法评估"
+  },
+  "Not specified": {
+    "ms": "Tidak dinyatakan",
+    "zh": "未指定"
+  },
+  "Not yet confirmed in your profile. You may already have them.": {
+    "ms": "Belum disahkan dalam profil anda. Anda mungkin sudah memilikinya.",
+    "zh": "尚未在您的个人资料中确认。您可能已经具备这些技能。"
+  },
+  "O*NET describes U.S. occupations and does not establish Malaysian vacancies or hiring eligibility.": {
+    "ms": "O*NET menerangkan pekerjaan di A.S. dan tidak menetapkan kekosongan jawatan atau kelayakan pengambilan pekerja di Malaysia.",
+    "zh": "O*NET 仅描述美国职业，不涵盖马来西亚的职位空缺或招聘资格。"
+  },
+  "O*NET scale definitions": {
+    "ms": "Definisi skala O*NET",
+    "zh": "O*NET 量表定义"
+  },
+  "O*NET uses a 0–7 scale. Our comparison assumes beginner = 2, intermediate = 4 and advanced = 6.": {
+    "ms": "O*NET menggunakan skala 0–7. Perbandingan kami mengandaikan pemula = 2, pertengahan = 4 dan mahir = 6.",
+    "zh": "O*NET 使用 0–7 量表。我们的比较假设初级 = 2，中级 = 4，高级 = 6。"
+  },
+  "Occupational family": {
+    "ms": "Keluarga pekerjaan",
+    "zh": "职业类别"
+  },
+  "of": {
+    "ms": "daripada",
+    "zh": "共"
+  },
+  "ONE COURSE, MULTIPLE SKILLS": {
+    "ms": "SATU KURSUS, PELBAGAI KEMAHIRAN",
+    "zh": "一门课程，多项技能"
+  },
+  "ONE STEP CLOSER TO WHAT’S NEXT": {
+    "ms": "SELANGKAH LEBIH DEKAT DENGAN MASA DEPAN",
+    "zh": "离下一步更近一步"
+  },
+  "Opening this career": {
+    "ms": "Membuka kerjaya ini",
+    "zh": "开启此职业"
+  },
+  "Opening your skills": {
+    "ms": "Membuka kemahiran anda",
+    "zh": "开启您的技能"
+  },
+  "Optional": {
+    "ms": "Pilihan",
+    "zh": "可选"
+  },
+  "Optional choices. Check access, fees and entry requirements with the provider.": {
+    "ms": "Pilihan tambahan. Semak akses, yuran dan syarat kemasukan dengan penyedia.",
+    "zh": "可选项目。请向提供方查询使用权限、费用及入学要求。"
+  },
+  "or choose a file to get started": {
+    "ms": "atau pilih fail untuk bermula",
+    "zh": "或选择一个文件以开始"
+  },
+  "Original English content shown. Translation is temporarily unavailable.": {
+    "ms": "Kandungan asal bahasa Inggeris dipaparkan. Terjemahan buat sementara waktu tidak tersedia.",
+    "zh": "显示原始英文内容。翻译功能暂时不可用。"
+  },
+  "Original rank & score": {
+    "ms": "Kedudukan & skor asal",
+    "zh": "原始排名与得分"
+  },
+  "Other learning providers": {
+    "ms": "Penyedia pembelajaran lain",
+    "zh": "其他学习提供方"
+  },
+  "paid": {
+    "ms": "berbayar",
+    "zh": "已付费"
+  },
+  "Passage:": {
+    "ms": "Petikan:",
+    "zh": "段落："
+  },
+  "PDF, DOCX, TXT, JPG or PNG · up to 2 MB": {
+    "ms": "PDF, DOCX, TXT, JPG atau PNG · sehingga 2 MB",
+    "zh": "PDF、DOCX、TXT、JPG 或 PNG · 最大 2 MB"
+  },
+  "PDFs can have up to five pages. Scans use local OCR. You can correct any missed or mistaken skills.": {
+    "ms": "PDF boleh mempunyai sehingga lima halaman. Imbasan menggunakan OCR setempat. Anda boleh membetulkan sebarang kemahiran yang terlepas atau tersilap.",
+    "zh": "PDF 最多可包含五页。扫描使用本地 OCR。您可以更正任何遗漏或错误的技能。"
+  },
+  "personal fit / 100": {
+    "ms": "kesesuaian peribadi / 100",
+    "zh": "个人契合度 / 100"
+  },
+  "Personal fit / 100": {
+    "ms": "Kesesuaian peribadi / 100",
+    "zh": "个人匹配度 / 100"
+  },
+  "Pick tools to include in your roadmap.": {
+    "ms": "Pilih alat untuk dimasukkan ke dalam peta hala tuju anda.",
+    "zh": "选择要包含在您的路线图中的工具。"
+  },
+  "Plan details & limitations": {
+    "ms": "Butiran & had pelan",
+    "zh": "计划详情与限制"
+  },
+  "PLAN FOR YOUR NEXT STEP": {
+    "ms": "RANCANG UNTUK LANGKAH SETERUSNYA",
+    "zh": "规划您的下一步"
+  },
+  "Plan under different AI adoption scenarios": {
+    "ms": "Rancang di bawah senario penggunaan AI yang berbeza",
+    "zh": "在不同 AI 采用场景下进行规划"
+  },
+  "Planning period": {
+    "ms": "Tempoh perancangan",
+    "zh": "规划周期"
+  },
+  "Policy & limitations": {
+    "ms": "Dasar & had",
+    "zh": "政策与限制"
+  },
+  "Policy:": {
+    "ms": "Dasar:",
+    "zh": "政策："
+  },
+  "Polishing the career crystal ball...": {
+    "ms": "Menggilap bola kristal kerjaya...",
+    "zh": "正在擦亮职业水晶球..."
+  },
+  "Possible change:": {
+    "ms": "Perubahan yang mungkin:",
+    "zh": "可能的变动："
+  },
+  "Possible contributions, not measured SDG outcomes.": {
+    "ms": "Sumbangan yang mungkin, bukan hasil SDG yang diukur.",
+    "zh": "可能的贡献，而非已衡量的可持续发展目标(SDG)成果。"
+  },
+  "Possible task changes & human responsibilities": {
+    "ms": "Perubahan tugasan dan tanggungjawab manusia yang mungkin",
+    "zh": "可能的任务变动与人类职责"
+  },
+  "POST": {
+    "ms": "HANTAR",
+    "zh": "发布"
+  },
+  "Practical example & conditions": {
+    "ms": "Contoh praktikal & syarat",
+    "zh": "实用示例与条件"
+  },
+  "Practice outline": {
+    "ms": "Rangka amalan",
+    "zh": "练习大纲"
+  },
+  "Practised along the way": {
+    "ms": "Diamalkan sepanjang masa",
+    "zh": "过程中所练习的"
+  },
+  "Preparation useful across scenarios": {
+    "ms": "Persediaan yang berguna merentas senario",
+    "zh": "适用于各种场景的准备工作"
+  },
+  "Preparing your learning path": {
+    "ms": "Menyediakan laluan pembelajaran anda",
+    "zh": "规划您的学习路径"
+  },
+  "Priorities start with occupational requirements. Hypothetical scenarios and separately reviewed research adjustments are explained independently. They do not change your skills or career fit.": {
+    "ms": "Keutamaan bermula dengan keperluan pekerjaan. Senario hipotetikal dan pelarasan penyelidikan yang disemak secara berasingan dijelaskan secara bebas. Ia tidak mengubah kemahiran atau kesesuaian kerjaya anda.",
+    "zh": "优先级始于职业要求。假设性场景和单独审查的研究调整是独立解释的。它们不会改变您的技能或职业适配度。"
+  },
+  "Privacy & upload help": {
+    "ms": "Privasi & bantuan muat naik",
+    "zh": "隐私与上传帮助"
+  },
+  "Profile review": {
+    "ms": "Semakan profil",
+    "zh": "个人资料审核"
+  },
+  "Provider record checked": {
+    "ms": "Rekod penyedia disemak",
+    "zh": "已检查提供者记录"
+  },
+  "pts": {
+    "ms": "mata",
+    "zh": "积分"
+  },
+  "publishers": {
+    "ms": "penerbit",
+    "zh": "出版商"
+  },
+  "Put it into practice:": {
+    "ms": "Amalkan:",
+    "zh": "付诸实践："
+  },
+  "Putting your skills in the spotlight...": {
+    "ms": "Mengetengahkan kemahiran anda...",
+    "zh": "让您的技能成为焦点..."
+  },
+  "Rank": {
+    "ms": "Pangkat",
+    "zh": "排名"
+  },
+  "Rapid": {
+    "ms": "Pantas",
+    "zh": "快速"
+  },
+  "Rapid AI adoption": {
+    "ms": "Penggunaan AI yang pantas",
+    "zh": "快速采用人工智能"
+  },
+  "Read original research": {
+    "ms": "Baca penyelidikan asal",
+    "zh": "阅读原始研究"
+  },
+  "Read source": {
+    "ms": "Baca sumber",
+    "zh": "阅读来源"
+  },
+  "Read the official UN target": {
+    "ms": "Baca sasaran rasmi PBB",
+    "zh": "阅读联合国官方目标"
+  },
+  "Read the UN target": {
+    "ms": "Baca sasaran PBB",
+    "zh": "阅读联合国目标"
+  },
+  "Reading Comprehension": {
+    "ms": "Kefahaman Membaca",
+    "zh": "阅读理解"
+  },
+  "Reading the sample CV": {
+    "ms": "Membaca contoh CV",
+    "zh": "阅读简历样本"
+  },
+  "Reading your CV": {
+    "ms": "Membaca CV anda",
+    "zh": "正在读取您的简历"
+  },
+  "Ready to start learning?": {
+    "ms": "Sedia untuk mula belajar?",
+    "zh": "准备好开始学习了吗？"
+  },
+  "Refresh the configured research feeds to retrieve dated sources.": {
+    "ms": "Segarkan suapan penyelidikan yang dikonfigurasikan untuk mendapatkan sumber bertarikh.",
+    "zh": "刷新配置的研究源以检索过往来源。"
+  },
+  "Refresh trends": {
+    "ms": "Segarkan aliran",
+    "zh": "刷新趋势"
+  },
+  "Refreshing sources…": {
+    "ms": "Sedang menyegarkan sumber…",
+    "zh": "正在刷新来源…"
+  },
+  "Related category familiarity is present.": {
+    "ms": "Kefahaman kategori berkaitan adalah hadir.",
+    "zh": "已具备相关类别的熟悉度。"
+  },
+  "Related task:": {
+    "ms": "Tugasan berkaitan:",
+    "zh": "相关任务："
+  },
+  "Remove": {
+    "ms": "Buang",
+    "zh": "移除"
+  },
+  "Removed": {
+    "ms": "Dibuang",
+    "zh": "已移除"
+  },
+  "Removed skills": {
+    "ms": "Kemahiran dialih keluar",
+    "zh": "已移除的技能"
+  },
+  "Required level unavailable; presence only": {
+    "ms": "Tahap yang diperlukan tidak tersedia; kehadiran sahaja",
+    "zh": "所需级别不可用；仅显示存在"
+  },
+  "Research connected to this career’s tasks and skills. AI interpretations · not human reviewed.": {
+    "ms": "Penyelidikan disambungkan kepada tugas dan kemahiran kerjaya ini. Tafsiran AI · tidak disemak oleh manusia.",
+    "zh": "研究与此职业的任务和技能相关。AI 解读 · 未经人工审核。"
+  },
+  "research excerpts are assessed for this career.": {
+    "ms": "Petikan penyelidikan dinilai untuk kerjaya ini.",
+    "zh": "已评估此职业的研究摘录。"
+  },
+  "Research provides background. Future adoption and task changes remain assumptions. No outcome probabilities are estimated.": {
+    "ms": "Penyelidikan menyediakan latar belakang. Penerimaan masa depan dan perubahan tugas kekal sebagai andaian. Tiada kebarangkalian hasil dianggarkan.",
+    "zh": "研究提供背景信息。未来采用和任务变更仍为假设。未预估结果概率。"
+  },
+  "Restore": {
+    "ms": "Pulihkan",
+    "zh": "恢复"
+  },
+  "Retry AI assessment": {
+    "ms": "Cuba semula penilaian AI",
+    "zh": "重试 AI 评估"
+  },
+  "Retry AI mapping": {
+    "ms": "Cuba semula pemetaan AI",
+    "zh": "重试 AI 映射"
+  },
+  "Retry assessment": {
+    "ms": "Cuba semula penilaian",
+    "zh": "重试评估"
+  },
+  "Return roadmap to baseline": {
+    "ms": "Kembalikan pelan hala tuju kepada garis dasar",
+    "zh": "将路线图恢复至基准"
+  },
+  "Return to my roadmap": {
+    "ms": "Kembali ke pelan hala tuju saya",
+    "zh": "返回我的路线图"
+  },
+  "Review coverage": {
+    "ms": "Semak liputan",
+    "zh": "查看覆盖范围"
+  },
+  "Review my skills": {
+    "ms": "Semak kemahiran saya",
+    "zh": "查看我的技能"
+  },
+  "Review skills": {
+    "ms": "Semak kemahiran",
+    "zh": "查看技能"
+  },
+  "Review your skills": {
+    "ms": "Semak kemahiran anda",
+    "zh": "查看您的技能"
+  },
+  "Reviewed · conditional": {
+    "ms": "Disemak · bersyarat",
+    "zh": "已查看 · 条件性"
+  },
+  "Reviewed role impacts": {
+    "ms": "Kesan peranan disemak",
+    "zh": "已查看的角色影响"
+  },
+  "Reviewed skill connections": {
+    "ms": "Sambungan kemahiran disemak",
+    "zh": "已查看的技能关联"
+  },
+  "Roadmap": {
+    "ms": "Pelan hala tuju",
+    "zh": "路线图"
+  },
+  "Roadmap ready": {
+    "ms": "Pelan hala tuju sedia",
+    "zh": "路线图已就绪"
+  },
+  "Role impact evidence is temporarily unavailable. Reopen this role to try again.": {
+    "ms": "Bukti kesan peranan tidak tersedia buat sementara waktu. Buka semula peranan ini untuk cuba lagi.",
+    "zh": "角色影响证据暂时不可用。请重新打开此角色以重试。"
+  },
+  "Role importance": {
+    "ms": "Kepentingan peranan",
+    "zh": "角色重要性"
+  },
+  "Role requirements": {
+    "ms": "Keperluan peranan",
+    "zh": "角色要求"
+  },
+  "Scenario adjustment:": {
+    "ms": "Pelarasan senario:",
+    "zh": "情景调整："
+  },
+  "Score & data limitations": {
+    "ms": "Had skor & data",
+    "zh": "分数与数据限制"
+  },
+  "Scores compare your confirmed skills with O*NET occupational data. They are exploratory, not hiring probabilities. O*NET describes U.S. occupations and doesn't establish Malaysian vacancies, qualifications or hiring eligibility.": {
+    "ms": "Skor membandingkan kemahiran yang disahkan anda dengan data pekerjaan O*NET. Ia adalah penerokaan, bukan kebarangkalian pengambilan pekerja. O*NET menerangkan pekerjaan A.S. dan tidak menetapkan kekosongan, kelayakan atau kelayakan pengambilan pekerja di Malaysia.",
+    "zh": "分数将您已确认的技能与 O*NET 职业数据进行比较。它们仅供探索，并非招聘概率。O*NET 描述的是美国职业，并不确定马来西亚的职位空缺、资格或招聘资格。"
+  },
+  "SDG connections": {
+    "ms": "Sambungan SDG",
+    "zh": "可持续发展目标关联"
+  },
+  "Search an occupation": {
+    "ms": "Cari pekerjaan",
+    "zh": "搜索职业"
+  },
+  "Search career matches": {
+    "ms": "Cari padanan kerjaya",
+    "zh": "搜索职业匹配"
+  },
+  "Search skills": {
+    "ms": "Cari kemahiran",
+    "zh": "搜索技能"
+  },
+  "Search skills, tools or technologies": {
+    "ms": "Cari kemahiran, alatan atau teknologi",
+    "zh": "搜索技能、工具或技术"
+  },
+  "Search to change your occupation": {
+    "ms": "Cari untuk menukar pekerjaan anda",
+    "zh": "搜索以更改您的职业"
+  },
+  "Search your matches": {
+    "ms": "Cari padanan anda",
+    "zh": "搜索匹配项"
+  },
+  "Searching...": {
+    "ms": "Sedang mencari...",
+    "zh": "正在搜索..."
+  },
+  "See how this pathway could contribute to the Sustainable Development Goals.": {
+    "ms": "Lihat bagaimana laluan ini boleh menyumbang kepada Matlamat Pembangunan Mampan.",
+    "zh": "查看此路径如何为可持续发展目标做出贡献。"
+  },
+  "See score breakdown & proficiency": {
+    "ms": "Lihat pecahan skor & kecekapan",
+    "zh": "查看分数细分和熟练度"
+  },
+  "See the score breakdown for what contributed.": {
+    "ms": "Lihat pecahan skor untuk perkara yang menyumbang.",
+    "zh": "查看分数细分的贡献因素。"
+  },
+  "See what’s changing.": {
+    "ms": "Lihat perkara yang berubah.",
+    "zh": "查看变动详情。"
+  },
+  "Selected career goal": {
+    "ms": "Matlamat kerjaya yang dipilih",
+    "zh": "已选择的职业目标"
+  },
+  "selected for this career ·": {
+    "ms": "Dipilih untuk kerjaya ini ·",
+    "zh": "已为此职业选择 ·"
+  },
+  "Separate interests with commas.": {
+    "ms": "Asingkan minat dengan koma.",
+    "zh": "用逗号分隔兴趣。"
+  },
+  "Set a level yourself": {
+    "ms": "Tetapkan tahap sendiri",
+    "zh": "自行设置等级"
+  },
+  "Short term": {
+    "ms": "Jangka pendek",
+    "zh": "短期"
+  },
+  "shortlisted role/article pairs;": {
+    "ms": "pasangan peranan/artikel disenarai pendek;",
+    "zh": "已入围的职位/文章对；"
+  },
+  "Show": {
+    "ms": "Tunjukkan",
+    "zh": "显示"
+  },
+  "Show fewer skills": {
+    "ms": "Tunjukkan kurang kemahiran",
+    "zh": "显示较少技能"
+  },
+  "Showing": {
+    "ms": "Menunjukkan",
+    "zh": "正在显示"
+  },
+  "Showing your last completed assessment": {
+    "ms": "Menunjukkan penilaian terakhir anda yang telah selesai",
+    "zh": "显示您最后完成的评估"
+  },
+  "shown": {
+    "ms": "Ditunjukkan",
+    "zh": "已显示"
+  },
+  "skill": {
+    "ms": "Kemahiran",
+    "zh": "技能"
+  },
+  "Skill": {
+    "ms": "Kemahiran",
+    "zh": "技能"
+  },
+  "Skill alignment, general skill coverage and preferences are explained in each role's details.": {
+    "ms": "Penjajaran kemahiran, liputan kemahiran umum dan keutamaan dijelaskan dalam butiran setiap peranan.",
+    "zh": "技能对齐、一般技能覆盖范围和偏好在每个职位的详细信息中都有说明。"
+  },
+  "Skill confirmation progress": {
+    "ms": "Kemajuan pengesahan kemahiran",
+    "zh": "技能确认进度"
+  },
+  "Skill evidence is temporarily unavailable. Reopen this role to try again.": {
+    "ms": "Bukti kemahiran tidak tersedia buat sementara waktu. Buka semula peranan ini untuk mencuba lagi.",
+    "zh": "技能证据暂时不可用。请重新打开此职位以重试。"
+  },
+  "Skill relevance before proficiency": {
+    "ms": "Perkaitan kemahiran sebelum kecekapan",
+    "zh": "技能相关性优先于熟练度"
+  },
+  "skill/article pairs not assessed.": {
+    "ms": "pasangan kemahiran/artikel tidak dinilai.",
+    "zh": "技能/文章对未评估。"
+  },
+  "skill/article pairs remain pending across the catalog. Coverage is limited to shortlisted roles and selected findings.": {
+    "ms": "pasangan kemahiran/artikel masih belum selesai di seluruh katalog. Liputan terhad kepada peranan yang disenarai pendek dan penemuan yang dipilih.",
+    "zh": "技能/文章对在目录中仍处于待定状态。覆盖范围仅限于已入围的职位和已选定的调查结果。"
+  },
+  "skills": {
+    "ms": "Kemahiran",
+    "zh": "技能"
+  },
+  "Skills": {
+    "ms": "Kemahiran",
+    "zh": "技能"
+  },
+  "skills linked": {
+    "ms": "Kemahiran dipautkan",
+    "zh": "已关联技能"
+  },
+  "Skills score weight:": {
+    "ms": "Pemberat skor kemahiran:",
+    "zh": "技能分数权重："
+  },
+  "Skills to explore": {
+    "ms": "Kemahiran untuk diterokai",
+    "zh": "待探索技能"
+  },
+  "skills to make your own": {
+    "ms": "kemahiran untuk dijadikan milik anda",
+    "zh": "打造属于您的技能"
+  },
+  "skills together": {
+    "ms": "kemahiran bersama",
+    "zh": "技能汇总"
+  },
+  "Skills with a wider impact.": {
+    "ms": "Kemahiran dengan impak yang lebih luas.",
+    "zh": "具有更广泛影响的技能。"
+  },
+  "Skip to content": {
+    "ms": "Langkau ke kandungan",
+    "zh": "跳转至内容"
+  },
+  "Small steps.": {
+    "ms": "Langkah kecil.",
+    "zh": "小步前进。"
+  },
+  "Software category familiarity": {
+    "ms": "Keakraban kategori perisian",
+    "zh": "软件类别熟悉度"
+  },
+  "Software estimates show their source. Alternative tools are optional.": {
+    "ms": "Anggaran perisian menunjukkan sumbernya. Alat alternatif adalah pilihan.",
+    "zh": "软件估算显示其来源。备选工具为可选。"
+  },
+  "Software requirement bands are estimated from related occupational skills. See the alignment breakdown for sources.": {
+    "ms": "Jalur keperluan perisian dianggarkan daripada kemahiran pekerjaan yang berkaitan. Lihat pecahan penjajaran untuk sumber.",
+    "zh": "软件要求范围根据相关职业技能估算。请查看对齐细分以了解来源。"
+  },
+  "Source health & scope": {
+    "ms": "Kesihatan & skop sumber",
+    "zh": "来源健康状况与范围"
+  },
+  "source-card trend-card": {
+    "ms": "kad-sumber kad-trend",
+    "zh": "来源卡片 趋势卡片"
+  },
+  "Sources refresh automatically every 24 hours.": {
+    "ms": "Sumber dimuat semula secara automatik setiap 24 jam.",
+    "zh": "来源每24小时自动刷新一次。"
+  },
+  "Speaking": {
+    "ms": "Bertutur",
+    "zh": "口语"
+  },
+  "Specialist skills carry more weight than skills common across occupations.": {
+    "ms": "Kemahiran pakar mempunyai pemberat yang lebih tinggi daripada kemahiran yang biasa merentas pekerjaan.",
+    "zh": "专业技能的权重高于各职业通用的技能。"
+  },
+  "Standard": {
+    "ms": "Standard",
+    "zh": "标准"
+  },
+  "START HERE": {
+    "ms": "MULAKAN DI SINI",
+    "zh": "从这里开始"
+  },
+  "Start with the activities that matter to your next role or development goal. Use work, study or project examples to demonstrate what you can do.": {
+    "ms": "Mulakan dengan aktiviti yang penting bagi peranan atau matlamat pembangunan seterusnya anda. Gunakan contoh kerja, pengajian atau projek untuk menunjukkan keupayaan anda.",
+    "zh": "从对您下一个职位或发展目标至关重要的活动开始。使用工作、学习或项目示例来展示您的能力。"
+  },
+  "Starting your career:": {
+    "ms": "Memulakan kerjaya anda:",
+    "zh": "开启您的职业生涯："
+  },
+  "starts here.": {
+    "ms": "bermula di sini.",
+    "zh": "从这里开始。"
+  },
+  "still unassessed.": {
+    "ms": "masih belum dinilai.",
+    "zh": "尚未评估。"
+  },
+  "stored ·": {
+    "ms": "disimpan ·",
+    "zh": "已存储 ·"
+  },
+  "stored articles": {
+    "ms": "artikel disimpan",
+    "zh": "已存储的文章"
+  },
+  "Story sources & updates": {
+    "ms": "Sumber cerita & kemas kini",
+    "zh": "故事来源与更新"
+  },
+  "Suggested learning order": {
+    "ms": "Urutan pembelajaran yang dicadangkan",
+    "zh": "建议学习顺序"
+  },
+  "Suggested occupations": {
+    "ms": "Pekerjaan yang dicadangkan",
+    "zh": "建议职业"
+  },
+  "Suggested skills": {
+    "ms": "Kemahiran yang dicadangkan",
+    "zh": "建议技能"
+  },
+  "supported connections are shown.": {
+    "ms": "sambungan yang disokong dipaparkan.",
+    "zh": "显示支持的连接。"
+  },
+  "Supporting source": {
+    "ms": "Sumber sokongan",
+    "zh": "支持来源"
+  },
+  "surface target-section": {
+    "ms": "bahagian-sasaran permukaan",
+    "zh": "表面目标区域"
+  },
+  "Taking your experience for a spin...": {
+    "ms": "Menguji pengalaman anda...",
+    "zh": "正在为您分析经验..."
+  },
+  "Target": {
+    "ms": "Sasaran",
+    "zh": "目标"
+  },
+  "TARGET": {
+    "ms": "SASARAN",
+    "zh": "目标"
+  },
+  "Technical details": {
+    "ms": "Butiran teknikal",
+    "zh": "技术细节"
+  },
+  "text-button skill-remove": {
+    "ms": "butang-teks buang-kemahiran",
+    "zh": "文本按钮 移除技能"
+  },
+  "The latest refresh is overdue or a source failed. Available dated records remain visible.": {
+    "ms": "Muat semula terkini telah tamat tempoh atau sumber gagal. Rekod bertarikh yang tersedia masih boleh dilihat.",
+    "zh": "最新刷新已过期或来源失败。现有的历史记录仍可见。"
+  },
+  "The latest update is unavailable. Your complete illustration remains available.": {
+    "ms": "Kemas kini terkini tidak tersedia. Ilustrasi lengkap anda masih tersedia.",
+    "zh": "最新更新不可用。您完整的图示仍可查看。"
+  },
+  "The research sources are available, but we haven’t completed a career assessment. This does not mean that no articles are relevant.": {
+    "ms": "Sumber penyelidikan tersedia, tetapi kami belum melengkapkan penilaian kerjaya. Ini tidak bermakna tiada artikel yang relevan.",
+    "zh": "研究来源可用，但我们尚未完成职业评估。这并不意味着没有相关文章。"
+  },
+  "THE ROLE AT A GLANCE": {
+    "ms": "RINGKASAN PERANAN",
+    "zh": "职位概览"
+  },
+  "The verified course catalog is currently empty. Learning objectives are available; course links, prices and durations are not.": {
+    "ms": "Katalog kursus yang disahkan kini kosong. Objektif pembelajaran tersedia; pautan kursus, harga dan tempoh tidak tersedia.",
+    "zh": "已验证课程目录当前为空。学习目标可用；课程链接、价格和时长不可用。"
+  },
+  "These are conditional connections to UN targets, not measured outcomes.": {
+    "ms": "Ini adalah hubungan bersyarat dengan sasaran PBB, bukan hasil yang diukur.",
+    "zh": "这些是与联合国目标的条件性联系，而非已衡量的成果。"
+  },
+  "These connections describe selected research findings. They do not establish an occupational task effect or change your match score.": {
+    "ms": "Hubungan ini menerangkan penemuan penyelidikan terpilih. Ia tidak mewujudkan kesan tugas pekerjaan atau mengubah skor padanan anda.",
+    "zh": "这些联系描述了选定的研究结果。它们不会确立职业任务影响或更改您的匹配得分。"
+  },
+  "These illustrations use occupational tasks and authored adoption assumptions.": {
+    "ms": "Ilustrasi ini menggunakan tugas pekerjaan dan andaian penggunaan yang digubal.",
+    "zh": "这些图示使用了职业任务和拟定的采用假设。"
+  },
+  "These sources do not measure Malaysian vacancy growth. Trend interpretations do not change your personal fit score.": {
+    "ms": "Sumber ini tidak mengukur pertumbuhan kekosongan jawatan di Malaysia. Tafsiran trend tidak mengubah skor kesesuaian peribadi anda.",
+    "zh": "这些来源不衡量马来西亚的职位空缺增长。趋势解读不会改变您的个人匹配得分。"
+  },
+  "These support the project; they do not each need a separate course.": {
+    "ms": "Ini menyokong projek; setiap satunya tidak memerlukan kursus berasingan.",
+    "zh": "这些支持该项目；它们不需要每个都单独开设课程。"
+  },
+  "This career’s SDG contribution": {
+    "ms": "Sumbangan SDG kerjaya ini",
+    "zh": "此职业对可持续发展目标 (SDG) 的贡献"
+  },
+  "This excerpt supports the research finding above. Its application to this occupation is an AI interpretation.": {
+    "ms": "Petikan ini menyokong penemuan penyelidikan di atas. Penggunaannya pada pekerjaan ini adalah tafsiran AI.",
+    "zh": "此摘录支持上述研究结果。其在此职业中的应用为人工智能解读。"
+  },
+  "This is research coverage, not a judgment of your abilities. Approving your own CV skills does not approve research findings.": {
+    "ms": "Ini adalah liputan penyelidikan, bukan penilaian keupayaan anda. Meluluskan kemahiran CV anda sendiri tidak meluluskan penemuan penyelidikan.",
+    "zh": "这是研究覆盖范围，而非对您能力的评判。批准您自己的简历技能并不代表批准研究结果。"
+  },
+  "This is taking longer than usual. You can keep exploring other parts of the app and come back here.": {
+    "ms": "Proses ini mengambil masa lebih lama daripada biasa. Anda boleh terus meneroka bahagian lain aplikasi ini dan kembali semula ke sini.",
+    "zh": "此过程所用时间比平时长。您可以继续浏览应用的其它部分，稍后再回到这里。"
+  },
+  "This mapping is an application assumption, not an official equivalence.": {
+    "ms": "Pemetaan ini hanyalah andaian aplikasi, bukan kesetaraan rasmi.",
+    "zh": "此映射仅为应用假设，而非正式等效项。"
+  },
+  "This occupation has no approved task-impact records to display. It does not mean the role is unaffected.": {
+    "ms": "Pekerjaan ini tidak mempunyai rekod kesan tugas yang diluluskan untuk dipaparkan. Ini tidak bermakna peranan tersebut tidak terjejas.",
+    "zh": "此职业没有已批准的任务影响记录可供显示。这并不意味着该职位不受影响。"
+  },
+  "This saved analysis predates article-by-article explanations. Its original assessment count and omission reasons are unavailable.": {
+    "ms": "Analisis yang disimpan ini dibuat sebelum penjelasan demi penjelasan artikel. Jumlah penilaian asal dan sebab pengecualiannya tidak tersedia.",
+    "zh": "此保存的分析早于逐条文章说明。其原始评估计数和遗漏原因不可用。"
+  },
+  "This server response does not include article assessments. Restart the app server to load the updated feature, then refresh this page.": {
+    "ms": "Respons pelayan ini tidak termasuk penilaian artikel. Mulakan semula pelayan aplikasi untuk memuatkan ciri yang dikemas kini, kemudian segarkan halaman ini.",
+    "zh": "此服务器响应不包含文章评估。请重启应用服务器以加载更新的功能，然后刷新此页面。"
+  },
+  "Time Management": {
+    "ms": "Pengurusan Masa",
+    "zh": "时间管理"
+  },
+  "To review": {
+    "ms": "Untuk disemak",
+    "zh": "待审核"
+  },
+  "Tools & technologies": {
+    "ms": "Alat & teknologi",
+    "zh": "工具与技术"
+  },
+  "Tools you could learn": {
+    "ms": "Alat yang boleh anda pelajari",
+    "zh": "您可以学习的工具"
+  },
+  "Try a sample CV": {
+    "ms": "Cuba contoh CV",
+    "zh": "试用简历范本"
+  },
+  "Try again": {
+    "ms": "Cuba lagi",
+    "zh": "重试"
+  },
+  "Try this next": {
+    "ms": "Cuba ini seterusnya",
+    "zh": "接下来尝试这个"
+  },
+  "Turn insight into action.": {
+    "ms": "Tukarkan wawasan kepada tindakan.",
+    "zh": "将洞察转化为行动。"
+  },
+  "Unavailable": {
+    "ms": "Tidak tersedia",
+    "zh": "不可用"
+  },
+  "unconfirmed": {
+    "ms": "belum disahkan",
+    "zh": "未确认"
+  },
+  "unconfirmed skills": {
+    "ms": "kemahiran belum disahkan",
+    "zh": "未确认技能"
+  },
+  "unknown": {
+    "ms": "tidak diketahui",
+    "zh": "未知"
+  },
+  "Unknown proficiency receives no requirement fulfilment credit when a required level exists. Alignment retains a small presence allowance.": {
+    "ms": "Tahap kemahiran yang tidak diketahui tidak mendapat kredit pemenuhan keperluan apabila tahap yang diperlukan wujud. Penjajaran mengekalkan elaun kehadiran kecil.",
+    "zh": "当存在要求级别时，未知熟练度不会获得需求满足学分。对齐保留了少量的存在津贴。"
+  },
+  "unverified": {
+    "ms": "tidak disahkan",
+    "zh": "未验证"
+  },
+  "UP NEXT": {
+    "ms": "SETERUSNYA",
+    "zh": "接下来"
+  },
+  "Up to": {
+    "ms": "Sehingga",
+    "zh": "最多"
+  },
+  "Updatable AI trend sources": {
+    "ms": "Sumber aliran AI yang boleh dikemas kini",
+    "zh": "可更新的 AI 趋势来源"
+  },
+  "Update scenario explanation": {
+    "ms": "Kemas kini penjelasan senario",
+    "zh": "更新场景说明"
+  },
+  "Updating career research…": {
+    "ms": "Sedang mengemas kini penyelidikan kerjaya…",
+    "zh": "正在更新职业研究…"
+  },
+  "Updating explanation…": {
+    "ms": "Sedang mengemas kini penjelasan…",
+    "zh": "正在更新说明…"
+  },
+  "Updating explanations…": {
+    "ms": "Sedang mengemas kini penjelasan…",
+    "zh": "正在更新说明…"
+  },
+  "Updating your learning path": {
+    "ms": "Sedang mengemas kini laluan pembelajaran anda",
+    "zh": "正在更新您的学习路径"
+  },
+  "Updating your learning priorities": {
+    "ms": "Sedang mengemas kini keutamaan pembelajaran anda",
+    "zh": "正在更新您的学习优先级"
+  },
+  "Upload": {
+    "ms": "Muat naik",
+    "zh": "上传"
+  },
+  "Upload a fictional CV": {
+    "ms": "Muat naik CV fiksyen",
+    "zh": "上传虚构简历"
+  },
+  "Upload another CV": {
+    "ms": "Muat naik CV lain",
+    "zh": "上传另一份简历"
+  },
+  "Upload CV": {
+    "ms": "Muat naik CV",
+    "zh": "上传简历"
+  },
+  "Upload your CV": {
+    "ms": "Muat naik CV anda",
+    "zh": "上传您的简历"
+  },
+  "Upload your CV to discover your skills and career matches.": {
+    "ms": "Muat naik CV anda untuk menemui kemahiran dan padanan kerjaya anda.",
+    "zh": "上传您的简历以发现您的技能和职业匹配度。"
+  },
+  "Uploaded successfully": {
+    "ms": "Berjaya dimuat naik",
+    "zh": "上传成功"
+  },
+  "Use a fictional CV for this demo. Uploaded files are discarded after processing; extracted profiles expire after one hour. When AI assessment is enabled, extracted skill passages are sent to the AI service to estimate levels. Review those estimates before confirming.": {
+    "ms": "Gunakan CV fiksyen untuk demonstrasi ini. Fail yang dimuat naik akan dibuang selepas diproses; profil yang diekstrak akan tamat tempoh selepas satu jam. Apabila penilaian AI didayakan, petikan kemahiran yang diekstrak dihantar ke perkhidmatan AI untuk menganggarkan tahap. Semak anggaran tersebut sebelum mengesahkan.",
+    "zh": "在此演示中使用虚构简历。上传的文件在处理后将被丢弃；提取的个人资料将在一个小时后过期。启用 AI 评估时，提取的技能段落将被发送至 AI 服务以估算级别。在确认之前，请审阅这些估算结果。"
+  },
+  "Use these activities to build or demonstrate capabilities you already have.": {
+    "ms": "Gunakan aktiviti ini untuk membina atau menunjukkan keupayaan yang anda sudah miliki.",
+    "zh": "使用这些活动来建立或展示您已具备的能力。"
+  },
+  "Use this evidence in your next conversation": {
+    "ms": "Gunakan bukti ini dalam perbualan anda yang seterusnya",
+    "zh": "在下次对话中使用此证据"
+  },
+  "Verified course cost": {
+    "ms": "Kos kursus yang disahkan",
+    "zh": "已验证的课程费用"
+  },
+  "verified courses in the full resource plan": {
+    "ms": "kursus disahkan dalam pelan sumber penuh",
+    "zh": "完整资源计划中已验证的课程"
+  },
+  "View course": {
+    "ms": "Lihat kursus",
+    "zh": "查看课程"
+  },
+  "View CV evidence": {
+    "ms": "Lihat bukti CV",
+    "zh": "查看简历证据"
+  },
+  "View module": {
+    "ms": "Lihat modul",
+    "zh": "查看模块"
+  },
+  "View SDG connections": {
+    "ms": "Lihat hubungan SDG",
+    "zh": "查看可持续发展目标 (SDG) 联系"
+  },
+  "Want to try a different CV?": {
+    "ms": "Ingin mencuba CV yang lain?",
+    "zh": "想要尝试不同的简历吗？"
+  },
+  "We couldn’t complete the latest update. Your earlier assessment and its original source dates remain visible.": {
+    "ms": "Kami tidak dapat melengkapkan kemas kini terkini. Penilaian awal anda dan tarikh sumber asalnya masih kelihatan.",
+    "zh": "我们无法完成最新更新。您之前的评估及其原始来源日期仍然可见。"
+  },
+  "We’re checking the selected research excerpts for useful task and skill connections. The assessment will appear here when it is ready.": {
+    "ms": "Kami sedang menyemak petikan penyelidikan yang dipilih untuk hubungan tugas dan kemahiran yang berguna. Penilaian akan muncul di sini apabila ia siap.",
+    "zh": "我们正在检查所选研究摘录中是否有用的任务和技能联系。评估准备好后将显示在此处。"
+  },
+  "Week": {
+    "ms": "Minggu",
+    "zh": "周"
+  },
+  "Weekly study pace": {
+    "ms": "Kadar pembelajaran mingguan",
+    "zh": "每周学习进度"
+  },
+  "weeks at": {
+    "ms": "minggu pada",
+    "zh": "周，在"
+  },
+  "weeks of learning": {
+    "ms": "minggu pembelajaran",
+    "zh": "学习周数"
+  },
+  "weight is applied.": {
+    "ms": "pemberat digunakan.",
+    "zh": "已应用权重。"
+  },
+  "What AI could change. What you can practise next.": {
+    "ms": "Apa yang boleh diubah oleh AI. Apa yang boleh anda amalkan seterusnya.",
+    "zh": "人工智能可能带来的改变。您接下来可以练习的内容。"
+  },
+  "What could change this future?": {
+    "ms": "Apakah yang boleh mengubah masa depan ini?",
+    "zh": "什么可能改变这个未来？"
+  },
+  "What it could mean for this career": {
+    "ms": "Apa maknanya untuk kerjaya ini",
+    "zh": "这对该职业意味着什么"
+  },
+  "What role importance means": {
+    "ms": "Apakah maksud kepentingan peranan",
+    "zh": "角色重要性意味着什么"
+  },
+  "WHAT THE RESEARCH REPORTS": {
+    "ms": "APA YANG DILAPORKAN OLEH KAJIAN",
+    "zh": "研究报告内容"
+  },
+  "What these matches mean": {
+    "ms": "Apakah maksud padanan ini",
+    "zh": "这些匹配意味着什么"
+  },
+  "What you can practise": {
+    "ms": "Apa yang boleh anda amalkan",
+    "zh": "您可以练习的内容"
+  },
+  "What you’ll make": {
+    "ms": "Apa yang akan anda hasilkan",
+    "zh": "您将制作的内容"
+  },
+  "Where would you like to go?": {
+    "ms": "Ke mana anda ingin pergi?",
+    "zh": "您想去哪里？"
+  },
+  "Why these dependencies?": {
+    "ms": "Mengapa kebergantungan ini?",
+    "zh": "为什么会有这些依赖关系？"
+  },
+  "Why these learning priorities?": {
+    "ms": "Mengapa keutamaan pembelajaran ini?",
+    "zh": "为什么有这些学习优先级？"
+  },
+  "Why this match?": {
+    "ms": "Mengapa padanan ini?",
+    "zh": "为什么是此匹配项？"
+  },
+  "Writing": {
+    "ms": "Penulisan",
+    "zh": "写作"
+  },
+  "Your career goal": {
+    "ms": "Matlamat kerjaya anda",
+    "zh": "您的职业目标"
+  },
+  "YOUR CAREER GOAL": {
+    "ms": "MATLAMAT KERJAYA ANDA",
+    "zh": "您的职业目标"
+  },
+  "Your career journey": {
+    "ms": "Perjalanan kerjaya anda",
+    "zh": "您的职业旅程"
+  },
+  "YOUR CLOSEST MATCH · RANK": {
+    "ms": "PADANAN PALING TEPAT ANDA · KEDUDUKAN",
+    "zh": "最匹配项 · 排名"
+  },
+  "Your completed findings remain available below while we check for updates.": {
+    "ms": "Dapatan lengkap anda kekal tersedia di bawah sementara kami menyemak kemas kini.",
+    "zh": "在检查更新时，您已完成的评估结果仍可在下方查看。"
+  },
+  "Your direction": {
+    "ms": "Hala tuju anda",
+    "zh": "您的方向"
+  },
+  "Your estimate:": {
+    "ms": "Anggaran anda:",
+    "zh": "您的估算："
+  },
+  "YOUR EXPERIENCE, IN YOUR WORDS": {
+    "ms": "PENGALAMAN ANDA, DALAM KATA-KATA ANDA SENDIRI",
+    "zh": "您的经验，用您自己的话来说"
+  },
+  "Your goal stays visible. Its match score stays honest.": {
+    "ms": "Matlamat anda kekal kelihatan. Skor padanannya kekal jujur.",
+    "zh": "您的目标保持可见。其匹配分数保持真实。"
+  },
+  "Your learning dependency map": {
+    "ms": "Peta laluan pembelajaran anda",
+    "zh": "您的学习路线图"
+  },
+  "Your learning roadmap": {
+    "ms": "Peta hala tuju pembelajaran anda",
+    "zh": "您的学习路线图"
+  },
+  "YOUR NEXT CHAPTER": {
+    "ms": "BAB SETERUSNYA ANDA",
+    "zh": "您的下一个篇章"
+  },
+  "Your next chapter is warming up...": {
+    "ms": "Bab seterusnya anda sedang disediakan...",
+    "zh": "您的下一个篇章正在准备中..."
+  },
+  "Your next direction starts with a skill you can confirm.": {
+    "ms": "Hala tuju seterusnya anda bermula dengan kemahiran yang boleh anda sahkan.",
+    "zh": "您的下一个方向始于您可以确认的一项技能。"
+  },
+  "YOUR NEXT MOVE": {
+    "ms": "LANGKAH SETERUSNYA ANDA",
+    "zh": "您的下一步行动"
+  },
+  "Your next steps": {
+    "ms": "Langkah seterusnya anda",
+    "zh": "您的下一步"
+  },
+  "Your path forward.": {
+    "ms": "Laluan anda ke hadapan.",
+    "zh": "您的前进道路。"
+  },
+  "Your proficiency vs job requirements": {
+    "ms": "Tahap kecekapan berbanding keperluan kerja",
+    "zh": "您的熟练程度与工作要求对比"
+  },
+  "YOUR SELECTED MODULE": {
+    "ms": "MODUL PILIHAN ANDA",
+    "zh": "您选择的模块"
+  },
+  "Your skill level": {
+    "ms": "Tahap kemahiran anda",
+    "zh": "您的技能水平"
+  },
+  "Your skills": {
+    "ms": "Kemahiran anda",
+    "zh": "您的技能"
+  },
+  "Your skills and their SDG links": {
+    "ms": "Kemahiran anda dan pautan SDGnya",
+    "zh": "您的技能及其与可持续发展目标（SDG）的关联"
+  },
+  "Your starting point": {
+    "ms": "Titik permulaan anda",
+    "zh": "您的起点"
+  },
+  "AI level assessment is unavailable because the selected provider is not configured. No level has been assigned.": {
+    "ms": "Penilaian tahap kemahiran AI belum tersedia kerana penyedia belum dikonfigurasi. Tiada tahap diberikan.",
+    "zh": "AI 技能等级评估暂不可用，因为所选服务尚未配置。尚未分配任何等级。"
+  },
+  "{0} skills to make your own": {
+    "ms": "{0} kemahiran untuk anda semak",
+    "zh": "完善您的 {0} 项技能"
+  },
+  "{0} skills confirmed.": {
+    "ms": "{0} kemahiran disahkan.",
+    "zh": "已确认 {0} 项技能。"
+  },
+  "{0} skill confirmed.": {
+    "ms": "{0} kemahiran disahkan.",
+    "zh": "已确认 {0} 项技能。"
+  },
+  "AI level assessment could not complete. The AI response did not pass the evidence checks. No new AI level has been assigned.": {
+    "ms": "Penilaian AI tidak dapat diselesaikan. Respons tidak melepasi semakan bukti. Tiada tahap baharu diberikan.",
+    "zh": "AI 评估未能完成。结果未通过证据检查，尚未分配新的技能等级。"
+  },
+  "free access": {
+    "ms": "akses percuma",
+    "zh": "免费访问"
+  },
+  "free with optional certificate": {
+    "ms": "percuma dengan sijil pilihan",
+    "zh": "免费学习，可选证书"
+  }
+}

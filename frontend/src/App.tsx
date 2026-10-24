@@ -1,15 +1,20 @@
+import { t, useLanguage } from './i18n';
+import LanguagePicker from './components/LanguagePicker';
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { json, request } from './api';
+import { clearResults } from './resultCache';
 import Loading from './components/Loading';
-import RoleDrawer from './components/RoleDrawer';
+import RoleDetails from './screens/RoleDetails';
+import AIOutlook from './screens/AIOutlook';
 import { Icon, type IconName } from './components/ui';
 import Careers from './screens/Careers';
 import Review, { type Preferences } from './screens/Review';
 import Roadmap from './screens/Roadmap';
+import SDG from './screens/SDG';
 import Upload from './screens/Upload';
-import type { CourseStatus, Evidence, Match, Outlook, Plan, Profile, ProfileResponse, ProfileSkill, Refresh, RoleData, RoleSummary, ScenarioId, Screen, Skill } from './types';
+import type { DependencyMap, RoadmapHorizon, CourseStatus, Evidence, Match, Outlook, Plan, Profile, ProfileResponse, ProfileSkill, Refresh, RoleData, RoleSummary, ScenarioId, Screen, Skill } from './types';
 
-const stages: { id: Screen; label: string; short: string; icon: IconName; heading: string }[] = [
+const stages: { id: Exclude<Screen, 'role' | 'outlook' | 'sdg'>; label: string; short: string; icon: IconName; heading: string }[] = [
   { id: 'intake', label: 'Upload CV', short: 'Upload', icon: 'upload', heading: 'Your career journey' },
   { id: 'review', label: 'Review skills', short: 'Skills', icon: 'skills', heading: 'Review your skills' },
   { id: 'explore', label: 'Explore careers', short: 'Careers', icon: 'career', heading: 'Explore careers' },
@@ -17,7 +22,7 @@ const stages: { id: Screen; label: string; short: string; icon: IconName; headin
 ];
 const emptyPreferences: Preferences = { budget: '', hours: '', interests: '' };
 function Brand({ mobile = false }: { mobile?: boolean }) {
-  return <div className={`brand ${mobile ? 'mobile-brand' : ''}`} aria-label="ikiguy">
+  return <div className={`brand ${mobile ? 'mobile-brand' : ''}`} aria-label={t("ikiguy")}>
     <span className="brand-mark" aria-hidden="true">
       <svg viewBox="0 0 32 32" fill="none">
         <path d="M16 16C5 16 5 4 11 4c5 0 5 7 5 12Z" fill="currentColor" opacity=".95" />
@@ -27,12 +32,19 @@ function Brand({ mobile = false }: { mobile?: boolean }) {
         <circle cx="16" cy="16" r="2" fill="currentColor" />
       </svg>
     </span>
-    <span className="brand-name">ikiguy<span className="brand-dot" aria-hidden="true">.</span></span>
+    <span className="brand-name">{t("ikiguy")}<span className="brand-dot" aria-hidden="true">.</span></span>
   </div>;
 }
 
 export default function App() {
-  const [screen, setScreen] = useState<Screen>('intake');
+  useLanguage();
+  const [screen, setCurrentScreen] = useState<Screen>('intake');
+  function setScreen(next: Screen) {
+    if (next !== screen) {
+      window.history.pushState({ screen: next }, '', `#${next}`);
+      setCurrentScreen(next);
+    }
+  }
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [token, setToken] = useState<string | null>(null);
   const [revision, setRevision] = useState(0);
@@ -46,9 +58,11 @@ export default function App() {
   const [explored, setExplored] = useState(false);
   const [roleData, setRoleData] = useState<RoleData | null>(null);
   const [plan, setPlan] = useState<Plan | null>(null);
+  const [roadmapHorizon, setRoadmapHorizon] = useState<RoadmapHorizon>('short');
+  const [curatedMap, setCuratedMap] = useState<DependencyMap | null>(null);
+  const [roadmapWeeklyHours, setRoadmapWeeklyHours] = useState<number | null>(null);
   const [courseStatus, setCourseStatus] = useState<CourseStatus | null>(null);
   const [selectedSoftware, setSelectedSoftware] = useState(new Set<string>());
-  const [drawerOpen, setDrawerOpen] = useState(false);
   const [loading, setLoading] = useState<{ label: string; upload: boolean } | null>(null);
   const [error, setError] = useState('');
   const pendingRef = useRef(false);
@@ -66,7 +80,24 @@ export default function App() {
     document.body.classList.toggle('is-busy', pending);
     return () => document.body.classList.remove('is-busy');
   }, [pending]);
-  useEffect(() => { if (error && !drawerOpen) errorRef.current?.focus(); }, [error, drawerOpen]);
+  useEffect(() => { if (error) errorRef.current?.focus(); }, [error]);
+  useEffect(() => {
+    window.history.replaceState({ screen: 'intake' }, '', '#intake');
+  }, []);
+  useEffect(() => {
+    const onPopState = (event: PopStateEvent) => {
+      const next = event.state?.screen as Screen | undefined;
+      const allowed = { intake: true, review: !!profile, explore: explored, role: !!roleData, outlook: !!roleData, detail: !!plan, sdg: !!plan && !!roleData };
+      if (next && allowed[next]) setCurrentScreen(next);
+      else {
+        const fallback = explored ? 'explore' : profile ? 'review' : 'intake';
+        setCurrentScreen(fallback);
+        window.history.replaceState({ screen: fallback }, '', `#${fallback}`);
+      }
+    };
+    window.addEventListener('popstate', onPopState);
+    return () => window.removeEventListener('popstate', onPopState);
+  }, [profile, explored, roleData, plan]);
   useEffect(() => {
     document.body.dataset.sidebar = sidebarCollapsed ? 'collapsed' : 'expanded';
     return () => { delete document.body.dataset.sidebar; };
@@ -80,7 +111,8 @@ export default function App() {
     finally { setLoading(null); pendingRef.current = false; }
   }
   function invalidate() {
-    setMatches([]); setExplored(false); setRoleData(null); setPlan(null); setCourseStatus(null); setDrawerOpen(false); setSelectedSoftware(new Set());
+    clearResults();
+    setMatches([]); setExplored(false); setRoleData(null); setPlan(null); setCourseStatus(null); setSelectedSoftware(new Set()); setRoadmapWeeklyHours(null); setRoadmapHorizon('short'); setCuratedMap(null);
   }
   async function acceptUpload(response: ProfileResponse, fileName: string | null = null) {
     if (token) await request('/profiles/current', token, { method: 'DELETE' });
@@ -158,7 +190,7 @@ export default function App() {
       ]);
       const match = matches.find(role => role.role_id === id);
       if (!match) throw new Error('Choose a role from your current matches.');
-      setRoleData({ match, detail, outlook, evidence, refresh, skillEvidence, roleImpacts }); setPlan(null); setSelectedSoftware(new Set()); setDrawerOpen(true);
+      setRoleData({ match, detail, outlook, evidence, refresh, skillEvidence, roleImpacts }); setPlan(null); setSelectedSoftware(new Set()); setRoadmapWeeklyHours(null); setRoadmapHorizon('short'); setCuratedMap(null); setScreen('role');
     });
   }
   async function fetchPlan(data: RoleData, software = selectedSoftware) {
@@ -170,7 +202,6 @@ export default function App() {
   }
   function buildRoadmap() {
     if (!roleData || pendingRef.current) return;
-    setDrawerOpen(false);
     void action('Preparing your learning path', async () => {
       if (!plan) setPlan(await fetchPlan(roleData));
       setScreen('detail');
@@ -183,7 +214,7 @@ export default function App() {
       const nextData = { ...roleData, outlook };
       const nextPlan = await fetchPlan(nextData);
       // Commit both together, leaving the existing roadmap intact on error.
-      setRoleData(nextData); setPlan(nextPlan);
+      setRoleData(nextData); setPlan(nextPlan); setCuratedMap(null);
     });
   }
   function changeSoftware(id: string, checked: boolean) {
@@ -196,32 +227,35 @@ export default function App() {
   }
   function exportPlan() {
     if (!plan || !roleData || pendingRef.current) return;
-    const blob = new Blob([JSON.stringify({ role_title: roleData.match.role_title, profile_is_fictional: true, plan }, null, 2)], { type: 'application/json' });
+    const blob = new Blob([JSON.stringify({ role_title: roleData.match.role_title, profile_is_fictional: true, plan, curated_roadmap: curatedMap }, null, 2)], { type: 'application/json' });
     const url = URL.createObjectURL(blob), anchor = document.createElement('a');
     anchor.href = url; anchor.download = 'ikiguy-learning-plan.json'; anchor.click(); window.setTimeout(() => URL.revokeObjectURL(url), 1000);
   }
   const enabled = { intake: true, review: !!profile, explore: explored, detail: !!plan };
   // Completion describes preparing each stage's output, not completing the learning itself.
   const completed = { intake: !!profile, review: explored, explore: !!plan, detail: !!plan };
-  const stageIndex = stages.findIndex(stage => stage.id === screen);
+  const activeStage = screen === 'role' || screen === 'outlook' ? 'explore' : screen === 'sdg' ? 'detail' : screen;
+  const stageIndex = stages.findIndex(stage => stage.id === activeStage);
   return <>
-    <a className="skip-link" href="#main">Skip to content</a>
-    <aside className="sidebar" aria-label="Journey sidebar">
-      <button className="sidebar-toggle" aria-label={sidebarCollapsed ? 'Expand sidebar' : 'Collapse sidebar'} aria-expanded={!sidebarCollapsed} aria-controls="journey-navigation" onClick={() => setSidebarCollapsed(value => !value)} title={sidebarCollapsed ? 'Expand sidebar' : 'Collapse sidebar'}><Icon name={sidebarCollapsed ? 'panelOpen' : 'panelClose'} /></button>
-      <Brand /><span className="nav-caption">YOUR NEXT CHAPTER</span>
-      <nav id="journey-navigation" aria-label="Career journey">{stages.map((stage, index) => <button key={stage.id} className={`nav-item ${screen === stage.id ? 'active' : ''} ${completed[stage.id] ? 'completed' : ''}`} data-screen={stage.id} data-complete={completed[stage.id]} aria-label={stage.label} aria-description={completed[stage.id] ? (stage.id === 'detail' ? 'Roadmap ready' : 'Completed') : undefined} aria-current={screen === stage.id ? 'step' : undefined} title={sidebarCollapsed ? `${stage.label}${completed[stage.id] ? (stage.id === 'detail' ? ' — Roadmap ready' : ' — Completed') : ''}` : undefined} disabled={pending || !enabled[stage.id]} onClick={() => setScreen(stage.id)}><Icon name={stage.icon} /><span className="nav-full">{stage.label}</span><span className="nav-short">{stage.short}</span><span className="nav-status" aria-hidden="true">{!completed[stage.id] && <small>0{index + 1}</small>}</span></button>)}</nav>
-      <div className="sidebar-bottom"><Icon name="spark" /><strong>Small steps.<br />New possibilities.</strong><span>Made for your next move.</span></div>
+    <a className="skip-link" href="#main" onClick={event => { event.preventDefault(); document.getElementById('main')?.focus(); document.getElementById('main')?.scrollIntoView(); }}>{t("Skip to content")}</a>
+    <aside className="sidebar" aria-label={t("Journey sidebar")}>
+      <button className="sidebar-toggle" aria-label={t(sidebarCollapsed ? 'Expand sidebar' : 'Collapse sidebar')} aria-expanded={!sidebarCollapsed} aria-controls="journey-navigation" onClick={() => setSidebarCollapsed(value => !value)} title={t(sidebarCollapsed ? 'Expand sidebar' : 'Collapse sidebar')}><Icon name={sidebarCollapsed ? 'panelOpen' : 'panelClose'} /></button>
+      <Brand /><span className="nav-caption">{t("YOUR NEXT CHAPTER")}</span>
+      <nav id="journey-navigation" aria-label={t("Career journey")}>{stages.map((stage, index) => <button key={stage.id} className={`nav-item ${activeStage === stage.id ? 'active' : ''} ${completed[stage.id] ? 'completed' : ''}`} data-screen={stage.id} data-complete={completed[stage.id]} aria-label={t(stage.label)} aria-description={t(completed[stage.id] ? (stage.id === 'detail' ? 'Roadmap ready' : 'Completed') : undefined)} aria-current={activeStage === stage.id ? 'step' : undefined} title={t(sidebarCollapsed ? `${stage.label}${completed[stage.id] ? (stage.id === 'detail' ? ' — Roadmap ready' : ' — Completed') : ''}` : undefined)} disabled={pending || !enabled[stage.id]} onClick={() => setScreen(stage.id)}><Icon name={stage.icon} /><span className="nav-full">{t(stage.label)}</span><span className="nav-short">{t(stage.short)}</span><span className="nav-status" aria-hidden="true">{!completed[stage.id] && <small>0{t(index + 1)}</small>}</span></button>)}</nav>
+      <div className="sidebar-bottom"><Icon name="spark" /><strong>{t("Small steps.")}<br />{t("New possibilities.")}</strong><span>{t("Made for your next move.")}</span></div>
     </aside>
-    <div className="workspace"><header className="topbar"><Brand mobile /><span id="breadcrumb">{stages[stageIndex].heading}</span></header>
+    <div className="workspace"><header className="topbar"><Brand mobile /><span id="breadcrumb">{t(screen === 'sdg' ? 'Learning roadmap / SDG connections' : screen === 'role' ? 'Explore careers / Role overview' : screen === 'outlook' ? 'Explore careers / AI outlook' : stages[stageIndex].heading)}</span><LanguagePicker /></header>
       <main id="main" tabIndex={-1} aria-busy={pending || undefined}>
-        <div id="feedback" ref={errorRef} className="feedback" role="alert" tabIndex={-1} hidden={!error || drawerOpen}>{error}</div>
-        {pending && <Loading label={loading.label} upload={loading.upload} />}
+        <div id="feedback" ref={errorRef} className="feedback" role="alert" tabIndex={-1} hidden={!error}>{t(error)}</div>
+        {pending && <Loading label={t(loading.label)} upload={loading.upload} />}
         {screen === 'intake' && <Upload pending={pending} uploadedFileName={uploadedFileName} onReview={() => setScreen('review')} onUpload={upload} onSample={() => void action('Reading the sample CV', async () => acceptUpload(await request<ProfileResponse>('/profiles/sample', token, { method: 'POST' }), 'graduate.pdf'), true)} onManual={() => void action('Opening your skills', async () => acceptUpload(await request<ProfileResponse>('/profiles/manual', token, { method: 'POST' })))} />}
         {screen === 'review' && profile && <Review profile={profile} removed={removed} added={added} pending={pending} target={target} preferences={preferences} onSkill={updateSkill} onRemove={removeSkill} onConfirmAll={checked => { setProfile({ ...profile, skills: profile.skills.map(skill => removed.has(skill.skill_id) ? skill : { ...skill, confirmation: checked ? 'confirmed' : 'unverified' }) }); invalidate(); }} onAdd={addSkill} onTarget={role => { setTarget(role); invalidate(); }} onPreferences={next => { setPreferences(next); invalidate(); }} onContinue={findMatches} onError={showError} onAssess={reassessSkills} />}
         {screen === 'explore' && profile && <Careers matches={matches} profile={profile} confirmedCount={confirmed.length} target={target} pending={pending} onEdit={() => setScreen('review')} onOpen={openRole} />}
-        {screen === 'detail' && profile && roleData && plan && <Roadmap sessionToken={token} data={roleData} plan={plan} courseStatus={courseStatus} profile={profile} pending={pending} onBack={() => setScreen('explore')} onDetails={() => setDrawerOpen(true)} onScenario={changeScenario} onExport={exportPlan} />}
-      </main><footer>Adapted from O*NET® 31.0 · USDOL/ETA · <a href="https://www.onetcenter.org/license_db.html" target="_blank" rel="noopener noreferrer">CC BY 4.0</a> · No endorsement.</footer>
+        {screen === 'role' && profile && roleData && <RoleDetails data={roleData} profile={profile} pending={pending} selectedSoftware={selectedSoftware} hasPlan={!!plan} onBack={() => setScreen('explore')} onOutlook={() => setScreen('outlook')} onSoftware={changeSoftware} onBuild={buildRoadmap} onReview={() => setScreen('review')} />}
+        {screen === 'outlook' && roleData && <AIOutlook data={roleData} sessionToken={token} pending={pending} hasPlan={!!plan} onBack={() => setScreen('role')} onBuild={buildRoadmap} />}
+        {screen === 'detail' && profile && roleData && plan && <Roadmap sessionToken={token} data={roleData} plan={plan} courseStatus={courseStatus} profile={profile} pending={pending} onBack={() => setScreen('explore')} onDetails={() => setScreen('role')} onScenario={changeScenario} onExport={exportPlan} onSdg={() => setScreen('sdg')} weeklyHours={roadmapWeeklyHours ?? profile.constraints.hours_per_week ?? 5} onPace={setRoadmapWeeklyHours} revision={revision} horizon={roadmapHorizon} onHorizon={setRoadmapHorizon} onCurated={setCuratedMap} curated={curatedMap} />}
+        {screen === 'sdg' && roleData && plan && <SDG data={roleData} plan={plan} pending={pending} onBack={() => setScreen('detail')} />}
+      </main><footer>{t("Adapted from O*NET® 31.0 · USDOL/ETA · ")}<a href="https://www.onetcenter.org/license_db.html" target="_blank" rel="noopener noreferrer">{t("CC BY 4.0")}</a>{t(" · No endorsement.")}</footer>
     </div>
-    {roleData && profile && <RoleDrawer data={roleData} profile={profile} sessionToken={token} open={drawerOpen} pending={pending} loadingLabel={loading?.label || ''} error={error} selectedSoftware={selectedSoftware} hasPlan={!!plan} onClose={() => setDrawerOpen(false)} onSoftware={changeSoftware} onBuild={buildRoadmap} onReview={() => { setDrawerOpen(false); setScreen("review"); }} />}
   </>;
 }

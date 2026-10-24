@@ -1,5 +1,5 @@
 // Fields consumed by the UI. API responses retain their full metadata for export.
-export type Screen = 'intake' | 'review' | 'explore' | 'detail';
+export type Screen = 'intake' | 'review' | 'explore' | 'role' | 'outlook' | 'detail' | 'sdg';
 export type ScenarioId = 'baseline' | 'moderate_ai_change' | 'rapid_ai_change';
 export interface Skill { skill_id: string; label: string }
 export interface ProfileSkill extends Skill {
@@ -108,8 +108,9 @@ export interface PriorityEvidence {
 }
 export interface Gap extends Skill { baseline_priority: number; adjusted_priority: number; applied_adjustment: number }
 export interface Course {
+  skill_ids?: string[];
   course_id: string; title: string; course_url: string; provider: string; last_verified_at: string;
-  duration: { display_text: string }; cost: { access: string; currency: string | null; amount: number };
+  duration: { hours?: number; display_text: string }; cost: { access: string; currency: string | null; amount: number };
   prerequisite_skill_ids: string[];
 }
 export interface SdgConnection {
@@ -119,13 +120,31 @@ export interface SdgConnection {
 }
 export interface LearningStep {
   order: number; skill_ids: string[]; course_id: string | null;
+  estimated_hours?: number | null;
   learning_goal: string; practice_activity: string; completion_evidence: string;
 }
 export interface Plan {
+  selected_software_skill_ids?: string[];
   prioritized_gaps: Gap[]; selected_courses: Course[]; uncovered_skill_ids: string[];
   milestones: { title: string; steps: LearningStep[] }[]; sdg_connections: SdgConnection[];
   warnings: string[]; cost_totals: { currency: string; amount: number }[]; total_estimated_hours: number | null;
   sdg_summary?: SdgSummary | null;
+}
+export type RoadmapHorizon = 'short' | 'standard' | 'long';
+export interface RoadmapSkill extends Skill { course_covered: boolean; already_confirmed: boolean; suggested_tool: boolean }
+export interface RoadmapModule {
+  node_id: string; title: string; objective: string; deliverable: string; task_id: string;
+  skill_ids: string[]; embedded_skill_ids: string[]; course_ids: string[];
+  practice_hours: number; course_hours: number; hours: number; week_start: number; week_end: number; level: number;
+  skills: RoadmapSkill[]; embedded_skills: RoadmapSkill[];
+}
+export interface RoadmapEdge { source: string; target: string; reason: string; basis: 'ai_suggested' | 'course_prerequisite' | 'practice_sequence' }
+export interface DependencyMap {
+  content_language?: string; translation_status?: string;
+  summary: string; nodes: RoadmapModule[]; edges: RoadmapEdge[];
+  origin: 'ai_generated' | 'application_outline'; status: string; provider?: string | null; model?: string | null;
+  horizon: RoadmapHorizon; target_weeks: number; weekly_hours: number; budget_hours: number;
+  planned_hours: number; estimated_weeks: number; deferred_skills: Skill[]; changes_personal_fit: false;
 }
 export interface ExplainedSdg extends SdgConnection {
   goal_title: string; target_label: string; application_example: string; condition: string;
