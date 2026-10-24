@@ -23,11 +23,10 @@ Ikiguy helps students, graduates and early-career professionals connect their sk
 | Resource | Link |
 |---|---|
 | GitHub repository | [ProProcer/here-we-go-sdc](https://github.com/ProProcer/here-we-go-sdc) |
-| Replit project | To be added |
+| Replit project | [Replit Project](https://replit.com/@Proprocer/here-we-go-sdc) |
 | Live demo | [Ikiguy](https://here-we-go-sdc.replit.app) |
-| RunPod endpoint | To be added |
+| RunPod endpoint | https://api.runpod.ai/v2/mw04eleb91hr3t |
 | Slide deck | To be added |
-| Demo video | To be added |
 | Pitching video | To be added |
 
 ## Features and status
