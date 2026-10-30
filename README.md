@@ -11,24 +11,23 @@ Ikiguy helps students, graduates and early-career professionals connect their sk
 | Item | Details |
 |---|---|
 | App name | Ikiguy |
-| Team name | To be added |
+| Team name | Here We Go |
 | Hackathon | SDC Hackathon 2026 |
 | Domain | Domain 1: The Aiversecity Future-Ready Workforce |
 | How to run the project | Follow [Run locally](#run-locally) for installation and startup commands, then open http://localhost:8000. |
 | Live demo | [Try Ikiguy](https://here-we-go-sdc.replit.app) |
-| Pitching video | To be added |
+| Pitching video | [Pitching Video](https://youtu.be/XASOrQQj72U) |
 
 ## Project links
 
 | Resource | Link |
 |---|---|
 | GitHub repository | [ProProcer/here-we-go-sdc](https://github.com/ProProcer/here-we-go-sdc) |
-| Replit project | To be added |
+| Replit project | [Replit Project](https://replit.com/@Proprocer/here-we-go-sdc) |
 | Live demo | [Ikiguy](https://here-we-go-sdc.replit.app) |
-| RunPod endpoint | To be added |
-| Slide deck | To be added |
-| Demo video | To be added |
-| Pitching video | To be added |
+| RunPod endpoint | https://api.runpod.ai/v2/mw04eleb91hr3t |
+| Slide deck | [View Ikiguy Pitch Presentation](docs/presentation/Ikiguy-Pitch/Ikiguy-Pitch.pdf) |
+| Pitching video | [Pitching Video](https://youtu.be/XASOrQQj72U) |
 
 ## Features and status
 
